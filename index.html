@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -15,26 +14,927 @@
   --text:#1a0a12;--text2:#6b4057;--text3:#b08a9a;
   --bg:#fafafa;--white:#fff;--border:#f0dce6;
   --green:#16a34a;--red:#dc2626;--amber:#d97706;
-  --sidebar:220px;
+  --sb:220px;
 }
-body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;font-size:14px}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;font-size:14px;overflow-x:hidden}
 
-/* Sidebar */
-#sidebar{width:var(--sidebar);background:var(--white);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100}
+/* ── Hamburger (single, fixed) ── */
+#hamburger{display:none;position:fixed;top:10px;left:10px;z-index:300;background:var(--white);border:1px solid var(--border);border-radius:8px;cursor:pointer;padding:5px 9px;font-size:20px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+
+/* ── Overlay ── */
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:199}
+#overlay.open{display:block}
+
+/* ── Sidebar ── */
+#sidebar{width:var(--sb);background:var(--white);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:200;flex-shrink:0}
 .logo{padding:20px 20px 16px;border-bottom:1px solid var(--border)}
 .logo-mark{display:flex;align-items:center;gap:8px}
-.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#e8356d,#f472a0);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#e8356d,#f472a0);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 .logo-text{font-size:13px;font-weight:700;color:var(--pink);letter-spacing:1px;line-height:1.2}
 .logo-sub{font-size:8px;color:var(--text3);letter-spacing:2px}
-nav{flex:1;padding:12px 0;overflow-y:auto}
-.nav-item{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;border-radius:0;transition:all .15s;color:var(--text2);font-size:13px;font-weight:500;border-left:3px solid transparent}
+#sb-nav{flex:1;padding:12px 0;overflow-y:auto}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:var(--text2);font-size:13px;font-weight:500;border-left:3px solid transparent;transition:all .15s;white-space:nowrap}
 .nav-item:hover{background:var(--rose);color:var(--pink)}
 .nav-item.active{background:var(--rose2);color:var(--pink);border-left-color:var(--pink);font-weight:700}
-.nav-icon{font-size:16px;width:20px;text-align:center}
+.nav-icon{font-size:16px;width:20px;text-align:center;flex-shrink:0}
 .fire-goal{margin:12px;background:linear-gradient(135deg,#fce7ef,#fde8f0);border-radius:12px;padding:14px;border:1px solid var(--border)}
 .fire-goal-label{font-size:10px;color:var(--text3);margin-bottom:4px}
 .fire-goal-val{font-size:20px;font-weight:700;color:var(--pink);margin-bottom:8px}
 .progress-bar{background:var(--border);border-radius:4px;height:5px;margin-bottom:4px}
+.progress-fill{background:linear-gradient(90deg,var(--pink),var(--pink-mid));border-radius:4px;height:100%}
+.fire-goal-sub{font-size:10px;color:var(--text3)}
+.user-info{padding:12px 16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#e8356d,#f472a0);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;font-weight:700;flex-shrink:0}
+.user-name{font-size:12px;font-weight:700}
+.user-assets{font-size:11px;color:var(--text3)}
+
+/* ── Main ── */
+#main{margin-left:var(--sb);flex:1;min-width:0;min-height:100vh}
+.topbar{background:var(--white);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:50}
+.topbar-titles{flex:1;min-width:0}
+.page-title{font-size:18px;font-weight:700;color:var(--text)}
+.page-sub{font-size:12px;color:var(--text3);margin-top:2px}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.search-box{background:var(--rose);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12px;color:var(--text2);display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
+.btn-primary{background:var(--pink);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.btn-primary:hover{background:var(--pink-dark)}
+.btn-ghost{background:transparent;border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--text2);cursor:pointer;white-space:nowrap}
+
+.content{padding:20px 24px}
+.page{display:none}
+.page.active{display:block}
+
+/* ── Cards ── */
+.card{background:var(--white);border-radius:14px;border:1px solid var(--border);padding:18px}
+.card-sm{background:var(--white);border-radius:10px;border:1px solid var(--border);padding:12px}
+
+/* ── Layouts ── */
+.side-layout{display:grid;grid-template-columns:1fr 260px;gap:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+
+/* ── Stats ── */
+.stat-label{font-size:11px;color:var(--text3);margin-bottom:4px}
+.stat-val{font-size:20px;font-weight:700;line-height:1}
+.pos{color:var(--green)!important}
+.neg{color:var(--red)!important}
+
+/* ── Period tabs ── */
+.period-tabs{display:flex;gap:2px;flex-wrap:wrap}
+.period-tab{padding:3px 8px;border-radius:6px;font-size:11px;cursor:pointer;color:var(--text3);font-weight:500;border:none;background:transparent}
+.period-tab.active{background:var(--text);color:#fff}
+
+/* ── Table ── */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* canvasが親を押し広げないよう制限（ドーナツ以外） */
+canvas:not(#allocChart){max-width:100%!important}
+/* ドーナツは固定サイズを守る */
+#allocChart{width:150px!important;height:150px!important;max-width:150px!important}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;color:var(--text3);font-weight:500;text-align:left;padding:7px 10px;border-bottom:1px solid var(--border)}
+td{padding:9px 10px;border-bottom:1px solid #fdf0f5;font-size:12px;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--rose)}
+
+/* ── Tags / Chips ── */
+.tag{display:inline-block;padding:2px 7px;border-radius:20px;font-size:11px;font-weight:500}
+.tag-green{background:#dcfce7;color:#166534}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-pink{background:var(--rose2);color:var(--pink)}
+.tag-gray{background:#f3f4f6;color:#4b5563}
+.tag-amber{background:#fef3c7;color:#92400e}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--text2);white-space:nowrap}
+.chip.active{background:var(--text);color:#fff;border-color:var(--text)}
+.chip.pink.active{background:var(--pink);border-color:var(--pink);color:#fff}
+
+/* ── Section header ── */
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.sec-title{font-size:14px;font-weight:700}
+.sec-link{font-size:12px;color:var(--pink);cursor:pointer;font-weight:500;white-space:nowrap}
+
+/* ── Ticker flag ── */
+.ticker-flag{width:26px;height:26px;border-radius:5px;background:linear-gradient(135deg,#e8356d,#f5a3c0);display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700;margin-right:4px;flex-shrink:0;vertical-align:middle}
+
+/* ── Cat cards ── */
+.cat-card{background:var(--white);border-radius:10px;border:1px solid var(--border);padding:12px}
+.cat-val{font-size:15px;font-weight:700;margin-bottom:2px}
+.cat-chg{font-size:11px;color:var(--green)}
+canvas.mini{max-height:40px;width:100%!important}
+
+/* ── Donut ── */
+.donut-wrap{position:relative;display:flex;align-items:center;justify-content:center}
+.donut-center{position:absolute;text-align:center;pointer-events:none}
+.donut-total-label{font-size:10px;color:var(--text3)}
+.donut-total-val{font-size:14px;font-weight:700}
+.alloc-legend{display:flex;flex-direction:column;gap:6px}
+.alloc-row{display:flex;align-items:center;gap:7px}
+.alloc-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.alloc-name{font-size:12px;color:var(--text2);flex:1}
+.alloc-pct{font-size:12px;font-weight:700}
+
+/* ── Feed ── */
+.feed-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:14px;margin-bottom:10px}
+.feed-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.feed-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.feed-user{font-weight:700;font-size:13px}
+.feed-time{font-size:11px;color:var(--text3)}
+.feed-badge{padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700}
+.badge-buy{background:#fee2e2;color:#dc2626}
+.badge-sell{background:#dcfce7;color:#16a34a}
+.feed-ticker{font-size:16px;font-weight:700;margin-bottom:2px}
+.feed-ticker-sub{font-size:11px;color:var(--text3);margin-bottom:8px}
+.feed-amount{font-size:18px;font-weight:700;text-align:right}
+.feed-note{font-size:12px;color:var(--text2);border-top:1px solid var(--border);padding-top:8px;margin-bottom:8px}
+.feed-actions{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--text3);flex-wrap:wrap}
+.btn-copy{background:var(--pink);color:#fff;border:none;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;cursor:pointer;margin-left:auto}
+
+/* ── Market ── */
+.market-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px}
+.market-item:last-child{border-bottom:none}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:4px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── Ranking ── */
+.rank-medal{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.rank-1{background:#fde68a;color:#92400e}
+.rank-2{background:#e2e8f0;color:#475569}
+.rank-3{background:#fed7aa;color:#9a3412}
+.rank-n{background:var(--rose);color:var(--pink)}
+.top3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.top3-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:14px;display:flex;align-items:center;gap:10px}
+.btn-follow{background:var(--pink);color:#fff;border:none;border-radius:8px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap}
+
+/* ── Calendar ── */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-day-name{text-align:center;font-size:11px;color:var(--text3);padding:6px 0;font-weight:500}
+.cal-cell{min-height:60px;background:var(--white);border:1px solid var(--border);border-radius:4px;padding:4px;cursor:pointer}
+.cal-cell:hover{border-color:var(--pink-mid)}
+.cal-date{font-size:11px;font-weight:500;color:var(--text2)}
+.cal-today .cal-date{background:var(--text);color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.cal-event{font-size:8px;padding:1px 3px;border-radius:2px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev-kessan{background:#fee2e2;color:#dc2626}
+.ev-shihyo{background:#fde68a;color:#92400e}
+.ev-haitou{background:#dcfce7;color:#166534}
+
+/* ── Search ── */
+.search-modal{background:var(--white);border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 16px 48px rgba(232,53,109,.12)}
+.search-input-wrap{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid var(--border)}
+.search-input{border:none;font-size:15px;color:var(--text);flex:1;outline:none;font-family:inherit;min-width:0}
+.search-tabs{display:flex;gap:3px;padding:8px 14px;border-bottom:1px solid var(--border)}
+.search-tab{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text3)}
+.search-tab.active{background:var(--text);color:#fff}
+.search-section{padding:8px 14px}
+.search-section-title{font-size:10px;color:var(--text3);font-weight:700;letter-spacing:.5px;margin-bottom:6px;text-transform:uppercase}
+.search-result{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;cursor:pointer}
+.search-result:hover{background:var(--rose)}
+.ticker-badge{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;background:linear-gradient(135deg,#e8356d,#f472a0);flex-shrink:0}
+.search-action{display:flex;align-items:center;gap:8px;padding:8px;color:var(--text2);cursor:pointer;border-radius:8px;font-size:12px}
+.search-action:hover{background:var(--rose)}
+
+/* ══ TABLET 769–1100px ══ */
+@media(max-width:1100px){
+  :root{--sb:56px}
+  .logo-text,.logo-sub,.nav-label,.fire-goal,.user-name,.user-assets{display:none}
+  .logo{padding:12px 0;display:flex;justify-content:center;border-bottom:1px solid var(--border)}
+  .logo-mark{justify-content:center}
+  .logo-icon{width:28px;height:28px;font-size:14px}
+  .nav-item{justify-content:center;padding:12px 0;border-left:3px solid transparent}
+  .nav-item.active{border-left-color:var(--pink);background:var(--rose2)}
+  .nav-icon{width:auto;font-size:18px;margin:0}
+  .user-info{justify-content:center;padding:10px 0}
+  .side-layout{grid-template-columns:1fr}
+  .grid6{grid-template-columns:repeat(3,1fr)}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .top3{grid-template-columns:1fr 1fr}
+  .content{padding:14px 16px}
+  .search-box{display:none}
+}
+
+/* ══ MOBILE ≤768px ══ */
+@media(max-width:768px){
+  :root{--sb:0px}
+  #hamburger{display:block}
+  #sidebar{width:220px;transform:translateX(-100%);transition:transform .25s ease}
+  #sidebar.open{transform:translateX(0)}
+  /* サイドバー内はフル表示に戻す */
+  .logo-text,.logo-sub,.nav-label,.fire-goal,.user-name,.user-assets{display:revert}
+  .logo{padding:18px 18px 14px;display:block}
+  .logo-mark{justify-content:flex-start}
+  .logo-icon{width:30px;height:30px;font-size:15px}
+  .nav-item{justify-content:flex-start;padding:10px 18px;border-left:3px solid transparent}
+  .nav-item.active{border-left-color:var(--pink)}
+  .nav-icon{width:20px;font-size:15px}
+  .user-info{justify-content:flex-start;padding:12px 16px}
+  #main{margin-left:0}
+  /* topbarにハンバーガー分の左余白 */
+  .topbar{padding:10px 12px 10px 52px}
+  .content{padding:10px 12px}
+  /* layouts */
+  .side-layout{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr 1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .grid6{grid-template-columns:1fr 1fr}
+  .top3{grid-template-columns:1fr}
+  /* text */
+  .page-title{font-size:16px}
+  .stat-val{font-size:17px}
+  .hide-sm{display:none!important}
+  .feed-actions{gap:8px}
+}
+
+/* ══ SMALL ≤480px ══ */
+@media(max-width:480px){
+  .grid2,.grid3,.grid4,.grid6{grid-template-columns:1fr}
+  .top3{grid-template-columns:1fr}
+  .card{padding:12px}
+  .card-sm{padding:10px}
+  .period-tab{padding:3px 6px;font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ハンバーガー：1つだけ、body直下 -->
+<button id="hamburger" aria-label="メニュー" onclick="openSidebar()">☰</button>
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<nav id="sidebar">
+  <div class="logo">
+    <div class="logo-mark">
+      <div class="logo-icon">🔥</div>
+      <div><div class="logo-text">FIRE</div><div class="logo-sub">ALL TOGETHER</div></div>
+    </div>
+  </div>
+  <div id="sb-nav">
+    <div class="nav-item active" data-page="portfolio"><span class="nav-icon">📊</span><span class="nav-label">ポートフォリオ</span></div>
+    <div class="nav-item" data-page="category"><span class="nav-icon">🗂️</span><span class="nav-label">カテゴリ</span></div>
+    <div class="nav-item" data-page="dividend"><span class="nav-icon">💴</span><span class="nav-label">配当</span></div>
+    <div class="nav-item" data-page="calendar"><span class="nav-icon">📅</span><span class="nav-label">カレンダー</span></div>
+    <div class="nav-item" data-page="ranking"><span class="nav-icon">🏆</span><span class="nav-label">ランキング</span></div>
+    <div class="nav-item" data-page="feed"><span class="nav-icon">📰</span><span class="nav-label">フィード</span></div>
+    <div class="nav-item" data-page="explore"><span class="nav-icon">🔍</span><span class="nav-label">探索</span></div>
+  </div>
+  <div class="fire-goal">
+    <div class="fire-goal-label">FIRE達成まで</div>
+    <div class="fire-goal-val">あと 8.4年</div>
+    <div class="progress-bar"><div class="progress-fill" style="width:24.7%"></div></div>
+    <div class="fire-goal-sub">目標¥50M・進捗24.7%</div>
+  </div>
+  <div class="user-info">
+    <div class="avatar">C</div>
+    <div><div class="user-name">chappy</div><div class="user-assets">¥12,345,678</div></div>
+  </div>
+</nav>
+
+<div id="main">
+
+<!-- ══ PORTFOLIO ══ -->
+<div class="page active" id="page-portfolio">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">ポートフォリオ</div><div class="page-sub">2026/5/11 15:00 JST</div></div>
+    <div class="topbar-right">
+      <div class="search-box" onclick="showPage('explore')">🔍 検索</div>
+      <button class="btn-primary" onclick="showPage('explore')">＋ 取引を記録</button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="side-layout">
+      <div>
+        <div class="card" style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <div>
+              <div class="stat-label">総資産</div>
+              <div style="font-size:28px;font-weight:700">¥12,345,678</div>
+              <div style="font-size:12px;margin-top:4px;display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                <span class="pos" style="font-weight:600">▲+1.42%</span>
+                <span style="color:var(--text3)">本日 <strong class="pos">+¥175,432</strong></span>
+                <span style="color:var(--text3)">累計 <strong class="pos">+¥2,184,200（+21.5%）</strong></span>
+              </div>
+            </div>
+            <div class="period-tabs">
+              <button class="period-tab">1D</button><button class="period-tab">1W</button>
+              <button class="period-tab active">1M</button><button class="period-tab">3M</button>
+              <button class="period-tab">1Y</button><button class="period-tab">ALL</button>
+            </div>
+          </div>
+          <div style="height:160px"><canvas id="portfolioChart"></canvas></div>
+        </div>
+        <div class="grid6" style="margin-bottom:12px">
+          <div class="cat-card"><div class="stat-label">日本株</div><div class="cat-val">¥506M</div><div class="cat-chg">▲+1.32%</div><canvas id="mini1" class="mini" style="margin-top:4px;height:36px"></canvas></div>
+          <div class="cat-card"><div class="stat-label">海外株</div><div class="cat-val">¥372M</div><div class="cat-chg">▲+1.18%</div><canvas id="mini2" class="mini" style="margin-top:4px;height:36px"></canvas></div>
+          <div class="cat-card"><div class="stat-label">金属</div><div class="cat-val">¥145M</div><div class="cat-chg">▲+0.18%</div><canvas id="mini3" class="mini" style="margin-top:4px;height:36px"></canvas></div>
+          <div class="cat-card"><div class="stat-label">債券</div><div class="cat-val">¥118M</div><div class="cat-chg">▲+0.05%</div><canvas id="mini4" class="mini" style="margin-top:4px;height:36px"></canvas></div>
+          <div class="cat-card"><div class="stat-label">為替</div><div class="cat-val">¥38M</div><div class="cat-chg">▲+0.28%</div><canvas id="mini5" class="mini" style="margin-top:4px;height:36px"></canvas></div>
+          <div class="cat-card"><div class="stat-label">仮想通貨</div><div class="cat-val">¥56M</div><div class="cat-chg">▲+3.92%</div><canvas id="mini6" class="mini" style="margin-top:4px;height:36px"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="sec-header">
+            <div class="sec-title">保有銘柄</div>
+            <div class="chips">
+              <span class="chip active">すべて</span><span class="chip">日本株</span><span class="chip">海外株</span><span class="chip">金属</span>
+            </div>
+          </div>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>銘柄</th><th>数量</th><th>現在値</th><th>評価額</th><th>損益</th><th class="hide-sm">30日</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ticker-flag">JP</span>トヨタ<br><span style="font-size:10px;color:var(--text3)">7203</span></td><td>200</td><td>¥3,120</td><td>¥624,000</td><td><span class="pos">+¥128,000<br><small>+25.8%</small></span></td><td class="hide-sm"><canvas id="h1" width="70" height="28"></canvas></td></tr>
+                <tr><td><span class="ticker-flag">JP</span>ソニーG<br><span style="font-size:10px;color:var(--text3)">6758</span></td><td>100</td><td>¥14,850</td><td>¥1,485,000</td><td><span class="pos">+¥365,000<br><small>+32.6%</small></span></td><td class="hide-sm"><canvas id="h2" width="70" height="28"></canvas></td></tr>
+                <tr><td><span class="ticker-flag">JP</span>三井住友<br><span style="font-size:10px;color:var(--text3)">8316</span></td><td>300</td><td>¥9,820</td><td>¥2,946,000</td><td><span class="pos">+¥246,000<br><small>+9.1%</small></span></td><td class="hide-sm"><canvas id="h3" width="70" height="28"></canvas></td></tr>
+                <tr><td><span class="ticker-flag" style="background:linear-gradient(135deg,#2563eb,#60a5fa)">US</span>NVIDIA<br><span style="font-size:10px;color:var(--text3)">NVDA</span></td><td>50</td><td>$138.20</td><td>¥1,042,810</td><td><span class="pos">+¥312,000<br><small>+42.8%</small></span></td><td class="hide-sm"><canvas id="h4" width="70" height="28"></canvas></td></tr>
+                <tr><td><span class="ticker-flag" style="background:linear-gradient(135deg,#2563eb,#60a5fa)">US</span>Apple<br><span style="font-size:10px;color:var(--text3)">AAPL</span></td><td>30</td><td>$182.50</td><td>¥412,200</td><td><span class="neg">-¥18,000<br><small>-4.2%</small></span></td><td class="hide-sm"><canvas id="h5" width="70" height="28"></canvas></td></tr>
+                <tr><td><span class="ticker-flag" style="background:linear-gradient(135deg,#d97706,#fcd34d)">XAU</span>ゴールド<br><span style="font-size:10px;color:var(--text3)">XAU</span></td><td>5</td><td>$2,850</td><td>¥2,147,250</td><td><span class="pos">+¥287,000<br><small>+15.4%</small></span></td><td class="hide-sm"><canvas id="h6" width="70" height="28"></canvas></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:12px">
+          <div class="sec-header"><div class="sec-title">アロケーション</div><span style="font-size:11px;color:var(--text3)">6カテゴリ</span></div>
+          <div class="donut-wrap" style="margin-bottom:12px">
+            <canvas id="allocChart" width="150" height="150" style="max-width:150px"></canvas>
+            <div class="donut-center"><div class="donut-total-label">TOTAL</div><div class="donut-total-val">1235M</div></div>
+          </div>
+          <div class="alloc-legend">
+            <div class="alloc-row"><div class="alloc-dot" style="background:#e8356d"></div><span class="alloc-name">日本株</span><span class="alloc-pct">40.9%</span></div>
+            <div class="alloc-row"><div class="alloc-dot" style="background:#f472a0"></div><span class="alloc-name">海外株</span><span class="alloc-pct">30.1%</span></div>
+            <div class="alloc-row"><div class="alloc-dot" style="background:#d97706"></div><span class="alloc-name">金属</span><span class="alloc-pct">11.7%</span></div>
+            <div class="alloc-row"><div class="alloc-dot" style="background:#2563eb"></div><span class="alloc-name">債券</span><span class="alloc-pct">9.6%</span></div>
+            <div class="alloc-row"><div class="alloc-dot" style="background:#16a34a"></div><span class="alloc-name">為替</span><span class="alloc-pct">3.1%</span></div>
+            <div class="alloc-row"><div class="alloc-dot" style="background:#7c3aed"></div><span class="alloc-name">仮想通貨</span><span class="alloc-pct">4.6%</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-header"><div class="sec-title">フォロー中の動き</div><span class="sec-link" onclick="showPage('feed')">すべて表示</span></div>
+          <div style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--border)">
+            <div class="feed-avatar" style="background:#fee2e2">🐻</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span style="font-weight:700;font-size:12px">kuma_invests</span><span class="tag tag-red" style="font-size:10px">買付</span></div>
+              <div style="font-size:11px;color:var(--text3);margin-top:2px">2分前</div>
+              <div style="font-size:12px;margin-top:2px">レーザーテック・¥480,000</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;padding:8px 0">
+            <div class="feed-avatar" style="background:#fee2e2">🎯</div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px"><span style="font-weight:700;font-size:12px">NikkeiHunter</span><span class="tag tag-green" style="font-size:10px">売却</span></div>
+              <div style="font-size:11px;color:var(--text3);margin-top:2px">14分前</div>
+              <div style="font-size:12px;margin-top:2px">ソフトバンクG・¥1,240,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CATEGORY ══ -->
+<div class="page" id="page-category">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">カテゴリ</div><div class="page-sub">日本株・3銘柄・¥506万・40.9%</div></div>
+    <div class="topbar-right"><div class="search-box">🔍 検索</div></div>
+  </div>
+  <div class="content">
+    <div class="chips" style="margin-bottom:14px">
+      <span class="chip pink active" onclick="switchCat(this)">🔴 日本株</span>
+      <span class="chip" onclick="switchCat(this)">🟣 海外株</span>
+      <span class="chip" onclick="switchCat(this)">🟠 金・銀</span>
+      <span class="chip" onclick="switchCat(this)">🟢 債券</span>
+      <span class="chip" onclick="switchCat(this)">🔵 為替</span>
+      <span class="chip" onclick="switchCat(this)">🟡 仮想通貨</span>
+    </div>
+    <div class="side-layout">
+      <div>
+        <div class="card" style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+            <div>
+              <div class="stat-label">日本株 評価額</div>
+              <div style="font-size:24px;font-weight:700">¥5,055,000</div>
+              <div class="pos" style="font-size:12px;font-weight:600;margin-top:2px">▲+1.32%</div>
+              <div style="font-size:11px;color:var(--text3);margin-top:2px">含み益 +¥482,000・取得 ¥4,573,000</div>
+            </div>
+            <div class="period-tabs">
+              <button class="period-tab">1D</button><button class="period-tab">5D</button>
+              <button class="period-tab active">1M</button><button class="period-tab">3M</button>
+              <button class="period-tab">1Y</button><button class="period-tab">ALL</button>
+            </div>
+          </div>
+          <div style="height:180px"><canvas id="catChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="sec-header">
+            <div class="sec-title">保有銘柄・3件</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button class="btn-ghost">並び替え</button>
+              <button class="btn-primary">＋ 追加</button>
+            </div>
+          </div>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>銘柄</th><th>数量</th><th class="hide-sm">取得平均</th><th>現在値</th><th>評価額</th><th>損益</th><th class="hide-sm">30日</th></tr></thead>
+              <tbody>
+                <tr><td>トヨタ自動車</td><td>200株</td><td class="hide-sm">¥2,496</td><td>¥3,120</td><td>¥624,000</td><td><span class="pos">+¥124,800<br><small>+25.0%</small></span></td><td class="hide-sm"><canvas id="ch1" width="70" height="28"></canvas></td></tr>
+                <tr><td>ソニーグループ</td><td>100株</td><td class="hide-sm">¥11,200</td><td>¥14,850</td><td>¥1,485,000</td><td><span class="pos">+¥365,000<br><small>+32.6%</small></span></td><td class="hide-sm"><canvas id="ch2" width="70" height="28"></canvas></td></tr>
+                <tr><td>三井住友FG</td><td>300株</td><td class="hide-sm">¥8,980</td><td>¥9,820</td><td>¥2,946,000</td><td><span class="pos">+¥252,000<br><small>+9.4%</small></span></td><td class="hide-sm"><canvas id="ch3" width="70" height="28"></canvas></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:12px">
+          <div class="sec-title" style="margin-bottom:10px">カテゴリ内訳</div>
+          <table style="font-size:12px">
+            <tr><td style="color:var(--text3);padding:4px 0">銘柄数</td><td style="text-align:right;font-weight:600;padding:4px 0">3銘柄</td></tr>
+            <tr><td style="color:var(--text3);padding:4px 0">取得総額</td><td style="text-align:right;font-weight:600;padding:4px 0">¥4,573,000</td></tr>
+            <tr><td style="color:var(--text3);padding:4px 0">評価額</td><td style="text-align:right;font-weight:600;padding:4px 0">¥5,055,000</td></tr>
+            <tr><td style="color:var(--text3);padding:4px 0">含み損益</td><td style="text-align:right;font-weight:600;padding:4px 0" class="pos">+¥482,000</td></tr>
+            <tr><td style="color:var(--text3);padding:4px 0">配当（年間予測）</td><td style="text-align:right;font-weight:600;padding:4px 0">¥42,300</td></tr>
+            <tr><td style="color:var(--text3);padding:4px 0">配当利回り</td><td style="text-align:right;font-weight:600;padding:4px 0">0.84%</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <div class="sec-title" style="margin-bottom:10px">積立設定・2件</div>
+          <div style="padding:10px;background:var(--rose);border-radius:8px;margin-bottom:6px;font-size:12px"><div style="font-weight:700">NEXT FUNDS 日経225</div><div style="color:var(--text3);margin-top:2px">毎月15日・つみたてNISA</div></div>
+          <div style="padding:10px;background:var(--rose);border-radius:8px;font-size:12px"><div style="font-weight:700">NEXT FUNDS TOPIX</div><div style="color:var(--text3);margin-top:2px">毎月1日・つみたてNISA</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DIVIDEND ══ -->
+<div class="page" id="page-dividend">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">配当・分配金</div><div class="page-sub">年間予測 ¥88,800・利回り 0.78%</div></div>
+  </div>
+  <div class="content">
+    <div class="side-layout">
+      <div>
+        <div class="grid4" style="margin-bottom:12px">
+          <div class="card-sm"><div class="stat-label">年間予測</div><div class="stat-val">¥88,800</div></div>
+          <div class="card-sm"><div class="stat-label">受取済</div><div class="stat-val">¥18,400</div></div>
+          <div class="card-sm"><div class="stat-label">受取予定</div><div class="stat-val">¥70,400</div></div>
+          <div class="card-sm"><div class="stat-label">月平均</div><div class="stat-val">¥7,400</div></div>
+        </div>
+        <div class="card" style="margin-bottom:12px">
+          <div class="sec-header">
+            <div class="sec-title">月別の配当・分配金</div>
+            <div class="period-tabs"><button class="period-tab active">2026年</button><button class="period-tab">2025年</button><button class="period-tab">2024年</button></div>
+          </div>
+          <div style="height:180px"><canvas id="dividendChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="sec-header">
+            <div class="sec-title">個別・直近の配当</div>
+            <div class="chips"><span class="chip active">すべて</span><span class="chip">予定</span><span class="chip">受取済</span></div>
+          </div>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>銘柄</th><th class="hide-sm">支払予定日</th><th>支払額</th><th class="hide-sm">源泉税</th><th>受取額</th><th>状態</th></tr></thead>
+              <tbody>
+                <tr><td>三井住友FG</td><td class="hide-sm">03-28</td><td>¥12,400</td><td class="hide-sm" style="color:var(--red)">-¥2,520</td><td>¥9,880</td><td><span class="tag tag-amber">予定</span></td></tr>
+                <tr><td>トヨタ自動車</td><td class="hide-sm">03-31</td><td>¥3,300</td><td class="hide-sm" style="color:var(--red)">-¥670</td><td>¥2,630</td><td><span class="tag tag-amber">予定</span></td></tr>
+                <tr><td>ソニーグループ</td><td class="hide-sm">03-31</td><td>¥2,700</td><td class="hide-sm" style="color:var(--red)">-¥548</td><td>¥2,152</td><td><span class="tag tag-amber">予定</span></td></tr>
+                <tr><td>Apple</td><td class="hide-sm">02-15</td><td>¥980</td><td class="hide-sm" style="color:var(--red)">-¥147</td><td class="pos">¥833</td><td><span class="tag tag-green">受取済</span></td></tr>
+                <tr><td>Microsoft</td><td class="hide-sm">03-13</td><td>¥1,850</td><td class="hide-sm" style="color:var(--red)">-¥277</td><td>¥1,573</td><td><span class="tag tag-amber">予定</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:12px">
+          <div class="sec-title" style="margin-bottom:10px">カテゴリ別 配当</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px"><span>日本株</span><span style="font-weight:600">¥51,200</span></div><div style="background:var(--border);border-radius:3px;height:4px"><div style="background:var(--pink);width:58%;height:100%;border-radius:3px"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px"><span>海外株</span><span style="font-weight:600">¥24,600</span></div><div style="background:var(--border);border-radius:3px;height:4px"><div style="background:#7c3aed;width:28%;height:100%;border-radius:3px"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px"><span>債券</span><span style="font-weight:600">¥9,800</span></div><div style="background:var(--border);border-radius:3px;height:4px"><div style="background:#2563eb;width:11%;height:100%;border-radius:3px"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px"><span>仮想通貨</span><span style="font-weight:600">¥3,200</span></div><div style="background:var(--border);border-radius:3px;height:4px"><div style="background:#d97706;width:4%;height:100%;border-radius:3px"></div></div></div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:12px">
+          <div class="sec-title" style="margin-bottom:10px">配当 TOP5</div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:12px">
+            <div style="display:flex;gap:8px;align-items:center"><span style="font-weight:700;color:var(--pink);width:14px">1</span><div><div style="font-weight:600">三井住友FG</div><div style="color:var(--text3)">8316</div></div></div>
+            <div style="display:flex;gap:8px;align-items:center"><span style="font-weight:700;color:var(--text3);width:14px">2</span><div><div style="font-weight:600">日本国債10年</div><div style="color:var(--text3)">JGB10</div></div></div>
+            <div style="display:flex;gap:8px;align-items:center"><span style="font-weight:700;color:var(--text3);width:14px">3</span><div><div style="font-weight:600">トヨタ自動車</div><div style="color:var(--text3)">7203</div></div></div>
+            <div style="display:flex;gap:8px;align-items:center"><span style="font-weight:700;color:var(--text3);width:14px">4</span><div><div style="font-weight:600">ソニーグループ</div><div style="color:var(--text3)">6758</div></div></div>
+            <div style="display:flex;gap:8px;align-items:center"><span style="font-weight:700;color:var(--text3);width:14px">5</span><div><div style="font-weight:600">Microsoft</div><div style="color:var(--text3)">MSFT</div></div></div>
+          </div>
+        </div>
+        <div class="card" style="background:linear-gradient(135deg,#e8356d,#f472a0);border:none">
+          <div style="color:rgba(255,255,255,.8);font-size:11px;margin-bottom:4px">配当だけで生活</div>
+          <div style="color:#fff;font-size:20px;font-weight:700;margin-bottom:4px">月¥8,142</div>
+          <div style="color:rgba(255,255,255,.8);font-size:11px">あと <strong style="color:#fff">¥291,858</strong>/月 が必要です。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CALENDAR ══ -->
+<div class="page" id="page-calendar">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">カレンダー</div><div class="page-sub">決算・経済指標・配当権利日</div></div>
+  </div>
+  <div class="content">
+    <div class="side-layout">
+      <div>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+            <button class="btn-ghost">←</button>
+            <span style="font-size:16px;font-weight:700">May 2026</span>
+            <button class="btn-ghost">→</button>
+            <div class="chips" style="margin-left:auto">
+              <span class="chip active">すべて</span>
+              <span class="chip" style="border-color:#dc2626;color:#dc2626">● 決算</span>
+              <span class="chip" style="border-color:#d97706;color:#d97706">● 指標</span>
+              <span class="chip" style="border-color:#16a34a;color:#16a34a">● 配当</span>
+            </div>
+          </div>
+          <div class="cal-grid" style="margin-bottom:3px">
+            <div class="cal-day-name">日</div><div class="cal-day-name">月</div><div class="cal-day-name">火</div>
+            <div class="cal-day-name">水</div><div class="cal-day-name">木</div><div class="cal-day-name">金</div><div class="cal-day-name">土</div>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="sec-title" style="margin-bottom:12px">今後7日間</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;gap:8px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid var(--border)"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">12</div></div><div><div style="font-size:12px;font-weight:700">トヨタ自動車 決算発表</div><div><span class="tag ev-kessan" style="font-size:10px">決算</span><span style="font-size:10px;color:var(--text3);margin-left:4px">7203</span></div></div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid var(--border)"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">13</div></div><div><div style="font-size:12px;font-weight:700">FOMC 政策金利発表</div><div><span class="tag ev-shihyo" style="font-size:10px">指標</span></div></div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid var(--border)"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">14</div></div><div><div style="font-size:12px;font-weight:700">ソニーG / 任天堂 決算</div><div><span class="tag ev-kessan" style="font-size:10px">決算</span></div></div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid var(--border)"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">15</div></div><div><div style="font-size:12px;font-weight:700">米CPI 4月分</div><div><span class="tag ev-shihyo" style="font-size:10px">指標</span></div></div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid var(--border)"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">16</div></div><div><div style="font-size:12px;font-weight:700">NVIDIA Q1 決算</div><div><span class="tag ev-kessan" style="font-size:10px">決算</span></div></div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid var(--border)"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">19</div></div><div><div style="font-size:12px;font-weight:700">日銀 金融政策決定会合</div><div><span class="tag ev-shihyo" style="font-size:10px">指標</span></div></div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><div style="text-align:center;width:32px;flex-shrink:0"><div style="font-size:10px;color:var(--text3)">5月</div><div style="font-size:16px;font-weight:700">20</div></div><div><div style="font-size:12px;font-weight:700">三井住友FG 配当権利確定</div><div><span class="tag ev-haitou" style="font-size:10px">配当</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RANKING ══ -->
+<div class="page" id="page-ranking">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">ランキング</div><div class="page-sub">みんなのFIREの進み具合</div></div>
+  </div>
+  <div class="content">
+    <div class="top3">
+      <div class="top3-card" style="border-color:var(--pink-mid);background:var(--rose)">
+        <div class="rank-medal rank-1">1</div>
+        <div style="flex:1;min-width:0"><div style="font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">NikkeiHunter</div><div style="font-size:11px;color:var(--text3)">¥2180M・1,842フォロワー</div></div>
+        <div class="pos" style="font-size:16px;font-weight:700;white-space:nowrap">+32.1%</div>
+      </div>
+      <div class="top3-card" style="border-color:var(--pink-mid);background:var(--rose)">
+        <div class="rank-medal rank-2">2</div>
+        <div style="flex:1;min-width:0"><div style="font-weight:700">chappy <span class="tag tag-pink" style="font-size:10px">あなた</span></div><div style="font-size:11px;color:var(--text3)">¥1235M・1,204フォロワー</div></div>
+        <div class="pos" style="font-size:16px;font-weight:700;white-space:nowrap">+28.7%</div>
+      </div>
+      <div class="top3-card">
+        <div class="rank-medal rank-3">3</div>
+        <div style="flex:1;min-width:0"><div style="font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">goldbug_jp</div><div style="font-size:11px;color:var(--text3)">¥980M・892フォロワー</div></div>
+        <div class="pos" style="font-size:16px;font-weight:700;white-space:nowrap">+24.2%</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+      <div class="chips">
+        <span class="chip active">30日</span><span class="chip">7日</span><span class="chip">今年</span><span class="chip">全期間</span><span class="chip">配当</span><span class="chip">勝率</span>
+      </div>
+      <span style="font-size:11px;color:var(--text3)">2位 / 6名中</span>
+    </div>
+    <div class="chips" style="margin-bottom:12px">
+      <span class="chip">全員</span><span class="chip pink active">🔴 近い資産帯</span>
+      <span class="chip">〜500万</span><span class="chip">500〜1000万</span><span class="chip">1000〜3000万</span><span class="chip">1億〜</span>
+    </div>
+    <div class="card">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>順位</th><th>ユーザー</th><th>30日</th><th class="hide-sm">年初来</th><th class="hide-sm">資産</th><th class="hide-sm">戦略</th><th class="hide-sm">フォロワー</th><th>操作</th></tr></thead>
+          <tbody>
+            <tr><td><div class="rank-medal rank-1">1</div></td><td><b>NikkeiHunter</b></td><td><span class="pos">+32.1%</span></td><td class="hide-sm"><span class="pos">+51.4%</span></td><td class="hide-sm">¥2180M</td><td class="hide-sm"><span class="tag tag-gray">jp-only</span></td><td class="hide-sm">1,842</td><td><button class="btn-follow">フォロー</button></td></tr>
+            <tr style="background:var(--rose)"><td><div class="rank-medal rank-2">2</div></td><td><b>chappy</b> <span class="tag tag-pink" style="font-size:10px">あなた</span></td><td><span class="pos">+28.7%</span></td><td class="hide-sm"><span class="pos">+45.9%</span></td><td class="hide-sm">¥1235M</td><td class="hide-sm"><span class="tag tag-gray">balanced</span></td><td class="hide-sm">1,204</td><td></td></tr>
+            <tr><td><div class="rank-medal rank-3">3</div></td><td><b>goldbug_jp</b></td><td><span class="pos">+24.2%</span></td><td class="hide-sm"><span class="pos">+38.7%</span></td><td class="hide-sm">¥980M</td><td class="hide-sm"><span class="tag tag-amber">metals</span></td><td class="hide-sm">892</td><td><button class="btn-follow">フォロー</button></td></tr>
+            <tr><td><div class="rank-medal rank-n">4</div></td><td><b>sato_taro</b></td><td><span class="pos">+21.5%</span></td><td class="hide-sm"><span class="pos">+34.4%</span></td><td class="hide-sm">¥650M</td><td class="hide-sm"><span class="tag tag-blue">us-tech</span></td><td class="hide-sm">651</td><td><button class="btn-follow">フォロー</button></td></tr>
+            <tr><td><div class="rank-medal rank-n">5</div></td><td><b>yui_FIRE2030</b></td><td><span class="pos">+19.8%</span></td><td class="hide-sm"><span class="pos">+31.7%</span></td><td class="hide-sm">¥1420M</td><td class="hide-sm"><span class="tag tag-green">dividend</span></td><td class="hide-sm">548</td><td><button class="btn-follow">フォロー</button></td></tr>
+            <tr><td><div class="rank-medal rank-n">6</div></td><td><b>minimalfire</b></td><td><span class="pos">+16.9%</span></td><td class="hide-sm"><span class="pos">+27.0%</span></td><td class="hide-sm">¥780M</td><td class="hide-sm"><span class="tag tag-gray">index</span></td><td class="hide-sm">391</td><td><button class="btn-follow">フォロー</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FEED ══ -->
+<div class="page" id="page-feed">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">フィード</div><div class="page-sub">フォロー中の取引・コメント</div></div>
+  </div>
+  <div class="content">
+    <div class="side-layout">
+      <div>
+        <div class="chips" style="margin-bottom:12px">
+          <span class="chip active">すべて</span><span class="chip">取引</span><span class="chip">コメント</span><span class="chip">大口</span><span class="chip">銘柄ピック</span>
+        </div>
+        <div class="feed-card">
+          <div class="feed-header">
+            <div class="feed-avatar" style="background:#fee2e2">🐻</div>
+            <div><div class="feed-user">kuma_invests</div><div class="feed-time">2分前</div></div>
+            <span class="feed-badge badge-buy" style="margin-left:auto">買付</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:4px">
+            <div><div class="feed-ticker">レーザーテック</div><div class="feed-ticker-sub">6920・30株 × ¥19,840</div></div>
+            <div class="feed-amount">¥60万</div>
+          </div>
+          <div class="feed-note">AI半導体の検査需要。PSR的にはまだ余裕。決算後の反動は覚悟済み。</div>
+          <div class="feed-actions"><span>♡ 24</span><span>💬 7</span><span style="color:var(--pink);font-weight:600">🔄 14人が真似した</span><button class="btn-copy">真似して取引</button></div>
+        </div>
+        <div class="feed-card">
+          <div class="feed-header">
+            <div class="feed-avatar" style="background:#fee2e2">🎯</div>
+            <div><div class="feed-user">NikkeiHunter</div><div class="feed-time">14分前</div></div>
+            <span class="feed-badge badge-sell" style="margin-left:auto">売却</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:4px">
+            <div><div class="feed-ticker">ソフトバンクG</div><div class="feed-ticker-sub">9984・100株 × ¥8,920</div></div>
+            <div class="feed-amount">¥89万</div>
+          </div>
+          <div class="feed-note">NAV割引の縮小一巡。利確して任天堂に乗せ替え予定。</div>
+          <div class="feed-actions"><span>♡ 18</span><span>💬 12</span><span style="color:var(--pink);font-weight:600">🔄 5人が真似した</span><button class="btn-copy">真似して取引</button></div>
+        </div>
+        <div class="feed-card">
+          <div class="feed-header">
+            <div class="feed-avatar" style="background:#fef3c7">🏆</div>
+            <div><div class="feed-user">goldbug_jp</div><div class="feed-time">38分前</div></div>
+            <div style="margin-left:auto;background:var(--rose2);padding:2px 8px;border-radius:6px;font-size:11px;color:var(--text3)">▲ +0.34%</div>
+          </div>
+          <div style="margin-bottom:6px"><div class="feed-ticker">ゴールド</div><div class="feed-ticker-sub">XAU</div></div>
+          <div class="feed-note">ゴールドが2,800ドル抜けたら本物。中央銀行の買い越しは継続中で需給は崩れていません。長期コア20%は維持。</div>
+          <div class="feed-actions"><span>♡ 31</span><span>💬 9</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="sec-title">マーケット</div>
+            <span style="font-size:11px"><span class="live-dot"></span>LIVE</span>
+          </div>
+          <div class="market-item"><span style="color:var(--text2)">日経平均</span><div><span style="font-weight:700">38,420</span><span class="pos" style="font-size:11px"> ▲+0.62%</span></div></div>
+          <div class="market-item"><span style="color:var(--text2)">TOPIX</span><div><span style="font-weight:700">2,684</span><span class="pos" style="font-size:11px"> ▲+0.48%</span></div></div>
+          <div class="market-item"><span style="color:var(--text2)">S&P 500</span><div><span style="font-weight:700">5,820</span><span class="pos" style="font-size:11px"> ▲+1.22%</span></div></div>
+          <div class="market-item"><span style="color:var(--text2)">NASDAQ</span><div><span style="font-weight:700">18,940</span><span class="pos" style="font-size:11px"> ▲+1.85%</span></div></div>
+          <div class="market-item"><span style="color:var(--text2)">BTC/JPY</span><div><span style="font-weight:700">¥11.2M</span><span class="pos" style="font-size:11px"> ▲+4.18%</span></div></div>
+          <div class="market-item"><span style="color:var(--text2)">USD/JPY</span><div><span style="font-weight:700">152.40</span><span class="neg" style="font-size:11px"> ▼-0.18%</span></div></div>
+        </div>
+        <div class="card" style="margin-bottom:12px">
+          <div class="sec-title" style="margin-bottom:10px">あなたに似た投資家</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🏆</span><div style="flex:1"><div style="font-weight:700;font-size:12px">goldbug_jp</div><div class="pos" style="font-size:11px">+24.2%</div></div><button class="btn-follow">フォロー</button></div>
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🦊</span><div style="flex:1"><div style="font-weight:700;font-size:12px">sato_taro</div><div class="pos" style="font-size:11px">+21.5%</div></div><button class="btn-follow">フォロー</button></div>
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:20px">🌸</span><div style="flex:1"><div style="font-weight:700;font-size:12px">yui_FIRE2030</div><div class="pos" style="font-size:11px">+19.8%</div></div><button class="btn-follow">フォロー</button></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title" style="margin-bottom:8px">みんなが見てる銘柄</div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:12px">
+            <div style="display:flex;justify-content:space-between"><span><b>1</b> NVIDIA <span style="color:var(--text3);font-size:10px">484人</span></span><span class="pos">▲+3.22%</span></div>
+            <div style="display:flex;justify-content:space-between"><span><b>2</b> トヨタ <span style="color:var(--text3);font-size:10px">312人</span></span><span class="pos">▲+1.42%</span></div>
+            <div style="display:flex;justify-content:space-between"><span><b>3</b> BTC <span style="color:var(--text3);font-size:10px">268人</span></span><span class="pos">▲+4.18%</span></div>
+            <div style="display:flex;justify-content:space-between"><span><b>4</b> レーザーテック <span style="color:var(--text3);font-size:10px">215人</span></span><span class="pos">▲+3.18%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXPLORE ══ -->
+<div class="page" id="page-explore">
+  <div class="topbar">
+    <div class="topbar-titles"><div class="page-title">探索</div><div class="page-sub">銘柄・ユーザーを検索</div></div>
+  </div>
+  <div class="content">
+    <div style="max-width:600px;margin:0 auto">
+      <div class="search-modal">
+        <div class="search-input-wrap">
+          <span style="font-size:16px;color:var(--text3)">🔍</span>
+          <input class="search-input" id="exploreInput" placeholder="銘柄・ユーザー・コードを検索" autocomplete="off">
+          <span id="exploreClear" style="font-size:12px;color:var(--text3);background:var(--rose);padding:3px 8px;border-radius:4px;cursor:pointer;display:none">✕</span>
+        </div>
+        <div id="exploreResults"></div>
+        <div style="padding:8px 14px;border-top:1px solid var(--border);display:flex;gap:8px;font-size:11px;color:var(--text3)">
+          <span>↑↓ 移動</span><span>↵ 開く</span>
+          <span style="margin-left:auto;font-weight:600;color:var(--pink)">FIRE Search</span>
+        </div>
+      </div>
+      <div style="margin-top:20px">
+        <div class="sec-header"><div class="sec-title">トレンド銘柄 🔥</div></div>
+        <div class="grid3" style="margin-bottom:16px">
+          <div class="card-sm" style="cursor:pointer"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="ticker-badge" style="width:36px;height:36px;font-size:10px;border-radius:8px">NVDA</div><span class="tag tag-green">▲+3.22%</span></div><div style="font-weight:700;margin-top:6px;font-size:13px">NVIDIA</div><div style="font-size:11px;color:var(--text3)">484人が閲覧</div></div>
+          <div class="card-sm" style="cursor:pointer"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="ticker-badge" style="width:36px;height:36px;font-size:10px;border-radius:8px;background:linear-gradient(135deg,#d97706,#fcd34d)">BTC</div><span class="tag tag-green">▲+4.18%</span></div><div style="font-weight:700;margin-top:6px;font-size:13px">ビットコイン</div><div style="font-size:11px;color:var(--text3)">268人が閲覧</div></div>
+          <div class="card-sm" style="cursor:pointer"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div class="ticker-badge" style="width:36px;height:36px;font-size:10px;border-radius:8px">6920</div><span class="tag tag-green">▲+3.18%</span></div><div style="font-weight:700;margin-top:6px;font-size:13px">レーザーテック</div><div style="font-size:11px;color:var(--text3)">215人が閲覧</div></div>
+        </div>
+        <div class="sec-header"><div class="sec-title">注目ユーザー</div></div>
+        <div class="card">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:24px">🐻</span><div style="flex:1;min-width:100px"><div style="font-weight:700">kuma_invests</div><div style="font-size:12px;color:var(--text3)">グロースとマクロを半々で。</div></div><div style="text-align:right"><div class="pos" style="font-weight:700">+38.4%</div><div style="font-size:11px;color:var(--text3)">2,148フォロワー</div></div><button class="btn-follow">フォロー</button></div>
+            <hr style="border:none;border-top:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:24px">🎯</span><div style="flex:1;min-width:100px"><div style="font-weight:700">NikkeiHunter</div><div style="font-size:12px;color:var(--text3)">日本株専門。日経とTOPIXの乖離を狙う。</div></div><div style="text-align:right"><div class="pos" style="font-weight:700">+32.1%</div><div style="font-size:11px;color:var(--text3)">1,842フォロワー</div></div><button class="btn-follow">フォロー</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- #main -->
+
+<script>
+const PINK='#e8356d', PINK_M='#f472a0';
+const charts={};
+function destroyChart(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
+
+function sparkline(id,data,color='#e8356d'){
+  const c=document.getElementById(id);if(!c)return;
+  destroyChart(id);
+  charts[id]=new Chart(c.getContext('2d'),{
+    type:'line',
+    data:{labels:data.map((_,i)=>i),datasets:[{data,borderColor:color,borderWidth:1.5,tension:.4,pointRadius:0,fill:false}]},
+    options:{responsive:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}
+  });
+}
+const up=[10,12,11,13,14,15,13,16,17,18];
+const down=[18,16,17,15,14,13,15,12,11,10];
+const wave=[10,14,12,16,13,17,15,19,17,20];
+const flat=[10,10,11,10,11,10,11,10,11,11];
+const rocket=[10,12,15,12,16,14,18,15,20,22];
+
+function initPortfolioCharts(){
+  destroyChart('portfolioChart');
+  const ctx=document.getElementById('portfolioChart').getContext('2d');
+  const grad=ctx.createLinearGradient(0,0,0,160);
+  grad.addColorStop(0,'rgba(232,53,109,.25)');grad.addColorStop(1,'rgba(232,53,109,.02)');
+  charts['portfolioChart']=new Chart(ctx,{type:'line',data:{labels:['1/10','1/13','1/17','1/20','1/24','1/27','1/31','2/3','2/7'],datasets:[{data:[9800000,9950000,10100000,10050000,10300000,10800000,11200000,11900000,12345678],borderColor:PINK,borderWidth:2,tension:.4,pointRadius:0,fill:true,backgroundColor:grad}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'¥'+c.raw.toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{color:'#b08a9a',font:{size:10}}},y:{display:false}}}});
+  destroyChart('allocChart');
+  charts['allocChart']=new Chart(document.getElementById('allocChart').getContext('2d'),{type:'doughnut',data:{labels:['日本株','海外株','金属','債券','為替','仮想通貨'],datasets:[{data:[40.9,30.1,11.7,9.6,3.1,4.6],backgroundColor:['#e8356d','#f472a0','#d97706','#2563eb','#16a34a','#7c3aed'],borderWidth:0,hoverOffset:4}]},options:{cutout:'70%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.raw+'%'}}}}});
+  [['h1',up],['h2',wave],['h3',up],['h4',wave],['h5',down],['h6',up]].forEach(([id,d])=>sparkline(id,d));
+  [['mini1',up],['mini2',wave],['mini3',up],['mini4',flat],['mini5',up],['mini6',rocket]].forEach(([id,d])=>sparkline(id,d));
+}
+
+function initCategoryChart(){
+  destroyChart('catChart');
+  const ctx=document.getElementById('catChart').getContext('2d');
+  const grad=ctx.createLinearGradient(0,0,0,180);
+  grad.addColorStop(0,'rgba(232,53,109,.2)');grad.addColorStop(1,'rgba(232,53,109,.02)');
+  charts['catChart']=new Chart(ctx,{type:'line',data:{labels:['1/10','1/13','1/17','1/20','1/24','1/27','1/31','2/3','2/7'],datasets:[{data:[4200000,4100000,4350000,4280000,4500000,4700000,4800000,4950000,5055000],borderColor:PINK,borderWidth:2,tension:.4,pointRadius:0,fill:true,backgroundColor:grad}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#b08a9a',font:{size:10}}},y:{display:false}}}});
+  [['ch1',up],['ch2',wave],['ch3',up]].forEach(([id,d])=>sparkline(id,d));
+}
+
+function initDividendChart(){
+  destroyChart('dividendChart');
+  const el=document.getElementById('dividendChart');if(!el)return;
+  const data=[0,18400,52000,5500,0,31200,8800,12000,41600,15000,8800,22800];
+  charts['dividendChart']=new Chart(el.getContext('2d'),{type:'bar',data:{labels:['1','2','3','4','5','6','7','8','9','10','11','12'],datasets:[{data,backgroundColor:data.map((_,i)=>i===1?PINK:'#fce7ef'),borderRadius:4,hoverBackgroundColor:PINK_M}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'¥'+c.raw.toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{color:'#b08a9a',font:{size:10}}},y:{display:false,beginAtZero:true}}}});
+}
+
+function buildCalendar(){
+  const grid=document.getElementById('calGrid');if(!grid||grid.children.length>0)return;
+  const firstDay=new Date(2026,4,1).getDay();
+  const events={11:{t:'ev-kessan',l:'トヨタ決算'},12:{t:'ev-shihyo',l:'FOMC'},13:{t:'ev-kessan',l:'ソニーG決算'},15:{t:'ev-shihyo',l:'米CPI'},16:{t:'ev-kessan',l:'NVIDIA決算'},19:{t:'ev-shihyo',l:'日銀会合'},20:{t:'ev-haitou',l:'三井住友配当'},25:{t:'ev-shihyo',l:'ECB金利'},26:{t:'ev-kessan',l:'NTT/KDDI'}};
+  for(let i=0;i<firstDay;i++){const e=document.createElement('div');e.style.minHeight='60px';grid.appendChild(e);}
+  for(let d=1;d<=31;d++){
+    const cell=document.createElement('div');cell.className='cal-cell'+(d===11?' cal-today':'');
+    const dt=document.createElement('div');dt.className='cal-date';dt.textContent=d;cell.appendChild(dt);
+    if(d===11){const t=document.createElement('div');t.style.cssText='font-size:8px;color:var(--pink);margin-top:1px';t.textContent='TODAY';cell.appendChild(t);}
+    if(events[d]){const ev=document.createElement('div');ev.className='cal-event '+events[d].t;ev.textContent=events[d].l;cell.appendChild(ev);}
+    grid.appendChild(cell);
+  }
+}
+
+// ── Navigation ──
+document.querySelectorAll('.nav-item').forEach(item=>{
+  item.addEventListener('click',()=>showPage(item.dataset.page));
+});
+function showPage(id){
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.page===id));
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+id));
+  if(id==='portfolio')initPortfolioCharts();
+  if(id==='category')initCategoryChart();
+  if(id==='dividend')initDividendChart();
+  if(id==='calendar')buildCalendar();
+  closeSidebar();
+}
+
+// ── Event delegation ──
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('period-tab')){
+    e.target.closest('.period-tabs')?.querySelectorAll('.period-tab').forEach(t=>t.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+  if(e.target.classList.contains('chip')){
+    const siblings=e.target.closest('.chips')?.querySelectorAll('.chip');
+    if(siblings){siblings.forEach(c=>c.classList.remove('active'));e.target.classList.add('active');}
+  }
+  if(e.target.classList.contains('btn-follow')){
+    const following=e.target.textContent==='フォロー中';
+    e.target.textContent=following?'フォロー':'フォロー中';
+    e.target.style.cssText=following?'':'background:var(--rose2);color:var(--pink);border:1px solid var(--pink-mid)';
+  }
+  if(e.target.id==='exploreClear'){
+    document.getElementById('exploreInput').value='';
+    document.getElementById('exploreClear').style.display='none';
+    document.getElementById('exploreResults').innerHTML='';
+    document.getElementById('exploreInput').focus();
+  }
+});
+
+// ── Sidebar ──
+function openSidebar(){
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+// ── Explore search ──
+const SEARCH_DATA={
+  stocks:[
+    {ticker:'NVDA',name:'NVIDIA',sub:'NVDA・NASDAQ・海外株',price:'$138.20',change:'+3.22%',pos:true,held:true},
+    {ticker:'AAPL',name:'Apple',sub:'AAPL・NASDAQ・海外株',price:'$182.50',change:'-4.20%',pos:false,held:true},
+    {ticker:'7203',name:'トヨタ自動車',sub:'7203・東証プライム・日本株',price:'¥3,120',change:'+1.42%',pos:true,held:true},
+    {ticker:'6758',name:'ソニーグループ',sub:'6758・東証プライム・日本株',price:'¥14,850',change:'+2.18%',pos:true,held:true},
+    {ticker:'8316',name:'三井住友FG',sub:'8316・東証プライム・日本株',price:'¥9,820',change:'+0.55%',pos:true,held:true},
+    {ticker:'MSFT',name:'Microsoft',sub:'MSFT・NASDAQ・海外株',price:'$415.20',change:'+0.88%',pos:true,held:false},
+    {ticker:'BTC',name:'ビットコイン',sub:'BTC・仮想通貨',price:'¥11.2M',change:'+4.18%',pos:true,held:false},
+    {ticker:'XAU',name:'ゴールド',sub:'XAU・金属',price:'$2,850',change:'+0.34%',pos:true,held:true},
+    {ticker:'9984',name:'ソフトバンクG',sub:'9984・東証プライム・日本株',price:'¥8,920',change:'+1.10%',pos:true,held:false},
+    {ticker:'6920',name:'レーザーテック',sub:'6920・東証プライム・日本株',price:'¥19,840',change:'+3.18%',pos:true,held:false},
+  ],
+  users:[
+    {emoji:'🐻',name:'kuma_invests',sub:'2,148フォロワー・jp+crypto',perf:'+38.4%'},
+    {emoji:'🎯',name:'NikkeiHunter',sub:'1,842フォロワー・jp-only',perf:'+32.1%'},
+    {emoji:'🏆',name:'goldbug_jp',sub:'892フォロワー・metals',perf:'+24.2%'},
+    {emoji:'🦊',name:'sato_taro',sub:'651フォロワー・us-tech',perf:'+21.5%'},
+    {emoji:'🌸',name:'yui_FIRE2030',sub:'548フォロワー・dividend',perf:'+19.8%'},
+    {emoji:'C',name:'chappy',sub:'1,204フォロワー・balanced',perf:'+28.7%',isMe:true},
+  ]
+};
+function matchScore(str,q){const s=str.toLowerCase(),query=q.toLowerCase();return s.startsWith(query)?2:s.includes(query)?1:0;}
+function renderExploreResults(q){
+  const box=document.getElementById('exploreResults');
+  if(!q){box.innerHTML='';return;}
+  const ms=SEARCH_DATA.stocks.map(s=>({...s,score:Math.max(matchScore(s.ticker,q),matchScore(s.name,q))})).filter(s=>s.score>0).sort((a,b)=>b.score-a.score).slice(0,4);
+  const mu=SEARCH_DATA.users.map(u=>({...u,score:matchScore(u.name,q)})).filter(u=>u.score>0).sort((a,b)=>b.score-a.score).slice(0,3);
+  const total=ms.length+mu.length;
+  if(!total){box.innerHTML=`<div style="padding:20px;text-align:center;color:var(--text3);font-size:13px">「${q}」に一致する結果が見つかりません</div>`;return;}
+  let html=`<div class="search-tabs"><button class="search-tab active">すべて ${total}</button><button class="search-tab">銘柄 ${ms.length}</button><button class="search-tab">ユーザー ${mu.length}</button></div>`;
+  if(ms.length){html+=`<div class="search-section"><div class="search-section-title">銘柄</div>`;ms.forEach(s=>{html+=`<div class="search-result"><div class="ticker-badge" style="font-size:${s.ticker.length>3?'9px':'11px'}">${s.ticker}</div><div style="flex:1;min-width:0"><div style="font-weight:700;font-size:13px">${s.name}${s.held?'<span class="tag tag-pink" style="font-size:10px;margin-left:6px">保有</span>':''}</div><div style="font-size:11px;color:var(--text3)">${s.sub}</div></div><div style="text-align:right;flex-shrink:0"><div style="font-weight:700;font-size:13px">${s.price}</div><div style="font-size:11px;color:${s.pos?'var(--green)':'var(--red)'}">${s.change}</div></div></div>`;});html+=`</div>`;}
+  if(mu.length){html+=`<div class="search-section"><div class="search-section-title">ユーザー</div>`;mu.forEach(u=>{html+=`<div class="search-result"><div style="font-size:22px">${u.emoji}</div><div style="flex:1;min-width:0"><div style="font-weight:700;font-size:13px">${u.name}${u.isMe?'<span class="tag tag-pink" style="font-size:10px;margin-left:6px">あなた</span>':''}</div><div style="font-size:11px;color:var(--text3)">${u.sub}</div></div><div style="color:var(--green);font-weight:600;font-size:13px">${u.perf}</div></div>`;});html+=`</div>`;}
+  html+=`<div class="search-section" style="border-top:1px solid var(--border);padding-top:8px"><div class="search-action"><span>＋</span>「${q}」を新しい銘柄として登録</div><div class="search-action"><span>🔔</span>「${q}」の価格アラート設定</div></div>`;
+  box.innerHTML=html;
+}
+document.addEventListener('input',e=>{
+  if(e.target.id==='exploreInput'){
+    const v=e.target.value.trim();
+    document.getElementById('exploreClear').style.display=v?'inline':'none';
+    renderExploreResults(v);
+  }
+});
+
+function switchCat(el){
+  document.querySelectorAll('.chip[onclick^="switchCat"]').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+window.addEventListener('load',()=>{initPortfolioCharts();buildCalendar();});
+
+// Chart.jsはcanvasを縮小しないのでリサイズ時に強制再描画
+let resizeTimer;
+window.addEventListener('resize',()=>{
+  clearTimeout(resizeTimer);
+  resizeTimer=setTimeout(()=>{
+    // 表示中のページを判定して該当チャートを再描画
+    const active=document.querySelector('.page.active')?.id;
+    if(active==='page-portfolio') initPortfolioCharts();
+    if(active==='page-category') initCategoryChart();
+    if(active==='page-dividend') initDividendChart();
+  }, 150);
+});
+</script>
+</body>
+</html>.progress-bar{background:var(--border);border-radius:4px;height:5px;margin-bottom:4px}
 .progress-fill{background:linear-gradient(90deg,var(--pink),var(--pink-mid));border-radius:4px;height:100%}
 .fire-goal-sub{font-size:10px;color:var(--text3)}
 .user-info{padding:12px 16px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px}
