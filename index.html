@@ -313,13 +313,12 @@ canvas.mini{max-height:40px;width:100%!important}
             <div>
               <div class="stat-label">総資産</div>
               <div style="font-size:28px;font-weight:700">¥12,345,678</div>
-              <div style="font-size:12px;margin-top:4px;display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                <span class="pos" style="font-weight:600">▲+1.42%</span>
-                <span style="color:var(--text3)">本日 <strong class="pos">+¥175,432</strong></span>
-                <span style="color:var(--text3)">累計 <strong class="pos">+¥2,184,200（+21.5%）</strong></span>
+              <div style="font-size:12px;margin-top:4px;display:flex;flex-wrap:wrap;gap:6px;align-items:center" id="totalAsset">
+                <span class="pos" style="font-weight:600">▲+25.9%</span>
+                <span style="color:var(--text3)">期間中 <strong class="pos">+¥2,545,678</strong></span>
               </div>
             </div>
-            <div class="period-tabs">
+            <div class="period-tabs" id="portfolioPeriodTabs">
               <button class="period-tab">1D</button><button class="period-tab">1W</button>
               <button class="period-tab active">1M</button><button class="period-tab">3M</button>
               <button class="period-tab">1Y</button><button class="period-tab">ALL</button>
@@ -779,22 +778,139 @@ function sparkline(id,data,color='#e8356d'){
     options:{responsive:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}
   });
 }
-const up=[10,12,11,13,14,15,13,16,17,18];
-const down=[18,16,17,15,14,13,15,12,11,10];
-const wave=[10,14,12,16,13,17,15,19,17,20];
-const flat=[10,10,11,10,11,10,11,10,11,11];
-const rocket=[10,12,15,12,16,14,18,15,20,22];
+
+// ── 期間別データ ──
+const PERIOD_DATA={
+  '1D':{
+    labels:['9:00','10:00','11:00','12:00','13:00','14:00','15:00'],
+    total:[12180000,12210000,12195000,12230000,12290000,12320000,12345678],
+    change:'+¥175,432',changePct:'▲+1.42%',changeColor:'var(--green)',
+    cats:[
+      {label:'日本株', val:'¥506M', chg:'▲+1.32%', pos:true, spark:[10,11,10,12,13,12,13]},
+      {label:'海外株', val:'¥372M', chg:'▲+1.18%', pos:true, spark:[10,10,11,11,12,12,13]},
+      {label:'金属',   val:'¥145M', chg:'▲+0.18%', pos:true, spark:[10,10,10,11,11,10,11]},
+      {label:'債券',   val:'¥118M', chg:'▲+0.05%', pos:true, spark:[10,10,10,10,10,11,11]},
+      {label:'為替',   val:'¥38M',  chg:'▲+0.28%', pos:true, spark:[10,11,11,10,11,11,12]},
+      {label:'仮想通貨',val:'¥56M', chg:'▲+3.92%', pos:true, spark:[10,11,13,12,14,15,16]},
+    ]
+  },
+  '1W':{
+    labels:['5/5','5/6','5/7','5/8','5/9','5/11'],
+    total:[11980000,12050000,11990000,12150000,12280000,12345678],
+    change:'+¥365,678',changePct:'▲+3.05%',changeColor:'var(--green)',
+    cats:[
+      {label:'日本株', val:'¥506M', chg:'▲+2.84%', pos:true, spark:[10,11,10,12,13,14]},
+      {label:'海外株', val:'¥372M', chg:'▲+3.21%', pos:true, spark:[10,10,12,11,13,14]},
+      {label:'金属',   val:'¥145M', chg:'▲+1.10%', pos:true, spark:[10,10,11,11,11,11]},
+      {label:'債券',   val:'¥118M', chg:'▼-0.12%', pos:false,spark:[11,11,10,10,10,10]},
+      {label:'為替',   val:'¥38M',  chg:'▲+0.95%', pos:true, spark:[10,10,11,11,12,11]},
+      {label:'仮想通貨',val:'¥56M', chg:'▲+8.40%', pos:true, spark:[10,12,13,15,16,18]},
+    ]
+  },
+  '1M':{
+    labels:['1/10','1/13','1/17','1/20','1/24','1/27','1/31','2/3','2/7'],
+    total:[9800000,9950000,10100000,10050000,10300000,10800000,11200000,11900000,12345678],
+    change:'+¥2,545,678',changePct:'▲+25.9%',changeColor:'var(--green)',
+    cats:[
+      {label:'日本株', val:'¥506M', chg:'▲+18.2%', pos:true, spark:[10,12,11,13,14,15,13,16,18]},
+      {label:'海外株', val:'¥372M', chg:'▲+22.4%', pos:true, spark:[10,14,12,16,13,17,15,19,20]},
+      {label:'金属',   val:'¥145M', chg:'▲+8.5%',  pos:true, spark:[10,10,11,10,11,10,11,10,11]},
+      {label:'債券',   val:'¥118M', chg:'▲+1.2%',  pos:true, spark:[10,10,11,10,11,10,11,10,11]},
+      {label:'為替',   val:'¥38M',  chg:'▲+5.8%',  pos:true, spark:[10,12,11,13,14,15,13,16,18]},
+      {label:'仮想通貨',val:'¥56M', chg:'▲+42.1%', pos:true, spark:[10,12,15,12,16,14,18,15,22]},
+    ]
+  },
+  '3M':{
+    labels:['2月','3月','4月','5月初','5/11'],
+    total:[9200000,10100000,11400000,12100000,12345678],
+    change:'+¥3,145,678',changePct:'▲+34.2%',changeColor:'var(--green)',
+    cats:[
+      {label:'日本株', val:'¥506M', chg:'▲+28.4%', pos:true, spark:[10,12,15,17,18]},
+      {label:'海外株', val:'¥372M', chg:'▲+38.1%', pos:true, spark:[10,13,16,18,20]},
+      {label:'金属',   val:'¥145M', chg:'▲+12.3%', pos:true, spark:[10,11,12,12,12]},
+      {label:'債券',   val:'¥118M', chg:'▼-1.8%',  pos:false,spark:[11,11,10,10,10]},
+      {label:'為替',   val:'¥38M',  chg:'▲+9.2%',  pos:true, spark:[10,11,12,12,13]},
+      {label:'仮想通貨',val:'¥56M', chg:'▲+68.5%', pos:true, spark:[10,14,18,20,22]},
+    ]
+  },
+  '1Y':{
+    labels:['6月','7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月'],
+    total:[7800000,8100000,8600000,8400000,9200000,9800000,10500000,11000000,11400000,11800000,12100000,12345678],
+    change:'+¥4,545,678',changePct:'▲+58.3%',changeColor:'var(--green)',
+    cats:[
+      {label:'日本株', val:'¥506M', chg:'▲+48.2%', pos:true, spark:[10,11,12,11,13,14,15,16,17,17,18,18]},
+      {label:'海外株', val:'¥372M', chg:'▲+62.4%', pos:true, spark:[10,11,12,13,14,15,16,17,18,19,19,20]},
+      {label:'金属',   val:'¥145M', chg:'▲+22.1%', pos:true, spark:[10,10,11,11,11,12,12,12,12,12,12,12]},
+      {label:'債券',   val:'¥118M', chg:'▼-3.2%',  pos:false,spark:[11,11,11,10,10,10,10,10,10,10,10,10]},
+      {label:'為替',   val:'¥38M',  chg:'▲+15.8%', pos:true, spark:[10,10,11,11,12,12,12,12,12,12,13,13]},
+      {label:'仮想通貨',val:'¥56M', chg:'▲+124.5%',pos:true, spark:[10,12,14,13,16,18,19,20,21,22,22,22]},
+    ]
+  },
+  'ALL':{
+    labels:['2022','2023','2024','2025','2026'],
+    total:[5200000,6800000,8900000,10800000,12345678],
+    change:'+¥7,145,678',changePct:'▲+137.4%',changeColor:'var(--green)',
+    cats:[
+      {label:'日本株', val:'¥506M', chg:'▲+98.2%',  pos:true, spark:[10,13,16,18,18]},
+      {label:'海外株', val:'¥372M', chg:'▲+142.4%', pos:true, spark:[10,13,16,19,20]},
+      {label:'金属',   val:'¥145M', chg:'▲+44.1%',  pos:true, spark:[10,11,12,12,12]},
+      {label:'債券',   val:'¥118M', chg:'▼-5.8%',   pos:false,spark:[11,11,10,10,10]},
+      {label:'為替',   val:'¥38M',  chg:'▲+28.3%',  pos:true, spark:[10,11,12,12,13]},
+      {label:'仮想通貨',val:'¥56M', chg:'▲+280.0%', pos:true, spark:[10,13,17,20,22]},
+    ]
+  },
+};
+
+let currentPeriod='1M';
+
+function updatePortfolioPeriod(period){
+  currentPeriod=period;
+  const d=PERIOD_DATA[period];
+
+  // メインチャート更新
+  if(charts['portfolioChart']){
+    charts['portfolioChart'].data.labels=d.labels;
+    charts['portfolioChart'].data.datasets[0].data=d.total;
+    charts['portfolioChart'].update();
+  }
+
+  // 総資産の変化テキスト更新
+  const totalEl=document.getElementById('totalAsset');
+  if(totalEl){
+    const last=d.total[d.total.length-1];
+    totalEl.innerHTML=`
+      <span style="color:${d.changeColor};font-weight:600">${d.changePct}</span>
+      <span style="color:var(--text3)">期間中 <strong style="color:${d.changeColor}">${d.change}</strong></span>`;
+  }
+
+  // カテゴリminiカード更新
+  const catCards=document.querySelectorAll('.cat-card');
+  d.cats.forEach((cat,i)=>{
+    if(!catCards[i]) return;
+    catCards[i].querySelector('.cat-val').textContent=cat.val;
+    const chgEl=catCards[i].querySelector('.cat-chg');
+    chgEl.textContent=cat.chg;
+    chgEl.style.color=cat.pos?'var(--green)':'var(--red)';
+    sparkline('mini'+(i+1), cat.spark, cat.pos?PINK:'#2563eb');
+  });
+}
 
 function initPortfolioCharts(){
+  const d=PERIOD_DATA[currentPeriod];
   destroyChart('portfolioChart');
   const ctx=document.getElementById('portfolioChart').getContext('2d');
   const grad=ctx.createLinearGradient(0,0,0,160);
   grad.addColorStop(0,'rgba(232,53,109,.25)');grad.addColorStop(1,'rgba(232,53,109,.02)');
-  charts['portfolioChart']=new Chart(ctx,{type:'line',data:{labels:['1/10','1/13','1/17','1/20','1/24','1/27','1/31','2/3','2/7'],datasets:[{data:[9800000,9950000,10100000,10050000,10300000,10800000,11200000,11900000,12345678],borderColor:PINK,borderWidth:2,tension:.4,pointRadius:0,fill:true,backgroundColor:grad}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'¥'+c.raw.toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{color:'#b08a9a',font:{size:10}}},y:{display:false}}}});
+  charts['portfolioChart']=new Chart(ctx,{type:'line',data:{labels:d.labels,datasets:[{data:d.total,borderColor:PINK,borderWidth:2,tension:.4,pointRadius:0,fill:true,backgroundColor:grad}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'¥'+c.raw.toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{color:'#b08a9a',font:{size:10}}},y:{display:false}}}});
+
   destroyChart('allocChart');
   charts['allocChart']=new Chart(document.getElementById('allocChart').getContext('2d'),{type:'doughnut',data:{labels:['日本株','海外株','金属','債券','為替','仮想通貨'],datasets:[{data:[40.9,30.1,11.7,9.6,3.1,4.6],backgroundColor:['#e8356d','#f472a0','#d97706','#2563eb','#16a34a','#7c3aed'],borderWidth:0,hoverOffset:4}]},options:{cutout:'70%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.raw+'%'}}}}});
-  [['h1',up],['h2',wave],['h3',up],['h4',wave],['h5',down],['h6',up]].forEach(([id,d])=>sparkline(id,d));
-  [['mini1',up],['mini2',wave],['mini3',up],['mini4',flat],['mini5',up],['mini6',rocket]].forEach(([id,d])=>sparkline(id,d));
+
+  [['h1',[10,12,11,13,14,15,13,16,17,18]],['h2',[10,14,12,16,13,17,15,19,17,20]],['h3',[10,12,11,13,14,15,13,16,17,18]],['h4',[10,14,12,16,13,17,15,19,17,20]],['h5',[18,16,17,15,14,13,15,12,11,10]],['h6',[10,12,11,13,14,15,13,16,17,18]]].forEach(([id,d])=>sparkline(id,d));
+
+  // カテゴリmini初期描画
+  const cats=PERIOD_DATA[currentPeriod].cats;
+  cats.forEach((cat,i)=>sparkline('mini'+(i+1),cat.spark,cat.pos?PINK:'#2563eb'));
 }
 
 function initCategoryChart(){
@@ -826,6 +942,14 @@ function buildCalendar(){
     grid.appendChild(cell);
   }
 }
+
+// ── ポートフォリオ期間タブ ──
+document.getElementById('portfolioPeriodTabs').addEventListener('click',e=>{
+  if(!e.target.classList.contains('period-tab')) return;
+  document.querySelectorAll('#portfolioPeriodTabs .period-tab').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active');
+  updatePortfolioPeriod(e.target.textContent.trim());
+});
 
 // ── Navigation ──
 document.querySelectorAll('.nav-item').forEach(item=>{
