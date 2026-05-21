@@ -167,6 +167,23 @@
     gap: 28px;
     font-size: 14px;
   }
+  .hero-stats > div {
+    position: relative;
+    padding-right: 28px;
+  }
+  .hero-stats > div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 32px;
+    background: #e5e7eb;
+  }
+  .hero-stats > div:last-child {
+    padding-right: 0;
+  }
   .stat-num { font-weight: 700; font-size: 18px; }
   .stat-num.pink { color: #ec4899; }
   .stat-label { font-size: 11px; color: #6b7280; }
@@ -1502,8 +1519,7 @@
     <div class="hero-grid">
       <div>
         <div class="hero-badge">
-          <span>🔥🔥🔥</span>
-          <span>同じ目標を持つ仲間と、すでにFIREへの道を歩いています</span>
+          <span>同じ目標を持つ仲間たちが、すでにFIREへの道を歩いています</span>
         </div>
         <h1 class="hero-title">
           みんなで、<br>
@@ -1754,10 +1770,6 @@
           <span class="grad-text">何も変わらない。</span>
         </h2>
         <p>ベンチマークは「同じ運用層の、同じ目標を持つ人たち」。¥10M〜30M レンジであなたのリターンは、その層で何位か。世界中でない、現実的な数字に。</p>
-        <div>
-          <a href="#" class="btn-pink">ランキングを見る →</a>
-          <a href="#" class="btn-link">仕組みを知る</a>
-        </div>
       </div>
       <div class="ranking-card">
         <div class="ranking-header">
@@ -1869,118 +1881,6 @@
   </div>
 </section>
 
-<!-- ========== THE APP ========== -->
-<section class="section">
-  <div class="container-sm text-center">
-    <div class="eyebrow" style="margin-bottom: 12px;">THE APP</div>
-    <h2 class="section-title">
-      毎朝、<span class="grad-text">開きたくなる。</span>
-    </h2>
-    <div class="phones-row">
-      <!-- Phone 1: Chart -->
-      <div style="display:flex;flex-direction:column;align-items:center;">
-      <div class="phone phone-small">
-        <div class="phone-notch"></div>
-        <div class="phone-screen white" style="text-align:left;">
-          <div class="phone-label-sm" style="color:#6b7280;">今日の運用</div>
-          <div style="font-size:24px;font-weight:900;color:#111827;">¥3,247</div>
-          <div style="font-size:11px;color:#ec4899;margin-bottom:24px;">+2.13% MoM</div>
-          <svg viewBox="0 0 200 80" style="width:100%;height:80px;margin-bottom:16px;">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#ff3d6e" stop-opacity="0.4"/>
-                <stop offset="100%" stop-color="#ff3d6e" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="M0,60 L20,55 L40,40 L60,45 L80,30 L100,35 L120,20 L140,25 L160,15 L180,10 L200,5" stroke="#ff3d6e" stroke-width="2" fill="none"/>
-            <path d="M0,60 L20,55 L40,40 L60,45 L80,30 L100,35 L120,20 L140,25 L160,15 L180,10 L200,5 L200,80 L0,80 Z" fill="url(#g1)"/>
-          </svg>
-          <div class="phone-label-sm" style="color:#6b7280;">資産推移</div>
-          <div style="font-size:18px;font-weight:700;color:#ec4899;">+¥213,880</div>
-          <div style="font-size:11px;color:#6b7280;margin-bottom:8px;">+2.3%</div>
-          <div style="display:flex;gap:4px;">
-            <div class="avatar" style="width:20px;height:20px;"></div>
-            <div class="avatar blue" style="width:20px;height:20px;"></div>
-            <div class="avatar yellow" style="width:20px;height:20px;"></div>
-            <div class="avatar green" style="width:20px;height:20px;"></div>
-            <div class="avatar purple" style="width:20px;height:20px;"></div>
-          </div>
-        </div>
-      </div>
-      <div class="phone-caption">
-        <div class="phone-caption-title">今日の運用が、わかる</div>
-        <div class="phone-caption-desc">毎朝、昨日からの変動を一目で。</div>
-      </div>
-      </div>
-      
-      <!-- Phone 2: Rank -->
-      <div style="display:flex;flex-direction:column;align-items:center;">
-      <div class="phone phone-small">
-        <div class="phone-notch"></div>
-        <div class="phone-screen pink" style="text-align:left;">
-          <div class="phone-label-sm">YOUR FIRE RANK</div>
-          <div class="phone-label-sm" style="margin-bottom:4px;">¥10M~30M</div>
-          <div class="phone-rank-big">#3</div>
-          <div class="phone-label-sm" style="margin-bottom:4px;">of 2,847 in bracket</div>
-          <div style="font-size:24px;font-weight:700;margin-bottom:24px;">+28.4%</div>
-          <div class="phone-progress-card">
-            <div class="phone-rank-row"><span>Aya K.</span><b>+47.8%</b></div>
-            <div class="phone-rank-row"><span>Ken S.</span><b>+38.2%</b></div>
-            <div class="phone-rank-row divider"><span>You</span><b>+28.4%</b></div>
-          </div>
-        </div>
-      </div>
-      <div class="phone-caption">
-        <div class="phone-caption-title">ランキングで仲間が見える</div>
-        <div class="phone-caption-desc">同じ資産帯の人と、フェアに比較。</div>
-      </div>
-      </div>
-      
-      <!-- Phone 3: Feed -->
-      <div style="display:flex;flex-direction:column;align-items:center;">
-      <div class="phone phone-small">
-        <div class="phone-notch"></div>
-        <div class="phone-screen white" style="text-align:left;">
-          <div class="phone-label-sm" style="color:#6b7280;margin-bottom:16px;">フィード</div>
-          <div class="phone-feed-item">
-            <div class="avatar avatar-md"></div>
-            <div class="feed-text">
-              <div><span class="feed-name">Aya K.</span><span class="feed-pct">+47.8%</span></div>
-              <div class="feed-msg">日本株を売り、米株へ。</div>
-            </div>
-          </div>
-          <div class="phone-feed-item">
-            <div class="avatar avatar-md blue"></div>
-            <div class="feed-text">
-              <div><span class="feed-name">Ken S.</span><span class="feed-pct">+38.2%</span></div>
-              <div class="feed-msg">SOXL 押し目買い。</div>
-            </div>
-          </div>
-          <div class="phone-feed-item">
-            <div class="avatar avatar-md yellow"></div>
-            <div class="feed-text">
-              <div><span class="feed-name">Mio K.</span><span class="feed-pct">+19.7%</span></div>
-              <div class="feed-msg">VTI を黙々と積立。</div>
-            </div>
-          </div>
-          <div class="phone-feed-item">
-            <div class="avatar avatar-md green"></div>
-            <div class="feed-text">
-              <div><span class="feed-name">Hiro M.</span><span class="feed-pct">+24.1%</span></div>
-              <div class="feed-msg">BTC スポット買い増し。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="phone-caption">
-        <div class="phone-caption-title">仲間の動きが、流れてくる</div>
-        <div class="phone-caption-desc">フォロー中の人の取引や積立を、フィードで。</div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== ASSETS ========== -->
 <section class="section section-assets">
   <div class="container">
@@ -1992,7 +1892,6 @@
           ビットコインまで。
         </h2>
       </div>
-      <p>日本の投資家が、実際に持つすべて。ひとつのアプリで、現金から仮想通貨まで。複数アプリを行き来する時代は、もう終わり。</p>
     </div>
 
     <!-- Portfolio header card -->
@@ -2018,7 +1917,6 @@
         </div>
       </div>
     </div>
-    <div class="portfolio-note">↓ あなたのポートフォリオも、登録するとこう表示されます。</div>
 
     <!-- Asset cards row -->
     <div class="assets-grid">
