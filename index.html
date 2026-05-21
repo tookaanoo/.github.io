@@ -955,7 +955,7 @@
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 32px;
   }
   .footer-brand p {
@@ -991,6 +991,465 @@
     .footer-bottom { flex-direction: column; gap: 8px; }
   }
 
+
+  /* ===== FIRE Stages ===== */
+  .stages-section { padding: 96px 0; }
+  .stages-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    margin: 48px 0 32px;
+  }
+  .stage-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    position: relative;
+    transition: all 0.2s;
+  }
+  .stage-card.active {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+    border-color: #ec4899;
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.18);
+  }
+  .stage-card.active::before {
+    content: 'YOU';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ec4899;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 9999px;
+  }
+  .stage-num {
+    font-size: 10px;
+    color: #9ca3af;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .stage-card.active .stage-num { color: #ec4899; }
+  .stage-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .stage-range {
+    font-size: 10px;
+    color: #6b7280;
+    line-height: 1.3;
+  }
+  .stages-desc {
+    font-size: 14px;
+    color: #4b5563;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .stages-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ===== Tax Section ===== */
+  .tax-section {
+    background: linear-gradient(180deg, #fffaf5 0%, #fff5eb 100%);
+    padding: 96px 0;
+  }
+  .tax-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .tax-grid h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .tax-grid p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .tax-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .tax-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: #374151;
+  }
+  .tax-bullet-dot {
+    width: 6px;
+    height: 6px;
+    background: #ec4899;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .tax-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border: 1px solid #fef3e8;
+  }
+  .tax-card-head {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+  }
+  .tax-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .tax-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 13px;
+  }
+  .tax-row:last-child { border-bottom: none; }
+  .tax-row .label { color: #6b7280; }
+  .tax-row .val { font-weight: 700; }
+  .tax-row.total {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 2px solid #111;
+    border-bottom: none;
+    font-size: 14px;
+  }
+  .tax-row.total .val { color: #ec4899; }
+  .tax-warning {
+    margin-top: 16px;
+    background: #fff7ed;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 11px;
+    color: #9a3412;
+    display: flex;
+    gap: 8px;
+  }
+  @media (max-width: 768px) {
+    .tax-grid { grid-template-columns: 1fr; }
+    .tax-grid h2 { font-size: 36px; }
+  }
+
+  /* ===== Contribution vs Growth ===== */
+  .contrib-section {
+    padding: 96px 0;
+    background: #fff;
+  }
+  .contrib-head {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .contrib-head h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .contrib-head p {
+    font-size: 14px;
+    color: #6b7280;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .contrib-card {
+    background: linear-gradient(135deg, #fff 0%, #fff8fb 100%);
+    border: 1px solid #fee2ec;
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(236, 72, 153, 0.08);
+  }
+  .contrib-total {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .contrib-total-label {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+  .contrib-total-val {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .contrib-bar {
+    height: 32px;
+    background: #f3f4f6;
+    border-radius: 9999px;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .contrib-bar-input {
+    background: linear-gradient(90deg, #d1d5db 0%, #9ca3af 100%);
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .contrib-bar-growth {
+    background: linear-gradient(90deg, #ff3d6e 0%, #c61f8c 100%);
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .contrib-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .contrib-detail-item {
+    text-align: center;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.6);
+  }
+  .contrib-detail-label {
+    font-size: 11px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .contrib-detail-val {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .contrib-detail-val.pink { color: #ec4899; }
+  .contrib-detail-pct {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .contrib-head h2 { font-size: 40px; }
+    .contrib-card { padding: 24px; }
+  }
+
+  /* ===== TWR / Fair Section ===== */
+  .twr-section {
+    background: #0a0408;
+    color: #fff;
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .twr-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .twr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .twr-grid .eyebrow { color: #f9a8d4; }
+  .twr-grid h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .twr-grid > div:first-child > p {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .twr-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .twr-compare-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .twr-compare-card .who {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .twr-compare-card .amount {
+    font-size: 14px;
+    color: #d1d5db;
+    margin-bottom: 16px;
+  }
+  .twr-compare-card .twr-val {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ec4899;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .twr-compare-card .twr-label {
+    font-size: 10px;
+    color: #9ca3af;
+    letter-spacing: 0.15em;
+  }
+  .twr-takeaway {
+    margin-top: 24px;
+    padding: 18px;
+    background: rgba(236, 72, 153, 0.1);
+    border-left: 3px solid #ec4899;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #fce7f3;
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .twr-grid { grid-template-columns: 1fr; }
+    .twr-grid h2 { font-size: 38px; }
+    .twr-compare { grid-template-columns: 1fr; }
+  }
+
+  /* ===== Any Stage Welcome ===== */
+  .anystage {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff5f9 0%, #fff 100%);
+    text-align: center;
+  }
+  .anystage h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .anystage p {
+    font-size: 15px;
+    color: #4b5563;
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .anystage-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .anystage-tag {
+    background: #fff;
+    border: 1px solid #fce7f3;
+    color: #ec4899;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 9999px;
+  }
+  @media (max-width: 768px) {
+    .anystage h2 { font-size: 36px; }
+  }
+
+  /* ===== App detail texts ===== */
+  .phone-caption {
+    margin-top: 16px;
+    text-align: center;
+    max-width: 220px;
+  }
+  .phone-caption-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .phone-caption-desc {
+    font-size: 11px;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+  .phones-row { align-items: flex-start; }
+
+
+  /* ===== Security Dark Variant ===== */
+  .section-security {
+    background: radial-gradient(ellipse at bottom left, #1a0820 0%, #0a0410 50%, #050208 100%);
+    color: #fff;
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-security::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .section-security .security-grid { position: relative; z-index: 1; }
+  .section-security .eyebrow { color: #f9a8d4; }
+  .section-security .security-grid h2 { color: #fff; }
+  .section-security .security-grid > div:first-child p { color: #9ca3af; }
+  .section-security .sec-card {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+  }
+  .section-security .sec-card .tag { color: #f9a8d4; }
+  .section-security .sec-card h3 { color: #fff; }
+  .section-security .sec-card p { color: #9ca3af; }
+
   /* Helpers */
   .grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; font-size: 11px; }
   .row-between { display: flex; justify-content: space-between; }
@@ -1025,9 +1484,9 @@
     </div>
     <div class="nav-links">
       <a href="#">何ができる？</a>
+      <a href="#">ステージ</a>
       <a href="#">コミュニティ</a>
-      <a href="#">対応アプリ</a>
-      <a href="#">FIRE基準</a>
+      <a href="#">税務</a>
       <a href="#">FAQ</a>
     </div>
     <div class="nav-actions">
@@ -1225,6 +1684,64 @@
   </div>
 </section>
 
+<!-- ========== FIRE STAGES ========== -->
+<section class="stages-section">
+  <div class="container-sm">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="eyebrow">FIRE STAGES</div>
+      <h2 style="font-family:'Inter','Noto Sans JP',sans-serif;font-weight:900;font-size:52px;line-height:1.1;margin-bottom:20px;">
+        あなたはいま、<br>
+        <span class="grad-text">どのステージ?</span>
+      </h2>
+      <p class="stages-desc">
+        絶対額じゃない。資産形成のステージで、ちょうど合う仲間が見つかる。
+        同じ景色を見ている人と、同じ目線で話ができる。
+      </p>
+    </div>
+
+    <div class="stages-grid">
+      <div class="stage-card">
+        <div class="stage-num">01</div>
+        <div class="stage-name">スタート期</div>
+        <div class="stage-range">〜¥500万</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">02</div>
+        <div class="stage-name">準備期</div>
+        <div class="stage-range">¥500万〜<br>¥1,500万</div>
+      </div>
+      <div class="stage-card active">
+        <div class="stage-num">03</div>
+        <div class="stage-name">基礎構築期</div>
+        <div class="stage-range">¥1,500万〜<br>¥3,000万</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">04</div>
+        <div class="stage-name">加速期</div>
+        <div class="stage-range">¥3,000万〜<br>¥5,000万</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">05</div>
+        <div class="stage-name">FIRE視野</div>
+        <div class="stage-range">¥5,000万〜<br>¥7,500万</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">06</div>
+        <div class="stage-name">FIRE達成圏</div>
+        <div class="stage-range">¥7,500万〜<br>¥1.5億</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">07</div>
+        <div class="stage-name">達成 or その先</div>
+        <div class="stage-range">¥1.5億〜</div>
+      </div>
+    </div>
+    <p class="stages-desc" style="margin-top:24px;font-size:13px;color:#6b7280;">
+      ※ 公開設定は自由。ステージ名のみ、レンジ、絶対額、非公開 から選べます。
+    </p>
+  </div>
+</section>
+
 <!-- ========== COMMUNITY ========== -->
 <section class="section bg-gray">
   <div class="container-sm">
@@ -1307,6 +1824,51 @@
   </div>
 </section>
 
+<!-- ========== TWR / FAIR COMPARISON ========== -->
+<section class="twr-section">
+  <div class="container-sm">
+    <div class="twr-grid">
+      <div>
+        <div class="eyebrow">FAIR COMPARISON</div>
+        <h2>
+          入金タイミング<br>
+          じゃない。<br>
+          <span class="grad-text">運用力で比べる。</span>
+        </h2>
+        <p>
+          ¥10万を10年積み立てた人と、¥1,000万を1年運用した人。
+          単純な「リターン率」では比べられない。
+        </p>
+        <p>
+          fire together は <b style="color:#ec4899;">時間加重リターン(TWR)</b> でフェアに比較。
+          プロのファンドマネージャーと同じ評価軸で、あなたの腕前を可視化します。
+        </p>
+      </div>
+
+      <div>
+        <div class="twr-compare">
+          <div class="twr-compare-card">
+            <div class="who">A さん</div>
+            <div class="amount">月¥3万を10年積立</div>
+            <div class="twr-val">+9.8%</div>
+            <div class="twr-label">TWR 年率</div>
+          </div>
+          <div class="twr-compare-card">
+            <div class="who">B さん</div>
+            <div class="amount">¥1,000万を1年運用</div>
+            <div class="twr-val">+12.3%</div>
+            <div class="twr-label">TWR 年率</div>
+          </div>
+        </div>
+        <div class="twr-takeaway">
+          入金額や入金タイミングを排除した、純粋な運用判断の評価。
+          だから、ランキングがフェアになる。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== THE APP ========== -->
 <section class="section">
   <div class="container-sm text-center">
@@ -1316,6 +1878,7 @@
     </h2>
     <div class="phones-row">
       <!-- Phone 1: Chart -->
+      <div style="display:flex;flex-direction:column;align-items:center;">
       <div class="phone phone-small">
         <div class="phone-notch"></div>
         <div class="phone-screen white" style="text-align:left;">
@@ -1344,8 +1907,14 @@
           </div>
         </div>
       </div>
+      <div class="phone-caption">
+        <div class="phone-caption-title">今日の運用が、わかる</div>
+        <div class="phone-caption-desc">毎朝、昨日からの変動を一目で。</div>
+      </div>
+      </div>
       
       <!-- Phone 2: Rank -->
+      <div style="display:flex;flex-direction:column;align-items:center;">
       <div class="phone phone-small">
         <div class="phone-notch"></div>
         <div class="phone-screen pink" style="text-align:left;">
@@ -1361,8 +1930,14 @@
           </div>
         </div>
       </div>
+      <div class="phone-caption">
+        <div class="phone-caption-title">ランキングで仲間が見える</div>
+        <div class="phone-caption-desc">同じ資産帯の人と、フェアに比較。</div>
+      </div>
+      </div>
       
       <!-- Phone 3: Feed -->
+      <div style="display:flex;flex-direction:column;align-items:center;">
       <div class="phone phone-small">
         <div class="phone-notch"></div>
         <div class="phone-screen white" style="text-align:left;">
@@ -1397,6 +1972,11 @@
           </div>
         </div>
       </div>
+      <div class="phone-caption">
+        <div class="phone-caption-title">仲間の動きが、流れてくる</div>
+        <div class="phone-caption-desc">フォロー中の人の取引や積立を、フィードで。</div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1412,7 +1992,7 @@
           ビットコインまで。
         </h2>
       </div>
-      <p>日本の投資家が、実際に持つすべて。USD は自動で円換算、金属は g 単位、債券は利回り。それぞれのカテゴリに、それぞれ最適な見せ方を。</p>
+      <p>日本の投資家が、実際に持つすべて。ひとつのアプリで、現金から仮想通貨まで。複数アプリを行き来する時代は、もう終わり。</p>
     </div>
 
     <!-- Portfolio header card -->
@@ -1516,6 +2096,49 @@
   </div>
 </section>
 
+<!-- ========== CONTRIBUTION vs GROWTH ========== -->
+<section class="contrib-section">
+  <div class="container-sm">
+    <div class="contrib-head">
+      <div class="eyebrow">TRUE GROWTH</div>
+      <h2>
+        入金で増えた?<br>
+        <span class="grad-text">運用で増えた?</span>
+      </h2>
+      <p>
+        総資産が増えるのは当たり前。FIRE を目指す人にとって本当に大事なのは、
+        「自分が入金した分」と「運用で増えた分」を分けて見ること。
+        複利が効いてきた瞬間が、目に見える。
+      </p>
+    </div>
+
+    <div class="contrib-card">
+      <div class="contrib-total">
+        <div class="contrib-total-label">TOTAL ASSETS</div>
+        <div class="contrib-total-val">¥14,217,830</div>
+      </div>
+
+      <div class="contrib-bar">
+        <div class="contrib-bar-input">拠出 70%</div>
+        <div class="contrib-bar-growth">運用 30%</div>
+      </div>
+
+      <div class="contrib-detail">
+        <div class="contrib-detail-item">
+          <div class="contrib-detail-label">あなたの拠出</div>
+          <div class="contrib-detail-val">¥9,950,000</div>
+          <div class="contrib-detail-pct">入金 − 出金</div>
+        </div>
+        <div class="contrib-detail-item">
+          <div class="contrib-detail-label">運用で増えた分</div>
+          <div class="contrib-detail-val pink">+¥4,267,830</div>
+          <div class="contrib-detail-pct">値上がり益 + 配当 − 税</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FIRE TRACKING (DARK) ========== -->
 <section class="section-dark">
   <div class="container-sm">
@@ -1559,8 +2182,76 @@
   </div>
 </section>
 
+<!-- ========== TAX SAVVY ========== -->
+<section class="tax-section">
+  <div class="container-sm">
+    <div class="tax-grid">
+      <div>
+        <div class="eyebrow">TAX SAVVY</div>
+        <h2>
+          税金を抜いた、<br>
+          <span class="grad-text">本当のリターンを。</span>
+        </h2>
+        <p>
+          国内株 20.315%、米国株は二重課税、NISAでも取り戻せない外国税。
+          あなたが本当に手にできる金額を、銘柄ごと・年ごとに。
+        </p>
+        <div class="tax-bullets">
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>年間の実現損益・配当・源泉徴収を、口座種別ごとに集計</div>
+          </div>
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>外国税額控除の参考額を自動表示。確定申告でいくら戻せそうかが見える</div>
+          </div>
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>配当の課税方式を3パターン比較。一番有利な方式を提案 <span style="color:#ec4899;font-weight:700;font-size:11px;">PREMIUM</span></div>
+          </div>
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>NISAでの米国株配当の落とし穴も、ちゃんと教えてくれる</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tax-card">
+        <div class="tax-card-head">2025 年 税務サマリー</div>
+        <div class="tax-card-title">上場株式等(申告分離)</div>
+
+        <div class="tax-row">
+          <span class="label">年間実現損益</span>
+          <span class="val">+¥350,000</span>
+        </div>
+        <div class="tax-row">
+          <span class="label">年間配当受取</span>
+          <span class="val">+¥85,000</span>
+        </div>
+        <div class="tax-row">
+          <span class="label">既源泉徴収(国内)</span>
+          <span class="val">¥88,371</span>
+        </div>
+        <div class="tax-row">
+          <span class="label">既源泉徴収(外国)</span>
+          <span class="val">¥3,200</span>
+        </div>
+        <div class="tax-row total">
+          <span class="label">外国税額控除 想定還付</span>
+          <span class="val">¥3,200</span>
+        </div>
+
+        <div class="tax-warning">
+          <span>⚠️</span>
+          <span>NISA で米国株配当を ¥X,XXX 受取済み。米国側 10% は取り戻せません。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== SECURITY ========== -->
-<section class="section">
+<section class="section-security">
   <div class="container-sm">
     <div class="security-grid">
       <div>
@@ -1650,11 +2341,34 @@
   </div>
 </section>
 
+<!-- ========== ANY STAGE ========== -->
+<section class="anystage">
+  <div class="container-sm">
+    <div class="eyebrow">ANY STAGE</div>
+    <h2>
+      残高 ¥0 からでも、<br>
+      <span class="grad-text">始められる。</span>
+    </h2>
+    <p>
+      スタート期の人も、加速期の人も、達成済みの人も。
+      あなたの今のステージで、ちょうど合う仲間と歩める。
+    </p>
+    <div class="anystage-tags">
+      <span class="anystage-tag">#20代でFIRE準備中</span>
+      <span class="anystage-tag">#30代積立勢</span>
+      <span class="anystage-tag">#40代加速期</span>
+      <span class="anystage-tag">#インデックス投資</span>
+      <span class="anystage-tag">#高配当</span>
+      <span class="anystage-tag">#FIRE達成</span>
+    </div>
+  </div>
+</section>
+
 <!-- ========== CTA ========== -->
 <section class="cta">
   <div class="container-xs">
     <div class="eyebrow-cta">NOW IN BETA • FREE</div>
-    <h2>一緒に、増やそう。</h2>
+    <h2>一緒に、たどり着こう。</h2>
     <p>ベータ版利用は完全無料。同じ目標を持つ仲間が、すでに集まっています。</p>
     <div class="store-buttons">
       <a href="#" class="store-btn">
@@ -1732,25 +2446,12 @@
         <ul>
           <li>機能紹介</li>
           <li>料金プラン</li>
-          <li>ベータ版に参加</li>
-          <li>ロードマップ</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-head">コミュニティ</div>
-        <ul>
-          <li>ランキング</li>
-          <li>フィード</li>
-          <li>ブログ</li>
-          <li>Discord</li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="footer-head">会社情報</div>
         <ul>
           <li>運営会社</li>
-          <li>採用情報</li>
-          <li>プレス</li>
           <li>お問い合わせ</li>
         </ul>
       </div>
@@ -1758,9 +2459,9 @@
         <div class="footer-head">法的情報</div>
         <ul>
           <li>利用規約</li>
-          <li>プライバシー</li>
+          <li>プライバシーポリシー</li>
           <li>免責事項</li>
-          <li>特定商取引法</li>
+          <li>特定商取引法に基づく表記</li>
         </ul>
       </div>
     </div>
