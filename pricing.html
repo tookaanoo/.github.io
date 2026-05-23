@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>料金プラン — fire together</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  .container-xs { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .grad-bg {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+  }
+  .grad-bg-soft {
+    background: linear-gradient(180deg, #fff 0%, #ffeef2 100%);
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a.active { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Hero ===== */
+  .page-hero {
+    padding: 80px 0 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #fff 0%, #ffeef2 100%);
+  }
+  .page-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .page-hero p.lead {
+    font-size: 17px;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ===== Billing Toggle ===== */
+  .billing-toggle {
+    display: inline-flex;
+    padding: 4px;
+    background: #f3f4f6;
+    border-radius: 9999px;
+    margin: 32px auto 0;
+    gap: 4px;
+  }
+  .billing-btn {
+    padding: 10px 24px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #6b7280;
+    background: transparent;
+    border: none;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .billing-btn.active {
+    background: #111827;
+    color: #fff;
+  }
+  .billing-btn .save {
+    margin-left: 6px;
+    padding: 2px 8px;
+    background: #ec4899;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 10px;
+  }
+  .billing-btn.active .save { background: #fff; color: #ec4899; }
+
+  /* ===== Plan Cards ===== */
+  .plans {
+    padding: 40px 0 80px;
+    background: linear-gradient(180deg, #ffeef2 0%, #fff 60%);
+  }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+  .plan-card {
+    background: #fff;
+    border: 1px solid #f3f4f6;
+    border-radius: 24px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(17, 24, 39, 0.08);
+  }
+  .plan-card.popular {
+    background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 30px 80px rgba(17, 24, 39, 0.3);
+    transform: scale(1.02);
+  }
+  .plan-card.popular:hover {
+    transform: scale(1.02) translateY(-4px);
+  }
+  .plan-popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #ff3d6e, #d61f4a);
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+  }
+  .plan-name {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #ec4899;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .plan-tagline {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    min-height: 42px;
+  }
+  .plan-card.popular .plan-tagline { color: #d1d5db; }
+  .plan-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .plan-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .plan-price-unit {
+    font-size: 14px;
+    color: #9ca3af;
+  }
+  .plan-card.popular .plan-price-unit { color: #9ca3af; }
+  .plan-billing-note {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 28px;
+  }
+  .plan-billing-note .save-pill {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 8px;
+    background: #fce4ec;
+    color: #be185d;
+    border-radius: 9999px;
+    font-weight: 700;
+  }
+  .plan-card.popular .plan-billing-note .save-pill {
+    background: rgba(236, 72, 153, 0.2);
+    color: #f9a8d4;
+  }
+
+  .plan-cta {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    background: #111827;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    transition: background 0.2s;
+  }
+  .plan-cta:hover { background: #1f2937; }
+  .plan-card.popular .plan-cta {
+    background: linear-gradient(135deg, #ff3d6e, #d61f4a);
+  }
+  .plan-card.popular .plan-cta:hover {
+    background: linear-gradient(135deg, #ff4d7a, #e91e5e);
+  }
+
+  .plan-features {
+    display: grid;
+    gap: 12px;
+  }
+  .plan-features-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9ca3af;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .plan-card.popular .plan-features-title { color: #6b7280; }
+  .plan-feature {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .plan-feature::before {
+    content: '✓';
+    flex-shrink: 0;
+    width: 18px; height: 18px;
+    background: #fce4ec;
+    color: #ec4899;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .plan-card.popular .plan-feature::before {
+    background: rgba(236, 72, 153, 0.2);
+    color: #f9a8d4;
+  }
+  .plan-feature b { font-weight: 700; }
+
+  /* ===== Detailed Comparison Table ===== */
+  .compare-section {
+    padding: 80px 0;
+    background: #faf9fb;
+    border-top: 1px solid #f3f4f6;
+  }
+  .compare-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .compare-table {
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .compare-table thead th {
+    background: #fff;
+    padding: 24px 16px;
+    text-align: center;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  .compare-table thead th:first-child {
+    text-align: left;
+    padding-left: 28px;
+  }
+  .compare-table .col-cat {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ec4899;
+  }
+  .compare-table .col-plan-name {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .compare-table .col-plan-price {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  .compare-table thead th.popular-col {
+    background: linear-gradient(180deg, #fff4f8, #fce4ec);
+  }
+  .compare-table tbody tr td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f9fafb;
+    font-size: 13px;
+  }
+  .compare-table tbody tr td:first-child {
+    padding-left: 28px;
+    font-weight: 600;
+    color: #374151;
+  }
+  .compare-table tbody tr td:not(:first-child) {
+    text-align: center;
+    color: #6b7280;
+  }
+  .compare-table tbody tr:hover {
+    background: #fafafa;
+  }
+  .check {
+    color: #ec4899;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .dash {
+    color: #d1d5db;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .cat-row td {
+    background: #f9fafb;
+    font-weight: 800 !important;
+    color: #ec4899 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px !important;
+  }
+
+  /* ===== Creator Program ===== */
+  .creator-section {
+    padding: 80px 0;
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+  }
+  .creator-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .creator-card {
+    padding: 28px 24px;
+    border-radius: 18px;
+    background: #faf9fb;
+    border: 1px solid #f3f4f6;
+    text-align: center;
+  }
+  .creator-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #fce4ec;
+    color: #be185d;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .creator-cond { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .creator-reward {
+    background: linear-gradient(135deg, #ff3d6e, #d61f4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .creator-desc { font-size: 12px; color: #6b7280; }
+
+  /* ===== FAQ ===== */
+  .pricing-faq {
+    padding: 80px 0;
+    background: #faf9fb;
+    border-top: 1px solid #f3f4f6;
+  }
+  .pricing-faq h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    border: 1px solid #f3f4f6;
+  }
+  .faq-q {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-num {
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #fce4ec;
+    color: #ec4899;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .faq-a {
+    padding-top: 16px;
+    padding-left: 40px;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  /* ===== CTA bottom ===== */
+  .cta-final {
+    padding: 100px 0 120px;
+    background: linear-gradient(180deg, #ffeef2 0%, #fff 100%);
+    text-align: center;
+  }
+  .cta-final h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+  .cta-final p { font-size: 16px; color: #6b7280; margin-bottom: 32px; }
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: transform 0.2s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); }
+
+  /* ===== Footer ===== */
+  .footer {
+    padding: 40px 0;
+    background: #fafafa;
+    border-top: 1px solid #f3f4f6;
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 12px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .page-hero h1 { font-size: 44px; }
+    .cta-final h2 { font-size: 36px; }
+    .plans-grid { grid-template-columns: 1fr; }
+    .plan-card.popular { transform: none; }
+    .plan-card.popular:hover { transform: translateY(-4px); }
+    .creator-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .compare-table { font-size: 11px; }
+    .compare-table thead th { padding: 16px 8px; }
+    .compare-table tbody tr td { padding: 10px 8px; }
+    .compare-table tbody tr td:first-child { padding-left: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradP)"/>
+          <defs>
+            <linearGradient id="logoGradP" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">fire together</span>
+    </a>
+    <div class="nav-links">
+      <a href="features.html">機能紹介</a>
+      <a href="pricing.html" class="active">料金プラン</a>
+      <a href="index.html#stages">ステージ</a>
+      <a href="index.html#community">コミュニティ</a>
+      <a href="index.html#tax">税務</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="login">ログイン</a>
+      <a href="#" class="btn-primary">無料ではじめる</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="page-hero">
+  <div class="container-sm">
+    <div class="eyebrow">PRICING</div>
+    <h1>
+      無料から、<br>
+      <span class="grad-text">あなたのペースで。</span>
+    </h1>
+    <p class="lead">コア機能はずっと無料。<br>必要になったら、Light か Premium へ。いつでも切り替え可能。</p>
+
+    <div class="billing-toggle" id="billingToggle">
+      <button class="billing-btn active" data-billing="monthly">月払い</button>
+      <button class="billing-btn" data-billing="yearly">年払い<span class="save">2ヶ月分お得</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PLAN CARDS ========== -->
+<section class="plans">
+  <div class="container">
+    <div class="plans-grid">
+
+      <!-- 無料 -->
+      <div class="plan-card">
+        <div class="plan-name">FREE</div>
+        <div class="plan-tagline">まずはここから。コア機能だけで十分FIREを目指せる。</div>
+        <div class="plan-price-row">
+          <div class="plan-price">¥0</div>
+          <div class="plan-price-unit">/月</div>
+        </div>
+        <div class="plan-billing-note">クレジットカード登録不要</div>
+        <a href="#" class="plan-cta" style="background: #f3f4f6; color: #111827;">無料ではじめる</a>
+
+        <div class="plan-features-title">含まれるもの</div>
+        <div class="plan-features">
+          <div class="plan-feature">7カテゴリ資産管理(複数口座対応)</div>
+          <div class="plan-feature">計算ロジック<b>すべて</b>(XIRR・TWR・拠出効果)</div>
+          <div class="plan-feature">SNS機能(フィードは日次集計)</div>
+          <div class="plan-feature">FIRE達成予測(実績ベース)</div>
+          <div class="plan-feature">ランキング・ステージ判定</div>
+          <div class="plan-feature">標準ベンチマーク3つ</div>
+          <div class="plan-feature">税務サマリー(年間損益総額のみ)</div>
+          <div class="plan-feature" style="color: #9ca3af;">取引履歴 500件 or 直近3年</div>
+          <div class="plan-feature" style="color: #9ca3af;">フォロー上限 20人</div>
+          <div class="plan-feature" style="color: #9ca3af;">控えめな広告表示</div>
+        </div>
+      </div>
+
+      <!-- Light 中央・推奨 -->
+      <div class="plan-card popular">
+        <div class="plan-popular-badge">★ 人気</div>
+        <div class="plan-name" style="color: #f9a8d4;">LIGHT</div>
+        <div class="plan-tagline">税務最適化と週次通知。<br>本格運用フェーズ向け。</div>
+        <div class="plan-price-row">
+          <div class="plan-price" data-monthly="¥300" data-yearly="¥248">¥300</div>
+          <div class="plan-price-unit">/月</div>
+        </div>
+        <div class="plan-billing-note" data-monthly-note="月¥300 · 年¥3,600" data-yearly-note="年¥2,980 一括 <span class='save-pill'>2ヶ月分お得</span>">月¥300 · 年¥3,600</div>
+        <a href="#" class="plan-cta">Light をはじめる</a>
+
+        <div class="plan-features-title" style="color: #f9a8d4;">無料に加えて</div>
+        <div class="plan-features">
+          <div class="plan-feature"><b>税務サマリー詳細</b>(口座種別・グループ別、損益通算、還付見込み)</div>
+          <div class="plan-feature"><b>外国税額控除</b>の自動試算</div>
+          <div class="plan-feature"><b>NISAアラート</b>(米国株配当の取戻不可、枠管理)</div>
+          <div class="plan-feature"><b>リバランス提案</b>(目標配分との乖離アラート)</div>
+          <div class="plan-feature"><b>What-If シミュレーション</b>(月積立・想定年率の変動)</div>
+          <div class="plan-feature">フォロー中ユーザーの<b>週1サマリー通知</b></div>
+          <div class="plan-feature">取引履歴 <b>無制限</b></div>
+          <div class="plan-feature">フォロー上限 100人</div>
+          <div class="plan-feature"><b>広告非表示</b></div>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan-card">
+        <div class="plan-name">PREMIUM</div>
+        <div class="plan-tagline">税最適化・即時通知・AIレポート。<br>FIRE志向の最強装備。</div>
+        <div class="plan-price-row">
+          <div class="plan-price" data-monthly="¥600" data-yearly="¥498">¥600</div>
+          <div class="plan-price-unit">/月</div>
+        </div>
+        <div class="plan-billing-note" data-monthly-note="月¥600 · 年¥7,200" data-yearly-note="年¥5,980 一括 <span class='save-pill'>2ヶ月分お得</span>">月¥600 · 年¥7,200</div>
+        <a href="#" class="plan-cta">Premium をはじめる</a>
+
+        <div class="plan-features-title">Light に加えて</div>
+        <div class="plan-features">
+          <div class="plan-feature"><b>税最適化シミュレーション</b>(配当課税3パターン比較、損益通算アドバイス)</div>
+          <div class="plan-feature"><b>AI月次レポート</b>(パーソナライズされたポートフォリオ診断)</div>
+          <div class="plan-feature">フォロー中ユーザーの<b>即時プッシュ通知</b></div>
+          <div class="plan-feature">通知の絞り込み(銘柄・金額・ユーザー別)</div>
+          <div class="plan-feature">為替差損益の分離表示(高度な税務処理)</div>
+          <div class="plan-feature">詳細シナリオシミュレーション</div>
+          <div class="plan-feature">フォロー上限 <b>無制限</b></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== Detailed Comparison ========== -->
+<section class="compare-section">
+  <div class="container">
+    <h2>詳細比較</h2>
+    <div style="overflow-x: auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>
+              <div class="col-plan-name">Free</div>
+              <div class="col-plan-price">¥0</div>
+            </th>
+            <th class="popular-col">
+              <div class="col-plan-name">Light</div>
+              <div class="col-plan-price">¥300/月</div>
+            </th>
+            <th>
+              <div class="col-plan-name">Premium</div>
+              <div class="col-plan-price">¥600/月</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cat-row"><td colspan="4">資産管理</td></tr>
+          <tr><td>7カテゴリ管理</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>複数口座対応</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>取引履歴</td><td>500件 or 直近3年</td><td>無制限</td><td>無制限</td></tr>
+          <tr><td>外貨ポジション(USD・EUR等)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">パフォーマンス分析</td></tr>
+          <tr><td>XIRR(実利回り)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>TWR(運用力)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>拠出効果 vs 運用効果</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>ベンチマーク比較(XIRR・TWR両軸)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">税務</td></tr>
+          <tr><td>税務サマリー(年間損益総額)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>税務サマリー詳細(グループ別・口座別)</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>損益通算・還付見込み計算</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>外国税額控除の試算</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>NISAアラート(米国配当・枠管理)</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>配当課税3パターン比較</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>損益通算アドバイス(売却タイミング提案)</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>為替差損益の分離表示</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">シミュレーション</td></tr>
+          <tr><td>FIRE達成予測(実績ベース)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>3シナリオ(楽観・中立・悲観)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>What-If シミュレーション</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>リバランス提案</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>詳細シナリオシミュレーション</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>AI月次ポートフォリオレポート</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">SNS・通知</td></tr>
+          <tr><td>ランキング・フィード</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>公開プロフィール(XIRR・TWR・配分)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>フォロー上限</td><td>20人</td><td>100人</td><td>無制限</td></tr>
+          <tr><td>フィード通知</td><td>なし</td><td>週1サマリー</td><td>即時プッシュ</td></tr>
+          <tr><td>通知の絞り込み(銘柄・金額・ユーザー別)</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">その他</td></tr>
+          <tr><td>広告表示</td><td>控えめ</td><td>なし</td><td>なし</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Creator Program ========== -->
+<section class="creator-section">
+  <div class="container-sm">
+    <div style="text-align: center;">
+      <div class="eyebrow">CREATOR REWARDS</div>
+      <h2 style="font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 900; letter-spacing: -0.02em;">フォロワーが増えると、<br><span class="grad-text">プラン代が無料に。</span></h2>
+      <p style="font-size: 15px; color: #6b7280; margin-top: 12px;">コミュニティに貢献するクリエイターを、有料機能の無料化でお返しします。</p>
+    </div>
+
+    <div class="creator-grid">
+      <div class="creator-card">
+        <div class="creator-badge">⭐ ACTIVE</div>
+        <div class="creator-cond">100<span style="font-size: 14px; color: #6b7280; font-weight: 600;">人〜</span></div>
+        <div class="creator-reward">プロフィール優先表示</div>
+        <div class="creator-desc">バッジ + 検索結果上位表示</div>
+      </div>
+      <div class="creator-card">
+        <div class="creator-badge">✓ VERIFIED</div>
+        <div class="creator-cond">500<span style="font-size: 14px; color: #6b7280; font-weight: 600;">人〜</span></div>
+        <div class="creator-reward">Light プランが無料</div>
+        <div class="creator-desc">認証バッジ + 全Light機能</div>
+      </div>
+      <div class="creator-card">
+        <div class="creator-badge">💎 PREMIUM</div>
+        <div class="creator-cond">2,000<span style="font-size: 14px; color: #6b7280; font-weight: 600;">人〜</span></div>
+        <div class="creator-reward">Premium プランが無料</div>
+        <div class="creator-desc">Premium認証バッジ + 全機能</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; padding: 20px; background: #faf9fb; border-radius: 14px; font-size: 12px; color: #6b7280; line-height: 1.7;">
+      <b style="color: #374151;">注意事項</b><br>
+      ・アクティブ条件:月X回以上の取引記録 or 投稿が必要<br>
+      ・アカウント作成3ヶ月以降のフォロワーをカウント(水増し対策)<br>
+      ・フォロー水増しが検知された場合、認定取消の可能性あり
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="pricing-faq">
+  <div class="container-xs">
+    <h2>料金に関するよくある質問</h2>
+
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-num">01</span><span>無料プランだけでもFIREを目指せますか?</span></summary>
+      <p class="faq-a">はい。資産管理、XIRR・TWR・拠出効果すべての計算、FIRE達成予測、ベンチマーク比較、SNS機能まで、コア機能はすべて無料プランに含まれます。Light・Premium は「税務最適化」「リバランス」「即時通知」など、本格運用フェーズに入った時に追加されるオプションです。</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-num">02</span><span>プランはいつでも変更できますか?</span></summary>
+      <p class="faq-a">はい。設定画面からいつでもアップグレード・ダウングレード可能です。月払いから年払いへの変更は次回更新時に反映されます。途中解約の場合、月払いはその月の末日まで利用可能、年払いは次回更新時から無料プランに移行します。返金は原則対応していませんが、特別な事情がある場合はサポートまでご連絡ください。</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-num">03</span><span>年払いはどれくらいお得ですか?</span></summary>
+      <p class="faq-a">月払いと比較して、年払いは<b>2ヶ月分お得</b>です。Light プランの場合:月払いだと年¥3,600 → 年払いは¥2,980。Premium プランの場合:月払いだと年¥7,200 → 年払いは¥5,980。1年以上の利用予定なら年払いがおすすめです。</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-num">04</span><span>支払い方法は?</span></summary>
+      <p class="faq-a">クレジットカード(Visa, MasterCard, JCB, American Express)、Apple Pay、Google Pay に対応予定です。コンビニ払いには対応していません。</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-num">05</span><span>Creator還元プログラムは誰でも対象ですか?</span></summary>
+      <p class="faq-a">はい、アカウント作成から3ヶ月以上経過し、アクティブ条件(月X回以上の取引記録 or 投稿)を満たしているユーザーが対象です。Active(100人)・Verified(500人)・Premium(2,000人)の3段階で、フォロワー数に応じてプランが自動的に無料化されます。</p>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-num">06</span><span>解約しても今までのデータは残りますか?</span></summary>
+      <p class="faq-a">プランを解約しても無料プランとして継続できます。すべての取引記録・ポートフォリオデータはそのまま残ります(無料プランの制限内で閲覧可能)。完全にアカウントを削除した場合のみ、すべてのデータが削除されます。</p>
+    </details>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-final">
+  <div class="container-sm">
+    <div class="eyebrow">START NOW</div>
+    <h2>まず、無料で。</h2>
+    <p>クレジットカード登録不要。<br>使ってみてから、必要なら Light・Premium へ。</p>
+    <a href="#" class="cta-btn">無料ではじめる</a>
+  </div>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="features.html">機能紹介</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="#">利用規約</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+    </div>
+    <div>© 2026 fire together. 投資判断はご自身の責任で。</div>
+  </div>
+</footer>
+
+<script>
+  // Billing toggle
+  const buttons = document.querySelectorAll('#billingToggle .billing-btn');
+  const prices = document.querySelectorAll('.plan-price[data-monthly]');
+  const notes = document.querySelectorAll('.plan-billing-note[data-monthly-note]');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.billing;
+      buttons.forEach(b => b.classList.toggle('active', b === btn));
+      prices.forEach(p => {
+        p.textContent = mode === 'yearly' ? p.dataset.yearly : p.dataset.monthly;
+      });
+      notes.forEach(n => {
+        n.innerHTML = mode === 'yearly' ? n.dataset.yearlyNote : n.dataset.monthlyNote;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
