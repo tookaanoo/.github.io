@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>免責事項 — fire together</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 60px 0 40px;
+    background: linear-gradient(180deg, #fff 0%, #ffeef2 100%);
+    text-align: center;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 15px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 60px 0 100px;
+  }
+  .doc-meta {
+    padding: 20px 24px;
+    background: #fafafa;
+    border-left: 4px solid #ec4899;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  .doc-meta div { margin-bottom: 4px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #111827; font-weight: 700; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 56px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    margin: 32px 0 12px;
+  }
+  .doc-body p {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    counter-reset: item;
+    margin: 16px 0 24px;
+    padding-left: 0;
+  }
+  .doc-body ol > li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #374151;
+  }
+  .doc-body ol > li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px; height: 24px;
+    background: #fce4ec;
+    color: #ec4899;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+  }
+  .doc-body ul {
+    margin: 8px 0 16px;
+    padding-left: 8px;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.7;
+  }
+  .doc-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 6px; height: 6px;
+    background: #ec4899;
+    border-radius: 50%;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0 32px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #f3f4f6;
+  }
+  .doc-table thead th {
+    background: #faf9fb;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ec4899;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  .doc-table tbody td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.8;
+    border-bottom: 1px solid #f9fafb;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 700;
+    color: #111827;
+    background: #fafafa;
+  }
+  .doc-table tbody td b {
+    font-weight: 700;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 80px;
+    padding: 32px;
+    background: #faf9fb;
+    border-radius: 18px;
+    border: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ec4899;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .related-grid a {
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #f3f4f6;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+  }
+  .related-grid a:hover {
+    border-color: #ec4899;
+    color: #ec4899;
+    transform: translateX(2px);
+  }
+  .related-grid a::after {
+    content: '→';
+    color: #d1d5db;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover::after { color: #ec4899; }
+
+  /* ===== Footer ===== */
+  .footer {
+    padding: 40px 0;
+    background: #fafafa;
+    border-top: 1px solid #f3f4f6;
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+  }
+  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 28px; margin-bottom: 12px; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 32px; }
+    .doc-body h2 { font-size: 20px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradDisc)"/>
+          <defs>
+            <linearGradient id="logoGradDisc" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">fire together</span>
+    </a>
+    <div class="nav-links">
+      <a href="features.html">機能紹介</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="index.html#stages">ステージ</a>
+      <a href="index.html#community">コミュニティ</a>
+      <a href="index.html#tax">税務</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="login">ログイン</a>
+      <a href="#" class="btn-primary">無料ではじめる</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="doc-hero">
+  <div class="container-sm">
+    <div class="eyebrow">LEGAL</div>
+    <h1>免責事項</h1>
+    <p class="subtitle">本サービスを利用する際の注意事項</p>
+  </div>
+</section>
+
+<!-- ========== BODY ========== -->
+<section class="doc-body">
+  <div class="container-sm">
+    <p>FireTogether株式会社(以下「当社」といいます)が提供するスマートフォンアプリケーション及びウェブサービス「fire together」(以下「本サービス」といいます)のご利用にあたって、以下の免責事項にご同意ください。</p>
+<div class="doc-meta">
+  <div><b>最終更新日</b>: 20XX年XX月XX日</div>
+  <div><b>発効日</b>: 20XX年XX月XX日</div>
+</div>
+<h2>第1条(本サービスの位置付け)</h2>
+<ol>
+<li><b>本サービスは、利用者が自己の資産・取引情報を記録・管理し、他の利用者と情報を共有することができる資産管理SNSです。</b></li>
+<li><b>本サービスは、金融商品取引法に定める「投資助言・代理業」「投資運用業」「金融商品取引業」のいずれにも該当しません</b>。</li>
+<li><b>本サービスは、特定の金融商品の購入・売却・保有を推奨するものではありません</b>。</li>
+<li><b>本サービスは、税務代理業務(税理士法第2条)、税務相談を行うものではありません</b>。</li>
+</ol>
+<h2>第2条(投資判断の自己責任)</h2>
+<ol>
+<li><b>利用者の投資判断は、すべて利用者自身の自己責任にて行うものとします</b>。</li>
+<li>本サービスで提供される情報(損益計算、税務試算、リターン分析、目標達成シミュレーション、他利用者の保有状況・取引履歴・パフォーマンス等)は、参考情報として提供されるものであり、特定の金融商品の取得・処分その他の投資判断を推奨するものではありません。</li>
+<li>本サービスを参考にして行った投資行動の結果について、当社は一切の責任を負いません。利益が出た場合も、損失が生じた場合も、すべて利用者自身に帰属します。</li>
+</ol>
+<h2>第3条(計算結果の正確性)</h2>
+<ol>
+<li>本サービスで提供される計算結果(平均取得単価、実現損益、含み損益、リターン率、税額試算等)は、利用者が入力した情報に基づくものです。</li>
+<li>計算結果の正確性は、利用者の入力情報の正確性に依存します。入力情報が実際の取引と異なる場合、計算結果は実態を反映しません。</li>
+<li>本サービスの計算結果は、証券会社・税務当局等の数値と必ずしも一致しません。実際の損益確定、税務申告等に際しては、証券会社の年間取引報告書、税理士その他の専門家にご確認ください。</li>
+<li>本サービスは、計算ロジックの改善・修正を継続的に行っており、過去の計算結果と現在の計算結果が異なる場合があります。</li>
+</ol>
+<h2>第4条(税務情報)</h2>
+<ol>
+<li>本サービスで提供される税務関連情報(税額試算、課税方式比較、外国税額控除の参考情報、損益通算等)は、一般的な情報提供を目的とするものであり、<b>利用者個別の税務相談に応じるものではありません</b>。</li>
+<li>税制は法改正等により変動する可能性があります。本サービスが提供する情報は、特定時点の税制を前提としており、最新の税制と異なることがあります。</li>
+<li><b>実際の確定申告、税務処理に際しては、必ず最新の税法を確認の上、税理士その他の専門家にご相談ください</b>。</li>
+<li>本サービスの税務関連情報に基づき利用者が行った税務処理の結果について、当社は責任を負いません。</li>
+</ol>
+<h2>第5条(価格情報・市場データ)</h2>
+<ol>
+<li>本サービスで表示される株価、為替レート、暗号資産価格、その他の市場データは、第三者データプロバイダーから提供される情報を含みます。</li>
+<li>これらの情報は、提供時点で正確であることを保証するものではなく、遅延、欠損、誤りが生じることがあります。</li>
+<li><b>本サービスで表示される価格情報を売買の根拠とすることはお控えください</b>。実際の取引時には、利用する証券会社・取引所等の最新価格情報をご確認ください。</li>
+<li>データプロバイダーの仕様変更、サービス停止等により、本サービスの一部機能が制限される場合があります。</li>
+</ol>
+<h2>第6条(他利用者の情報)</h2>
+<ol>
+<li>本サービスでは、利用者が他の利用者の公開ポートフォリオ、取引履歴、パフォーマンス等を閲覧することができます。</li>
+<li><b>他利用者の情報は、当該利用者が自己の判断で公開している情報であり、当社が正確性を保証するものではありません</b>。</li>
+<li>他利用者の投資行動を模倣することは推奨しません。投資判断は、自己の財務状況、リスク許容度、投資目標等を考慮の上、自己の責任で行ってください。</li>
+<li>他利用者との交流(コメント、メッセージ等)に関するトラブルについて、当社は責任を負いません。当事者間で解決するものとします。</li>
+</ol>
+<h2>第7条(目標達成シミュレーション)</h2>
+<ol>
+<li>本サービスは、利用者の入力情報及び想定リターン率等に基づき、FIRE達成等の目標シミュレーションを提供します。</li>
+<li><b>シミュレーション結果は、特定の前提に基づく試算であり、実際の運用結果を保証するものではありません</b>。</li>
+<li>市場環境、税制、利用者のライフイベント等の変化により、実際の結果はシミュレーションと大きく異なる可能性があります。</li>
+<li>過去のリターン実績は、将来の運用成果を保証するものではありません。</li>
+</ol>
+<h2>第8条(サービス内容の変更等)</h2>
+<ol>
+<li>当社は、本サービスの内容、機能、デザイン等を、利用者への事前通知なく変更することがあります。</li>
+<li>当社は、本サービスの提供を、利用者への事前通知なく中断・停止・終了することがあります。</li>
+<li>これらの変更・中断・停止・終了により利用者に生じた損害について、当社は責任を負いません。</li>
+</ol>
+<h2>第9条(システム障害等)</h2>
+<ol>
+<li>当社は、本サービスのシステム障害、通信障害、メンテナンス、不正アクセス、自然災害等により、本サービスの全部又は一部が利用できなくなった場合、当該事由により利用者に生じた損害について、責任を負いません。</li>
+<li>当社は、本サービスのバックアップ・データ保全に努めますが、データの完全な保護を保証するものではありません。利用者は、重要なデータについて、自己でバックアップを取ることを推奨します。</li>
+</ol>
+<h2>第10条(第三者サービスとのリンク・連携)</h2>
+<ol>
+<li>本サービスは、第三者が提供するサービス・ウェブサイトへのリンクを含むことがあります。</li>
+<li>第三者サービスの内容、安全性、信頼性等について、当社は責任を負いません。</li>
+<li>第三者サービスの利用は、利用者と当該第三者との間の契約条件に従い、利用者の責任で行うものとします。</li>
+</ol>
+<h2>第11条(広告)</h2>
+<ol>
+<li>本サービスは、無料プラン利用者に対し、控えめな広告を表示することがあります。</li>
+<li>広告内容について、当社が事前に審査することはありますが、すべての広告内容の正確性・信頼性を保証するものではありません。</li>
+<li>広告主の商品・サービスの利用は、利用者の責任で行うものとします。</li>
+</ol>
+<h2>第12条(損害の上限)</h2>
+<ol>
+<li>当社が本サービスに関連して利用者に対して責任を負う場合、その責任範囲は、利用者が当該事由が生じた月に当社に対し支払った利用料金の額を上限とします。</li>
+<li>当社の故意又は重大な過失による場合は、この限りではありません。</li>
+</ol>
+<h2>第13条(本免責事項の変更)</h2>
+<p>当社は、必要に応じて本免責事項を変更することがあります。重要な変更については、本サービス内又はその他適切な方法で利用者に通知します。</p>
+<p><b>FireTogether株式会社</b></p>
+<p>所在地: [東京都〇〇区〇〇 X-X-X]</p>
+<p>お問い合わせ: [contact@firetogether.example.com]</p>
+
+    <div class="related-links">
+      <h3>関連する文書</h3>
+      <div class="related-grid">
+        <a href="terms.html">利用規約</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="disclaimer.html">免責事項</a>
+        <a href="scta.html">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="features.html">機能紹介</a>
+      <a href="pricing.html">料金プラン</a>
+      <a href="terms.html">利用規約</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="disclaimer.html">免責事項</a>
+      <a href="scta.html">特定商取引法に基づく表記</a>
+    </div>
+    <div>© 2026 fire together. 投資判断はご自身の責任で。</div>
+  </div>
+</footer>
+
+</body>
+</html>
