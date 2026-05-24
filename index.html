@@ -107,18 +107,50 @@
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
     gap: 48px;
     align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
   }
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    padding: 6px 16px 6px 8px;
+    background: #fff;
+    border: 1px solid #f3f4f6;
+    border-radius: 9999px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     font-size: 12px;
-    color: #6b7280;
+    color: #4b5563;
     margin-bottom: 24px;
   }
+  .hero-badge-avatars {
+    display: flex;
+    align-items: center;
+  }
+  .hero-badge-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .hero-badge-avatar:not(:first-child) {
+    margin-left: -10px;
+  }
+  .hero-badge-avatar.a1 { background: linear-gradient(135deg, #ff6b9d, #e91e63); }
+  .hero-badge-avatar.a2 { background: linear-gradient(135deg, #ffd400, #ff8a00); }
+  .hero-badge-avatar.a3 { background: linear-gradient(135deg, #9c27b0, #6a1b9a); }
+  .hero-badge-avatar.a4 { background: linear-gradient(135deg, #00d4ff, #0080ff); }
   .hero-title {
     font-family: 'Inter', 'Noto Sans JP', sans-serif;
     font-weight: 900;
@@ -283,6 +315,70 @@
   }
   .floating-card .small { font-size: 10px; color: #6b7280; margin-bottom: 4px; }
   .floating-card .pink-num { color: #ec4899; font-weight: 700; font-size: 13px; }
+
+  .floating-card-bl {
+    position: absolute;
+    left: -28px;
+    bottom: 60px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    padding: 14px 16px;
+    width: 200px;
+  }
+  .fc-bl-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .fc-bl-live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #ec4899;
+    animation: live-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+  .fc-bl-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.15em;
+  }
+  .fc-bl-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .fc-bl-avatar {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd400, #ff8a00);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+  .fc-bl-name {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .fc-bl-event {
+    font-size: 11px;
+    color: #4b5563;
+    line-height: 1.4;
+  }
+  .fc-bl-event b {
+    color: #ec4899;
+    font-weight: 700;
+  }
 
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
@@ -1171,6 +1267,7 @@
   @media (max-width: 768px) {
     .tax-grid { grid-template-columns: 1fr; }
     .tax-grid h2 { font-size: 36px; }
+    .tax-grid .tax-card { order: 2; }
   }
 
   /* ===== Contribution vs Growth ===== */
@@ -1521,6 +1618,12 @@
     <div class="hero-grid">
       <div>
         <div class="hero-badge">
+          <div class="hero-badge-avatars">
+            <div class="hero-badge-avatar a1">A</div>
+            <div class="hero-badge-avatar a2">K</div>
+            <div class="hero-badge-avatar a3">M</div>
+            <div class="hero-badge-avatar a4">H</div>
+          </div>
           <span>同じ目標を持つ仲間たちが、すでにFIREへの道を歩いています</span>
         </div>
         <h1 class="hero-title">
@@ -1630,6 +1733,17 @@
           </div>
           <div class="small">in your bracket</div>
           <div class="pink-num">+28.4%</div>
+        </div>
+        <div class="floating-card-bl">
+          <div class="fc-bl-head">
+            <span class="fc-bl-live-dot"></span>
+            <span class="fc-bl-label">LIVE NOW</span>
+          </div>
+          <div class="fc-bl-user">
+            <div class="fc-bl-avatar">K</div>
+            <div class="fc-bl-name">Ken S.</div>
+          </div>
+          <div class="fc-bl-event"><b>Coast FIRE 達成 🎉</b><br>「やっと到達。みんなのおかげ」</div>
         </div>
       </div>
     </div>
@@ -1845,7 +1959,7 @@
         <div class="eyebrow">7 ASSET CLASSES</div>
         <h2>
           日本株から、<br>
-          ビットコインまで。
+          <span style="white-space:nowrap;">ビットコインまで。</span>
         </h2>
       </div>
     </div>
@@ -2040,36 +2154,6 @@
 <section class="tax-section" id="tax">
   <div class="container-sm">
     <div class="tax-grid">
-      <div>
-        <div class="eyebrow">TAX SAVVY</div>
-        <h2>
-          税金を抜いた、<br>
-          <span class="grad-text">本当のリターンを。</span>
-        </h2>
-        <p>
-          国内株 20.315%、米国株は二重課税、NISAでも取り戻せない外国税。
-          あなたが本当に手にできる金額を、銘柄ごと・年ごとに。
-        </p>
-        <div class="tax-bullets">
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>年間の実現損益・配当・源泉徴収を、口座種別ごとに集計</div>
-          </div>
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>外国税額控除の参考額を自動表示。確定申告でいくら戻せそうかが見える</div>
-          </div>
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>配当の課税方式を3パターン比較。一番有利な方式を提案 <span style="color:#ec4899;font-weight:700;font-size:11px;">PREMIUM</span></div>
-          </div>
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>NISAでの米国株配当の落とし穴も、ちゃんと教えてくれる</div>
-          </div>
-        </div>
-      </div>
-
       <div class="tax-card">
         <div class="tax-card-head">2025 年 税務サマリー</div>
         <div class="tax-card-title">上場株式等(申告分離)</div>
@@ -2098,6 +2182,36 @@
         <div class="tax-warning">
           <span>⚠️</span>
           <span>NISA で米国株配当を ¥X,XXX 受取済み。米国側 10% は取り戻せません。</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">TAX SAVVY</div>
+        <h2>
+          税金を抜いた、<br>
+          <span class="grad-text">本当のリターンを。</span>
+        </h2>
+        <p>
+          国内株 20.315%、米国株は二重課税、NISAでも取り戻せない外国税。
+          あなたが本当に手にできる金額を、銘柄ごと・年ごとに。
+        </p>
+        <div class="tax-bullets">
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>年間の実現損益・配当・源泉徴収を、口座種別ごとに集計</div>
+          </div>
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>外国税額控除の参考額を自動表示。確定申告でいくら戻せそうかが見える</div>
+          </div>
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>配当の課税方式を3パターン比較。一番有利な方式を提案 <span style="color:#ec4899;font-weight:700;font-size:11px;">PREMIUM</span></div>
+          </div>
+          <div class="tax-bullet">
+            <div class="tax-bullet-dot"></div>
+            <div>NISAでの米国株配当の落とし穴も、ちゃんと教えてくれる</div>
+          </div>
         </div>
       </div>
     </div>
