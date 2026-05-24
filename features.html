@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>機能紹介 — fire together</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -123,23 +124,56 @@
   }
   .pillar-card {
     padding: 28px 22px;
-    background: #faf9fb;
+    background: #fff;
     border-radius: 18px;
     border: 1px solid #f3f4f6;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
   .pillar-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(236, 72, 153, 0.12);
+    box-shadow: 0 16px 40px rgba(236, 72, 153, 0.12);
+    border-color: #fce4ec;
   }
   .pillar-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
+    width: 52px; height: 52px;
+    border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
-    font-size: 22px;
-    background: linear-gradient(135deg, #ff3d6e, #d61f4a);
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe0ec 100%);
+    border: 1px solid #fce4ec;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .pillar-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: #e91e63;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.2s;
+  }
+  .pillar-card:hover .pillar-icon {
+    background: linear-gradient(135deg, #ff6b9d 0%, #e91e63 50%, #9c27b0 100%);
+    border-color: transparent;
+  }
+  .pillar-card:hover .pillar-icon svg {
+    stroke: #fff;
+  }
+  .pillar-num {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px; height: 22px;
+    background: #111827;
     color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
   }
   .pillar-card h3 {
     font-size: 17px;
@@ -447,26 +481,66 @@
       <h2 style="font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 900; letter-spacing: -0.02em;">4つの柱で、ゴールへ。</h2>
     </div>
     <div class="pillars-grid">
+
+      <!-- 01 記録 -->
       <div class="pillar-card">
-        <div class="pillar-icon">📊</div>
+        <div class="pillar-icon">
+          <span class="pillar-num">01</span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 21h18"/>
+            <rect x="5" y="13" width="3" height="8" rx="0.5"/>
+            <rect x="10.5" y="8" width="3" height="13" rx="0.5"/>
+            <rect x="16" y="4" width="3" height="17" rx="0.5"/>
+          </svg>
+        </div>
         <h3>記録</h3>
         <p>7カテゴリ・複数口座の資産を、1つの画面で管理。手書きの手帳のように、日々の成長を可視化。</p>
       </div>
+
+      <!-- 02 共有 -->
       <div class="pillar-card">
-        <div class="pillar-icon">👥</div>
+        <div class="pillar-icon">
+          <span class="pillar-num">02</span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="8" r="3.5"/>
+            <circle cx="17" cy="11" r="2.5"/>
+            <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+            <path d="M14.5 20c0-2.5 2-4.5 4.5-4.5s2 0 2 0"/>
+          </svg>
+        </div>
         <h3>共有</h3>
         <p>同じ資産帯の仲間とつながり、ランキング・フィードで学び合う。匿名で安心して公開できる設計。</p>
       </div>
+
+      <!-- 03 税務 -->
       <div class="pillar-card">
-        <div class="pillar-icon">🧮</div>
+        <div class="pillar-icon">
+          <span class="pillar-num">03</span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+            <path d="M14 3v5h5"/>
+            <path d="M8.5 14l2 2 4-4"/>
+          </svg>
+        </div>
         <h3>税務</h3>
         <p>NISA枠管理、外国税額控除、配当課税3パターン比較。確定申告の節税ポイントが見える。</p>
       </div>
+
+      <!-- 04 予測 -->
       <div class="pillar-card">
-        <div class="pillar-icon">🎯</div>
+        <div class="pillar-icon">
+          <span class="pillar-num">04</span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5.5"/>
+            <circle cx="12" cy="12" r="2"/>
+            <path d="M19 5l2-2M21 3h-3M21 3v3"/>
+          </svg>
+        </div>
         <h3>予測</h3>
         <p>あなたの実績ベースで FIRE 到達年を試算。「年率5%固定」じゃない、本気の予測。</p>
       </div>
+
     </div>
   </div>
 </section>
