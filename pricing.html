@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>料金プラン — fire together</title>
+<title>料金プラン — みんなでFIRE</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,6 +24,13 @@
   .container-xs { max-width: 800px; margin: 0 auto; padding: 0 24px; }
   .grad-text {
     background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -71,7 +79,7 @@
     font-weight: 800;
     letter-spacing: -0.02em;
   }
-  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links { display: flex; gap: 48px; font-size: 14px; font-weight: 500; }
   .nav-links a.active { color: #ec4899; }
   .nav-actions { display: flex; gap: 12px; align-items: center; }
   .login { font-size: 14px; font-weight: 600; }
@@ -532,11 +540,18 @@
     .plan-card.popular { transform: none; }
     .plan-card.popular:hover { transform: translateY(-4px); }
     .creator-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
     .compare-table { font-size: 11px; }
     .compare-table thead th { padding: 16px 8px; }
     .compare-table tbody tr td { padding: 10px 8px; }
     .compare-table tbody tr td:first-child { padding-left: 12px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { gap: 16px; font-size: 13px; }
+    .nav-inner { padding: 14px 16px; gap: 12px; }
+    .nav-actions { gap: 8px; }
+    .nav-actions .login { display: none; }
+    .btn-primary { padding: 8px 14px; font-size: 12px; }
+    .logo-text { display: none; }
   }
 </style>
 </head>
@@ -559,15 +574,11 @@
           </defs>
         </svg>
       </div>
-      <span class="logo-text">fire together</span>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
     </a>
     <div class="nav-links">
       <a href="features.html">機能紹介</a>
       <a href="pricing.html" class="active">料金プラン</a>
-      <a href="index.html#stages">ステージ</a>
-      <a href="index.html#community">コミュニティ</a>
-      <a href="index.html#tax">税務</a>
-      <a href="index.html#faq">FAQ</a>
     </div>
     <div class="nav-actions">
       <a href="#" class="login">ログイン</a>
@@ -601,7 +612,7 @@
       <!-- 無料 -->
       <div class="plan-card">
         <div class="plan-name">FREE</div>
-        <div class="plan-tagline">まずはここから。コア機能だけで十分FIREを目指せる。</div>
+        <div class="plan-tagline">まずはここから。コア機能だけで十分、経済的自立を目指せる。</div>
         <div class="plan-price-row">
           <div class="plan-price">¥0</div>
           <div class="plan-price-unit">/月</div>
@@ -611,18 +622,14 @@
 
         <div class="plan-features-title">含まれるもの</div>
         <div class="plan-features">
-          <div class="plan-feature">8カテゴリ資産管理(複数口座対応)</div>
+          <div class="plan-feature">7カテゴリ資産管理(複数口座対応)</div>
           <div class="plan-feature">計算ロジック<b>すべて</b>(XIRR・TWR・拠出効果)</div>
-          <div class="plan-feature">SNS機能<b>すべて</b>(ホルダーコミュニティ・チア・保有理由)</div>
-          <div class="plan-feature">まとめ通知 <b>週次</b></div>
-          <div class="plan-feature"><b>発信スタジオ全機能</b></div>
+          <div class="plan-feature">SNS機能(フィードは日次集計)</div>
           <div class="plan-feature">FIRE達成予測(実績ベース)</div>
           <div class="plan-feature">ランキング・ステージ判定</div>
           <div class="plan-feature">標準ベンチマーク3つ</div>
           <div class="plan-feature">税務サマリー(年間損益総額のみ)</div>
-          <div class="plan-feature">取引履歴 <b>無制限・全期間</b></div>
-          <div class="plan-feature">口座登録 <b>無制限</b></div>
-          <div class="plan-feature" style="color: #9ca3af;">銘柄比較 3銘柄 / ウォッチ 10銘柄 / アラート 3件</div>
+          <div class="plan-feature" style="color: #9ca3af;">取引履歴 500件 or 直近3年</div>
           <div class="plan-feature" style="color: #9ca3af;">フォロー上限 20人</div>
           <div class="plan-feature" style="color: #9ca3af;">控えめな広告表示</div>
         </div>
@@ -647,8 +654,8 @@
           <div class="plan-feature"><b>NISAアラート</b>(米国株配当の取戻不可、枠管理)</div>
           <div class="plan-feature"><b>リバランス提案</b>(目標配分との乖離アラート)</div>
           <div class="plan-feature"><b>What-If シミュレーション</b>(月積立・想定年率の変動)</div>
-          <div class="plan-feature">まとめ通知 <b>+ 日次</b></div>
-          <div class="plan-feature">銘柄比較 <b>10銘柄</b> / ウォッチ <b>50銘柄</b> / アラート <b>20件</b></div>
+          <div class="plan-feature">フォロー中ユーザーの<b>週1サマリー通知</b></div>
+          <div class="plan-feature">取引履歴 <b>無制限</b></div>
           <div class="plan-feature">フォロー上限 100人</div>
           <div class="plan-feature"><b>広告非表示</b></div>
         </div>
@@ -657,23 +664,22 @@
       <!-- Premium -->
       <div class="plan-card">
         <div class="plan-name">PREMIUM</div>
-        <div class="plan-tagline">即時通知・AIレポート。<br>FIRE志向の最強装備。</div>
+        <div class="plan-tagline">税最適化・即時通知・AIレポート。<br>FIRE志向の最強装備。</div>
         <div class="plan-price-row">
-          <div class="plan-price" data-monthly="¥800" data-yearly="¥665">¥800</div>
+          <div class="plan-price" data-monthly="¥600" data-yearly="¥498">¥600</div>
           <div class="plan-price-unit">/月</div>
         </div>
-        <div class="plan-billing-note" data-monthly-note="月¥800 · 年¥9,600" data-yearly-note="年¥7,980 一括 <span class='save-pill'>2ヶ月分お得</span>">月¥800 · 年¥9,600</div>
+        <div class="plan-billing-note" data-monthly-note="月¥600 · 年¥7,200" data-yearly-note="年¥5,980 一括 <span class='save-pill'>2ヶ月分お得</span>">月¥600 · 年¥7,200</div>
         <a href="#" class="plan-cta">Premium をはじめる</a>
 
         <div class="plan-features-title">Light に加えて</div>
         <div class="plan-features">
-          <div class="plan-feature">まとめ通知 <b>+ 即時プッシュ</b></div>
-          <div class="plan-feature">通知の絞り込み(銘柄・金額・ユーザー別)</div>
+          <div class="plan-feature"><b>税最適化シミュレーション</b>(配当課税3パターン比較、損益通算アドバイス)</div>
           <div class="plan-feature"><b>AI月次レポート</b>(パーソナライズされたポートフォリオ診断)</div>
-          <div class="plan-feature"><b>詳細シナリオ What-If</b>(楽観/中立/悲観の同時比較)</div>
-          <div class="plan-feature"><b>配当課税3パターン比較</b>(税額の集計表示)</div>
+          <div class="plan-feature">フォロー中ユーザーの<b>即時プッシュ通知</b></div>
+          <div class="plan-feature">通知の絞り込み(銘柄・金額・ユーザー別)</div>
           <div class="plan-feature">為替差損益の分離表示(高度な税務処理)</div>
-          <div class="plan-feature">ウォッチリスト <b>無制限</b> / アラート <b>無制限</b></div>
+          <div class="plan-feature">詳細シナリオシミュレーション</div>
           <div class="plan-feature">フォロー上限 <b>無制限</b></div>
         </div>
       </div>
@@ -701,19 +707,16 @@
             </th>
             <th>
               <div class="col-plan-name">Premium</div>
-              <div class="col-plan-price">¥800/月</div>
+              <div class="col-plan-price">¥600/月</div>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr class="cat-row"><td colspan="4">資産管理</td></tr>
-          <tr><td>8カテゴリ管理(MVP=3カテゴリ、Phase 2/3 で順次拡張)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>口座登録数</td><td>無制限</td><td>無制限</td><td>無制限</td></tr>
-          <tr><td>取引履歴</td><td>無制限・全期間</td><td>無制限・全期間</td><td>無制限・全期間</td></tr>
+          <tr><td>7カテゴリ管理</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>複数口座対応</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>取引履歴</td><td>500件 or 直近3年</td><td>無制限</td><td>無制限</td></tr>
           <tr><td>外貨ポジション(USD・EUR等)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>銘柄比較(同時比較数)</td><td>3銘柄</td><td>10銘柄</td><td>10銘柄</td></tr>
-          <tr><td>ウォッチリスト</td><td>10銘柄</td><td>50銘柄</td><td>無制限</td></tr>
-          <tr><td>価格アラート</td><td>3件</td><td>20件</td><td>無制限</td></tr>
 
           <tr class="cat-row"><td colspan="4">パフォーマンス分析</td></tr>
           <tr><td>XIRR(実利回り)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -727,7 +730,8 @@
           <tr><td>損益通算・還付見込み計算</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>外国税額控除の試算</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>NISAアラート(米国配当・枠管理)</td><td><span class="dash">−</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>配当課税3パターン比較(税額の集計表示)</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>配当課税3パターン比較</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>損益通算アドバイス(売却タイミング提案)</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>為替差損益の分離表示</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="cat-row"><td colspan="4">シミュレーション</td></tr>
@@ -739,11 +743,10 @@
           <tr><td>AI月次ポートフォリオレポート</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="cat-row"><td colspan="4">SNS・通知</td></tr>
-          <tr><td>ホルダーコミュニティ・チア・保有理由</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>発信スタジオ(全機能)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>ランキング・公開プロフィール</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>ランキング・フィード</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>公開プロフィール(XIRR・TWR・配分)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>フォロー上限</td><td>20人</td><td>100人</td><td>無制限</td></tr>
-          <tr><td>まとめ通知</td><td>週次</td><td>週次 + 日次</td><td>週次 + 日次 + 即時プッシュ</td></tr>
+          <tr><td>フィード通知</td><td>なし</td><td>週1サマリー</td><td>即時プッシュ</td></tr>
           <tr><td>通知の絞り込み(銘柄・金額・ユーザー別)</td><td><span class="dash">−</span></td><td><span class="dash">−</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="cat-row"><td colspan="4">その他</td></tr>
@@ -799,7 +802,7 @@
     <h2>料金に関するよくある質問</h2>
 
     <details class="faq-item">
-      <summary class="faq-q"><span class="faq-num">01</span><span>無料プランだけでもFIREを目指せますか?</span></summary>
+      <summary class="faq-q"><span class="faq-num">01</span><span>無料プランだけでも経済的自立を目指せますか?</span></summary>
       <p class="faq-a">はい。資産管理、XIRR・TWR・拠出効果すべての計算、FIRE達成予測、ベンチマーク比較、SNS機能まで、コア機能はすべて無料プランに含まれます。Light・Premium は「税務最適化」「リバランス」「即時通知」など、本格運用フェーズに入った時に追加されるオプションです。</p>
     </details>
 
@@ -810,7 +813,7 @@
 
     <details class="faq-item">
       <summary class="faq-q"><span class="faq-num">03</span><span>年払いはどれくらいお得ですか?</span></summary>
-      <p class="faq-a">月払いと比較して、年払いは<b>2ヶ月分お得</b>です。Light プランの場合:月払いだと年¥3,600 → 年払いは¥2,980。Premium プランの場合:月払いだと年¥9,600 → 年払いは¥7,980。1年以上の利用予定なら年払いがおすすめです。</p>
+      <p class="faq-a">月払いと比較して、年払いは<b>2ヶ月分お得</b>です。Light プランの場合:月払いだと年¥3,600 → 年払いは¥2,980。Premium プランの場合:月払いだと年¥7,200 → 年払いは¥5,980。1年以上の利用予定なら年払いがおすすめです。</p>
     </details>
 
     <details class="faq-item">
@@ -852,7 +855,8 @@
       <a href="disclaimer.html">免責事項</a>
       <a href="scta.html">特定商取引法に基づく表記</a>
     </div>
-    <div>© 2026 fire together. 投資判断はご自身の責任で。</div>
+    <div style="font-size:13px;color:#9ca3af;margin-bottom:8px;">Financial Independence, within REach.</div>
+    <div>© 2026 みんなでFIRE · 投資判断はご自身の責任で。</div>
   </div>
 </footer>
 
