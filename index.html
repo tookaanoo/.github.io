@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fire together - みんなで、FIRE する。</title>
+<title>みんなでFIRE - Financial Independence, within REach.</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -25,6 +25,13 @@
   .container-xs { max-width: 800px; margin: 0 auto; padding: 0 24px; }
   .grad-text {
     background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -162,6 +169,14 @@
     font-size: 72px;
     line-height: 1.05;
     letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .hero-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #4b5563;
+    letter-spacing: -0.01em;
     margin-bottom: 24px;
   }
   .hero-desc {
@@ -769,7 +784,6 @@
   .asset-card.cat-jp::before { background: #e8112d; }
   .asset-card.cat-global::before { background: #9c27b0; }
   .asset-card.cat-fund::before { background: #2196f3; }
-  .asset-card.cat-reit::before { background: #00897b; }
   .asset-card.cat-metal::before { background: #f9a825; }
   .asset-card.cat-bond::before { background: #2e7d32; }
   .asset-card.cat-fx::before { background: #0277bd; }
@@ -783,7 +797,6 @@
   .asset-card.cat-jp .asset-cat-label { color: #e8112d; }
   .asset-card.cat-global .asset-cat-label { color: #9c27b0; }
   .asset-card.cat-fund .asset-cat-label { color: #2196f3; }
-  .asset-card.cat-reit .asset-cat-label { color: #00897b; }
   .asset-card.cat-metal .asset-cat-label { color: #f9a825; }
   .asset-card.cat-bond .asset-cat-label { color: #2e7d32; }
   .asset-card.cat-fx .asset-cat-label { color: #0277bd; }
@@ -1581,95 +1594,6 @@
   .mb-6 { margin-bottom: 24px; }
   .mt-4 { margin-top: 16px; }
   .text-center { text-align: center; }
-
-  /* ===== COMMUNITY v0.5: SNS 3層構造 ===== */
-  .cf-list { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
-  .cf-list li { display: flex; gap: 14px; align-items: flex-start; }
-  .cf-emoji {
-    flex-shrink: 0;
-    width: 40px; height: 40px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    background: linear-gradient(135deg, #fff4f8 0%, #ffe1ec 100%);
-    border-radius: 10px;
-  }
-  .cf-text { display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
-  .cf-text b { font-size: 14px; font-weight: 800; color: #111827; }
-  .cf-text span { font-size: 13px; color: #6b7280; line-height: 1.6; }
-
-  .holder-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    border: 1px solid #f3f4f6;
-  }
-  .hc-eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    color: #ec4899;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .hc-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 14px;
-    border-bottom: 1px solid #f3f4f6;
-    margin-bottom: 16px;
-  }
-  .hc-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
-  .hc-meta { font-size: 12px; color: #6b7280; }
-  .hc-cheer {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ec4899;
-    padding: 6px 12px;
-    background: #fff4f8;
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-  .hc-reason {
-    display: flex;
-    gap: 12px;
-    padding: 10px 0;
-    align-items: flex-start;
-  }
-  .hc-avatar {
-    flex-shrink: 0;
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff3d6e 0%, #d61f4a 100%);
-  }
-  .hc-avatar-blue { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-  .hc-avatar-orange { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-  .hc-reason-body { flex: 1; }
-  .hc-reason-head {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
-  .hc-reason-head span {
-    font-size: 11px;
-    color: #9ca3af;
-    font-weight: 400;
-    margin-left: 4px;
-  }
-  .hc-reason-text {
-    font-size: 13px;
-    color: #374151;
-    line-height: 1.5;
-  }
-  .hc-footer {
-    text-align: center;
-    font-size: 12px;
-    color: #9ca3af;
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid #f3f4f6;
-  }
 </style>
 </head>
 <body>
@@ -1691,7 +1615,7 @@
           </defs>
         </svg>
       </div>
-      <span class="logo-text">fire together</span>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
     </div>
     <div class="nav-links">
       <a href="features.html">機能紹介</a>
@@ -1722,8 +1646,9 @@
           みんなで、<br>
           <span class="grad-text">FIRE する。</span>
         </h1>
+        <p class="hero-tagline">Financial Independence, within REach.</p>
         <p class="hero-desc">
-          <b>fire together</b> は、ポートフォリオを共有して、同じ目標を持つ仲間と一緒に経済的自由を目指す資産運用 SNS。
+          <b>みんなでFIRE</b> は、ポートフォリオを共有して、同じ目標を持つ仲間と一緒に経済的自立を目指す資産運用 SNS。
         </p>
         <div class="store-buttons">
           <a href="#" class="store-btn">
@@ -1772,7 +1697,7 @@
         </div>
         <div class="hero-stats">
           <div>
-            <div class="stat-num">8</div>
+            <div class="stat-num">7</div>
             <div class="stat-label">資産カテゴリ</div>
           </div>
           <div>
@@ -1885,8 +1810,8 @@
     <div class="props-grid">
       <div class="prop-card">
         <div class="num-tag">01 RECORD</div>
-        <h3>8カテゴリを、1つの画面で。</h3>
-        <p>日本株、海外株、投資信託・ETF、J-REIT、債券、貴金属、為替、仮想通貨。資産形成のすべてを記録できる。日々の成長を、視覚化する手帳のように。</p>
+        <h3>7カテゴリを、1つの画面で。</h3>
+        <p>日本株、海外株、投資信託、金属、債券、為替、仮想通貨。資産形成のすべてを記録できる。日々の成長を、視覚化する手帳のように。</p>
         <div class="big-num">¥14.2M</div>
         <div class="small-label">total assets</div>
       </div>
@@ -1956,7 +1881,7 @@
       </div>
       <div class="stage-card">
         <div class="stage-num">07</div>
-        <div class="stage-name">達成 or その先</div>
+        <div class="stage-name">継続 or 次の一歩</div>
         <div class="stage-range">¥1.5億〜</div>
       </div>
     </div>
@@ -1966,80 +1891,190 @@
   </div>
 </section>
 
-<!-- ========== COMMUNITY (v0.5: SNS 3層構造) ========== -->
+<!-- ========== COMMUNITY ========== -->
 <section class="section bg-gray" id="community">
   <div class="container-sm">
     <div class="two-col">
       <div>
         <div class="eyebrow">COMMUNITY</div>
         <h2>
-          1人じゃない、<br>
-          <span class="grad-text">FIRE。</span>
+          学びは、上から。<br>
+          <span class="grad-text">ヒントは、横から。</span>
         </h2>
-        <p>同じ銘柄を持つ仲間とつながる。煽らない、ランキング化しない、当事者性で語る。SNS の3層設計で、健全なコミュニティを。</p>
-        <ul class="cf-list">
-          <li>
-            <div class="cf-emoji">🏠</div>
-            <div class="cf-text">
-              <b>ホルダーコミュニティ</b>
-              <span>同じ銘柄を持つ人の輪。額はレンジ表示のみ、人数と保有期間で語る</span>
-            </div>
-          </li>
-          <li>
-            <div class="cf-emoji">💪</div>
-            <div class="cf-text">
-              <b>応援(チア)スタンプ</b>
-              <span>💪 ナイスホールド・🎉 おめでとう・🫡 お疲れさま。労いと連帯の3種</span>
-            </div>
-          </li>
-          <li>
-            <div class="cf-emoji">✏️</div>
-            <div class="cf-text">
-              <b>「なぜ私は持つか」保有理由</b>
-              <span>一人称で書く。保有期間で裏付け、公開範囲はオプトイン</span>
-            </div>
-          </li>
-          <li>
-            <div class="cf-emoji">📬</div>
-            <div class="cf-text">
-              <b>まとめ通知(ダイジェスト)</b>
-              <span>フォロー先の動きを遅延+まとめて配信。週次/日次/即時</span>
-            </div>
-          </li>
-        </ul>
+        <p>一つ上のステージの人をフォローすれば、未来の自分の道筋が見えてくる。同じ資産帯の仲間とは、日々の判断や工夫を共有できる。順位を争うんじゃない、お互いから学び合うコミュニティ。</p>
       </div>
-      <div>
-        <div class="holder-card">
-          <div class="hc-eyebrow">ホルダーコミュニティ · オルカン</div>
-          <div class="hc-header">
+      <div class="ranking-card">
+        <div class="ranking-header">
+          <span style="font-weight:700;">RANKING</span>
+          <span style="font-weight:700;">¥10M〜30M の人たち</span>
+          <span class="pink-label">▲ YOUR BRACKET</span>
+        </div>
+        <div class="ranking-row top">
+          <div class="left">
+            <span class="rank-num">#1</span>
+            <div class="avatar avatar-md"></div>
+            <span class="name">Aya K.</span>
+          </div>
+          <span class="pct">+47.8%</span>
+        </div>
+        <div class="ranking-row">
+          <div class="left">
+            <span class="rank-num">#2</span>
+            <div class="avatar avatar-md blue"></div>
+            <span class="name">Ken S.</span>
+          </div>
+          <span class="pct">+38.2%</span>
+        </div>
+        <div class="ranking-row you">
+          <div class="left">
+            <span class="rank-num">#3</span>
+            <div class="avatar avatar-md"></div>
+            <span class="name">You</span>
+          </div>
+          <span class="pct">+28.4%</span>
+        </div>
+        <div class="ranking-row">
+          <div class="left">
+            <span class="rank-num">#4</span>
+            <div class="avatar avatar-md green"></div>
+            <span class="name">Hiro M.</span>
+          </div>
+          <span class="pct">+24.1%</span>
+        </div>
+        <div class="ranking-row">
+          <div class="left">
+            <span class="rank-num">#5</span>
+            <div class="avatar avatar-md yellow"></div>
+            <span class="name">Mio K.</span>
+          </div>
+          <span class="pct">+19.7%</span>
+        </div>
+        <div class="ranking-mini">
+          <div class="info">
+            <div class="avatar avatar-md"></div>
             <div>
-              <div class="hc-title">eMAXIS Slim 全世界株式</div>
-              <div class="hc-meta">ホルダー 1,247人 · 平均保有 2年3ヶ月</div>
-            </div>
-            <div class="hc-cheer">💪 326</div>
-          </div>
-          <div class="hc-reason">
-            <div class="hc-avatar"></div>
-            <div class="hc-reason-body">
-              <div class="hc-reason-head">@hiro_fire <span>保有 3年2ヶ月</span></div>
-              <div class="hc-reason-text">「コアにオルカン。配分は気にせず淡々と」</div>
+              <div class="info-name">Aya K.</div>
+              <div class="info-pct">+47.8%</div>
             </div>
           </div>
-          <div class="hc-reason">
-            <div class="hc-avatar hc-avatar-blue"></div>
-            <div class="hc-reason-body">
-              <div class="hc-reason-head">@chappy <span>保有 1年5ヶ月</span></div>
-              <div class="hc-reason-text">「下落日も買い増し。むしろチャンス」</div>
-            </div>
+          <button class="follow-btn">フォロー</button>
+          <div class="right">
+            <div class="right-label">LV. 3</div>
+            <div class="right-pct">67.3%</div>
           </div>
-          <div class="hc-reason">
-            <div class="hc-avatar hc-avatar-orange"></div>
-            <div class="hc-reason-body">
-              <div class="hc-reason-head">@mio_k <span>保有 4年8ヶ月</span></div>
-              <div class="hc-reason-text">「子の教育資金の一部もここに」</div>
-            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ASSETS ========== -->
+<section class="section section-assets">
+  <div class="container">
+    <div class="assets-head">
+      <div>
+        <div class="eyebrow">7 ASSET CLASSES</div>
+        <h2>
+          日本株から、<br>
+          <span style="white-space:nowrap;">ビットコインまで。</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Portfolio header card -->
+    <div class="portfolio-header">
+      <div class="pf-user">
+        <div class="pf-avatar">YT</div>
+        <div>
+          <div class="pf-info-name">
+            @yuki_t のポートフォリオ
+            <span class="pf-sample-tag">SAMPLE</span>
           </div>
-          <div class="hc-footer">同じ銘柄を持つ人と、ゆるくつながる</div>
+          <div class="pf-info-bio">PdM, 33歳・5口座を一元管理・¥30M 帯</div>
+        </div>
+      </div>
+      <div class="pf-stats">
+        <div>
+          <div class="pf-stat-label">TOTAL</div>
+          <div class="pf-stat-val">¥14.2M</div>
+        </div>
+        <div>
+          <div class="pf-stat-label">HOLDINGS</div>
+          <div class="pf-stat-val">38 銘柄</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asset cards row -->
+    <div class="assets-grid">
+      <div class="asset-card cat-jp">
+        <div class="asset-cat-label">JP STOCKS</div>
+        <h3>日本株</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">36<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">12 銘柄</span>
+          <span class="asset-change up">+2.18%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-global">
+        <div class="asset-cat-label">US / GLOBAL</div>
+        <h3>海外株</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">24<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">8 銘柄</span>
+          <span class="asset-change down">-0.34%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-fund">
+        <div class="asset-cat-label">FUNDS &amp; ETF</div>
+        <h3>投資信託・ETF</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">18<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">6 銘柄</span>
+          <span class="asset-change up">+1.12%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-metal">
+        <div class="asset-cat-label">PRECIOUS METAL</div>
+        <h3>金・銀・PT</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">8<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">3 銘柄</span>
+          <span class="asset-change up">+0.45%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-bond">
+        <div class="asset-cat-label">BONDS</div>
+        <h3>債券</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">7<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">4 銘柄</span>
+          <span class="asset-change up">+0.22%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-fx">
+        <div class="asset-cat-label">FX</div>
+        <h3>為替</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">4<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">2 銘柄</span>
+          <span class="asset-change down">-0.18%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-crypto">
+        <div class="asset-cat-label">CRYPTO</div>
+        <h3>仮想通貨</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">3<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">3 銘柄</span>
+          <span class="asset-change up">+1.84%</span>
         </div>
       </div>
     </div>
@@ -2250,7 +2285,7 @@
           <span class="faq-num">01</span>
           <span class="faq-q-text">取引はこのアプリで行えますか？</span>
         </summary>
-        <p class="faq-a">いいえ。fire together は記録と共有のためのアプリです。実際の売買は証券会社・暗号資産取引所などで行ってください。アプリ側はあなたの取引を集計し、可視化と仲間との比較を行います。</p>
+        <p class="faq-a">いいえ。みんなでFIRE は記録と共有のためのアプリです。実際の売買は証券会社・暗号資産取引所などで行ってください。アプリ側はあなたの取引を集計し、可視化と仲間との比較を行います。</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
@@ -2264,7 +2299,7 @@
           <span class="faq-num">03</span>
           <span class="faq-q-text">対応している証券口座は？</span>
         </summary>
-        <p class="faq-a">fire together は特定の証券会社と API 連携していません。どの証券会社・暗号資産取引所のデータでも、手入力または取引履歴のスクリーンショットから取り込んで管理できます。SBI証券・楽天証券・マネックス証券など主要なフォーマットに対応しています。</p>
+        <p class="faq-a">みんなでFIRE は特定の証券会社と API 連携していません。どの証券会社・暗号資産取引所のデータでも、手入力または取引履歴のスクリーンショットから取り込んで管理できます。SBI証券・楽天証券・マネックス証券など主要なフォーマットに対応しています。</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
@@ -2278,7 +2313,7 @@
           <span class="faq-num">05</span>
           <span class="faq-q-text">料金体系は？</span>
         </summary>
-        <p class="faq-a">ベース機能はすべて無料でご利用いただけます。<br>・無料:8カテゴリ資産管理、SNS(ホルダーコミュニティ・チア・保有理由)、ランキング、まとめ通知(週次)、FIREシミュレーション、発信スタジオ<br>・Light(¥300/月):税務サマリー詳細、リバランス提案、まとめ通知(日次)、ウォッチリスト50銘柄<br>・Premium(¥800/月):配当課税3パターン比較、即時プッシュ通知、AI月次レポート、ウォッチリスト無制限</p>
+        <p class="faq-a">ベース機能はすべて無料でご利用いただけます。<br>・無料:7カテゴリ資産管理、SNS、ランキング、フィード、FIREシミュレーション<br>・Light(¥300/月):税務サマリー詳細、リバランス提案、週次通知<br>・Premium(¥600/月):税最適化、即時通知、AI月次レポート</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
@@ -2300,7 +2335,7 @@
       <span class="grad-text">始められる。</span>
     </h2>
     <p>
-      スタート期の人も、加速期の人も、達成済みの人も。
+      スタート期の人も、加速期の人も、FIRE達成した人も。
       あなたの今のステージで、ちょうど合う仲間と歩める。
     </p>
     <div class="anystage-tags">
@@ -2309,7 +2344,7 @@
       <span class="anystage-tag">#40代加速期</span>
       <span class="anystage-tag">#インデックス投資</span>
       <span class="anystage-tag">#高配当</span>
-      <span class="anystage-tag">#FIRE達成</span>
+      <span class="anystage-tag">#経済的自立</span>
     </div>
   </div>
 </section>
@@ -2386,9 +2421,9 @@
               </defs>
             </svg>
           </div>
-          <span class="logo-text">fire together</span>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
         </div>
-        <p>みんなで FIRE を目指す、コミュニティ型 資産運用 SNS。</p>
+        <p>コミュニティ型 資産運用 SNS。<br>Financial Independence, within REach.</p>
       </div>
       <div class="footer-col">
         <div class="footer-head">プロダクト</div>
@@ -2416,7 +2451,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2026 fire together · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
     <div>v1.18.3-beta</div>
   </div>
 </footer>
