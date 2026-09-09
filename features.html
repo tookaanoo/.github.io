@@ -3,441 +3,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Features - みんなでFIRE</title>
+<title>機能紹介 - みんなでFIRE</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Noto Sans JP', 'Inter', sans-serif;
-    color: #111827;
-    background: #fff;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; }
-  ul { list-style: none; }
+/* === site.css（共通スタイル）をインライン展開。編集元は site/site.css === */
+/* みんなでFIRE — 共通スタイル（案C · Community Heat）
+   トップページ (index.html) の視覚言語を全ページで共有するための土台。 */
 
-  /* ===== Utilities ===== */
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .container-sm { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-  .container-xs { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-  .grad-text {
-    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-  .logo-text .grad-text {
-    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-weight: 900;
-  }
-  .grad-bg {
-    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
-  }
-  .grad-bg-cta {
-    background: linear-gradient(135deg, #ff4d7a 0%, #ff2266 50%, #c91d6e 100%);
-  }
-  .grad-bg-soft {
-    background: linear-gradient(180deg, #fff 0%, #ffeef2 100%);
-  }
-  .eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    color: #ec4899;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
+:root{
+  --ink:#111827;--ink-2:#374151;--ink-3:#4b5563;--muted:#6b7280;--muted-2:#9ca3af;
+  --line:#f3f4f6;--line-2:#e5e7eb;
+  --accent:#ec4899;--accent-dark:#be185d;--accent-soft:#fce4ec;
+  --linen:#f5f0ea;--paper:#faf9fb;--blush:#ffeef2;
+  --flame:linear-gradient(135deg,#ff3d6e 0%,#ff1f5a 50%,#d61f4a 100%);
+  --flame-cta:linear-gradient(135deg,#ff4d7a 0%,#ff2266 50%,#c91d6e 100%);
+  --sans:'Noto Sans JP','Inter',sans-serif;
+  --display:'Inter','Noto Sans JP',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+ul{list-style:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);letter-spacing:-0.02em}
 
-  /* ===== Nav ===== */
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #fff;
-    border-bottom: 1px solid #f3f4f6;
-  }
-  .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo { display: flex; align-items: center; gap: 8px; }
-  .logo-icon {
-    width: 32px; height: 32px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .logo-icon svg { width: 100%; height: 100%; }
-  .logo-text { font-weight: 700; font-size: 17px; }
-  .nav-links { display: flex; gap: 48px; font-size: 14px; font-weight: 500; }
-  .nav-links a.active { color: #ec4899; }
-  .nav-actions { display: flex; gap: 12px; align-items: center; }
-  .login { font-size: 14px; font-weight: 600; }
-  .btn-primary {
-    padding: 10px 18px;
-    background: #111827;
-    color: #fff;
-    border-radius: 9999px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: #1f2937; }
+/* ===== Layout ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.container-sm{max-width:1000px;margin:0 auto;padding:0 24px}
+.container-xs{max-width:800px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.section-tight{padding:72px 0}
+.bg-linen{background:var(--linen)}
+.bg-paper{background:var(--paper)}
+.bg-blush{background:linear-gradient(180deg,#fff 0%,var(--blush) 100%)}
+.hairline-top{border-top:1px solid var(--line)}
 
-  /* ===== Hero ===== */
-  .page-hero {
-    padding: 80px 0 60px;
-    text-align: center;
-    background: linear-gradient(180deg, #fff 0%, #ffeef2 100%);
-  }
-  .page-hero h1 {
-    font-family: 'Inter', 'Noto Sans JP', sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    margin-bottom: 24px;
-  }
-  .page-hero p.lead {
-    font-size: 18px;
-    color: #6b7280;
-    max-width: 640px;
-    margin: 0 auto;
-  }
+/* ===== Type utilities ===== */
+.grad-text{background:var(--flame);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.logo-text .grad-text{background:linear-gradient(90deg,#e91e63 0%,#9c27b0 60%,#6a1b9a 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
+.eyebrow{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:16px}
+.eyebrow-gray{font-size:10px;font-weight:700;color:var(--muted-2);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px}
+.lead{font-size:16px;color:var(--muted);line-height:1.8}
+.note{font-size:12px;color:var(--muted-2);line-height:1.7}
 
-  /* ===== Feature Pillars ===== */
-  .pillars {
-    padding: 80px 0;
-    background: #fff;
-  }
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 40px;
-  }
-  .pillar-card {
-    padding: 28px 22px;
-    background: #fff;
-    border-radius: 18px;
-    border: 1px solid #f3f4f6;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  }
-  .pillar-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(236, 72, 153, 0.12);
-    border-color: #fce4ec;
-  }
-  .pillar-icon {
-    width: 52px; height: 52px;
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #fff0f5 0%, #ffe0ec 100%);
-    border: 1px solid #fce4ec;
-    position: relative;
-    transition: background 0.2s, border-color 0.2s;
-  }
-  .pillar-icon svg {
-    width: 26px;
-    height: 26px;
-    stroke: #e91e63;
-    stroke-width: 1.8;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: stroke 0.2s;
-  }
-  .pillar-card:hover .pillar-icon {
-    background: linear-gradient(135deg, #ff6b9d 0%, #e91e63 50%, #9c27b0 100%);
-    border-color: transparent;
-  }
-  .pillar-card:hover .pillar-icon svg {
-    stroke: #fff;
-  }
-  .pillar-num {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    width: 22px; height: 22px;
-    background: #111827;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 10px;
-    font-weight: 800;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.02em;
-  }
-  .pillar-card h3 {
-    font-size: 17px;
-    font-weight: 800;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-  .pillar-card p {
-    font-size: 13px;
-    color: #6b7280;
-    line-height: 1.6;
-  }
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:100%;height:100%}
+.logo-text{font-weight:700;font-size:17px;white-space:nowrap}
+.nav-links{display:flex;gap:36px;font-size:14px;font-weight:500}
+.nav-links a{color:var(--ink-2)}
+.nav-links a.active{color:var(--accent);font-weight:700}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-actions .login{font-size:13px;font-weight:600;color:var(--ink-2)}
+.btn-primary{background:var(--ink);color:#fff;padding:9px 17px;border-radius:9999px;font-size:13px;font-weight:700;transition:background .2s}
+.btn-primary:hover{background:#1f2937;color:#fff}
 
-  /* ===== Feature Detail Section ===== */
-  .feature-section {
-    padding: 80px 0;
-    border-top: 1px solid #f3f4f6;
-  }
-  .feature-section.alt { background: #faf9fb; }
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .feature-section.flip .feature-grid > div:first-child { order: 2; }
-  .feature-text h2 {
-    font-family: 'Inter', 'Noto Sans JP', sans-serif;
-    font-size: 44px;
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 20px;
-  }
-  .feature-text p.desc {
-    font-size: 16px;
-    color: #4b5563;
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-  .feature-list { display: grid; gap: 12px; }
-  .feature-list li {
-    display: flex;
-    gap: 12px;
-    font-size: 14px;
-    color: #374151;
-    line-height: 1.5;
-  }
-  .feature-list li::before {
-    content: '';
-    flex-shrink: 0;
-    width: 6px; height: 6px;
-    margin-top: 8px;
-    background: #ec4899;
-    border-radius: 50%;
-  }
-  .feature-list li b { color: #111827; }
+/* ===== Buttons ===== */
+.btn-flame{display:inline-block;background:var(--flame-cta);color:#fff;padding:15px 34px;border-radius:9999px;font-size:15px;font-weight:700;box-shadow:0 16px 36px -12px rgba(255,45,110,.5);transition:transform .2s}
+.btn-flame:hover{transform:translateY(-2px);color:#fff}
+.btn-ink{display:inline-block;background:var(--ink);color:#fff;padding:15px 34px;border-radius:9999px;font-size:15px;font-weight:700;transition:transform .2s}
+.btn-ink:hover{transform:translateY(-2px);color:#fff}
+.btn-ghost{display:inline-block;padding:14px 26px;border-radius:9999px;border:1px solid var(--line-2);font-size:14px;font-weight:700;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.store-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.store-btn{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;padding:10px 18px;border-radius:10px;transition:opacity .2s}
+.store-btn:hover{opacity:.85;color:#fff}
+.store-btn .store-icon{width:24px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.store-btn .store-icon svg{width:100%;height:100%}
+.store-btn .store-label-small{font-size:10px;opacity:.85;line-height:1.1;letter-spacing:.02em}
+.store-btn .store-label-main{font-size:17px;font-weight:600;line-height:1.1;letter-spacing:-0.01em}
 
-  /* ===== Mock Visual ===== */
-  .feature-mock {
-    background: #fff;
-    border-radius: 24px;
-    padding: 24px;
-    border: 1px solid #f3f4f6;
-    box-shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
-  }
-  .mock-eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    color: #9ca3af;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .mock-big {
-    font-size: 56px;
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .mock-sub { font-size: 14px; color: #6b7280; margin-bottom: 20px; }
-  .mock-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 16px;
-  }
-  .mock-mini {
-    padding: 14px;
-    background: #faf9fb;
-    border-radius: 12px;
-  }
-  .mock-mini-label {
-    font-size: 11px;
-    color: #9ca3af;
-    margin-bottom: 4px;
-  }
-  .mock-mini-val {
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-  }
-  .mock-mini-val.pink { color: #ec4899; }
-  .mock-mini-val.green { color: #059669; }
-  .mock-mini-val.red { color: #dc2626; }
+/* ===== Page hero ===== */
+.page-hero{position:relative;overflow:hidden;padding:88px 0 72px;background:linear-gradient(180deg,#fff 0%,var(--blush) 100%)}
+.page-hero::before{content:'';position:absolute;top:-180px;right:-120px;width:620px;height:620px;background:radial-gradient(circle,rgba(255,61,110,.16) 0%,transparent 70%);pointer-events:none}
+.page-hero > *{position:relative;z-index:1}
+.page-hero h1{font-size:64px;font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:20px}
+.page-hero .lead{max-width:600px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.hero-chip{background:#fff;border:1px solid var(--accent-soft);color:var(--accent-dark);font-size:12px;font-weight:700;padding:8px 15px;border-radius:9999px}
+.hero-chip:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 
-  /* Donut */
-  .donut-row {
-    display: flex; align-items: center; gap: 20px; margin: 12px 0;
-  }
-  .donut-bar {
-    flex: 1;
-    height: 8px;
-    background: #f3f4f6;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .donut-fill { height: 100%; background: linear-gradient(90deg, #ff3d6e, #d61f4a); }
-  .donut-label {
-    width: 90px;
-    font-size: 12px;
-    color: #6b7280;
-  }
-  .donut-pct {
-    width: 50px;
-    text-align: right;
-    font-size: 12px;
-    font-weight: 700;
-    color: #111827;
-  }
+/* ===== Sample attribution band ===== */
+.sample-band{background:#fff;border-radius:18px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.sample-user{display:flex;align-items:center;gap:14px}
+.sample-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#ff6b9d 0%,#9c27b0 100%);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;letter-spacing:-0.02em;flex-shrink:0}
+.sample-name{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:3px}
+.sample-tag{background:#111;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.05em}
+.sample-bio{font-size:12px;color:var(--muted)}
+.sample-stats{display:flex;gap:32px}
+.sample-stat-label{font-size:10px;color:var(--muted-2);letter-spacing:.15em;font-weight:600;margin-bottom:4px}
+.sample-stat-val{font-size:18px;font-weight:800}
+.sample-note{font-size:11px;color:var(--muted-2);margin-top:10px;padding-left:4px}
 
-  /* Tax box */
-  .tax-line {
-    display: flex; justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #f3f4f6;
-    font-size: 13px;
-  }
-  .tax-line:last-child { border-bottom: none; }
-  .tax-line span:first-child { color: #6b7280; }
-  .tax-line span:last-child { font-weight: 700; color: #111827; }
-  .tax-line.win span:last-child { color: #059669; }
+/* ===== Cards ===== */
+.card{background:#fff;border-radius:20px;border:1px solid var(--line);padding:26px}
+.card-lift{transition:transform .2s,box-shadow .2s,border-color .2s}
+.card-lift:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(236,72,153,.12);border-color:var(--accent-soft)}
+.glass-card{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.05)}
 
-  /* SNS */
-  .sns-card {
-    padding: 14px;
-    background: #faf9fb;
-    border-radius: 14px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .sns-avatar {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b9d, #9c27b0);
-    flex-shrink: 0;
-  }
-  .sns-content { flex: 1; min-width: 0; }
-  .sns-user { font-size: 13px; font-weight: 700; }
-  .sns-stage { font-size: 11px; color: #ec4899; font-weight: 600; }
-  .sns-perf { font-size: 13px; font-weight: 800; }
-  .sns-perf.green { color: #059669; }
+/* ===== Dark heat section ===== */
+.heat{position:relative;overflow:hidden;color:#fff;padding:96px 0;background:radial-gradient(ellipse at top right,#3a0e1f 0%,#1a0810 40%,#0a0408 100%)}
+.heat::before{content:'';position:absolute;top:18%;right:6%;width:520px;height:520px;background:radial-gradient(circle,rgba(255,45,110,.24) 0%,transparent 70%);pointer-events:none}
+.heat > *{position:relative;z-index:1}
+.heat .eyebrow{color:#f9a8d4}
+.heat h2,.heat h3{color:#fff}
+.heat p,.heat .lead{color:#9ca3af}
+.heat a:hover{color:#f9a8d4}
 
-  /* Stage timeline */
-  .stages-list {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    margin: 16px 0 8px;
-  }
-  .stage-cell {
-    aspect-ratio: 1;
-    background: #f3f4f6;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: #9ca3af;
-  }
-  .stage-cell.current {
-    background: linear-gradient(135deg, #ff3d6e, #d61f4a);
-    color: #fff;
-    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
-  }
-  .stage-cell.done {
-    background: #fce4ec;
-    color: #ec4899;
-  }
-  .stage-label-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: #9ca3af;
-  }
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--line-2);padding:20px 0}
+.faq-q{display:flex;align-items:flex-start;gap:12px;cursor:pointer;list-style:none;font-weight:700;font-size:16px;line-height:1.5}
+.faq-q::-webkit-details-marker{display:none}
+.faq-num{color:var(--accent);font-size:12px;font-weight:800;padding-top:4px;flex-shrink:0;font-family:var(--display)}
+.faq-a{font-size:14px;color:var(--ink-3);line-height:1.8;margin-top:12px;padding-left:32px}
+details[open] .faq-q{color:var(--accent-dark)}
 
-  /* ===== CTA bottom ===== */
-  .cta-final {
-    padding: 100px 0 120px;
-    background: linear-gradient(180deg, #ffeef2 0%, #fff 100%);
-    text-align: center;
-  }
-  .cta-final h2 {
-    font-family: 'Inter', 'Noto Sans JP', sans-serif;
-    font-size: 56px;
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 24px;
-  }
-  .cta-final p { font-size: 16px; color: #6b7280; margin-bottom: 32px; }
-  .cta-btn {
-    display: inline-block;
-    padding: 16px 40px;
-    background: #111827;
-    color: #fff;
-    border-radius: 9999px;
-    font-size: 15px;
-    font-weight: 700;
-    transition: transform 0.2s;
-  }
-  .cta-btn:hover { transform: translateY(-2px); }
+/* ===== Flame CTA ===== */
+.cta-flame{background:var(--flame-cta);color:#fff;padding:96px 0;text-align:center}
+.cta-flame .eyebrow{color:rgba(255,255,255,.85)}
+.cta-flame h2{font-size:72px;font-weight:900;line-height:1.05;margin-bottom:20px}
+.cta-flame p{font-size:15px;opacity:.92;margin-bottom:32px;line-height:1.8}
+.cta-flame .store-buttons{justify-content:center}
+.cta-flame a.underline-link{color:#fff;font-weight:700;border-bottom:1px solid rgba(255,255,255,.5)}
 
-  /* ===== Footer ===== */
-  .footer {
-    padding: 40px 0;
-    background: #fafafa;
-    border-top: 1px solid #f3f4f6;
-    font-size: 13px;
-    color: #6b7280;
-    text-align: center;
-  }
-  .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 12px; }
+/* ===== Footer ===== */
+.footer{background:#fff;border-top:1px solid var(--line);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px}
+.footer-col .footer-head{font-size:10px;color:var(--muted-2);font-weight:700;letter-spacing:.2em;margin-bottom:12px}
+.footer-col ul li{font-size:12px;color:var(--ink-3);margin-bottom:8px}
+.footer-bottom{max-width:1200px;margin:48px auto 0;padding:24px 24px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted-2)}
 
-  /* Responsive */
-  @media (max-width: 900px) {
-    .page-hero h1 { font-size: 44px; }
-    .cta-final h2 { font-size: 38px; }
-    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-    .feature-grid { grid-template-columns: 1fr; gap: 36px; }
-    .feature-section.flip .feature-grid > div:first-child { order: 0; }
-    .feature-text h2 { font-size: 32px; }
-    .mock-big { font-size: 40px; }
-  }
-  @media (max-width: 768px) {
-    .nav-links { gap: 16px; font-size: 13px; }
-    .nav-inner { padding: 14px 16px; gap: 12px; }
-    .nav-actions { gap: 8px; }
-    .nav-actions .login { display: none; }
-    .btn-primary { padding: 8px 14px; font-size: 12px; }
-    .logo-text { display: none; }
-  }
+/* ===== Responsive ===== */
+@media (max-width:900px){
+  .section{padding:72px 0}
+  .page-hero{padding:64px 0 56px}
+  .page-hero h1{font-size:42px;letter-spacing:-0.03em}
+  .cta-flame{padding:72px 0}
+  .cta-flame h2{font-size:44px}
+  .sample-band{flex-direction:column;align-items:flex-start}
+  .sample-stats{width:100%;justify-content:flex-start;gap:24px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column}
+}
+@media (max-width:768px){
+  .nav-inner{padding:12px 16px;gap:12px}
+  .nav-links{gap:18px;font-size:13px}
+  .nav-actions .login{display:none}
+  .logo-text{display:none}
+  .btn-primary{padding:8px 14px;font-size:12px}
+  .container,.container-sm,.container-xs{padding:0 16px}
+  .page-hero h1{font-size:34px}
+  .cta-flame h2{font-size:36px}
+  .faq-a{padding-left:0}
+}
+</style>
+<style>
+/* ===== Pillars (案A: editorial rows) ===== */
+.rowsA{margin-top:40px;border-top:1px solid var(--line-2)}
+.rowA{display:grid;grid-template-columns:110px 1fr 1.3fr;gap:32px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line-2)}
+.rowA .n{font-family:var(--display);font-size:52px;font-weight:900;letter-spacing:-0.04em;line-height:.9}
+.rowA h3{font-size:26px;font-weight:900;letter-spacing:-0.03em}
+.rowA .kw{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--accent);margin-top:8px}
+.rowA p{font-size:13.5px;color:var(--ink-3);line-height:1.85}
+
+/* ===== 基本機能 (案2: ジグザグ詳説) ===== */
+.zz{margin-top:40px;display:flex;flex-direction:column}
+.zzRow{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:40px 0;border-bottom:1px solid var(--line)}
+.zzRow:last-child{border-bottom:none}
+.zzRow.flip .zzText{order:2}
+.zzText .n{font-family:var(--display);font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--accent)}
+.zzText h3{font-size:30px;font-weight:900;letter-spacing:-0.03em;margin:12px 0 10px}
+.zzText p{font-size:13.5px;color:var(--ink-3);line-height:1.85;max-width:420px}
+.zzText .spec{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.zzText .spec span{font-size:10.5px;font-weight:700;background:var(--accent-soft);color:var(--accent-dark);padding:4px 9px;border-radius:6px}
+.vizBig{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;min-height:196px;box-shadow:0 14px 40px rgba(17,24,39,.06);display:flex;flex-direction:column;gap:9px}
+.vizBig .cap{font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2)}
+.hm{display:grid;gap:5px;height:100%}
+.hm div{border-radius:5px;padding:6px 7px;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--display);font-weight:800;overflow:hidden}
+.hm .nm{font-size:10.5px;line-height:1.25}
+.hm .pc{font-size:11.5px}
+.up3{background:#c8102e;color:#fff}.up2{background:#d12b55;color:#fff}.up1{background:#f9b3c3;color:#8c0b25}.up0{background:#fde4ea;color:#8c0b25}
+.dn1{background:#cfe9d8;color:#14532d}.dn2{background:#35714e;color:#fff}
+.hmScale{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:700;color:var(--muted);font-family:var(--display)}
+.hmScale .grad{flex:1;height:7px;border-radius:4px;background:linear-gradient(90deg,#2e7d32,#eef0ef 50%,#c8102e)}
+.calHead{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;font-family:var(--display);font-size:9.5px;font-weight:800;letter-spacing:.14em;color:var(--muted-2);text-transform:uppercase;text-align:center;padding-bottom:7px;border-bottom:1px solid var(--line-2)}
+.calGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:7px}
+.calCell{border-radius:7px;border:1px solid var(--line);padding:4px 5px;display:flex;flex-direction:column;gap:3px;min-height:30px}
+.calCell .d{font-family:var(--display);font-size:10px;font-weight:800;color:var(--muted-2)}
+.calCell.sat .d{color:#60a5fa}.calCell.sun .d{color:#f87171}
+.calChip{font-size:10px;font-weight:800;border-radius:4px;padding:1px 5px;line-height:1.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.calChip.div{background:#fce4ec;color:#9d174d}
+.calChip.earn{background:#e0e7ff;color:#312e81}
+.calChip.cont{background:#fef3c7;color:#8a5200}
+.calChip.macro{background:#111827;color:#fff}
+.calLegend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:10.5px;font-weight:700;color:var(--muted)}
+.calLegend i{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
+.serieLegend{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;font-weight:700;font-family:var(--display)}
+.serieLegend span i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.alert-row{display:flex;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:12px 14px;font-size:12px}
+.alert-row b{font-family:var(--display);font-weight:800}
+.dotpill{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:6px}
+
+/* ===== Feature rows ===== */
+.feature-row{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.feature-row.flip .fr-text{order:2}
+.fr-text h2{font-size:46px;font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
+.fr-text .desc{font-size:15px;color:var(--ink-3);line-height:1.85;margin-bottom:24px;max-width:460px}
+.heat .fr-text .desc{color:#9ca3af}
+.fr-list{display:grid;gap:11px}
+.fr-list li{display:flex;gap:12px;font-size:13.5px;color:var(--ink-2);line-height:1.65}
+.fr-list li::before{content:'';flex-shrink:0;width:6px;height:6px;margin-top:8px;background:var(--accent);border-radius:50%}
+.fr-list b{color:var(--ink);font-weight:700}
+.heat .fr-list li{color:#d1d5db}
+.heat .fr-list b{color:#fff}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:5px;vertical-align:1px;white-space:nowrap}
+.tag.free{background:#dcfce7;color:#15803d}
+.tag.light{background:var(--accent-soft);color:var(--accent-dark)}
+.tag.premium{background:#111827;color:#fff}
+.heat .tag.free{background:rgba(34,197,94,.18);color:#86efac}
+.heat .tag.light{background:rgba(236,72,153,.2);color:#fbcfe8}
+.heat .tag.premium{background:#fff;color:#111827}
+
+/* ===== Mock cards ===== */
+.mock{background:#fff;border-radius:22px;padding:26px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(17,24,39,.08)}
+.heat .mock{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.4);color:#fff}
+.mock-eyebrow{font-size:10px;font-weight:700;color:var(--muted-2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px}
+.mock-big{font-family:var(--display);font-size:56px;font-weight:900;letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
+.mock-sub{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.heat .mock-sub{color:#9ca3af}
+.mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.mock-mini{padding:14px;background:var(--paper);border-radius:12px}
+.heat .mock-mini{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07)}
+.mock-mini-label{font-size:10.5px;color:var(--muted-2);margin-bottom:5px;letter-spacing:.04em}
+.mock-mini-val{font-family:var(--display);font-size:19px;font-weight:800;letter-spacing:-0.01em}
+.mock-mini-val.pink{color:var(--accent)}
+.mock-mini-val.green{color:#059669}
+.heat .mock-mini-val.green{color:#34d399}
+.bar-row{display:flex;align-items:center;gap:16px;margin:11px 0}
+.bar-label{width:104px;font-size:12px;color:var(--muted)}
+.bar-track{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#ff3d6e,#d61f4a)}
+.bar-pct{width:44px;text-align:right;font-family:var(--display);font-size:12px;font-weight:700}
+.line-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+.line-row:last-of-type{border-bottom:none}
+.line-row span:first-child{color:var(--muted)}
+.line-row span:last-child{font-weight:700;font-family:var(--display)}
+.line-row.win span:last-child{color:#059669}
+.mock-callout{margin-top:20px;padding:14px;background:linear-gradient(135deg,#fff4f8 0%,#ffe1ec 100%);border-radius:12px;font-size:12px;color:var(--accent-dark);line-height:1.6}
+.heat .mock-callout{background:rgba(236,72,153,.12);border-left:3px solid var(--accent);color:#fce7f3}
+.sns-card{padding:13px;background:var(--paper);border-radius:14px;margin-bottom:9px;display:flex;align-items:center;gap:12px}
+.heat .sns-card{background:rgba(255,255,255,.05)}
+.sns-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#ff6b9d,#9c27b0);flex-shrink:0}
+.sns-user{font-size:13px;font-weight:700}
+.sns-hold{font-size:11px;color:var(--muted-2);font-weight:400}
+.sns-quote{font-size:12px;color:var(--ink-2);margin-top:2px}
+.heat .sns-quote{color:#d1d5db}
+.stages-cells{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:16px 0 8px}
+.stage-cell{aspect-ratio:1;background:var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:11px;font-weight:800;color:var(--muted-2)}
+.stage-cell.done{background:var(--accent-soft);color:var(--accent)}
+.stage-cell.current{background:var(--flame);color:#fff;box-shadow:0 8px 20px rgba(236,72,153,.32)}
+.cmp-table{width:100%;font-size:12px;border-collapse:collapse}
+.cmp-table th{text-align:right;padding:9px 4px;color:var(--muted);font-weight:600}
+.cmp-table th:first-child{text-align:left}
+.cmp-table thead tr{border-bottom:1px solid var(--line)}
+.cmp-table td{padding:9px 4px;text-align:right;font-family:var(--display)}
+.cmp-table td:first-child{text-align:left;font-family:var(--sans);color:var(--muted)}
+.cmp-table tbody tr{border-bottom:1px solid #f9fafb}
+.cmp-table tbody tr:last-child{border-bottom:none}
+.up-red{color:#dc2626;font-weight:700}
+.broadcast-prompt{padding:18px;background:linear-gradient(135deg,#fff4f8 0%,#ffe1ec 100%);border-radius:14px;margin-bottom:18px}
+.heat .broadcast-prompt{background:rgba(236,72,153,.14);border:1px solid rgba(236,72,153,.3)}
+.radio-line{display:flex;align-items:center;gap:9px;font-size:13px;margin-top:6px;color:var(--ink-2)}
+.heat .radio-line{color:#d1d5db}
+.mock-btn{margin-top:18px;width:100%;padding:13px;background:var(--flame);color:#fff;border:none;border-radius:11px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer}
+
+@media (max-width:900px){
+  .rowA{grid-template-columns:64px 1fr;gap:20px;padding:24px 0}
+  .rowA .n{font-size:38px}
+  .rowA p{grid-column:2}
+  .zzRow{grid-template-columns:1fr;gap:28px;padding:32px 0}
+  .zzRow.flip .zzText{order:0}
+  .zzText h3{font-size:25px}
+  .zzText p{max-width:none}
+}
+@media (max-width:900px){
+  .feature-row{grid-template-columns:1fr;gap:36px}
+  .feature-row.flip .fr-text{order:0}
+  .fr-text h2{font-size:32px}
+  .mock-big{font-size:40px}
+  .bar-label{width:84px}
+}
+@media (max-width:768px){
+  .stages-cells{grid-template-columns:repeat(4,1fr)}
+}
 </style>
 </head>
+<template id="__bundler_thumbnail" data-bg-color="#ffeef2">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="tf" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF6B9D"/><stop offset="0.4" stop-color="#E91E63"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+    <rect width="1200" height="800" fill="#ffeef2"/>
+    <g transform="translate(540 240) scale(1.5)"><path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#tf)"/></g>
+    <text x="600" y="590" text-anchor="middle" font-family="Inter, sans-serif" font-size="86" font-weight="900" fill="#111827">FEATURES</text>
+  </svg>
+</template>
 <body>
 
-<!-- ========== NAV ========== -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="logo">
@@ -446,10 +324,7 @@
           <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradF)"/>
           <defs>
             <linearGradient id="logoGradF" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF6B9D"/>
-              <stop offset="0.38" stop-color="#E91E63"/>
-              <stop offset="0.72" stop-color="#9C27B0"/>
-              <stop offset="1" stop-color="#6A1B9A"/>
+              <stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/>
             </linearGradient>
           </defs>
         </svg>
@@ -469,182 +344,138 @@
 
 <!-- ========== HERO ========== -->
 <section class="page-hero">
-  <div class="container-sm">
+  <div class="container">
     <div class="eyebrow">FEATURES</div>
-    <h1>
-      経済的自立のために、<br>
-      <span class="grad-text">必要なすべて。</span>
-    </h1>
+    <h1>経済的自立のために、<br><span class="grad-text">必要なすべて。</span></h1>
     <p class="lead">資産管理、コミュニティ、税務、シミュレーション。<br>FIRE 志向の個人投資家が「これが欲しかった」と思う機能を、ひとつのアプリに。</p>
+    <div class="hero-chips">
+      <a class="hero-chip" href="#record">記録</a>
+      <a class="hero-chip" href="#performance">パフォーマンス</a>
+      <a class="hero-chip" href="#tax">税務</a>
+      <a class="hero-chip" href="#community">コミュニティ</a>
+      <a class="hero-chip" href="#simulation">FIRE予測</a>
+      <a class="hero-chip" href="#stages">ステージ</a>
+      <a class="hero-chip" href="#broadcast">発信</a>
+      <a class="hero-chip" href="#tools">ツール</a>
+      <a class="hero-chip" href="#basics">基本機能</a>
+    </div>
   </div>
 </section>
 
-<!-- ========== 4 PILLARS ========== -->
-<section class="pillars">
+<!-- ========== 4 PILLARS (案A: editorial rows) ========== -->
+<section class="section bg-linen">
   <div class="container">
-    <div style="text-align: center;">
-      <div class="eyebrow">CORE PILLARS</div>
-      <h2 style="font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 900; letter-spacing: -0.02em;">4つの柱で、ゴールへ。</h2>
-    </div>
-    <div class="pillars-grid">
-
-      <!-- 01 記録 -->
-      <div class="pillar-card">
-        <div class="pillar-icon">
-          <span class="pillar-num">01</span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 21h18"/>
-            <rect x="5" y="13" width="3" height="8" rx="0.5"/>
-            <rect x="10.5" y="8" width="3" height="13" rx="0.5"/>
-            <rect x="16" y="4" width="3" height="17" rx="0.5"/>
-          </svg>
-        </div>
-        <h3>記録</h3>
+    <div class="eyebrow">CORE PILLARS</div>
+    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;">4つの柱で、ゴールへ。</h2>
+    <div class="rowsA">
+      <div class="rowA">
+        <div class="n grad-text">01</div>
+        <div><h3>記録</h3><div class="kw">RECORD</div></div>
         <p>8カテゴリ・複数口座の資産を、1つの画面で管理。手書きの手帳のように、日々の成長を可視化。</p>
       </div>
-
-      <!-- 02 共有 -->
-      <div class="pillar-card">
-        <div class="pillar-icon">
-          <span class="pillar-num">02</span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="8" r="3.5"/>
-            <circle cx="17" cy="11" r="2.5"/>
-            <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-            <path d="M14.5 20c0-2.5 2-4.5 4.5-4.5s2 0 2 0"/>
-          </svg>
-        </div>
-        <h3>共有</h3>
-        <p>同じ銘柄を持つ仲間とホルダーコミュニティでつながる。💪 チアと保有理由で、当事者性を持って学び合う。</p>
+      <div class="rowA">
+        <div class="n grad-text">02</div>
+        <div><h3>共有</h3><div class="kw">COMMUNITY</div></div>
+        <p>同じ銘柄を持つ仲間とホルダーコミュニティでつながる。チアと保有理由で、当事者性を持って学び合う。</p>
       </div>
-
-      <!-- 03 税務 -->
-      <div class="pillar-card">
-        <div class="pillar-icon">
-          <span class="pillar-num">03</span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
-            <path d="M14 3v5h5"/>
-            <path d="M8.5 14l2 2 4-4"/>
-          </svg>
-        </div>
-        <h3>税務</h3>
+      <div class="rowA">
+        <div class="n grad-text">03</div>
+        <div><h3>税務</h3><div class="kw">TAX</div></div>
         <p>NISA枠管理、外国税額控除、配当課税3パターン比較。確定申告の節税ポイントが見える。</p>
       </div>
-
-      <!-- 04 予測 -->
-      <div class="pillar-card">
-        <div class="pillar-icon">
-          <span class="pillar-num">04</span>
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="9"/>
-            <circle cx="12" cy="12" r="5.5"/>
-            <circle cx="12" cy="12" r="2"/>
-            <path d="M19 5l2-2M21 3h-3M21 3v3"/>
-          </svg>
-        </div>
-        <h3>予測</h3>
+      <div class="rowA">
+        <div class="n grad-text">04</div>
+        <div><h3>予測</h3><div class="kw">SIMULATION</div></div>
         <p>あなたの実績ベースで FIRE 到達年を試算。「年率5%固定」じゃない、本気の予測。</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURE 1: 記録 ========== -->
-<section class="feature-section">
+<!-- ========== SAMPLE BAND ========== -->
+<section style="padding:56px 0 0;">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="eyebrow-gray">この先の画面はすべて同じ人のデータです</div>
+    <div class="sample-band" style="border:1px solid var(--line);">
+      <div class="sample-user">
+        <div class="sample-avatar">YT</div>
+        <div>
+          <div class="sample-name">@yuki_t <span class="sample-tag">SAMPLE</span></div>
+          <div class="sample-bio">32歳 · 基礎構築期 · 積立5年目</div>
+        </div>
+      </div>
+      <div class="sample-stats">
+        <div><div class="sample-stat-label">TOTAL</div><div class="sample-stat-val">¥14.2M</div></div>
+        <div><div class="sample-stat-label">HOLDINGS</div><div class="sample-stat-val">38銘柄</div></div>
+        <div><div class="sample-stat-label">XIRR</div><div class="sample-stat-val" style="color:var(--accent)">+22.3%</div></div>
+      </div>
+    </div>
+    <div class="sample-note">↓ あなたのポートフォリオも、登録するとこう表示されます</div>
+  </div>
+</section>
+
+<!-- ========== 01 RECORD ========== -->
+<section class="section" id="record">
+  <div class="container">
+    <div class="feature-row">
+      <div class="fr-text">
         <div class="eyebrow">01 RECORD</div>
         <h2>8カテゴリ、<br>1つの画面で。</h2>
         <p class="desc">日本株、投資信託・ETF、J-REIT、海外株、海外ETF、仮想通貨、債券、貴金属、為替。資産形成のすべてを、ひとつのダッシュボードに集約。</p>
-        <ul class="feature-list">
-          <li><span><b>複数口座対応</b>:SBI、楽天、マネックス、外国証券、暗号資産取引所まで<b>口座数無制限</b>で統合管理</span></li>
-          <li><span><b>取引履歴無制限・全期間</b>:長期積立にも耐える、無料でずっと</span></li>
-          <li><span><b>移動平均法</b>:売却時の取得簿価を自動計算、実現損益が正確に</span></li>
-          <li><span><b>外貨ポジション</b>:USD・EUR 等の外貨を「銘柄」として管理、為替差損益を分離表示</span></li>
-          <li><span><b>調整機能</b>:スクショ取り込みのズレや手数料計上漏れを5パターンで補正</span></li>
+        <ul class="fr-list">
+          <li><span><b>複数口座対応</b>：SBI、楽天、マネックス、外国証券、暗号資産取引所まで<b>口座数無制限</b>で統合管理</span></li>
+          <li><span><b>取引履歴無制限・全期間</b>：長期積立にも耐える、無料でずっと</span></li>
+          <li><span><b>移動平均法</b>：売却時の取得簿価を自動計算、実現損益が正確に</span></li>
+          <li><span><b>外貨ポジション</b>：USD・EUR 等の外貨を「銘柄」として管理、為替差損益を分離表示</span></li>
+          <li><span><b>調整機能</b>：スクショ取り込みのズレや手数料計上漏れを5パターンで補正</span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
-          <div class="mock-eyebrow">YOUR ASSETS</div>
+        <div class="mock">
+          <div class="mock-eyebrow">Your assets</div>
           <div class="mock-big grad-text">¥14.2M</div>
           <div class="mock-sub">2026.05.21 · +¥84,200 today</div>
-          <div class="donut-row">
-            <div class="donut-label">投資信託・ETF</div>
-            <div class="donut-bar"><div class="donut-fill" style="width: 55%"></div></div>
-            <div class="donut-pct">55%</div>
-          </div>
-          <div class="donut-row">
-            <div class="donut-label">日本株</div>
-            <div class="donut-bar"><div class="donut-fill" style="width: 18%"></div></div>
-            <div class="donut-pct">18%</div>
-          </div>
-          <div class="donut-row">
-            <div class="donut-label">J-REIT</div>
-            <div class="donut-bar"><div class="donut-fill" style="width: 8%"></div></div>
-            <div class="donut-pct">8%</div>
-          </div>
-          <div class="donut-row">
-            <div class="donut-label">海外株</div>
-            <div class="donut-bar"><div class="donut-fill" style="width: 12%"></div></div>
-            <div class="donut-pct">12%</div>
-          </div>
-          <div class="donut-row">
-            <div class="donut-label">仮想通貨</div>
-            <div class="donut-bar"><div class="donut-fill" style="width: 5%"></div></div>
-            <div class="donut-pct">5%</div>
-          </div>
-          <div class="donut-row">
-            <div class="donut-label">現金・他</div>
-            <div class="donut-bar"><div class="donut-fill" style="width: 2%"></div></div>
-            <div class="donut-pct">2%</div>
-          </div>
+          <div class="bar-row"><div class="bar-label">投資信託・ETF</div><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><div class="bar-pct">55%</div></div>
+          <div class="bar-row"><div class="bar-label">日本株</div><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div><div class="bar-pct">18%</div></div>
+          <div class="bar-row"><div class="bar-label">海外株</div><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div><div class="bar-pct">12%</div></div>
+          <div class="bar-row"><div class="bar-label">J-REIT</div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><div class="bar-pct">8%</div></div>
+          <div class="bar-row"><div class="bar-label">仮想通貨</div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><div class="bar-pct">5%</div></div>
+          <div class="bar-row"><div class="bar-label">現金・他</div><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><div class="bar-pct">2%</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURE 2: パフォーマンス ========== -->
-<section class="feature-section alt flip">
+<!-- ========== 02 PERFORMANCE ========== -->
+<section class="section bg-linen" id="performance">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row flip">
+      <div class="fr-text">
         <div class="eyebrow">02 PERFORMANCE</div>
         <h2>XIRR と TWR、<br>2つの目で見る。</h2>
         <p class="desc">「あなたの実利回り」を表す XIRR と、「運用力」を表す TWR。FIRE 志向の積立スタイルでは、両方を見ることで真実が見える。</p>
-        <ul class="feature-list">
-          <li><span><b>XIRR(メイン)</b>:ドルコスト平均法・スポット買付の成果が反映される実利回り</span></li>
-          <li><span><b>TWR(補助)</b>:入金タイミングを排除した運用力。ランキングや他人との比較に</span></li>
-          <li><span><b>ベンチマーク比較</b>:オルカン・S&P500・TOPIX と XIRR/TWR の両軸で比較</span></li>
-          <li><span><b>拠出効果 vs 運用効果</b>:「自分のお金で増えた」vs「市場が増やしてくれた」を分離</span></li>
+        <ul class="fr-list">
+          <li><span><b>XIRR（メイン）</b>：ドルコスト平均法・スポット買付の成果が反映される実利回り</span></li>
+          <li><span><b>TWR（補助）</b>：入金タイミングを排除した運用力。ランキングや他人との比較に</span></li>
+          <li><span><b>ベンチマーク比較</b>：オルカン・S&amp;P500・TOPIX と XIRR/TWR の両軸で比較</span></li>
+          <li><span><b>拠出効果 vs 運用効果</b>：「自分のお金で増えた」vs「市場が増やしてくれた」を分離</span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
-          <div class="mock-eyebrow">PERFORMANCE</div>
-          <div class="mock-big" style="color: #ec4899;">+22.3%</div>
+        <div class="mock">
+          <div class="mock-eyebrow">Performance</div>
+          <div class="mock-big" style="color:var(--accent)">+22.3%</div>
           <div class="mock-sub">XIRR 年率 · あなたの実利回り</div>
           <div class="mock-grid">
-            <div class="mock-mini">
-              <div class="mock-mini-label">TWR 年率</div>
-              <div class="mock-mini-val">+18.7%</div>
-            </div>
-            <div class="mock-mini">
-              <div class="mock-mini-label">vs オルカン (XIRR)</div>
-              <div class="mock-mini-val green">+1.4%</div>
-            </div>
-            <div class="mock-mini">
-              <div class="mock-mini-label">拠出効果</div>
-              <div class="mock-mini-val">¥9.8M</div>
-            </div>
-            <div class="mock-mini">
-              <div class="mock-mini-label">運用効果</div>
-              <div class="mock-mini-val pink">¥4.4M</div>
-            </div>
+            <div class="mock-mini"><div class="mock-mini-label">TWR 年率</div><div class="mock-mini-val">+18.7%</div></div>
+            <div class="mock-mini"><div class="mock-mini-label">vs オルカン (XIRR)</div><div class="mock-mini-val green">+1.4%</div></div>
+            <div class="mock-mini"><div class="mock-mini-label">拠出効果</div><div class="mock-mini-val">¥9.8M</div></div>
+            <div class="mock-mini"><div class="mock-mini-label">運用効果</div><div class="mock-mini-val pink">¥4.4M</div></div>
+          </div>
+          <div style="display:flex;height:30px;border-radius:9999px;overflow:hidden;margin-top:16px;box-shadow:inset 0 1px 2px rgba(0,0,0,.06)">
+            <div style="width:69%;background:linear-gradient(90deg,#d1d5db,#9ca3af);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">拠出 69%</div>
+            <div style="width:31%;background:linear-gradient(90deg,#ff3d6e,#c61f8c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">運用 31%</div>
           </div>
         </div>
       </div>
@@ -652,134 +483,123 @@
   </div>
 </section>
 
-<!-- ========== FEATURE 3: 税務 ========== -->
-<section class="feature-section">
+<!-- ========== 03 TAX ========== -->
+<section class="section" id="tax">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row">
+      <div class="fr-text">
         <div class="eyebrow">03 TAX</div>
         <h2>税金を、<br>味方にする。</h2>
         <p class="desc">複雑な日本の税制を、シンプルに見える化。NISA・外国税額控除・配当課税の最適化まで、確定申告の節税ポイントを自動で提示。</p>
-        <ul class="feature-list">
-          <li><span><b>NISA枠管理</b>:年間枠・生涯枠・売却時の枠復活を自動計算</span></li>
-          <li><span><b>NISAの落とし穴</b>:米国株配当の取戻不可額をアラートで警告</span></li>
-          <li><span><b>配当課税3パターン比較</b>:申告不要・申告分離・総合課税の節税額を自動判定 <span style="color:#ec4899; font-weight:700;">(Premium)</span></span></li>
-          <li><span><b>損益通算と還付見込み</b>:多めに源泉徴収された分の還付額を可視化 <span style="color:#ec4899; font-weight:700;">(Light)</span></span></li>
-          <li><span><b>外国税額控除</b>:課税口座の米国源泉から、確定申告で取り戻せる額を試算 <span style="color:#ec4899; font-weight:700;">(Light)</span></span></li>
+        <ul class="fr-list">
+          <li><span><b>NISA枠管理</b>：年間枠・生涯枠・売却時の枠復活を自動計算</span></li>
+          <li><span><b>NISAの落とし穴</b>：米国株配当の取戻不可額をアラートで警告</span></li>
+          <li><span><b>配当課税3パターン比較</b>：申告不要・申告分離・総合課税の節税額を自動判定 <span class="tag premium">PREMIUM</span></span></li>
+          <li><span><b>損益通算と還付見込み</b>：多めに源泉徴収された分の還付額を可視化 <span class="tag light">LIGHT</span></span></li>
+          <li><span><b>外国税額控除</b>：課税口座の米国源泉から、確定申告で取り戻せる額を試算 <span class="tag light">LIGHT</span></span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
+        <div class="mock">
           <div class="mock-eyebrow">2025年 税務サマリー</div>
-          <div style="font-size: 16px; font-weight: 800; margin-bottom: 16px;">上場株式等(申告分離)</div>
-          <div class="tax-line"><span>年間実現損益</span><span>+¥162,668</span></div>
-          <div class="tax-line"><span>年間配当(税後)</span><span>+¥12,883</span></div>
-          <div class="tax-line"><span>既源泉徴収額</span><span>¥203,345</span></div>
-          <div class="tax-line"><span>概算税額(申告分離)</span><span>¥33,239</span></div>
-          <div class="tax-line win"><span>還付見込み</span><span>−¥170,106</span></div>
-          <div style="margin-top: 20px; padding: 14px; background: #fce4ec; border-radius: 12px; font-size: 12px; color: #c2185b;">
-            💡 配当課税は総合課税が有利:節税額 ¥3,800
-          </div>
+          <div style="font-size:17px;font-weight:800;margin-bottom:16px;">上場株式等（申告分離）</div>
+          <div class="line-row"><span>年間実現損益</span><span>+¥162,668</span></div>
+          <div class="line-row"><span>年間配当（税後）</span><span>+¥12,883</span></div>
+          <div class="line-row"><span>既源泉徴収額</span><span>¥203,345</span></div>
+          <div class="line-row"><span>概算税額（申告分離）</span><span>¥33,239</span></div>
+          <div class="line-row win"><span>還付見込み</span><span>−¥170,106</span></div>
+          <div class="mock-callout">配当課税は総合課税が有利：節税額 ¥3,800</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURE 4: SNS ========== -->
-<section class="feature-section alt flip">
+<!-- ========== 04 COMMUNITY (dark) ========== -->
+<section class="heat" id="community">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row flip">
+      <div class="fr-text">
         <div class="eyebrow">04 COMMUNITY</div>
         <h2>1人じゃない、<br>経済的自立。</h2>
         <p class="desc">同じ銘柄を持つ仲間とつながる。煽らない、ランキング化しない、当事者性で語る。SNS の3層設計で、健全なコミュニティを。</p>
-        <ul class="feature-list">
-          <li><span><b>ホルダーコミュニティ</b>:同じ銘柄を持つ人の輪。額はレンジ表示のみ、人数と保有期間で語る</span></li>
-          <li><span><b>応援(チア)スタンプ</b>:💪 ナイスホールド・🎉 おめでとう・🫡 お疲れさま。労いと連帯の3種</span></li>
-          <li><span><b>「なぜ私は持つか」保有理由</b>:一人称で書く。保有期間で裏付け、公開範囲はオプトイン</span></li>
-          <li><span><b>まとめ通知(ダイジェスト)</b>:フォロー先の動きを遅延+まとめて配信。週次=無料 / 日次=Light / 即時=Premium</span></li>
-          <li><span><b>FIRE ステージ7段階</b>:同じ資産帯でフェアに比較、XIRR/TWR の2軸切替</span></li>
-          <li><span><b>Creator還元</b>:フォロワー数に応じて Premium 機能が無料に</span></li>
+        <ul class="fr-list">
+          <li><span><b>ホルダーコミュニティ</b>：同じ銘柄を持つ人の輪。額はレンジ表示のみ、人数と保有期間で語る</span></li>
+          <li><span><b>応援（チア）スタンプ</b>：ナイスホールド・おめでとう・お疲れさま。労いと連帯の3種</span></li>
+          <li><span><b>「なぜ私は持つか」保有理由</b>：一人称で書く。保有期間で裏付け、公開範囲はオプトイン</span></li>
+          <li><span><b>まとめ通知（ダイジェスト）</b>：フォロー先の動きを遅延＋まとめて配信。週次＝無料 / 日次＝Light / 即時＝Premium</span></li>
+          <li><span><b>FIRE ステージ7段階</b>：同じ資産帯でフェアに比較、XIRR/TWR の2軸切替</span></li>
+          <li><span><b>Creator還元</b>：フォロワー数に応じて Premium 機能が無料に</span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
+        <div class="mock">
           <div class="mock-eyebrow">ホルダーコミュニティ · オルカン</div>
-          <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid #f3f4f6; margin-bottom:12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0 14px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:14px;">
             <div>
-              <div style="font-size:14px; font-weight:800;">eMAXIS Slim 全世界株式</div>
-              <div style="font-size:12px; color:#6b7280;">ホルダー 1,247人 · 平均保有 2年3ヶ月</div>
+              <div style="font-size:14.5px;font-weight:800;">eMAXIS Slim 全世界株式</div>
+              <div style="font-size:12px;color:#9ca3af;margin-top:2px;">ホルダー 1,247人 · 平均保有 2年3ヶ月</div>
             </div>
-            <div style="font-size:12px; color:#ec4899; font-weight:700;">💪 326</div>
+            <div style="font-size:12px;color:#f9a8d4;font-weight:700;white-space:nowrap;">チア 326</div>
           </div>
           <div class="sns-card">
             <div class="sns-avatar"></div>
-            <div class="sns-content">
-              <div class="sns-user">@hiro_fire <span style="font-size:11px; color:#9ca3af; font-weight:400;">保有 3年2ヶ月</span></div>
-              <div class="sns-stage" style="font-size:12px; color:#374151;">「コアにオルカン。配分は気にせず淡々と」</div>
+            <div>
+              <div class="sns-user">@hiro_fire <span class="sns-hold">保有 3年2ヶ月</span></div>
+              <div class="sns-quote">「コアにオルカン。配分は気にせず淡々と」</div>
             </div>
           </div>
           <div class="sns-card">
-            <div class="sns-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></div>
-            <div class="sns-content">
-              <div class="sns-user">@chappy <span style="font-size:11px; color:#9ca3af; font-weight:400;">保有 1年5ヶ月</span></div>
-              <div class="sns-stage" style="font-size:12px; color:#374151;">「下落日も買い増し。むしろチャンス」</div>
+            <div class="sns-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"></div>
+            <div>
+              <div class="sns-user">@chappy <span class="sns-hold">保有 1年5ヶ月</span></div>
+              <div class="sns-quote">「下落日も買い増し。むしろチャンス」</div>
             </div>
           </div>
           <div class="sns-card">
-            <div class="sns-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></div>
-            <div class="sns-content">
-              <div class="sns-user">@mio_k <span style="font-size:11px; color:#9ca3af; font-weight:400;">保有 4年8ヶ月</span></div>
-              <div class="sns-stage" style="font-size:12px; color:#374151;">「子の教育資金の一部もここに」</div>
+            <div class="sns-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"></div>
+            <div>
+              <div class="sns-user">@mio_k <span class="sns-hold">保有 4年8ヶ月</span></div>
+              <div class="sns-quote">「子の教育資金の一部もここに」</div>
             </div>
           </div>
-          <div style="text-align: center; font-size: 12px; color: #9ca3af; margin-top: 12px;">同じ銘柄を持つ人と、ゆるくつながる</div>
+          <div style="text-align:center;font-size:12px;color:#9ca3af;margin-top:14px;">同じ銘柄を持つ人と、ゆるくつながる</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURE 5: FIREシミュレーション ========== -->
-<section class="feature-section">
+<!-- ========== 05 SIMULATION ========== -->
+<section class="section bg-linen" id="simulation">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row">
+      <div class="fr-text">
         <div class="eyebrow">05 SIMULATION</div>
         <h2>あなただけの、<br>到達予測。</h2>
-        <p class="desc">入金・配当・運用利回り、すべて「あなたの実績」から逆算。「もし月積立を¥3万増やしたら?」What-If も、リアルな実績ベースで試算できる。</p>
-        <ul class="feature-list">
-          <li><span><b>実績ベース推定</b>:あなたのこれまでの XIRR・入金力・配当利回りからパラメータを抽出</span></li>
-          <li><span><b>3シナリオ表示</b>:楽観(実績+3%)・中立(実績維持)・悲観(実績-3%)で比較<b style="color:#22c55e;">(無料)</b></span></li>
-          <li><span><b>What-If シミュレーション</b>:月積立・想定年率の2軸を変えて達成時期を試算 <span style="color:#ec4899; font-weight:700;">(Light)</span></span></li>
-          <li><span><b>詳細 What-If</b>:退職年齢・ライフイベント・感度分析・シナリオ保存(最大5つ) <span style="color:#ec4899; font-weight:700;">(Premium)</span></span></li>
-          <li><span><b>リバランス提案</b>:目標配分と現在の乖離をアラート <span style="color:#ec4899; font-weight:700;">(Light)</span></span></li>
-          <li><span><b>AI月次レポート</b>:パーソナライズされたアクション提案 <span style="color:#ec4899; font-weight:700;">(Premium)</span></span></li>
+        <p class="desc">入金・配当・運用利回り、すべて「あなたの実績」から逆算。「もし月積立を¥3万増やしたら？」What-If も、リアルな実績ベースで試算できる。</p>
+        <ul class="fr-list">
+          <li><span><b>実績ベース推定</b>：あなたのこれまでの XIRR・入金力・配当利回りからパラメータを抽出</span></li>
+          <li><span><b>3シナリオ表示</b>：楽観（実績+3%）・中立（実績維持）・悲観（実績-3%）で比較 <span class="tag free">無料</span></span></li>
+          <li><span><b>What-If シミュレーション</b>：月積立・想定年率の2軸を変えて達成時期を試算 <span class="tag light">LIGHT</span></span></li>
+          <li><span><b>詳細 What-If</b>：退職年齢・ライフイベント・感度分析・シナリオ保存（最大5つ） <span class="tag premium">PREMIUM</span></span></li>
+          <li><span><b>リバランス提案</b>：目標配分と現在の乖離をアラート <span class="tag light">LIGHT</span></span></li>
+          <li><span><b>AI月次レポート</b>：パーソナライズされたアクション提案 <span class="tag premium">PREMIUM</span></span></li>
         </ul>
-        <p style="font-size: 12px; color: #9ca3af; margin-top: 16px;">※ FIRE達成予測は取引実績が過去3ヶ月分以上存在するユーザーから有効</p>
+        <p class="note" style="margin-top:18px;">※ FIRE達成予測は取引実績が過去3ヶ月分以上存在するユーザーから有効</p>
       </div>
       <div>
-        <div class="feature-mock">
-          <div class="mock-eyebrow">YOUR FIRE PROGRESS</div>
+        <div class="mock">
+          <div class="mock-eyebrow">Your FIRE progress</div>
           <div class="mock-big grad-text">24.7%</div>
-          <div class="mock-sub">あと <b style="color:#ec4899;">8.4年</b> · ¥14.2M / ¥50M</div>
-          <div style="height: 10px; background: #f3f4f6; border-radius: 5px; overflow: hidden; margin: 16px 0;">
-            <div style="height: 100%; width: 24.7%; background: linear-gradient(90deg, #ff3d6e, #d61f4a);"></div>
+          <div class="mock-sub">あと <b style="color:var(--accent)">8.4年</b> · ¥14.2M / ¥50M</div>
+          <div style="height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:16px 0;">
+            <div style="height:100%;width:24.7%;background:linear-gradient(90deg,#ff3d6e,#d61f4a)"></div>
           </div>
-          <div class="mock-grid" style="grid-template-columns: repeat(3, 1fr);">
-            <div class="mock-mini">
-              <div class="mock-mini-label">楽観 +3%</div>
-              <div class="mock-mini-val" style="font-size: 14px;">T-6.2y</div>
-            </div>
-            <div class="mock-mini" style="background: #fce4ec;">
-              <div class="mock-mini-label">中立</div>
-              <div class="mock-mini-val pink" style="font-size: 14px;">T-8.4y</div>
-            </div>
-            <div class="mock-mini">
-              <div class="mock-mini-label">悲観 -3%</div>
-              <div class="mock-mini-val" style="font-size: 14px;">T-11.8y</div>
-            </div>
+          <div class="mock-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="mock-mini"><div class="mock-mini-label">楽観 +3%</div><div class="mock-mini-val" style="font-size:15px">T-6.2y</div></div>
+            <div class="mock-mini" style="background:var(--accent-soft)"><div class="mock-mini-label">中立</div><div class="mock-mini-val pink" style="font-size:15px">T-8.4y</div></div>
+            <div class="mock-mini"><div class="mock-mini-label">悲観 -3%</div><div class="mock-mini-val" style="font-size:15px">T-11.8y</div></div>
           </div>
         </div>
       </div>
@@ -787,185 +607,323 @@
   </div>
 </section>
 
-<!-- ========== FEATURE 6: ステージ ========== -->
-<section class="feature-section alt flip">
+<!-- ========== 06 STAGES ========== -->
+<section class="section" id="stages">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row flip">
+      <div class="fr-text">
         <div class="eyebrow">06 STAGES</div>
         <h2>7段階、<br>あなたの今。</h2>
         <p class="desc">資産帯による7段階分類で、自分の位置と次の目標を明確に。同じステージの仲間との比較もフェアに。</p>
-        <ul class="feature-list">
-          <li><span><b>スタート期</b>(〜¥500万):基礎を作る時期</span></li>
-          <li><span><b>準備期</b>(〜¥1,500万):習慣化フェーズ</span></li>
-          <li><span><b>基礎構築期</b>(〜¥3,000万):コア・サテライト戦略</span></li>
-          <li><span><b>加速期</b>(〜¥5,000万):入金力UP + 最適化</span></li>
-          <li><span><b>FIRE視野</b>(〜¥7,500万):達成までの距離が具体化</span></li>
-          <li><span><b>FIRE達成圏</b>(〜¥1.5億):出口戦略</span></li>
-          <li><span><b>継続 or 次の一歩</b>(¥1.5億〜):FAT FIRE</span></li>
+        <ul class="fr-list">
+          <li><span><b>スタート期</b>（〜¥500万）：基礎を作る時期</span></li>
+          <li><span><b>準備期</b>（〜¥1,500万）：習慣化フェーズ</span></li>
+          <li><span><b>基礎構築期</b>（〜¥3,000万）：コア・サテライト戦略</span></li>
+          <li><span><b>加速期</b>（〜¥5,000万）：入金力UP ＋ 最適化</span></li>
+          <li><span><b>FIRE視野</b>（〜¥7,500万）：達成までの距離が具体化</span></li>
+          <li><span><b>FIRE達成圏</b>（〜¥1.5億）：出口戦略</span></li>
+          <li><span><b>継続 or 次の一歩</b>（¥1.5億〜）：FAT FIRE</span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
-          <div class="mock-eyebrow">YOUR STAGE</div>
-          <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 4px;">基礎構築期</div>
-          <div class="mock-sub">次の「加速期」まで <b style="color:#ec4899;">¥15.8M</b></div>
-          <div class="stages-list">
-            <div class="stage-cell done">01</div>
-            <div class="stage-cell done">02</div>
-            <div class="stage-cell current">03</div>
-            <div class="stage-cell">04</div>
-            <div class="stage-cell">05</div>
-            <div class="stage-cell">06</div>
-            <div class="stage-cell">07</div>
+        <div class="mock">
+          <div class="mock-eyebrow">Your stage</div>
+          <div style="font-family:var(--display);font-size:26px;font-weight:900;letter-spacing:-0.02em;margin-bottom:4px;">基礎構築期</div>
+          <div class="mock-sub" style="margin-bottom:0;">次の「加速期」まで <b style="color:var(--accent)">¥15.8M</b></div>
+          <div class="stages-cells">
+            <div class="stage-cell done">01</div><div class="stage-cell done">02</div><div class="stage-cell current">03</div>
+            <div class="stage-cell">04</div><div class="stage-cell">05</div><div class="stage-cell">06</div><div class="stage-cell">07</div>
           </div>
-          <div class="stage-label-row">
-            <span>スタート</span>
-            <span>継続 or 次の一歩</span>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted-2)">
+            <span>スタート</span><span>継続 or 次の一歩</span>
           </div>
-          <div style="margin-top: 20px; padding: 14px; background: #fff4f8; border-radius: 12px; font-size: 12px; color: #be185d; line-height: 1.5;">
-            🎯 同じステージのユーザー <b>2,847人</b> と比較中
-          </div>
+          <div class="mock-callout">同じステージのユーザー <b>2,847人</b> と比較中</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURE 7: 発信スタジオ ========== -->
-<section class="feature-section">
+<!-- ========== 07 BROADCAST (dark) ========== -->
+<section class="heat" id="broadcast">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row">
+      <div class="fr-text">
         <div class="eyebrow">07 BROADCAST</div>
         <h2>静かに記録、<br>燃える瞬間だけ発信。</h2>
         <p class="desc">普段は静かに資産を記録する。マイルストーン到達やステージアップなど、発信に値する瞬間だけプロンプトが立ち上がる。あなたの実績データを引用するから、煽りや誇張は構造的に防がれる。</p>
-        <ul class="feature-list">
-          <li><span><b>モーメント検知</b>:マイルストーン・連続記録・大きな本日損益など、発信どきを自動検知</span></li>
-          <li><span><b>実績データ引用</b>:発信できるのは自分の記録に紐づくもののみ。捏造できない設計</span></li>
-          <li><span><b>額の出し方を選べる</b>:レンジ・率・非表示から選択。絶対額は既定で出さない</span></li>
-          <li><span><b>一人称フレーミング</b>:「これを買え」ではなく「自分はこうした」。当事者性で語る</span></li>
-          <li><span style="color:#ec4899; font-weight:700;">発信スタジオは全機能無料</span></li>
+        <ul class="fr-list">
+          <li><span><b>モーメント検知</b>：マイルストーン・連続記録・大きな本日損益など、発信どきを自動検知</span></li>
+          <li><span><b>実績データ引用</b>：発信できるのは自分の記録に紐づくもののみ。捏造できない設計</span></li>
+          <li><span><b>額の出し方を選べる</b>：レンジ・率・非表示から選択。絶対額は既定で出さない</span></li>
+          <li><span><b>一人称フレーミング</b>：「これを買え」ではなく「自分はこうした」。当事者性で語る</span></li>
+          <li><span><b>発信スタジオは全機能無料</b> <span class="tag free">無料</span></span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
-          <div class="mock-eyebrow">📢 発信どき</div>
-          <div style="padding:16px; background:linear-gradient(135deg, #fff4f8 0%, #ffe1ec 100%); border-radius:14px; margin-bottom:16px;">
-            <div style="font-size:13px; color:#be185d; font-weight:700; margin-bottom:6px;">🎉 マイルストーン到達!</div>
-            <div style="font-size:18px; font-weight:900; margin-bottom:4px;">FIRE進捗 25% を超えました</div>
-            <div style="font-size:12px; color:#6b7280;">¥14.2M / ¥50M · 基礎構築期</div>
+        <div class="mock">
+          <div class="mock-eyebrow">発信どき</div>
+          <div class="broadcast-prompt">
+            <div style="font-size:12.5px;color:#f9a8d4;font-weight:700;margin-bottom:7px;letter-spacing:.04em;">マイルストーン到達</div>
+            <div style="font-family:var(--display);font-size:20px;font-weight:900;margin-bottom:5px;">FIRE進捗 25% を超えました</div>
+            <div style="font-size:12px;color:#9ca3af;">¥14.2M / ¥50M · 基礎構築期</div>
           </div>
-          <div style="font-size:13px; color:#374151; line-height:1.7;">
-            <div style="margin-bottom:8px; font-weight:600;">公開範囲</div>
-            <label style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-              <input type="radio" checked> <span>フォロワーのみ</span>
-            </label>
-            <label style="display:flex; align-items:center; gap:8px;">
-              <input type="radio"> <span>全体に公開</span>
-            </label>
-          </div>
-          <button style="margin-top:16px; width:100%; padding:12px; background:linear-gradient(135deg, #ff3d6e, #d61f4a); color:#fff; border:none; border-radius:10px; font-weight:700; cursor:pointer;">発信する</button>
+          <div style="font-size:12.5px;font-weight:700;margin-bottom:6px;color:#fff;">公開範囲</div>
+          <label class="radio-line"><input type="radio" name="scope" checked> <span>フォロワーのみ</span></label>
+          <label class="radio-line"><input type="radio" name="scope"> <span>全体に公開</span></label>
+          <button class="mock-btn">発信する</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURE 8: 銘柄比較・分析ツール ========== -->
-<section class="feature-section alt flip">
+<!-- ========== 08 TOOLS ========== -->
+<section class="section bg-linen" id="tools">
   <div class="container">
-    <div class="feature-grid">
-      <div class="feature-text">
+    <div class="feature-row flip">
+      <div class="fr-text">
         <div class="eyebrow">08 TOOLS</div>
         <h2>比較して、<br>見守って、気づく。</h2>
         <p class="desc">銘柄選びの精度を上げるツール群。最大10銘柄の横並び比較、ウォッチリストと価格アラートで気になる銘柄を見守る。分析ハブには FIRE シミュレーション・ベンチマーク・リスク分析・リバランスをすべて集約。</p>
-        <ul class="feature-list">
-          <li><span><b>銘柄比較</b>:最大10銘柄を横並び比較。価格推移の重ね描き、財務指標・配当利回りを一覧で(無料3銘柄 / Light以上10銘柄)</span></li>
-          <li><span><b>ウォッチリスト</b>:気になる銘柄を保有前から見守る(無料10銘柄 / Light 30銘柄 / Premium 100銘柄)</span></li>
-          <li><span><b>価格アラート</b>:上抜け・下抜けの通知(無料3件 / Light 10件 / Premium 30件)</span></li>
-          <li><span><b>分析ハブ</b>:FIREシミュレーション・ベンチマーク・リスク・リバランスを1つの画面に集約</span></li>
-          <li><span><b>口座別ページ</b>:証券会社軸での内訳。NISA枠の使用状況も一目で</span></li>
+        <ul class="fr-list">
+          <li><span><b>銘柄比較</b>：最大10銘柄を横並び比較。価格推移の重ね描き、財務指標・配当利回りを一覧で（無料3銘柄 / Light以上10銘柄）</span></li>
+          <li><span><b>ウォッチリスト</b>：気になる銘柄を保有前から見守る（無料10銘柄 / Light 30銘柄 / Premium 100銘柄）</span></li>
+          <li><span><b>価格アラート</b>：上抜け・下抜けの通知（無料3件 / Light 10件 / Premium 30件）</span></li>
+          <li><span><b>分析ハブ</b>：FIREシミュレーション・ベンチマーク・リスク・リバランスを1つの画面に集約</span></li>
+          <li><span><b>口座別ページ</b>：証券会社軸での内訳。NISA枠の使用状況も一目で</span></li>
         </ul>
       </div>
       <div>
-        <div class="feature-mock">
+        <div class="mock">
           <div class="mock-eyebrow">銘柄比較 · 3銘柄</div>
-          <table style="width:100%; font-size:12px; border-collapse:collapse;">
-            <thead>
-              <tr style="border-bottom:1px solid #f3f4f6;">
-                <th style="text-align:left; padding:8px 4px; color:#6b7280; font-weight:600;"></th>
-                <th style="text-align:right; padding:8px 4px; color:#6b7280; font-weight:600;">ソニーG</th>
-                <th style="text-align:right; padding:8px 4px; color:#6b7280; font-weight:600;">日本ビル</th>
-                <th style="text-align:right; padding:8px 4px; color:#6b7280; font-weight:600;">オルカン</th>
-              </tr>
-            </thead>
+          <table class="cmp-table">
+            <thead><tr><th></th><th>ソニーG</th><th>日本ビル</th><th>オルカン</th></tr></thead>
             <tbody>
-              <tr style="border-bottom:1px solid #f9fafb;">
-                <td style="padding:8px 4px;">現在価格</td>
-                <td style="text-align:right; padding:8px 4px; font-weight:600;">¥3,247</td>
-                <td style="text-align:right; padding:8px 4px; font-weight:600;">¥991K</td>
-                <td style="text-align:right; padding:8px 4px; font-weight:600;">¥28.5K</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f9fafb;">
-                <td style="padding:8px 4px;">本日変動</td>
-                <td style="text-align:right; padding:8px 4px; color:#dc2626; font-weight:700;">+2.27%</td>
-                <td style="text-align:right; padding:8px 4px; color:#dc2626; font-weight:700;">+0.87%</td>
-                <td style="text-align:right; padding:8px 4px; color:#dc2626; font-weight:700;">+0.42%</td>
-              </tr>
-              <tr style="border-bottom:1px solid #f9fafb;">
-                <td style="padding:8px 4px;">配当利回り</td>
-                <td style="text-align:right; padding:8px 4px;">0.62%</td>
-                <td style="text-align:right; padding:8px 4px; font-weight:700; color:#ec4899;">3.84%</td>
-                <td style="text-align:right; padding:8px 4px;">—</td>
-              </tr>
-              <tr>
-                <td style="padding:8px 4px;">あなたの保有</td>
-                <td style="text-align:right; padding:8px 4px;">✓</td>
-                <td style="text-align:right; padding:8px 4px;">✓</td>
-                <td style="text-align:right; padding:8px 4px;">✓</td>
-              </tr>
+              <tr><td>現在価格</td><td style="font-weight:700">¥3,247</td><td style="font-weight:700">¥991K</td><td style="font-weight:700">¥28.5K</td></tr>
+              <tr><td>本日変動</td><td class="up-red">+2.27%</td><td class="up-red">+0.87%</td><td class="up-red">+0.42%</td></tr>
+              <tr><td>配当利回り</td><td>0.62%</td><td style="font-weight:700;color:var(--accent)">3.84%</td><td>—</td></tr>
+              <tr><td>あなたの保有</td><td>✓</td><td>✓</td><td>✓</td></tr>
             </tbody>
           </table>
-          <div style="margin-top:16px; padding:12px; background:#fff4f8; border-radius:10px; font-size:11px; color:#6b7280;">
-            💡 ウォッチリスト 8/10 · アラート 2/3 設定中
+          <div class="mock-callout" style="background:var(--paper);color:var(--muted)">ウォッチリスト 8/10 · アラート 2/3 設定中</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 09 BASICS (案2: ジグザグ詳説) ========== -->
+<section class="section" id="basics">
+  <div class="container">
+    <div class="eyebrow">EVERYDAY TOOLS</div>
+    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;">数字を見る道具は、<br>ぜんぶ入っています。</h2>
+    <div class="zz">
+
+      <div class="zzRow">
+        <div class="zzText">
+          <div class="n">TOOL 01</div>
+          <h3>ローソク足に、自分のIN / OUT。</h3>
+          <p>ローソク足へ、自分が買った日・売った日・平均取得単価を重ねて表示。相場の解説ではなく、自分の判断の履歴が見えます。</p>
+          <div class="spec"><span>売買マーカー</span><span>平均取得ライン</span><span>期間切替</span></div>
+        </div>
+        <div class="vizBig">
+          <div class="cap">SONY G · 6M</div>
+          <svg viewBox="0 0 360 120" style="width:100%;height:100%">
+            <g stroke="#c8102e" fill="#c8102e">
+              <line x1="14" y1="86" x2="14" y2="99" stroke-width="1.3"></line><rect x="8.5" y="90" width="11" height="6" stroke="none"></rect>
+              <line x1="62" y1="77" x2="62" y2="92" stroke-width="1.3"></line><rect x="56.5" y="80" width="11" height="10" stroke="none"></rect>
+              <line x1="110" y1="67" x2="110" y2="83" stroke-width="1.3"></line><rect x="104.5" y="70" width="11" height="10" stroke="none"></rect>
+              <line x1="134" y1="58" x2="134" y2="73" stroke-width="1.3"></line><rect x="128.5" y="62" width="11" height="8" stroke="none"></rect>
+              <line x1="182" y1="50" x2="182" y2="67" stroke-width="1.3"></line><rect x="176.5" y="54" width="11" height="10" stroke="none"></rect>
+              <line x1="206" y1="42" x2="206" y2="57" stroke-width="1.3"></line><rect x="200.5" y="46" width="11" height="8" stroke="none"></rect>
+              <line x1="254" y1="32" x2="254" y2="51" stroke-width="1.3"></line><rect x="248.5" y="36" width="11" height="12" stroke="none"></rect>
+              <line x1="278" y1="24" x2="278" y2="39" stroke-width="1.3"></line><rect x="272.5" y="28" width="11" height="8" stroke="none"></rect>
+              <line x1="326" y1="22" x2="326" y2="37" stroke-width="1.3"></line><rect x="320.5" y="26" width="11" height="8" stroke="none"></rect>
+            </g>
+            <g stroke="#1d6b3f" fill="#fff">
+              <line x1="38" y1="85" x2="38" y2="97" stroke-width="1.3"></line><rect x="32.5" y="88" width="11" height="6" stroke-width="1.4"></rect>
+              <line x1="86" y1="75" x2="86" y2="88" stroke-width="1.3"></line><rect x="80.5" y="78" width="11" height="6" stroke-width="1.4"></rect>
+              <line x1="158" y1="60" x2="158" y2="75" stroke-width="1.3"></line><rect x="152.5" y="64" width="11" height="8" stroke-width="1.4"></rect>
+              <line x1="230" y1="44" x2="230" y2="60" stroke-width="1.3"></line><rect x="224.5" y="48" width="11" height="8" stroke-width="1.4"></rect>
+              <line x1="302" y1="28" x2="302" y2="44" stroke-width="1.3"></line><rect x="296.5" y="32" width="11" height="8" stroke-width="1.4"></rect>
+            </g>
+            <line x1="6" y1="74" x2="354" y2="74" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"></line>
+            <text x="10" y="68" font-family="Inter" font-size="9" font-weight="700" fill="#6b7280">平均取得 ¥2,980</text>
+            <g><circle cx="86" cy="99" r="10" fill="#075985"></circle><text x="86" y="103" font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
+            <g><circle cx="158" cy="88" r="10" fill="#075985"></circle><text x="158" y="92" font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
+            <g><circle cx="278" cy="13" r="10" fill="#111827"></circle><text x="278" y="17" font-family="Inter" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">OUT</text></g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="zzRow flip">
+        <div class="zzText">
+          <div class="n">TOOL 02</div>
+          <h3>ヒートマップで、<br>損益の出どころを。</h3>
+          <p>保有している全銘柄を1枚のタイルに。<b>面積が保有額、色が損益率</b>。緑がマイナス、赤がプラスで、濃さが幅。金額の大きさと動きの大きさが同時に読めます。</p>
+          <div class="spec"><span>1日 / 1週 / 1ヶ月 / 1年 / 全期間</span><span>タップで銘柄詳細</span></div>
+        </div>
+        <div class="vizBig" style="padding:16px;gap:10px">
+          <div class="cap">保有マップ · 38銘柄 · 1日</div>
+          <div class="hmScale"><span>損益率 −5%</span><span class="grad"></span><span>+5%</span></div>
+          <div class="hm" style="grid-template-columns:1.7fr 1.1fr 1fr .9fr;grid-template-rows:1.2fr 1fr;min-height:190px">
+            <div class="up1"><span class="nm">三井住友FG</span><span class="pc">+0.88%</span></div>
+            <div class="up2"><span class="nm">ソニーグループ</span><span class="pc">+2.18%</span></div>
+            <div class="up1"><span class="nm">Microsoft</span><span class="pc">+1.10%</span></div>
+            <div class="up3"><span class="nm">ビットコイン</span><span class="pc">+4.18%</span></div>
+            <div class="up0"><span class="nm">日本国債10年</span><span class="pc">+0.05%</span></div>
+            <div class="up0"><span class="nm">Apple</span><span class="pc">+0.42%</span></div>
+            <div class="dn1"><span class="nm">Alphabet</span><span class="pc">−0.62%</span></div>
+            <div class="dn2"><span class="nm">シルバー</span><span class="pc">−1.10%</span></div>
           </div>
         </div>
       </div>
+
+      <div class="zzRow">
+        <div class="zzText">
+          <div class="n">TOOL 03</div>
+          <h3>カレンダーで、先を読む。</h3>
+          <p>配当の権利確定日と入金日、保有銘柄の決算発表、積立の実行日。さらに日銀の金融政策決定会合や FOMC・雇用統計など、相場全体が動く日も同じ月ビューに並びます。</p>
+          <div class="spec"><span>配当・権利日</span><span>決算</span><span>積立</span><span>経済イベント</span></div>
+        </div>
+        <div class="vizBig" style="padding:16px;min-height:275px">
+          <div class="cap">2026年5月</div>
+          <div class="calHead"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+          <div class="calGrid">
+            <div class="calCell"><span class="d">1</span></div>
+            <div class="calCell"><span class="d">2</span><span class="calChip div">配当</span></div>
+            <div class="calCell"><span class="d">3</span></div>
+            <div class="calCell"><span class="d">4</span></div>
+            <div class="calCell"><span class="d">5</span><span class="calChip cont">積立</span></div>
+            <div class="calCell sat"><span class="d">6</span></div>
+            <div class="calCell sun"><span class="d">7</span></div>
+            <div class="calCell"><span class="d">8</span></div>
+            <div class="calCell"><span class="d">9</span><span class="calChip macro">日銀会合</span></div>
+            <div class="calCell"><span class="d">10</span><span class="calChip earn">決算</span></div>
+            <div class="calCell"><span class="d">11</span></div>
+            <div class="calCell"><span class="d">12</span><span class="calChip earn">決算</span></div>
+            <div class="calCell sat"><span class="d">13</span></div>
+            <div class="calCell sun"><span class="d">14</span></div>
+            <div class="calCell"><span class="d">15</span><span class="calChip macro">FOMC</span></div>
+            <div class="calCell"><span class="d">16</span></div>
+            <div class="calCell"><span class="d">17</span></div>
+            <div class="calCell"><span class="d">18</span><span class="calChip div">権利日</span></div>
+            <div class="calCell"><span class="d">19</span></div>
+            <div class="calCell sat"><span class="d">20</span></div>
+            <div class="calCell sun"><span class="d">21</span></div>
+          </div>
+          <div class="calLegend">
+            <span><i style="background:#ec4899"></i>配当・権利日</span>
+            <span><i style="background:#4f46e5"></i>決算</span>
+            <span><i style="background:#d97706"></i>積立</span>
+            <span><i style="background:#111827"></i>経済イベント</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="zzRow flip">
+        <div class="zzText">
+          <div class="n">TOOL 04</div>
+          <h3>重ねて見れば、差が分かる。</h3>
+          <p>最大10銘柄を、ある一時点を 100 とした指数で重ね描き。価格帯の違う銘柄でも同じスケールで比べられます。起点のハンドルをドラッグすれば、「あの日からどうだったか」もその場で。</p>
+          <div class="spec"><span>無料 3銘柄</span><span>LIGHT以上 10銘柄</span><span>起点をドラッグ</span><span>指標の並び</span></div>
+        </div>
+        <div class="vizBig">
+          <div class="cap">株価の比較 · 1Y · 起点を100</div>
+          <svg viewBox="0 0 360 118" style="width:100%;height:100%">
+            <line x1="6" y1="22" x2="330" y2="22" stroke="#f3f4f6" stroke-width="1"></line>
+            <line x1="6" y1="58" x2="330" y2="58" stroke="#d1d5db" stroke-width="1"></line>
+            <line x1="6" y1="94" x2="330" y2="94" stroke="#f3f4f6" stroke-width="1"></line>
+            <text x="334" y="25" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">+50%</text>
+            <text x="334" y="61" font-family="Inter" font-size="8" font-weight="700" fill="#6b7280">0%</text>
+            <text x="334" y="97" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">−50%</text>
+            <line x1="74" y1="6" x2="74" y2="110" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="3 3"></line>
+            <circle cx="74" cy="6" r="3.6" fill="#f59e0b"></circle>
+            <polyline points="6,74 30,64 54,60 74,58 98,44 122,50 146,34 170,40 194,24 218,16 242,30 266,26 290,34 314,30 330,32" fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linejoin="round"></polyline>
+            <polyline points="6,60 30,58 54,57 74,58 98,50 122,46 146,52 170,56 194,60 218,58 242,62 266,60 290,57 314,56 330,58" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linejoin="round"></polyline>
+            <polyline points="6,56 30,58 54,57 74,58 98,66 122,72 146,76 170,74 194,80 218,78 242,82 266,80 290,74 314,72 330,76" fill="none" stroke="#ec4899" stroke-width="2.4" stroke-linejoin="round"></polyline>
+          </svg>
+          <div class="serieLegend">
+            <span><i style="background:#38bdf8"></i>東京エレクトロン <b style="color:#be185d">+63.1%</b></span>
+            <span><i style="background:#16a34a"></i>トヨタ自動車 <b style="color:#15803d">−0.7%</b></span>
+            <span><i style="background:#ec4899"></i>ソニーG <b style="color:#15803d">−17.2%</b></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="zzRow">
+        <div class="zzText">
+          <div class="n">TOOL 05</div>
+          <h3>アラートは、静かに。</h3>
+          <p>上抜け・下抜けの価格通知に、配当の権利日や積立の実行日も。煽らないよう既定はまとめて配信、必要なものだけ即時に切り替えられます。</p>
+          <div class="spec"><span>無料 3件</span><span>LIGHT 10件</span><span>PREMIUM 30件</span></div>
+        </div>
+        <div class="vizBig" style="gap:10px">
+          <div class="cap">アラート · 3件設定中</div>
+          <div class="alert-row"><span><span class="dotpill"></span>ソニーG ¥3,300 上抜け</span><b style="color:var(--accent)">達成</b></div>
+          <div class="alert-row"><span><span class="dotpill" style="background:var(--muted-2)"></span>オルカン −3% 下抜け</span><b style="color:var(--muted)">監視中</b></div>
+          <div class="alert-row"><span><span class="dotpill" style="background:var(--muted-2)"></span>権利確定日 3日前</span><b style="color:var(--muted)">予約</b></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ========== CTA ========== -->
-<section class="cta-final">
+<section class="cta-flame">
   <div class="container-sm">
     <div class="eyebrow">START NOW</div>
-    <h2>
-      ゴールへ、<br>
-      <span class="grad-text">一歩目を。</span>
-    </h2>
+    <h2>ゴールへ、<br>一歩目を。</h2>
     <p>無料プランで、すべてのコア機能が使えます。<br>クレジットカード登録不要。</p>
-    <a href="#" class="cta-btn">無料ではじめる</a>
-    <div style="margin-top: 16px; font-size: 13px; color: #9ca3af;">
-      <a href="pricing.html" style="color: #ec4899; font-weight: 600;">料金プランを見る →</a>
+    <div class="store-buttons">
+      <a href="#" class="store-btn">
+        <span class="store-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.05 12.04c-.03-2.88 2.35-4.27 2.46-4.34-1.34-1.96-3.43-2.23-4.17-2.26-1.78-.18-3.47 1.05-4.38 1.05-.91 0-2.3-1.03-3.78-1-1.95.03-3.75 1.13-4.75 2.87-2.02 3.51-.52 8.71 1.45 11.56.96 1.39 2.11 2.96 3.6 2.9 1.44-.06 1.98-.93 3.72-.93 1.74 0 2.23.93 3.76.9 1.55-.03 2.53-1.42 3.48-2.82 1.09-1.62 1.55-3.19 1.57-3.27-.03-.01-3.01-1.16-3.04-4.59zM14.18 3.65c.8-.96 1.33-2.3 1.19-3.65-1.15.05-2.54.76-3.36 1.72-.74.85-1.38 2.21-1.21 3.52 1.28.1 2.59-.65 3.38-1.59z"/></svg></span>
+        <div><div class="store-label-small">Download on the</div><div class="store-label-main">App Store</div></div>
+      </a>
+      <a href="#" class="store-btn">
+        <span class="store-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gpf1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#0080ff"/></linearGradient><linearGradient id="gpf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffd400"/><stop offset="1" stop-color="#ff8a00"/></linearGradient><linearGradient id="gpf3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3a44"/><stop offset="1" stop-color="#c30b1f"/></linearGradient><linearGradient id="gpf4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00f076"/><stop offset="1" stop-color="#00a85a"/></linearGradient></defs><path d="M3.6 1.3c-.3.3-.5.8-.5 1.4v18.6c0 .6.2 1.1.5 1.4L13.7 12 3.6 1.3z" fill="url(#gpf1)"/><path d="M17 8.4l-3.3 3.6 3.3 3.6 4-2.3c1.1-.6 1.1-2 0-2.6l-4-2.3z" fill="url(#gpf2)"/><path d="M3.6 22.7c.4.4 1.1.5 1.8.1L17 15.6l-3.3-3.6L3.6 22.7z" fill="url(#gpf3)"/><path d="M5.4 1.2C4.7.8 4 .9 3.6 1.3L13.7 12 17 8.4 5.4 1.2z" fill="url(#gpf4)"/></svg></span>
+        <div><div class="store-label-small">GET IT ON</div><div class="store-label-main">Google Play</div></div>
+      </a>
     </div>
+    <div style="margin-top:22px;font-size:13px;"><a href="pricing.html" class="underline-link">料金プランを見る →</a></div>
   </div>
 </section>
 
-<!-- ========== Footer ========== -->
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-links">
-      <a href="index.html">トップ</a>
-      <a href="features.html">機能紹介</a>
-      <a href="pricing.html">料金プラン</a>
-      <a href="terms.html">利用規約</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="disclaimer.html">免責事項</a>
-      <a href="scta.html">特定商取引法に基づく表記</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterF)"/>
+              <defs><linearGradient id="logoGradFooterF" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>コミュニティ型 資産運用 SNS。<br>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul><li><a href="features.html">機能紹介</a></li><li><a href="pricing.html">料金プラン</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">会社情報</div>
+        <ul><li>運営会社</li><li>お問い合わせ</li></ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul><li><a href="terms.html">利用規約</a></li><li><a href="privacy.html">プライバシーポリシー</a></li><li><a href="disclaimer.html">免責事項</a></li><li><a href="scta.html">特定商取引法に基づく表記</a></li></ul>
+      </div>
     </div>
-    <div style="font-size:13px;color:#9ca3af;margin-bottom:8px;">Financial Independence, within REach.</div>
-    <div>© 2026 みんなでFIRE · 投資判断はご自身の責任で。</div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+    <div>v1.18.3-beta</div>
   </div>
 </footer>
 
