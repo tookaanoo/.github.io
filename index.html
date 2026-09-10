@@ -419,9 +419,47 @@
     font-weight: 700;
   }
 
+  @media (max-width: 1100px) {
+    .floating-card { top: 30px; right: -24px; }
+    .floating-card-tl { top: 150px; left: -24px; }
+  }
+  @media (max-width: 900px) {
+    .floating-card {
+      transform: scale(0.88);
+      transform-origin: top right;
+      top: 70px;
+      right: -16px;
+    }
+    .floating-card-tl {
+      transform: scale(0.88);
+      transform-origin: top left;
+      top: 190px;
+      left: -16px;
+    }
+  }
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 48px; }
+    body { overflow-x: hidden; }
+    .phone-wrap { max-width: 340px; margin: 0 auto; }
+    .floating-card {
+      transform: scale(0.8);
+      transform-origin: top right;
+      top: 330px;
+      right: -20px;
+    }
+    .floating-card-tl {
+      transform: scale(0.8);
+      transform-origin: top left;
+      top: 210px;
+      left: -20px;
+    }
+    .floating-card-bl {
+      transform: scale(0.78);
+      transform-origin: bottom left;
+      left: -18px;
+      bottom: -16px;
+    }
   }
 
   /* ===== Ticker ===== */
