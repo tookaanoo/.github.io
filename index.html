@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>みんなでFIRE - Financial Independence, within REach.</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -276,9 +276,14 @@
     padding: 48px 20px 20px;
     color: #fff;
     position: relative;
+    font-variant-numeric: tabular-nums;
   }
   .phone-screen.pink { background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%); }
   .phone-screen.white { background: #fff; color: #111827; }
+  .phone-screen .num, .floating-card .num, .floating-card-bl .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
   .phone-label { font-size: 11px; opacity: 0.8; }
   .phone-label-sm { font-size: 10px; opacity: 0.7; }
   .phone-big { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
@@ -321,31 +326,44 @@
 
   .floating-card {
     position: absolute;
-    right: -20px;
-    top: 50px;
+    right: -44px;
+    top: -16px;
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 12px 32px rgba(0,0,0,0.12);
     padding: 16px;
     width: 180px;
+    font-variant-numeric: tabular-nums;
+  }
+  .floating-card-tl {
+    position: absolute;
+    left: -56px;
+    top: 90px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    padding: 14px 16px;
+    width: 210px;
+    font-variant-numeric: tabular-nums;
   }
   .floating-card .rank-num {
     font-size: 36px;
     font-weight: 900;
     line-height: 1;
   }
-  .floating-card .small { font-size: 10px; color: #6b7280; margin-bottom: 4px; }
+  .floating-card .small, .floating-card-tl .small, .floating-card-bl .small { font-size: 10px; color: #6b7280; margin-bottom: 4px; }
   .floating-card .pink-num { color: #ec4899; font-weight: 700; font-size: 13px; }
 
   .floating-card-bl {
     position: absolute;
-    left: -28px;
-    bottom: 60px;
+    left: -48px;
+    bottom: -20px;
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-    padding: 14px 16px;
-    width: 200px;
+    padding: 18px 20px;
+    width: 240px;
+    font-variant-numeric: tabular-nums;
   }
   .fc-bl-head {
     display: flex;
@@ -392,9 +410,9 @@
     font-weight: 700;
   }
   .fc-bl-event {
-    font-size: 11px;
+    font-size: 14px;
     color: #4b5563;
-    line-height: 1.4;
+    line-height: 1.5;
   }
   .fc-bl-event b {
     color: #ec4899;
@@ -1025,8 +1043,13 @@
     gap: 12px;
     cursor: pointer;
     list-style: none;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: inherit;
+    text-align: left;
   }
-  .faq-q::-webkit-details-marker { display: none; }
   .faq-num {
     color: #ec4899;
     font-size: 12px;
@@ -1635,13 +1658,7 @@
     <div class="hero-grid">
       <div>
         <div class="hero-badge">
-          <div class="hero-badge-avatars">
-            <div class="hero-badge-avatar a1">A</div>
-            <div class="hero-badge-avatar a2">K</div>
-            <div class="hero-badge-avatar a3">M</div>
-            <div class="hero-badge-avatar a4">H</div>
-          </div>
-          <span>同じ目標を持つ仲間たちが、すでにFIREへの道を歩いています</span>
+          <span>🔥 登録無料・クレジットカード登録不要・今日から記録できる</span>
         </div>
         <h1 class="hero-title">
           みんなで、<br>
@@ -1649,7 +1666,7 @@
         </h1>
         <p class="hero-tagline">Financial Independence, within REach.</p>
         <p class="hero-desc">
-          <b>みんなでFIRE</b> は、ポートフォリオを共有して、同じ目標を持つ仲間と一緒に経済的自立を目指す資産運用 SNS。
+          <b>みんなでFIRE</b> は、日本株・海外株・投資信託など7つの資産カテゴリをひとつの画面で記録し、あなたの実績から FIRE 到達年を予測する資産管理アプリ。まずは、ひとりで始める。
         </p>
         <div class="store-buttons">
           <a href="#" class="store-btn">
@@ -1716,52 +1733,149 @@
       <div class="phone-wrap">
         <div class="phone">
           <div class="phone-notch"></div>
-          <div class="phone-screen pink">
-            <div class="phone-label">TOTAL</div>
-            <div class="phone-label-sm" style="margin-bottom:4px;">YOUR FIRE PROGRESS</div>
-            <div class="phone-big">¥14,217,830</div>
-            <div class="phone-label" style="margin-bottom:24px;">+1,238 今日</div>
-            
-            <div class="phone-progress-card">
-              <div class="phone-label-sm" style="margin-bottom:4px;">FIRE PROGRESS</div>
-              <div style="font-size:18px;font-weight:700;margin-bottom:8px;">あと 8.4 年</div>
-              <div class="grid-2x2">
-                <div class="row-between"><span>日本株</span><b>36%</b></div>
-                <div class="row-between"><span>海外株</span><b>24%</b></div>
-                <div class="row-between"><span>投信</span><b>18%</b></div>
-                <div class="row-between"><span>BTC</span><b>3%</b></div>
+          <div class="phone-screen white">
+            <div style="font-size:12px;color:#9ca3af;margin-bottom:6px;">総資産</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
+              <div class="phone-big num" style="color:#111827;font-size:21px;min-width:0;white-space:nowrap;">¥14,217,830</div>
+              <svg width="48" height="24" viewBox="0 0 48 24" style="flex-shrink:0;">
+                <polyline points="0,18 8,16 16,19 24,14 32,15 40,7 48,2" fill="none" stroke="#ec4899" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="num" style="font-size:12px;color:#db2777;font-weight:700;margin-top:4px;">▲ +1,238 (+0.95%) <span style="font-family:'Noto Sans JP','Inter',sans-serif;">本日</span></div>
+
+            <div style="display:flex;align-items:center;gap:14px;margin:20px 0;">
+              <svg width="80" height="80" viewBox="0 0 80 80" style="flex-shrink:0;">
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#f3f4f6" stroke-width="14"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#ec4899" stroke-width="14" stroke-dasharray="72.38 128.68" stroke-dashoffset="0" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#3b82f6" stroke-width="14" stroke-dasharray="48.25 152.81" stroke-dashoffset="-72.38" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#10b981" stroke-width="14" stroke-dasharray="36.19 164.87" stroke-dashoffset="-120.64" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="14" stroke-dasharray="6.03 195.03" stroke-dashoffset="-156.83" transform="rotate(-90 40 40)"/>
+              </svg>
+              <div style="flex:1;font-size:12px;color:#374151;">
+                <div class="row-between" style="margin-bottom:5px;"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ec4899;margin-right:6px;"></i>日本株</span><b class="num">36%</b></div>
+                <div class="row-between" style="margin-bottom:5px;"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#3b82f6;margin-right:6px;"></i>海外株</span><b class="num">24%</b></div>
+                <div class="row-between" style="margin-bottom:5px;"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#10b981;margin-right:6px;"></i>投信</span><b class="num">18%</b></div>
+                <div class="row-between"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#f59e0b;margin-right:6px;"></i>BTC</span><b class="num">3%</b></div>
               </div>
             </div>
-            
-            <div class="phone-label-sm" style="margin-bottom:8px;">LIVE • コメント</div>
-            <div class="phone-comment">
-              <div class="commenter">
-                <div class="avatar"></div>
-                <span style="font-weight:700;">Aya K.</span>
+
+            <div style="background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-radius:12px;padding:12px 14px;margin-bottom:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="font-size:12px;color:#9d174d;">
+                  <svg width="13" height="13" viewBox="0 0 120 143" fill="none" style="vertical-align:-2px;margin-right:6px;">
+                    <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFireBar)"/>
+                    <defs>
+                      <linearGradient id="logoGradFireBar" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#FF6B9D"/>
+                        <stop offset="0.38" stop-color="#E91E63"/>
+                        <stop offset="0.72" stop-color="#9C27B0"/>
+                        <stop offset="1" stop-color="#6A1B9A"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>FIRE&nbsp;<span class="num">31.9%</span>
+                </span>
+                <span style="font-size:12px;color:#9d174d;">基礎構築期 ›</span>
               </div>
-              <p>「ナンピン中。my future はそっちじゃない」</p>
+              <div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.6);overflow:hidden;">
+                <div style="height:100%;width:32%;background:linear-gradient(90deg,#FF6B9D 0%,#E91E63 38%,#9C27B0 72%,#6A1B9A 100%);border-radius:4px;"></div>
+              </div>
+            </div>
+
+            <div style="background:#fff;border:1px solid #f3f4f6;border-radius:14px;padding:12px 14px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+                <span style="font-size:12px;font-weight:700;color:#111827;">今日の値動き</span>
+                <span style="font-size:10px;color:#f97316;">値動きマップ →</span>
+              </div>
+              <div style="margin-bottom:10px;">
+                <span class="num" style="font-size:17px;font-weight:700;color:#db2777;">+¥149,972</span>
+                <span style="font-size:10px;color:#9ca3af;margin-left:6px;">本日の損益・<span class="num">▲17 ▼3</span></span>
+              </div>
+              <div class="grid-2x2" style="gap:8px;">
+                <div style="background:#fce7f3;border-radius:10px;padding:8px;">
+                  <div style="font-size:10px;color:#374151;">ビットコイン</div>
+                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+4.18%</div>
+                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥29,026</div>
+                </div>
+                <div style="background:#fce7f3;border-radius:10px;padding:8px;">
+                  <div style="font-size:10px;color:#374151;">NVIDIA</div>
+                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+3.22%</div>
+                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥12,236</div>
+                </div>
+                <div style="background:#fdf2f8;border-radius:10px;padding:8px;">
+                  <div style="font-size:10px;color:#374151;">イーサリアム</div>
+                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+2.20%</div>
+                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥2,218</div>
+                </div>
+                <div style="background:#fdf2f8;border-radius:10px;padding:8px;">
+                  <div style="font-size:10px;color:#374151;">ソニーグループ</div>
+                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+2.18%</div>
+                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥32,373</div>
+                </div>
+              </div>
+              <div style="font-size:10px;color:#9ca3af;margin-top:8px;">変動が大きい4銘柄</div>
             </div>
           </div>
         </div>
         <div class="floating-card">
-          <div class="small">YOUR RANK</div>
-          <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:8px;">
-            <span class="rank-num grad-text">#3</span>
-            <span class="small">/ 2,847</span>
+          <div style="position:absolute;top:10px;right:10px;display:flex;flex-direction:column;align-items:center;gap:3px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#9C27B0);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;">↗</div>
+            <span style="font-size:8px;color:#ec4899;font-weight:700;white-space:nowrap;">発信する</span>
           </div>
-          <div class="small">in your bracket</div>
-          <div class="pink-num">+28.4%</div>
+          <div class="fc-bl-head" style="margin-bottom:34px;padding-right:36px;">
+            <span class="fc-bl-live-dot"></span>
+            <span class="fc-bl-label">値動きマップ・本日</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:22px 22px;gap:2px;margin-bottom:10px;">
+            <div style="grid-row:span 2;background:#db2777;border-radius:6px 0 0 6px;"></div>
+            <div style="background:#ec4899;"></div>
+            <div style="background:#f472b6;border-radius:0 6px 0 0;"></div>
+            <div style="background:#86efac;"></div>
+            <div style="background:#fbcfe8;border-radius:0 0 6px 0;"></div>
+          </div>
+          <div style="margin-bottom:4px;">
+            <span class="rank-num grad-text num" style="font-size:22px;">+¥149,972</span>
+          </div>
+          <div class="small num">▲17 ▼3 · 20銘柄</div>
+        </div>
+        <div class="floating-card-tl">
+          <div style="position:absolute;top:10px;right:10px;display:flex;flex-direction:column;align-items:center;gap:3px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#9C27B0);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;">↗</div>
+            <span style="font-size:8px;color:#ec4899;font-weight:700;white-space:nowrap;">発信する</span>
+          </div>
+          <div class="fc-bl-head" style="margin-bottom:8px;padding-right:36px;">
+            <span class="fc-bl-live-dot"></span>
+            <span class="fc-bl-label">資産の伸び・過去1年</span>
+          </div>
+          <div style="margin-bottom:4px;">
+            <span class="num grad-text" style="font-size:26px;font-weight:800;">+56.1%</span>
+          </div>
+          <svg width="178" height="44" viewBox="0 0 178 44" style="display:block;margin-bottom:4px;">
+            <defs>
+              <linearGradient id="growLineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#FF6B9D"/>
+                <stop offset="0.5" stop-color="#E91E63"/>
+                <stop offset="1" stop-color="#9C27B0"/>
+              </linearGradient>
+              <linearGradient id="growAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#E91E63" stop-opacity="0.28"/>
+                <stop offset="1" stop-color="#E91E63" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <polygon points="0,40 22,36 44,39 66,31 88,33 110,23 132,25 178,10 178,44 0,44" fill="url(#growAreaGrad)"/>
+            <polyline points="0,40 22,36 44,39 66,31 88,33 110,23 132,25 178,10" fill="none" stroke="url(#growLineGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="small num" style="color:#9ca3af;">¥908万 → ¥1,417万</div>
         </div>
         <div class="floating-card-bl">
+          <div style="position:absolute;top:10px;right:10px;display:flex;flex-direction:column;align-items:center;gap:3px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#9C27B0);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;">↗</div>
+            <span style="font-size:8px;color:#ec4899;font-weight:700;white-space:nowrap;">発信する</span>
+          </div>
           <div class="fc-bl-head">
             <span class="fc-bl-live-dot"></span>
-            <span class="fc-bl-label">LIVE NOW</span>
+            <span class="fc-bl-label">TODAY'S RECORD</span>
           </div>
-          <div class="fc-bl-user">
-            <div class="fc-bl-avatar">K</div>
-            <div class="fc-bl-name">Ken S.</div>
-          </div>
-          <div class="fc-bl-event"><b>Coast FIRE 達成 🎉</b><br>「やっと到達。みんなのおかげ」</div>
+          <div class="fc-bl-event"><b>資産が過去最高を更新 🎉</b><br>前回最高は1月22日・3日連続</div>
         </div>
       </div>
     </div>
@@ -1805,7 +1919,7 @@
   <div class="container-sm">
     <div class="section-eyebrow-center">3 つの、シンプルなこと。</div>
     <h2 class="section-title">
-      記録して、共有して、<br>
+      記録して、把握して、<br>
       <span class="grad-text">たどり着く。</span>
     </h2>
     <div class="props-grid">
@@ -1817,11 +1931,11 @@
         <div class="small-label">total assets</div>
       </div>
       <div class="prop-card highlight">
-        <div class="num-tag">02 SHARE</div>
-        <h3>同じ目標を持つ仲間を、フォロー。</h3>
-        <p>ポートフォリオを公開して、ランキング・フィードで同じ資産帯の仲間とつながる。気になる人をフォローして、長期目線で学び合う。</p>
-        <div class="big-num">#3 / 2,847</div>
-        <div class="small-label">in your bracket</div>
+        <div class="num-tag">02 STAGE</div>
+        <h3>今のステージが、わかる。</h3>
+        <p>資産額の絶対値だけじゃなく、7段階の FIRE ステージで今の立ち位置を可視化。次のステージまでの距離も、一目でわかる。</p>
+        <div class="big-num">基礎構築期</div>
+        <div class="small-label">your stage</div>
       </div>
       <div class="prop-card">
         <div class="num-tag">03 FIRE</div>
@@ -1844,8 +1958,8 @@
         <span class="grad-text">どのステージ?</span>
       </h2>
       <p class="stages-desc">
-        絶対額じゃない。資産形成のステージで、ちょうど合う仲間が見つかる。
-        同じ景色を見ている人と、同じ目線で話ができる。
+        絶対額じゃない。資産形成のステージで、今の自分の立ち位置がわかる。
+        次のステージまでの距離も、はっきり見える。
       </p>
     </div>
 
@@ -1887,82 +2001,58 @@
       </div>
     </div>
     <p class="stages-desc" style="margin-top:24px;font-size:13px;color:#6b7280;">
-      ※ 公開設定は自由。ステージ名のみ、レンジ、絶対額、非公開 から選べます。
+      ※ 表示方法は自由に選べます。ステージ名のみ、レンジ表示、絶対額から選択可能。
     </p>
   </div>
 </section>
 
-<!-- ========== COMMUNITY ========== -->
-<section class="section bg-gray" id="community">
+<!-- ========== PRIVATE FIRST ========== -->
+<section class="section bg-gray" id="private-first">
   <div class="container-sm">
     <div class="two-col">
       <div>
-        <div class="eyebrow">COMMUNITY</div>
+        <div class="eyebrow">PRIVATE FIRST</div>
         <h2>
-          学びは、上から。<br>
-          <span class="grad-text">ヒントは、横から。</span>
+          まずは、<br>
+          <span class="grad-text">自分のペースで。</span>
         </h2>
-        <p>一つ上のステージの人をフォローすれば、未来の自分の道筋が見えてくる。同じ資産帯の仲間とは、日々の判断や工夫を共有できる。順位を争うんじゃない、お互いから学び合うコミュニティ。</p>
+        <p>誰かに見せる前提じゃない。日々の記録も、FIREへの進み方も、まずは自分だけの画面でじっくり向き合う。ポートフォリオを仲間と共有する機能は、これから届けていく予定。</p>
       </div>
       <div class="ranking-card">
         <div class="ranking-header">
-          <span style="font-weight:700;">RANKING</span>
-          <span style="font-weight:700;">¥10M〜30M の人たち</span>
-          <span class="pink-label">▲ YOUR BRACKET</span>
+          <span style="font-weight:700;">未確認の記録</span>
+          <span style="font-weight:700;">7件</span>
+          <span class="pink-label">合計 ¥217,323</span>
         </div>
         <div class="ranking-row top">
           <div class="left">
-            <span class="rank-num">#1</span>
-            <div class="avatar avatar-md"></div>
-            <span class="name">Aya K.</span>
+            <span class="name">配当・Apple</span>
           </div>
-          <span class="pct">+47.8%</span>
+          <span class="pct">¥1,243</span>
         </div>
         <div class="ranking-row">
           <div class="left">
-            <span class="rank-num">#2</span>
-            <div class="avatar avatar-md blue"></div>
-            <span class="name">Ken S.</span>
+            <span class="name">積立・Vanguard S&amp;P 500 ETF</span>
           </div>
-          <span class="pct">+38.2%</span>
+          <span class="pct">¥30,000</span>
         </div>
         <div class="ranking-row you">
           <div class="left">
-            <span class="rank-num">#3</span>
-            <div class="avatar avatar-md"></div>
-            <span class="name">You</span>
+            <span class="name">NISA枠 (2026)</span>
           </div>
-          <span class="pct">+28.4%</span>
+          <span class="pct">78% 利用</span>
         </div>
         <div class="ranking-row">
           <div class="left">
-            <span class="rank-num">#4</span>
-            <div class="avatar avatar-md green"></div>
-            <span class="name">Hiro M.</span>
+            <span class="name">ウォッチリスト</span>
           </div>
-          <span class="pct">+24.1%</span>
+          <span class="pct">6銘柄</span>
         </div>
         <div class="ranking-row">
           <div class="left">
-            <span class="rank-num">#5</span>
-            <div class="avatar avatar-md yellow"></div>
-            <span class="name">Mio K.</span>
+            <span class="name">価格アラート</span>
           </div>
-          <span class="pct">+19.7%</span>
-        </div>
-        <div class="ranking-mini">
-          <div class="info">
-            <div class="avatar avatar-md"></div>
-            <div>
-              <div class="info-name">Aya K.</div>
-              <div class="info-pct">+47.8%</div>
-            </div>
-          </div>
-          <button class="follow-btn">フォロー</button>
-          <div class="right">
-            <div class="right-label">LV. 3</div>
-            <div class="right-pct">67.3%</div>
-          </div>
+          <span class="pct">3件</span>
         </div>
       </div>
     </div>
@@ -2005,6 +2095,7 @@
         </div>
       </div>
     </div>
+    <p style="text-align:center;font-size:13px;color:#9ca3af;margin-top:-4px;margin-bottom:24px;">↓ あなたのポートフォリオも、登録するとこう表示されます</p>
 
     <!-- Asset cards row -->
     <div class="assets-grid">
@@ -2076,6 +2167,45 @@
         <div class="asset-footer">
           <span class="asset-count">3 銘柄</span>
           <span class="asset-change up">+1.84%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECURITY ========== -->
+<section class="section-security">
+  <div class="container-sm">
+    <div class="security-grid">
+      <div>
+        <div class="eyebrow">SECURITY • PRIVACY</div>
+        <h2>
+          預けない、<br>
+          売らない、<br>
+          <span class="grad-text">取引しない。</span>
+        </h2>
+        <p>あなたの資産情報は、必要最小限の設計で守られます。</p>
+      </div>
+      <div class="security-cards">
+        <div class="sec-card">
+          <div class="tag">NO PERSONAL INFO</div>
+          <h3>本名は要りません</h3>
+          <p>メール・パスワード・ペンネームだけ。本名・住所・電話番号は一切収集しません。</p>
+        </div>
+        <div class="sec-card">
+          <div class="tag">NO TRADING</div>
+          <h3>そもそも、触れません</h3>
+          <p>売買機能は搭載していません。あなたの資産にアプリ側から手出しできない設計だから、誤発注も不正アクセスによる取引リスクもありません。</p>
+        </div>
+        <div class="sec-card">
+          <div class="tag">ENCRYPTED</div>
+          <h3>転送・保存時暗号化</h3>
+          <p>すべて AES-256 / SSL-TLS で保護。データもトークンも常に暗号化された状態で保存されます。</p>
+        </div>
+        <div class="sec-card">
+          <div class="tag">YOUR DATA</div>
+          <h3>データは、あなたのもの</h3>
+          <p>第三者への販売やデータブローカーへの提供は一切ありません。退会時にはすべての記録を完全に削除します。</p>
         </div>
       </div>
     </div>
@@ -2168,161 +2298,47 @@
   </div>
 </section>
 
-<!-- ========== TAX SAVVY ========== -->
-<section class="tax-section" id="tax">
-  <div class="container-sm">
-    <div class="tax-grid">
-      <div class="tax-card">
-        <div class="tax-card-head">2025 年 税務サマリー</div>
-        <div class="tax-card-title">上場株式等(申告分離)</div>
-
-        <div class="tax-row">
-          <span class="label">年間実現損益</span>
-          <span class="val">+¥350,000</span>
-        </div>
-        <div class="tax-row">
-          <span class="label">年間配当受取</span>
-          <span class="val">+¥85,000</span>
-        </div>
-        <div class="tax-row">
-          <span class="label">既源泉徴収(国内)</span>
-          <span class="val">¥88,371</span>
-        </div>
-        <div class="tax-row">
-          <span class="label">既源泉徴収(外国)</span>
-          <span class="val">¥3,200</span>
-        </div>
-        <div class="tax-row total">
-          <span class="label">外国税額控除 想定還付</span>
-          <span class="val">¥3,200</span>
-        </div>
-
-        <div class="tax-warning">
-          <span>⚠️</span>
-          <span>NISA で米国株配当を ¥X,XXX 受取済み。米国側 10% は取り戻せません。</span>
-        </div>
-      </div>
-
-      <div>
-        <div class="eyebrow">TAX SAVVY</div>
-        <h2>
-          税金を抜いた、<br>
-          <span class="grad-text">本当のリターンを。</span>
-        </h2>
-        <p>
-          国内株 20.315%、米国株は二重課税、NISAでも取り戻せない外国税。
-          あなたが本当に手にできる金額を、銘柄ごと・年ごとに。
-        </p>
-        <div class="tax-bullets">
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>年間の実現損益・配当・源泉徴収を、口座種別ごとに集計</div>
-          </div>
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>外国税額控除の参考額を自動表示。確定申告でいくら戻せそうかが見える</div>
-          </div>
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>配当の課税方式を3パターン比較。一番有利な方式を提案 <span style="color:#ec4899;font-weight:700;font-size:11px;">PREMIUM</span></div>
-          </div>
-          <div class="tax-bullet">
-            <div class="tax-bullet-dot"></div>
-            <div>NISAでの米国株配当の落とし穴も、ちゃんと教えてくれる</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SECURITY ========== -->
-<section class="section-security">
-  <div class="container-sm">
-    <div class="security-grid">
-      <div>
-        <div class="eyebrow">SECURITY • PRIVACY</div>
-        <h2>
-          預けない、<br>
-          売らない、<br>
-          <span class="grad-text">取引しない。</span>
-        </h2>
-        <p>あなたの資産情報は、必要最小限の設計で守られます。</p>
-      </div>
-      <div class="security-cards">
-        <div class="sec-card">
-          <div class="tag">NO PERSONAL INFO</div>
-          <h3>本名は要りません</h3>
-          <p>メール・パスワード・ペンネームだけ。本名・住所・電話番号は一切収集しません。</p>
-        </div>
-        <div class="sec-card">
-          <div class="tag">NO TRADING</div>
-          <h3>そもそも、触れません</h3>
-          <p>売買機能は搭載していません。あなたの資産にアプリ側から手出しできない設計だから、誤発注も不正アクセスによる取引リスクもありません。</p>
-        </div>
-        <div class="sec-card">
-          <div class="tag">ENCRYPTED</div>
-          <h3>転送・保存時暗号化</h3>
-          <p>すべて AES-256 / SSL-TLS で保護。データもトークンも常に暗号化された状態で保存されます。</p>
-        </div>
-        <div class="sec-card">
-          <div class="tag">YOUR DATA</div>
-          <h3>データは、あなたのもの</h3>
-          <p>第三者への販売やデータブローカーへの提供は一切ありません。退会時にはすべての記録を完全に削除します。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== FAQ ========== -->
 <section class="section" id="faq">
   <div class="container-xs">
     <div class="eyebrow">FAQ</div>
     <h2 class="faq-title">よくある質問。</h2>
     <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
           <span class="faq-num">01</span>
           <span class="faq-q-text">取引はこのアプリで行えますか？</span>
-        </summary>
-        <p class="faq-a">いいえ。みんなでFIRE は記録と共有のためのアプリです。実際の売買は証券会社・暗号資産取引所などで行ってください。アプリ側はあなたの取引を集計し、可視化と仲間との比較を行います。</p>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">
+        </button>
+        <p class="faq-a" hidden>いいえ。みんなでFIRE は記録のためのアプリです。実際の売買は証券会社・暗号資産取引所などで行ってください。アプリ側はあなたの取引を集計し、可視化と FIRE 到達予測を行います。</p>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
           <span class="faq-num">02</span>
-          <span class="faq-q-text">ポートフォリオは公開しないと使えませんか？</span>
-        </summary>
-        <p class="faq-a">完全プライベートでの利用も可能です。フォロワー・ランキング・フィードなどすべて公開設定はON/OFF可能。完全に個別の記録としても利用できます。</p>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span class="faq-num">03</span>
           <span class="faq-q-text">対応している証券口座は？</span>
-        </summary>
-        <p class="faq-a">みんなでFIRE は特定の証券会社と API 連携していません。どの証券会社・暗号資産取引所のデータでも、手入力または取引履歴のスクリーンショットから取り込んで管理できます。SBI証券・楽天証券・マネックス証券など主要なフォーマットに対応しています。</p>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span class="faq-num">04</span>
+        </button>
+        <p class="faq-a" hidden>みんなでFIRE は特定の証券会社と API 連携していません。どの証券会社・暗号資産取引所のデータでも、手入力または取引履歴のスクリーンショットから取り込んで管理できます。SBI証券・楽天証券・マネックス証券など主要なフォーマットに対応しています。証券会社口座との自動連携機能も、今後の開発で追加していく予定です。</p>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="faq-num">03</span>
           <span class="faq-q-text">為替・USD建ての数値はどう扱われますか？</span>
-        </summary>
-        <p class="faq-a">取引時点の為替レートで自動的に日本円換算して記録します。現地通貨での損益と円換算での損益(税務上の正)を両方表示し、為替差損益も分離して可視化します。</p>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span class="faq-num">05</span>
+        </button>
+        <p class="faq-a" hidden>取引時点の為替レートで自動的に日本円換算して記録します。現地通貨での損益と円換算での損益を両方表示し、為替差損益も分離して可視化します。</p>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="faq-num">04</span>
           <span class="faq-q-text">料金体系は？</span>
-        </summary>
-        <p class="faq-a">ベース機能はすべて無料でご利用いただけます。<br>・無料:7カテゴリ資産管理、SNS、ランキング、フィード、FIREシミュレーション<br>・Light(¥300/月):税務サマリー詳細、リバランス提案、週次通知<br>・Premium(¥600/月):税最適化、即時通知、AI月次レポート</p>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span class="faq-num">06</span>
+        </button>
+        <p class="faq-a" hidden>現在、みんなでFIRE はすべての機能を無料でご利用いただけます。今後、機能追加にあわせて有料プランを新設する可能性がありますが、その際も基本の記録機能は無料のまま提供する予定です。</p>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="faq-num">05</span>
           <span class="faq-q-text">データの管理はどうなっていますか？</span>
-        </summary>
-        <p class="faq-a">すべての記録はあなたのアカウントに紐付き、退会時には完全に削除されます。広告利用やデータ販売は一切ありません。アプリ内でいつでも調整・編集が可能です。</p>
-      </details>
+        </button>
+        <p class="faq-a" hidden>すべての記録はあなたのアカウントに紐付き、退会時には完全に削除されます。広告利用やデータ販売は一切ありません。アプリ内でいつでも調整・編集が可能です。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -2337,7 +2353,7 @@
     </h2>
     <p>
       スタート期の人も、加速期の人も、FIRE達成した人も。
-      あなたの今のステージで、ちょうど合う仲間と歩める。
+      あなたの今のステージが、はっきりわかる。
     </p>
     <div class="anystage-tags">
       <span class="anystage-tag">#20代でFIRE準備中</span>
@@ -2350,11 +2366,37 @@
   </div>
 </section>
 
+<!-- ========== OUR BELIEF ========== -->
+<section class="section-dark">
+  <div class="container-sm" style="text-align:center;">
+    <div class="eyebrow-gray" style="margin-bottom:12px;">OUR BELIEF</div>
+    <h2 style="margin-bottom:28px;">
+      じっくり続ける。<br>
+      それでも、<span class="grad-text">売りたくなる日</span>がある。
+    </h2>
+    <p style="max-width:480px;margin:0 auto 24px;color:#d1d5db;line-height:2;">
+      Financial Independence への一番の近道は、<br>
+      長期投資をじっくり続けること。<br>
+      それでも、資産が値下がりした日は、<br>
+      手放してしまいたくなる。
+    </p>
+    <p style="max-width:480px;margin:0 auto;color:#d1d5db;line-height:2;">
+      そんな時、同じようにホールドを続ける仲間がいたら、<br>
+      きっと踏みとどまれる。
+      <br><br>
+      みんなでFIRE が目指すのは、そんな場所。<br>
+      まずは、ひとりで資産と向き合う記録機能から。<br>
+      この先、ホルダー同士が励まし合える機能も、<br>
+      少しずつ届けていきます。
+    </p>
+  </div>
+</section>
+
 <!-- ========== CTA ========== -->
 <section class="cta">
   <div class="container-xs">
-    <h2>一緒に、<br>たどり着こう。</h2>
-    <p>同じ目標を持つ仲間が、すでに集まっています。</p>
+    <h2>さあ、<br>たどり着こう。</h2>
+    <p>今日の記録が、未来の FIRE に積み重なる。</p>
     <div class="store-buttons">
       <a href="#" class="store-btn">
         <span class="store-icon">
@@ -2424,7 +2466,7 @@
           </div>
           <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
         </div>
-        <p>コミュニティ型 資産運用 SNS。<br>Financial Independence, within REach.</p>
+        <p>資産管理 × FIRE到達予測アプリ。<br>Financial Independence, within REach.</p>
       </div>
       <div class="footer-col">
         <div class="footer-head">プロダクト</div>
@@ -2457,5 +2499,15 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = btn.nextElementSibling;
+      var isOpen = !answer.hidden;
+      answer.hidden = isOpen;
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+</script>
 </body>
 </html>
