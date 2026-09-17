@@ -50,6 +50,20 @@
   .grad-bg-soft {
     background: linear-gradient(180deg, #fff 0%, #ffeef2 100%);
   }
+  .mobile-break { display: none; }
+  .stages-title {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .belief-title {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.2;
+  }
   .eyebrow {
     font-size: 10px;
     font-weight: 700;
@@ -111,6 +125,9 @@
     .nav-actions .login { display: none; }
     .btn-primary { padding: 8px 14px; font-size: 12px; }
     .logo-text { display: none; }
+    .mobile-break { display: inline; }
+    .stages-title { font-size: 34px; }
+    .belief-title { font-size: 34px; }
   }
 
   /* ===== Hero ===== */
@@ -1718,38 +1735,6 @@
               <div class="store-label-main">App Store</div>
             </div>
           </a>
-          <a href="#" class="store-btn">
-            <span class="store-icon">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="gp1" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#00d4ff"/>
-                    <stop offset="1" stop-color="#0080ff"/>
-                  </linearGradient>
-                  <linearGradient id="gp2" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0" stop-color="#ffd400"/>
-                    <stop offset="1" stop-color="#ff8a00"/>
-                  </linearGradient>
-                  <linearGradient id="gp3" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#ff3a44"/>
-                    <stop offset="1" stop-color="#c30b1f"/>
-                  </linearGradient>
-                  <linearGradient id="gp4" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#00f076"/>
-                    <stop offset="1" stop-color="#00a85a"/>
-                  </linearGradient>
-                </defs>
-                <path d="M3.6 1.3c-.3.3-.5.8-.5 1.4v18.6c0 .6.2 1.1.5 1.4L13.7 12 3.6 1.3z" fill="url(#gp1)"/>
-                <path d="M17 8.4l-3.3 3.6 3.3 3.6 4-2.3c1.1-.6 1.1-2 0-2.6l-4-2.3z" fill="url(#gp2)"/>
-                <path d="M3.6 22.7c.4.4 1.1.5 1.8.1L17 15.6l-3.3-3.6L3.6 22.7z" fill="url(#gp3)"/>
-                <path d="M5.4 1.2C4.7.8 4 .9 3.6 1.3L13.7 12 17 8.4 5.4 1.2z" fill="url(#gp4)"/>
-              </svg>
-            </span>
-            <div>
-              <div class="store-label-small">GET IT ON</div>
-              <div class="store-label-main">Google Play</div>
-            </div>
-          </a>
         </div>
         <div class="hero-stats">
           <div>
@@ -1957,7 +1942,7 @@
   <div class="container-sm">
     <div class="section-eyebrow-center">3 つの、シンプルなこと。</div>
     <h2 class="section-title">
-      記録して、把握して、<br>
+      記録して、<br class="mobile-break">把握して、<br>
       <span class="grad-text">たどり着く。</span>
     </h2>
     <div class="props-grid">
@@ -1991,7 +1976,7 @@
   <div class="container-sm">
     <div style="text-align:center;margin-bottom:24px;">
       <div class="eyebrow">FIRE STAGES</div>
-      <h2 style="font-family:'Inter','Noto Sans JP',sans-serif;font-weight:900;font-size:52px;line-height:1.1;margin-bottom:20px;">
+      <h2 class="stages-title">
         あなたはいま、<br>
         <span class="grad-text">どのステージ?</span>
       </h2>
@@ -2038,9 +2023,6 @@
         <div class="stage-range">¥1.5億〜</div>
       </div>
     </div>
-    <p class="stages-desc" style="margin-top:24px;font-size:13px;color:#6b7280;">
-      ※ 表示方法は自由に選べます。ステージ名のみ、レンジ表示、絶対額から選択可能。
-    </p>
   </div>
 </section>
 
@@ -2408,9 +2390,9 @@
 <section class="section-dark">
   <div class="container-sm" style="text-align:center;">
     <div class="eyebrow-gray" style="margin-bottom:12px;">OUR BELIEF</div>
-    <h2 style="margin-bottom:28px;">
+    <h2 class="belief-title" style="margin-bottom:28px;">
       じっくり続ける。<br>
-      それでも、<span class="grad-text">売りたくなる日</span>がある。
+      それでも、<br class="mobile-break"><span class="grad-text">売りたくなる日</span>がある。
     </h2>
     <p style="max-width:480px;margin:0 auto 24px;color:#d1d5db;line-height:2;">
       Financial Independence への一番の近道は、<br>
@@ -2447,38 +2429,6 @@
           <div class="store-label-main">App Store</div>
         </div>
       </a>
-      <a href="#" class="store-btn">
-        <span class="store-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="gp1b" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#00d4ff"/>
-                <stop offset="1" stop-color="#0080ff"/>
-              </linearGradient>
-              <linearGradient id="gp2b" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#ffd400"/>
-                <stop offset="1" stop-color="#ff8a00"/>
-              </linearGradient>
-              <linearGradient id="gp3b" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ff3a44"/>
-                <stop offset="1" stop-color="#c30b1f"/>
-              </linearGradient>
-              <linearGradient id="gp4b" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#00f076"/>
-                <stop offset="1" stop-color="#00a85a"/>
-              </linearGradient>
-            </defs>
-            <path d="M3.6 1.3c-.3.3-.5.8-.5 1.4v18.6c0 .6.2 1.1.5 1.4L13.7 12 3.6 1.3z" fill="url(#gp1b)"/>
-            <path d="M17 8.4l-3.3 3.6 3.3 3.6 4-2.3c1.1-.6 1.1-2 0-2.6l-4-2.3z" fill="url(#gp2b)"/>
-            <path d="M3.6 22.7c.4.4 1.1.5 1.8.1L17 15.6l-3.3-3.6L3.6 22.7z" fill="url(#gp3b)"/>
-            <path d="M5.4 1.2C4.7.8 4 .9 3.6 1.3L13.7 12 17 8.4 5.4 1.2z" fill="url(#gp4b)"/>
-          </svg>
-        </span>
-        <div>
-          <div class="store-label-small">GET IT ON</div>
-          <div class="store-label-main">Google Play</div>
-        </div>
-      </a>
     </div>
   </div>
 </section>
@@ -2504,7 +2454,7 @@
           </div>
           <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
         </div>
-        <p>資産管理 × FIRE到達予測アプリ。<br>Financial Independence, within REach.</p>
+        <p>Financial Independence, within REach.</p>
       </div>
       <div class="footer-col">
         <div class="footer-head">プロダクト</div>
@@ -2533,7 +2483,6 @@
   </div>
   <div class="footer-bottom">
     <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
-    <div>v1.18.3-beta</div>
   </div>
 </footer>
 
