@@ -343,7 +343,7 @@
 
   .floating-card {
     position: absolute;
-    right: -44px;
+    right: calc(-1 * min(100px, (100vw - 1200px) / 2));
     top: -16px;
     background: #fff;
     border-radius: 18px;
@@ -354,7 +354,7 @@
   }
   .floating-card-tl {
     position: absolute;
-    left: -56px;
+    left: calc(-1 * min(120px, (100vw - 1200px) / 2));
     top: 90px;
     background: #fff;
     border-radius: 18px;
@@ -373,7 +373,7 @@
 
   .floating-card-bl {
     position: absolute;
-    left: -48px;
+    left: calc(-1 * min(140px, (100vw - 1200px) / 2));
     bottom: -20px;
     background: #fff;
     border-radius: 18px;
@@ -436,9 +436,10 @@
     font-weight: 700;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     .floating-card { top: 30px; right: -24px; }
     .floating-card-tl { top: 150px; left: -24px; }
+    .floating-card-bl { left: -24px; }
   }
   @media (max-width: 900px) {
     .floating-card {
@@ -1673,6 +1674,12 @@
   .mb-6 { margin-bottom: 24px; }
   .mt-4 { margin-top: 16px; }
   .text-center { text-align: center; }
+
+  @media (min-width: 1024px) {
+    .hero-desc { font-size: 16px; }
+    .anystage p { font-size: 16px; }
+    .cta p { font-size: 15px; }
+  }
 </style>
 </head>
 <body>
@@ -2431,7 +2438,7 @@
 <section class="cta">
   <div class="container-xs">
     <h2>さあ、<br>たどり着こう。</h2>
-    <p>今日の記録が、未来の FIRE に積み重なる。</p>
+    <p>今日の記録が、未来の FIRE につながる。</p>
     <div class="store-buttons">
       <a href="#" class="store-btn">
         <span class="store-icon">
