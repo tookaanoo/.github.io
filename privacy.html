@@ -254,14 +254,20 @@
 
   /* ===== Footer ===== */
   .footer {
-    padding: 40px 0;
-    background: #fafafa;
+    background: #fff;
     border-top: 1px solid #f3f4f6;
-    font-size: 13px;
-    color: #6b7280;
-    text-align: center;
+    padding: 64px 0 32px;
   }
-  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 28px; margin-bottom: 12px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
 
   /* Responsive */
   @media (max-width: 768px) {
@@ -269,6 +275,8 @@
     .doc-body h2 { font-size: 17px; }
     .nav-links { display: none; }
     .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
   }
 </style>
 </head>
@@ -294,9 +302,8 @@
       <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
     </a>
     <div class="nav-links">
+      <a href="index.html">トップ</a>
       <a href="features.html">機能紹介</a>
-      <a href="index.html#stages">ステージ</a>
-      <a href="index.html#faq">FAQ</a>
     </div>
   </div>
 </nav>
@@ -313,10 +320,10 @@
 <!-- ========== BODY ========== -->
 <section class="doc-body">
   <div class="container-sm">
-    <p>みんなでFIRE株式会社(以下「当社」といいます)は、当社が提供するスマートフォンアプリケーション及びウェブサービス「みんなでFIRE」(以下「本サービス」といいます)におけるユーザーの個人情報の取扱いについて、本プライバシーポリシー(以下「本ポリシー」といいます)を定めます。</p>
+    <p>合同会社柴戸製作所(以下「当社」といいます)は、当社が提供するスマートフォンアプリケーション「みんなでFIRE」(以下「本サービス」といいます)におけるユーザーの個人情報の取扱いについて、本プライバシーポリシー(以下「本ポリシー」といいます)を定めます。</p>
 <div class="doc-meta">
-  <div><b>最終更新日</b>: 20XX年XX月XX日</div>
-  <div><b>発効日</b>: 20XX年XX月XX日</div>
+  <div><b>最終更新日</b>: 2026年9月18日</div>
+  <div><b>発効日</b>: 2026年9月18日</div>
 </div>
 <h2>第1条(基本方針)</h2>
 <p>当社は、本サービスの提供にあたり、<b>個人情報の収集を必要最小限に留める</b>設計を採用しています。本ポリシーは、当社が取得する情報、利用目的、第三者提供、利用者の権利等を明確化し、利用者の信頼に応えることを目的とします。</p>
@@ -361,19 +368,14 @@
       <td>プロフィール表示</td>
     </tr>
     <tr>
-      <td>職業・家族構成・年収レンジ</td>
-      <td>任意</td>
-      <td>プロフィール表示(公開設定はユーザー任意)</td>
-    </tr>
-    <tr>
       <td>資産・取引データ</td>
       <td>任意</td>
-      <td>サービスの中核機能(損益計算、シミュレーション、共有等)</td>
+      <td>サービスの中核機能(損益計算、シミュレーション等)</td>
     </tr>
     <tr>
       <td>投稿コンテンツ・コメント</td>
       <td>任意</td>
-      <td>SNS機能の提供</td>
+      <td>発信機能(外部SNSへの投稿時のコメント作成)</td>
     </tr>
   </tbody>
 </table>
@@ -395,8 +397,6 @@
 <li>本サービスの利用履歴・操作ログ</li>
 <li>Cookie 及び類似技術により取得される情報</li>
 </ul>
-<h3>4. 決済情報</h3>
-<p>有料プランの料金決済は、Apple App Store 又は Google Play Store を通じて行われます。<b>当社はクレジットカード番号・口座情報等の決済情報を直接取得・保存しません</b>。決済情報は各ストア運営者が取り扱います。</p>
 <h2>第3条(利用目的)</h2>
 <p>当社は、取得した情報を以下の目的で利用します。</p>
 <ol>
@@ -407,7 +407,6 @@
 <li>利用規約違反等の調査・対応</li>
 <li>サービスに関する分析・統計データの作成(匿名化・統計化した上で)</li>
 <li>新機能・新サービスの研究開発</li>
-<li>広告配信(無料プラン利用者に対する)</li>
 <li>その他、本サービスの円滑な提供に必要な業務</li>
 </ol>
 <h2>第4条(第三者提供)</h2>
@@ -420,13 +419,14 @@
 <li>国の機関若しくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
 <li><b>当社は、利用者の個人情報を広告主・データブローカー等に販売することは一切ありません</b>。</li>
 </ul>
+</ol>
 <h2>第5条(委託)</h2>
 <p>当社は、利用目的の達成に必要な範囲内で、個人情報の取扱いを第三者に委託することがあります(クラウドサーバーの利用、メール配信サービスの利用等)。委託先に対しては、適切な監督を行います。</p>
-<h2>第6条(情報の公開設定)</h2>
+<h2>第6条(外部SNSへの発信)</h2>
 <ol>
-<li>本サービス内で利用者が登録する情報のうち、プロフィール、ポートフォリオ、取引履歴等の情報は、利用者が公開設定機能により公開範囲を選択することができます。</li>
-<li><b>デフォルトでは、プライバシー保護を優先した設定となっています</b>。利用者が能動的に公開設定を変更しない限り、機微情報は公開されません。</li>
-<li>公開された情報は、当該公開設定に基づき、他の利用者又は第三者が閲覧することができます。</li>
+<li>利用者は、本サービスの発信機能を利用し、自己の記録(資産推移、値動き等)を任意でX等の外部SNSに投稿することができます。</li>
+<li>投稿する情報の内容(金額をレンジ表示にする、非表示にする等)は、利用者が発信時に選択することができます。</li>
+<li>外部SNSに投稿された情報は、当該SNSの仕様及び利用者自身の公開範囲設定に従い、第三者が閲覧することができます。投稿後の管理は利用者自身の責任で行うものとします。</li>
 </ol>
 <h2>第7条(Cookie 及び類似技術)</h2>
 <ol>
@@ -439,9 +439,10 @@
 <ul class="sub-list">
 <li>アクセス解析ツール(例:Google Analytics 等)</li>
 <li>クラッシュレポートツール</li>
-<li>広告配信ツール(無料プラン向け)</li>
+<li>広告配信ツール</li>
 <li>これらのツールを通じて取得される情報は、各ツール提供者のプライバシーポリシーに従って取り扱われます。</li>
 </ul>
+</ol>
 <h2>第9条(セキュリティ)</h2>
 <ol>
 <li>当社は、個人情報の漏洩、滅失、毀損等を防止するため、以下の措置を講じます。</li>
@@ -452,6 +453,7 @@
 <li>役職員への教育</li>
 <li>ただし、インターネット通信の性質上、完全な安全性を保証することはできません。利用者は、自己のアカウント情報の管理に十分注意するものとします。</li>
 </ul>
+</ol>
 <h2>第10条(保有期間と削除)</h2>
 <ol>
 <li>当社は、利用目的の達成に必要な期間に限り、個人情報を保有します。</li>
@@ -465,7 +467,7 @@
 <li>自己の個人情報の訂正・追加・削除</li>
 <li>自己の個人情報の利用停止・第三者提供の停止</li>
 </ol>
-<p>ご請求の際は、本サービス内のお問い合わせ機能又は別途定めるメールアドレスにご連絡ください。当社は、本人確認の上、合理的な期間内に対応します。</p>
+<p>ご請求の際は、本サービス内のお問い合わせ機能よりご連絡ください。当社は、本人確認の上、合理的な期間内に対応します。</p>
 <h2>第12条(未成年の利用)</h2>
 <p>本サービスは、満18歳以上の利用を前提としています。満18歳未満の方は、本サービスをご利用いただけません。</p>
 <h2>第13条(国外への移転)</h2>
@@ -473,11 +475,8 @@
 <h2>第14条(本ポリシーの変更)</h2>
 <p>当社は、必要に応じて本ポリシーを変更することがあります。重要な変更については、本サービス内又はその他適切な方法で利用者に通知します。</p>
 <h2>第15条(個人情報保護管理者・お問い合わせ)</h2>
-<p>個人情報の取扱いに関するお問い合わせは、以下までご連絡ください。</p>
-<p><b>みんなでFIRE株式会社</b></p>
-<p>個人情報保護管理者: [役職・氏名]</p>
-<p>所在地: [東京都〇〇区〇〇 X-X-X]</p>
-<p>お問い合わせ: [contact@example.com]</p>
+<p>個人情報の取扱いに関するお問い合わせは、アプリ内のお問い合わせよりご連絡ください。</p>
+<p><b>合同会社柴戸製作所</b></p>
 
     <div class="related-links">
       <h3>関連する文書</h3>
@@ -493,14 +492,43 @@
 <!-- ========== Footer ========== -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-links">
-      <a href="index.html">トップ</a>
-      <a href="features.html">機能紹介</a>
-      <a href="terms.html">利用規約</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="disclaimer.html">免責事項</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">会社情報</div>
+        <ul>
+          <li>合同会社柴戸製作所</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="disclaimer.html">免責事項</a></li>
+        </ul>
+      </div>
     </div>
-    <div>© 2026 みんなでFIRE · 投資判断はご自身の責任で。</div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
   </div>
 </footer>
 
