@@ -233,7 +233,10 @@ details[open] .faq-q{color:var(--accent-dark)}
 .heat .tag.premium{background:#fff;color:#111827}
 
 /* ===== Mock cards ===== */
-.mock{background:#fff;border-radius:22px;padding:26px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(17,24,39,.08)}
+.mock{position:relative;background:#fff;border-radius:22px;padding:26px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(17,24,39,.08)}
+.vizBig{position:relative}
+.sample-badge{position:absolute;top:12px;right:14px;font-size:10px;font-weight:700;color:var(--muted-2);background:var(--paper);padding:3px 9px;border-radius:9999px;border:1px solid var(--line);z-index:1}
+.heat .sample-badge{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.15)}
 .heat .mock{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.4);color:#fff}
 .mock-eyebrow{font-size:10px;font-weight:700;color:var(--muted-2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px}
 .mock-big{font-family:var(--display);font-size:56px;font-weight:900;letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
@@ -267,7 +270,8 @@ details[open] .faq-q{color:var(--accent-dark)}
 .sns-quote{font-size:12px;color:var(--ink-2);margin-top:2px}
 .heat .sns-quote{color:#d1d5db}
 .stages-cells{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:16px 0 8px}
-.stage-cell{aspect-ratio:1;background:var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:11px;font-weight:800;color:var(--muted-2)}
+.stage-cell{aspect-ratio:1;background:var(--line);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:var(--display);font-size:11px;font-weight:800;color:var(--muted-2)}
+.stage-cell .range{font-size:8px;font-weight:600;opacity:0.8;white-space:nowrap}
 .stage-cell.done{background:var(--accent-soft);color:var(--accent)}
 .stage-cell.current{background:var(--flame);color:#fff;box-shadow:0 8px 20px rgba(236,72,153,.32)}
 .cmp-table{width:100%;font-size:12px;border-collapse:collapse}
@@ -342,7 +346,7 @@ details[open] .faq-q{color:var(--accent-dark)}
   <div class="container">
     <div class="eyebrow">FEATURES</div>
     <h1>経済的自立のために、<br><span class="grad-text">必要なすべて。</span></h1>
-    <p class="lead">資産管理、コミュニティ、税務、シミュレーション。<br>FIRE 志向の個人投資家が「これが欲しかった」と思う機能を、ひとつのアプリに。</p>
+    <p class="lead">資産管理、FIRE予測、発信。<br>FIRE 志向の個人投資家が「これが欲しかった」と思う機能を、ひとつのアプリに。</p>
     <div class="hero-chips">
       <a class="hero-chip" href="#record">記録</a>
       <a class="hero-chip" href="#performance">パフォーマンス</a>
@@ -352,45 +356,9 @@ details[open] .faq-q{color:var(--accent-dark)}
       <a class="hero-chip" href="#stages">ステージ</a>
       <a class="hero-chip" href="#broadcast">発信</a>
       <a class="hero-chip" href="#tools">ツール</a>
-      <a class="hero-chip" href="#basics">基本機能</a>
     </div>
-  </div>
-</section>
 
-<!-- ========== 4 PILLARS (案A: editorial rows) ========== -->
-<section class="section bg-linen">
-  <div class="container">
-    <div class="eyebrow">CORE PILLARS</div>
-    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;">4つの柱で、ゴールへ。</h2>
-    <div class="rowsA">
-      <div class="rowA">
-        <div class="n grad-text">01</div>
-        <div><h3>記録</h3><div class="kw">RECORD</div></div>
-        <p>8カテゴリ・複数口座の資産を、1つの画面で管理。手書きの手帳のように、日々の成長を可視化。</p>
-      </div>
-      <div class="rowA">
-        <div class="n grad-text">02</div>
-        <div><h3>共有</h3><div class="kw">COMMUNITY</div></div>
-        <p>同じ銘柄を持つ仲間とホルダーコミュニティでつながる。チアと保有理由で、当事者性を持って学び合う。</p>
-      </div>
-      <div class="rowA">
-        <div class="n grad-text">03</div>
-        <div><h3>税務</h3><div class="kw">TAX</div></div>
-        <p>NISA枠管理、外国税額控除、配当課税3パターン比較。確定申告の節税ポイントが見える。</p>
-      </div>
-      <div class="rowA">
-        <div class="n grad-text">04</div>
-        <div><h3>予測</h3><div class="kw">SIMULATION</div></div>
-        <p>あなたの実績ベースで FIRE 到達年を試算。「年率5%固定」じゃない、本気の予測。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== SAMPLE BAND ========== -->
-<section style="padding:56px 0 0;">
-  <div class="container">
-    <div class="eyebrow-gray">この先の画面はすべて同じ人のデータです</div>
+    <div class="eyebrow-gray" style="margin-top:40px;">この先の画面は、すべて積立5年目の@yuki_tの場合です</div>
     <div class="sample-band" style="border:1px solid var(--line);">
       <div class="sample-user">
         <div class="sample-avatar">YT</div>
@@ -405,7 +373,6 @@ details[open] .faq-q{color:var(--accent-dark)}
         <div><div class="sample-stat-label">XIRR</div><div class="sample-stat-val" style="color:var(--accent)">+22.3%</div></div>
       </div>
     </div>
-    <div class="sample-note">↓ あなたのポートフォリオも、登録するとこう表示されます</div>
   </div>
 </section>
 
@@ -427,6 +394,7 @@ details[open] .faq-q{color:var(--accent-dark)}
       </div>
       <div>
         <div class="mock">
+          <span class="sample-badge">@yuki_t</span>
           <div class="mock-eyebrow">Your assets</div>
           <div class="mock-big grad-text">¥14.2M</div>
           <div class="mock-sub">2026.05.21 · +¥84,200 today</div>
@@ -452,13 +420,14 @@ details[open] .faq-q{color:var(--accent-dark)}
         <p class="desc">「あなたの実利回り」を表す XIRR と、「運用力」を表す TWR。FIRE 志向の積立スタイルでは、両方を見ることで真実が見える。</p>
         <ul class="fr-list">
           <li><span><b>XIRR（メイン）</b>：ドルコスト平均法・スポット買付の成果が反映される実利回り</span></li>
-          <li><span><b>TWR（補助）</b>：入金タイミングを排除した運用力。ランキングや他人との比較に</span></li>
+          <li><span><b>TWR（補助）</b>：入金タイミングを排除した、純粋な運用力の指標</span></li>
           <li><span><b>ベンチマーク比較</b>：オルカン・S&amp;P500・TOPIX と XIRR/TWR の両軸で比較</span></li>
           <li><span><b>拠出効果 vs 運用効果</b>：「自分のお金で増えた」vs「市場が増やしてくれた」を分離</span></li>
         </ul>
       </div>
       <div>
         <div class="mock">
+          <span class="sample-badge">@yuki_t</span>
           <div class="mock-eyebrow">Performance</div>
           <div class="mock-big" style="color:var(--accent)">+22.3%</div>
           <div class="mock-sub">XIRR 年率 · あなたの実利回り</div>
@@ -484,26 +453,23 @@ details[open] .faq-q{color:var(--accent-dark)}
     <div class="feature-row">
       <div class="fr-text">
         <div class="eyebrow">03 TAX</div>
-        <h2>税金を、<br>味方にする。</h2>
-        <p class="desc">複雑な日本の税制を、シンプルに見える化。NISA・外国税額控除・配当課税の最適化まで、確定申告の節税ポイントを自動で提示。</p>
+        <h2>NISA枠を、<br>賢く使う。</h2>
+        <p class="desc">NISAの年間枠・生涯枠を自動計算。見落としがちな落とし穴も、アラートで教えてくれる。</p>
         <ul class="fr-list">
           <li><span><b>NISA枠管理</b>：年間枠・生涯枠・売却時の枠復活を自動計算</span></li>
           <li><span><b>NISAの落とし穴</b>：米国株配当の取戻不可額をアラートで警告</span></li>
-          <li><span><b>配当課税3パターン比較</b>：申告不要・申告分離・総合課税の節税額を自動判定 <span class="tag premium">PREMIUM</span></span></li>
-          <li><span><b>損益通算と還付見込み</b>：多めに源泉徴収された分の還付額を可視化 <span class="tag light">LIGHT</span></span></li>
-          <li><span><b>外国税額控除</b>：課税口座の米国源泉から、確定申告で取り戻せる額を試算 <span class="tag light">LIGHT</span></span></li>
         </ul>
       </div>
       <div>
         <div class="mock">
-          <div class="mock-eyebrow">2025年 税務サマリー</div>
-          <div style="font-size:17px;font-weight:800;margin-bottom:16px;">上場株式等（申告分離）</div>
-          <div class="line-row"><span>年間実現損益</span><span>+¥162,668</span></div>
-          <div class="line-row"><span>年間配当（税後）</span><span>+¥12,883</span></div>
-          <div class="line-row"><span>既源泉徴収額</span><span>¥203,345</span></div>
-          <div class="line-row"><span>概算税額（申告分離）</span><span>¥33,239</span></div>
-          <div class="line-row win"><span>還付見込み</span><span>−¥170,106</span></div>
-          <div class="mock-callout">配当課税は総合課税が有利：節税額 ¥3,800</div>
+          <span class="sample-badge">@yuki_t</span>
+          <div class="mock-eyebrow">NISA枠 (2026)</div>
+          <div class="mock-big grad-text">78%</div>
+          <div class="mock-sub">利用済み · あと ¥64万 の枠が残っています</div>
+          <div style="height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:16px 0;">
+            <div style="height:100%;width:78%;background:linear-gradient(90deg,#ff3d6e,#d61f4a)"></div>
+          </div>
+          <div class="mock-callout">⚠ NISAで米国株配当を受取済み。米国側10%は取り戻せません</div>
         </div>
       </div>
     </div>
@@ -515,20 +481,18 @@ details[open] .faq-q{color:var(--accent-dark)}
   <div class="container">
     <div class="feature-row flip">
       <div class="fr-text">
-        <div class="eyebrow">04 COMMUNITY</div>
-        <h2>1人じゃない、<br>経済的自立。</h2>
-        <p class="desc">同じ銘柄を持つ仲間とつながる。煽らない、ランキング化しない、当事者性で語る。SNS の3層設計で、健全なコミュニティを。</p>
+        <div class="eyebrow">04 COMMUNITY · COMING SOON</div>
+        <h2>1人じゃない、<br>経済的自立へ。</h2>
+        <p class="desc">同じ銘柄を持つ仲間とゆるくつながる機能を、開発中です。ホルダー同士が励まし合う、そんなコミュニティを目指しています。</p>
         <ul class="fr-list">
-          <li><span><b>ホルダーコミュニティ</b>：同じ銘柄を持つ人の輪。額はレンジ表示のみ、人数と保有期間で語る</span></li>
-          <li><span><b>応援（チア）スタンプ</b>：ナイスホールド・おめでとう・お疲れさま。労いと連帯の3種</span></li>
-          <li><span><b>「なぜ私は持つか」保有理由</b>：一人称で書く。保有期間で裏付け、公開範囲はオプトイン</span></li>
-          <li><span><b>まとめ通知（ダイジェスト）</b>：フォロー先の動きを遅延＋まとめて配信。週次＝無料 / 日次＝Light / 即時＝Premium</span></li>
-          <li><span><b>FIRE ステージ7段階</b>：同じ資産帯でフェアに比較、XIRR/TWR の2軸切替</span></li>
-          <li><span><b>Creator還元</b>：フォロワー数に応じて Premium 機能が無料に</span></li>
+          <li><span><b>ホルダーコミュニティ</b>：同じ銘柄を持つ人の輪。額はレンジ表示のみ、人数と保有期間で語る（開発中）</span></li>
+          <li><span><b>応援（チア）スタンプ</b>：ナイスホールド・おめでとう・お疲れさま。労いと連帯の3種（開発中）</span></li>
+          <li><span><b>「なぜ私は持つか」保有理由</b>：一人称で書く。保有期間で裏付け、公開範囲はオプトイン（開発中）</span></li>
         </ul>
       </div>
       <div>
-        <div class="mock">
+        <div class="mock" style="position:relative;">
+          <div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.12);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.05em;padding:4px 10px;border-radius:9999px;">COMING SOON</div>
           <div class="mock-eyebrow">ホルダーコミュニティ · オルカン</div>
           <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0 14px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:14px;">
             <div>
@@ -572,29 +536,25 @@ details[open] .faq-q{color:var(--accent-dark)}
       <div class="fr-text">
         <div class="eyebrow">05 SIMULATION</div>
         <h2>あなただけの、<br>到達予測。</h2>
-        <p class="desc">入金・配当・運用利回り、すべて「あなたの実績」から逆算。「もし月積立を¥3万増やしたら？」What-If も、リアルな実績ベースで試算できる。</p>
+        <p class="desc">楽観・中立・悲観、3つの固定シナリオと、あなたの実績ベースのシナリオを比較。「このペースなら何歳で到達できる？」が一目でわかる。</p>
         <ul class="fr-list">
-          <li><span><b>実績ベース推定</b>：あなたのこれまでの XIRR・入金力・配当利回りからパラメータを抽出</span></li>
-          <li><span><b>3シナリオ表示</b>：楽観（実績+3%）・中立（実績維持）・悲観（実績-3%）で比較 <span class="tag free">無料</span></span></li>
-          <li><span><b>What-If シミュレーション</b>：月積立・想定年率の2軸を変えて達成時期を試算 <span class="tag light">LIGHT</span></span></li>
-          <li><span><b>詳細 What-If</b>：退職年齢・ライフイベント・感度分析・シナリオ保存（最大5つ） <span class="tag premium">PREMIUM</span></span></li>
-          <li><span><b>リバランス提案</b>：目標配分と現在の乖離をアラート <span class="tag light">LIGHT</span></span></li>
-          <li><span><b>AI月次レポート</b>：パーソナライズされたアクション提案 <span class="tag premium">PREMIUM</span></span></li>
+          <li><span><b>3つの固定シナリオ</b>：楽観(年率7%)・中立(年率4%)・悲観(年率1%)で、到達年齢を比較</span></li>
+          <li><span><b>実績シナリオ</b>：あなたのこれまでの運用実績(XIRR)から、リアルな到達年齢を算出</span></li>
         </ul>
         <p class="note" style="margin-top:18px;">※ FIRE達成予測は取引実績が過去3ヶ月分以上存在するユーザーから有効</p>
       </div>
       <div>
         <div class="mock">
-          <div class="mock-eyebrow">Your FIRE progress</div>
-          <div class="mock-big grad-text">24.7%</div>
-          <div class="mock-sub">あと <b style="color:var(--accent)">8.4年</b> · ¥14.2M / ¥50M</div>
-          <div style="height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:16px 0;">
-            <div style="height:100%;width:24.7%;background:linear-gradient(90deg,#ff3d6e,#d61f4a)"></div>
-          </div>
+          <span class="sample-badge">@yuki_t</span>
+          <div class="mock-eyebrow">達成予測</div>
+          <div class="mock-sub" style="margin-bottom:12px;">楽観7% / 中立4% / 悲観1% 固定</div>
           <div class="mock-grid" style="grid-template-columns:repeat(3,1fr)">
-            <div class="mock-mini"><div class="mock-mini-label">楽観 +3%</div><div class="mock-mini-val" style="font-size:15px">T-6.2y</div></div>
-            <div class="mock-mini" style="background:var(--accent-soft)"><div class="mock-mini-label">中立</div><div class="mock-mini-val pink" style="font-size:15px">T-8.4y</div></div>
-            <div class="mock-mini"><div class="mock-mini-label">悲観 -3%</div><div class="mock-mini-val" style="font-size:15px">T-11.8y</div></div>
+            <div class="mock-mini"><div class="mock-mini-label">楽観 年率7.0%</div><div class="mock-mini-val" style="font-size:19px">40歳</div><div style="font-size:11px;color:var(--accent);font-weight:700;margin-top:2px;">+5年早期</div></div>
+            <div class="mock-mini" style="background:var(--accent-soft)"><div class="mock-mini-label">中立 年率4.0%</div><div class="mock-mini-val pink" style="font-size:19px">42歳</div><div style="font-size:11px;color:var(--accent);font-weight:700;margin-top:2px;">+3年早期</div></div>
+            <div class="mock-mini"><div class="mock-mini-label">悲観 年率1.0%</div><div class="mock-mini-val" style="font-size:19px">45歳</div><div style="font-size:11px;color:#16a34a;font-weight:700;margin-top:2px;">0年遅延</div></div>
+          </div>
+          <div class="mock-callout" style="margin-top:14px;border:1px dashed var(--accent);">
+            <b>実績シナリオ</b>（年率7.82%）： <b style="color:var(--accent)">39歳達成</b> · +6年早期
           </div>
         </div>
       </div>
@@ -609,30 +569,30 @@ details[open] .faq-q{color:var(--accent-dark)}
       <div class="fr-text">
         <div class="eyebrow">06 STAGES</div>
         <h2>7段階、<br>あなたの今。</h2>
-        <p class="desc">資産帯による7段階分類で、自分の位置と次の目標を明確に。同じステージの仲間との比較もフェアに。</p>
+        <p class="desc">資産帯による7段階分類で、自分の位置と次の目標を明確に。</p>
         <ul class="fr-list">
-          <li><span><b>スタート期</b>（〜¥500万）：基礎を作る時期</span></li>
-          <li><span><b>準備期</b>（〜¥1,500万）：習慣化フェーズ</span></li>
-          <li><span><b>基礎構築期</b>（〜¥3,000万）：コア・サテライト戦略</span></li>
-          <li><span><b>加速期</b>（〜¥5,000万）：入金力UP ＋ 最適化</span></li>
-          <li><span><b>FIRE視野</b>（〜¥7,500万）：達成までの距離が具体化</span></li>
-          <li><span><b>FIRE達成圏</b>（〜¥1.5億）：出口戦略</span></li>
-          <li><span><b>継続 or 次の一歩</b>（¥1.5億〜）：FAT FIRE</span></li>
+          <li><span><b>スタート期</b>：基礎を作る時期</span></li>
+          <li><span><b>準備期</b>：習慣化フェーズ</span></li>
+          <li><span><b>基礎構築期</b>：コア・サテライト戦略</span></li>
+          <li><span><b>加速期</b>：入金力UP ＋ 最適化</span></li>
+          <li><span><b>FIRE視野</b>：達成までの距離が具体化</span></li>
+          <li><span><b>FIRE達成圏</b>：出口戦略</span></li>
+          <li><span><b>継続 or 次の一歩</b>：FAT FIRE</span></li>
         </ul>
       </div>
       <div>
         <div class="mock">
-          <div class="mock-eyebrow">Your stage</div>
+          <div class="mock-eyebrow">@yuki_t さんの現在地</div>
           <div style="font-family:var(--display);font-size:26px;font-weight:900;letter-spacing:-0.02em;margin-bottom:4px;">基礎構築期</div>
           <div class="mock-sub" style="margin-bottom:0;">次の「加速期」まで <b style="color:var(--accent)">¥15.8M</b></div>
           <div class="stages-cells">
-            <div class="stage-cell done">01</div><div class="stage-cell done">02</div><div class="stage-cell current">03</div>
-            <div class="stage-cell">04</div><div class="stage-cell">05</div><div class="stage-cell">06</div><div class="stage-cell">07</div>
+            <div class="stage-cell done">01<span class="range">〜500万</span></div><div class="stage-cell done">02<span class="range">〜1500万</span></div><div class="stage-cell current">03<span class="range">〜3000万</span></div>
+            <div class="stage-cell">04<span class="range">〜5000万</span></div><div class="stage-cell">05<span class="range">〜7500万</span></div><div class="stage-cell">06<span class="range">〜1.5億</span></div><div class="stage-cell">07<span class="range">1.5億〜</span></div>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted-2)">
             <span>スタート</span><span>継続 or 次の一歩</span>
           </div>
-          <div class="mock-callout">同じステージのユーザー <b>2,847人</b> と比較中</div>
+          <div style="font-size:11px;color:var(--muted-2);margin-top:10px;">※ ステージの区切りはどなたも共通。現在地は@yuki_tさんの例です</div>
         </div>
       </div>
     </div>
@@ -646,9 +606,9 @@ details[open] .faq-q{color:var(--accent-dark)}
       <div class="fr-text">
         <div class="eyebrow">07 BROADCAST</div>
         <h2>静かに記録、<br>燃える瞬間だけ発信。</h2>
-        <p class="desc">普段は静かに資産を記録する。マイルストーン到達やステージアップなど、発信に値する瞬間だけプロンプトが立ち上がる。あなたの実績データを引用するから、煽りや誇張は構造的に防がれる。</p>
+        <p class="desc">普段は静かに資産を記録する。マイルストーン到達やステージアップなど、発信に値する瞬間だけプロンプトが立ち上がる。発信することで、自分を鼓舞し、目標に向かう。</p>
         <ul class="fr-list">
-          <li><span><b>モーメント検知</b>：マイルストーン・連続記録・大きな本日損益など、発信どきを自動検知</span></li>
+          <li><span><b>モーメント検知</b>：マイルストーン・連続記録・大きな本日損益など、投稿タイミングを自動検知</span></li>
           <li><span><b>実績データ引用</b>：発信できるのは自分の記録に紐づくもののみ。捏造できない設計</span></li>
           <li><span><b>額の出し方を選べる</b>：レンジ・率・非表示から選択。絶対額は既定で出さない</span></li>
           <li><span><b>一人称フレーミング</b>：「これを買え」ではなく「自分はこうした」。当事者性で語る</span></li>
@@ -657,15 +617,14 @@ details[open] .faq-q{color:var(--accent-dark)}
       </div>
       <div>
         <div class="mock">
-          <div class="mock-eyebrow">発信どき</div>
+          <span class="sample-badge">@yuki_t</span>
+          <div class="mock-eyebrow">発信スタジオ</div>
           <div class="broadcast-prompt">
             <div style="font-size:12.5px;color:#f9a8d4;font-weight:700;margin-bottom:7px;letter-spacing:.04em;">マイルストーン到達</div>
             <div style="font-family:var(--display);font-size:20px;font-weight:900;margin-bottom:5px;">FIRE進捗 25% を超えました</div>
             <div style="font-size:12px;color:#9ca3af;">¥14.2M / ¥50M · 基礎構築期</div>
           </div>
-          <div style="font-size:12.5px;font-weight:700;margin-bottom:6px;color:#fff;">公開範囲</div>
-          <label class="radio-line"><input type="radio" name="scope" checked> <span>フォロワーのみ</span></label>
-          <label class="radio-line"><input type="radio" name="scope"> <span>全体に公開</span></label>
+          <div style="font-size:12px;color:#9ca3af;margin-bottom:10px;">X などの外部SNSに投稿できます</div>
           <button class="mock-btn">発信する</button>
         </div>
       </div>
@@ -673,58 +632,25 @@ details[open] .faq-q{color:var(--accent-dark)}
   </div>
 </section>
 
-<!-- ========== 08 TOOLS ========== -->
-<section class="section bg-linen" id="tools">
+<!-- ========== TOOLS (統合: EVERYDAY TOOLS) ========== -->
+<section class="section" id="tools">
   <div class="container">
-    <div class="feature-row flip">
-      <div class="fr-text">
-        <div class="eyebrow">08 TOOLS</div>
-        <h2>比較して、<br>見守って、気づく。</h2>
-        <p class="desc">銘柄選びの精度を上げるツール群。最大10銘柄の横並び比較、ウォッチリストと価格アラートで気になる銘柄を見守る。分析ハブには FIRE シミュレーション・ベンチマーク・リスク分析・リバランスをすべて集約。</p>
-        <ul class="fr-list">
-          <li><span><b>銘柄比較</b>：最大10銘柄を横並び比較。価格推移の重ね描き、財務指標・配当利回りを一覧で（無料3銘柄 / Light以上10銘柄）</span></li>
-          <li><span><b>ウォッチリスト</b>：気になる銘柄を保有前から見守る（無料10銘柄 / Light 30銘柄 / Premium 100銘柄）</span></li>
-          <li><span><b>価格アラート</b>：上抜け・下抜けの通知（無料3件 / Light 10件 / Premium 30件）</span></li>
-          <li><span><b>分析ハブ</b>：FIREシミュレーション・ベンチマーク・リスク・リバランスを1つの画面に集約</span></li>
-          <li><span><b>口座別ページ</b>：証券会社軸での内訳。NISA枠の使用状況も一目で</span></li>
-        </ul>
-      </div>
-      <div>
-        <div class="mock">
-          <div class="mock-eyebrow">銘柄比較 · 3銘柄</div>
-          <table class="cmp-table">
-            <thead><tr><th></th><th>ソニーG</th><th>日本ビル</th><th>オルカン</th></tr></thead>
-            <tbody>
-              <tr><td>現在価格</td><td style="font-weight:700">¥3,247</td><td style="font-weight:700">¥991K</td><td style="font-weight:700">¥28.5K</td></tr>
-              <tr><td>本日変動</td><td class="up-red">+2.27%</td><td class="up-red">+0.87%</td><td class="up-red">+0.42%</td></tr>
-              <tr><td>配当利回り</td><td>0.62%</td><td style="font-weight:700;color:var(--accent)">3.84%</td><td>—</td></tr>
-              <tr><td>あなたの保有</td><td>✓</td><td>✓</td><td>✓</td></tr>
-            </tbody>
-          </table>
-          <div class="mock-callout" style="background:var(--paper);color:var(--muted)">ウォッチリスト 8/10 · アラート 2/3 設定中</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== 09 BASICS (案2: ジグザグ詳説) ========== -->
-<section class="section" id="basics">
-  <div class="container">
-    <div class="eyebrow">EVERYDAY TOOLS</div>
-    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;">数字を見る道具は、<br>ぜんぶ入っています。</h2>
+    <div class="eyebrow">TOOLS</div>
+    <h2 style="font-size:44px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;">比較して、見守って、気づく。<br>数字を見る道具は、ぜんぶ入っています。</h2>
     <div class="zz">
 
       <div class="zzRow">
         <div class="zzText">
           <div class="n">TOOL 01</div>
           <h3>ローソク足に、自分のIN / OUT。</h3>
-          <p>ローソク足へ、自分が買った日・売った日・平均取得単価を重ねて表示。相場の解説ではなく、自分の判断の履歴が見えます。</p>
-          <div class="spec"><span>売買マーカー</span><span>平均取得ライン</span><span>期間切替</span></div>
+          <p>ローソク足へ、自分が買った日・売った日・平均取得単価を重ねて表示。移動平均線や出来高も切り替えて表示でき、相場の解説ではなく、自分の判断の履歴が見えます。</p>
+          <div class="spec"><span>売買マーカー</span><span>平均取得ライン</span><span>移動平均線</span><span>出来高</span><span>期間切替</span></div>
         </div>
         <div class="vizBig">
+          <span class="sample-badge">@yuki_t</span>
           <div class="cap">SONY G · 6M</div>
-          <svg viewBox="0 0 360 120" style="width:100%;height:100%">
+          <svg viewBox="0 0 360 150" style="width:100%;height:100%">
+            <polyline points="14,92 38,89 62,84 86,82 110,76 134,70 158,73 182,62 206,54 230,52 254,44 278,32 302,30 326,34" fill="none" stroke="#9333ea" stroke-width="1.4" stroke-dasharray="0" opacity="0.75"></polyline>
             <g stroke="#c8102e" fill="#c8102e">
               <line x1="14" y1="86" x2="14" y2="99" stroke-width="1.3"></line><rect x="8.5" y="90" width="11" height="6" stroke="none"></rect>
               <line x1="62" y1="77" x2="62" y2="92" stroke-width="1.3"></line><rect x="56.5" y="80" width="11" height="10" stroke="none"></rect>
@@ -745,9 +671,30 @@ details[open] .faq-q{color:var(--accent-dark)}
             </g>
             <line x1="6" y1="74" x2="354" y2="74" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"></line>
             <text x="10" y="68" font-family="Inter" font-size="9" font-weight="700" fill="#6b7280">平均取得 ¥2,980</text>
+            <text x="330" y="34" font-family="Inter" font-size="8" font-weight="700" fill="#9333ea">MA25</text>
             <g><circle cx="86" cy="99" r="10" fill="#075985"></circle><text x="86" y="103" font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
             <g><circle cx="158" cy="88" r="10" fill="#075985"></circle><text x="158" y="92" font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
             <g><circle cx="278" cy="13" r="10" fill="#111827"></circle><text x="278" y="17" font-family="Inter" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">OUT</text></g>
+            <line x1="6" y1="112" x2="354" y2="112" stroke="#e5e7eb" stroke-width="1"></line>
+            <text x="10" y="122" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">出来高</text>
+            <g fill="#f3aeb8">
+              <rect x="9" y="128" width="10" height="14"></rect>
+              <rect x="57" y="122" width="10" height="20"></rect>
+              <rect x="105" y="132" width="10" height="10"></rect>
+              <rect x="129" y="124" width="10" height="18"></rect>
+              <rect x="177" y="130" width="10" height="12"></rect>
+              <rect x="201" y="120" width="10" height="22"></rect>
+              <rect x="249" y="126" width="10" height="16"></rect>
+              <rect x="273" y="118" width="10" height="24"></rect>
+              <rect x="321" y="133" width="10" height="9"></rect>
+            </g>
+            <g fill="#bce3c9">
+              <rect x="33" y="134" width="10" height="8"></rect>
+              <rect x="81" y="129" width="10" height="13"></rect>
+              <rect x="153" y="125" width="10" height="17"></rect>
+              <rect x="225" y="131" width="10" height="11"></rect>
+              <rect x="297" y="127" width="10" height="15"></rect>
+            </g>
           </svg>
         </div>
       </div>
@@ -756,10 +703,11 @@ details[open] .faq-q{color:var(--accent-dark)}
         <div class="zzText">
           <div class="n">TOOL 02</div>
           <h3>ヒートマップで、<br>損益の出どころを。</h3>
-          <p>保有している全銘柄を1枚のタイルに。<b>面積が保有額、色が損益率</b>。緑がマイナス、赤がプラスで、濃さが幅。金額の大きさと動きの大きさが同時に読めます。</p>
+          <p>保有している全銘柄を1枚のタイルに。<b>面積が保有額、色が損益率</b>。緑がマイナス、赤がプラスで、濃さが損益率。金額の大きさと動きの大きさが同時に読めます。</p>
           <div class="spec"><span>1日 / 1週 / 1ヶ月 / 1年 / 全期間</span><span>タップで銘柄詳細</span></div>
         </div>
         <div class="vizBig" style="padding:16px;gap:10px">
+          <span class="sample-badge">@yuki_t</span>
           <div class="cap">保有マップ · 38銘柄 · 1日</div>
           <div class="hmScale"><span>損益率 −5%</span><span class="grad"></span><span>+5%</span></div>
           <div class="hm" style="grid-template-columns:1.7fr 1.1fr 1fr .9fr;grid-template-rows:1.2fr 1fr;min-height:190px">
@@ -779,10 +727,11 @@ details[open] .faq-q{color:var(--accent-dark)}
         <div class="zzText">
           <div class="n">TOOL 03</div>
           <h3>カレンダーで、先を読む。</h3>
-          <p>配当の権利確定日と入金日、保有銘柄の決算発表、積立の実行日。さらに日銀の金融政策決定会合や FOMC・雇用統計など、相場全体が動く日も同じ月ビューに並びます。</p>
+          <p>配当の権利確定日と入金日、保有銘柄の決算発表、積立の実行日。さらに日銀の金融政策決定会合や FOMC・雇用統計など、相場全体が動く日も同じカレンダーに並びます。</p>
           <div class="spec"><span>配当・権利日</span><span>決算</span><span>積立</span><span>経済イベント</span></div>
         </div>
         <div class="vizBig" style="padding:16px;min-height:275px">
+          <span class="sample-badge">@yuki_t</span>
           <div class="cap">2026年5月</div>
           <div class="calHead"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
           <div class="calGrid">
@@ -820,12 +769,23 @@ details[open] .faq-q{color:var(--accent-dark)}
       <div class="zzRow flip">
         <div class="zzText">
           <div class="n">TOOL 04</div>
-          <h3>重ねて見れば、差が分かる。</h3>
-          <p>最大10銘柄を、ある一時点を 100 とした指数で重ね描き。価格帯の違う銘柄でも同じスケールで比べられます。起点のハンドルをドラッグすれば、「あの日からどうだったか」もその場で。</p>
-          <div class="spec"><span>無料 3銘柄</span><span>LIGHT以上 10銘柄</span><span>起点をドラッグ</span><span>指標の並び</span></div>
+          <h3>銘柄比較。<br>表でも、グラフでも。</h3>
+          <p>気になる銘柄を並べて比較。現在価格・配当利回りなどの指標は表で、価格の推移は起点を100とした指数チャートで重ね描き。見せ方を切り替えて、多角的に判断できます。</p>
+          <div class="spec"><span>表 / グラフ切替</span><span>起点をドラッグ</span></div>
         </div>
-        <div class="vizBig">
-          <div class="cap">株価の比較 · 1Y · 起点を100</div>
+        <div class="vizBig" style="gap:14px;">
+          <span class="sample-badge">@yuki_t</span>
+          <div class="cap">銘柄比較 · 3銘柄 · 表</div>
+          <table class="cmp-table">
+            <thead><tr><th></th><th>東京エレクトロン</th><th>トヨタ自動車</th><th>ソニーG</th></tr></thead>
+            <tbody>
+              <tr><td>現在価格</td><td style="font-weight:700">¥28,450</td><td style="font-weight:700">¥2,891</td><td style="font-weight:700">¥3,247</td></tr>
+              <tr><td>本日変動</td><td class="up-red">+1.85%</td><td style="color:#16a34a;font-weight:700">−0.42%</td><td class="up-red">+2.27%</td></tr>
+              <tr><td>配当利回り</td><td>1.2%</td><td style="font-weight:700;color:var(--accent)">2.8%</td><td>0.62%</td></tr>
+              <tr><td>あなたの保有</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            </tbody>
+          </table>
+          <div class="cap" style="margin-top:6px;">株価の比較 · 1Y · グラフ · 起点を100</div>
           <svg viewBox="0 0 360 118" style="width:100%;height:100%">
             <line x1="6" y1="22" x2="330" y2="22" stroke="#f3f4f6" stroke-width="1"></line>
             <line x1="6" y1="58" x2="330" y2="58" stroke="#d1d5db" stroke-width="1"></line>
@@ -850,15 +810,42 @@ details[open] .faq-q{color:var(--accent-dark)}
       <div class="zzRow">
         <div class="zzText">
           <div class="n">TOOL 05</div>
-          <h3>アラートは、静かに。</h3>
-          <p>上抜け・下抜けの価格通知に、配当の権利日や積立の実行日も。煽らないよう既定はまとめて配信、必要なものだけ即時に切り替えられます。</p>
-          <div class="spec"><span>無料 3件</span><span>LIGHT 10件</span><span>PREMIUM 30件</span></div>
+          <h3>ウォッチリストで、<br>保有前から見守る。</h3>
+          <p>気になる銘柄を、保有前からウォッチ。価格・値動きをリストで一覧、タップで銘柄詳細へ。</p>
+          <div class="spec"><span>最大10銘柄</span><span>タップで詳細</span></div>
         </div>
-        <div class="vizBig" style="gap:10px">
-          <div class="cap">アラート · 3件設定中</div>
-          <div class="alert-row"><span><span class="dotpill"></span>ソニーG ¥3,300 上抜け</span><b style="color:var(--accent)">達成</b></div>
-          <div class="alert-row"><span><span class="dotpill" style="background:var(--muted-2)"></span>オルカン −3% 下抜け</span><b style="color:var(--muted)">監視中</b></div>
-          <div class="alert-row"><span><span class="dotpill" style="background:var(--muted-2)"></span>権利確定日 3日前</span><b style="color:var(--muted)">予約</b></div>
+        <div class="vizBig" style="gap:8px;">
+          <span class="sample-badge">@yuki_t</span>
+          <div class="cap">ウォッチリスト · 6銘柄</div>
+          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">NVIDIA <span style="color:var(--muted-2);font-size:11px;font-weight:400;">NVDA</span></span><b class="up-red">+3.41%</b></div>
+          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">トヨタ自動車 <span style="color:var(--muted-2);font-size:11px;font-weight:400;">7203</span></span><b class="up-red">+2.18%</b></div>
+          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">レーザーテック <span style="color:var(--muted-2);font-size:11px;font-weight:400;">6920</span></span><b style="color:#16a34a">−2.10%</b></div>
+          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">Apple <span style="color:var(--muted-2);font-size:11px;font-weight:400;">AAPL</span></span><b class="up-red">+0.42%</b></div>
+          <div class="mock-callout" style="background:var(--paper);color:var(--muted);margin-top:4px;">気になる銘柄を、保有前からウォッチ中</div>
+        </div>
+      </div>
+
+      <div class="zzRow flip">
+        <div class="zzText">
+          <div class="n">TOOL 06</div>
+          <h3>その他の分析機能。</h3>
+          <p>目的別のまとめページも用意。FIREシミュレーションやベンチマークは分析ハブに、資産はカテゴリ別・口座別にも切り替えて見られます。</p>
+          <div class="spec"><span>分析ハブ</span><span>カテゴリ別ページ</span><span>口座別ページ</span></div>
+        </div>
+        <div class="vizBig" style="gap:10px;">
+          <span class="sample-badge">@yuki_t</span>
+          <div class="alert-row" style="align-items:flex-start;">
+            <span style="font-weight:800;">📊 分析ハブ</span>
+            <span style="font-size:12px;color:var(--muted);text-align:right;max-width:60%;">FIREシミュレーション・ベンチマークを1画面に</span>
+          </div>
+          <div class="alert-row" style="align-items:flex-start;">
+            <span style="font-weight:800;">🗂 カテゴリ別ページ</span>
+            <span style="font-size:12px;color:var(--muted);text-align:right;max-width:60%;">日本株・投資信託など、資産カテゴリ軸での内訳</span>
+          </div>
+          <div class="alert-row" style="align-items:flex-start;">
+            <span style="font-weight:800;">🏦 口座別ページ</span>
+            <span style="font-size:12px;color:var(--muted);text-align:right;max-width:60%;">証券会社軸での内訳。NISA枠の使用状況も一目で</span>
+          </div>
         </div>
       </div>
 
@@ -876,10 +863,6 @@ details[open] .faq-q{color:var(--accent-dark)}
       <a href="#" class="store-btn">
         <span class="store-icon"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.05 12.04c-.03-2.88 2.35-4.27 2.46-4.34-1.34-1.96-3.43-2.23-4.17-2.26-1.78-.18-3.47 1.05-4.38 1.05-.91 0-2.3-1.03-3.78-1-1.95.03-3.75 1.13-4.75 2.87-2.02 3.51-.52 8.71 1.45 11.56.96 1.39 2.11 2.96 3.6 2.9 1.44-.06 1.98-.93 3.72-.93 1.74 0 2.23.93 3.76.9 1.55-.03 2.53-1.42 3.48-2.82 1.09-1.62 1.55-3.19 1.57-3.27-.03-.01-3.01-1.16-3.04-4.59zM14.18 3.65c.8-.96 1.33-2.3 1.19-3.65-1.15.05-2.54.76-3.36 1.72-.74.85-1.38 2.21-1.21 3.52 1.28.1 2.59-.65 3.38-1.59z"/></svg></span>
         <div><div class="store-label-small">Download on the</div><div class="store-label-main">App Store</div></div>
-      </a>
-      <a href="#" class="store-btn">
-        <span class="store-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gpf1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#0080ff"/></linearGradient><linearGradient id="gpf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffd400"/><stop offset="1" stop-color="#ff8a00"/></linearGradient><linearGradient id="gpf3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3a44"/><stop offset="1" stop-color="#c30b1f"/></linearGradient><linearGradient id="gpf4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00f076"/><stop offset="1" stop-color="#00a85a"/></linearGradient></defs><path d="M3.6 1.3c-.3.3-.5.8-.5 1.4v18.6c0 .6.2 1.1.5 1.4L13.7 12 3.6 1.3z" fill="url(#gpf1)"/><path d="M17 8.4l-3.3 3.6 3.3 3.6 4-2.3c1.1-.6 1.1-2 0-2.6l-4-2.3z" fill="url(#gpf2)"/><path d="M3.6 22.7c.4.4 1.1.5 1.8.1L17 15.6l-3.3-3.6L3.6 22.7z" fill="url(#gpf3)"/><path d="M5.4 1.2C4.7.8 4 .9 3.6 1.3L13.7 12 17 8.4 5.4 1.2z" fill="url(#gpf4)"/></svg></span>
-        <div><div class="store-label-small">GET IT ON</div><div class="store-label-main">Google Play</div></div>
       </a>
     </div>
   </div>
@@ -899,7 +882,7 @@ details[open] .faq-q{color:var(--accent-dark)}
           </div>
           <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
         </div>
-        <p>コミュニティ型 資産運用 SNS。<br>Financial Independence, within REach.</p>
+        <p>Financial Independence, within REach.</p>
       </div>
       <div class="footer-col">
         <div class="footer-head">プロダクト</div>
@@ -917,7 +900,6 @@ details[open] .faq-q{color:var(--accent-dark)}
   </div>
   <div class="footer-bottom">
     <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
-    <div>v1.18.3-beta</div>
   </div>
 </footer>
 
