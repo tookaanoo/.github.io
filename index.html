@@ -855,33 +855,32 @@
     padding: 18px 16px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #eeeae4;
   }
-  .asset-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-  .asset-card.cat-jp::before { background: #e8112d; }
-  .asset-card.cat-global::before { background: #9c27b0; }
-  .asset-card.cat-fund::before { background: #2196f3; }
-  .asset-card.cat-metal::before { background: #f9a825; }
-  .asset-card.cat-bond::before { background: #2e7d32; }
-  .asset-card.cat-fx::before { background: #0277bd; }
-  .asset-card.cat-crypto::before { background: #ff6f00; }
   .asset-cat-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #9ca3af;
     margin-bottom: 8px;
   }
-  .asset-card.cat-jp .asset-cat-label { color: #e8112d; }
-  .asset-card.cat-global .asset-cat-label { color: #9c27b0; }
-  .asset-card.cat-fund .asset-cat-label { color: #2196f3; }
-  .asset-card.cat-metal .asset-cat-label { color: #f9a825; }
-  .asset-card.cat-bond .asset-cat-label { color: #2e7d32; }
-  .asset-card.cat-fx .asset-cat-label { color: #0277bd; }
-  .asset-card.cat-crypto .asset-cat-label { color: #ff6f00; }
+  .asset-cat-label::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--c, #9ca3af);
+    flex-shrink: 0;
+  }
+  .asset-card.cat-jp { --c: #ec4899; }
+  .asset-card.cat-global { --c: #2563eb; }
+  .asset-card.cat-fund { --c: #38bdf8; }
+  .asset-card.cat-metal { --c: #eab308; }
+  .asset-card.cat-bond { --c: #334155; }
+  .asset-card.cat-fx { --c: #2dd4bf; }
+  .asset-card.cat-crypto { --c: #6b7280; }
   .asset-card h3 {
     font-size: 16px;
     font-weight: 800;
@@ -900,6 +899,14 @@
     line-height: 1;
     letter-spacing: -0.03em;
     margin-bottom: 24px;
+  }
+  .asset-share::after {
+    content: '';
+    display: block;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--c) var(--w, 0%), #f0eeea var(--w, 0%));
   }
   .asset-share .pct-sign {
     font-size: 16px;
@@ -2174,7 +2181,7 @@
 
     <!-- Asset cards row -->
     <div class="assets-grid">
-      <div class="asset-card cat-jp">
+      <div class="asset-card cat-jp" style="--w:36%;">
         <div class="asset-cat-label">JP STOCKS</div>
         <h3>日本株</h3>
         <div class="asset-share-label">SHARE</div>
@@ -2184,7 +2191,7 @@
           <span class="asset-change up">+2.18%</span>
         </div>
       </div>
-      <div class="asset-card cat-global">
+      <div class="asset-card cat-global" style="--w:24%;">
         <div class="asset-cat-label">US / GLOBAL</div>
         <h3>海外株</h3>
         <div class="asset-share-label">SHARE</div>
@@ -2194,7 +2201,7 @@
           <span class="asset-change down">-0.34%</span>
         </div>
       </div>
-      <div class="asset-card cat-fund">
+      <div class="asset-card cat-fund" style="--w:18%;">
         <div class="asset-cat-label">FUNDS &amp; ETF</div>
         <h3>投資信託・ETF</h3>
         <div class="asset-share-label">SHARE</div>
@@ -2204,7 +2211,7 @@
           <span class="asset-change up">+1.12%</span>
         </div>
       </div>
-      <div class="asset-card cat-metal">
+      <div class="asset-card cat-metal" style="--w:8%;">
         <div class="asset-cat-label">PRECIOUS METAL</div>
         <h3>金・銀・PT</h3>
         <div class="asset-share-label">SHARE</div>
@@ -2214,7 +2221,7 @@
           <span class="asset-change up">+0.45%</span>
         </div>
       </div>
-      <div class="asset-card cat-bond">
+      <div class="asset-card cat-bond" style="--w:7%;">
         <div class="asset-cat-label">BONDS</div>
         <h3>債券</h3>
         <div class="asset-share-label">SHARE</div>
@@ -2224,7 +2231,7 @@
           <span class="asset-change up">+0.22%</span>
         </div>
       </div>
-      <div class="asset-card cat-fx">
+      <div class="asset-card cat-fx" style="--w:4%;">
         <div class="asset-cat-label">FX</div>
         <h3>為替</h3>
         <div class="asset-share-label">SHARE</div>
@@ -2234,7 +2241,7 @@
           <span class="asset-change down">-0.18%</span>
         </div>
       </div>
-      <div class="asset-card cat-crypto">
+      <div class="asset-card cat-crypto" style="--w:3%;">
         <div class="asset-cat-label">CRYPTO</div>
         <h3>仮想通貨</h3>
         <div class="asset-share-label">SHARE</div>
