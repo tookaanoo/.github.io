@@ -103,7 +103,7 @@
     display: flex; align-items: center; justify-content: center;
   }
   .logo-icon svg { width: 100%; height: 100%; }
-  .logo-text { font-weight: 700; font-size: 17px; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
   .nav-links { display: flex; gap: 48px; font-size: 14px; }
   .nav-links a { color: #374151; transition: color 0.2s; }
   .nav-links a:hover { color: #ec4899; }
@@ -124,7 +124,6 @@
     .nav-actions { gap: 8px; }
     .nav-actions .login { display: none; }
     .btn-primary { padding: 8px 14px; font-size: 12px; }
-    .logo-text { display: none; }
     .mobile-break { display: inline; }
     .stages-title { font-size: 34px; }
     .belief-title { font-size: 34px; }
@@ -1173,7 +1172,7 @@
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 32px;
   }
   .footer-brand p {
@@ -2485,13 +2484,6 @@
         <div class="footer-head">プロダクト</div>
         <ul>
           <li><a href="features.html">機能紹介</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-head">会社情報</div>
-        <ul>
-          <li>運営会社</li>
-          <li>お問い合わせ</li>
         </ul>
       </div>
       <div class="footer-col">
