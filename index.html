@@ -661,6 +661,10 @@
   }
   .ranking-row.you .pct { color: #fff; }
   .ranking-row.you .avatar { background: rgba(255,255,255,0.35); }
+  .rec-chip { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:6px; margin-left:6px; vertical-align:1px; }
+  .rec-chip.purple { background:#ede9fe; color:#7c3aed; }
+  .rec-chip.green { background:#d1fae5; color:#047857; }
+  .rec-chip.blue { background:#dbeafe; color:#2563eb; }
   .ranking-row.top { background: #fdf2f8; }
   .ranking-mini {
     margin-top: 24px;
@@ -1985,7 +1989,7 @@
       <div class="prop-card">
         <div class="num-tag">03 FIRE</div>
         <h3>ゴールまで、何年。</h3>
-        <p>あなたのこれまでの運用実績(XIRR・入金力・配当)から、FIRE 到達年を算出。「自分だけのリアルな予測」が、楽観・中立・悲観の3シナリオで見える。</p>
+        <p>あなたのこれまでの運用実績(XIRR)から、FIRE 到達年を算出。楽観7%・中立4%・悲観1%の固定シナリオと、実績ベースのリアルな予測を比較できる。</p>
         <div class="big-num">24.7%</div>
         <div class="small-label">to FIRE goal</div>
       </div>
@@ -2045,6 +2049,7 @@
         <div class="stage-range">¥1.5億〜</div>
       </div>
     </div>
+    <p style="text-align:center;font-size:12px;color:#9ca3af;margin-top:20px;">※ 金額は一例です。</p>
   </div>
 </section>
 
@@ -2058,43 +2063,41 @@
           まずは、<br>
           <span class="grad-text">自分のペースで。</span>
         </h2>
-        <p>誰かに見せる前提じゃない。日々の記録も、FIREへの進み方も、まずは自分だけの画面でじっくり向き合う。ポートフォリオを仲間と共有する機能は、これから届けていく予定。</p>
+        <p>誰かに見せるためじゃない。日々の記録も、FIREへの進み方も、まずは自分だけの画面でじっくり向き合う。ポートフォリオを仲間と共有する機能は、これから届けていく予定。</p>
       </div>
       <div class="ranking-card">
         <div class="ranking-header">
           <span style="font-weight:700;">未確認の記録</span>
-          <span style="font-weight:700;">7件</span>
-          <span class="pink-label">合計 ¥217,323</span>
-        </div>
-        <div class="ranking-row top">
-          <div class="left">
-            <span class="name">配当・Apple</span>
-          </div>
-          <span class="pct">¥1,243</span>
+          <span style="font-weight:700;">4件</span>
+          <span class="pink-label">合計 ¥181,425</span>
         </div>
         <div class="ranking-row">
-          <div class="left">
-            <span class="name">積立・Vanguard S&amp;P 500 ETF</span>
+          <div class="left" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <span class="name">eMAXIS Slim 全世界株式 <span class="rec-chip purple">積立</span></span>
+            <span style="font-size:12px;color:#9ca3af;">2/8(日) ・ 毎月8日</span>
+          </div>
+          <span class="pct">¥50,000</span>
+        </div>
+        <div class="ranking-row">
+          <div class="left" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <span class="name">Apple <span class="rec-chip green">配当</span></span>
+            <span style="font-size:12px;color:#9ca3af;">2/6(金) ・ 税引後</span>
+          </div>
+          <span class="pct">¥1,425</span>
+        </div>
+        <div class="ranking-row">
+          <div class="left" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <span class="name">Vanguard S&amp;P 500 ETF <span class="rec-chip purple">積立</span></span>
+            <span style="font-size:12px;color:#9ca3af;">2/5(木) ・ 毎月5日</span>
           </div>
           <span class="pct">¥30,000</span>
         </div>
-        <div class="ranking-row you">
-          <div class="left">
-            <span class="name">NISA枠 (2026)</span>
-          </div>
-          <span class="pct">78% 利用</span>
-        </div>
         <div class="ranking-row">
-          <div class="left">
-            <span class="name">ウォッチリスト</span>
+          <div class="left" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <span class="name">給与から入金 <span class="rec-chip blue">入金</span></span>
+            <span style="font-size:12px;color:#9ca3af;">2/5(木) ・ 毎月5日</span>
           </div>
-          <span class="pct">6銘柄</span>
-        </div>
-        <div class="ranking-row">
-          <div class="left">
-            <span class="name">価格アラート</span>
-          </div>
-          <span class="pct">3件</span>
+          <span class="pct">¥100,000</span>
         </div>
       </div>
     </div>
@@ -2308,31 +2311,31 @@
           明日じゃない。<br>
           <span class="grad-text">でも、見える。</span>
         </h2>
-        <p>あなたのこれまでの運用実績 — XIRR・入金力・配当利回り — から、FIRE 到達年を試算。一般的な「年率5%固定」じゃない、あなただけのリアルな予測が、毎朝アップデートされる。</p>
+        <p>あなたのこれまでの運用実績(XIRR)から、FIRE 到達年を試算。楽観7%・中立4%・悲観1%の固定シナリオに加えて、あなただけの実績シナリオも見える。</p>
       </div>
       <div class="glass-card">
         <div class="eyebrow-gray">YOUR FIRE PROGRESS</div>
         <div class="tracking-big grad-text">24.7%</div>
         <div class="tracking-sub">あと <span class="accent">8.4 年</span></div>
-        <div class="tracking-pace">¥14.2M / ¥50M · 中立シナリオ</div>
+        <div class="tracking-pace">¥14.2M / ¥50M · 実績シナリオ(年率7.82%)</div>
         <div class="progress-bar">
           <div class="progress-fill"></div>
         </div>
         <div class="tracking-stats">
           <div class="tracking-mini">
-            <div class="tracking-mini-label">楽観 実績+3%</div>
-            <div class="tracking-mini-val">¥50M</div>
-            <div class="tracking-mini-yrs">T-6.2y</div>
+            <div class="tracking-mini-label">楽観 年率7%</div>
+            <div class="tracking-mini-val">40歳</div>
+            <div class="tracking-mini-yrs">+5年早期</div>
           </div>
           <div class="tracking-mini">
-            <div class="tracking-mini-label">中立 実績維持</div>
-            <div class="tracking-mini-val">¥50M</div>
-            <div class="tracking-mini-yrs">T-8.4y</div>
+            <div class="tracking-mini-label">中立 年率4%</div>
+            <div class="tracking-mini-val">42歳</div>
+            <div class="tracking-mini-yrs">+3年早期</div>
           </div>
           <div class="tracking-mini">
-            <div class="tracking-mini-label">悲観 実績-3%</div>
-            <div class="tracking-mini-val">¥50M</div>
-            <div class="tracking-mini-yrs">T-11.8y</div>
+            <div class="tracking-mini-label">悲観 年率1%</div>
+            <div class="tracking-mini-val">45歳</div>
+            <div class="tracking-mini-yrs">0年遅延</div>
           </div>
         </div>
       </div>
@@ -2358,7 +2361,7 @@
           <span class="faq-num">02</span>
           <span class="faq-q-text">対応している証券口座は？</span>
         </button>
-        <p class="faq-a" hidden>みんなでFIRE は特定の証券会社と API 連携していません。どの証券会社・暗号資産取引所のデータでも、手入力または取引履歴のスクリーンショットから取り込んで管理できます。SBI証券・楽天証券・マネックス証券など主要なフォーマットに対応しています。証券会社口座との自動連携機能も、今後の開発で追加していく予定です。</p>
+        <p class="faq-a" hidden>みんなでFIRE は特定の証券会社と API 連携していません。どの証券会社・暗号資産取引所の取引でも、手入力で記録して管理できます。証券会社口座との自動連携機能も、今後の開発で追加していく予定です。</p>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q" aria-expanded="false">
