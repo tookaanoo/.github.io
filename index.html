@@ -290,7 +290,7 @@
     overflow: hidden;
     background: #fff;
     aspect-ratio: 9/19;
-    padding: 48px 20px 20px;
+    padding: 44px 16px 16px;
     color: #fff;
     position: relative;
     font-variant-numeric: tabular-nums;
@@ -364,7 +364,7 @@
     font-variant-numeric: tabular-nums;
   }
   .floating-card .rank-num {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 900;
     line-height: 1;
   }
@@ -399,10 +399,11 @@
     50% { opacity: 0.4; transform: scale(1.3); }
   }
   .fc-bl-label {
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
     color: #ec4899;
-    letter-spacing: 0.15em;
+    white-space: nowrap;
+    letter-spacing: 0.06em;
   }
   .fc-bl-user {
     display: flex;
@@ -1776,8 +1777,8 @@
             </div>
             <div class="num" style="font-size:11px;color:#db2777;font-weight:700;margin-top:3px;">▲ +1,238 (+0.95%) <span style="font-family:'Noto Sans JP','Inter',sans-serif;">本日</span></div>
 
-            <div style="display:flex;align-items:center;gap:12px;margin:12px 0;">
-              <svg width="72" height="72" viewBox="0 0 100 100" style="flex-shrink:0;">
+            <div style="display:flex;align-items:center;gap:8px;margin:10px 0;">
+              <svg width="64" height="64" viewBox="0 0 100 100" style="flex-shrink:0;">
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#f3f4f6" stroke-width="16"/>
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#ec4899" stroke-width="16" stroke-dasharray="73.14 178.19" stroke-dashoffset="-0.00" transform="rotate(-90 50 50)"/>
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#2563eb" stroke-width="16" stroke-dasharray="53.78 197.54" stroke-dashoffset="-73.14" transform="rotate(-90 50 50)"/>
@@ -1788,15 +1789,15 @@
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#6b7280" stroke-width="16" stroke-dasharray="11.56 239.77" stroke-dashoffset="-234.49" transform="rotate(-90 50 50)"/>
                 <circle cx="50" cy="50" r="40" fill="none" stroke="#2dd4bf" stroke-width="16" stroke-dasharray="5.53 245.80" stroke-dashoffset="-246.05" transform="rotate(-90 50 50)"/>
               </svg>
-              <div style="flex:1;font-size:10px;color:#374151;">
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#ec4899;margin-right:5px;"></i>日本株</span><b class="num" style="font-weight:500;">29.1%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#2563eb;margin-right:5px;"></i>海外株</span><b class="num" style="font-weight:500;">21.4%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#38bdf8;margin-right:5px;"></i>投資信託・ETF</span><b class="num" style="font-weight:500;">17.2%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#065f46;margin-right:5px;"></i>J-REIT</span><b class="num" style="font-weight:500;">10.2%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#eab308;margin-right:5px;"></i>金・銀・プラチナ</span><b class="num" style="font-weight:500;">8.6%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#334155;margin-right:5px;"></i>債券</span><b class="num" style="font-weight:500;">6.8%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#6b7280;margin-right:5px;"></i>仮想通貨</span><b class="num" style="font-weight:500;">4.6%</b></div>
-                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#2dd4bf;margin-right:5px;"></i>為替</span><b class="num" style="font-weight:500;">2.2%</b></div>
+              <div style="flex:1;min-width:0;font-size:9px;white-space:nowrap;color:#374151;">
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#ec4899;margin-right:4px;"></i>日本株</span><b class="num" style="font-weight:500;">29.1%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#2563eb;margin-right:4px;"></i>海外株</span><b class="num" style="font-weight:500;">21.4%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#38bdf8;margin-right:4px;"></i>投資信託・ETF</span><b class="num" style="font-weight:500;">17.2%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#065f46;margin-right:4px;"></i>J-REIT</span><b class="num" style="font-weight:500;">10.2%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#eab308;margin-right:4px;"></i>金・銀・プラチナ</span><b class="num" style="font-weight:500;">8.6%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#334155;margin-right:4px;"></i>債券</span><b class="num" style="font-weight:500;">6.8%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#6b7280;margin-right:4px;"></i>仮想通貨</span><b class="num" style="font-weight:500;">4.6%</b></div>
+                <div class="row-between" style="margin-bottom:2px;"><span><i style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#2dd4bf;margin-right:4px;"></i>為替</span><b class="num" style="font-weight:500;">2.2%</b></div>
               </div>
             </div>
 
@@ -1885,7 +1886,7 @@
             <div style="background:#fbcfe8;border-radius:0 0 6px 0;"></div>
           </div>
           <div style="margin-bottom:4px;">
-            <span class="rank-num grad-text num" style="font-size:22px;">+¥149,972</span>
+            <span class="rank-num grad-text num" style="font-size:18px;">+¥149,972</span>
           </div>
           <div class="small num">▲17 ▼3 · 20銘柄</div>
         </div>
