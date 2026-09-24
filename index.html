@@ -1761,36 +1761,46 @@
       <div class="phone-wrap">
         <div class="phone">
           <div class="phone-notch"></div>
-          <div class="phone-screen white">
-            <div style="font-size:12px;color:#9ca3af;margin-bottom:6px;">総資産</div>
+          <div class="phone-screen white" style="background:#f3f4f8;">
+            <div style="background:#fff;border-radius:14px;padding:12px;margin-bottom:10px;">
+            <div style="font-size:9px;color:#9ca3af;margin-bottom:3px;">総資産</div>
             <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
-              <div class="phone-big num" style="color:#111827;font-size:21px;min-width:0;white-space:nowrap;">¥14,217,830</div>
-              <svg width="48" height="24" viewBox="0 0 48 24" style="flex-shrink:0;">
+              <div class="phone-big num" style="color:#111827;font-size:18px;min-width:0;white-space:nowrap;">¥14,217,830</div>
+              <svg width="56" height="28" viewBox="0 0 48 24" style="flex-shrink:0;">
+                <defs><linearGradient id="totalAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E91E63" stop-opacity="0.28"/><stop offset="1" stop-color="#E91E63" stop-opacity="0"/></linearGradient></defs>
+                <polygon points="0,18 8,16 16,19 24,14 32,15 40,7 48,2 48,24 0,24" fill="url(#totalAreaGrad)"/>
                 <polyline points="0,18 8,16 16,19 24,14 32,15 40,7 48,2" fill="none" stroke="#ec4899" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="num" style="font-size:12px;color:#db2777;font-weight:700;margin-top:4px;">▲ +1,238 (+0.95%) <span style="font-family:'Noto Sans JP','Inter',sans-serif;">本日</span></div>
+            <div class="num" style="font-size:11px;color:#db2777;font-weight:700;margin-top:3px;">▲ +1,238 (+0.95%) <span style="font-family:'Noto Sans JP','Inter',sans-serif;">本日</span></div>
 
-            <div style="display:flex;align-items:center;gap:14px;margin:20px 0;">
-              <svg width="80" height="80" viewBox="0 0 80 80" style="flex-shrink:0;">
-                <circle cx="40" cy="40" r="32" fill="none" stroke="#f3f4f6" stroke-width="14"/>
-                <circle cx="40" cy="40" r="32" fill="none" stroke="#ec4899" stroke-width="14" stroke-dasharray="72.38 128.68" stroke-dashoffset="0" transform="rotate(-90 40 40)"/>
-                <circle cx="40" cy="40" r="32" fill="none" stroke="#3b82f6" stroke-width="14" stroke-dasharray="48.25 152.81" stroke-dashoffset="-72.38" transform="rotate(-90 40 40)"/>
-                <circle cx="40" cy="40" r="32" fill="none" stroke="#10b981" stroke-width="14" stroke-dasharray="36.19 164.87" stroke-dashoffset="-120.64" transform="rotate(-90 40 40)"/>
-                <circle cx="40" cy="40" r="32" fill="none" stroke="#f59e0b" stroke-width="14" stroke-dasharray="6.03 195.03" stroke-dashoffset="-156.83" transform="rotate(-90 40 40)"/>
+            <div style="display:flex;align-items:center;gap:12px;margin:12px 0;">
+              <svg width="72" height="72" viewBox="0 0 100 100" style="flex-shrink:0;">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#f3f4f6" stroke-width="16"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#ec4899" stroke-width="16" stroke-dasharray="73.14 178.19" stroke-dashoffset="-0.00" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#2563eb" stroke-width="16" stroke-dasharray="53.78 197.54" stroke-dashoffset="-73.14" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#38bdf8" stroke-width="16" stroke-dasharray="43.23 208.10" stroke-dashoffset="-126.92" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#065f46" stroke-width="16" stroke-dasharray="25.64 225.69" stroke-dashoffset="-170.15" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="21.61 229.71" stroke-dashoffset="-195.78" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#334155" stroke-width="16" stroke-dasharray="17.09 234.24" stroke-dashoffset="-217.40" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#6b7280" stroke-width="16" stroke-dasharray="11.56 239.77" stroke-dashoffset="-234.49" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#2dd4bf" stroke-width="16" stroke-dasharray="5.53 245.80" stroke-dashoffset="-246.05" transform="rotate(-90 50 50)"/>
               </svg>
-              <div style="flex:1;font-size:12px;color:#374151;">
-                <div class="row-between" style="margin-bottom:5px;"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ec4899;margin-right:6px;"></i>日本株</span><b class="num">36%</b></div>
-                <div class="row-between" style="margin-bottom:5px;"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#3b82f6;margin-right:6px;"></i>海外株</span><b class="num">24%</b></div>
-                <div class="row-between" style="margin-bottom:5px;"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#10b981;margin-right:6px;"></i>投信</span><b class="num">18%</b></div>
-                <div class="row-between"><span><i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#f59e0b;margin-right:6px;"></i>BTC</span><b class="num">3%</b></div>
+              <div style="flex:1;font-size:10px;color:#374151;">
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#ec4899;margin-right:5px;"></i>日本株</span><b class="num" style="font-weight:500;">29.1%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#2563eb;margin-right:5px;"></i>海外株</span><b class="num" style="font-weight:500;">21.4%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#38bdf8;margin-right:5px;"></i>投資信託・ETF</span><b class="num" style="font-weight:500;">17.2%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#065f46;margin-right:5px;"></i>J-REIT</span><b class="num" style="font-weight:500;">10.2%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#eab308;margin-right:5px;"></i>金・銀・プラチナ</span><b class="num" style="font-weight:500;">8.6%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#334155;margin-right:5px;"></i>債券</span><b class="num" style="font-weight:500;">6.8%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#6b7280;margin-right:5px;"></i>仮想通貨</span><b class="num" style="font-weight:500;">4.6%</b></div>
+                <div class="row-between" style="margin-bottom:3px;"><span><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#2dd4bf;margin-right:5px;"></i>為替</span><b class="num" style="font-weight:500;">2.2%</b></div>
               </div>
             </div>
 
-            <div style="background:linear-gradient(135deg,#fdf2f8,#fce7f3);border-radius:12px;padding:12px 14px;margin-bottom:16px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                <span style="font-size:12px;color:#9d174d;">
-                  <svg width="13" height="13" viewBox="0 0 120 143" fill="none" style="vertical-align:-2px;margin-right:6px;">
+            <div style="border-top:1px solid #f3f4f6;padding-top:9px;display:flex;align-items:center;gap:8px;">
+              <span style="font-size:11px;color:#9d174d;white-space:nowrap;display:flex;align-items:center;">
+                <svg width="13" height="13" viewBox="0 0 120 143" fill="none" style="vertical-align:-2px;margin-right:6px;">
                     <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFireBar)"/>
                     <defs>
                       <linearGradient id="logoGradFireBar" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
@@ -1801,46 +1811,58 @@
                       </linearGradient>
                     </defs>
                   </svg>FIRE&nbsp;<span class="num">31.9%</span>
-                </span>
-                <span style="font-size:12px;color:#9d174d;">基礎構築期 ›</span>
-              </div>
-              <div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.6);overflow:hidden;">
+              </span>
+              <div style="flex:1;height:6px;border-radius:4px;background:#f3f4f6;overflow:hidden;">
                 <div style="height:100%;width:32%;background:linear-gradient(90deg,#FF6B9D 0%,#E91E63 38%,#9C27B0 72%,#6A1B9A 100%);border-radius:4px;"></div>
               </div>
             </div>
+            </div>
 
-            <div style="background:#fff;border:1px solid #f3f4f6;border-radius:14px;padding:12px 14px;">
-              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
-                <span style="font-size:12px;font-weight:700;color:#111827;">今日の値動き</span>
-                <span style="font-size:10px;color:#f97316;">値動きマップ →</span>
+            <div style="background:#fff;border-radius:14px;padding:10px 12px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">
+                <span style="font-size:11px;font-weight:700;color:#111827;">値動きヒートマップ</span>
+                              </div>
+              <div style="margin-bottom:6px;">
+                <span class="num" style="font-size:14px;font-weight:700;color:#db2777;">+¥149,972</span>
+                <span class="num" style="font-size:10px;color:#9ca3af;margin-left:6px;">▲17 ▼3</span>
               </div>
-              <div style="margin-bottom:10px;">
-                <span class="num" style="font-size:17px;font-weight:700;color:#db2777;">+¥149,972</span>
-                <span style="font-size:10px;color:#9ca3af;margin-left:6px;">本日の損益・<span class="num">▲17 ▼3</span></span>
-              </div>
-              <div class="grid-2x2" style="gap:8px;">
-                <div style="background:#fce7f3;border-radius:10px;padding:8px;">
-                  <div style="font-size:10px;color:#374151;">ビットコイン</div>
-                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+4.18%</div>
-                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥29,026</div>
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:#fff;border-radius:10px;overflow:hidden;">
+                <div style="background:#d6456b;padding:5px 7px;">
+                  <div style="font-size:9px;color:#fff;opacity:.95;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">eMAXIS Slim 全世界株式</div>
+                  <div class="num" style="font-size:10px;font-weight:700;color:#fff;white-space:nowrap;">+4.18% <span style="font-size:7.5px;font-weight:400;opacity:.85;">+¥29,026</span></div>
                 </div>
-                <div style="background:#fce7f3;border-radius:10px;padding:8px;">
-                  <div style="font-size:10px;color:#374151;">NVIDIA</div>
-                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+3.22%</div>
-                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥12,236</div>
+                <div style="background:#dc5a7c;padding:5px 7px;">
+                  <div style="font-size:9px;color:#fff;opacity:.95;">NVIDIA</div>
+                  <div class="num" style="font-size:10px;font-weight:700;color:#fff;white-space:nowrap;">+3.22% <span style="font-size:7.5px;font-weight:400;opacity:.85;">+¥12,236</span></div>
                 </div>
-                <div style="background:#fdf2f8;border-radius:10px;padding:8px;">
-                  <div style="font-size:10px;color:#374151;">イーサリアム</div>
-                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+2.20%</div>
-                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥2,218</div>
+                <div style="background:#e5849d;padding:5px 7px;">
+                  <div style="font-size:9px;color:#fff;opacity:.95;">ソニーグループ</div>
+                  <div class="num" style="font-size:10px;font-weight:700;color:#fff;white-space:nowrap;">+2.20% <span style="font-size:7.5px;font-weight:400;opacity:.85;">+¥2,218</span></div>
                 </div>
-                <div style="background:#fdf2f8;border-radius:10px;padding:8px;">
-                  <div style="font-size:10px;color:#374151;">ソニーグループ</div>
-                  <div class="num" style="font-weight:700;font-size:12px;color:#db2777;">+2.18%</div>
-                  <div class="num" style="font-size:9px;color:#9ca3af;">+¥32,373</div>
+                <div style="background:#e5849d;padding:5px 7px;">
+                  <div style="font-size:9px;color:#fff;opacity:.95;">ビットコイン</div>
+                  <div class="num" style="font-size:10px;font-weight:700;color:#fff;white-space:nowrap;">+2.18% <span style="font-size:7.5px;font-weight:400;opacity:.85;">+¥32,373</span></div>
                 </div>
               </div>
-              <div style="font-size:10px;color:#9ca3af;margin-top:8px;">変動が大きい4銘柄</div>
+            </div>
+
+            <div style="background:#fff;border-radius:14px;padding:10px 12px;margin-top:10px;">
+              <div style="font-size:11px;font-weight:700;color:#111827;margin-bottom:6px;">ウォッチリスト</div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #f3f4f6;">
+                <span style="width:3px;height:22px;border-radius:2px;background:#2540b8;flex-shrink:0;"></span>
+                <div style="flex:1;min-width:0;"><div style="font-size:10px;font-weight:700;color:#111827;">NVIDIA</div><div class="num" style="font-size:8px;color:#9ca3af;">NVDA</div></div>
+                <div style="text-align:right;"><div class="num" style="font-size:10px;font-weight:700;color:#111827;">$138.20</div><div class="num" style="font-size:9px;font-weight:700;color:#c93a5a;">+3.41%</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #f3f4f6;">
+                <span style="width:3px;height:22px;border-radius:2px;background:#e06cbf;flex-shrink:0;"></span>
+                <div style="flex:1;min-width:0;"><div style="font-size:10px;font-weight:700;color:#111827;">トヨタ自動車</div><div class="num" style="font-size:8px;color:#9ca3af;">7203</div></div>
+                <div style="text-align:right;"><div class="num" style="font-size:10px;font-weight:700;color:#111827;">¥2,843</div><div class="num" style="font-size:9px;font-weight:700;color:#c93a5a;">+2.18%</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;padding:5px 0;">
+                <span style="width:3px;height:22px;border-radius:2px;background:#e06cbf;flex-shrink:0;"></span>
+                <div style="flex:1;min-width:0;"><div style="font-size:10px;font-weight:700;color:#111827;">レーザーテック</div><div class="num" style="font-size:8px;color:#9ca3af;">6920</div></div>
+                <div style="text-align:right;"><div class="num" style="font-size:10px;font-weight:700;color:#111827;">¥18,400</div><div class="num" style="font-size:9px;font-weight:700;color:#4a9d5b;">-2.10%</div></div>
+              </div>
             </div>
           </div>
         </div>
