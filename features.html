@@ -189,6 +189,10 @@ details[open] .faq-q{color:var(--accent-dark)}
 .hm div{border-radius:5px;padding:6px 7px;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--display);font-weight:800;overflow:hidden}
 .hm .nm{font-size:10.5px;line-height:1.25}
 .hm .pc{font-size:11.5px}
+.tm{position:relative;width:100%;height:250px;border-radius:12px;overflow:hidden;background:#fff}
+.tm div{position:absolute;box-sizing:border-box;border:1px solid #fff;padding:4px 5px;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--display);font-weight:800;overflow:hidden}
+.tm .pc{white-space:nowrap}
+.tm .nm{line-height:1.2;overflow-wrap:break-word;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .up3{background:#c8102e;color:#fff}.up2{background:#d12b55;color:#fff}.up1{background:#f9b3c3;color:#8c0b25}.up0{background:#fde4ea;color:#8c0b25}
 .dn1{background:#cfe9d8;color:#14532d}.dn2{background:#35714e;color:#fff}
 .hmScale{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:700;color:var(--muted);font-family:var(--display)}
@@ -203,10 +207,43 @@ details[open] .faq-q{color:var(--accent-dark)}
 .calChip.earn{background:#e0e7ff;color:#312e81}
 .calChip.cont{background:#fef3c7;color:#8a5200}
 .calChip.macro{background:#111827;color:#fff}
+.cal2 .c2title{font-family:var(--display);font-size:17px;font-weight:900;color:var(--ink);margin-top:2px;padding-right:70px}
+.c2pills{display:flex;gap:6px;flex-wrap:wrap}
+.c2pills span{font-size:9.5px;font-weight:700;padding:5px 10px;border-radius:9999px;border:1px solid var(--line);color:var(--muted)}
+.c2pills span.on{background:#111;color:#fff;border-color:#111}
+.c2pills em{font-style:normal;font-family:var(--display);opacity:.7;margin-left:2px}
+.c2legend{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:8.5px;font-weight:600;color:var(--muted)}
+.c2legend span{display:inline-flex;align-items:center;gap:4px}
+.c2legend i{width:7px;height:7px;border-radius:2px;display:inline-block}
+.c2card{padding:4px 0 2px}
+.c2head{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:9px;font-weight:700;color:var(--muted-2);padding:2px 0 6px;border-bottom:1px solid var(--line-2)}
+.c2head .sun{color:#dc2626}.c2head .sat{color:#ea580c}
+.c2grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:2px;margin-top:4px}
+.c2{height:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:9px}
+.c2 .dn{font-family:var(--display);font-size:11px;font-weight:700;color:var(--ink)}
+.c2 .dots{display:flex;gap:2px;height:4px}
+.c2 .dots i{width:4px;height:4px;border-radius:50%;display:block}
+.c2.today{background:linear-gradient(135deg,#ec5b86,#9333ea);box-shadow:0 6px 14px rgba(200,40,120,.3)}
+.c2.today .dn{color:#fff}.c2.today .dots i{background:#fff!important}
+.c2list{background:#fff;overflow:hidden}
+.c2lt{font-size:9px;font-weight:700;color:var(--muted-2);padding:8px 0 4px}
+.e2{display:grid;grid-template-columns:30px 3px 1fr auto;gap:8px;align-items:center;padding:8px 0;border-top:1px solid var(--line-2)}
+.e2 .ed{text-align:center;line-height:1.1}.e2 .ed b{display:block;font-family:var(--display);font-size:15px;font-weight:900;color:var(--ink)}.e2 .ed span{font-size:8px;color:var(--muted-2)}
+.e2 .eb{width:3px;height:26px;border-radius:2px;display:block}
+.e2 .et b{display:block;font-size:10.5px;color:var(--ink);line-height:1.3}.e2 .et span{font-size:8.5px;color:var(--muted-2)}.e2 .et em{font-style:normal;font-weight:700}
+.e2 .er{text-align:right}.e2 .er b{display:block;font-family:var(--display);font-size:11px;font-weight:800;color:var(--ink)}.e2 .er small{font-size:8px;color:var(--muted-2)}
+.tag{display:inline-block;font-size:8px;font-weight:700;padding:2px 7px;border-radius:5px}.tag.imp{background:#e0e7ff;color:#3730a3}.tag.plan{background:#fff;border:1px solid #d9a066;color:#b45a1f}
 .calLegend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:10.5px;font-weight:700;color:var(--muted)}
 .calLegend i{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
 .serieLegend{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;font-weight:700;font-family:var(--display)}
 .serieLegend span i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.w2list{background:#fff;overflow:hidden}
+.w2{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line-2)}
+.w2:first-child{border-top:none}
+.w2 i{width:3px;height:26px;border-radius:2px;flex-shrink:0}
+.w2n{flex:1;min-width:0}.w2n b{display:block;font-size:12.5px;font-weight:800;color:var(--ink);line-height:1.3}.w2n span{font-family:var(--display);font-size:9.5px;font-weight:600;color:var(--muted-2)}
+.w2p{text-align:right}.w2p b{display:block;font-family:var(--display);font-size:12.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.w2p .up{font-family:var(--display);font-size:10.5px;font-weight:800;color:#c93a5a}.w2p .dn{font-family:var(--display);font-size:10.5px;font-weight:800;color:#4a9d5b}
 .alert-row{display:flex;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:12px 14px;font-size:12px}
 .alert-row b{font-family:var(--display);font-weight:800}
 .dotpill{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:6px}
@@ -442,51 +479,183 @@ details[open] .faq-q{color:var(--accent-dark)}
         <div class="vizBig">
           <span class="sample-badge">@yuki_t</span>
           <div class="cap">SONY G · 6M</div>
-          <svg viewBox="0 0 360 150" style="width:100%;height:100%">
-            <polyline points="14,92 38,89 62,84 86,82 110,76 134,70 158,73 182,62 206,54 230,52 254,44 278,32 302,30 326,34" fill="none" stroke="#9333ea" stroke-width="1.4" stroke-dasharray="0" opacity="0.75"></polyline>
+          <svg viewBox="0 0 360 220" style="width:100%;height:100%">
+            <polyline points="14.0,130.8 18.2,130.8 22.4,129.4 26.6,128.2 30.8,128.2 35.0,127.6 39.2,127.3 43.4,126.9 47.6,126.2 51.8,125.1 56.0,124.1 60.2,123.2 64.4,122.5 68.6,121.5 72.8,120.5 77.0,119.4 81.2,118.4 85.4,117.5 89.6,116.6 93.8,115.8 98.1,115.0 102.3,114.5 106.5,113.8 110.7,113.2 114.9,113.0 119.1,112.1 123.3,111.1 127.5,110.2 131.7,109.2 135.9,108.0 140.1,107.1 144.3,106.3 148.5,105.7 152.7,105.1 156.9,104.7 161.1,104.3 165.3,104.0 169.5,103.6 173.7,103.4 177.9,103.3 182.1,103.4 186.3,103.4 190.5,103.3 194.7,103.3 198.9,103.1 203.1,103.0 207.3,102.7 211.5,102.5 215.7,102.4 219.9,102.2 224.1,101.7 228.3,101.5 232.5,101.3 236.7,101.3 240.9,101.5 245.1,101.3 249.3,100.9 253.5,100.8 257.7,100.5 261.9,100.2 266.2,99.7 270.4,98.9 274.6,97.6 278.8,96.4 283.0,94.9 287.2,93.5 291.4,92.4 295.6,91.1 299.8,89.8 304.0,88.2 308.2,86.6 312.4,84.6 316.6,82.6 320.8,80.6 325.0,78.4 329.2,76.0 333.4,73.4 337.6,70.9 341.8,68.2 346.0,65.5" fill="none" stroke="#9333ea" stroke-width="1.4" opacity="0.75"></polyline>
             <g stroke="#c8102e" fill="#c8102e">
-              <line x1="14" y1="86" x2="14" y2="99" stroke-width="1.3"></line><rect x="8.5" y="90" width="11" height="6" stroke="none"></rect>
-              <line x1="62" y1="77" x2="62" y2="92" stroke-width="1.3"></line><rect x="56.5" y="80" width="11" height="10" stroke="none"></rect>
-              <line x1="110" y1="67" x2="110" y2="83" stroke-width="1.3"></line><rect x="104.5" y="70" width="11" height="10" stroke="none"></rect>
-              <line x1="134" y1="58" x2="134" y2="73" stroke-width="1.3"></line><rect x="128.5" y="62" width="11" height="8" stroke="none"></rect>
-              <line x1="182" y1="50" x2="182" y2="67" stroke-width="1.3"></line><rect x="176.5" y="54" width="11" height="10" stroke="none"></rect>
-              <line x1="206" y1="42" x2="206" y2="57" stroke-width="1.3"></line><rect x="200.5" y="46" width="11" height="8" stroke="none"></rect>
-              <line x1="254" y1="32" x2="254" y2="51" stroke-width="1.3"></line><rect x="248.5" y="36" width="11" height="12" stroke="none"></rect>
-              <line x1="278" y1="24" x2="278" y2="39" stroke-width="1.3"></line><rect x="272.5" y="28" width="11" height="8" stroke="none"></rect>
-              <line x1="326" y1="22" x2="326" y2="37" stroke-width="1.3"></line><rect x="320.5" y="26" width="11" height="8" stroke="none"></rect>
+              <line x1="22.4" y1="126.2" x2="22.4" y2="132.0" stroke-width="0.8"></line><rect x="21.1" y="126.7" width="2.6" height="4.1" stroke="none"></rect>
+              <line x1="26.6" y1="124.2" x2="26.6" y2="126.9" stroke-width="0.8"></line><rect x="25.3" y="124.7" width="2.6" height="2.0" stroke="none"></rect>
+              <line x1="35.0" y1="122.8" x2="35.0" y2="129.9" stroke-width="0.8"></line><rect x="33.7" y="124.8" width="2.6" height="3.0" stroke="none"></rect>
+              <line x1="43.4" y1="123.2" x2="43.4" y2="126.3" stroke-width="0.8"></line><rect x="42.1" y="123.8" width="2.6" height="1.7" stroke="none"></rect>
+              <line x1="47.6" y1="120.7" x2="47.6" y2="124.6" stroke-width="0.8"></line><rect x="46.3" y="121.2" width="2.6" height="2.7" stroke="none"></rect>
+              <line x1="51.8" y1="113.7" x2="51.8" y2="122.6" stroke-width="0.8"></line><rect x="50.5" y="114.4" width="2.6" height="6.7" stroke="none"></rect>
+              <line x1="60.2" y1="112.6" x2="60.2" y2="114.9" stroke-width="0.8"></line><rect x="58.9" y="113.5" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="68.6" y1="107.8" x2="68.6" y2="113.9" stroke-width="0.8"></line><rect x="67.3" y="108.8" width="2.6" height="4.7" stroke="none"></rect>
+              <line x1="72.8" y1="104.8" x2="72.8" y2="108.9" stroke-width="0.8"></line><rect x="71.5" y="106.8" width="2.6" height="2.1" stroke="none"></rect>
+              <line x1="77.0" y1="99.4" x2="77.0" y2="107.2" stroke-width="0.8"></line><rect x="75.7" y="102.2" width="2.6" height="4.6" stroke="none"></rect>
+              <line x1="89.6" y1="99.5" x2="89.6" y2="104.6" stroke-width="0.8"></line><rect x="88.3" y="100.8" width="2.6" height="1.9" stroke="none"></rect>
+              <line x1="93.8" y1="99.9" x2="93.8" y2="102.6" stroke-width="0.8"></line><rect x="92.5" y="100.1" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="98.1" y1="97.8" x2="98.1" y2="100.7" stroke-width="0.8"></line><rect x="96.7" y="98.7" width="2.6" height="1.4" stroke="none"></rect>
+              <line x1="106.5" y1="97.2" x2="106.5" y2="105.5" stroke-width="0.8"></line><rect x="105.2" y="100.0" width="2.6" height="3.5" stroke="none"></rect>
+              <line x1="110.7" y1="97.8" x2="110.7" y2="100.8" stroke-width="0.8"></line><rect x="109.4" y="99.8" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="123.3" y1="105.3" x2="123.3" y2="109.3" stroke-width="0.8"></line><rect x="122.0" y="105.5" width="2.6" height="3.5" stroke="none"></rect>
+              <line x1="127.5" y1="101.6" x2="127.5" y2="106.3" stroke-width="0.8"></line><rect x="126.2" y="103.8" width="2.6" height="1.7" stroke="none"></rect>
+              <line x1="131.7" y1="100.7" x2="131.7" y2="105.9" stroke-width="0.8"></line><rect x="130.4" y="101.5" width="2.6" height="2.3" stroke="none"></rect>
+              <line x1="135.9" y1="95.0" x2="135.9" y2="102.2" stroke-width="0.8"></line><rect x="134.6" y="96.3" width="2.6" height="5.1" stroke="none"></rect>
+              <line x1="152.7" y1="106.8" x2="152.7" y2="109.5" stroke-width="0.8"></line><rect x="151.4" y="107.2" width="2.6" height="1.4" stroke="none"></rect>
+              <line x1="156.9" y1="103.3" x2="156.9" y2="108.1" stroke-width="0.8"></line><rect x="155.6" y="104.9" width="2.6" height="2.4" stroke="none"></rect>
+              <line x1="161.1" y1="102.7" x2="161.1" y2="104.9" stroke-width="0.8"></line><rect x="159.8" y="104.1" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="169.5" y1="102.5" x2="169.5" y2="105.1" stroke-width="0.8"></line><rect x="168.2" y="104.4" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="173.7" y1="102.6" x2="173.7" y2="106.3" stroke-width="0.8"></line><rect x="172.4" y="103.0" width="2.6" height="1.4" stroke="none"></rect>
+              <line x1="186.3" y1="101.5" x2="186.3" y2="106.0" stroke-width="0.8"></line><rect x="185.0" y="102.0" width="2.6" height="3.9" stroke="none"></rect>
+              <line x1="190.5" y1="99.8" x2="190.5" y2="102.2" stroke-width="0.8"></line><rect x="189.2" y="100.6" width="2.6" height="1.3" stroke="none"></rect>
+              <line x1="194.7" y1="98.4" x2="194.7" y2="100.6" stroke-width="0.8"></line><rect x="193.4" y="99.2" width="2.6" height="1.5" stroke="none"></rect>
+              <line x1="198.9" y1="95.6" x2="198.9" y2="102.0" stroke-width="0.8"></line><rect x="197.6" y="96.4" width="2.6" height="2.8" stroke="none"></rect>
+              <line x1="203.1" y1="94.7" x2="203.1" y2="96.9" stroke-width="0.8"></line><rect x="201.8" y="95.3" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="211.5" y1="92.2" x2="211.5" y2="99.3" stroke-width="0.8"></line><rect x="210.2" y="94.8" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="219.9" y1="98.5" x2="219.9" y2="100.1" stroke-width="0.8"></line><rect x="218.6" y="99.1" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="224.1" y1="98.1" x2="224.1" y2="102.5" stroke-width="0.8"></line><rect x="222.8" y="98.8" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="228.3" y1="97.4" x2="228.3" y2="98.9" stroke-width="0.8"></line><rect x="227.0" y="98.2" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="245.1" y1="94.0" x2="245.1" y2="102.0" stroke-width="0.8"></line><rect x="243.8" y="96.4" width="2.6" height="5.1" stroke="none"></rect>
+              <line x1="257.7" y1="99.7" x2="257.7" y2="105.3" stroke-width="0.8"></line><rect x="256.4" y="101.8" width="2.6" height="3.3" stroke="none"></rect>
+              <line x1="261.9" y1="96.2" x2="261.9" y2="102.0" stroke-width="0.8"></line><rect x="260.6" y="96.4" width="2.6" height="5.3" stroke="none"></rect>
+              <line x1="266.2" y1="91.8" x2="266.2" y2="96.5" stroke-width="0.8"></line><rect x="264.8" y="92.0" width="2.6" height="4.4" stroke="none"></rect>
+              <line x1="270.4" y1="83.1" x2="270.4" y2="92.4" stroke-width="0.8"></line><rect x="269.1" y="84.7" width="2.6" height="7.3" stroke="none"></rect>
+              <line x1="274.6" y1="70.8" x2="274.6" y2="86.1" stroke-width="0.8"></line><rect x="273.3" y="72.7" width="2.6" height="12.1" stroke="none"></rect>
+              <line x1="278.8" y1="71.0" x2="278.8" y2="73.8" stroke-width="0.8"></line><rect x="277.5" y="71.2" width="2.6" height="1.4" stroke="none"></rect>
+              <line x1="283.0" y1="66.9" x2="283.0" y2="73.7" stroke-width="0.8"></line><rect x="281.7" y="67.9" width="2.6" height="3.3" stroke="none"></rect>
+              <line x1="295.6" y1="65.8" x2="295.6" y2="74.6" stroke-width="0.8"></line><rect x="294.3" y="68.2" width="2.6" height="4.9" stroke="none"></rect>
+              <line x1="299.8" y1="64.5" x2="299.8" y2="69.5" stroke-width="0.8"></line><rect x="298.5" y="66.4" width="2.6" height="1.8" stroke="none"></rect>
+              <line x1="304.0" y1="57.2" x2="304.0" y2="69.0" stroke-width="0.8"></line><rect x="302.7" y="58.7" width="2.6" height="7.7" stroke="none"></rect>
+              <line x1="308.2" y1="53.2" x2="308.2" y2="62.1" stroke-width="0.8"></line><rect x="306.9" y="53.5" width="2.6" height="5.2" stroke="none"></rect>
+              <line x1="312.4" y1="46.6" x2="312.4" y2="54.5" stroke-width="0.8"></line><rect x="311.1" y="46.8" width="2.6" height="6.7" stroke="none"></rect>
+              <line x1="316.6" y1="43.9" x2="316.6" y2="49.5" stroke-width="0.8"></line><rect x="315.3" y="44.6" width="2.6" height="2.2" stroke="none"></rect>
+              <line x1="325.0" y1="42.8" x2="325.0" y2="50.4" stroke-width="0.8"></line><rect x="323.7" y="43.1" width="2.6" height="5.9" stroke="none"></rect>
+              <line x1="329.2" y1="38.9" x2="329.2" y2="43.3" stroke-width="0.8"></line><rect x="327.9" y="39.2" width="2.6" height="3.9" stroke="none"></rect>
+              <line x1="333.4" y1="33.1" x2="333.4" y2="43.5" stroke-width="0.8"></line><rect x="332.1" y="33.6" width="2.6" height="5.6" stroke="none"></rect>
+              <line x1="341.8" y1="34.5" x2="341.8" y2="36.2" stroke-width="0.8"></line><rect x="340.5" y="35.7" width="2.6" height="1.2" stroke="none"></rect>
+              <line x1="346.0" y1="32.6" x2="346.0" y2="38.2" stroke-width="0.8"></line><rect x="344.7" y="32.8" width="2.6" height="2.9" stroke="none"></rect>
             </g>
             <g stroke="#1d6b3f" fill="#fff">
-              <line x1="38" y1="85" x2="38" y2="97" stroke-width="1.3"></line><rect x="32.5" y="88" width="11" height="6" stroke-width="1.4"></rect>
-              <line x1="86" y1="75" x2="86" y2="88" stroke-width="1.3"></line><rect x="80.5" y="78" width="11" height="6" stroke-width="1.4"></rect>
-              <line x1="158" y1="60" x2="158" y2="75" stroke-width="1.3"></line><rect x="152.5" y="64" width="11" height="8" stroke-width="1.4"></rect>
-              <line x1="230" y1="44" x2="230" y2="60" stroke-width="1.3"></line><rect x="224.5" y="48" width="11" height="8" stroke-width="1.4"></rect>
-              <line x1="302" y1="28" x2="302" y2="44" stroke-width="1.3"></line><rect x="296.5" y="32" width="11" height="8" stroke-width="1.4"></rect>
+              <line x1="14.0" y1="130.1" x2="14.0" y2="131.1" stroke-width="0.8"></line><rect x="12.7" y="130.7" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="18.2" y1="129.7" x2="18.2" y2="131.1" stroke-width="0.8"></line><rect x="16.9" y="130.8" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="30.8" y1="123.6" x2="30.8" y2="128.4" stroke-width="0.8"></line><rect x="29.5" y="124.7" width="2.6" height="3.2" stroke-width="0.9"></rect>
+              <line x1="39.2" y1="124.2" x2="39.2" y2="125.9" stroke-width="0.8"></line><rect x="37.9" y="124.8" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="56.0" y1="113.5" x2="56.0" y2="115.1" stroke-width="0.8"></line><rect x="54.7" y="114.4" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="64.4" y1="112.2" x2="64.4" y2="114.2" stroke-width="0.8"></line><rect x="63.1" y="113.5" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="81.2" y1="101.1" x2="81.2" y2="103.0" stroke-width="0.8"></line><rect x="79.9" y="102.2" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="85.4" y1="100.4" x2="85.4" y2="103.8" stroke-width="0.8"></line><rect x="84.1" y="102.4" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="102.3" y1="97.3" x2="102.3" y2="104.3" stroke-width="0.8"></line><rect x="101.0" y="98.7" width="2.6" height="4.9" stroke-width="0.9"></rect>
+              <line x1="114.9" y1="96.3" x2="114.9" y2="106.9" stroke-width="0.8"></line><rect x="113.6" y="99.8" width="2.6" height="6.7" stroke-width="0.9"></rect>
+              <line x1="119.1" y1="105.0" x2="119.1" y2="110.3" stroke-width="0.8"></line><rect x="117.8" y="106.5" width="2.6" height="2.5" stroke-width="0.9"></rect>
+              <line x1="140.1" y1="95.4" x2="140.1" y2="102.9" stroke-width="0.8"></line><rect x="138.8" y="96.3" width="2.6" height="5.4" stroke-width="0.9"></rect>
+              <line x1="144.3" y1="101.4" x2="144.3" y2="107.5" stroke-width="0.8"></line><rect x="143.0" y="101.7" width="2.6" height="4.4" stroke-width="0.9"></rect>
+              <line x1="148.5" y1="104.0" x2="148.5" y2="109.3" stroke-width="0.8"></line><rect x="147.2" y="106.1" width="2.6" height="2.5" stroke-width="0.9"></rect>
+              <line x1="165.3" y1="102.9" x2="165.3" y2="106.9" stroke-width="0.8"></line><rect x="164.0" y="104.1" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="177.9" y1="101.3" x2="177.9" y2="106.4" stroke-width="0.8"></line><rect x="176.6" y="103.0" width="2.6" height="1.7" stroke-width="0.9"></rect>
+              <line x1="182.1" y1="103.9" x2="182.1" y2="107.4" stroke-width="0.8"></line><rect x="180.8" y="104.7" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="207.3" y1="94.0" x2="207.3" y2="96.1" stroke-width="0.8"></line><rect x="206.0" y="95.3" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="215.7" y1="94.4" x2="215.7" y2="99.8" stroke-width="0.8"></line><rect x="214.4" y="94.8" width="2.6" height="4.4" stroke-width="0.9"></rect>
+              <line x1="232.5" y1="98.1" x2="232.5" y2="103.2" stroke-width="0.8"></line><rect x="231.2" y="98.2" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="236.7" y1="98.0" x2="236.7" y2="102.9" stroke-width="0.8"></line><rect x="235.4" y="99.4" width="2.6" height="1.9" stroke-width="0.9"></rect>
+              <line x1="240.9" y1="100.0" x2="240.9" y2="102.7" stroke-width="0.8"></line><rect x="239.6" y="101.3" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="249.3" y1="95.5" x2="249.3" y2="98.5" stroke-width="0.8"></line><rect x="248.0" y="96.4" width="2.6" height="1.2" stroke-width="0.9"></rect>
+              <line x1="253.5" y1="95.4" x2="253.5" y2="107.0" stroke-width="0.8"></line><rect x="252.2" y="97.0" width="2.6" height="8.1" stroke-width="0.9"></rect>
+              <line x1="287.2" y1="66.9" x2="287.2" y2="72.9" stroke-width="0.8"></line><rect x="285.9" y="67.9" width="2.6" height="3.5" stroke-width="0.9"></rect>
+              <line x1="291.4" y1="69.0" x2="291.4" y2="75.1" stroke-width="0.8"></line><rect x="290.1" y="71.4" width="2.6" height="1.7" stroke-width="0.9"></rect>
+              <line x1="320.8" y1="42.6" x2="320.8" y2="51.7" stroke-width="0.8"></line><rect x="319.5" y="44.6" width="2.6" height="4.4" stroke-width="0.9"></rect>
+              <line x1="337.6" y1="30.0" x2="337.6" y2="37.8" stroke-width="0.8"></line><rect x="336.3" y="33.6" width="2.6" height="2.7" stroke-width="0.9"></rect>
             </g>
-            <line x1="6" y1="74" x2="354" y2="74" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"></line>
-            <text x="10" y="68" font-family="Inter" font-size="9" font-weight="700" fill="#6b7280">平均取得 ¥2,980</text>
-            <text x="330" y="34" font-family="Inter" font-size="8" font-weight="700" fill="#9333ea">MA25</text>
-            <g><circle cx="86" cy="99" r="10" fill="#075985"></circle><text x="86" y="103" font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
-            <g><circle cx="158" cy="88" r="10" fill="#075985"></circle><text x="158" y="92" font-family="Inter" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
-            <g><circle cx="278" cy="13" r="10" fill="#111827"></circle><text x="278" y="17" font-family="Inter" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">OUT</text></g>
-            <line x1="6" y1="112" x2="354" y2="112" stroke="#e5e7eb" stroke-width="1"></line>
-            <text x="10" y="122" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">出来高</text>
+            <line x1="6" y1="121.5" x2="354" y2="121.5" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"></line>
+            <text x="10" y="116.5" font-family="Inter" font-size="8" font-weight="700" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">平均取得 ¥2,980</text>
+            <text x="352" y="79.5" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#9333ea" text-anchor="end" stroke="#fff" stroke-width="3" paint-order="stroke">25日平均線</text>
+            <g><circle cx="22.4" cy="143.0" r="8" fill="#075985"></circle><text x="22.4" y="145.6" font-family="Inter" font-size="7" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
+            <g><circle cx="119.1" cy="122.3" r="8" fill="#075985"></circle><text x="119.1" y="124.9" font-family="Inter" font-size="7" font-weight="800" fill="#fff" text-anchor="middle">IN</text></g>
+            <g><circle cx="283.0" cy="54.9" r="8" fill="#111827"></circle><text x="283.0" y="57.1" font-family="Inter" font-size="5.5" font-weight="800" fill="#fff" text-anchor="middle">OUT</text></g>
+            <line x1="6" y1="156" x2="354" y2="156" stroke="#e5e7eb" stroke-width="1"></line>
+            <text x="10" y="167" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">出来高</text>
             <g fill="#f3aeb8">
-              <rect x="9" y="128" width="10" height="14"></rect>
-              <rect x="57" y="122" width="10" height="20"></rect>
-              <rect x="105" y="132" width="10" height="10"></rect>
-              <rect x="129" y="124" width="10" height="18"></rect>
-              <rect x="177" y="130" width="10" height="12"></rect>
-              <rect x="201" y="120" width="10" height="22"></rect>
-              <rect x="249" y="126" width="10" height="16"></rect>
-              <rect x="273" y="118" width="10" height="24"></rect>
-              <rect x="321" y="133" width="10" height="9"></rect>
+              <rect x="21.1" y="187.7" width="2.6" height="24.3"></rect>
+              <rect x="25.3" y="187.7" width="2.6" height="24.3"></rect>
+              <rect x="33.7" y="188.6" width="2.6" height="23.4"></rect>
+              <rect x="42.1" y="189.1" width="2.6" height="22.9"></rect>
+              <rect x="46.3" y="190.5" width="2.6" height="21.5"></rect>
+              <rect x="50.5" y="171.9" width="2.6" height="40.1"></rect>
+              <rect x="58.9" y="194.9" width="2.6" height="17.1"></rect>
+              <rect x="67.3" y="188.5" width="2.6" height="23.5"></rect>
+              <rect x="71.5" y="193.1" width="2.6" height="18.9"></rect>
+              <rect x="75.7" y="187.9" width="2.6" height="24.1"></rect>
+              <rect x="88.3" y="196.6" width="2.6" height="15.4"></rect>
+              <rect x="92.5" y="197.2" width="2.6" height="14.8"></rect>
+              <rect x="96.7" y="192.5" width="2.6" height="19.5"></rect>
+              <rect x="105.2" y="189.9" width="2.6" height="22.1"></rect>
+              <rect x="109.4" y="198.1" width="2.6" height="13.9"></rect>
+              <rect x="122.0" y="191.9" width="2.6" height="20.1"></rect>
+              <rect x="126.2" y="193.1" width="2.6" height="18.9"></rect>
+              <rect x="130.4" y="194.5" width="2.6" height="17.5"></rect>
+              <rect x="134.6" y="185.7" width="2.6" height="26.3"></rect>
+              <rect x="151.4" y="192.1" width="2.6" height="19.9"></rect>
+              <rect x="155.6" y="187.5" width="2.6" height="24.5"></rect>
+              <rect x="159.8" y="197.3" width="2.6" height="14.7"></rect>
+              <rect x="168.2" y="197.3" width="2.6" height="14.7"></rect>
+              <rect x="172.4" y="194.7" width="2.6" height="17.3"></rect>
+              <rect x="185.0" y="186.7" width="2.6" height="25.3"></rect>
+              <rect x="189.2" y="195.1" width="2.6" height="16.9"></rect>
+              <rect x="193.4" y="190.2" width="2.6" height="21.8"></rect>
+              <rect x="197.6" y="188.7" width="2.6" height="23.3"></rect>
+              <rect x="201.8" y="192.1" width="2.6" height="19.9"></rect>
+              <rect x="210.2" y="199.0" width="2.6" height="13.0"></rect>
+              <rect x="218.6" y="194.2" width="2.6" height="17.8"></rect>
+              <rect x="222.8" y="194.8" width="2.6" height="17.2"></rect>
+              <rect x="227.0" y="200.9" width="2.6" height="11.1"></rect>
+              <rect x="243.8" y="186.1" width="2.6" height="25.9"></rect>
+              <rect x="256.4" y="185.9" width="2.6" height="26.1"></rect>
+              <rect x="260.6" y="178.9" width="2.6" height="33.1"></rect>
+              <rect x="264.8" y="189.5" width="2.6" height="22.5"></rect>
+              <rect x="269.1" y="176.0" width="2.6" height="36.0"></rect>
+              <rect x="273.3" y="170.0" width="2.6" height="42.0"></rect>
+              <rect x="277.5" y="198.9" width="2.6" height="13.1"></rect>
+              <rect x="281.7" y="186.6" width="2.6" height="25.4"></rect>
+              <rect x="294.3" y="181.9" width="2.6" height="30.1"></rect>
+              <rect x="298.5" y="195.5" width="2.6" height="16.5"></rect>
+              <rect x="302.7" y="179.7" width="2.6" height="32.3"></rect>
+              <rect x="306.9" y="181.5" width="2.6" height="30.5"></rect>
+              <rect x="311.1" y="179.9" width="2.6" height="32.1"></rect>
+              <rect x="315.3" y="197.5" width="2.6" height="14.5"></rect>
+              <rect x="323.7" y="185.1" width="2.6" height="26.9"></rect>
+              <rect x="327.9" y="191.8" width="2.6" height="20.2"></rect>
+              <rect x="332.1" y="189.6" width="2.6" height="22.4"></rect>
+              <rect x="340.5" y="195.6" width="2.6" height="16.4"></rect>
+              <rect x="344.7" y="197.4" width="2.6" height="14.6"></rect>
             </g>
             <g fill="#bce3c9">
-              <rect x="33" y="134" width="10" height="8"></rect>
-              <rect x="81" y="129" width="10" height="13"></rect>
-              <rect x="153" y="125" width="10" height="17"></rect>
-              <rect x="225" y="131" width="10" height="11"></rect>
-              <rect x="297" y="127" width="10" height="15"></rect>
+              <rect x="12.7" y="201.1" width="2.6" height="10.9"></rect>
+              <rect x="16.9" y="199.8" width="2.6" height="12.2"></rect>
+              <rect x="29.5" y="189.4" width="2.6" height="22.6"></rect>
+              <rect x="37.9" y="195.6" width="2.6" height="16.4"></rect>
+              <rect x="54.7" y="198.3" width="2.6" height="13.7"></rect>
+              <rect x="63.1" y="198.4" width="2.6" height="13.6"></rect>
+              <rect x="79.9" y="203.4" width="2.6" height="8.6"></rect>
+              <rect x="84.1" y="195.1" width="2.6" height="16.9"></rect>
+              <rect x="101.0" y="184.0" width="2.6" height="28.0"></rect>
+              <rect x="113.6" y="178.5" width="2.6" height="33.5"></rect>
+              <rect x="117.8" y="188.3" width="2.6" height="23.7"></rect>
+              <rect x="138.8" y="180.5" width="2.6" height="31.5"></rect>
+              <rect x="143.0" y="185.6" width="2.6" height="26.4"></rect>
+              <rect x="147.2" y="190.7" width="2.6" height="21.3"></rect>
+              <rect x="164.0" y="195.5" width="2.6" height="16.5"></rect>
+              <rect x="176.6" y="192.0" width="2.6" height="20.0"></rect>
+              <rect x="180.8" y="196.0" width="2.6" height="16.0"></rect>
+              <rect x="206.0" y="193.7" width="2.6" height="18.3"></rect>
+              <rect x="214.4" y="185.5" width="2.6" height="26.5"></rect>
+              <rect x="231.2" y="199.2" width="2.6" height="12.8"></rect>
+              <rect x="235.4" y="194.0" width="2.6" height="18.0"></rect>
+              <rect x="239.6" y="202.6" width="2.6" height="9.4"></rect>
+              <rect x="248.0" y="201.6" width="2.6" height="10.4"></rect>
+              <rect x="252.2" y="173.4" width="2.6" height="38.6"></rect>
+              <rect x="285.9" y="185.6" width="2.6" height="26.4"></rect>
+              <rect x="290.1" y="197.4" width="2.6" height="14.6"></rect>
+              <rect x="319.5" y="189.7" width="2.6" height="22.3"></rect>
+              <rect x="336.3" y="195.1" width="2.6" height="16.9"></rect>
             </g>
           </svg>
         </div>
@@ -503,15 +672,27 @@ details[open] .faq-q{color:var(--accent-dark)}
           <span class="sample-badge">@yuki_t</span>
           <div class="cap">保有マップ · 38銘柄 · 1日</div>
           <div class="hmScale"><span>損益率 −5%</span><span class="grad"></span><span>+5%</span></div>
-          <div class="hm" style="grid-template-columns:1.7fr 1.1fr 1fr .9fr;grid-template-rows:1.2fr 1fr;min-height:190px">
-            <div class="up1"><span class="nm">三井住友FG</span><span class="pc">+0.88%</span></div>
-            <div class="up2"><span class="nm">ソニーグループ</span><span class="pc">+2.18%</span></div>
-            <div class="up1"><span class="nm">Microsoft</span><span class="pc">+1.10%</span></div>
-            <div class="up3"><span class="nm">ビットコイン</span><span class="pc">+4.18%</span></div>
-            <div class="up0"><span class="nm">日本国債10年</span><span class="pc">+0.05%</span></div>
-            <div class="up0"><span class="nm">Apple</span><span class="pc">+0.42%</span></div>
-            <div class="dn1"><span class="nm">Alphabet</span><span class="pc">−0.62%</span></div>
-            <div class="dn2"><span class="nm">シルバー</span><span class="pc">−1.10%</span></div>
+          <div class="tm">
+            <div class="up1" style="left:0.00%;top:0.00%;width:24.95%;height:58.33%"><span class="nm" style="font-size:10.5px">三井住友FG</span><span class="pc" style="font-size:11.5px">+0.88%</span></div>
+            <div class="up2" style="left:0.00%;top:58.33%;width:24.95%;height:41.67%"><span class="nm" style="font-size:10.5px">ソニーグループ</span><span class="pc" style="font-size:11.5px">+2.18%</span></div>
+            <div class="up0" style="left:24.95%;top:0.00%;width:17.15%;height:51.52%"><span class="nm" style="font-size:10.5px">eMAXIS Slim 全世界株式</span><span class="pc" style="font-size:11.5px">+0.63%</span></div>
+            <div class="up1" style="left:24.95%;top:51.52%;width:17.15%;height:48.48%"><span class="nm" style="font-size:10.5px">Microsoft</span><span class="pc" style="font-size:11.5px">+1.10%</span></div>
+            <div class="up0" style="left:42.10%;top:0.00%;width:18.19%;height:34.29%"><span class="nm" style="font-size:8.5px">Apple</span><span class="pc" style="font-size:9.5px">+0.42%</span></div>
+            <div class="up0" style="left:42.10%;top:34.29%;width:18.19%;height:34.29%"><span class="nm" style="font-size:8.5px">日本国債10年</span><span class="pc" style="font-size:9.5px">+0.05%</span></div>
+            <div class="up0" style="left:42.10%;top:68.57%;width:18.19%;height:31.43%"><span class="nm" style="font-size:8.5px">ゴールド</span><span class="pc" style="font-size:9.5px">+0.34%</span></div>
+            <div class="up1" style="left:60.29%;top:0.00%;width:15.88%;height:32.72%"><span class="nm" style="font-size:8.5px">Vanguard S&P 500 ETF</span><span class="pc" style="font-size:9.5px">+0.88%</span></div>
+            <div class="up1" style="left:76.17%;top:0.00%;width:12.71%;height:32.72%"><span class="nm" style="font-size:8.5px">トヨタ自動車</span><span class="pc" style="font-size:9.5px">+1.42%</span></div>
+            <div class="up0" style="left:88.88%;top:0.00%;width:11.12%;height:32.72%"><span class="nm" style="font-size:8.5px">NEXT FUNDS 日経225連動</span><span class="pc" style="font-size:9.5px">+0.52%</span></div>
+            <div class="up3" style="left:60.29%;top:32.72%;width:14.68%;height:24.79%"><span class="nm" style="font-size:8.5px">ビットコイン</span><span class="pc" style="font-size:9.5px">+4.18%</span></div>
+            <div class="dn1" style="left:60.29%;top:57.51%;width:14.68%;height:21.25%"><span class="nm" style="font-size:7.5px">野村不動産マスターファンド</span><span class="pc" style="font-size:8px">−0.34%</span></div>
+            <div class="dn1" style="left:60.29%;top:78.75%;width:14.68%;height:21.25%"><span class="nm" style="font-size:7.5px">Alphabet</span><span class="pc" style="font-size:8px">−0.62%</span></div>
+            <div class="up1" style="left:74.97%;top:32.72%;width:12.52%;height:24.92%"><span class="nm" style="font-size:7.5px">日本ロジスティクスファンド</span><span class="pc" style="font-size:8px">+0.88%</span></div>
+            <div class="up1" style="left:87.48%;top:32.72%;width:12.52%;height:24.92%"><span class="nm" style="font-size:7.5px">eMAXIS Slim 米国株式</span><span class="pc" style="font-size:8px">+0.88%</span></div>
+            <div class="up3" style="left:74.97%;top:57.64%;width:13.74%;height:22.69%"><span class="nm" style="font-size:7.5px">NVIDIA</span><span class="pc" style="font-size:8px">+3.22%</span></div>
+            <div class="up0" style="left:74.97%;top:80.33%;width:13.74%;height:19.67%"><span class="nm" style="font-size:7.5px">日本ビルファンド</span><span class="pc" style="font-size:8px">+0.62%</span></div>
+            <div class="dn2" style="left:88.71%;top:57.64%;width:11.29%;height:16.58%"><span class="nm" style="font-size:7.5px">シルバー</span><span class="pc" style="font-size:8px">−1.10%</span></div>
+            <div class="up0" style="left:88.71%;top:74.22%;width:11.29%;height:12.89%"><span class="nm" style="font-size:7px">米ドル</span><span class="pc" style="font-size:7px">+0.28%</span></div>
+            <div class="up0" style="left:88.71%;top:87.11%;width:11.29%;height:12.89%"><span class="nm" style="font-size:7px">NEXT FUNDS TOPIX</span><span class="pc" style="font-size:7px">+0.42%</span></div>
           </div>
         </div>
       </div>
@@ -523,39 +704,16 @@ details[open] .faq-q{color:var(--accent-dark)}
           <p>配当の権利確定日と入金日、保有銘柄の決算発表、積立の実行日。さらに日銀の金融政策決定会合や FOMC・雇用統計など、相場全体が動く日も同じカレンダーに並びます。</p>
           <div class="spec"><span>配当・権利日</span><span>決算</span><span>積立</span><span>経済イベント</span></div>
         </div>
-        <div class="vizBig" style="padding:16px;min-height:275px">
+        <div class="vizBig cal2" style="padding:16px;gap:10px">
           <span class="sample-badge">@yuki_t</span>
-          <div class="cap">2026年5月</div>
-          <div class="calHead"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
-          <div class="calGrid">
-            <div class="calCell"><span class="d">1</span></div>
-            <div class="calCell"><span class="d">2</span><span class="calChip div">配当</span></div>
-            <div class="calCell"><span class="d">3</span></div>
-            <div class="calCell"><span class="d">4</span></div>
-            <div class="calCell"><span class="d">5</span><span class="calChip cont">積立</span></div>
-            <div class="calCell sat"><span class="d">6</span></div>
-            <div class="calCell sun"><span class="d">7</span></div>
-            <div class="calCell"><span class="d">8</span></div>
-            <div class="calCell"><span class="d">9</span><span class="calChip macro">日銀会合</span></div>
-            <div class="calCell"><span class="d">10</span><span class="calChip earn">決算</span></div>
-            <div class="calCell"><span class="d">11</span></div>
-            <div class="calCell"><span class="d">12</span><span class="calChip earn">決算</span></div>
-            <div class="calCell sat"><span class="d">13</span></div>
-            <div class="calCell sun"><span class="d">14</span></div>
-            <div class="calCell"><span class="d">15</span><span class="calChip macro">FOMC</span></div>
-            <div class="calCell"><span class="d">16</span></div>
-            <div class="calCell"><span class="d">17</span></div>
-            <div class="calCell"><span class="d">18</span><span class="calChip div">権利日</span></div>
-            <div class="calCell"><span class="d">19</span></div>
-            <div class="calCell sat"><span class="d">20</span></div>
-            <div class="calCell sun"><span class="d">21</span></div>
+          <div class="c2title">February 2026</div>
+          <div class="c2pills"><span class="on">すべて <em>30</em></span><span>自分の動き <em>8</em></span><span>市場イベント <em>22</em></span></div>
+          <div class="c2legend"><span><i style="background:#e8702a"></i>積立</span><span><i style="background:#64748b"></i>入出金</span><span><i style="background:#b45a1f"></i>買付</span><span><i style="background:#4f46e5"></i>決算発表</span><span><i style="background:#a15c1a"></i>経済指標</span><span><i style="background:#2f7d6b"></i>権利確定</span></div>
+          <div class="c2card">
+            <div class="c2head"><span class="sun">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span class="sat">土</span></div>
+            <div class="c2grid"><div class="c2"><span class="dn">1</span><span class="dots"></span></div><div class="c2"><span class="dn">2</span><span class="dots"><i style="background:#e8702a"></i></span></div><div class="c2"><span class="dn">3</span><span class="dots"><i style="background:#64748b"></i></span></div><div class="c2"><span class="dn">4</span><span class="dots"><i style="background:#64748b"></i></span></div><div class="c2"><span class="dn">5</span><span class="dots"><i style="background:#e8702a"></i></span></div><div class="c2"><span class="dn">6</span><span class="dots"><i style="background:#1e3a5f"></i><i style="background:#2f7d6b"></i></span></div><div class="c2"><span class="dn">7</span><span class="dots"></span></div><div class="c2"><span class="dn">8</span><span class="dots"></span></div><div class="c2 today"><span class="dn">9</span><span class="dots"><i style="background:#64748b"></i><i style="background:#4f46e5"></i></span></div><div class="c2"><span class="dn">10</span><span class="dots"><i style="background:#4f46e5"></i></span></div><div class="c2"><span class="dn">11</span><span class="dots"><i style="background:#b45a1f"></i></span></div><div class="c2"><span class="dn">12</span><span class="dots"><i style="background:#a15c1a"></i><i style="background:#4f46e5"></i></span></div><div class="c2"><span class="dn">13</span><span class="dots"><i style="background:#4f46e5"></i></span></div><div class="c2"><span class="dn">14</span><span class="dots"><i style="background:#a15c1a"></i></span></div><div class="c2"><span class="dn">15</span><span class="dots"><i style="background:#b45a1f"></i></span></div><div class="c2"><span class="dn">16</span><span class="dots"><i style="background:#64748b"></i></span></div><div class="c2"><span class="dn">17</span><span class="dots"><i style="background:#4f46e5"></i></span></div><div class="c2"><span class="dn">18</span><span class="dots"><i style="background:#4f46e5"></i><i style="background:#2f7d6b"></i></span></div><div class="c2"><span class="dn">19</span><span class="dots"><i style="background:#e8702a"></i></span></div><div class="c2"><span class="dn">20</span><span class="dots"><i style="background:#2f7d6b"></i><i style="background:#a15c1a"></i></span></div><div class="c2"><span class="dn">21</span><span class="dots"></span></div><div class="c2"><span class="dn">22</span><span class="dots"></span></div><div class="c2"><span class="dn">23</span><span class="dots"><i style="background:#64748b"></i></span></div><div class="c2"><span class="dn">24</span><span class="dots"><i style="background:#64748b"></i></span></div><div class="c2"><span class="dn">25</span><span class="dots"><i style="background:#e8702a"></i><i style="background:#2f7d6b"></i></span></div><div class="c2"><span class="dn">26</span><span class="dots"><i style="background:#4f46e5"></i></span></div><div class="c2"><span class="dn">27</span><span class="dots"><i style="background:#2f7d6b"></i><i style="background:#64748b"></i></span></div><div class="c2"><span class="dn">28</span><span class="dots"></span></div></div>
           </div>
-          <div class="calLegend">
-            <span><i style="background:#ec4899"></i>配当・権利日</span>
-            <span><i style="background:#4f46e5"></i>決算</span>
-            <span><i style="background:#d97706"></i>積立</span>
-            <span><i style="background:#111827"></i>経済イベント</span>
-          </div>
+          <div class="c2list"><div class="c2lt">2月のイベント</div><div class="e2"><div class="ed"><b>9</b><span>2月</span></div><i class="eb" style="background:#64748b"></i><div class="et"><b>配当入金 三菱UFJ</b><span><em style="color:#64748b">入出金</em> · 税引後・特定口座</span></div><div class="er"><b>+¥1,398</b><small>記録済</small></div></div><div class="e2"><div class="ed"><b>9</b><span>2月</span></div><i class="eb" style="background:#4f46e5"></i><div class="et"><b>トヨタ自動車 決算発表</b><span><em style="color:#4f46e5">決算</em> · 7203</span></div><div class="er"><span class="tag imp">重要</span></div></div><div class="e2"><div class="ed"><b>11</b><span>2月</span></div><i class="eb" style="background:#b45a1f"></i><div class="et"><b>レーザーテック 指値注文中</b><span><em style="color:#b45a1f">買付</em> · 10株・指値 ¥19,000</span></div><div class="er"><b>¥190,000</b><small class="tag plan">予定</small></div></div><div class="e2"><div class="ed"><b>12</b><span>2月</span></div><i class="eb" style="background:#a15c1a"></i><div class="et"><b>FOMC 政策金利発表</b><span><em style="color:#a15c1a">経済指標</em> · 米国</span></div><div class="er"><span class="tag imp">重要</span></div></div></div>
         </div>
       </div>
 
@@ -579,23 +737,19 @@ details[open] .faq-q{color:var(--accent-dark)}
             </tbody>
           </table>
           <div class="cap" style="margin-top:6px;">株価の比較 · 1Y · グラフ · 起点を100</div>
-          <svg viewBox="0 0 360 118" style="width:100%;height:100%">
-            <line x1="6" y1="22" x2="330" y2="22" stroke="#f3f4f6" stroke-width="1"></line>
-            <line x1="6" y1="58" x2="330" y2="58" stroke="#d1d5db" stroke-width="1"></line>
-            <line x1="6" y1="94" x2="330" y2="94" stroke="#f3f4f6" stroke-width="1"></line>
-            <text x="334" y="25" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">+50%</text>
-            <text x="334" y="61" font-family="Inter" font-size="8" font-weight="700" fill="#6b7280">0%</text>
-            <text x="334" y="97" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">−50%</text>
-            <line x1="74" y1="6" x2="74" y2="110" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="3 3"></line>
+          <svg viewBox="0 0 360 170" style="width:100%;height:100%">
+            <line x1="6" y1="152.0" x2="330" y2="152.0" stroke="#f3f4f6" stroke-width="1"></line><line x1="6" y1="124.0" x2="330" y2="124.0" stroke="#d1d5db" stroke-width="1"></line><line x1="6" y1="96.0" x2="330" y2="96.0" stroke="#f3f4f6" stroke-width="1"></line><line x1="6" y1="68.0" x2="330" y2="68.0" stroke="#f3f4f6" stroke-width="1"></line><line x1="6" y1="40.0" x2="330" y2="40.0" stroke="#f3f4f6" stroke-width="1"></line><line x1="6" y1="12.0" x2="330" y2="12.0" stroke="#f3f4f6" stroke-width="1"></line>
+            <text x="334" y="155.0" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">−50%</text><text x="334" y="127.0" font-family="Inter" font-size="8" font-weight="700" fill="#6b7280">0%</text><text x="334" y="99.0" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">+50%</text><text x="334" y="71.0" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">+100%</text><text x="334" y="43.0" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">+150%</text><text x="334" y="15.0" font-family="Inter" font-size="8" font-weight="700" fill="#9ca3af">+200%</text>
+            <line x1="74" y1="6" x2="74" y2="164" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="3 3"></line>
             <circle cx="74" cy="6" r="3.6" fill="#f59e0b"></circle>
-            <polyline points="6,74 30,64 54,60 74,58 98,44 122,50 146,34 170,40 194,24 218,16 242,30 266,26 290,34 314,30 330,32" fill="none" stroke="#38bdf8" stroke-width="2.4" stroke-linejoin="round"></polyline>
-            <polyline points="6,60 30,58 54,57 74,58 98,50 122,46 146,52 170,56 194,60 218,58 242,62 266,60 290,57 314,56 330,58" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linejoin="round"></polyline>
-            <polyline points="6,56 30,58 54,57 74,58 98,66 122,72 146,76 170,74 194,80 218,78 242,82 266,80 290,74 314,72 330,76" fill="none" stroke="#ec4899" stroke-width="2.4" stroke-linejoin="round"></polyline>
+            <polyline points="6.0,157.3 7.3,156.6 8.5,151.7 9.8,149.5 11.0,147.4 12.3,146.1 13.5,145.3 14.8,143.9 16.0,143.9 17.3,145.1 18.5,146.7 19.8,148.8 21.0,148.1 22.3,146.8 23.5,143.4 24.8,142.1 26.0,141.3 27.3,139.8 28.5,139.5 29.8,142.9 31.0,140.6 32.3,141.2 33.5,140.5 34.8,140.8 36.0,134.9 37.3,132.4 38.5,131.3 39.8,133.2 41.0,131.2 42.3,132.7 43.5,130.2 44.8,132.9 46.0,132.8 47.3,130.7 48.5,132.1 49.8,131.6 51.0,131.0 52.3,128.8 53.5,129.5 54.8,127.9 56.0,123.5 57.3,126.2 58.5,127.6 59.8,126.4 61.0,127.4 62.3,129.7 63.5,126.6 64.8,124.4 66.0,121.9 67.3,119.5 68.5,117.8 69.8,119.1 71.1,123.5 72.3,122.2 73.6,124.0 74.8,123.6 76.1,122.5 77.3,124.7 78.6,125.1 79.8,121.3 81.1,119.5 82.3,122.4 83.6,122.5 84.8,122.1 86.1,120.7 87.3,118.9 88.6,118.7 89.8,118.9 91.1,116.8 92.3,119.4 93.6,116.8 94.8,115.8 96.1,116.5 97.3,117.4 98.6,116.6 99.8,119.3 101.1,123.6 102.3,122.6 103.6,119.4 104.8,119.5 106.1,119.1 107.3,118.9 108.6,120.6 109.8,119.6 111.1,117.7 112.3,117.5 113.6,115.5 114.8,117.3 116.1,116.6 117.3,117.9 118.6,118.6 119.8,117.9 121.1,117.4 122.3,115.6 123.6,114.1 124.8,116.2 126.1,113.5 127.3,116.5 128.6,116.5 129.8,115.8 131.1,115.8 132.3,114.7 133.6,114.5 134.8,116.4 136.1,114.7 137.4,114.7 138.6,116.4 139.9,116.2 141.1,116.2 142.4,115.5 143.6,116.6 144.9,116.2 146.1,116.4 147.4,113.3 148.6,113.9 149.9,111.4 151.1,111.4 152.4,109.2 153.6,104.6 154.9,105.3 156.1,105.0 157.4,106.7 158.6,108.0 159.9,109.0 161.1,108.8 162.4,106.9 163.6,105.1 164.9,106.0 166.1,105.7 167.4,108.5 168.6,107.3 169.9,107.7 171.1,109.7 172.4,111.1 173.6,109.9 174.9,109.7 176.1,108.4 177.4,109.2 178.6,108.9 179.9,109.3 181.1,112.2 182.4,112.4 183.6,112.6 184.9,113.9 186.1,112.3 187.4,108.1 188.6,105.3 189.9,105.2 191.1,107.4 192.4,107.7 193.6,108.9 194.9,108.5 196.1,106.1 197.4,106.2 198.6,108.9 199.9,106.2 201.2,106.1 202.4,103.4 203.7,105.0 204.9,100.1 206.2,102.4 207.4,102.1 208.7,100.5 209.9,105.4 211.2,106.9 212.4,110.0 213.7,106.6 214.9,105.2 216.2,107.0 217.4,110.3 218.7,113.6 219.9,113.2 221.2,114.8 222.4,114.0 223.7,115.0 224.9,118.2 226.2,114.7 227.4,113.7 228.7,115.0 229.9,115.6 231.2,113.0 232.4,111.3 233.7,113.7 234.9,110.8 236.2,112.0 237.4,110.8 238.7,113.1 239.9,114.3 241.2,112.8 242.4,115.0 243.7,114.8 244.9,114.0 246.2,115.2 247.4,112.4 248.7,111.0 249.9,111.2 251.2,109.2 252.4,106.5 253.7,104.0 254.9,104.2 256.2,102.6 257.4,101.8 258.7,103.9 259.9,104.5 261.2,100.5 262.4,102.0 263.7,101.0 264.9,97.7 266.2,98.3 267.5,98.3 268.7,99.7 270.0,98.7 271.2,101.0 272.5,100.0 273.7,101.6 275.0,100.9 276.2,104.2 277.5,106.2 278.7,104.4 280.0,103.2 281.2,109.0 282.5,106.1 283.7,107.6 285.0,105.8 286.2,103.8 287.5,104.1 288.7,104.8 290.0,108.5 291.2,107.5 292.5,103.9 293.7,106.2 295.0,104.0 296.2,102.5 297.5,100.7 298.7,102.7 300.0,102.9 301.2,102.3 302.5,99.0 303.7,100.7 305.0,101.7 306.2,103.2 307.5,101.5 308.7,104.5 310.0,104.8 311.2,107.3 312.5,108.0 313.7,106.5 315.0,107.5 316.2,106.1 317.5,107.0 318.7,107.0 320.0,107.3 321.2,109.0 322.5,108.1 323.7,106.9 325.0,108.4 326.2,107.0 327.5,106.8 328.7,107.6 330.0,107.3" fill="none" stroke="#ec4899" stroke-width="1.4" stroke-linejoin="round"></polyline>
+            <polyline points="6.0,111.8 7.3,111.5 8.5,111.5 9.8,111.6 11.0,112.5 12.3,112.2 13.5,112.2 14.8,110.3 16.0,112.0 17.3,107.7 18.5,113.1 19.8,113.0 21.0,111.4 22.3,111.7 23.5,113.0 24.8,113.1 26.0,111.9 27.3,109.7 28.5,112.3 29.8,111.9 31.0,113.1 32.3,111.2 33.5,112.1 34.8,111.9 36.0,110.0 37.3,110.6 38.5,110.2 39.8,111.7 41.0,112.3 42.3,115.7 43.5,117.3 44.8,118.4 46.0,119.7 47.3,116.1 48.5,120.2 49.8,124.2 51.0,123.9 52.3,123.0 53.5,122.8 54.8,121.0 56.0,117.4 57.3,118.4 58.5,120.8 59.8,121.3 61.0,119.3 62.3,118.7 63.5,119.2 64.8,118.8 66.0,118.4 67.3,121.5 68.5,120.9 69.8,122.4 71.1,123.0 72.3,124.0 73.6,124.0 74.8,122.5 76.1,122.9 77.3,122.7 78.6,121.2 79.8,120.5 81.1,121.8 82.3,120.5 83.6,121.3 84.8,121.9 86.1,121.6 87.3,119.0 88.6,120.6 89.8,121.4 91.1,121.2 92.3,122.8 93.6,122.7 94.8,120.6 96.1,123.8 97.3,123.8 98.6,125.1 99.8,121.6 101.1,120.7 102.3,119.7 103.6,120.0 104.8,121.9 106.1,121.8 107.3,121.3 108.6,121.3 109.8,118.2 111.1,117.0 112.3,118.6 113.6,119.4 114.8,118.9 116.1,121.1 117.3,121.5 118.6,122.7 119.8,122.4 121.1,122.3 122.3,123.4 123.6,121.3 124.8,122.3 126.1,121.2 127.3,123.1 128.6,124.8 129.8,126.0 131.1,126.8 132.3,125.4 133.6,128.1 134.8,125.2 136.1,127.4 137.4,124.9 138.6,124.6 139.9,125.5 141.1,124.1 142.4,125.0 143.6,125.0 144.9,125.0 146.1,120.0 147.4,121.7 148.6,118.5 149.9,119.0 151.1,120.3 152.4,121.2 153.6,119.1 154.9,119.5 156.1,120.9 157.4,119.9 158.6,119.4 159.9,117.7 161.1,119.7 162.4,117.2 163.6,115.1 164.9,116.4 166.1,117.1 167.4,116.3 168.6,116.8 169.9,115.5 171.1,114.6 172.4,114.7 173.6,116.7 174.9,120.3 176.1,119.9 177.4,122.2 178.6,120.3 179.9,117.3 181.1,117.2 182.4,115.8 183.6,113.7 184.9,112.4 186.1,114.4 187.4,116.2 188.6,117.2 189.9,117.1 191.1,118.7 192.4,118.4 193.6,116.2 194.9,117.0 196.1,117.1 197.4,118.9 198.6,119.2 199.9,117.7 201.2,115.4 202.4,115.1 203.7,116.6 204.9,113.2 206.2,116.9 207.4,117.7 208.7,119.2 209.9,119.2 211.2,118.3 212.4,119.1 213.7,113.0 214.9,109.5 216.2,108.0 217.4,108.9 218.7,111.7 219.9,109.7 221.2,108.2 222.4,107.4 223.7,105.0 224.9,104.2 226.2,106.7 227.4,110.1 228.7,110.8 229.9,110.6 231.2,109.6 232.4,109.2 233.7,109.5 234.9,111.0 236.2,110.1 237.4,108.9 238.7,110.0 239.9,111.7 241.2,112.5 242.4,114.4 243.7,114.1 244.9,116.2 246.2,115.7 247.4,117.3 248.7,116.5 249.9,112.4 251.2,114.4 252.4,114.3 253.7,110.2 254.9,108.6 256.2,108.3 257.4,107.5 258.7,108.0 259.9,110.6 261.2,115.3 262.4,116.6 263.7,117.8 264.9,115.9 266.2,115.5 267.5,118.4 268.7,117.7 270.0,120.0 271.2,118.0 272.5,119.9 273.7,118.5 275.0,118.4 276.2,119.4 277.5,117.6 278.7,118.0 280.0,122.5 281.2,121.8 282.5,123.6 283.7,124.5 285.0,124.1 286.2,122.9 287.5,122.8 288.7,124.7 290.0,126.1 291.2,128.2 292.5,128.7 293.7,130.1 295.0,128.8 296.2,130.2 297.5,128.6 298.7,125.5 300.0,124.8 301.2,125.2 302.5,123.3 303.7,124.9 305.0,125.1 306.2,122.9 307.5,122.0 308.7,122.4 310.0,123.0 311.2,124.0 312.5,121.5 313.7,118.2 315.0,115.7 316.2,115.7 317.5,115.2 318.7,116.8 320.0,118.8 321.2,117.8 322.5,116.7 323.7,119.1 325.0,121.3 326.2,120.8 327.5,123.3 328.7,121.5 330.0,119.5" fill="none" stroke="#16a34a" stroke-width="1.4" stroke-linejoin="round"></polyline>
+            <polyline points="6.0,152.7 7.3,150.4 8.5,146.5 9.8,148.7 11.0,151.1 12.3,150.0 13.5,144.9 14.8,143.7 16.0,146.9 17.3,149.0 18.5,149.0 19.8,146.2 21.0,146.1 22.3,147.0 23.5,147.6 24.8,147.0 26.0,149.0 27.3,148.9 28.5,148.0 29.8,143.2 31.0,143.2 32.3,140.4 33.5,143.2 34.8,140.6 36.0,140.0 37.3,141.4 38.5,141.4 39.8,138.7 41.0,139.5 42.3,136.5 43.5,132.0 44.8,127.2 46.0,122.5 47.3,126.0 48.5,124.9 49.8,126.7 51.0,123.9 52.3,123.5 53.5,122.8 54.8,121.3 56.0,122.9 57.3,122.5 58.5,124.4 59.8,118.3 61.0,119.5 62.3,119.3 63.5,124.2 64.8,128.3 66.0,130.6 67.3,128.2 68.5,125.9 69.8,124.9 71.1,126.6 72.3,121.2 73.6,124.0 74.8,126.0 76.1,124.1 77.3,126.5 78.6,125.2 79.8,122.0 81.1,121.7 82.3,120.0 83.6,119.4 84.8,120.9 86.1,129.5 87.3,132.5 88.6,132.0 89.8,136.2 91.1,137.4 92.3,136.3 93.6,132.0 94.8,135.4 96.1,136.5 97.3,135.3 98.6,133.4 99.8,136.8 101.1,131.0 102.3,132.9 103.6,129.3 104.8,129.4 106.1,127.7 107.3,122.5 108.6,120.0 109.8,119.1 111.1,121.5 112.3,122.9 113.6,126.5 114.8,120.3 116.1,124.2 117.3,131.2 118.6,126.0 119.8,121.8 121.1,122.4 122.3,119.5 123.6,121.4 124.8,122.5 126.1,120.6 127.3,119.0 128.6,119.9 129.8,114.7 131.1,112.1 132.3,111.2 133.6,114.2 134.8,113.3 136.1,113.7 137.4,113.5 138.6,110.7 139.9,111.9 141.1,110.6 142.4,107.9 143.6,106.4 144.9,99.3 146.1,103.8 147.4,103.5 148.6,106.5 149.9,106.2 151.1,98.5 152.4,102.8 153.6,103.1 154.9,100.8 156.1,100.0 157.4,96.9 158.6,101.0 159.9,97.7 161.1,100.0 162.4,103.0 163.6,101.0 164.9,99.1 166.1,100.8 167.4,102.7 168.6,102.8 169.9,102.4 171.1,102.4 172.4,104.9 173.6,111.2 174.9,106.9 176.1,106.0 177.4,109.1 178.6,113.2 179.9,114.8 181.1,115.5 182.4,121.2 183.6,116.8 184.9,115.1 186.1,115.6 187.4,114.1 188.6,113.0 189.9,109.5 191.1,108.7 192.4,104.6 193.6,99.7 194.9,100.1 196.1,101.0 197.4,103.1 198.6,103.4 199.9,105.1 201.2,104.6 202.4,103.3 203.7,101.3 204.9,104.2 206.2,100.7 207.4,101.2 208.7,101.1 209.9,102.1 211.2,107.5 212.4,106.3 213.7,111.0 214.9,107.4 216.2,106.9 217.4,102.0 218.7,99.7 219.9,97.2 221.2,92.7 222.4,92.4 223.7,87.6 224.9,87.5 226.2,86.4 227.4,87.9 228.7,85.9 229.9,83.6 231.2,84.6 232.4,87.9 233.7,87.6 234.9,86.0 236.2,86.0 237.4,88.4 238.7,90.1 239.9,90.5 241.2,97.7 242.4,99.0 243.7,94.4 244.9,97.7 246.2,97.9 247.4,92.6 248.7,90.2 249.9,87.1 251.2,87.1 252.4,90.6 253.7,81.8 254.9,80.5 256.2,79.4 257.4,74.3 258.7,71.5 259.9,70.9 261.2,73.7 262.4,73.8 263.7,68.8 264.9,64.2 266.2,60.7 267.5,58.7 268.7,55.3 270.0,53.8 271.2,50.0 272.5,45.0 273.7,43.6 275.0,43.2 276.2,38.3 277.5,36.0 278.7,39.8 280.0,41.5 281.2,40.6 282.5,42.7 283.7,40.1 285.0,44.8 286.2,56.7 287.5,61.3 288.7,64.8 290.0,72.4 291.2,74.0 292.5,68.1 293.7,68.1 295.0,67.8 296.2,70.9 297.5,73.4 298.7,78.0 300.0,79.0 301.2,82.9 302.5,82.3 303.7,75.4 305.0,78.1 306.2,75.1 307.5,71.3 308.7,77.6 310.0,76.9 311.2,76.5 312.5,77.1 313.7,74.4 315.0,75.3 316.2,73.9 317.5,74.7 318.7,74.7 320.0,76.6 321.2,69.6 322.5,69.4 323.7,72.2 325.0,66.2 326.2,61.2 327.5,61.4 328.7,62.9 330.0,64.7" fill="none" stroke="#38bdf8" stroke-width="1.4" stroke-linejoin="round"></polyline>
           </svg>
           <div class="serieLegend">
-            <span><i style="background:#38bdf8"></i>東京エレクトロン <b style="color:#be185d">+63.1%</b></span>
-            <span><i style="background:#16a34a"></i>トヨタ自動車 <b style="color:#15803d">−0.7%</b></span>
-            <span><i style="background:#ec4899"></i>ソニーG <b style="color:#15803d">−17.2%</b></span>
+            <span><i style="background:#38bdf8"></i>東京エレクトロン <b style="color:#be185d">+105.9%</b></span>
+            <span><i style="background:#16a34a"></i>トヨタ自動車 <b style="color:#be185d">+8.1%</b></span>
+            <span><i style="background:#ec4899"></i>ソニーG <b style="color:#be185d">+29.9%</b></span>
           </div>
         </div>
       </div>
@@ -607,14 +761,17 @@ details[open] .faq-q{color:var(--accent-dark)}
           <p>気になる銘柄を、保有前からウォッチ。価格・値動きをリストで一覧、タップで銘柄詳細へ。</p>
           <div class="spec"><span>最大10銘柄</span><span>タップで詳細</span></div>
         </div>
-        <div class="vizBig" style="gap:8px;">
+        <div class="vizBig wl2" style="padding:16px;gap:8px;">
           <span class="sample-badge">@yuki_t</span>
           <div class="cap">ウォッチリスト · 6銘柄</div>
-          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">NVIDIA <span style="color:var(--muted-2);font-size:11px;font-weight:400;">NVDA</span></span><b class="up-red">+3.41%</b></div>
-          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">トヨタ自動車 <span style="color:var(--muted-2);font-size:11px;font-weight:400;">7203</span></span><b class="up-red">+2.18%</b></div>
-          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">レーザーテック <span style="color:var(--muted-2);font-size:11px;font-weight:400;">6920</span></span><b style="color:#16a34a">−2.10%</b></div>
-          <div class="alert-row"><span style="font-weight:600;color:var(--muted);">Apple <span style="color:var(--muted-2);font-size:11px;font-weight:400;">AAPL</span></span><b class="up-red">+0.42%</b></div>
-          <div class="mock-callout" style="background:var(--paper);color:var(--muted);margin-top:4px;">気になる銘柄を、保有前からウォッチ中</div>
+          <div class="w2list">
+            <div class="w2"><i style="background:#e06cbf"></i><div class="w2n"><b>トヨタ自動車</b><span>7203 · 日本株</span></div><div class="w2p"><b>¥2,843</b><span class="up">+2.18%</span></div></div>
+            <div class="w2"><i style="background:#2540b8"></i><div class="w2n"><b>NVIDIA</b><span>NVDA · 海外株</span></div><div class="w2p"><b>$138.20</b><span class="up">+3.41%</span></div></div>
+            <div class="w2"><i style="background:#e06cbf"></i><div class="w2n"><b>レーザーテック</b><span>6920 · 日本株</span></div><div class="w2p"><b>¥18,400</b><span class="dn">−2.10%</span></div></div>
+            <div class="w2"><i style="background:#2540b8"></i><div class="w2n"><b>Apple</b><span>AAPL · 海外株</span></div><div class="w2p"><b>$228.50</b><span class="up">+0.52%</span></div></div>
+            <div class="w2"><i style="background:#e06cbf"></i><div class="w2n"><b>東京エレクトロン</b><span>8035 · 日本株</span></div><div class="w2p"><b>¥31,200</b><span class="dn">−0.84%</span></div></div>
+            <div class="w2"><i style="background:#4b5563"></i><div class="w2n"><b>ビットコイン</b><span>BTC · 仮想通貨</span></div><div class="w2p"><b>¥9,850,000</b><span class="up">+1.82%</span></div></div>
+          </div>
         </div>
       </div>
 
