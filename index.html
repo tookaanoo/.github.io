@@ -65,6 +65,21 @@
     font-size: 48px;
     line-height: 1.2;
   }
+  .belief-photo {
+    background: linear-gradient(90deg, rgba(20,10,16,0.05) 0%, rgba(20,10,16,0.55) 45%, rgba(20,10,16,0.82) 100%), url('images/belief.jpg') left center / cover no-repeat;
+    padding: 120px 0;
+    color: #fff;
+  }
+  .belief-photo-text { max-width: 500px; margin-left: auto; }
+  .belief-photo .belief-title { font-size: 34px; color: #fff; }
+  .belief-photo p { color: #f3f4f6; line-height: 2; margin-bottom: 20px; }
+  @media (max-width: 768px) {
+    .belief-photo {
+      background: linear-gradient(rgba(20,10,16,0.62), rgba(20,10,16,0.78)), url('images/belief.jpg') left center / cover no-repeat;
+      padding: 72px 0;
+    }
+    .belief-photo .belief-title { font-size: 25px; }
+  }
   .eyebrow {
     font-size: 10px;
     font-weight: 700;
@@ -955,6 +970,8 @@
     background: radial-gradient(circle, rgba(255, 45, 110, 0.25) 0%, transparent 70%);
     pointer-events: none;
   }
+  .gentle-dark::before { top: -140px; right: auto; left: 50%; transform: translateX(-50%); }
+  .gentle-dark > .container-sm { position: relative; }
   .section-dark .eyebrow { color: #f9a8d4; }
   .tracking-grid {
     display: grid;
@@ -1981,22 +1998,18 @@
 </section>
 
 <!-- ========== OUR BELIEF ========== -->
-<section class="section" style="background:#fdf2f8;">
-  <div class="container-sm" style="text-align:center;">
-    <div class="eyebrow" style="margin-bottom:12px;">OUR BELIEF</div>
-    <h2 class="belief-title" style="margin-bottom:28px;">
-      FIRE は、<br>
-      早期リタイアだけじゃない。
-    </h2>
-    <p style="max-width:560px;margin:0 auto 20px;color:#4b5563;line-height:2;">
-      経済的自立ができていないと、本当にやりたいことができない。嫌な仕事を、辞められないまま続けることさえある。それは個人にとって不幸なだけでなく、社会全体にとっても良い状態じゃない。
-    </p>
-    <p style="max-width:560px;margin:0 auto 20px;color:#4b5563;line-height:2;">
-      みんなが経済的自立を得て、自分のやりたいことに時間を使い、社会に貢献し、還元できる。みんなでFIRE が目指すのは、そんな世界。
-    </p>
-    <p style="max-width:560px;margin:0 auto;color:#4b5563;line-height:2;">
-      だから、FIRE を <span class="grad-text" style="font-weight:700;">「Financial Independence, within REach.」</span>と書く。経済的自立に手が届く。私たちがお手伝いできるのは、そこまでです。
-    </p>
+<section class="section belief-photo">
+  <div class="container">
+    <div class="belief-photo-text">
+      <div class="eyebrow" style="margin-bottom:12px;color:#f9a8d4;">OUR BELIEF</div>
+      <h2 class="belief-title" style="margin-bottom:28px;">
+        FIRE は、<br>
+        早期リタイアだけじゃない。
+      </h2>
+      <p>経済的自立ができていないと、本当にやりたいことができない。嫌な仕事を、辞められないまま続けることさえある。それは個人にとって不幸なだけでなく、社会全体にとっても良い状態じゃない。</p>
+      <p>みんなが経済的自立を得て、自分のやりたいことに時間を使い、社会に貢献し、還元できる。みんなでFIRE が目指すのは、そんな世界。</p>
+      <p style="margin-bottom:0;">だから、FIRE を <span style="font-weight:700;background:linear-gradient(90deg,#f43f8e 0%,#a855f7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">「Financial Independence, within REach.」</span>と書く。経済的自立に手が届く。私たちがお手伝いできるのは、そこまでです。</p>
+    </div>
   </div>
 </section>
 
@@ -2449,7 +2462,7 @@
 </section>
 
 <!-- ========== GENTLE CONNECTION ========== -->
-<section class="section-dark">
+<section class="section-dark gentle-dark" style="background:#040308;">
   <div class="container-sm" style="text-align:center;">
     <div class="eyebrow-gray" style="margin-bottom:12px;">GENTLE CONNECTION</div>
     <h2 class="belief-title" style="margin-bottom:28px;">
@@ -2471,6 +2484,7 @@
       この先、ホルダー同士が励まし合える機能も、<br>
       少しずつ届けていきます。
     </p>
+    <img src="images/gentle.jpg" alt="夜の街並みを窓から眺める人影" style="width:100%;max-width:760px;height:auto;margin:44px auto 0;display:block;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 78%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 78%);">
   </div>
 </section>
 
