@@ -2630,7 +2630,14 @@
     steps.push(function () { T(f, 'opacity', 700, 1700 + i * 280); f.style.opacity = '1'; });
   });
 
-  setTimeout(function () { requestAnimationFrame(function () { requestAnimationFrame(function () { steps.forEach(function (f) { f(); }); }); }); }, 250);
+  var go = function () { requestAnimationFrame(function () { requestAnimationFrame(function () { steps.forEach(function (f) { f(); }); }); }); };
+  var target = document.querySelector('.phone-wrap') || ps;
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { io.disconnect(); setTimeout(go, 250); }
+    }, { threshold: 0.5 });
+    io.observe(target);
+  } else { setTimeout(go, 250); }
 })();
 </script>
 </body>
