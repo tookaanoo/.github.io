@@ -1089,5 +1089,163 @@ details[open] .faq-q{color:var(--accent-dark)}
   </div>
 </footer>
 
+
+<script>
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var $ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  var T = function (el, prop, ms, delay, ease) { el.style.transition = prop.split(',').map(function (q) { return q + ' ' + ms + 'ms ' + (ease || 'cubic-bezier(.22,.8,.3,1)') + ' ' + delay + 'ms'; }).join(', '); };
+  var NONE = function (el) { el.style.transition = 'none'; };
+
+  function counter(node) {
+    var m = /^([^0-9]*)([0-9][0-9,]*)(\.\d+)?(.*)$/.exec(node.nodeValue);
+    if (!m) return null;
+    var pre = m[1], dec = m[3] ? m[3].length - 1 : 0, post = m[4], fin = parseFloat((m[2] + (m[3] || '')).replace(/,/g, '')), full = node.nodeValue, raf, to;
+    var fmt = function (v) { return pre + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + post; };
+    return {
+      init: function () { clearTimeout(to); cancelAnimationFrame(raf); node.nodeValue = fmt(0); },
+      run: function (ms, delay) {
+        to = setTimeout(function () {
+          var t0 = null;
+          (function tick(ts) {
+            if (!t0) t0 = ts;
+            var k = Math.min((ts - t0) / ms, 1), e = 1 - Math.pow(1 - k, 3);
+            node.nodeValue = k < 1 ? fmt(fin * e) : full;
+            if (k < 1) raf = requestAnimationFrame(tick);
+          })(performance.now());
+        }, delay);
+      }
+    };
+  }
+  function firstText(el) {
+    if (!el) return null;
+    for (var i = 0; i < el.childNodes.length; i++) if (el.childNodes[i].nodeType === 3 && /[0-9]/.test(el.childNodes[i].nodeValue)) return el.childNodes[i];
+    return null;
+  }
+  function group(root, items, anchor) {
+    if (!root) return;
+    var its = items(root).filter(Boolean);
+    its.forEach(function (it) { it.init(); });
+    var state = 'idle';
+    new IntersectionObserver(function (es) {
+      var e = es[0];
+      if (e.isIntersecting && state === 'idle') { state = 'played'; its.forEach(function (it) { it.run(); }); }
+      else if (!e.isIntersecting && state === 'played') { state = 'idle'; its.forEach(function (it) { it.init(); }); }
+    }, { threshold: 0, rootMargin: '0px 0px -28% 0px' }).observe(anchor || root);
+  }
+  var fade = function (el, i, dx, dy, base, step, scale) {
+    return {
+      init: function () { NONE(el); el.style.opacity = '0'; el.style.transform = 'translate(' + dx + 'px,' + dy + 'px)' + (scale ? ' scale(' + scale + ')' : ''); },
+      run: function () { T(el, 'opacity,transform', 700, (base || 0) + i * (step || 130)); el.style.opacity = '1'; el.style.transform = 'none'; }
+    };
+  };
+  var reveal = function (el, ms, delay) {
+    return {
+      init: function () { NONE(el); el.style.clipPath = 'inset(0 100% 0 0)'; },
+      run: function () { T(el, 'clip-path', ms, delay || 0, 'cubic-bezier(.4,.1,.3,1)'); el.style.clipPath = 'inset(0 0 0 0)'; }
+    };
+  };
+  var grow = function (el, to, ms, delay) {
+    return {
+      init: function () { NONE(el); el.style.width = '0%'; },
+      run: function () { T(el, 'width', ms, delay, 'cubic-bezier(.3,.7,.2,1)'); el.style.width = to; }
+    };
+  };
+  var count = function (el, ms, delay) {
+    var c = counter(firstText(el));
+    return c && { init: c.init, run: function () { c.run(ms, delay); } };
+  };
+
+  /* RECORD */
+  var rec = document.getElementById('record');
+  group(rec, function (r) {
+    var out = [count($('.mock-big', r)[0], 1600, 100)];
+    var donut = $('svg[viewBox="0 0 100 100"]', r)[0];
+    if (donut) $('circle', donut).slice(1).forEach(function (c, i) {
+      var d = c.getAttribute('stroke-dasharray').split(' '), first = d[0], rest = d[1];
+      out.push({ init: function () { NONE(c); c.style.strokeDasharray = '0 ' + (parseFloat(first) + parseFloat(rest)); },
+                 run: function () { T(c, 'stroke-dasharray', 900, 500 + i * 160, 'ease-out'); c.style.strokeDasharray = first + ' ' + rest; } });
+    });
+    $('.row-between', r).forEach(function (x, i) { out.push(fade(x, i, -6, 0, 700, 120)); });
+    return out;
+  }, $('.mock', rec)[0]);
+
+  /* TOOLS */
+  var rows = $('.zzRow');
+  group(rows[0], function (r) { var svg = $('svg', r)[0]; return svg ? [reveal(svg, 3200, 150)] : []; }, rows[0] && $('.vizBig', rows[0])[0]);
+  group(rows[1], function (r) { return $('.tm > div', r).map(function (t, i) { return fade(t, i, 0, 0, 100, 60, 0.88); }); }, rows[1] && $('.vizBig', rows[1])[0]);
+  group(rows[2], function (r) {
+    var out = $('.c2', r).map(function (c, i) { return fade(c, i, 0, 6, 100, 28); });
+    $('.e2', r).forEach(function (e, i) { out.push(fade(e, i, 18, 0, 1000, 220)); });
+    var l = $('.c2legend', r)[0]; if (l) out.push(fade(l, 0, 0, 0, 0));
+    return out;
+  }, rows[2] && $('.vizBig', rows[2])[0]);
+  group(rows[3], function (r) {
+    var out = [], svg = $('svg', r)[0];
+    if (svg) out.push(reveal(svg, 3600, 400));
+    $('.cmp-table tr', r).forEach(function (t, i) { out.push(fade(t, i, 0, 8, 0, 130)); });
+    $('.serieLegend span', r).forEach(function (t, i) { out.push(fade(t, i, 0, 0, 3200, 150)); });
+    return out;
+  }, rows[3] && $('.vizBig', rows[3])[0]);
+  group(rows[4], function (r) { return $('.w2', r).map(function (w, i) { return fade(w, i, 24, 0, 100, 200); }); }, rows[4] && $('.vizBig', rows[4])[0]);
+  group(rows[5], function (r) { return $('.alert-row, .row-link, .vizBig > div', r).filter(function (x) { return !x.classList.contains('cap'); }).map(function (w, i) { return fade(w, i, 0, 10, 100, 180); }); }, rows[5] && $('.vizBig', rows[5])[0]);
+
+  /* PERFORMANCE (benchmark) */
+  var perf = document.getElementById('performance');
+  group(perf, function (r) {
+    var out = [], svg = $('svg', r)[0];
+    if (svg) out.push(reveal(svg, 3200, 150));
+    $('.bm-legend span', r).forEach(function (x, i) { out.push(fade(x, i, 0, 0, 300, 140)); });
+    $('.bm-row', r).forEach(function (x, i) { out.push(fade(x, i, 0, 8, 2600, 260)); });
+    return out;
+  }, $('.mock', perf)[0]);
+
+  /* TAX (NISA) */
+  var tax = document.getElementById('tax');
+  group(tax, function (r) {
+    var out = [count($('.mock-big', r)[0], 1800, 150)];
+    var bar = $('div', $('.mock', r)[0]).filter(function (d) { return d.style.width === '78%'; })[0];
+    if (bar) out.push(grow(bar, '78%', 1800, 150));
+    var co = $('.mock-callout', r)[0]; if (co) out.push(fade(co, 0, 0, 10, 1700));
+    return out;
+  }, $('.mock', tax)[0]);
+
+  /* COMMUNITY */
+  var com = document.getElementById('community');
+  group(com, function (r) { return $('.sns-card', r).map(function (c, i) { return fade(c, i, 0, 14, 100, 220); }); }, $('.mock', com)[0]);
+
+  /* SIMULATION */
+  var sim = document.getElementById('simulation');
+  group(sim, function (r) {
+    var out = [];
+    $('.mock-mini', r).forEach(function (m, i) {
+      out.push(fade(m, i, 0, 14, 100, 260));
+      var v = count($('.mock-mini-val', m)[0], 1400, 300 + i * 260); if (v) out.push(v);
+    });
+    var co = $('.mock-callout', r)[0]; if (co) out.push(fade(co, 0, 0, 10, 1600));
+    return out;
+  }, $('.mock', sim)[0]);
+
+  /* STAGES */
+  var st = document.getElementById('stages');
+  group(st, function (r) {
+    var out = $('.stage-cell', r).map(function (c, i) {
+      var cur = c.classList.contains('current');
+      return { init: function () { NONE(c); c.style.opacity = '0.15'; c.style.transform = 'translateY(10px)'; },
+               run: function () {
+                 T(c, 'opacity,transform', 600, 150 + i * 200); c.style.opacity = '1'; c.style.transform = 'none';
+                 if (cur) setTimeout(function () { c.style.transition = 'transform 280ms ease'; c.style.transform = 'scale(1.1)'; setTimeout(function () { c.style.transform = 'none'; }, 300); }, 150 + 6 * 200 + 300);
+               } };
+    });
+    var v = count($('.mock-sub b', r)[0], 1800, 300); if (v) out.push(v);
+    return out;
+  }, $('.mock', st)[0]);
+
+  /* BROADCAST */
+  var bc = document.getElementById('broadcast');
+  group(bc, function (r) { return $('.broadcast-prompt, .mock-btn', r).map(function (x, i) { return fade(x, i, 0, 14, 100, 400); }); }, $('.mock', bc)[0]);
+})();
+</script>
 </body>
 </html>
