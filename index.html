@@ -2697,7 +2697,7 @@
   }
 
   var groups = [];
-  function group(rootSel, items) {
+  function group(rootSel, items, anchorSel) {
     var root = document.querySelector(rootSel);
     if (!root) return;
     var its = items(root).filter(Boolean);
@@ -2707,7 +2707,7 @@
       var e = es[0];
       if (e.isIntersecting && state === 'idle') { state = 'played'; its.forEach(function (it) { it.run(); }); }
       else if (!e.isIntersecting && state === 'played') { state = 'idle'; its.forEach(function (it) { it.init(); }); }
-    }, { threshold: [0, 0.3] }).observe(root);
+    }, { threshold: 0, rootMargin: '0px 0px -28% 0px' }).observe((anchorSel && root.querySelector(anchorSel)) || root);
   }
   var fade = function (el, i, dx, dy, base) {
     return {
@@ -2725,7 +2725,7 @@
   group('#private-first', function (root) {
     var out = $('.ranking-header', root).map(function (h) { return fade(h, 0, 0, 0); });
     return out.concat($('.ranking-row', root).map(function (r, i) { return fade(r, i, 18, 0, 250); }));
-  });
+  }, '.ranking-card');
 
   group('#stages', function (root) {
     return $('.stage-card', root).map(function (c, i) {
@@ -2738,7 +2738,7 @@
         }
       };
     });
-  });
+  }, '.stages-grid');
 
   group('.section-assets', function (root) {
     var out = [];
@@ -2755,7 +2755,7 @@
       });
     });
     return out;
-  });
+  }, '.assets-grid');
 
   group('.contrib-section', function (root) {
     var out = [];
@@ -2788,7 +2788,7 @@
       if (c) out.push({ init: c.init, run: function () { c.run(1400, 500 + i * 150); } });
     });
     return out;
-  });
+  }, '.contrib-card');
 
   group('.section-dark:not(.gentle-dark)', function (root) {
     var out = [];
@@ -2798,7 +2798,7 @@
     if (pf) out.push(grow(pf, '24.7%', 1500, 200));
     $('.tracking-mini', root).forEach(function (m, i) { out.push(fade(m, i, 0, 14, 900)); });
     return out;
-  });
+  }, '.glass-card');
 })();
 </script>
 </body>
