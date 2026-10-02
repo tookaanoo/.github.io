@@ -1157,6 +1157,58 @@ details[open] .faq-q{color:var(--accent-dark)}
     return c && { init: c.init, run: function () { c.run(ms, delay); } };
   };
 
+  /* 銘柄比較: 起点(オレンジの縦線)が左右に動き、各線が起点基準で組み直される */
+  function rebase(svg, legend, delay) {
+    var cols = { '#38bdf8': 0, '#16a34a': 1, '#ec4899': 2 };
+    var lines = $('polyline', svg), marker = $('line[stroke="#f59e0b"]', svg)[0], dot = $('circle', svg)[0];
+    var S = [], orig = [], N = 0, X0 = 6, DX = 324 / 259, I0 = 54;
+    var Y = function (p) { return 152 - (p + 50) * 0.56; };
+    lines.forEach(function (pl) {
+      var pts = pl.getAttribute('points').trim().split(/\s+/).map(function (q) { return q.split(',').map(Number); });
+      orig.push(pl.getAttribute('points'));
+      S.push({ el: pl, L: pts.map(function (q) { return 100 + ((152 - q[1]) / 0.56 - 50); }), idx: cols[pl.getAttribute('stroke')] });
+      N = pts.length;
+    });
+    var legendOrig = legend.map(function (b) { return { t: b.textContent, c: b.style.color }; });
+    var raf, to;
+    function render(b) {
+      var i = Math.floor(b), f = b - i, j = Math.min(i + 1, N - 1);
+      S.forEach(function (s) {
+        var Lb = s.L[i] * (1 - f) + s.L[j] * f, pts = [];
+        for (var k = 0; k < N; k++) pts.push((X0 + k * DX).toFixed(1) + ',' + Y((s.L[k] / Lb - 1) * 100).toFixed(1));
+        s.el.setAttribute('points', pts.join(' '));
+        var last = (s.L[N - 1] / Lb - 1) * 100, lb = legend[s.idx];
+        if (lb) { lb.textContent = (last >= 0 ? '+' : '−') + Math.abs(last).toFixed(1) + '%'; lb.style.color = last >= 0 ? '#be185d' : '#15803d'; }
+      });
+      var x = X0 + b * DX;
+      if (marker) { marker.setAttribute('x1', x); marker.setAttribute('x2', x); }
+      if (dot) dot.setAttribute('cx', x);
+    }
+    var ease = function (t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
+    var path = [[I0, 32, 1000], [32, 130, 1900], [130, I0, 1200]];
+    return {
+      init: function () {
+        clearTimeout(to); cancelAnimationFrame(raf);
+        S.forEach(function (s, i) { s.el.setAttribute('points', orig[i]); });
+        if (marker) { marker.setAttribute('x1', 74); marker.setAttribute('x2', 74); }
+        if (dot) dot.setAttribute('cx', 74);
+        legend.forEach(function (b, i) { b.textContent = legendOrig[i].t; b.style.color = legendOrig[i].c; });
+      },
+      run: function () {
+        to = setTimeout(function () {
+          var seg = 0, t0 = null;
+          (function tick(ts) {
+            if (!t0) t0 = ts;
+            var p = path[seg], k = Math.min((ts - t0) / p[2], 1);
+            render(p[0] + (p[1] - p[0]) * ease(k));
+            if (k >= 1) { seg++; t0 = null; if (seg >= path.length) { render(I0); return; } }
+            raf = requestAnimationFrame(tick);
+          })(performance.now());
+        }, delay);
+      }
+    };
+  }
+
   /* RECORD */
   var rec = document.getElementById('record');
   group(rec, function (r) {
@@ -1183,11 +1235,14 @@ details[open] .faq-q{color:var(--accent-dark)}
   }, rows[2] && $('.vizBig', rows[2])[0]);
   group(rows[3], function (r) {
     var out = [], svg = $('svg', r)[0];
-    if (svg) out.push(reveal(svg, 3600, 400));
-    $('.cmp-table tr', r).forEach(function (t, i) { out.push(fade(t, i, 0, 8, 0, 130)); });
-    $('.serieLegend span', r).forEach(function (t, i) { out.push(fade(t, i, 0, 0, 3200, 150)); });
+    $('.cmp-table tr', r).forEach(function (t, i) { out.push(fade(t, i, 0, 8, 0, 90)); });
+    if (svg) {
+      out.push(fade(svg, 0, 0, 0, 100));
+      out.push(rebase(svg, $('.serieLegend b', r), 500));
+    }
+    $('.serieLegend span', r).forEach(function (t, i) { out.push(fade(t, i, 0, 0, 200, 100)); });
     return out;
-  }, rows[3] && $('.vizBig', rows[3])[0]);
+  }, rows[3] && $('svg', rows[3])[0]);
   group(rows[4], function (r) { return $('.w2', r).map(function (w, i) { return fade(w, i, 24, 0, 100, 200); }); }, rows[4] && $('.vizBig', rows[4])[0]);
   group(rows[5], function (r) { return $('.alert-row, .row-link, .vizBig > div', r).filter(function (x) { return !x.classList.contains('cap'); }).map(function (w, i) { return fade(w, i, 0, 10, 100, 180); }); }, rows[5] && $('.vizBig', rows[5])[0]);
 
