@@ -1482,6 +1482,12 @@
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .contrib-detail { gap: 10px; }
+    .contrib-detail-item { padding: 14px 6px; }
+    .contrib-detail-val { font-size: clamp(14px, 4.3vw, 22px); }
   }
   .contrib-detail-val.pink { color: #ec4899; }
   .contrib-detail-pct {
@@ -2766,17 +2772,22 @@
       var raf, set = function (v) {
         v = Math.max(0, Math.min(100, v));
         bi.style.width = v + '%'; bg.style.width = (100 - v) + '%';
-        bi.textContent = '拠出 ' + Math.round(v) + '%'; bg.textContent = '運用 ' + Math.round(100 - v) + '%';
       };
+      var li = document.createElement('span'), lg = document.createElement('span');
+      li.textContent = '拠出 70%'; lg.textContent = '運用 30%';
+      bi.textContent = ''; bg.textContent = ''; bi.appendChild(li); bg.appendChild(lg);
+      [bi, bg].forEach(function (b) { b.style.overflow = 'hidden'; b.style.whiteSpace = 'nowrap'; });
+      var hide = function (l) { NONE(l); l.style.display = 'inline-block'; l.style.opacity = '0'; l.style.transform = 'translateY(8px) scale(.9)'; l.style.filter = 'blur(3px)'; };
+      var show = function (l, d) { l.style.transition = 'opacity 600ms ease ' + d + 'ms, transform 700ms cubic-bezier(.2,.9,.3,1.2) ' + d + 'ms, filter 600ms ease ' + d + 'ms'; l.style.opacity = '1'; l.style.transform = 'none'; l.style.filter = 'none'; };
       out.push({
-        init: function () { cancelAnimationFrame(raf); NONE(bi); NONE(bg); set(15); },
+        init: function () { cancelAnimationFrame(raf); NONE(bi); NONE(bg); set(15); hide(li); hide(lg); },
         run: function () {
           var t0 = null;
           (function tick(ts) {
             if (!t0) t0 = ts;
             var t = (ts - t0) / 1000 - 0.25;
             if (t < 0) { raf = requestAnimationFrame(tick); return; }
-            if (t > 2.8) { set(70); return; }
+            if (t > 2.8) { set(70); show(li, 0); show(lg, 150); return; }
             set(70 - 55 * Math.exp(-2.6 * t) * Math.cos(2 * Math.PI * 0.95 * t));
             raf = requestAnimationFrame(tick);
           })(performance.now());
