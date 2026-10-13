@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="一括投資と積立投資を、S&amp;P500と日経平均の過去約550通りで比較。勝ち負けを分ける条件と、最悪のケース、状況別の考え方。">
+<title>一括投資と積立投資を、長期投資家の目線で比べる - みんなでFIRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms tr { border: 1px solid #f3f4f6; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; background: #fff; }
+    .art-table.ms td { border: none; padding: 5px 0; min-width: 0 !important; }
+    .art-table.ms td:first-child { font-size: 14.5px; padding-bottom: 8px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>一括投資と積立投資を、<br>長期投資家の目線で比べる</h1>
+    <p class="subtitle">平均では一括、最悪時は積立。何を取るかは、人による</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 2025年11月までの株価（終値）</span></div>
+    <div class="art-tags"><a href="index.html?tag=比較">#比較</a><a href="index.html?tag=積立">#積立</a><a href="index.html?tag=一括投資">#一括投資</a><a href="index.html?tag=資産形成">#資産形成</a></div>
+    <div class="art-note"><b>この記事について</b>　特定の売買を勧めるものではなく、過去のデータをもとに、条件ごとの違いを整理した情報提供です。数値は株価データに基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>過去約551通り（1980〜2025年）で比べると、12か月では、<b>一括投資が積立を上回った割合は、S&P500で76%、日経平均で60%</b>。平均では、一括のほうが有利。</li>
+      <li>ただし、<b>勝ち負けは「その後の1年が上昇か下落か」でほぼ決まる</b>（上昇なら一括が89%、下落なら23%）。投資する時点では分からない。</li>
+      <li>最悪のケースは、一括で-45%、積立で-35%。<b>平均の有利さと、最悪時の傷の浅さの、どちらを取るかは、人によって違う</b>。</li>
+    </ul></div>
+
+    <h2>1. 何を比べたか</h2>
+    <p>手元にまとまった資金があるとき、「一括で買う」か「何か月かに分けて買う」か。よくある疑問を、過去のデータで比べました。</p>
+    <ul>
+      <li><b>一括</b>：最初の月に、全額を買う。</li>
+      <li><b>積立</b>：同じ金額を、毎月の最初の営業日に、均等に分けて買う（買っていない分は、現金のまま、利息なし）。</li>
+      <li><b>評価</b>：期間の最後の月末に、評価額を比べる。</li>
+      <li><b>対象</b>：S&P500と日経平均。1980年1月〜2025年11月の、すべての開始月。</li>
+    </ul>
+
+    <h2>2. 結果：平均では、一括が有利</h2>
+    <figure class="fig"><div class="fig-title">一括投資が、積立投資を上回った割合（%）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="180.0" x2="410" y2="180.0" stroke="#e5e7eb"/><rect x="34.7" y="47.4" width="40.0" height="132.6" rx="3" fill="#111827"/><text x="54.7" y="42.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >70%</text><rect x="78.7" y="71.4" width="40.0" height="108.6" rx="3" fill="#ec4899"/><text x="98.7" y="66.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >57%</text><text x="76.7" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >6か月</text><rect x="168.0" y="37.0" width="40.0" height="143.0" rx="3" fill="#111827"/><text x="188.0" y="32.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >76%</text><rect x="212.0" y="67.5" width="40.0" height="112.5" rx="3" fill="#ec4899"/><text x="232.0" y="62.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >60%</text><text x="210.0" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >12か月</text><rect x="301.3" y="24.0" width="40.0" height="156.0" rx="3" fill="#111827"/><text x="321.3" y="19.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >83%</text><rect x="345.3" y="62.9" width="40.0" height="117.1" rx="3" fill="#ec4899"/><text x="365.3" y="57.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >62%</text><text x="343.3" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >24か月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#111827"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >S&amp;P500</text><rect x="106" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="119.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >日経平均</text></svg><figcaption>1980年1月〜2025年11月の各月を開始月として、約551通りを比較（期間は、投資を終えて評価するまでの月数）。出典：Yahoo Finance（日次終値、価格指数）。<b>12か月では、S&P500で76%、日経平均で60%</b>。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>指数・期間</th><th>一括が上回った割合</th><th>平均の差（一括−積立）</th><th>最悪の開始月のリターン（一括／積立）</th></tr></thead><tbody><tr><td data-label="指数・期間"><b>S&P500</b>　12か月</td><td data-label="一括が上回った割合">76%</td><td data-label="平均の差（一括−積立）">+5.0ポイント</td><td data-label="最悪の開始月のリターン（一括／積立）">−45% ／ −35%</td></tr><tr><td data-label="指数・期間"><b>日経平均</b>　12か月</td><td data-label="一括が上回った割合">60%</td><td data-label="平均の差（一括−積立）">+3.4ポイント</td><td data-label="最悪の開始月のリターン（一括／積立）">−49% ／ −37%</td></tr></tbody></table></div>
+    <p class="art-fig">出典：Yahoo Finance（日次終値）。価格指数で、配当、為替、税、手数料は含みません。現金の利息をゼロとして計算しています。</p>
+    <p>理由は単純で、株価は長い目で見ると、上昇してきたためです。早く投資した分だけ、上昇の恩恵を受けやすくなります。米国は、日本より上昇した期間が長いため、差が大きく出ています。</p>
+
+    <h2>3. 勝ち負けを分けるのは、「その後の1年」</h2>
+    <figure class="fig"><div class="fig-title">その後の1年が「上昇」か「下落」かで、一括の勝率は変わる（S&amp;P500・12か月）</div><svg viewBox="0 0 420 72" role="img" xmlns="http://www.w3.org/2000/svg"><text x="96.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >上昇した場合</text><rect x="104.0" y="4" width="239.7" height="22" rx="3" fill="#ec4899"/><text x="348.7" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >89%</text><text x="96.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >下落した場合</text><rect x="104.0" y="38" width="62.9" height="22" rx="3" fill="#64748b"/><text x="171.9" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >23%</text></svg><figcaption>一括投資が積立を上回った割合。開始から12か月後に株価が上昇していた79%のケースでは89%、下落していたケースでは23%。<b>勝ち負けを分けるのは、投資する時点では分からない「その後の値動き」</b>。</figcaption></figure>
+    <p>一括が不利になるのは、投資した直後に下落したときです。逆に、積立が不利になるのは、投資した直後から上昇が続いたときです。<b>どちらになるかは、投資を始める時点では、誰にも分かりません</b>。</p>
+
+    <h2>4. 時期で見ると、有利・不利は入れ替わる</h2>
+    <figure class="fig"><div class="fig-title">「一括 − 積立」の12か月リターンの差（ポイント、開始月ごと、S&amp;P500）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="154.0" x2="368" y2="154.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="157.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-25</text><line x1="8" y1="104.0" x2="368" y2="104.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="107.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+0</text><line x1="8" y1="54.0" x2="368" y2="54.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="57.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+25</text><defs><linearGradient id="g85836" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#64748b" stop-opacity=".22"/><stop offset="1" stop-color="#64748b" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,184.0 8.0,80.9 8.7,97.3 9.3,90.2 10.0,62.3 10.6,65.9 11.3,73.7 11.9,79.3 12.6,89.0 13.2,92.9 13.9,98.6 14.5,102.5 15.2,114.8 15.9,114.6 16.5,103.0 17.2,111.1 17.8,119.0 18.5,117.5 19.1,118.5 19.8,117.4 20.4,120.6 21.1,114.5 21.7,105.3 22.4,117.7 23.1,120.0 23.7,112.5 24.4,100.6 25.0,86.9 25.7,81.9 26.3,81.5 27.0,62.5 27.6,45.2 28.3,38.8 28.9,53.5 29.6,55.0 30.3,76.6 30.9,78.3 31.6,74.6 32.2,79.4 32.9,89.7 33.5,91.6 34.2,102.7 34.8,103.4 35.5,111.1 36.1,105.2 36.8,109.0 37.5,110.8 38.1,108.3 38.8,111.3 39.4,108.8 40.1,107.3 40.7,99.2 41.4,96.3 42.0,99.1 42.7,84.1 43.3,79.9 44.0,77.2 44.7,89.5 45.3,87.4 46.0,88.5 46.6,78.0 47.3,76.8 47.9,91.3 48.6,93.2 49.2,85.8 49.9,76.8 50.5,85.9 51.2,85.0 51.9,80.8 52.5,69.3 53.2,63.5 53.8,65.6 54.5,71.6 55.1,79.1 55.8,77.9 56.4,85.4 57.1,91.2 57.7,87.4 58.4,93.5 59.1,96.7 59.7,74.3 60.4,82.6 61.0,61.6 61.7,76.4 62.3,80.5 63.0,78.0 63.6,98.9 64.3,104.5 64.9,111.3 65.6,110.8 66.3,113.4 66.9,123.4 67.6,133.3 68.2,137.4 68.9,144.3 69.5,100.5 70.2,77.2 70.8,96.2 71.5,93.5 72.1,101.5 72.8,90.5 73.5,92.2 74.1,93.3 74.8,94.5 75.4,90.9 76.1,72.4 76.7,79.5 77.4,82.3 78.0,72.2 78.7,69.3 79.3,84.5 80.0,74.8 80.7,78.8 81.3,86.4 82.0,92.7 82.6,88.8 83.3,102.7 83.9,107.6 84.6,107.4 85.2,104.1 85.9,110.9 86.5,117.1 87.2,101.3 87.9,103.0 88.5,105.1 89.2,99.1 89.8,116.5 90.5,112.7 91.1,109.8 91.8,86.1 92.4,76.7 93.1,66.0 93.7,76.1 94.4,71.6 95.1,79.9 95.7,94.2 96.4,93.0 97.0,96.5 97.7,99.4 98.3,92.6 99.0,95.9 99.6,97.3 100.3,94.6 100.9,94.6 101.6,87.2 102.3,104.5 102.9,99.8 103.6,99.9 104.2,94.2 104.9,96.9 105.5,98.0 106.2,94.3 106.8,99.1 107.5,93.2 108.1,91.6 108.8,92.9 109.5,95.3 110.1,96.3 110.8,98.5 111.4,97.0 112.1,100.2 112.7,97.1 113.4,101.8 114.0,99.6 114.7,100.1 115.3,105.4 116.0,104.2 116.7,107.6 117.3,104.5 118.0,106.5 118.6,112.8 119.3,106.8 119.9,93.5 120.6,98.1 121.2,97.9 121.9,88.9 122.5,92.6 123.2,95.3 123.9,85.5 124.5,84.9 125.2,68.6 125.8,68.1 126.5,67.6 127.1,69.9 127.8,72.8 128.4,73.6 129.1,77.6 129.7,79.6 130.4,82.2 131.1,80.9 131.7,84.3 132.4,81.7 133.0,86.1 133.7,87.8 134.3,90.6 135.0,88.9 135.6,89.2 136.3,85.8 136.9,85.9 137.6,83.6 138.3,65.1 138.9,62.1 139.6,67.2 140.2,67.9 140.9,79.5 141.5,67.6 142.2,78.6 142.8,74.9 143.5,54.9 144.1,61.0 144.8,70.7 145.5,77.8 146.1,88.4 146.8,83.9 147.4,87.8 148.1,81.8 148.7,86.4 149.4,81.9 150.0,83.4 150.7,90.6 151.3,100.4 152.0,100.1 152.7,90.5 153.3,99.1 154.0,88.5 154.6,57.1 155.3,51.0 155.9,73.5 156.6,82.7 157.2,88.9 157.9,94.7 158.5,86.8 159.2,93.8 159.9,101.6 160.5,90.5 161.2,102.3 161.8,93.0 162.5,91.4 163.1,81.7 163.8,91.6 164.4,97.9 165.1,106.3 165.7,102.4 166.4,99.1 167.1,115.1 167.7,116.0 168.4,116.1 169.0,120.3 169.7,119.1 170.3,129.1 171.0,122.9 171.6,126.4 172.3,119.3 172.9,117.4 173.6,130.4 174.3,115.7 174.9,102.2 175.6,120.2 176.2,121.6 176.9,120.1 177.5,119.7 178.2,113.4 178.8,102.8 179.5,113.1 180.1,123.5 180.8,128.4 181.5,126.8 182.1,131.4 182.8,138.0 183.4,136.4 184.1,133.0 184.7,120.6 185.4,101.2 186.0,97.6 186.7,87.0 187.3,97.2 188.0,102.6 188.7,93.4 189.3,75.4 190.0,61.5 190.6,63.4 191.3,75.2 191.9,84.0 192.6,84.6 193.2,82.3 193.9,89.4 194.5,87.0 195.2,93.5 195.9,94.2 196.5,99.8 197.2,103.6 197.8,106.6 198.5,101.5 199.1,98.2 199.8,98.1 200.4,98.4 201.1,92.7 201.7,90.8 202.4,94.0 203.1,92.6 203.7,102.4 204.4,103.2 205.0,100.0 205.7,102.5 206.3,94.5 207.0,90.5 207.6,96.2 208.3,93.7 208.9,99.5 209.6,96.6 210.3,96.0 210.9,89.8 211.6,98.7 212.2,97.6 212.9,97.9 213.5,97.5 214.2,97.1 214.8,96.4 215.5,90.2 216.1,86.2 216.8,82.2 217.5,86.4 218.1,87.0 218.8,90.3 219.4,93.7 220.1,95.8 220.7,99.9 221.4,95.0 222.0,98.7 222.7,107.2 223.3,114.2 224.0,113.0 224.7,109.4 225.3,114.6 226.0,121.6 226.6,118.9 227.3,120.4 227.9,126.6 228.6,125.7 229.2,124.3 229.9,138.4 230.5,152.5 231.2,159.5 231.9,154.3 232.5,160.0 233.2,167.6 233.8,157.1 234.5,122.0 235.1,79.9 235.8,107.4 236.4,74.1 237.1,20.3 237.7,50.4 238.4,64.2 239.1,79.0 239.7,73.6 240.4,88.3 241.0,86.2 241.7,90.3 242.3,90.7 243.0,101.9 243.6,105.1 244.3,93.9 244.9,96.0 245.6,105.7 246.3,108.2 246.9,78.5 247.6,64.7 248.2,82.7 248.9,72.5 249.5,85.0 250.2,90.8 250.8,94.2 251.5,104.3 252.1,109.9 252.8,109.7 253.5,113.2 254.1,116.5 254.8,108.4 255.4,113.0 256.1,104.3 256.7,88.2 257.4,62.1 258.0,82.9 258.7,84.9 259.3,88.3 260.0,93.4 260.7,99.2 261.3,104.5 262.0,100.7 262.6,75.2 263.3,87.1 263.9,84.9 264.6,86.7 265.2,89.8 265.9,83.3 266.5,75.5 267.2,79.6 267.9,84.5 268.5,81.8 269.2,84.9 269.8,84.5 270.5,89.4 271.1,82.4 271.8,92.0 272.4,79.7 273.1,84.3 273.7,90.3 274.4,92.6 275.1,94.2 275.7,81.2 276.4,90.8 277.0,93.4 277.7,91.5 278.3,94.2 279.0,98.1 279.6,91.7 280.3,99.0 280.9,94.3 281.6,101.3 282.3,104.2 282.9,104.2 283.6,101.1 284.2,110.5 284.9,106.6 285.5,111.1 286.2,111.8 286.8,108.6 287.5,110.6 288.1,90.1 288.8,89.1 289.5,106.3 290.1,106.2 290.8,96.0 291.4,85.2 292.1,86.3 292.7,93.7 293.4,92.2 294.0,91.6 294.7,89.3 295.3,93.7 296.0,91.4 296.7,87.7 297.3,78.9 298.0,83.5 298.6,87.0 299.3,85.1 299.9,93.6 300.6,88.4 301.2,89.6 301.9,91.2 302.5,89.0 303.2,90.8 303.9,88.1 304.5,90.0 305.2,92.8 305.8,96.6 306.5,100.2 307.1,110.1 307.8,100.4 308.4,91.7 309.1,95.6 309.7,100.6 310.4,99.7 311.1,104.9 311.7,110.0 312.4,112.0 313.0,98.1 313.7,100.0 314.3,72.0 315.0,85.8 315.6,91.9 316.3,96.1 316.9,101.7 317.6,88.6 318.3,103.1 318.9,101.4 319.6,95.3 320.2,94.9 320.9,101.9 321.5,103.8 322.2,111.5 322.8,108.5 323.5,93.8 324.1,24.4 324.8,52.5 325.5,66.0 326.1,64.2 326.8,72.1 327.4,83.5 328.1,69.4 328.7,56.2 329.4,76.6 330.0,74.0 330.7,75.7 331.3,80.9 332.0,85.1 332.7,93.2 333.3,93.8 334.0,99.9 334.6,104.6 335.3,111.0 335.9,106.1 336.6,118.9 337.2,118.6 337.9,129.3 338.5,125.2 339.2,116.4 339.9,128.3 340.5,113.0 341.2,110.3 341.8,94.5 342.5,108.5 343.1,98.2 343.8,79.4 344.4,87.7 345.1,97.3 345.7,79.3 346.4,93.0 347.1,78.6 347.7,83.9 348.4,82.9 349.0,81.5 349.7,90.0 350.3,92.6 351.0,85.7 351.6,67.9 352.3,59.6 352.9,73.0 353.6,76.6 354.3,80.3 354.9,87.9 355.6,91.0 356.2,80.4 356.9,88.7 357.5,94.0 358.2,90.3 358.8,91.1 359.5,95.4 360.1,93.1 360.8,102.4 361.5,93.4 362.1,95.4 362.8,87.1 363.4,76.6 364.1,69.3 364.7,77.6 365.4,83.9 366.0,82.1 366.7,84.6 367.3,92.1 368.0,94.2 368.0,184.0" fill="url(#g85836)"/><polyline points="8.0,80.9 8.7,97.3 9.3,90.2 10.0,62.3 10.6,65.9 11.3,73.7 11.9,79.3 12.6,89.0 13.2,92.9 13.9,98.6 14.5,102.5 15.2,114.8 15.9,114.6 16.5,103.0 17.2,111.1 17.8,119.0 18.5,117.5 19.1,118.5 19.8,117.4 20.4,120.6 21.1,114.5 21.7,105.3 22.4,117.7 23.1,120.0 23.7,112.5 24.4,100.6 25.0,86.9 25.7,81.9 26.3,81.5 27.0,62.5 27.6,45.2 28.3,38.8 28.9,53.5 29.6,55.0 30.3,76.6 30.9,78.3 31.6,74.6 32.2,79.4 32.9,89.7 33.5,91.6 34.2,102.7 34.8,103.4 35.5,111.1 36.1,105.2 36.8,109.0 37.5,110.8 38.1,108.3 38.8,111.3 39.4,108.8 40.1,107.3 40.7,99.2 41.4,96.3 42.0,99.1 42.7,84.1 43.3,79.9 44.0,77.2 44.7,89.5 45.3,87.4 46.0,88.5 46.6,78.0 47.3,76.8 47.9,91.3 48.6,93.2 49.2,85.8 49.9,76.8 50.5,85.9 51.2,85.0 51.9,80.8 52.5,69.3 53.2,63.5 53.8,65.6 54.5,71.6 55.1,79.1 55.8,77.9 56.4,85.4 57.1,91.2 57.7,87.4 58.4,93.5 59.1,96.7 59.7,74.3 60.4,82.6 61.0,61.6 61.7,76.4 62.3,80.5 63.0,78.0 63.6,98.9 64.3,104.5 64.9,111.3 65.6,110.8 66.3,113.4 66.9,123.4 67.6,133.3 68.2,137.4 68.9,144.3 69.5,100.5 70.2,77.2 70.8,96.2 71.5,93.5 72.1,101.5 72.8,90.5 73.5,92.2 74.1,93.3 74.8,94.5 75.4,90.9 76.1,72.4 76.7,79.5 77.4,82.3 78.0,72.2 78.7,69.3 79.3,84.5 80.0,74.8 80.7,78.8 81.3,86.4 82.0,92.7 82.6,88.8 83.3,102.7 83.9,107.6 84.6,107.4 85.2,104.1 85.9,110.9 86.5,117.1 87.2,101.3 87.9,103.0 88.5,105.1 89.2,99.1 89.8,116.5 90.5,112.7 91.1,109.8 91.8,86.1 92.4,76.7 93.1,66.0 93.7,76.1 94.4,71.6 95.1,79.9 95.7,94.2 96.4,93.0 97.0,96.5 97.7,99.4 98.3,92.6 99.0,95.9 99.6,97.3 100.3,94.6 100.9,94.6 101.6,87.2 102.3,104.5 102.9,99.8 103.6,99.9 104.2,94.2 104.9,96.9 105.5,98.0 106.2,94.3 106.8,99.1 107.5,93.2 108.1,91.6 108.8,92.9 109.5,95.3 110.1,96.3 110.8,98.5 111.4,97.0 112.1,100.2 112.7,97.1 113.4,101.8 114.0,99.6 114.7,100.1 115.3,105.4 116.0,104.2 116.7,107.6 117.3,104.5 118.0,106.5 118.6,112.8 119.3,106.8 119.9,93.5 120.6,98.1 121.2,97.9 121.9,88.9 122.5,92.6 123.2,95.3 123.9,85.5 124.5,84.9 125.2,68.6 125.8,68.1 126.5,67.6 127.1,69.9 127.8,72.8 128.4,73.6 129.1,77.6 129.7,79.6 130.4,82.2 131.1,80.9 131.7,84.3 132.4,81.7 133.0,86.1 133.7,87.8 134.3,90.6 135.0,88.9 135.6,89.2 136.3,85.8 136.9,85.9 137.6,83.6 138.3,65.1 138.9,62.1 139.6,67.2 140.2,67.9 140.9,79.5 141.5,67.6 142.2,78.6 142.8,74.9 143.5,54.9 144.1,61.0 144.8,70.7 145.5,77.8 146.1,88.4 146.8,83.9 147.4,87.8 148.1,81.8 148.7,86.4 149.4,81.9 150.0,83.4 150.7,90.6 151.3,100.4 152.0,100.1 152.7,90.5 153.3,99.1 154.0,88.5 154.6,57.1 155.3,51.0 155.9,73.5 156.6,82.7 157.2,88.9 157.9,94.7 158.5,86.8 159.2,93.8 159.9,101.6 160.5,90.5 161.2,102.3 161.8,93.0 162.5,91.4 163.1,81.7 163.8,91.6 164.4,97.9 165.1,106.3 165.7,102.4 166.4,99.1 167.1,115.1 167.7,116.0 168.4,116.1 169.0,120.3 169.7,119.1 170.3,129.1 171.0,122.9 171.6,126.4 172.3,119.3 172.9,117.4 173.6,130.4 174.3,115.7 174.9,102.2 175.6,120.2 176.2,121.6 176.9,120.1 177.5,119.7 178.2,113.4 178.8,102.8 179.5,113.1 180.1,123.5 180.8,128.4 181.5,126.8 182.1,131.4 182.8,138.0 183.4,136.4 184.1,133.0 184.7,120.6 185.4,101.2 186.0,97.6 186.7,87.0 187.3,97.2 188.0,102.6 188.7,93.4 189.3,75.4 190.0,61.5 190.6,63.4 191.3,75.2 191.9,84.0 192.6,84.6 193.2,82.3 193.9,89.4 194.5,87.0 195.2,93.5 195.9,94.2 196.5,99.8 197.2,103.6 197.8,106.6 198.5,101.5 199.1,98.2 199.8,98.1 200.4,98.4 201.1,92.7 201.7,90.8 202.4,94.0 203.1,92.6 203.7,102.4 204.4,103.2 205.0,100.0 205.7,102.5 206.3,94.5 207.0,90.5 207.6,96.2 208.3,93.7 208.9,99.5 209.6,96.6 210.3,96.0 210.9,89.8 211.6,98.7 212.2,97.6 212.9,97.9 213.5,97.5 214.2,97.1 214.8,96.4 215.5,90.2 216.1,86.2 216.8,82.2 217.5,86.4 218.1,87.0 218.8,90.3 219.4,93.7 220.1,95.8 220.7,99.9 221.4,95.0 222.0,98.7 222.7,107.2 223.3,114.2 224.0,113.0 224.7,109.4 225.3,114.6 226.0,121.6 226.6,118.9 227.3,120.4 227.9,126.6 228.6,125.7 229.2,124.3 229.9,138.4 230.5,152.5 231.2,159.5 231.9,154.3 232.5,160.0 233.2,167.6 233.8,157.1 234.5,122.0 235.1,79.9 235.8,107.4 236.4,74.1 237.1,20.3 237.7,50.4 238.4,64.2 239.1,79.0 239.7,73.6 240.4,88.3 241.0,86.2 241.7,90.3 242.3,90.7 243.0,101.9 243.6,105.1 244.3,93.9 244.9,96.0 245.6,105.7 246.3,108.2 246.9,78.5 247.6,64.7 248.2,82.7 248.9,72.5 249.5,85.0 250.2,90.8 250.8,94.2 251.5,104.3 252.1,109.9 252.8,109.7 253.5,113.2 254.1,116.5 254.8,108.4 255.4,113.0 256.1,104.3 256.7,88.2 257.4,62.1 258.0,82.9 258.7,84.9 259.3,88.3 260.0,93.4 260.7,99.2 261.3,104.5 262.0,100.7 262.6,75.2 263.3,87.1 263.9,84.9 264.6,86.7 265.2,89.8 265.9,83.3 266.5,75.5 267.2,79.6 267.9,84.5 268.5,81.8 269.2,84.9 269.8,84.5 270.5,89.4 271.1,82.4 271.8,92.0 272.4,79.7 273.1,84.3 273.7,90.3 274.4,92.6 275.1,94.2 275.7,81.2 276.4,90.8 277.0,93.4 277.7,91.5 278.3,94.2 279.0,98.1 279.6,91.7 280.3,99.0 280.9,94.3 281.6,101.3 282.3,104.2 282.9,104.2 283.6,101.1 284.2,110.5 284.9,106.6 285.5,111.1 286.2,111.8 286.8,108.6 287.5,110.6 288.1,90.1 288.8,89.1 289.5,106.3 290.1,106.2 290.8,96.0 291.4,85.2 292.1,86.3 292.7,93.7 293.4,92.2 294.0,91.6 294.7,89.3 295.3,93.7 296.0,91.4 296.7,87.7 297.3,78.9 298.0,83.5 298.6,87.0 299.3,85.1 299.9,93.6 300.6,88.4 301.2,89.6 301.9,91.2 302.5,89.0 303.2,90.8 303.9,88.1 304.5,90.0 305.2,92.8 305.8,96.6 306.5,100.2 307.1,110.1 307.8,100.4 308.4,91.7 309.1,95.6 309.7,100.6 310.4,99.7 311.1,104.9 311.7,110.0 312.4,112.0 313.0,98.1 313.7,100.0 314.3,72.0 315.0,85.8 315.6,91.9 316.3,96.1 316.9,101.7 317.6,88.6 318.3,103.1 318.9,101.4 319.6,95.3 320.2,94.9 320.9,101.9 321.5,103.8 322.2,111.5 322.8,108.5 323.5,93.8 324.1,24.4 324.8,52.5 325.5,66.0 326.1,64.2 326.8,72.1 327.4,83.5 328.1,69.4 328.7,56.2 329.4,76.6 330.0,74.0 330.7,75.7 331.3,80.9 332.0,85.1 332.7,93.2 333.3,93.8 334.0,99.9 334.6,104.6 335.3,111.0 335.9,106.1 336.6,118.9 337.2,118.6 337.9,129.3 338.5,125.2 339.2,116.4 339.9,128.3 340.5,113.0 341.2,110.3 341.8,94.5 342.5,108.5 343.1,98.2 343.8,79.4 344.4,87.7 345.1,97.3 345.7,79.3 346.4,93.0 347.1,78.6 347.7,83.9 348.4,82.9 349.0,81.5 349.7,90.0 350.3,92.6 351.0,85.7 351.6,67.9 352.3,59.6 352.9,73.0 353.6,76.6 354.3,80.3 354.9,87.9 355.6,91.0 356.2,80.4 356.9,88.7 357.5,94.0 358.2,90.3 358.8,91.1 359.5,95.4 360.1,93.1 360.8,102.4 361.5,93.4 362.1,95.4 362.8,87.1 363.4,76.6 364.1,69.3 364.7,77.6 365.4,83.9 366.0,82.1 366.7,84.6 367.3,92.1 368.0,94.2" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="237.1" cy="20.3" r="3" fill="#64748b"/><text x="237.1" y="13.3" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >+42</text><circle cx="233.2" cy="167.6" r="3" fill="#64748b"/><text x="233.2" y="181.6" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >-32</text><circle cx="368.0" cy="94.2" r="3.4" fill="#111827"/><text x="8.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >1980</text><text x="165.1" y="202.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2000</text><text x="322.2" y="202.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2020</text><text x="368.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2025</text></svg><figcaption>ゼロより上は一括が有利、下は積立が有利だった開始月。平均では一括が約5.0ポイント有利ですが、<b>大きく不利になる時期（ITバブル、リーマン、2022年など）もある</b>。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">4つの開始月での、12か月間のリターン（%、S&amp;P500）</div><svg viewBox="0 0 420 230" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="150.3" x2="410" y2="150.3" stroke="#e5e7eb" stroke-width="1.2"/><rect x="28.0" y="150.3" width="30.0" height="49.7" rx="3" fill="#111827"/><text x="43.0" y="212.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-25%</text><rect x="62.0" y="150.3" width="30.0" height="31.9" rx="3" fill="#ec4899"/><text x="77.0" y="194.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-16%</text><text x="60.0" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2007/10 高値の月</text><rect x="128.0" y="34.0" width="30.0" height="116.3" rx="3" fill="#111827"/><text x="143.0" y="29.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+58%</text><rect x="162.0" y="118.5" width="30.0" height="31.8" rx="3" fill="#ec4899"/><text x="177.0" y="113.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+16%</text><text x="160.0" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2009/3 底の月</text><rect x="228.0" y="121.4" width="30.0" height="28.9" rx="3" fill="#111827"/><text x="243.0" y="116.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+14%</text><rect x="262.0" y="116.9" width="30.0" height="33.4" rx="3" fill="#ec4899"/><text x="277.0" y="111.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+17%</text><text x="260.0" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2020/2 コロナ前</text><rect x="328.0" y="150.3" width="30.0" height="40.3" rx="3" fill="#111827"/><text x="343.0" y="202.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-20%</text><rect x="362.0" y="150.3" width="30.0" height="14.7" rx="3" fill="#ec4899"/><text x="377.0" y="177.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-7%</text><text x="360.0" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2022/1 年初</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#111827"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >一括</text><rect x="62" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="75.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >積立</text></svg><figcaption>同じ金額を、開始月に一括で買う場合と、12か月で均等に積み立てる場合。ラベルは開始月。<b>下落が続いた2007年10月・2022年1月は積立が、大きく上昇した2009年3月は一括が有利</b>。2020年2月は、急落のあとの上昇で、積立がわずかに上回った。</figcaption></figure>
+    <ul>
+      <li><b>2007年10月（高値の月）</b>：一括は−25%、積立は−16%。積立のほうが傷が浅かった。</li>
+      <li><b>2009年3月（底の月）</b>：一括は+58%、積立は+16%。一括が圧倒的に有利だった。</li>
+      <li><b>2022年1月</b>：一括は−20%、積立は−7%。下落が続いたため、積立が有利。</li>
+    </ul>
+
+    <h2>5. 現実には、「選べる人」は限られる</h2>
+    <p>この比較が当てはまるのは、<b>手元にまとまった資金があり、投資に回せる場合</b>です。毎月の給与から投資する場合は、収入が入るたびに買うことになり、結果として積立になります。</p>
+    <p>長期で投資を続けるうえで大切なのは、どちらが成績で上回るかよりも、<b>下落したときに続けられるか</b>です。積立は、下落局面でも「買い続ける」仕組みとして、続けやすいという面があります。</p>
+
+    <h2>6. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「どちらが優れているか」ではなく、「どちらが自分に合うか」。</b>統計は平均を示すだけで、1回の投資の結果を約束しない。</li>
+      <li><b>最悪のケースを、想像しておく。</b>一括で買った直後に、−25%を超える下落があっても、続けられるか。</li>
+      <li><b>積立は、タイミングを分散する方法。</b>安く買える可能性を残す代わりに、上昇局面では取り逃しもある。</li>
+      <li><b>期間を決めて、迷いを減らす。</b>分けるなら、期間（例：6か月、12か月）を最初に決めておく。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の売買や、投資の方法を勧めるものではありません。過去の値動きは、将来を約束するものではありません。</div>
+
+    <h2>7. 状況別の、考え方の整理</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>あなたの状況</th><th>傾向</th><th>注意点</th></tr></thead><tbody><tr><td data-label="あなたの状況">手元にまとまった資金があり、長く保有できる</td><td data-label="傾向">統計では、一括が上回る割合が高い（平均で見て有利）</td><td data-label="注意点">下落のタイミングで買うと、大きく含み損になる可能性（最悪−45%）</td></tr><tr><td data-label="あなたの状況">下落の最中に、含み損を見るのがつらい</td><td data-label="傾向">積立は、最悪のケースの傷が浅い（最悪−35%）</td><td data-label="注意点">上昇局面では、一括より成績が劣る傾向</td></tr><tr><td data-label="あなたの状況">毎月の収入から投資する</td><td data-label="傾向">そもそも選択肢は「積立」。収入が入るたびに買うことになる</td><td data-label="注意点">「一括の資金」が手元にないなら、この比較は当てはまらない</td></tr><tr><td data-label="あなたの状況">資金が一時的に入った（ボーナス・退職金など）</td><td data-label="傾向">一括か、数か月に分けるかを選べる</td><td data-label="注意点">迷うなら、期間を決めて分けるのも、ひとつの考え方</td></tr></tbody></table></div>
+
+    <h2>8. この比較の前提と限界</h2>
+    <ul>
+      <li>価格指数で、配当を含みません。配当を含めると、一括・積立ともに成績は上がります。</li>
+      <li>現金の利息をゼロとして計算しています。利息があると、積立の成績は少し上がります。</li>
+      <li>為替は含みません。日本の個人が米国株に投資する場合は、為替の影響も受けます。</li>
+      <li>開始月は、重なり合っています。独立した551回の結果ではありません。</li>
+      <li>税、手数料、投資できる金額の制約は含みません。</li>
+    </ul>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>この記事の「確認する時期」を目安に、あとで見返す。みんなでFIREなら、資産の記録とFIRE到達予測、気になる銘柄のウォッチリストをひとつのアプリで。</p>
+  <a class="btn" href="../features.html">機能紹介を見る</a>
+</div>
+    <h2>出典</h2><ul class="src-list"><li>Yahoo Finance（S&P500・日経平均の日次終値）：<a href="https://finance.yahoo.com/" target="_blank" rel="noopener">https://finance.yahoo.com/</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月14日　初版</li></ul>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
