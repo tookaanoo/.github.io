@@ -343,8 +343,20 @@
   .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
   .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
   .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
   .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
   .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
   .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
@@ -383,7 +395,7 @@
     <h1>積立投資のシミュレーションを、<br>長期投資家の目線で検証する</h1>
     <p class="subtitle">「月5万円を20年」の結果と、「元本割れしない」の真偽</p>
     <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 2025年11月までの株価（終値）と、仮定の年率</span></div>
-    <div class="art-tags"><a href="index.html?tag=シミュレーション">#シミュレーション</a><a href="index.html?tag=積立">#積立</a><a href="index.html?tag=FIRE">#FIRE</a><a href="index.html?tag=資産形成">#資産形成</a></div>
+    <div class="art-tags"><a href="index.html?tag=積立">#積立</a><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=日本株">#日本株</a></div>
     <div class="art-note"><b>この記事について</b>　特定の売買を勧めるものではなく、仮定と過去のデータによる試算を整理した情報提供です。数値は株価データと計算に基づきます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
   </div>
 </section>
@@ -459,7 +471,7 @@
     <h2>出典</h2><ul class="src-list"><li>株価データ（S&P500・日経平均の日次終値）</li></ul>
     <h2>更新履歴</h2>
     <ul class="src-list"><li>2026年10月14日　初版</li></ul>
-    <div class="related-links"><h3>関連記事</h3><div class="related-grid"><a href="life-education-cost.html">子どもの教育費を、長期投資家の目線で考える</a><a href="lump-sum-vs-dca.html">一括投資と積立投資を、長期投資家の目線で比べる</a><a href="fire-4-percent-rule.html">FIREに必要な金額は？4%ルールの意味と限界</a></div></div>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="lump-sum-vs-dca.html">一括投資と積立投資を、長期投資家の目線で比べる</a><a href="market-crashes-history.html">過去の暴落を、長期投資家の目線で読む</a><a href="life-education-cost.html">子どもの教育費を、長期投資家の目線で考える</a></div></div>
     <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
   </div>
 </section>

@@ -343,8 +343,20 @@
   .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
   .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
   .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
   .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
   .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
   .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
@@ -383,7 +395,7 @@
     <h1>PER（株価収益率）とは</h1>
     <p class="subtitle">株価が、1株あたり利益の何倍かを見る指標</p>
     <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 2026年10月14日時点</span></div>
-    <div class="art-tags"><a href="index.html?tag=用語解説">#用語解説</a><a href="index.html?tag=PER">#PER</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=日本株">#日本株</a></div>
+    <div class="art-tags"><a href="index.html?tag=決算">#決算</a></div>
     <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、用語の意味と見方を整理した情報提供です。例の数字は、説明のための架空のものです。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
   </div>
 </section>
@@ -433,7 +445,7 @@
     <h2>出典</h2><ul class="src-list"><li>一般的な財務指標の定義（東京証券取引所「決算短信」の1株当たり当期純利益（EPS）の考え方）</li></ul>
     <h2>更新履歴</h2>
     <ul class="src-list"><li>2026年10月14日　初版</li></ul>
-    <div class="related-links"><h3>関連記事</h3><div class="related-grid"><a href="toyota.html">トヨタの決算を、長期投資家の目線で読む</a><a href="watchlist-2026q4.html">2026年10〜12月の経済日程と、確認ポイント</a><a href="market-crashes-history.html">過去の暴落を、長期投資家の目線で読む</a></div></div>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="watchlist-2026q4.html">2026年10〜12月の経済日程と、確認ポイント</a><a href="real-estate-industry.html">不動産業界を、長期投資家の目線で読む</a><a href="toyota.html">トヨタの決算を、長期投資家の目線で読む</a></div></div>
     <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
   </div>
 </section>

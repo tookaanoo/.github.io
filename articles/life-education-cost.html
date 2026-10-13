@@ -343,8 +343,20 @@
   .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
   .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
   .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
   .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
   .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
   .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
@@ -383,7 +395,7 @@
     <h1>子どもの教育費を、<br>長期投資家の目線で考える</h1>
     <p class="subtitle">「いつ・いくら必要か」から、お金の置き場所を考える</p>
     <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 令和5年度の調査（2026年1月訂正後）</span></div>
-    <div class="art-tags"><a href="index.html?tag=ライフイベント">#ライフイベント</a><a href="index.html?tag=教育費">#教育費</a><a href="index.html?tag=FIRE">#FIRE</a><a href="index.html?tag=資産形成">#資産形成</a></div>
+    <div class="art-tags"><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a></div>
     <div class="art-note"><b>この記事について</b>　特定の進路や投資の方法を勧めるものではなく、公表された統計をもとに、考え方を整理した情報提供です。数値は公表機関の資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
   </div>
 </section>
@@ -465,7 +477,7 @@
     <h2>出典</h2><ul class="src-list"><li>文部科学省「令和5年度 子供の学習費調査」と、「「子供の学習費調査」結果の訂正について」（2026年1月16日）：<a href="https://www.mext.go.jp/content/20260116-mxt_chousa01-000046779_01.pdf" target="_blank" rel="noopener">https://www.mext.go.jp/content/20260116-mxt_chousa01-000046779_01.pdf</a></li><li>政府統計の総合窓口（e-Stat）「子供の学習費調査」：<a href="https://www.e-stat.go.jp/statistics/00400201" target="_blank" rel="noopener">https://www.e-stat.go.jp/statistics/00400201</a></li><li>文部科学省令「国立大学等の授業料その他の費用に関する省令」（国立大学の授業料・入学料の標準額）</li></ul>
     <h2>更新履歴</h2>
     <ul class="src-list"><li>2026年10月14日　初版</li></ul>
-    <div class="related-links"><h3>関連記事</h3><div class="related-grid"><a href="dca-simulation.html">積立投資のシミュレーションを、長期投資家の目線で検証する</a><a href="fire-4-percent-rule.html">FIREに必要な金額は？4%ルールの意味と限界</a><a href="lump-sum-vs-dca.html">一括投資と積立投資を、長期投資家の目線で比べる</a></div></div>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="dca-simulation.html">積立投資のシミュレーションを、長期投資家の目線で検証する</a><a href="fire-4-percent-rule.html">FIREに必要な金額は？4%ルールの意味と限界</a></div></div>
     <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
   </div>
 </section>

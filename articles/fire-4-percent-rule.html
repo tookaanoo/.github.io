@@ -343,8 +343,20 @@
   .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
   .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
   .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
   .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
   .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
   .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
@@ -383,7 +395,7 @@
     <h1>FIREに必要な金額は？<br>4%ルールの意味と限界</h1>
     <p class="subtitle">「年間支出の25倍」を、自分の数字に当てはめて使う</p>
     <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 米国の過去データに基づく経験則（1994年・1998年の研究）</span></div>
-    <div class="art-tags"><a href="index.html?tag=FIRE">#FIRE</a><a href="index.html?tag=4%ルール">#4%ルール</a><a href="index.html?tag=取り崩し">#取り崩し</a><a href="index.html?tag=資産形成">#資産形成</a></div>
+    <div class="art-tags"><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a></div>
     <div class="art-note"><b>この記事について</b>　一般的な情報提供であり、個別の投資や取り崩しの方法を助言するものではありません。過去の研究結果は将来の成果を保証しません。判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
   </div>
 </section>
@@ -439,7 +451,7 @@
     <h2>出典</h2><ul class="src-list"><li>William P. Bengen, "Determining Withdrawal Rates Using Historical Data", Journal of Financial Planning, 1994年10月</li><li>Cooley, Hubbard, Walz, "Retirement Savings: Choosing a Withdrawal Rate That Is Sustainable", AAII Journal, 1998年（トリニティ・スタディ）</li><li>原典での数値の確認をおすすめします。上記の数値は、これらの研究の要点を一般的に紹介したものです。</li></ul>
     <h2>更新履歴</h2>
     <ul class="src-list"><li>2026年10月13日　初版</li></ul>
-    <div class="related-links"><h3>関連記事</h3><div class="related-grid"><a href="life-education-cost.html">子どもの教育費を、長期投資家の目線で考える</a><a href="dca-simulation.html">積立投資のシミュレーションを、長期投資家の目線で検証する</a><a href="lump-sum-vs-dca.html">一括投資と積立投資を、長期投資家の目線で比べる</a></div></div>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="life-education-cost.html">子どもの教育費を、長期投資家の目線で考える</a><a href="dca-simulation.html">積立投資のシミュレーションを、長期投資家の目線で検証する</a></div></div>
     <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
   </div>
 </section>
