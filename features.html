@@ -317,8 +317,10 @@ details[open] .faq-q{color:var(--accent-dark)}
 .stages-cells{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:start;gap:5px;margin:16px 0 8px}
 .stage-cell{aspect-ratio:1;background:var(--line);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:var(--display);font-size:11px;font-weight:800;color:var(--muted-2)}
 .stage-cell .range{font-size:8px;font-weight:600;opacity:0.8;white-space:nowrap}
-.stage-cell.done{background:var(--accent-soft);color:var(--accent)}
-.stage-cell.current{background:var(--flame);color:#fff;box-shadow:0 8px 20px rgba(236,72,153,.32)}
+.stage-cell{--c:#94a3b8;background:color-mix(in srgb,var(--c) 14%,#fff);color:var(--c)}
+.stage-cell.done{background:var(--c);color:#fff}
+.stage-cell.current{background:var(--c);color:#fff;box-shadow:0 8px 20px color-mix(in srgb,var(--c) 40%,transparent)}
+.stage-cell.current,.stage-cell.done{border:0}
 .cmp-table{width:100%;font-size:12px;border-collapse:collapse}
 .cmp-table th{text-align:right;padding:9px 4px;color:var(--muted);font-weight:600}
 .cmp-table th:first-child{text-align:left}
@@ -980,30 +982,30 @@ details[open] .faq-q{color:var(--accent-dark)}
       <div class="fr-text">
         <div class="eyebrow">07 STAGES</div>
         <h2>7段階、<br>あなたの今。</h2>
-        <p class="desc">資産帯による7段階分類で、自分の位置と次の目標を明確に。</p>
+        <p class="desc">目標額に対する達成率で、7段階のステージを判定。自分の位置と、次の目標を明確に。目標を変えれば、金額帯も変わります。</p>
         <ul class="fr-list">
-          <li><span><b>スタート期</b>：基礎を作る時期</span></li>
-          <li><span><b>準備期</b>：習慣化フェーズ</span></li>
-          <li><span><b>基礎構築期</b>：コア・サテライト戦略</span></li>
-          <li><span><b>加速期</b>：入金力UP ＋ 最適化</span></li>
-          <li><span><b>FIRE視野</b>：達成までの距離が具体化</span></li>
-          <li><span><b>FIRE達成圏</b>：出口戦略</span></li>
-          <li><span><b>継続 or 次の一歩</b>：FAT FIRE</span></li>
+          <li><span><b>スタート期</b>（0%〜）：基礎を作る時期</span></li>
+          <li><span><b>準備期</b>（10%〜）：習慣化フェーズ</span></li>
+          <li><span><b>基礎構築期</b>（30%〜）：コア・サテライト確立</span></li>
+          <li><span><b>加速期</b>（60%〜）：入金力UP ＋ 最適化</span></li>
+          <li><span><b>FIRE視野</b>（80%〜）：達成までの距離が具体化</span></li>
+          <li><span><b>FIRE直前</b>（90%〜）：出口戦略を準備する</span></li>
+          <li><span><b>FIRE達成</b>（100%〜）：取り崩し開始 or FAT FIRE</span></li>
         </ul>
       </div>
       <div>
         <div class="mock">
           <div class="mock-eyebrow">@yuki_t さんの現在地</div>
           <div style="font-family:var(--display);font-size:26px;font-weight:900;letter-spacing:-0.02em;margin-bottom:4px;">基礎構築期</div>
-          <div class="mock-sub" style="margin-bottom:0;">次の「加速期」まで <b style="color:var(--accent)">¥15.8M</b></div>
+          <div class="mock-sub" style="margin-bottom:2px;">目標 ¥45M · 達成率 31.6%</div>
+          <div class="mock-sub" style="margin-bottom:0;">次の「加速期」まで <b style="color:var(--accent)">¥12.8M</b></div>
           <div class="stages-cells">
-            <div class="stage-cell done">01<span class="range">〜500万</span></div><div class="stage-cell done">02<span class="range">〜1500万</span></div><div class="stage-cell current">03<span class="range">〜3000万</span></div>
-            <div class="stage-cell">04<span class="range">〜5000万</span></div><div class="stage-cell">05<span class="range">〜7500万</span></div><div class="stage-cell">06<span class="range">〜1.5億</span></div><div class="stage-cell">07<span class="range">1.5億〜</span></div>
+            <div class="stage-cell done" style="--c:#94a3b8">01<span class="range">0%〜</span></div><div class="stage-cell done" style="--c:#38a8e8">02<span class="range">10%〜</span></div><div class="stage-cell current" style="--c:#4a86ee">03<span class="range">30%〜</span></div><div class="stage-cell" style="--c:#7c4ae0">04<span class="range">60%〜</span></div><div class="stage-cell" style="--c:#eba23a">05<span class="range">80%〜</span></div><div class="stage-cell" style="--c:#ee7d38">06<span class="range">90%〜</span></div><div class="stage-cell" style="--c:#d9344f">07<span class="range">100%〜</span></div>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted-2)">
-            <span>スタート</span><span>継続 or 次の一歩</span>
+            <span>スタート</span><span>FIRE達成</span>
           </div>
-          <div style="font-size:11px;color:var(--muted-2);margin-top:10px;">※ ステージの区切りはどなたも共通。現在地は@yuki_tさんの例です</div>
+          <div style="font-size:11px;color:var(--muted-2);margin-top:10px;">※ ステージは目標額に対する達成率で決まります。現在地は@yuki_tさんの例です</div>
         </div>
       </div>
     </div>
@@ -1033,7 +1035,7 @@ details[open] .faq-q{color:var(--accent-dark)}
           <div class="broadcast-prompt">
             <div style="font-size:12.5px;color:#f9a8d4;font-weight:700;margin-bottom:7px;letter-spacing:.04em;">マイルストーン到達</div>
             <div style="font-family:var(--display);font-size:20px;font-weight:900;margin-bottom:5px;">FIRE進捗 25% を超えました</div>
-            <div style="font-size:12px;color:#9ca3af;">¥14.2M / ¥50M · 基礎構築期</div>
+            <div style="font-size:12px;color:#9ca3af;">¥14.2M / ¥45M · 基礎構築期</div>
           </div>
           <div style="font-size:12px;color:#9ca3af;margin-bottom:10px;">X などの外部SNSに投稿できます</div>
           <button class="mock-btn">発信する</button>

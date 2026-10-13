@@ -1013,7 +1013,7 @@
   }
   .progress-fill {
     height: 100%;
-    width: 24.7%;
+    width: 31.6%;
     background: linear-gradient(90deg, #ff3d6e 0%, #c61f8c 100%);
     border-radius: 9999px;
   }
@@ -1235,10 +1235,11 @@
     position: relative;
     transition: all 0.2s;
   }
+  .stage-card { --c: #94a3b8; border-top: 3px solid var(--c); }
   .stage-card.active {
-    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
-    border-color: #ec4899;
-    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.18);
+    background: color-mix(in srgb, var(--c) 9%, #fff);
+    border-color: var(--c);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--c) 28%, transparent);
   }
   .stage-card.active::before {
     content: 'YOU';
@@ -1246,7 +1247,7 @@
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ec4899;
+    background: var(--c);
     color: #fff;
     font-size: 10px;
     font-weight: 700;
@@ -1255,13 +1256,18 @@
     border-radius: 9999px;
   }
   .stage-num {
-    font-size: 10px;
-    color: #9ca3af;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
+    display: inline-block;
+    min-width: 26px;
+    padding: 3px 6px;
+    border-radius: 7px;
+    background: var(--c);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
   }
-  .stage-card.active .stage-num { color: #ec4899; }
+  .stage-pct { font-size: 15px; font-weight: 900; color: var(--c); margin-bottom: 2px; letter-spacing: -0.01em; }
   .stage-name {
     font-size: 13px;
     font-weight: 700;
@@ -1269,9 +1275,9 @@
     line-height: 1.3;
   }
   .stage-range {
-    font-size: 10px;
+    font-size: 10.5px;
     color: #6b7280;
-    line-height: 1.3;
+    line-height: 1.4;
   }
   .stages-desc {
     font-size: 14px;
@@ -1834,7 +1840,7 @@
                         <stop offset="1" stop-color="#6A1B9A"/>
                       </linearGradient>
                     </defs>
-                  </svg>FIRE&nbsp;<span class="num">31.9%</span>
+                  </svg>FIRE&nbsp;<span class="num">31.6%</span>
               </span>
               <div style="flex:1;height:6px;border-radius:4px;background:#f3f4f6;overflow:hidden;">
                 <div style="height:100%;width:32%;background:linear-gradient(90deg,#FF6B9D 0%,#E91E63 38%,#9C27B0 72%,#6A1B9A 100%);border-radius:4px;"></div>
@@ -2027,7 +2033,7 @@
       <div class="prop-card highlight">
         <div class="num-tag">02 STAGE</div>
         <h3>今のステージが、わかる。</h3>
-        <p>資産額の絶対値だけじゃなく、7段階の FIRE ステージで今の立ち位置を可視化。次のステージまでの距離も、一目でわかる。</p>
+        <p>資産額の絶対値だけじゃなく、目標に対する達成率で7段階のステージを判定。今の立ち位置も、次のステージまでの距離も、一目でわかる。</p>
         <div class="big-num">基礎構築期</div>
         <div class="small-label">your stage</div>
       </div>
@@ -2035,7 +2041,7 @@
         <div class="num-tag">03 FIRE</div>
         <h3>ゴールまで、何年。</h3>
         <p>あなたのこれまでの運用実績から、FIRE 到達年を算出。楽観7%・中立4%・悲観1%の固定シナリオと、実績ベースのリアルな予測を比較できる。</p>
-        <div class="big-num">24.7%</div>
+        <div class="big-num">31.6%</div>
         <div class="small-label">to FIRE goal</div>
       </div>
     </div>
@@ -2052,49 +2058,56 @@
         <span class="grad-text">どのステージ?</span>
       </h2>
       <p class="stages-desc">
-        絶対額じゃない。資産形成のステージで、今の自分の立ち位置がわかる。
+        絶対額じゃない。目標に対する達成率で、今の自分の立ち位置がわかる。
         次のステージまでの距離も、はっきり見える。
       </p>
     </div>
 
     <div class="stages-grid">
-      <div class="stage-card">
+      <div class="stage-card" style="--c:#94a3b8;">
         <div class="stage-num">01</div>
         <div class="stage-name">スタート期</div>
-        <div class="stage-range">〜¥500万</div>
+        <div class="stage-pct">0%〜</div>
+        <div class="stage-range">〜500万</div>
       </div>
-      <div class="stage-card">
+      <div class="stage-card" style="--c:#38a8e8;">
         <div class="stage-num">02</div>
         <div class="stage-name">準備期</div>
-        <div class="stage-range">¥500万〜<br>¥1,500万</div>
+        <div class="stage-pct">10%〜</div>
+        <div class="stage-range">500万〜</div>
       </div>
-      <div class="stage-card active">
+      <div class="stage-card active" style="--c:#4a86ee;">
         <div class="stage-num">03</div>
         <div class="stage-name">基礎構築期</div>
-        <div class="stage-range">¥1,500万〜<br>¥3,000万</div>
+        <div class="stage-pct">30%〜</div>
+        <div class="stage-range">1,500万〜</div>
       </div>
-      <div class="stage-card">
+      <div class="stage-card" style="--c:#7c4ae0;">
         <div class="stage-num">04</div>
         <div class="stage-name">加速期</div>
-        <div class="stage-range">¥3,000万〜<br>¥5,000万</div>
+        <div class="stage-pct">60%〜</div>
+        <div class="stage-range">3,000万〜</div>
       </div>
-      <div class="stage-card">
+      <div class="stage-card" style="--c:#eba23a;">
         <div class="stage-num">05</div>
         <div class="stage-name">FIRE視野</div>
-        <div class="stage-range">¥5,000万〜<br>¥7,500万</div>
+        <div class="stage-pct">80%〜</div>
+        <div class="stage-range">4,000万〜</div>
       </div>
-      <div class="stage-card">
+      <div class="stage-card" style="--c:#ee7d38;">
         <div class="stage-num">06</div>
-        <div class="stage-name">FIRE達成圏</div>
-        <div class="stage-range">¥7,500万〜<br>¥1.5億</div>
+        <div class="stage-name">FIRE直前</div>
+        <div class="stage-pct">90%〜</div>
+        <div class="stage-range">4,500万〜</div>
       </div>
-      <div class="stage-card">
+      <div class="stage-card" style="--c:#d9344f;">
         <div class="stage-num">07</div>
-        <div class="stage-name">継続 or 次の一歩</div>
-        <div class="stage-range">¥1.5億〜</div>
+        <div class="stage-name">FIRE達成</div>
+        <div class="stage-pct">100%〜</div>
+        <div class="stage-range">5,000万〜</div>
       </div>
     </div>
-    <p style="text-align:center;font-size:12px;color:#9ca3af;margin-top:20px;">※ 金額は一例です。</p>
+    <p style="text-align:center;font-size:12px;color:#9ca3af;margin-top:20px;">※ ステージは、目標額に対する達成率で決まります。金額は、目標が5,000万円の場合の一例です。目標を変えれば、金額帯も変わります。</p>
   </div>
 </section>
 
@@ -2360,9 +2373,9 @@
       </div>
       <div class="glass-card">
         <div class="eyebrow-gray">YOUR FIRE PROGRESS</div>
-        <div class="tracking-big grad-text">24.7%</div>
+        <div class="tracking-big grad-text">31.6%</div>
         <div class="tracking-sub">あと <span class="accent">8.4 年</span></div>
-        <div class="tracking-pace">¥14.2M / ¥50M · 実績シナリオ(年率7.82%)</div>
+        <div class="tracking-pace">¥14.2M / ¥45M · 実績シナリオ(年率7.82%)</div>
         <div class="progress-bar">
           <div class="progress-fill"></div>
         </div>
@@ -2806,7 +2819,7 @@
     var big = $('.tracking-big', root)[0], bn = big && counter(big.firstChild);
     if (bn) out.push({ init: bn.init, run: function () { bn.run(1600, 100); } });
     var pf = $('.progress-fill', root)[0];
-    if (pf) out.push(grow(pf, '24.7%', 1500, 200));
+    if (pf) out.push(grow(pf, '31.6%', 1500, 200));
     $('.tracking-mini', root).forEach(function (m, i) { out.push(fade(m, i, 0, 14, 900)); });
     return out;
   }, '.glass-card');
