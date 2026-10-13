@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="幼稚園から高校までの教育費は、公立か私立かで3倍以上変わる。文部科学省の調査をもとに、必要な時期から逆算して、投資とFIREの目標額を考える。">
+<title>子どもの教育費を、長期投資家の目線で考える - みんなでFIRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms tr { border: 1px solid #f3f4f6; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; background: #fff; }
+    .art-table.ms td { border: none; padding: 5px 0; min-width: 0 !important; }
+    .art-table.ms td:first-child { font-size: 14.5px; padding-bottom: 8px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · ライフイベント</div>
+    <h1>子どもの教育費を、<br>長期投資家の目線で考える</h1>
+    <p class="subtitle">「いつ・いくら必要か」から、お金の置き場所を考える</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 令和5年度の調査（2026年1月訂正後）</span></div>
+    <div class="art-tags"><a href="index.html?tag=ライフイベント">#ライフイベント</a><a href="index.html?tag=教育費">#教育費</a><a href="index.html?tag=FIRE">#FIRE</a><a href="index.html?tag=資産形成">#資産形成</a></div>
+    <div class="art-note"><b>この記事について</b>　特定の進路や投資の方法を勧めるものではなく、公表された統計をもとに、考え方を整理した情報提供です。数値は公表機関の資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>幼稚園から高校までの学習費は、<b>全て公立で約614万円、全て私立で約1,969万円</b>（文部科学省の調査）。進路の選び方で、<b>3倍以上</b>の差が出る。</li>
+      <li>大学は、国立の標準額で4年間約243万円（授業料と入学料）。<b>教育費は、約19年間、少しずつ家計に乗る支出</b>で、必要な時期がほぼ決まっている。</li>
+      <li>長期投資家の視点では、<b>「いつ・いくら必要か」から、お金の置き場所を考える</b>。FIREの目標額も、教育費の期間を分けて見積もる。</li>
+    </ul></div>
+
+    <h2>1. 教育費は、いつ・どれくらい動くか</h2>
+    <figure class="fig"><div class="fig-title">教育費が必要になる期間</div><svg viewBox="0 0 420 150" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="64.5" y="40" width="52.5" height="38" rx="5" fill="#fbcfe8"/><text x="90.8" y="63.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >幼稚園</text><rect x="119.1" y="40" width="107.1" height="38" rx="5" fill="#f9a8d4"/><text x="172.6" y="63.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >小学校</text><rect x="228.2" y="40" width="52.5" height="38" rx="5" fill="#f472b6"/><text x="254.5" y="63.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >中学校</text><rect x="282.7" y="40" width="52.5" height="38" rx="5" fill="#ec4899"/><text x="309.0" y="63.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >高校</text><rect x="337.3" y="40" width="70.7" height="38" rx="5" fill="#9ca3af"/><text x="372.6" y="63.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >大学（4年）</text><text x="10.0" y="98.0" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="500" >0歳</text><text x="64.5" y="98.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >3歳</text><text x="119.1" y="98.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >6歳</text><text x="228.2" y="98.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >12歳</text><text x="282.7" y="98.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >15歳</text><text x="337.3" y="98.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >18歳</text><text x="410.0" y="98.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >22歳</text><text x="10.0" y="24.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >学校に通う期間（子どもの年齢）</text><text x="64.5" y="128.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >教育費が動くのは、およそ3歳から22歳までの約19年間</text></svg><figcaption>幼稚園（3年）〜高校（3年）は15年間。大学（国公立4年）を含めると、約19年間。出典：文部科学省「子供の学習費調査」ほか。</figcaption></figure>
+    <p>教育費は、子どもが3歳ごろから22歳ごろまで、およそ19年間にわたって、少しずつ家計から出ていきます。<b>必要になる時期が、ほぼ決まっている</b>のが、この支出の特徴です。</p>
+
+    <h2>2. 学校の種類で、1年あたりの費用は大きく違う</h2>
+    <figure class="fig"><div class="fig-title">学校種別の、1年あたりの学習費（万円、令和5年度）</div><svg viewBox="0 0 420 220" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb"/><rect x="28.0" y="172.4" width="30.0" height="17.6" rx="3" fill="#111827"/><text x="43.0" y="167.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >18</text><rect x="62.0" y="156.9" width="30.0" height="33.1" rx="3" fill="#ec4899"/><text x="77.0" y="151.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >35</text><text x="60.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >幼稚園</text><rect x="128.0" y="155.1" width="30.0" height="34.9" rx="3" fill="#111827"/><text x="143.0" y="150.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >37</text><rect x="162.0" y="24.0" width="30.0" height="166.0" rx="3" fill="#ec4899"/><text x="177.0" y="19.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >174</text><text x="160.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >小学校</text><rect x="228.0" y="138.3" width="30.0" height="51.7" rx="3" fill="#111827"/><text x="243.0" y="133.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >54</text><rect x="262.0" y="41.3" width="30.0" height="148.7" rx="3" fill="#ec4899"/><text x="277.0" y="36.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >156</text><text x="260.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >中学校</text><rect x="328.0" y="133.1" width="30.0" height="56.9" rx="3" fill="#111827"/><text x="343.0" y="128.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >60</text><rect x="362.0" y="77.6" width="30.0" height="112.4" rx="3" fill="#ec4899"/><text x="377.0" y="72.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >118</text><text x="360.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >高等学校</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#111827"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >公立</text><rect x="62" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="75.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >私立</text></svg><figcaption>学校教育費、給食費、学校外活動費（塾・習い事など）の合計の平均。出典：文部科学省「子供の学習費調査」（令和5年度、2026年1月訂正後）。<b>私立は、小学校で公立の約4.8倍</b>（174万円と37万円）。</figcaption></figure>
+    <ul>
+      <li>公立は、<b>幼稚園で年約18万円、小学校で約37万円、中学校で約54万円、高校で約60万円</b>。</li>
+      <li>私立は、<b>幼稚園で年約35万円、小学校で約174万円、中学校で約156万円、高校で約118万円</b>。</li>
+      <li>公立小学校では、学習費の<b>約7割が、塾や習い事などの学校外活動費</b>。学校の種類だけでなく、「学校の外で何をするか」でも、費用は変わる。</li>
+    </ul>
+    <p class="art-fig">出典：文部科学省「子供の学習費調査」（令和5年度）。2026年1月16日の訂正後の値。平均値であり、地域や家庭によって異なります。</p>
+
+    <h2>3. 進路の組み合わせで、合計が3倍以上変わる</h2>
+    <figure class="fig"><div class="fig-title">幼稚園から高校までの、学習費の合計（万円）</div><svg viewBox="0 0 420 140" role="img" xmlns="http://www.w3.org/2000/svg"><text x="92.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >全て公立</text><rect x="100.0" y="4" width="78.0" height="22" rx="3" fill="#111827"/><text x="183.0" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >614万円</text><text x="92.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >中学だけ私立</text><rect x="100.0" y="38" width="116.6" height="22" rx="3" fill="#f472b6"/><text x="221.6" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >919万円</text><text x="92.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >高校だけ私立</text><rect x="100.0" y="72" width="100.0" height="22" rx="3" fill="#f472b6"/><text x="205.0" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >788万円</text><text x="92.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >全て私立</text><rect x="100.0" y="106" width="250.0" height="22" rx="3" fill="#ec4899"/><text x="355.0" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,969万円</text></svg><figcaption>幼稚園〜高校（15年間）の合計。幼稚園は、「全て私立」のみ私立、それ以外は公立で計算。<b>全て公立で約614万円、全て私立で約1,969万円</b>。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>進路のパターン</th><th>内訳</th><th>幼稚園〜高校の合計</th><th>1年あたりの平均（15年）</th></tr></thead><tbody><tr><td data-label="進路のパターン"><b>全て公立</b></td><td data-label="内訳">幼・小・中・高が、すべて公立</td><td data-label="幼稚園〜高校の合計">614万円</td><td data-label="1年あたりの平均（15年）">約41万円</td></tr><tr><td data-label="進路のパターン"><b>中学だけ私立</b></td><td data-label="内訳">公立幼・公立小・私立中・公立高</td><td data-label="幼稚園〜高校の合計">919万円</td><td data-label="1年あたりの平均（15年）">約61万円</td></tr><tr><td data-label="進路のパターン"><b>高校だけ私立</b></td><td data-label="内訳">公立幼・公立小・公立中・私立高</td><td data-label="幼稚園〜高校の合計">788万円</td><td data-label="1年あたりの平均（15年）">約53万円</td></tr><tr><td data-label="進路のパターン"><b>全て私立</b></td><td data-label="内訳">幼・小・中・高が、すべて私立</td><td data-label="幼稚園〜高校の合計">1,969万円</td><td data-label="1年あたりの平均（15年）">約131万円</td></tr></tbody></table></div>
+    <p class="art-fig">幼稚園〜高校（全日制）の、各学年の平均年額を合計した値（文部科学省の集計方法に基づく）。大学は含みません。</p>
+
+    <h2>4. 大学は、別に考える</h2>
+    <p>文部科学省の学習費調査は、高校までが対象です。大学の費用は、別の目安が必要です。</p>
+    <ul>
+      <li><b>国立大学（標準額）</b>：入学料28.2万円、授業料は年53.58万円。<b>4年間で、約243万円</b>（授業料4年分と、入学料）。</li>
+      <li>標準額は、文部科学省令で定められた金額。最近は、標準額を超える金額を設定する大学もあるため、志望校の募集要項で確認が必要。</li>
+      <li>私立大学や、自宅外から通う場合の生活費は、この金額に含まれません。</li>
+    </ul>
+
+    <h2>5. 投資とのつながり：「いつ必要か」から逆算する</h2>
+    <p>教育費は、必要な時期がほぼ決まっているお金です。そのため、投資の考え方に、次の2つの視点が加わります。</p>
+    <ul>
+      <li><b>必要になるまでの年数。</b>数十年先のお金と、数年以内に必要になるお金では、値動きの影響の受け方が違う。過去の暴落では、ピークの水準に戻るまでに、数か月から数十年かかった（<a href="market-crashes-history.html">過去の暴落を、長期投資家の目線で読む</a>）。</li>
+      <li><b>積み立てる期間と金額。</b>必要な金額が決まっていれば、毎月いくら積み立てるかを逆算できる（<a href="dca-simulation.html">積立投資のシミュレーション</a>）。</li>
+    </ul>
+
+    <h2>6. FIREの目標額との関係</h2>
+    <p>FIREの目標額は「年間支出の25倍」が目安です（<a href="fire-4-percent-rule.html">4%ルール</a>）。教育費は、この年間支出に、次のように影響します。</p>
+    <ul>
+      <li>幼稚園〜高校の学習費を、15年間で平均すると、<b>全て公立で年約41万円、全て私立で年約131万円</b>。</li>
+      <li>この金額がずっと続く支出だと仮定して25倍すると、目標額は約1,023万円〜3,281万円分増える計算になる。</li>
+      <li>ただし、教育費は<b>期間が限られた支出</b>。25倍はあくまで上限の目安で、<b>教育費の期間と、その後の期間を分けて見積もる</b>ほうが、現実に近い。</li>
+    </ul>
+
+    <h2>7. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>平均ではなく、自分の家庭の進路で見積もる。</b>公立・私立、学校外活動の方針で、合計は大きく変わる。</li>
+      <li><b>必要な時期から、逆算する。</b>近い時期に必要なお金と、遠い時期のお金は、分けて考える。</li>
+      <li><b>教育費を、一時的な高支出として扱う。</b>FIREの目標額や、毎月の積立額は、教育費の期間とその後で分けて試算する。</li>
+      <li><b>数字は、更新される。</b>授業料の改定や、物価の上昇で、将来の費用は変わりうる。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の進路や、投資の方法を勧めるものではありません。教育費は、家庭や地域によって異なり、ここでの数値は平均値です。</div>
+
+    <h2>8. 子どもの年齢別：確認のチェックリスト</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>時期</th><th>確認すること</th><th>お金の観点</th></tr></thead><tbody><tr><td data-label="時期">出産前〜乳幼児期</td><td data-label="確認すること">進路のイメージ（公立中心か、私立も考えるか）</td><td data-label="お金の観点">総額は、全て公立で約614万円〜全て私立で約1,969万円。幅が大きい</td></tr><tr><td data-label="時期">小学生</td><td data-label="確認すること">学校外活動費（習い事・塾）の方針</td><td data-label="お金の観点">公立小では、学習費の約7割が学校外活動費</td></tr><tr><td data-label="時期">中学入学前</td><td data-label="確認すること">私立・公立のどちらか</td><td data-label="お金の観点">私立中は、年約156万円。公立の約2.9倍</td></tr><tr><td data-label="時期">高校入学前</td><td data-label="確認すること">進路と、大学までの見通し</td><td data-label="お金の観点">高校の学習費は、公立で年約60万円、私立で年約118万円</td></tr><tr><td data-label="時期">大学入学前</td><td data-label="確認すること">入学料・授業料を、必要な時期から逆算して準備</td><td data-label="お金の観点">国立大の標準額は、4年間で約243万円（授業料と入学料のみ）</td></tr></tbody></table></div>
+
+    <h2>9. 前提と限界</h2>
+    <ul>
+      <li>学習費は、学校教育費、学校給食費、学校外活動費の合計です。通学にかかる交通費や、下宿代、大学の私立の費用は含みません。</li>
+      <li>令和5年度（2023年度）の平均値です。その後の物価の変化は反映していません。</li>
+      <li>文部科学省は、2026年1月16日に、令和5年度調査の一部数値を訂正しています。この記事は、訂正後の値を使っています。</li>
+      <li>合計は、各学年の平均年額を、単純に足した値です。</li>
+    </ul>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>この記事の「確認する時期」を目安に、あとで見返す。みんなでFIREなら、資産の記録とFIRE到達予測、気になる銘柄のウォッチリストをひとつのアプリで。</p>
+  <a class="btn" href="../features.html">機能紹介を見る</a>
+</div>
+    <h2>出典</h2><ul class="src-list"><li>文部科学省「令和5年度 子供の学習費調査」と、「「子供の学習費調査」結果の訂正について」（2026年1月16日）：<a href="https://www.mext.go.jp/content/20260116-mxt_chousa01-000046779_01.pdf" target="_blank" rel="noopener">https://www.mext.go.jp/content/20260116-mxt_chousa01-000046779_01.pdf</a></li><li>政府統計の総合窓口（e-Stat）「子供の学習費調査」：<a href="https://www.e-stat.go.jp/statistics/00400201" target="_blank" rel="noopener">https://www.e-stat.go.jp/statistics/00400201</a></li><li>文部科学省令「国立大学等の授業料その他の費用に関する省令」（国立大学の授業料・入学料の標準額）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月14日　初版</li></ul>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
