@@ -357,6 +357,9 @@
   .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
   .related-grid.col a::before { content: '・'; color: #ec4899; }
   .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
   .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
@@ -433,9 +436,9 @@
     <div class="art-note">この記事は、特定の売買や、投資のタイミングを勧めるものではありません。日程は変更されることがあります。最新の情報は、公表機関の資料で確認してください。</div>
 
     <div class="art-cta">
-  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
-  <p>この記事の「確認する時期」を目安に、あとで見返す。みんなでFIREなら、資産の記録とFIRE到達予測、気になる銘柄のウォッチリストをひとつのアプリで。</p>
-  <a class="btn" href="../features.html">機能紹介を見る</a>
+  <h3>決算も経済イベントも、ひとつのカレンダーで</h3>
+  <p>配当の権利日や保有銘柄の決算、積立の実行日に加えて、日銀の金融政策決定会合やFOMC・雇用統計などの経済イベントも、同じカレンダーで確認できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-calendar">カレンダーを見る</a><span class="btn ghost">App Storeで公開予定</span></div>
 </div>
     <h2>出典</h2><ul class="src-list"><li>FRB「FOMC Calendars」：<a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm</a></li><li>米労働統計局（BLS）「Employment Situation」「Consumer Price Index」の公表予定：<a href="https://www.bls.gov/schedule/news_release/" target="_blank" rel="noopener">https://www.bls.gov/schedule/news_release/</a></li><li>日本銀行「金融政策決定会合等の日程」：<a href="https://www.boj.or.jp/mopo/mpmsche_minu/index.htm" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/mpmsche_minu/index.htm</a></li></ul>
     <h2>更新履歴</h2>
