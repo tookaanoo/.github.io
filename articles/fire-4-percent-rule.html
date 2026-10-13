@@ -334,6 +334,18 @@
     .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -371,6 +383,7 @@
     <h1>FIREに必要な金額は？<br>4%ルールの意味と限界</h1>
     <p class="subtitle">「年間支出の25倍」を、自分の数字に当てはめて使う</p>
     <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 米国の過去データに基づく経験則（1994年・1998年の研究）</span></div>
+    <div class="art-tags"><a href="index.html?tag=FIRE">#FIRE</a><a href="index.html?tag=4%ルール">#4%ルール</a><a href="index.html?tag=取り崩し">#取り崩し</a><a href="index.html?tag=資産形成">#資産形成</a></div>
     <div class="art-note"><b>この記事について</b>　一般的な情報提供であり、個別の投資や取り崩しの方法を助言するものではありません。過去の研究結果は将来の成果を保証しません。判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、[メールアドレス]までお知らせください。</div>
   </div>
 </section>

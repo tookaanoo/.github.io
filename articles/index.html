@@ -334,6 +334,18 @@
     .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -373,16 +385,46 @@
 </section>
 <section class="doc-body art">
   <div class="container-sm">
-    <div class="art-cards">
-      <a class="art-card" href="real-estate-industry.html"><div class="tag">業界分析 · 2026.10.13</div><h3>不動産業界を、長期投資家の目線で読む</h3><p>金利と人口動態のマクロ視点と、大手5社の決算比較。</p></a>
-      <a class="art-card" href="india.html"><div class="tag">国・インデックス · 2026.10.13</div><h3>インドを、長期投資家の目線で読む</h3><p>人口・成長・為替。インデックスで持つ前に見ておきたいこと。</p></a>
-      <a class="art-card" href="spacex.html"><div class="tag">個別銘柄 · 2026.10.13</div><h3>SpaceXの目論見書を、長期投資家の目線で読む</h3><p>赤字の理由と、これから10年で見るべき6つのマイルストーン。</p></a>
-      <a class="art-card" href="toyota.html"><div class="tag">個別銘柄 · 2026.10.13</div><h3>トヨタの決算を、長期投資家の目線で読む</h3><p>円安で守った利益と、HEV・北米・ROEなど、数年で見るべき6項目。</p></a>
-      <a class="art-card" href="fire-4-percent-rule.html"><div class="tag">基礎知識 · 2026.10.13</div><h3>FIREに必要な金額は？4%ルールの意味と限界</h3><p>「年間支出の25倍」を、自分の数字に当てはめて使うために。</p></a>
+    <input class="art-search" id="q" type="search" placeholder="キーワードで探す（例：金利）" aria-label="記事を検索">
+    <div class="tagbar" id="tagbar"><button type="button" class="tagchip" data-tag="4%ルール">#4%ルール</button><button type="button" class="tagchip" data-tag="FIRE">#FIRE</button><button type="button" class="tagchip" data-tag="HEV">#HEV</button><button type="button" class="tagchip" data-tag="IPO">#IPO</button><button type="button" class="tagchip" data-tag="ROE">#ROE</button><button type="button" class="tagchip" data-tag="SpaceX">#SpaceX</button><button type="button" class="tagchip" data-tag="Starship">#Starship</button><button type="button" class="tagchip" data-tag="インデックス">#インデックス</button><button type="button" class="tagchip" data-tag="インド">#インド</button><button type="button" class="tagchip" data-tag="トヨタ">#トヨタ</button><button type="button" class="tagchip" data-tag="ニフティ50">#ニフティ50</button><button type="button" class="tagchip" data-tag="三井不動産">#三井不動産</button><button type="button" class="tagchip" data-tag="不動産">#不動産</button><button type="button" class="tagchip" data-tag="人口動態">#人口動態</button><button type="button" class="tagchip" data-tag="円安">#円安</button><button type="button" class="tagchip" data-tag="取り崩し">#取り崩し</button><button type="button" class="tagchip" data-tag="宇宙">#宇宙</button><button type="button" class="tagchip" data-tag="新興国">#新興国</button><button type="button" class="tagchip" data-tag="日本株">#日本株</button><button type="button" class="tagchip" data-tag="業界分析">#業界分析</button><button type="button" class="tagchip" data-tag="決算">#決算</button><button type="button" class="tagchip" data-tag="決算比較">#決算比較</button><button type="button" class="tagchip" data-tag="為替">#為替</button><button type="button" class="tagchip" data-tag="目論見書">#目論見書</button><button type="button" class="tagchip" data-tag="米国株">#米国株</button><button type="button" class="tagchip" data-tag="自動車">#自動車</button><button type="button" class="tagchip" data-tag="資産形成">#資産形成</button><button type="button" class="tagchip" data-tag="赤字">#赤字</button><button type="button" class="tagchip" data-tag="金利">#金利</button></div>
+    <p class="art-count" id="cnt"></p>
+    <div class="art-cards" id="cards">
+      <a class="art-card" href="real-estate-industry.html" data-cat="業界分析" data-tags="不動産|業界分析|金利|人口動態|三井不動産|決算比較|日本株"><div class="tag">業界分析 · 2026.10.13</div><h3>不動産業界を、長期投資家の目線で読む</h3><p>金利と人口動態のマクロ視点と、大手5社の決算比較。</p><div class="art-tags"><span>#不動産</span><span>#業界分析</span><span>#金利</span><span>#人口動態</span><span>#三井不動産</span><span>#決算比較</span><span>#日本株</span></div></a>
+      <a class="art-card" href="india.html" data-cat="国・インデックス" data-tags="インド|ニフティ50|新興国|インデックス|人口動態|為替"><div class="tag">国・インデックス · 2026.10.13</div><h3>インドを、長期投資家の目線で読む</h3><p>人口・成長・為替。インデックスで持つ前に見ておきたいこと。</p><div class="art-tags"><span>#インド</span><span>#ニフティ50</span><span>#新興国</span><span>#インデックス</span><span>#人口動態</span><span>#為替</span></div></a>
+      <a class="art-card" href="spacex.html" data-cat="個別銘柄" data-tags="SpaceX|IPO|目論見書|宇宙|米国株|赤字|Starship"><div class="tag">個別銘柄 · 2026.10.13</div><h3>SpaceXの目論見書を、長期投資家の目線で読む</h3><p>赤字の理由と、これから10年で見るべき6つのマイルストーン。</p><div class="art-tags"><span>#SpaceX</span><span>#IPO</span><span>#目論見書</span><span>#宇宙</span><span>#米国株</span><span>#赤字</span><span>#Starship</span></div></a>
+      <a class="art-card" href="toyota.html" data-cat="個別銘柄" data-tags="トヨタ|決算|日本株|自動車|円安|ROE|HEV"><div class="tag">個別銘柄 · 2026.10.13</div><h3>トヨタの決算を、長期投資家の目線で読む</h3><p>円安で守った利益と、HEV・北米・ROEなど、数年で見るべき6項目。</p><div class="art-tags"><span>#トヨタ</span><span>#決算</span><span>#日本株</span><span>#自動車</span><span>#円安</span><span>#ROE</span><span>#HEV</span></div></a>
+      <a class="art-card" href="fire-4-percent-rule.html" data-cat="基礎知識" data-tags="FIRE|4%ルール|取り崩し|資産形成"><div class="tag">基礎知識 · 2026.10.13</div><h3>FIREに必要な金額は？4%ルールの意味と限界</h3><p>「年間支出の25倍」を、自分の数字に当てはめて使うために。</p><div class="art-tags"><span>#FIRE</span><span>#4%ルール</span><span>#取り崩し</span><span>#資産形成</span></div></a>
     </div>
+    <p class="art-empty" id="empty">条件に合う記事がありません。</p>
     <div class="art-note" style="margin-top:32px;">掲載内容は情報提供であり、特定の銘柄の売買を勧めるものではありません。数値は各社の公開資料に基づきます。</div>
   </div>
 </section>
+<script>
+(function(){
+  var q=document.getElementById('q'),cards=[].slice.call(document.querySelectorAll('#cards .art-card')),
+      chips=[].slice.call(document.querySelectorAll('.tagchip')),cnt=document.getElementById('cnt'),empty=document.getElementById('empty'),
+      sel=[];
+  cards.forEach(function(c){c._t=(c.textContent+' '+c.dataset.tags.replace(/\|/g,' ')).toLowerCase();});
+  function norm(s){return s.toLowerCase().replace(/[\u30a1-\u30f6]/g,function(m){return String.fromCharCode(m.charCodeAt(0)-0x60)});}
+  cards.forEach(function(c){c._n=norm(c._t);});
+  function apply(push){
+    var words=norm(q.value).split(/\s+/).filter(Boolean),n=0;
+    cards.forEach(function(c){
+      var tags=c.dataset.tags.split('|');
+      var ok=words.every(function(w){return c._n.indexOf(w)>-1})&&sel.every(function(t){return tags.indexOf(t)>-1});
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    chips.forEach(function(b){b.classList.toggle('on',sel.indexOf(b.dataset.tag)>-1)});
+    cnt.textContent=(words.length||sel.length)?n+'件の記事':'全'+cards.length+'件';
+    empty.style.display=n?'none':'block';
+    if(push){try{var p=[];if(q.value.trim())p.push('q='+encodeURIComponent(q.value.trim()));sel.forEach(function(t){p.push('tag='+encodeURIComponent(t))});history.replaceState(null,'',p.length?'?'+p.join('&'):location.pathname)}catch(e){}}
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.tag,i=sel.indexOf(t);i>-1?sel.splice(i,1):sel.push(t);apply(true)})});
+  q.addEventListener('input',function(){apply(true)});
+  try{var u=new URLSearchParams(location.search);q.value=u.get('q')||'';sel=u.getAll('tag').filter(function(t){return chips.some(function(b){return b.dataset.tag===t})})}catch(e){}
+  apply(false);
+})();
+</script>
 
 <footer class="footer">
   <div class="container">
