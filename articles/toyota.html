@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="トヨタ自動車の2027年3月期第1四半期決算を、為替の影響を除いて読み解き、長期で見るべきマイルストーンを整理。">
+<title>トヨタの決算を、長期投資家の目線で読む - みんなでFIRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms tr { border: 1px solid #f3f4f6; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; background: #fff; }
+    .art-table.ms td { border: none; padding: 5px 0; min-width: 0 !important; }
+    .art-table.ms td:first-child { font-size: 14.5px; padding-bottom: 8px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>トヨタの決算を、<br>長期投資家の目線で読む</h1>
+    <p class="subtitle">円安で守った利益と、これから数年で見るべきマイルストーン</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 2027年3月期 第1四半期決算（2026年8月4日発表）</span></div>
+    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>2026年4〜6月は、売上が過去最高水準に伸びた一方、営業利益は前年同期比で△8.8%。<b>円安の追い風（＋3,450億円）がなければ、実質的に減益</b>。</li>
+      <li>通期の営業利益見通しは3兆4,000億円に上方修正されたが、前期（3兆7,662億円）より少なく、<b>円安で守っている面が大きい</b>。</li>
+      <li>長期で見るのは、HEVの増産・北米の採算・生産体制の再編・BEV・ROE・為替に頼らない稼ぐ力の<b>6項目</b>。</li>
+    </ul></div>
+
+    <h2>1. 今回の決算（2027年3月期 第1四半期）</h2>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th></th><th>2025年4〜6月</th><th>2026年4〜6月</th><th>前年同期比</th></tr></thead><tbody><tr><td data-label="">営業収益</td><td class="num">12兆2,533億円</td><td class="num">13兆5,254億円</td><td class="num">＋10.4%</td></tr><tr><td data-label="">営業利益</td><td class="num">1兆1,661億円</td><td class="num">1兆634億円</td><td class="num">△8.8%</td></tr><tr><td data-label="">営業利益率</td><td class="num">9.5%</td><td class="num">7.9%</td><td class="num"></td></tr><tr><td data-label="">親会社に帰属する四半期利益</td><td class="num">8,413億円</td><td class="num">1兆4,770億円</td><td class="num">＋75.6%</td></tr><tr><td data-label="">為替（1ドル）</td><td class="num">145円</td><td class="num">160円</td><td class="num">15円の円安</td></tr></tbody></table></div>
+    <p class="art-fig">出典：2027年3月期 第1四半期決算（2026年8月4日発表）。</p>
+    <p>売上は伸びたのに利益が減った理由は、会社の資料にあります。営業利益の増減は、為替＋3,450億円、営業面の努力＋700億円に対して、原価改善△850億円、諸経費の増加△1,900億円、その他△2,426億円。<b>為替の効果を除くと、営業利益は約△2,050億円の減益</b>です（会社資料）。</p>
+    <figure class="fig"><div class="fig-title">営業利益はなぜ減ったか（2026年4〜6月 vs 前年同期）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="20.9" y="69.0" width="35.4" height="121.0" rx="3" fill="#111827"/><text x="38.6" y="63.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >11,661</text><text x="38.6" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >前年同期</text><line x1="56.3" y1="69.0" x2="78.0" y2="69.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="78.0" y="33.3" width="35.4" height="35.8" rx="3" fill="#ec4899"/><text x="95.7" y="27.3" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+3,450</text><text x="95.7" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >為替</text><line x1="113.4" y1="33.3" x2="135.1" y2="33.3" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="135.1" y="26.0" width="35.4" height="7.3" rx="3" fill="#ec4899"/><text x="152.9" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+700</text><text x="152.9" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業面の</text><text x="152.9" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >努力</text><line x1="170.6" y1="26.0" x2="192.3" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="192.3" y="26.0" width="35.4" height="8.8" rx="3" fill="#64748b"/><text x="210.0" y="47.8" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-850</text><text x="210.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >原価改善</text><line x1="227.7" y1="34.8" x2="249.4" y2="34.8" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="249.4" y="34.8" width="35.4" height="19.7" rx="3" fill="#64748b"/><text x="267.1" y="67.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-1,900</text><text x="267.1" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >諸経費</text><line x1="284.9" y1="54.5" x2="306.6" y2="54.5" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="306.6" y="54.5" width="35.4" height="25.2" rx="3" fill="#64748b"/><text x="324.3" y="92.7" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-2,426</text><text x="324.3" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >その他</text><line x1="342.0" y1="79.7" x2="363.7" y2="79.7" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="363.7" y="79.7" width="35.4" height="110.3" rx="3" fill="#111827"/><text x="381.4" y="73.7" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >10,634</text><text x="381.4" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >今期</text></svg><figcaption>単位：億円。出典：決算説明資料。<b>為替の＋3,450億円を除くと、約△2,050億円の減益</b>（会社資料）。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">損益計算書を滝グラフで（2026年4〜6月）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="180.0" x2="410" y2="180.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.2" y="96.6" width="49.6" height="83.4" rx="3" fill="#111827"/><text x="50.0" y="90.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >10,634</text><text x="50.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業利益</text><line x1="74.8" y1="96.6" x2="105.2" y2="96.6" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="105.2" y="26.0" width="49.6" height="70.6" rx="3" fill="#ec4899"/><text x="130.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+9,003</text><text x="130.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業外損益</text><line x1="154.8" y1="26.0" x2="185.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="185.2" y="26.0" width="49.6" height="154.0" rx="3" fill="#111827"/><text x="210.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >19,638</text><text x="210.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >税引前利益</text><line x1="234.8" y1="26.0" x2="265.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="265.2" y="26.0" width="49.6" height="32.3" rx="3" fill="#64748b"/><text x="290.0" y="71.3" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-4,121</text><text x="290.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >法人税等</text><line x1="314.8" y1="58.3" x2="345.2" y2="58.3" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="345.2" y="58.3" width="49.6" height="121.7" rx="3" fill="#111827"/><text x="370.0" y="52.3" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >15,517</text><text x="370.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >四半期利益</text></svg><figcaption>単位：億円。営業収益は13兆5,254億円。四半期利益は非支配持分を含む（親会社帰属分は14,770億円）。出典：決算短信。<b>営業利益は減ったのに、営業外損益（＋9,003億円、前年同期は＋860億円）が増え、純利益は＋75.6%</b>。本業の力は営業利益で見るのが基本。</figcaption></figure>
+    <ul>
+      <li><b>セグメント別：</b>自動車事業の営業利益は7,199億円（△21.0%）、金融事業は2,756億円（＋24.0%）。<b>金融が増益を支えた</b>形です。</li>
+      <li><b>地域別：</b>北米は営業利益1,854億円で、前年同期の赤字から黒字に転換。日本は5,401億円（△16.3%）。</li>
+      <li><b>電動車：</b>トヨタ・レクサスの販売に占める電動車比率は55.3%（前年同期47.4%）。HEVが123.8万台、BEVが11.4万台。</li>
+    </ul>
+
+    <figure class="fig"><div class="fig-title">電動車の比率 — トヨタ・レクサス販売（4〜6月、千台）</div><svg viewBox="0 0 420 166" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="52" y="5" width="9" height="9" rx="2" fill="#ec4899"/><text x="65.0" y="13.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >HEV</text><rect x="116" y="5" width="9" height="9" rx="2" fill="#f97316"/><text x="129.0" y="13.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >PHEV</text><rect x="190" y="5" width="9" height="9" rx="2" fill="#2563eb"/><text x="203.0" y="13.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >BEV</text><rect x="254" y="5" width="9" height="9" rx="2" fill="#d1d5db"/><text x="267.0" y="13.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >その他</text><text x="44.0" y="47.0" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >2025年</text><text x="44.0" y="59.5" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >4〜6月</text><rect x="52.0" y="34" width="153.8" height="30" fill="#ec4899"/><text x="128.9" y="52.5" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="700" >1,160</text><rect x="205.8" y="34" width="6.2" height="30" fill="#f97316"/><rect x="212.0" y="34" width="6.2" height="30" fill="#2563eb"/><rect x="218.3" y="34" width="184.2" height="30" fill="#d1d5db"/><text x="310.4" y="52.5" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="700" >1,389</text><text x="410.0" y="78.0" font-size="9.5" text-anchor="end" fill="#9ca3af" font-weight="500" >合計 2,643</text><text x="44.0" y="111.0" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >2026年</text><text x="44.0" y="123.5" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >4〜6月</text><rect x="52.0" y="98" width="164.1" height="30" fill="#ec4899"/><text x="134.1" y="116.5" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="700" >1,238</text><rect x="216.1" y="98" width="7.7" height="30" fill="#f97316"/><rect x="223.8" y="98" width="15.1" height="30" fill="#2563eb"/><rect x="239.0" y="98" width="151.4" height="30" fill="#d1d5db"/><text x="314.7" y="116.5" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="700" >1,142</text><text x="410.0" y="142.0" font-size="9.5" text-anchor="end" fill="#9ca3af" font-weight="500" >合計 2,552</text></svg><figcaption>出典：決算説明資料。電動車比率は47.4% → 55.3%。BEVは47千台から114千台へ（2.4倍）。</figcaption></figure>
+    <h2>2. 通期見通しと株主還元</h2>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>2027年3月期（通期見通し）</th><th>前回見通し</th><th>今回見通し（2026年8月）</th><th>前期実績</th></tr></thead><tbody><tr><td data-label="2027年3月期（通期見通し）">営業収益</td><td class="num">51兆円</td><td class="num">54兆円</td><td class="num">50兆6,849億円</td></tr><tr><td data-label="2027年3月期（通期見通し）">営業利益</td><td class="num">3兆円</td><td class="num">3兆4,000億円</td><td class="num">3兆7,662億円</td></tr><tr><td data-label="2027年3月期（通期見通し）">親会社に帰属する当期利益</td><td class="num">3兆円</td><td class="num">3兆2,500億円</td><td class="num">3兆8,480億円</td></tr><tr><td data-label="2027年3月期（通期見通し）">1株あたり配当</td><td class="num">100円</td><td class="num">100円</td><td class="num">95円</td></tr><tr><td data-label="2027年3月期（通期見通し）">為替の前提（1ドル）</td><td class="num">150円</td><td class="num">160円</td><td class="num">151円</td></tr></tbody></table></div>
+    <p class="art-fig">出典：同決算の説明資料。見通しには令和8年熊本地震の影響は織り込まれていません（会社資料）。</p>
+    <figure class="fig"><div class="fig-title">通期の営業利益：前期と、今期の見通し</div><svg viewBox="0 0 420 190" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="160.0" x2="410" y2="160.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="48.7" y="22.0" width="56.0" height="138.0" rx="3" fill="#111827"/><text x="76.7" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >37,662</text><text x="76.7" y="180.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >前期実績</text><text x="76.7" y="192.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >(2026/3期)</text><rect x="182.0" y="50.1" width="56.0" height="109.9" rx="3" fill="#f9a8d4"/><text x="210.0" y="44.1" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >30,000</text><text x="210.0" y="180.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >前回見通し</text><rect x="315.3" y="35.4" width="56.0" height="124.6" rx="3" fill="#ec4899"/><text x="343.3" y="29.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >34,000</text><text x="343.3" y="180.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >今回見通し</text></svg><figcaption>単位：億円。出典：決算説明資料。今期見通しは前期より少ない。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">通期の営業利益見通しは、なぜ上がったか（前回 → 今回）</div><svg viewBox="0 0 420 260" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="607.6" x2="410" y2="607.6" stroke="#e5e7eb" stroke-width="1.2"/><rect x="20.9" y="137.3" width="35.4" height="62.7" rx="3" fill="#111827"/><text x="38.6" y="131.3" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >30,000</text><text x="38.6" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >前回見通し</text><line x1="56.3" y1="137.3" x2="78.0" y2="137.3" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="78.0" y="62.1" width="35.4" height="75.2" rx="3" fill="#ec4899"/><text x="95.7" y="56.1" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+4,800</text><text x="95.7" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >為替</text><line x1="113.4" y1="62.1" x2="135.1" y2="62.1" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="135.1" y="26.0" width="35.4" height="36.1" rx="3" fill="#ec4899"/><text x="152.9" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+2,300</text><text x="152.9" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業面の</text><text x="152.9" y="243.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >努力</text><line x1="170.6" y1="26.0" x2="192.3" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="192.3" y="26.0" width="35.4" height="18.8" rx="3" fill="#64748b"/><text x="210.0" y="57.8" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-1,200</text><text x="210.0" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >原価改善</text><line x1="227.7" y1="44.8" x2="249.4" y2="44.8" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="249.4" y="44.8" width="35.4" height="7.8" rx="3" fill="#64748b"/><text x="267.1" y="65.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-500</text><text x="267.1" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >諸経費</text><line x1="284.9" y1="52.6" x2="306.6" y2="52.6" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="306.6" y="52.6" width="35.4" height="21.9" rx="3" fill="#64748b"/><text x="324.3" y="87.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-1,400</text><text x="324.3" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >その他</text><line x1="342.0" y1="74.6" x2="363.7" y2="74.6" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="363.7" y="74.6" width="35.4" height="125.4" rx="3" fill="#111827"/><text x="381.4" y="68.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >34,000</text><text x="381.4" y="231.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >今回見通し</text></svg><figcaption>単位：億円。縦軸は26,000億円から表示（途中を省略）。出典：決算説明資料。<b>上方修正（＋4,000億円）の主因は、為替前提の見直し（＋4,800億円）</b>。</figcaption></figure>
+    <p><b>見通しは上がったが、中身は為替。</b>今回の上方修正（＋4,000億円）のうち、為替の前提の見直し（150円→160円）が＋4,800億円を占めます。為替以外は、営業面の努力などの積み上げです。</p>
+    <p><b>株主還元は強化。</b>自己株式の取得枠は上限1兆円（市場買付）、2億株を消却（発行済株式総数の1.37%）。年間配当の予想は100円（前期95円）です。会社は、ROE20%を「ひとつのモノサシ」として、稼ぐ力と資本効率を高めると説明しています。</p>
+
+    <h2>3. 長期でこれから見るべきこと（マイルストーン）</h2>
+    <p>決算ごとの増減益より、「<b>数年かけて何が実現すると、稼ぐ力が上がるのか</b>」を見るほうが、長期の判断には役立ちます。会社が示した計画を、確認の目印にします。</p>
+    <figure class="fig"><div class="fig-title">マイルストーンを時間軸で見る</div><svg viewBox="0 0 420 206" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="36" x2="402" y2="36" stroke="#111827" stroke-width="2" stroke-linecap="round"/><line x1="18.0" y1="32" x2="18.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="18.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2026年</text><line x1="94.8" y1="32" x2="94.8" y2="40" stroke="#111827" stroke-width="1.5"/><text x="94.8" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2027年</text><line x1="171.6" y1="32" x2="171.6" y2="40" stroke="#111827" stroke-width="1.5"/><text x="171.6" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2028年</text><line x1="248.4" y1="32" x2="248.4" y2="40" stroke="#111827" stroke-width="1.5"/><text x="248.4" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2029年</text><line x1="325.2" y1="32" x2="325.2" y2="40" stroke="#111827" stroke-width="1.5"/><text x="325.2" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2030年</text><circle cx="56.4" cy="36.0" r="9" fill="#ec4899"/><text x="56.4" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><circle cx="79.4" cy="36.0" r="9" fill="#2563eb"/><text x="79.4" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><circle cx="140.9" cy="36.0" r="9" fill="#7c3aed"/><text x="140.9" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><circle cx="271.4" cy="36.0" r="9" fill="#2563eb"/><text x="271.4" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><circle cx="348.2" cy="36.0" r="9" fill="#2563eb"/><text x="348.2" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><circle cx="26" cy="88" r="8" fill="#ec4899"/><text x="26.0" y="91.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><text x="42.0" y="92.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2026年</text><text x="136.0" y="92.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >HEV販売が初めて500万台超（計画）</text><circle cx="26" cy="112" r="8" fill="#2563eb"/><text x="26.0" y="115.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><text x="42.0" y="116.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2026年</text><text x="136.0" y="116.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >インド第3工場が稼働</text><circle cx="26" cy="136" r="8" fill="#7c3aed"/><text x="26.0" y="139.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><text x="42.0" y="140.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2027〜28年</text><text x="136.0" y="140.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >日本のHEV電池ラインを次世代電池へ切替</text><circle cx="26" cy="160" r="8" fill="#2563eb"/><text x="26.0" y="163.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><text x="42.0" y="164.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2029年</text><text x="136.0" y="164.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >インド第4工場が稼働（年10万台）</text><circle cx="26" cy="184" r="8" fill="#2563eb"/><text x="26.0" y="187.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><text x="42.0" y="188.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2030年</text><text x="136.0" y="188.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >タコマ工場が稼働（年15万台）</text></svg><figcaption>会社の説明資料にある計画。番号は、表のマイルストーンに対応。時期は目標であり、保証ではありません。ROE20%は時期の明示がない目標です。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認すること</th><th>会社が開示している内容</th><th>見る指標</th><th>外れた場合</th></tr></thead><tbody><tr><td data-label="確認すること">① HEV（ハイブリッド）の増産と電池</td><td data-label="会社が開示している内容">2026年にHEV販売が初めて500万台超の計画。日本では2027〜28年に60万台規模のHEV用電池ラインを次世代電池へ切り替え</td><td data-label="見る指標">HEV販売台数、電池の生産能力と原価</td><td data-label="外れた場合">需要に供給が追いつかない、または原価が下がらず利益率が伸びない</td></tr><tr><td data-label="確認すること">② 北米の採算</td><td data-label="会社が開示している内容">2026年4〜6月は営業利益1,854億円（前年同期は211億円の赤字）。価格改定・為替・関税の低減が寄与</td><td data-label="見る指標">北米の営業利益、関税の動向、価格改定の通りやすさ</td><td data-label="外れた場合">関税や需要の変化で、再び赤字に</td></tr><tr><td data-label="確認すること">③ 生産体制の再編</td><td data-label="会社が開示している内容">米国：テキサス第2工場（2026年7月公表）、タコマ工場で年15万台（2030年稼働）。インド：第3工場（2026年稼働）と第4工場（2029年稼働）で合計年20万台</td><td data-label="見る指標">各工場の稼働開始時期、投資額、現地需要</td><td data-label="外れた場合">立ち上げ遅れ、需要の読み違いによる稼働率低下</td></tr><tr><td data-label="確認すること">④ BEV（電気自動車）の位置づけ</td><td data-label="会社が開示している内容">2026年4〜6月のBEV販売は11.4万台（前年同期の2.4倍）。ただし通期見通しは59.8万台から53.3万台へ引き下げ</td><td data-label="見る指標">BEV販売台数、BEV事業の採算、競合との価格差</td><td data-label="外れた場合">BEVの競争力不足、または普及の遅れ・加速のどちらに振れても、HEV一本足の見直しが必要になる</td></tr><tr><td data-label="確認すること">⑤ 資本効率（ROE 20%）</td><td data-label="会社が開示している内容">ROE20%を「ひとつのモノサシ」に。自己株式の取得枠は上限1兆円、2億株（発行済の1.37%）を消却</td><td data-label="見る指標">ROE、自己株式の取得の進み具合、純資産</td><td data-label="外れた場合">成長投資と還元のバランスが崩れ、資本効率が改善しない</td></tr><tr><td data-label="確認すること">⑥ 為替に頼らない稼ぐ力</td><td data-label="会社が開示している内容">為替・スワップ等の影響を除いた通期営業利益は前期比で約△7,850億円（会社資料）</td><td data-label="見る指標">為替を除いた営業利益、原価改善、バリューチェーン収益</td><td data-label="外れた場合">円高に振れると、利益が急に目減りする</td></tr></tbody></table></div>
+    <p class="art-fig">出典：同決算の説明資料・決算短信。表は筆者が整理。</p>
+    <p>ポイントは、<b>HEVの増産（①）と北米の採算（②）が、為替に頼らない利益の柱になれるか（⑥）</b>です。為替の影響を除いた営業利益が回復していくかどうかが、決算を読むうえでの大きな分かれ目になります。</p>
+
+    <h2>4. 気をつけたいこと</h2>
+    <ul>
+      <li><b>円高への反転：</b>見通しは1ドル160円が前提。為替が動けば、利益は大きく変わります。</li>
+      <li><b>関税・貿易政策：</b>前年同期（2025年4〜6月）は北米が赤字でした。今期は価格改定や関税の負担低減で黒字に転じましたが、貿易政策の先行きは不透明です。</li>
+      <li><b>中東情勢：</b>今期の営業利益に影響が出ており、代替の物流ルート構築で対応中です。</li>
+      <li><b>地震の影響：</b>令和8年熊本地震の影響は、見通しに反映されていません。</li>
+      <li><b>グループ構造の変化：</b>日野自動車とその連結子会社が連結から外れ、前年との単純比較に注意が必要です。</li>
+    </ul>
+
+    <h2>5. 財務の体力と、この1年の株価</h2>
+    <figure class="fig"><div class="fig-title">貸借対照表（2026年6月末）</div><svg viewBox="0 0 420 230" role="img" xmlns="http://www.w3.org/2000/svg"><text x="105.0" y="20.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >資産 102.6兆円</text><text x="315.0" y="20.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >負債・資本 102.6兆円</text><rect x="20" y="34.0" width="170" height="188.0" fill="#475569" stroke="#fff" stroke-width="1.5"/><text x="105.0" y="126.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >資産合計</text><text x="105.0" y="139.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >1,026,351億円</text><rect x="230" y="152.0" width="170" height="70.0" fill="#16a34a" stroke="#fff" stroke-width="1.5"/><text x="315.0" y="185.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >資本合計</text><text x="315.0" y="198.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >382,289億円</text><rect x="230" y="34.0" width="170" height="118.0" fill="#64748b" stroke="#fff" stroke-width="1.5"/><text x="315.0" y="91.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >負債合計</text><text x="315.0" y="104.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >644,062億円</text></svg><figcaption>単位：億円（図は億円表示）。親会社所有者帰属持分比率は36.4%（2026年3月末は37.8%）。出典：決算短信。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">この1年の株価の推移（終値、円）</div><svg viewBox="0 0 420 200" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="134.1" x2="368" y2="134.1" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="137.6" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >3,000</text><line x1="8" y1="70.5" x2="368" y2="70.5" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="74.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >3,500</text><defs><linearGradient id="g81826" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,174.0 8.0,150.4 9.5,145.1 11.0,139.9 12.5,142.5 14.0,133.7 15.5,133.4 17.0,120.8 18.5,122.5 20.0,117.9 21.4,106.3 22.9,112.3 24.4,115.5 25.9,110.5 27.4,116.5 28.9,114.3 30.4,129.0 31.9,116.4 33.4,119.1 34.9,117.4 36.4,115.4 37.9,109.9 39.4,108.9 40.9,111.2 42.4,118.9 43.9,130.4 45.3,129.4 46.8,128.5 48.3,121.7 49.8,124.3 51.3,116.1 52.8,116.5 54.3,117.1 55.8,123.6 57.3,128.3 58.8,133.4 60.3,121.0 61.8,130.0 63.3,126.4 64.8,125.7 66.3,119.3 67.8,120.1 69.2,101.0 70.7,89.5 72.2,92.1 73.7,89.7 75.2,87.9 76.7,80.1 78.2,76.2 79.7,81.3 81.2,89.2 82.7,86.5 84.2,85.7 85.7,87.8 87.2,88.8 88.7,83.3 90.2,79.5 91.7,91.5 93.1,96.7 94.6,84.7 96.1,52.5 97.6,55.0 99.1,43.3 100.6,48.8 102.1,54.8 103.6,65.3 105.1,63.9 106.6,59.8 108.1,54.7 109.6,73.4 111.1,75.7 112.6,89.9 114.1,77.1 115.6,70.0 117.0,66.0 118.5,58.5 120.0,41.9 121.5,44.3 123.0,34.9 124.5,41.3 126.0,43.3 127.5,44.4 129.0,35.6 130.5,49.4 132.0,43.4 133.5,41.2 135.0,35.6 136.5,53.3 138.0,50.6 139.5,42.5 140.9,35.4 142.4,29.1 143.9,14.0 145.4,44.8 146.9,67.9 148.4,72.9 149.9,68.6 151.4,84.1 152.9,73.9 154.4,69.2 155.9,74.7 157.4,87.0 158.9,91.1 160.4,85.9 161.9,82.7 163.4,92.7 164.8,102.1 166.3,99.6 167.8,91.1 169.3,84.7 170.8,82.2 172.3,105.6 173.8,113.5 175.3,94.5 176.8,100.7 178.3,101.6 179.8,102.6 181.3,102.0 182.8,85.2 184.3,92.0 185.8,93.5 187.3,93.5 188.7,92.6 190.2,85.6 191.7,84.2 193.2,90.4 194.7,84.5 196.2,98.5 197.7,109.8 199.2,118.4 200.7,125.5 202.2,125.5 203.7,119.8 205.2,131.1 206.7,134.1 208.2,136.9 209.7,145.1 211.2,150.6 212.6,154.0 214.1,141.8 215.6,133.0 217.1,123.3 218.6,139.9 220.1,139.5 221.6,141.4 223.1,136.9 224.6,135.7 226.1,130.8 227.6,131.3 229.1,133.0 230.6,130.2 232.1,128.7 233.6,146.1 235.1,153.9 236.5,149.2 238.0,154.6 239.5,153.1 241.0,156.6 242.5,155.7 244.0,157.7 245.5,166.2 247.0,162.6 248.5,146.5 250.0,153.5 251.5,158.2 253.0,160.3 254.5,162.5 256.0,166.9 257.5,171.5 259.0,174.0 260.4,172.2 261.9,163.6 263.4,163.1 264.9,169.0 266.4,169.1 267.9,160.4 269.4,155.9 270.9,143.9 272.4,140.9 273.9,148.2 275.4,156.4 276.9,156.6 278.4,158.7 279.9,154.5 281.4,149.9 282.9,145.6 284.3,146.8 285.8,141.1 287.3,141.8 288.8,140.4 290.3,147.2 291.8,138.5 293.3,133.0 294.8,105.6 296.3,118.0 297.8,125.5 299.3,138.7 300.8,144.4 302.3,144.9 303.8,136.2 305.3,136.6 306.8,136.5 308.2,134.1 309.7,136.0 311.2,131.5 312.7,132.4 314.2,131.3 315.7,141.6 317.2,125.7 318.7,117.3 320.2,118.2 321.7,123.6 323.2,125.2 324.7,124.3 326.2,119.3 327.7,114.2 329.2,103.2 330.7,117.1 332.1,119.2 333.6,123.8 335.1,121.9 336.6,138.1 338.1,137.8 339.6,134.8 341.1,130.1 342.6,130.9 344.1,131.4 345.6,132.0 347.1,129.7 348.6,130.9 350.1,138.0 351.6,135.4 353.1,135.8 354.6,149.1 356.0,144.2 357.5,143.6 359.0,152.3 360.5,147.6 362.0,142.9 363.5,146.7 365.0,146.5 366.5,145.4 368.0,136.1 368.0,174.0" fill="url(#g81826)"/><polyline points="8.0,150.4 9.5,145.1 11.0,139.9 12.5,142.5 14.0,133.7 15.5,133.4 17.0,120.8 18.5,122.5 20.0,117.9 21.4,106.3 22.9,112.3 24.4,115.5 25.9,110.5 27.4,116.5 28.9,114.3 30.4,129.0 31.9,116.4 33.4,119.1 34.9,117.4 36.4,115.4 37.9,109.9 39.4,108.9 40.9,111.2 42.4,118.9 43.9,130.4 45.3,129.4 46.8,128.5 48.3,121.7 49.8,124.3 51.3,116.1 52.8,116.5 54.3,117.1 55.8,123.6 57.3,128.3 58.8,133.4 60.3,121.0 61.8,130.0 63.3,126.4 64.8,125.7 66.3,119.3 67.8,120.1 69.2,101.0 70.7,89.5 72.2,92.1 73.7,89.7 75.2,87.9 76.7,80.1 78.2,76.2 79.7,81.3 81.2,89.2 82.7,86.5 84.2,85.7 85.7,87.8 87.2,88.8 88.7,83.3 90.2,79.5 91.7,91.5 93.1,96.7 94.6,84.7 96.1,52.5 97.6,55.0 99.1,43.3 100.6,48.8 102.1,54.8 103.6,65.3 105.1,63.9 106.6,59.8 108.1,54.7 109.6,73.4 111.1,75.7 112.6,89.9 114.1,77.1 115.6,70.0 117.0,66.0 118.5,58.5 120.0,41.9 121.5,44.3 123.0,34.9 124.5,41.3 126.0,43.3 127.5,44.4 129.0,35.6 130.5,49.4 132.0,43.4 133.5,41.2 135.0,35.6 136.5,53.3 138.0,50.6 139.5,42.5 140.9,35.4 142.4,29.1 143.9,14.0 145.4,44.8 146.9,67.9 148.4,72.9 149.9,68.6 151.4,84.1 152.9,73.9 154.4,69.2 155.9,74.7 157.4,87.0 158.9,91.1 160.4,85.9 161.9,82.7 163.4,92.7 164.8,102.1 166.3,99.6 167.8,91.1 169.3,84.7 170.8,82.2 172.3,105.6 173.8,113.5 175.3,94.5 176.8,100.7 178.3,101.6 179.8,102.6 181.3,102.0 182.8,85.2 184.3,92.0 185.8,93.5 187.3,93.5 188.7,92.6 190.2,85.6 191.7,84.2 193.2,90.4 194.7,84.5 196.2,98.5 197.7,109.8 199.2,118.4 200.7,125.5 202.2,125.5 203.7,119.8 205.2,131.1 206.7,134.1 208.2,136.9 209.7,145.1 211.2,150.6 212.6,154.0 214.1,141.8 215.6,133.0 217.1,123.3 218.6,139.9 220.1,139.5 221.6,141.4 223.1,136.9 224.6,135.7 226.1,130.8 227.6,131.3 229.1,133.0 230.6,130.2 232.1,128.7 233.6,146.1 235.1,153.9 236.5,149.2 238.0,154.6 239.5,153.1 241.0,156.6 242.5,155.7 244.0,157.7 245.5,166.2 247.0,162.6 248.5,146.5 250.0,153.5 251.5,158.2 253.0,160.3 254.5,162.5 256.0,166.9 257.5,171.5 259.0,174.0 260.4,172.2 261.9,163.6 263.4,163.1 264.9,169.0 266.4,169.1 267.9,160.4 269.4,155.9 270.9,143.9 272.4,140.9 273.9,148.2 275.4,156.4 276.9,156.6 278.4,158.7 279.9,154.5 281.4,149.9 282.9,145.6 284.3,146.8 285.8,141.1 287.3,141.8 288.8,140.4 290.3,147.2 291.8,138.5 293.3,133.0 294.8,105.6 296.3,118.0 297.8,125.5 299.3,138.7 300.8,144.4 302.3,144.9 303.8,136.2 305.3,136.6 306.8,136.5 308.2,134.1 309.7,136.0 311.2,131.5 312.7,132.4 314.2,131.3 315.7,141.6 317.2,125.7 318.7,117.3 320.2,118.2 321.7,123.6 323.2,125.2 324.7,124.3 326.2,119.3 327.7,114.2 329.2,103.2 330.7,117.1 332.1,119.2 333.6,123.8 335.1,121.9 336.6,138.1 338.1,137.8 339.6,134.8 341.1,130.1 342.6,130.9 344.1,131.4 345.6,132.0 347.1,129.7 348.6,130.9 350.1,138.0 351.6,135.4 353.1,135.8 354.6,149.1 356.0,144.2 357.5,143.6 359.0,152.3 360.5,147.6 362.0,142.9 363.5,146.7 365.0,146.5 366.5,145.4 368.0,136.1" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="143.9" cy="14.0" r="3" fill="#ec4899"/><text x="143.9" y="7.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >3,944</text><circle cx="259.0" cy="174.0" r="3" fill="#ec4899"/><text x="259.0" y="188.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >2,686</text><circle cx="368.0" cy="136.1" r="3.4" fill="#111827"/><text x="8.0" y="192.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2025/10/14</text><text x="368.0" y="192.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10/13</text></svg><figcaption>出典：Yahoo Finance（日次終値、2026/10/13時点）。1年間の安値は 2,686円、高値は 3,944円。</figcaption></figure>
+    <p>自己資本の厚さ（親会社帰属持分比率 36.4%）は、成長投資と株主還元を両立するための土台です。株価は為替や関税のニュースで動きやすい面があります。</p>
+
+    <h2>6. 長期で積み立てる人にとって</h2>
+    <p>トヨタは、日本株の代表格として多くの人のポートフォリオに入っています。個別の売買の判断はここでは示しません。ひとつの見方として、<b>決算の増減益に一喜一憂せず、「為替を除いた利益が戻るか」「HEVと北米が育つか」という数年単位の変化を、年に1〜2回点検する</b>。配当や自社株買いが、長期保有の下支えになる面もあります。</p>
+
+    <h2>7. 次に確認する時期</h2>
+    <ul>
+      <li>次の四半期決算（2027年3月期 第2四半期）：為替を除いた営業利益、北米の採算、BEV販売台数。</li>
+      <li>2026年中：HEV販売500万台超が達成できそうか。</li>
+      <li>2027〜28年：日本でのHEV用次世代電池ラインの切り替え。2029〜2030年：インド第4工場、タコマ工場の稼働。</li>
+    </ul>
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>この記事の「確認する時期」を目安に、あとで見返す。みんなでFIREなら、資産の記録とFIRE到達予測、気になる銘柄のウォッチリストをひとつのアプリで。</p>
+  <a class="btn" href="../features.html">機能紹介を見る</a>
+</div>
+    <h2>出典</h2><ul class="src-list"><li>トヨタ自動車 2027年3月期 第1四半期決算 要旨（2026年8月4日）：<a href="https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_jp.pdf" target="_blank" rel="noopener">https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_jp.pdf</a></li><li>トヨタ自動車 2027年3月期 第1四半期決算 説明資料（スクリプト付き）：<a href="https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_2_jp.pdf" target="_blank" rel="noopener">https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_2_jp.pdf</a></li><li>トヨタ自動車 決算情報（IR）：<a href="https://global.toyota/jp/ir/financial-results/" target="_blank" rel="noopener">https://global.toyota/jp/ir/financial-results/</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月13日　初版（2027年3月期 第1四半期決算に基づく）</li></ul>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li><li><a href="index.html">コラム</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>

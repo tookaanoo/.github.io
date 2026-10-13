@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SpaceXの目論見書から、赤字の理由と、これから10年で見るべきマイルストーンを長期投資家の目線で整理。">
+<title>SpaceXの目論見書を、長期投資家の目線で読む - みんなでFIRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms tr { border: 1px solid #f3f4f6; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; background: #fff; }
+    .art-table.ms td { border: none; padding: 5px 0; min-width: 0 !important; }
+    .art-table.ms td:first-child { font-size: 14.5px; padding-bottom: 8px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>SpaceXの目論見書を、<br>長期投資家の目線で読む</h1>
+    <p class="subtitle">赤字の理由と、これから10年で見るべきマイルストーン</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 目論見書（2026年6月12日付）</span></div>
+    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>2025年の売上高は$187億（前年比＋33%）。ただし営業損失は$26億、純損失は$49億。<b>稼いでいるのはStarlink、赤字の主因はAI部門</b>。</li>
+      <li>長期の価値を分ける最大の前提は<b>「Starshipを完全再使用で運用できるか」</b>。目論見書もこれを最大のリスクとして書いている。</li>
+      <li>長期投資家が見るのは日々の株価ではなく、<b>会社自身が時期つきで示した目標が実現していくか</b>。この記事では6つに整理した。</li>
+    </ul></div>
+
+    <h2>1. 何をしている会社か</h2>
+    <p>目論見書によれば、SpaceXは宇宙・通信・AIの3つを、垂直統合（部品から運用まで自社で持つ）で手がける会社です。2026年2月にxAIを取得し、AIが第3の柱になりました。過去の数字は、取得後の形に合わせて合算し直されています。</p>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>セグメント</th><th>中身</th><th>2025年の売上</th><th>2025年の営業損益</th></tr></thead><tbody><tr><td data-label="セグメント">Space（宇宙）</td><td data-label="中身">Falcon・Dragon・Starship（打上げ170回／年）</td><td class="num">$4,086M</td><td class="num">$(657)M</td></tr><tr><td data-label="セグメント">Connectivity（通信）</td><td data-label="中身">Starlink（契約者 約1,030万、2026年3月末）</td><td class="num">$11,387M</td><td class="num">$4,423M</td></tr><tr><td data-label="セグメント">AI</td><td data-label="中身">xAI・Grok・X（2026年2月に買収）</td><td class="num">$3,201M</td><td class="num">$(6,355)M</td></tr></tbody></table></div>
+    <p class="art-fig">出典：目論見書（Form 424B4）Summary Historical Consolidated Financial and Operating Data。M＝百万ドル。</p>
+    <figure class="fig"><div class="fig-title">売上高と営業利益（損失）の推移</div><svg viewBox="0 0 420 150" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="120.0" x2="410" y2="120.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="48.7" y="65.5" width="56.0" height="54.5" rx="3" fill="#f9a8d4"/><text x="76.7" y="59.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >$10.4B</text><text x="76.7" y="140.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2023年</text><rect x="182.0" y="46.6" width="56.0" height="73.4" rx="3" fill="#f9a8d4"/><text x="210.0" y="40.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >$14.0B</text><text x="210.0" y="140.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024年</text><rect x="315.3" y="22.0" width="56.0" height="98.0" rx="3" fill="#ec4899"/><text x="343.3" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >$18.7B</text><text x="343.3" y="140.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text></svg><svg viewBox="0 0 420 150" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="32.8" x2="410" y2="32.8" stroke="#e5e7eb" stroke-width="1.2"/><rect x="48.7" y="32.8" width="56.0" height="75.2" rx="3" fill="#64748b"/><text x="76.7" y="121.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >$-3.5B</text><text x="76.7" y="140.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2023年</text><rect x="182.0" y="22.0" width="56.0" height="10.8" rx="3" fill="#ec4899"/><text x="210.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >$+0.5B</text><text x="210.0" y="140.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024年</text><rect x="315.3" y="32.8" width="56.0" height="55.9" rx="3" fill="#64748b"/><text x="343.3" y="101.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >$-2.6B</text><text x="343.3" y="140.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text></svg><figcaption>上：売上高、下：営業利益（損失）。単位は十億ドル。出典：目論見書。</figcaption></figure>
+
+    <h2>2. 数字から見えること</h2>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th></th><th>2023年</th><th>2024年</th><th>2025年</th><th>2026年1〜3月</th></tr></thead><tbody><tr><td data-label="">売上高</td><td class="num">$10,387M</td><td class="num">$14,015M</td><td class="num">$18,674M</td><td class="num">$4,694M</td></tr><tr><td data-label="">営業利益（損失）</td><td class="num">$(3,505)M</td><td class="num">$466M</td><td class="num">$(2,589)M</td><td class="num">$(1,943)M</td></tr><tr><td data-label="">純利益（損失）</td><td class="num">$(4,628)M</td><td class="num">$791M</td><td class="num">$(4,937)M</td><td class="num">$(4,276)M</td></tr><tr><td data-label="">設備投資</td><td class="num">$4,415M</td><td class="num">$11,163M</td><td class="num">$20,737M</td><td class="num">$10,107M</td></tr></tbody></table></div>
+    <p class="art-fig">出典：同上。設備投資は3セグメントの合計。</p>
+    <figure class="fig"><div class="fig-title">2025年の営業利益（損失）の内訳 — 稼ぐ部門と、赤字の部門</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="117.3" x2="410" y2="117.3" stroke="#e5e7eb" stroke-width="1.2"/><rect x="34.0" y="117.3" width="52.0" height="15.9" rx="3" fill="#64748b"/><text x="60.0" y="146.2" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-657</text><text x="60.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >Space</text><text x="60.0" y="223.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >（宇宙）</text><line x1="86.0" y1="133.2" x2="134.0" y2="133.2" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="134.0" y="26.0" width="52.0" height="107.2" rx="3" fill="#ec4899"/><text x="160.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+4,423</text><text x="160.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >Connectivity</text><text x="160.0" y="223.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >（通信）</text><line x1="186.0" y1="26.0" x2="234.0" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="234.0" y="26.0" width="52.0" height="154.0" rx="3" fill="#64748b"/><text x="260.0" y="193.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-6,355</text><text x="260.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >AI</text><line x1="286.0" y1="180.0" x2="334.0" y2="180.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="334.0" y="117.3" width="52.0" height="62.7" rx="3" fill="#111827"/><text x="360.0" y="193.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-2,589</text><text x="360.0" y="211.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業損失</text><text x="360.0" y="223.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >（合計）</text></svg><figcaption>単位：百万ドル。出典：目論見書（セグメント別営業損益）。<b>通信の黒字（＋44億ドル）を、AIの赤字（△64億ドル）が飲み込んでいる</b>。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">損益計算書を滝グラフで（2025年）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="155.7" x2="410" y2="155.7" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.2" y="26.0" width="49.6" height="129.7" rx="3" fill="#111827"/><text x="50.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >18,674</text><text x="50.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >売上高</text><line x1="74.8" y1="26.0" x2="105.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="105.2" y="26.0" width="49.6" height="147.7" rx="3" fill="#64748b"/><text x="130.0" y="186.7" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-21,263</text><text x="130.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >費用</text><line x1="154.8" y1="173.7" x2="185.2" y2="173.7" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="185.2" y="155.7" width="49.6" height="18.0" rx="3" fill="#111827"/><text x="210.0" y="186.7" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-2,589</text><text x="210.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業損失</text><line x1="234.8" y1="173.7" x2="265.2" y2="173.7" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="265.2" y="173.7" width="49.6" height="16.3" rx="3" fill="#64748b"/><text x="290.0" y="203.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-2,348</text><text x="290.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業外・</text><text x="290.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >税など</text><line x1="314.8" y1="190.0" x2="345.2" y2="190.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="345.2" y="155.7" width="49.6" height="34.3" rx="3" fill="#111827"/><text x="370.0" y="203.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-4,937</text><text x="370.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >純損失</text></svg><figcaption>単位：百万ドル。「営業外・税など」は、純損失と営業損失の差額（筆者計算）。出典：目論見書。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">稼ぐ現金と、使う現金 — 営業キャッシュフローと設備投資</div><svg viewBox="0 0 420 200" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="170.0" x2="410" y2="170.0" stroke="#e5e7eb"/><rect x="34.7" y="138.3" width="40.0" height="31.7" rx="3" fill="#f9a8d4"/><text x="54.7" y="133.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >$4.5B</text><rect x="78.7" y="139.0" width="40.0" height="31.0" rx="3" fill="#111827"/><text x="98.7" y="134.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >$4.4B</text><text x="76.7" y="190.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2023年</text><rect x="168.0" y="129.1" width="40.0" height="40.9" rx="3" fill="#f9a8d4"/><text x="188.0" y="124.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >$5.8B</text><rect x="212.0" y="91.0" width="40.0" height="79.0" rx="3" fill="#111827"/><text x="232.0" y="86.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >$11.2B</text><text x="210.0" y="190.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024年</text><rect x="301.3" y="122.0" width="40.0" height="48.0" rx="3" fill="#f9a8d4"/><text x="321.3" y="117.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >$6.8B</text><rect x="345.3" y="24.0" width="40.0" height="146.0" rx="3" fill="#111827"/><text x="365.3" y="19.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >$20.7B</text><text x="343.3" y="190.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#f9a8d4"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >営業CF</text><rect x="84" y="4" width="9" height="9" rx="2" fill="#111827"/><text x="97.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >設備投資</text></svg><figcaption>単位：十億ドル。出典：目論見書。2025年は、設備投資が営業CFの約3倍。<b>差額は外部資金（今回のIPOなど）で埋める構図</b>。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">Starlink 契約者数と、1人あたり月額</div><svg viewBox="0 0 420 170" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.0" x2="410" y2="140.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="32.5" y="113.7" width="55.0" height="26.3" rx="3" fill="#f9a8d4"/><text x="60.0" y="107.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2.3M</text><text x="60.0" y="152.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2023末</text><text x="60.0" y="164.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >$99</text><rect x="132.5" y="89.6" width="55.0" height="50.4" rx="3" fill="#f9a8d4"/><text x="160.0" y="83.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >4.4M</text><text x="160.0" y="152.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024末</text><text x="160.0" y="164.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >$91</text><rect x="232.5" y="38.0" width="55.0" height="102.0" rx="3" fill="#f9a8d4"/><text x="260.0" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >8.9M</text><text x="260.0" y="152.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025末</text><text x="260.0" y="164.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >$81</text><rect x="332.5" y="22.0" width="55.0" height="118.0" rx="3" fill="#ec4899"/><text x="360.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >10.3M</text><text x="360.0" y="152.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026/3末</text><text x="360.0" y="164.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >$66</text></svg><div class="fig-note">下段の$はARPU（契約者1人あたり月額収入）</div><figcaption>契約者数は百万。出典：目論見書。<b>契約者は4倍強に増えたが、1人あたり月額は3分の2に低下</b>。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">貸借対照表（2026年3月末）— 何を持ち、どう調達しているか</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><text x="105.0" y="20.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >資産 102,094</text><text x="315.0" y="20.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >負債・純資産 102,094</text><rect x="20" y="176.1" width="170" height="65.9" fill="#94a3b8" stroke="#fff" stroke-width="1.5"/><text x="105.0" y="207.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >その他資産</text><text x="105.0" y="220.0" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >32,363</text><rect x="20" y="66.3" width="170" height="109.8" fill="#475569" stroke="#fff" stroke-width="1.5"/><text x="105.0" y="119.2" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >有形固定資産</text><text x="105.0" y="132.2" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >53,879</text><rect x="20" y="34.0" width="170" height="32.3" fill="#ec4899" stroke="#fff" stroke-width="1.5"/><text x="105.0" y="48.1" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >現金</text><text x="105.0" y="61.1" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >15,852</text><rect x="230" y="171.6" width="170" height="70.4" fill="#16a34a" stroke="#fff" stroke-width="1.5"/><text x="315.0" y="204.8" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >純資産</text><text x="315.0" y="217.8" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >34,533</text><rect x="230" y="157.3" width="170" height="14.4" fill="#4ade80" stroke="#fff" stroke-width="1.5"/><text x="315.0" y="168.0" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="700" >優先株 7,049</text><rect x="230" y="34.0" width="170" height="123.3" fill="#64748b" stroke="#fff" stroke-width="1.5"/><text x="315.0" y="93.6" font-size="10" text-anchor="middle" fill="#fff" font-weight="700" >負債</text><text x="315.0" y="106.6" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" >60,512</text></svg><figcaption>単位：百万ドル。優先株＝償還可能転換優先株（上場により普通株へ転換）。出典：目論見書。<b>資産の半分超が有形固定資産（ロケット・衛星・データセンター）</b>。</figcaption></figure>
+    <ul>
+      <li><b>売上は伸びているが、利益は赤字に転じた。</b>2024年は営業黒字（$4.7億）でしたが、2025年は営業赤字（$25.9億）。内訳は、Space $(6.6)億、Connectivity ＋$44.2億、AI $(63.6)億。<b>AI部門の損失拡大が全体を赤字にした</b>形です。</li>
+      <li><b>設備投資が営業キャッシュフローを大きく上回る。</b>2025年は設備投資$207億に対し、営業キャッシュフローは$68億。このうちAI向けが$127億を占めます。不足分は外部からの資金調達で埋める構図で、今回のIPO（公開価格$135、約5.56億株）もその一部と読めます。</li>
+      <li><b>Starlinkは契約者が倍増する一方、1人あたり月額は下がっている。</b>契約者は2023年末の230万から2026年3月末に1,030万へ。月額（ARPU）は$99→$91→$81→$66。会社は、価格の低い国際市場の比率が上がったことを理由に挙げています。契約者数だけでなく、<b>1人あたり収益も追う</b>必要があります。</li>
+      <li><b>Starshipへの投資は大きい。</b>累計で$150億超。2025年のSpace部門の研究開発費$30億はStarship向けです。</li>
+    </ul>
+
+    <h2>3. 10年後に価値を決める条件（マイルストーン）</h2>
+    <p>赤字そのものは、成長投資の結果としてありえます。長期で見るときの問いは「<b>赤字を払ってまで進めている計画が、時期どおりに実現しているか</b>」です。目論見書が自ら示した目標を、確認の目印にします。</p>
+    <figure class="fig"><div class="fig-title">マイルストーンを時間軸で見る</div><svg viewBox="0 0 420 182" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="36" x2="402" y2="36" stroke="#111827" stroke-width="2" stroke-linecap="round"/><line x1="18.0" y1="32" x2="18.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="18.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2026年</text><line x1="146.0" y1="32" x2="146.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="146.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2027年</text><line x1="274.0" y1="32" x2="274.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="274.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2028年</text><line x1="402.0" y1="32" x2="402.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="402.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2029年</text><circle cx="94.8" cy="36.0" r="9" fill="#ec4899"/><text x="94.8" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><circle cx="120.4" cy="36.0" r="9" fill="#2563eb"/><text x="120.4" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><circle cx="210.0" cy="36.0" r="9" fill="#7c3aed"/><text x="210.0" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >★</text><circle cx="299.6" cy="36.0" r="9" fill="#ea580c"/><text x="299.6" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >⑤</text><circle cx="26" cy="88" r="8" fill="#ec4899"/><text x="26.0" y="91.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><text x="42.0" y="92.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2026年下期</text><text x="136.0" y="92.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >Starship が軌道へ荷物を運び始める</text><circle cx="26" cy="112" r="8" fill="#2563eb"/><text x="26.0" y="115.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><text x="42.0" y="116.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2026年下期</text><text x="136.0" y="116.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >Starlink V3 衛星の展開開始</text><circle cx="26" cy="136" r="8" fill="#7c3aed"/><text x="26.0" y="139.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >★</text><text x="42.0" y="140.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2027年</text><text x="136.0" y="140.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >V2 Mobile 衛星（通信用）の展開開始</text><circle cx="26" cy="160" r="8" fill="#ea580c"/><text x="26.0" y="163.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >⑤</text><text x="42.0" y="164.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >早ければ2028年</text><text x="136.0" y="164.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >軌道上AI計算衛星の展開開始</text></svg><figcaption>会社が目論見書で示した予定。番号は表のマイルストーンに対応（★は表外）。時期は目標であり、保証ではありません。出典：目論見書。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認すること</th><th>会社が開示している目標・時期</th><th>見る指標</th><th>外れた場合</th></tr></thead><tbody><tr><td data-label="確認すること">① Starship が軌道へ荷物を運び始める</td><td data-label="会社が開示している目標・時期">2026年下期に軌道への搭載物の投入を開始する予定（目論見書）</td><td data-label="見る指標">飛行試験の結果、FAAの承認、実際の顧客ペイロード</td><td data-label="外れた場合">次世代衛星の展開と、その先の計画が後ろ倒しになる</td></tr><tr><td data-label="確認すること">② 完全再使用と、航空機並みの高頻度運用</td><td data-label="会社が開示している目標・時期">「完全かつ迅速な再使用」を目指す。ブースターの回収には成功済み</td><td data-label="見る指標">再使用の回数、打上げの間隔、1回あたりの費用</td><td data-label="外れた場合">打上げ単価が下がらず、成長戦略の前提が崩れる。目論見書自身が「大規模な軌道上AI計算衛星は、完全再使用がないと経済的に成り立たない」と記載</td></tr><tr><td data-label="確認すること">③ Starlink V3 衛星の展開</td><td data-label="会社が開示している目標・時期">2026年下期からStarshipで展開。1機あたり下り1Tbps、1回の打上げで最大60機</td><td data-label="見る指標">展開数、契約者数、1人あたり月額（ARPU）</td><td data-label="外れた場合">成長が現行世代（V2）の容量に縛られる</td></tr><tr><td data-label="確認すること">④ 軌道上での推進剤補給</td><td data-label="会社が開示している目標・時期">月・火星計画の前提として必要（目論見書）</td><td data-label="見る指標">補給実証の成否と時期</td><td data-label="外れた場合">月面・惑星探査の計画が成立しにくくなる</td></tr><tr><td data-label="確認すること">⑤ 軌道上AI計算衛星</td><td data-label="会社が開示している目標・時期">早ければ2028年に展開開始</td><td data-label="見る指標">初号機の打上げ、AI部門の稼働規模（2026年1〜3月で約1GW）</td><td data-label="外れた場合">AI向けの巨額投資に見合う収益化が遅れる</td></tr><tr><td data-label="確認すること">⑥ AI部門の赤字縮小</td><td data-label="会社が開示している目標・時期">—（具体的な黒字化時期は示されていない）</td><td data-label="見る指標">AI部門の営業損益、設備投資と売上の比率</td><td data-label="外れた場合">全社の赤字と資金需要が長引く</td></tr></tbody></table></div>
+    <p class="art-fig">出典：目論見書 Prospectus Summary／Risk Factors／MD&A。表は筆者が整理。</p>
+    <p>特に①と②が土台です。目論見書は、Starshipの開発・量産・再使用が遅れれば「成長戦略が制約される」と明記し、過去の飛行試験の一部で、FAAが事故（mishap）と判定し、会社主導の調査が行われたと書いています。①②が進めば③〜⑤が連鎖して動き、遅れれば全体が後ろにずれる、という構造です。</p>
+
+    <h2>4. 気をつけたいこと</h2>
+    <ul>
+      <li><b>議決権が創業者に集中している。</b>Class B株は1株10票。上場後、イーロン・マスク氏の議決権は約82.4%。取締役会の過半数も選べるため、会社の方針は事実上この1人で決まります（Nasdaqの「支配会社」）。</li>
+      <li><b>赤字が続く可能性を、会社自身が認めている。</b>目論見書のリスク要因に「純損失の履歴があり、黒字化できない可能性がある」と記載があります。</li>
+      <li><b>規制と事故のリスク。</b>打上げ・再突入にはFAAの許可が必要で、許可が下りない、または遅れるリスクがあります。</li>
+      <li><b>将来の売却圧力。</b>ロックアップ（一定期間の売却制限）の期限が来ると、既存株主の株式が市場に出る可能性があります。</li>
+    </ul>
+
+    <h2>5. 上場後の株価の動き</h2>
+    <p>上場からまだ数か月ですが、値動きの大きさは見て取れます。</p>
+    <figure class="fig"><div class="fig-title">上場後の株価の推移（終値、米ドル）</div><svg viewBox="0 0 420 200" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="109.3" x2="368" y2="109.3" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="112.8" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >$150</text><line x1="8" y1="31.7" x2="368" y2="31.7" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="35.2" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >$200</text><defs><linearGradient id="g72927" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,174.0 8.0,92.3 12.3,43.3 16.7,14.0 21.0,44.4 25.3,54.9 29.7,102.1 34.0,99.8 38.4,102.2 42.7,104.6 47.0,104.2 51.4,87.2 55.7,76.9 60.0,97.6 64.4,90.6 68.7,93.1 73.1,110.1 77.4,111.9 81.7,105.9 86.1,116.5 90.4,126.1 94.7,130.9 99.1,132.1 103.4,138.6 107.8,149.6 112.1,156.0 116.4,150.3 120.8,163.2 125.1,158.5 129.4,163.4 133.8,165.9 138.1,161.4 142.5,167.4 146.8,167.9 151.1,173.8 155.5,164.3 159.8,147.5 164.1,174.0 168.5,163.7 172.8,135.5 177.2,126.7 181.5,135.2 185.8,115.2 190.2,122.8 194.5,124.8 198.8,115.1 203.2,119.6 207.5,125.3 211.9,134.1 216.2,129.5 220.5,132.5 224.9,127.9 229.2,125.3 233.5,123.4 237.9,122.4 242.2,119.0 246.6,121.3 250.9,123.7 255.2,109.7 259.6,112.4 263.9,103.9 268.2,113.1 272.6,112.1 276.9,107.4 281.3,112.1 285.6,119.4 289.9,107.9 294.3,101.8 298.6,105.0 302.9,106.4 307.3,101.9 311.6,111.8 316.0,112.3 320.3,111.3 324.6,116.3 329.0,110.4 333.3,107.9 337.6,112.2 342.0,95.3 346.3,76.5 350.7,75.2 355.0,81.9 359.3,92.9 363.7,89.7 368.0,88.4 368.0,174.0" fill="url(#g72927)"/><polyline points="8.0,92.3 12.3,43.3 16.7,14.0 21.0,44.4 25.3,54.9 29.7,102.1 34.0,99.8 38.4,102.2 42.7,104.6 47.0,104.2 51.4,87.2 55.7,76.9 60.0,97.6 64.4,90.6 68.7,93.1 73.1,110.1 77.4,111.9 81.7,105.9 86.1,116.5 90.4,126.1 94.7,130.9 99.1,132.1 103.4,138.6 107.8,149.6 112.1,156.0 116.4,150.3 120.8,163.2 125.1,158.5 129.4,163.4 133.8,165.9 138.1,161.4 142.5,167.4 146.8,167.9 151.1,173.8 155.5,164.3 159.8,147.5 164.1,174.0 168.5,163.7 172.8,135.5 177.2,126.7 181.5,135.2 185.8,115.2 190.2,122.8 194.5,124.8 198.8,115.1 203.2,119.6 207.5,125.3 211.9,134.1 216.2,129.5 220.5,132.5 224.9,127.9 229.2,125.3 233.5,123.4 237.9,122.4 242.2,119.0 246.6,121.3 250.9,123.7 255.2,109.7 259.6,112.4 263.9,103.9 268.2,113.1 272.6,112.1 276.9,107.4 281.3,112.1 285.6,119.4 289.9,107.9 294.3,101.8 298.6,105.0 302.9,106.4 307.3,101.9 311.6,111.8 316.0,112.3 320.3,111.3 324.6,116.3 329.0,110.4 333.3,107.9 337.6,112.2 342.0,95.3 346.3,76.5 350.7,75.2 355.0,81.9 359.3,92.9 363.7,89.7 368.0,88.4" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><line x1="8" y1="132.5" x2="368" y2="132.5" stroke="#111827" stroke-width="1" stroke-dasharray="4 4"/><text x="10.0" y="127.5" font-size="10" text-anchor="start" fill="#111827" font-weight="700" >公開価格 $135</text><circle cx="16.7" cy="14.0" r="3" fill="#ec4899"/><text x="30.0" y="7.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >$211</text><circle cx="164.1" cy="174.0" r="3" fill="#ec4899"/><text x="164.1" y="188.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >$108</text><circle cx="368.0" cy="88.4" r="3.4" fill="#111827"/><text x="8.0" y="192.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2026/6/12 上場</text><text x="368.0" y="192.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10/12</text></svg><figcaption>出典：Yahoo Finance（日次終値、2026/10/12時点）。上場後の安値は $108.27、高値は $211.39。<b>上場後わずか数か月で、最大2倍近く動いている</b>点に注意。</figcaption></figure>
+    <p>株価は日々、期待や需給で大きく動きます。マイルストーン型の銘柄では、<b>予定の進み具合のニュースで、短期間に株価が大きく上下する</b>のが普通です。値動きの大きさ自体が、長期の積立で持つときの「付き合い方」の前提になります。</p>
+
+    <h2>6. 長期で積み立てる人にとって</h2>
+    <p>個別の売買の判断は、この記事では示しません。ひとつだけ言えるのは、<b>こうしたマイルストーン型の銘柄は、予定が1年ずれるだけで評価が大きく変わりうる</b>ということです。投資するなら、資産全体のごく一部にとどめて、年に1〜2回、上の6項目を点検する。それ以外の日々の値動きに、神経を使いすぎない。そのくらいの距離感が、長期投資とは相性が良いと考えます。</p>
+
+    <h2>7. 次に確認する時期</h2>
+    <ul>
+      <li>次の四半期報告書（10-Q）：数字の更新（売上、営業損益、設備投資、Starlink契約者数）。</li>
+      <li>2026年下期：Starshipの飛行試験と、軌道への搭載物投入の開始（①）、V3衛星の展開（③）。</li>
+      <li>2027年：V2 Mobile衛星の展開予定。2028年：軌道上AI計算衛星の展開予定（⑤）。</li>
+    </ul>
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>この記事の「確認する時期」を目安に、あとで見返す。みんなでFIREなら、資産の記録とFIRE到達予測、気になる銘柄のウォッチリストをひとつのアプリで。</p>
+  <a class="btn" href="../features.html">機能紹介を見る</a>
+</div>
+    <h2>出典</h2><ul class="src-list"><li>SpaceX 目論見書（Form 424B4, 2026年6月12日）：<a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm</a></li><li>SEC EDGAR 提出書類一覧（Space Exploration Technologies Corp.）：<a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001181412" target="_blank" rel="noopener">https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001181412</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月13日　初版（2026年6月12日付の目論見書に基づく）</li></ul>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li><li><a href="index.html">コラム</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
