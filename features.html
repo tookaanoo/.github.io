@@ -1260,8 +1260,8 @@ details[open] .faq-q{color:var(--accent-dark)}
   group(perf, function (r) {
     var out = [], svg = $('svg', r)[0];
     if (svg) out.push(reveal(svg, 3200, 150));
-    $('.bm-legend span', r).forEach(function (x, i) { out.push(fade(x, i, 0, 0, 300, 140)); });
-    $('.bm-row', r).forEach(function (x, i) { out.push(fade(x, i, 0, 8, 2600, 260)); });
+    $('.bm-legend span', r).forEach(function (x, i) { out.push(fade(x, i, 0, 0, 150, 60)); });
+    $('.bm-row', r).forEach(function (x, i) { out.push(fade(x, i, 0, 8, 150, 80)); });
     return out;
   }, $('.mock', perf)[0]);
 
