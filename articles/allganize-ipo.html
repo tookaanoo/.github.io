@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Allganize Holdings（656A）の新規上場（グロース市場、2026年11月4日予定）を、事業・業績・利益の質・リスクの面で整理。企業向け生成AIの会社を、長期投資家の目線で確認する6項目。">
+<title>Allganize Holdingsの新規上場を、長期投資家の目線で読む - みんなでFIRE</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms tr { border: 1px solid #f3f4f6; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; background: #fff; }
+    .art-table.ms td { border: none; padding: 5px 0; min-width: 0 !important; }
+    .art-table.ms td:first-child { font-size: 14.5px; padding-bottom: 8px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/allganize-ipo.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Allganize Holdingsの新規上場を、長期投資家の目線で読む">
+<meta property="og:description" content="Allganize Holdings（656A）の新規上場（グロース市場、2026年11月4日予定）を、事業・業績・利益の質・リスクの面で整理。企業向け生成AIの会社を、長期投資家の目線で確認する6項目。">
+<meta property="og:url" content="https://fire-app.jp/articles/allganize-ipo.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/allganize-ipo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/allganize-ipo.jpg">
+<meta name="twitter:title" content="Allganize Holdingsの新規上場を、長期投資家の目線で読む">
+<meta name="twitter:description" content="Allganize Holdings（656A）の新規上場（グロース市場、2026年11月4日予定）を、事業・業績・利益の質・リスクの面で整理。企業向け生成AIの会社を、長期投資家の目線で確認する6項目。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Allganize Holdingsの新規上場を、長期投資家の目線で読む", "description": "Allganize Holdings（656A）の新規上場（グロース市場、2026年11月4日予定）を、事業・業績・利益の質・リスクの面で整理。企業向け生成AIの会社を、長期投資家の目線で確認する6項目。", "inLanguage": "ja", "datePublished": "2026-10-17", "dateModified": "2026-10-17", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/allganize-ipo.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/"}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/"}, "articleSection": "個別銘柄", "keywords": ["日本株", "新規上場"], "image": ["https://fire-app.jp/articles/og/allganize-ipo.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "Allganize Holdingsの新規上場を、長期投資家の目線で読む", "item": "https://fire-app.jp/articles/allganize-ipo.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>Allganize Holdingsの<br>新規上場を、<br>長期投資家の目線で読む</h1>
+    <p class="subtitle">企業向けの生成AI。売上は倍増。利益の質と、売出しの大きさを確認する</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月17日</span><span><b>情報の時点</b> 2026年9月30日提出の有価証券報告書（Ⅰの部）／2026年10月16日に仮条件決定</span></div>
+    <div class="art-tags"><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=新規上場">#新規上場</a></div>
+    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>Allganize Holdingsは、<b>企業向けの生成AI・AIエージェントのプラットフォーム</b>を、日本・韓国・米国で提供する会社。<b>東京証券取引所グロース市場に、2026年11月4日に上場する予定</b>。</li>
+      <li>2025年9月期の売上は約13.4億円（前期比+95.2%）。2026年10〜6月の累計は約14.0億円で、<b>すでに前期の通期を上回った</b>。営業利益も黒字（約2.4億円）。ただし、経常利益は、<b>為替差益</b>で、営業利益の約2倍になっている。</li>
+      <li>今回の上場は、<b>公募が小さく、売出しが大半</b>。長期では、契約社数と単価、新製品の広がり、利益の質、売出し株主の動向を確認する。この記事は、公開価格の妥当性や、申込みの是非を判断するものではない。</li>
+    </ul></div>
+
+    <h2>1. どんな会社か</h2>
+    <p>Allganize Holdingsは、2021年11月に設立された、東京・渋谷に本社を置く持株会社です。前身の米国法人（Allganize Inc.、2017年設立）の事業を引き継ぎ、日本、韓国、米国で事業を展開しています。子会社は3社、連結の従業員は76人です（2025年9月期末）。</p>
+    <ul>
+      <li><b>Alli LLM App Market</b>：「社内文書からの回答の自動生成」「議事録の自動作成」「契約書チェック」など、目的別に100個以上の生成AIアプリを用意したプラットフォーム。国内外の239社に提供している（2026年3月時点）。</li>
+      <li><b>SaaSとオンプレミスの両方</b>：クラウドとして使えるほか、金融機関や官公庁など、データを外に出せない顧客向けに、自社の環境（オンプレミス）にも導入できる。会社は、これを最大の特徴としている。</li>
+      <li><b>Alli Coworker</b>：2026年4月に提供を開始した、チャットの指示だけで、業務アプリやAIエージェントを自動生成するプラットフォーム。2026年6月末までに、有料顧客は累計19社。</li>
+    </ul>
+    <p>売上の約6割がSaaS、約4割がオンプレミスです。業種は、金融、保険、製造、小売、ITサービスなど、多岐にわたります。</p>
+
+    <h2>2. 上場の概要</h2>
+    <figure class="fig"><div class="fig-title">公募・売出しの規模（億円、仮条件の上限で計算）</div><svg viewBox="0 0 420 118" role="img" xmlns="http://www.w3.org/2000/svg"><text x="88.0" y="19.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >公募（新株）</text><rect x="96.0" y="4" width="58.8" height="24" rx="3" fill="#ec4899"/><text x="159.8" y="19.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >8.3億円</text><text x="88.0" y="57.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >売出し（引受）</text><rect x="96.0" y="42" width="264.0" height="24" rx="3" fill="#111827"/><text x="365.0" y="57.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >37.2億円</text><text x="88.0" y="95.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >売出し（OA）</text><rect x="96.0" y="80" width="48.4" height="24" rx="3" fill="#64748b"/><text x="149.4" y="95.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >6.8億円</text></svg><figcaption>出典：新規上場会社概要（東京証券取引所）。株数×仮条件の上限（1,260円）で計算した概算（OA＝オーバーアロットメントによる売出し）で、公開価格は2026年10月26日に決定される予定。上場時の発行済株式総数は19,073,388株で、<b>仮条件の上限で計算した想定時価総額は約240億円</b>。<b>公募は小さく、売出しが大半</b>。</figcaption></figure>
+    <ul>
+      <li><b>市場・時期</b>：グロース市場。上場予定日は2026年11月4日。主幹事は、SMBC日興証券。</li>
+      <li><b>仮条件</b>：1,250円〜1,260円（2026年10月16日決定）。公開価格は、10月26日に決定される予定。</li>
+      <li><b>公募</b>：658,100株（新株の発行）。上場時の発行済株式総数（19,073,388株）の約3.5%。調達資金は、人材の採用・育成、システム投資、運転資金に充てる予定（会社の説明）。</li>
+      <li><b>売出し</b>：2,954,900株（引受人の買取引受による売出し）と、オーバーアロットメントによる売出し541,900株。売出し株主は、代表取締役、KDDI系・SKテレコム系・Naver系のファンド、三井住友銀行など。</li>
+    </ul>
+    <p>仮条件の上限で計算した想定時価総額は、約240億円です（上場時の発行済株式総数で計算）。<b>公募による調達は約8.3億円と小さく、売出しは約37.2億円</b>で、既存株主の売却が中心の上場です。</p>
+
+    <h2>3. 業績：売上は倍増、営業利益は黒字に</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目</th><th>2024年9月期</th><th>2025年9月期</th><th>2026年9月期（10〜6月累計）</th></tr></thead><tbody><tr><td data-label="項目"><b>売上高</b></td><td data-label="2024年9月期">6.84億円</td><td data-label="2025年9月期">13.36億円</td><td data-label="2026年9月期（10〜6月累計）">13.98億円</td></tr><tr><td data-label="項目"><b>営業損益</b></td><td data-label="2024年9月期">−7.19億円</td><td data-label="2025年9月期">−2.06億円</td><td data-label="2026年9月期（10〜6月累計）">2.37億円</td></tr><tr><td data-label="項目"><b>経常損益</b></td><td data-label="2024年9月期">−7.90億円</td><td data-label="2025年9月期">−0.05億円</td><td data-label="2026年9月期（10〜6月累計）">4.82億円</td></tr><tr><td data-label="項目"><b>当期（四半期）純損益</b></td><td data-label="2024年9月期">−7.46億円</td><td data-label="2025年9月期">0.09億円</td><td data-label="2026年9月期（10〜6月累計）">4.05億円</td></tr></tbody></table></div>
+    <p class="art-fig">出典：新規上場申請のための有価証券報告書（Ⅰの部）。2024年9月期と2025年9月期は、監査法人（EY新日本有限責任監査法人）の監査済み。2026年9月期は、第3四半期累計（10〜6月）の数字で、通期ではありません。</p>
+    <figure class="fig"><div class="fig-title">売上高と営業損益（億円）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="170.0" x2="410" y2="170.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="48.7" y="116.4" width="56.0" height="53.6" rx="3" fill="#cbd5e1"/><text x="76.7" y="110.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6.8</text><text x="76.7" y="202.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024年9月期</text><rect x="182.0" y="65.4" width="56.0" height="104.6" rx="3" fill="#cbd5e1"/><text x="210.0" y="59.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >13.4</text><text x="210.0" y="202.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年9月期</text><rect x="315.3" y="24.0" width="56.0" height="146.0" rx="3" fill="none" stroke="#ec4899" stroke-width="1.4" stroke-dasharray="4 3"/><text x="343.3" y="18.0" font-size="10.5" text-anchor="middle" fill="#ec4899" font-weight="700" >18.6（参考）</text><rect x="315.3" y="60.5" width="56.0" height="109.5" rx="3" fill="#ec4899"/><text x="343.3" y="74.5" font-size="11" text-anchor="middle" fill="#fff" font-weight="700" >14.0</text><text x="343.3" y="192.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年9月期</text><text x="343.3" y="205.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >10〜6月累計</text></svg><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="58.7" x2="410" y2="58.7" stroke="#e5e7eb" stroke-width="1.2"/><rect x="48.7" y="58.7" width="56.0" height="111.3" rx="3" fill="#64748b"/><text x="76.7" y="183.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-7.2</text><text x="76.7" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024年9月期</text><text x="76.7" y="234.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" ></text><rect x="182.0" y="58.7" width="56.0" height="31.9" rx="3" fill="#64748b"/><text x="210.0" y="103.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-2.1</text><text x="210.0" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年9月期</text><text x="210.0" y="234.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" ></text><rect x="315.3" y="22.0" width="56.0" height="36.7" rx="3" fill="#ec4899"/><text x="343.3" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+2.4</text><text x="343.3" y="222.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年9月期</text><text x="343.3" y="234.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >10〜6月累計</text></svg><figcaption>出典：新規上場申請のための有価証券報告書（Ⅰの部）。上段が売上高、下段が営業損益（赤字は下向き）。2026年9月期は、第3四半期（2025年10月〜2026年6月）の累計で、通期ではありません。<b>点線の枠は、累計を12÷9倍しただけの単純計算（参考）で、会社の予想でも、筆者の予想でもありません</b>。<b>累計の売上は、2025年9月期の通期の105%</b>に達しています。</figcaption></figure>
+    <ul>
+      <li>2025年9月期は、売上が約13.4億円（前期比+95.2%）。会社は、増加の主な理由を、日本・米国での月額課金契約の増加と、<b>韓国での金融機関・公的機関向けのオンプレミス提供の増加</b>としている。</li>
+      <li>営業損益は、2024年9月期の約7.2億円の赤字から、2025年9月期は約2.1億円の赤字に縮小し、<b>2026年9月期の累計では、約2.4億円の黒字</b>になった。</li>
+      <li>四半期ごとにみると、10〜3月（中間）の売上が約9.3億円、営業利益が約1.9億円。累計との差から、<b>4〜6月は、売上が約4.7億円、営業利益が約0.5億円</b>と計算できる（会社が単独の四半期として開示したものではありません）。</li>
+      <li>研究開発費は、2025年9月期で約3.2億円。</li>
+    </ul>
+
+    <h2>4. 利益の質：為替差益が大きい</h2>
+    <figure class="fig"><div class="fig-title">2026年9月期（10〜6月累計）の利益の流れ（百万円）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.2" y="109.4" width="49.6" height="80.6" rx="3" fill="#111827"/><text x="50.0" y="103.4" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >237</text><text x="50.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業利益</text><line x1="74.8" y1="109.4" x2="105.2" y2="109.4" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="105.2" y="26.0" width="49.6" height="83.4" rx="3" fill="#ec4899"/><text x="130.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+245</text><text x="130.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業外収支等</text><line x1="154.8" y1="26.0" x2="185.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="185.2" y="26.0" width="49.6" height="164.0" rx="3" fill="#111827"/><text x="210.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >482</text><text x="210.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >経常利益</text><line x1="234.8" y1="26.0" x2="265.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="265.2" y="26.0" width="49.6" height="26.2" rx="3" fill="#64748b"/><text x="290.0" y="65.2" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-77</text><text x="290.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >税金等</text><line x1="314.8" y1="52.2" x2="345.2" y2="52.2" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="345.2" y="52.2" width="49.6" height="137.8" rx="3" fill="#111827"/><text x="370.0" y="46.2" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >405</text><text x="370.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >四半期純利益</text></svg><figcaption>出典：新規上場申請のための有価証券報告書（Ⅰの部）。<b>経常利益（約4.8億円）は、営業利益（約2.4億円）の約2倍</b>。差の営業外収支は、会社の説明では、<b>米ドル建て預金の為替差益</b>が主因（中間期の為替差益は約1.5億円、2025年9月期は約0.9億円と開示）。</figcaption></figure>
+    <p>2026年9月期の累計では、営業利益が約2.4億円なのに対し、<b>経常利益は約4.8億円</b>と、約2倍です。差の大半は、営業外の収益です。会社は、<b>米ドル建て預金（2026年6月末で約1,585万米ドル）の為替差益</b>を挙げ、円安のときは営業利益にマイナス、経常利益にプラスに働き、円高のときは逆に働く、と説明しています。為替の動き次第で、経常利益は、大きく変わりうる点に注意が必要です。</p>
+
+    <h2>5. 売上の中身：韓国が伸び、米国は減った</h2>
+    <figure class="fig"><div class="fig-title">売上の内訳（2026年9月期、10〜6月累計、%）</div><svg viewBox="0 0 420 106" role="img" xmlns="http://www.w3.org/2000/svg"><text x="72.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >日本</text><rect x="80.0" y="4" width="229.1" height="22" rx="3" fill="#ec4899"/><text x="314.1" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >55.3%</text><text x="72.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >韓国</text><rect x="80.0" y="38" width="167.7" height="22" rx="3" fill="#111827"/><text x="252.7" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >40.5%</text><text x="72.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >米国</text><rect x="80.0" y="72" width="17.2" height="22" rx="3" fill="#64748b"/><text x="102.2" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >4.1%</text></svg><svg viewBox="0 0 420 72" role="img" xmlns="http://www.w3.org/2000/svg"><text x="72.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >SaaS</text><rect x="80.0" y="4" width="252.5" height="22" rx="3" fill="#ec4899"/><text x="337.5" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >60.9%</text><text x="72.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >オンプレミス</text><rect x="80.0" y="38" width="161.8" height="22" rx="3" fill="#111827"/><text x="246.8" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >39.1%</text></svg><figcaption>出典：新規上場申請のための有価証券報告書（Ⅰの部）。上段が地域別、下段が提供形態別。地域別の売上は、日本約7.7億円、韓国約5.7億円、米国約0.6億円。<b>韓国の伸びが大きく、米国は前年同期より減った</b>（前年同期比79.7%）。</figcaption></figure>
+    <ul>
+      <li><b>日本</b>が最大（約55%）。前年同期比は+43.0%。</li>
+      <li><b>韓国</b>は約41%で、前年同期比+86.5%と、最も大きく伸びた。</li>
+      <li><b>米国</b>は約4%で、前年同期の約8割に減った（前年同期比79.7%）。</li>
+      <li>10%以上の売上がある顧客は、いない（会社の開示）。</li>
+    </ul>
+
+    <h2>6. 営業の指標：社数の伸びは緩やか</h2>
+    <figure class="fig"><div class="fig-title">会社が重視するKPI</div><svg viewBox="0 0 420 170" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.0" x2="410" y2="140.0" stroke="#e5e7eb"/><rect x="26.0" y="43.4" width="120.0" height="96.6" rx="3" fill="#cbd5e1"/><text x="86.0" y="38.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >223</text><rect x="150.0" y="36.4" width="120.0" height="103.6" rx="3" fill="#f9a8d4"/><text x="210.0" y="31.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >239</text><rect x="274.0" y="36.0" width="120.0" height="104.0" rx="3" fill="#ec4899"/><text x="334.0" y="31.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >240</text><text x="210.0" y="160.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >契約社数（社）</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年9月末</text><rect x="128" y="4" width="9" height="9" rx="2" fill="#f9a8d4"/><text x="141.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年3月末</text><rect x="246" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="259.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年6月末</text></svg><svg viewBox="0 0 420 170" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.0" x2="410" y2="140.0" stroke="#e5e7eb"/><rect x="26.0" y="57.4" width="120.0" height="82.6" rx="3" fill="#cbd5e1"/><text x="86.0" y="52.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >5.4</text><rect x="150.0" y="42.1" width="120.0" height="97.9" rx="3" fill="#f9a8d4"/><text x="210.0" y="37.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6.4</text><rect x="274.0" y="36.0" width="120.0" height="104.0" rx="3" fill="#ec4899"/><text x="334.0" y="31.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6.8</text><text x="210.0" y="160.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >ARPA（顧客1社あたり売上、百万円）</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年9月期</text><rect x="128" y="4" width="9" height="9" rx="2" fill="#f9a8d4"/><text x="141.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年9月期 中間</text><rect x="279" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="292.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年9月期 3Q累計</text></svg><figcaption>出典：新規上場申請のための有価証券報告書（Ⅰの部）。ARPAは、顧客当たりの平均売上高（会社の定義）。<b>契約社数は増加が緩やか（223社→240社）で、ARPAの上昇（5.4→6.8百万円）が、売上の伸びを支えている</b>。</figcaption></figure>
+    <p>会社が重視する指標は、売上高、契約社数、ARPA（顧客当たりの平均売上高）、営業利益です。<b>契約社数は、2025年9月末の223社から、2026年6月末の240社へ、緩やかに増えました。</b>一方、ARPAは、5.4百万円から6.8百万円に上がりました。会社は、既存顧客への追加提案（クロスセル・アップセル）の成果としています。</p>
+
+    <h2>7. 財務：現金が中心、借入は少ない</h2>
+    <ul>
+      <li><b>現金及び現金同等物</b>は、2025年9月末で約31.2億円。2026年6月末には、現金及び預金が、約3.8億円増えた。</li>
+      <li><b>総資産</b>は、2026年6月末で約41.5億円、<b>純資産</b>は約34.2億円。2023年12月に、約30.5億円（約2,020万米ドル）を、第三者割当増資で調達している。</li>
+      <li><b>営業キャッシュ・フロー</b>は、2025年9月期でほぼゼロ（約0.02億円のマイナス）。2024年9月期は、約5.6億円のマイナスだった。</li>
+    </ul>
+
+    <h2>8. 会社が挙げる主なリスク</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>リスク（会社の開示）</th><th>会社の整理（発生可能性／影響度）</th><th>内容</th></tr></thead><tbody><tr><td data-label="リスク（会社の開示）"><b>為替変動</b></td><td data-label="会社の整理（発生可能性／影響度）">可能性：中／影響度：中〜大</td><td data-label="内容">売上・経費の多くが外貨建て。米ドル建ての経費が売上を上回るため、円安は営業利益にマイナス、米ドル建て預金（2026年6月末で約1,585万米ドル）の為替差益で経常利益にはプラス。円高では逆に作用する</td></tr><tr><td data-label="リスク（会社の開示）"><b>競合の動向</b></td><td data-label="会社の整理（発生可能性／影響度）">可能性：中／影響度：中〜大</td><td data-label="内容">大手企業から新興企業まで参入が続き、価格低下の圧力や、追加のコストがかかりうる</td></tr><tr><td data-label="リスク（会社の開示）"><b>売上計上時期の期ずれ</b></td><td data-label="会社の整理（発生可能性／影響度）">可能性：中／影響度：中</td><td data-label="内容">オンプレミスの大型案件で、顧客側の事情により、売上の計上時期がずれ、四半期の業績が動きうる</td></tr><tr><td data-label="リスク（会社の開示）"><b>技術革新</b></td><td data-label="会社の整理（発生可能性／影響度）">可能性：低〜中／影響度：大</td><td data-label="内容">AIの技術革新が速く、想定を超える変化に対応できない場合に、事業に影響しうる</td></tr><tr><td data-label="リスク（会社の開示）"><b>AI関連市場</b></td><td data-label="会社の整理（発生可能性／影響度）">可能性：低〜中／影響度：中〜大</td><td data-label="内容">規制、景気、技術の動向で、市場の成長が鈍ると、事業が想定どおりに伸びない可能性</td></tr><tr><td data-label="リスク（会社の開示）"><b>ストック・オプションによる希薄化</b></td><td data-label="会社の整理（発生可能性／影響度）">可能性：高／影響度：低</td><td data-label="内容">行使により、1株あたりの価値が薄まる可能性</td></tr></tbody></table></div>
+    <p class="art-fig">出典：新規上場申請のための有価証券報告書（Ⅰの部）「事業等のリスク」。区分は、会社が自己評価したもの。</p>
+
+    <h2>9. 長期投資家は、何を確認するか</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>現在の数字</th><th>なぜ重要か</th><th>外れた場合</th></tr></thead><tbody><tr><td data-label="確認する項目">① 契約社数とARPA</td><td data-label="現在の数字">契約社数240社、ARPA 6.8百万円</td><td data-label="なぜ重要か">売上の伸びが、社数と単価のどちらに支えられているかを確認</td><td data-label="外れた場合">社数の増加が止まり、単価の上昇にも頼れなくなる</td></tr><tr><td data-label="確認する項目">② 新製品（Alli Coworker）の広がり</td><td data-label="現在の数字">提供開始は2026年4月、有料顧客は累計19社（2026年6月末）</td><td data-label="なぜ重要か">新しい収益の柱になるか</td><td data-label="外れた場合">導入が広がらず、既存製品の成長に依存し続ける</td></tr><tr><td data-label="確認する項目">③ 利益の質</td><td data-label="現在の数字">経常利益は、営業利益の約2倍（米ドル建て預金の為替差益の影響）</td><td data-label="なぜ重要か">営業利益で、黒字が定着するかを確認</td><td data-label="外れた場合">為替が逆に動き、経常段階の利益が縮む</td></tr><tr><td data-label="確認する項目">④ 地域の偏り</td><td data-label="現在の数字">日本55%、韓国41%、米国4%（米国は前年同期より減少）</td><td data-label="なぜ重要か">韓国の金融機関向けオンプレミスが伸びている</td><td data-label="外れた場合">特定の地域・顧客層への依存が高まる</td></tr><tr><td data-label="確認する項目">⑤ 競合と価格</td><td data-label="現在の数字">大手を含む参入が続く（会社が競合を主要リスクに挙げる）</td><td data-label="なぜ重要か">AIエージェント市場の競争で、価格を維持できるか</td><td data-label="外れた場合">価格低下の圧力で、利益率が悪化する</td></tr><tr><td data-label="確認する項目">⑥ 売出し株主の動向</td><td data-label="現在の数字">売出しが公募の約4.5倍（ファンドなどの既存株主）</td><td data-label="なぜ重要か">上場後の株式の需給</td><td data-label="外れた場合">上場後も、売却が続く</td></tr></tbody></table></div>
+    <p class="art-fig">数字は、新規上場申請のための有価証券報告書（Ⅰの部、2026年9月30日提出）より。上場後の決算の日程は、会社のIRで確認してください（決算期は9月）。</p>
+
+    <h2>10. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>売上の伸びの中身を見る。</b>社数の増加は緩やかで、単価の上昇と、韓国のオンプレミスが、売上の伸びを支えている。</li>
+      <li><b>営業利益と経常利益を、分けて見る。</b>経常利益には、為替差益が含まれる。本業の利益（営業利益）が、定着するかを確認する。</li>
+      <li><b>新製品の進捗を、決算ごとに確認する。</b>Alli Coworkerの導入社数が、新しい柱になるかが、成長の焦点。</li>
+      <li><b>株式の需給も確認する。</b>公募が小さく、売出しが大半のため、既存株主の動向が、上場後の需給に影響しうる。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。公開価格や初値の予想、公募・売出しへの申込みの是非についても、述べるものではありません。</div>
+
+    <h2>11. 前提と限界</h2>
+    <ul>
+      <li>数字は、新規上場申請のための有価証券報告書（Ⅰの部）と、新規上場会社概要（東京証券取引所）に基づきます。公開価格は、まだ決まっていません。</li>
+      <li>第3四半期累計の財務諸表は、会社の開示のとおりで、監査を受けたものではありません。4〜6月の損益は、累計の差による計算値です。</li>
+      <li>グラフの点線の枠は、累計を12÷9倍した単純計算（参考）です。予想ではありません。本記事の元になった書類には、会社の通期の業績予想が、記載されていません。</li>
+      <li>営業外収益の内訳（為替差益）は、会社の説明（中間期と2025年9月期の開示、為替変動リスクの記載）に基づくもので、第3四半期累計の内訳は、確認していません。</li>
+      <li>想定時価総額と公募・売出しの規模は、仮条件の上限で計算した概算です。</li>
+      <li>百万円単位の数字を、億円に換算し、小数点以下を丸めています。</li>
+    </ul>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><span class="btn ghost">Coming Soon · App Store</span></div>
+</div>
+    <h2>出典</h2><ul class="src-list"><li>日本取引所グループ（JPX）「新規上場会社情報」（Allganize Holdings株式会社、証券コード656A）：<a href="https://www.jpx.co.jp/listing/stocks/new/index.html" target="_blank" rel="noopener">https://www.jpx.co.jp/listing/stocks/new/index.html</a></li><li>東京証券取引所「新規上場会社概要」（2026年9月30日）：<a href="https://www.jpx.co.jp/listing/stocks/new/t13vrt00000269d4-att/11AllganizeHoldings-Outline.pdf" target="_blank" rel="noopener">https://www.jpx.co.jp/listing/stocks/new/t13vrt00000269d4-att/11AllganizeHoldings-Outline.pdf</a></li><li>Allganize Holdings「新規上場申請のための有価証券報告書（Ⅰの部）」（2026年9月30日提出）：<a href="https://www.jpx.co.jp/listing/stocks/new/t13vrt00000269d4-att/11AllganizeHoldings-1s.pdf" target="_blank" rel="noopener">https://www.jpx.co.jp/listing/stocks/new/t13vrt00000269d4-att/11AllganizeHoldings-1s.pdf</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月17日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="mabgenesis-ipo.html">MabGenesisの新規上場を、長期投資家の目線で読む</a><a href="toggle-holdings-ipo.html">トグルホールディングスの新規上場を、長期投資家の目線で読む</a><a href="spacex-q2-2026.html">SpaceXの上場後初の決算（2026年4〜6月期）を、長期投資家の目線で読む</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
