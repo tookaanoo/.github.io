@@ -847,7 +847,7 @@
   /* Asset cards row */
   .assets-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px;
   }
   .asset-card {
@@ -878,6 +878,7 @@
   .asset-card.cat-jp { --c: #ec4899; }
   .asset-card.cat-global { --c: #2563eb; }
   .asset-card.cat-fund { --c: #38bdf8; }
+  .asset-card.cat-reit { --c: #065f46; }
   .asset-card.cat-metal { --c: #eab308; }
   .asset-card.cat-bond { --c: #334155; }
   .asset-card.cat-fx { --c: #2dd4bf; }
@@ -1717,7 +1718,11 @@
 <meta property="og:title" content="みんなでFIRE - Financial Independence, within REach.">
 <meta property="og:description" content="みんなでFIREは、日本株・海外株・投資信託など複数の資産をひとつの画面で記録し、あなたの実績からFIRE到達年を予測する資産管理アプリです。">
 <meta property="og:url" content="https://fire-app.jp/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://fire-app.jp/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/og-default.jpg">
 <meta name="twitter:title" content="みんなでFIRE - Financial Independence, within REach.">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "legalName": "合同会社柴戸製作所", "email": "support@fire-app.jp"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "inLanguage": "ja"}</script>
@@ -1765,7 +1770,7 @@
         </h1>
         <p class="hero-tagline">Financial Independence, within REach.</p>
         <p class="hero-desc">
-          <b>みんなでFIRE</b> は、日本株・海外株・投資信託など7つの資産カテゴリをひとつの画面で記録し、あなたの実績から FIRE 到達年を予測する資産管理アプリ。まずは、ひとりで始める。
+          <b>みんなでFIRE</b> は、日本株・海外株・投資信託など8つの資産カテゴリをひとつの画面で記録し、あなたの実績から FIRE 到達年を予測する資産管理アプリ。まずは、ひとりで始める。
         </p>
         <div class="store-buttons">
           <div class="store-btn" role="img" aria-label="App Store（Coming Soon）" style="cursor:default">
@@ -1782,7 +1787,7 @@
         </div>
         <div class="hero-stats">
           <div>
-            <div class="stat-num">7</div>
+            <div class="stat-num">8</div>
             <div class="stat-label">資産カテゴリ</div>
           </div>
           <div>
@@ -2040,8 +2045,8 @@
     <div class="props-grid">
       <div class="prop-card">
         <div class="num-tag">01 RECORD</div>
-        <h3>7カテゴリを、1つの画面で。</h3>
-        <p>日本株、海外株、投資信託、金属、債券、為替、仮想通貨。資産形成のすべてを記録できる。日々の成長を、視覚化する手帳のように。</p>
+        <h3>8カテゴリを、1つの画面で。</h3>
+        <p>日本株、海外株、投資信託、J-REIT、金属、債券、為替、仮想通貨。資産形成のすべてを記録できる。日々の成長を、視覚化する手帳のように。</p>
         <div class="big-num">¥14.2M</div>
         <div class="small-label">total assets</div>
       </div>
@@ -2182,7 +2187,7 @@
   <div class="container">
     <div class="assets-head">
       <div>
-        <div class="eyebrow">7 ASSET CLASSES</div>
+        <div class="eyebrow">8 ASSET CLASSES</div>
         <h2>
           日本株から、<br>
           <span style="white-space:nowrap;">ビットコインまで。</span>
@@ -2216,41 +2221,51 @@
 
     <!-- Asset cards row -->
     <div class="assets-grid" style="margin-top:24px">
-      <div class="asset-card cat-jp" style="--w:36%;">
+      <div class="asset-card cat-jp" style="--w:29%;">
         <div class="asset-cat-label">JP STOCKS</div>
         <h3>日本株</h3>
         <div class="asset-share-label">SHARE</div>
-        <div class="asset-share">36<span class="pct-sign">%</span></div>
+        <div class="asset-share">29<span class="pct-sign">%</span></div>
         <div class="asset-footer">
           <span class="asset-count">12 銘柄</span>
           <span class="asset-change up">+2.18%</span>
         </div>
       </div>
-      <div class="asset-card cat-global" style="--w:24%;">
+      <div class="asset-card cat-global" style="--w:21%;">
         <div class="asset-cat-label">US / GLOBAL</div>
         <h3>海外株</h3>
         <div class="asset-share-label">SHARE</div>
-        <div class="asset-share">24<span class="pct-sign">%</span></div>
+        <div class="asset-share">21<span class="pct-sign">%</span></div>
         <div class="asset-footer">
           <span class="asset-count">8 銘柄</span>
           <span class="asset-change down">-0.34%</span>
         </div>
       </div>
-      <div class="asset-card cat-fund" style="--w:18%;">
+      <div class="asset-card cat-fund" style="--w:17%;">
         <div class="asset-cat-label">FUNDS &amp; ETF</div>
         <h3>投資信託・ETF</h3>
         <div class="asset-share-label">SHARE</div>
-        <div class="asset-share">18<span class="pct-sign">%</span></div>
+        <div class="asset-share">17<span class="pct-sign">%</span></div>
         <div class="asset-footer">
           <span class="asset-count">6 銘柄</span>
           <span class="asset-change up">+1.12%</span>
         </div>
       </div>
-      <div class="asset-card cat-metal" style="--w:8%;">
+      <div class="asset-card cat-reit" style="--w:10%;">
+        <div class="asset-cat-label">J-REIT</div>
+        <h3>J-REIT</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">10<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">4 銘柄</span>
+          <span class="asset-change up">+0.58%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-metal" style="--w:9%;">
         <div class="asset-cat-label">PRECIOUS METAL</div>
         <h3>金・銀・PT</h3>
         <div class="asset-share-label">SHARE</div>
-        <div class="asset-share">8<span class="pct-sign">%</span></div>
+        <div class="asset-share">9<span class="pct-sign">%</span></div>
         <div class="asset-footer">
           <span class="asset-count">3 銘柄</span>
           <span class="asset-change up">+0.45%</span>
@@ -2266,24 +2281,24 @@
           <span class="asset-change up">+0.22%</span>
         </div>
       </div>
-      <div class="asset-card cat-fx" style="--w:4%;">
-        <div class="asset-cat-label">FX</div>
-        <h3>為替</h3>
-        <div class="asset-share-label">SHARE</div>
-        <div class="asset-share">4<span class="pct-sign">%</span></div>
-        <div class="asset-footer">
-          <span class="asset-count">2 銘柄</span>
-          <span class="asset-change down">-0.18%</span>
-        </div>
-      </div>
-      <div class="asset-card cat-crypto" style="--w:3%;">
+      <div class="asset-card cat-crypto" style="--w:5%;">
         <div class="asset-cat-label">CRYPTO</div>
         <h3>仮想通貨</h3>
         <div class="asset-share-label">SHARE</div>
-        <div class="asset-share">3<span class="pct-sign">%</span></div>
+        <div class="asset-share">5<span class="pct-sign">%</span></div>
         <div class="asset-footer">
           <span class="asset-count">3 銘柄</span>
           <span class="asset-change up">+1.84%</span>
+        </div>
+      </div>
+      <div class="asset-card cat-fx" style="--w:2%;">
+        <div class="asset-cat-label">FX</div>
+        <h3>為替</h3>
+        <div class="asset-share-label">SHARE</div>
+        <div class="asset-share">2<span class="pct-sign">%</span></div>
+        <div class="asset-footer">
+          <span class="asset-count">2 銘柄</span>
+          <span class="asset-change down">-0.18%</span>
         </div>
       </div>
     </div>
