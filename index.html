@@ -1709,6 +1709,24 @@
     .anystage p { font-size: 16px; }
     .cta p { font-size: 15px; }
   }
+/* wl:css */
+.wl{margin-top:22px;max-width:460px;font-family:inherit}
+.wl p.wl-lead{font-size:14px;font-weight:700;margin:0 0 10px;color:#374151;opacity:1}
+.wl-row{display:flex;gap:8px}
+.wl-row input[type=email]{flex:1;min-width:0;font:inherit;font-size:15px;padding:12px 14px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;color:#111827;outline:none}
+.wl-row input[type=email]:focus{border-color:#ec4899;box-shadow:0 0 0 3px rgba(236,72,153,.15)}
+.wl-row button{font:inherit;font-size:14px;font-weight:700;padding:12px 18px;border-radius:10px;border:0;background:#111827;color:#fff;cursor:pointer;white-space:nowrap}
+.wl-row button:disabled{opacity:.6;cursor:default}
+.wl p.wl-note{font-size:11.5px;line-height:1.7;margin:10px 0 0;color:#6b7280;opacity:1}
+.wl p.wl-note a{text-decoration:underline;color:inherit}
+.wl-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.wl p.wl-msg{font-size:14px;font-weight:700;margin:12px 0 0;color:#111827;opacity:1}
+.wl-dark{margin-left:auto;margin-right:auto;text-align:center}
+.wl-dark p.wl-lead,.wl-dark p.wl-note,.wl-dark p.wl-msg{color:#fff;text-align:center}
+.wl-dark p.wl-note{opacity:.92}
+.wl-dark .wl-row input[type=email]{border-color:transparent}
+@media (max-width:520px){.wl-row{flex-direction:column}.wl-row button{width:100%}}
+/* /wl:css */
 </style>
 <!-- seo:start -->
 <link rel="canonical" href="https://fire-app.jp/">
@@ -1786,6 +1804,19 @@
             </div>
           </div>
         </div>
+<div class="wl wl-light" id="waitlist-hero">
+  <p class="wl-lead">アプリの公開時に、メールでお知らせします</p>
+  <form class="wl-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSdUo-2jKClfk5Gf1TN6qbXkemts1MQsm4wD0p_Z0uUpusSyow/formResponse">
+    <div class="wl-row">
+      <input type="email" name="entry.556850631" required placeholder="メールアドレス" aria-label="メールアドレス" autocomplete="email">
+      <button type="submit">お知らせを受け取る</button>
+    </div>
+    <input type="hidden" name="entry.1789755566" value="公開などのお知らせを、メールで受け取ることに同意します">
+    <p class="wl-note">※ ボタンを押すと、アプリの公開などのお知らせを、メールで受け取ることに同意したものとします（<a href="privacy.html">プライバシーポリシー</a>）。</p>
+    <input class="wl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  </form>
+  <p class="wl-msg" role="status" hidden>ご登録ありがとうございます。アプリの公開時に、メールでお知らせします。</p>
+</div>
         <div class="hero-stats">
           <div>
             <div class="stat-num">8</div>
@@ -2543,6 +2574,19 @@
         </div>
       </div>
     </div>
+<div class="wl wl-dark" id="waitlist">
+  <p class="wl-lead">アプリの公開時に、メールでお知らせします</p>
+  <form class="wl-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSdUo-2jKClfk5Gf1TN6qbXkemts1MQsm4wD0p_Z0uUpusSyow/formResponse">
+    <div class="wl-row">
+      <input type="email" name="entry.556850631" required placeholder="メールアドレス" aria-label="メールアドレス" autocomplete="email">
+      <button type="submit">お知らせを受け取る</button>
+    </div>
+    <input type="hidden" name="entry.1789755566" value="公開などのお知らせを、メールで受け取ることに同意します">
+    <p class="wl-note">※ ボタンを押すと、アプリの公開などのお知らせを、メールで受け取ることに同意したものとします（<a href="privacy.html">プライバシーポリシー</a>）。</p>
+    <input class="wl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  </form>
+  <p class="wl-msg" role="status" hidden>ご登録ありがとうございます。アプリの公開時に、メールでお知らせします。</p>
+</div>
   </div>
 </section>
 
@@ -2862,5 +2906,25 @@
   }, '.glass-card');
 })();
 </script>
+<!-- wl:js -->
+<script>
+(function(){
+  var forms=document.querySelectorAll('.wl-form');
+  for(var i=0;i<forms.length;i++){(function(f,i){
+    var fr=document.createElement('iframe');fr.name='wl_frame_'+i;fr.hidden=true;fr.setAttribute('aria-hidden','true');fr.tabIndex=-1;
+    f.parentNode.appendChild(fr);f.target=fr.name;
+    var sent=false,btn=f.querySelector('button');
+    f.addEventListener('submit',function(e){
+      var hp=f.querySelector('.wl-hp'); if(hp&&hp.value){e.preventDefault();return;}
+      sent=true;btn.disabled=true;
+    });
+    fr.addEventListener('load',function(){
+      if(!sent)return; sent=false;
+      var m=f.parentNode.querySelector('.wl-msg'); f.hidden=true; var l=f.parentNode.querySelector('.wl-lead'); if(l)l.hidden=true; var n=f.parentNode.querySelector('.wl-note'); if(n)n.hidden=true; m.hidden=false;
+    });
+  })(forms[i],i);}
+})();
+</script>
+<!-- /wl:js -->
 </body>
 </html>
