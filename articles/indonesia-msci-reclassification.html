@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MSCIが2026年10月15日に発表した、インドネシアを新興国からスタンドアロン市場へ移す案について、経緯・理由・日程・確認ポイントを整理。">
+<title>MSCIのインドネシア再分類案を、長期投資家の目線で読む - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/indonesia-msci-reclassification.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="MSCIのインドネシア再分類案を、長期投資家の目線で読む">
+<meta property="og:description" content="MSCIが2026年10月15日に発表した、インドネシアを新興国からスタンドアロン市場へ移す案について、経緯・理由・日程・確認ポイントを整理。">
+<meta property="og:url" content="https://fire-app.jp/articles/indonesia-msci-reclassification.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/indonesia-msci-reclassification.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/indonesia-msci-reclassification.jpg">
+<meta name="twitter:title" content="MSCIのインドネシア再分類案を、長期投資家の目線で読む">
+<meta name="twitter:description" content="MSCIが2026年10月15日に発表した、インドネシアを新興国からスタンドアロン市場へ移す案について、経緯・理由・日程・確認ポイントを整理。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "MSCIのインドネシア再分類案を、長期投資家の目線で読む", "description": "MSCIが2026年10月15日に発表した、インドネシアを新興国からスタンドアロン市場へ移す案について、経緯・理由・日程・確認ポイントを整理。", "inLanguage": "ja", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/indonesia-msci-reclassification.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "指標解説", "keywords": ["新興国", "リスク・暴落"], "image": ["https://fire-app.jp/articles/og/indonesia-msci-reclassification.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "MSCIのインドネシア再分類案を、長期投資家の目線で読む", "item": "https://fire-app.jp/articles/indonesia-msci-reclassification.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 指標解説</div>
+    <h1>MSCIのインドネシア再分類案を、<br>長期投資家の目線で読む</h1>
+    <p class="subtitle">「提案」と「決定」を分けて、日程で追う</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月20日</span><span><b>情報の時点</b> 2026年10月15日発表（MSCI）／株価は10月20日終値</span></div>
+    <div class="art-tags"><a href="index.html?tag=新興国">#新興国</a><a href="index.html?tag=リスク・暴落">#リスク・暴落</a></div>
+    <div class="art-note"><b>この記事について</b>　特定の売買を勧めるものではなく、公表された資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は公表機関の資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>MSCIは<b>2026年10月15日</b>、インドネシアを「新興国」から「<b>スタンドアロン市場</b>」へ移す案の<b>意見募集</b>を始めた。意見募集は<b>2027年4月30日</b>まで、<b>最終決定は2027年6月30日まで</b>に公表する。</li>
+      <li>理由は、<b>株主構成の不透明さ</b>と、<b>協調取引の疑い</b>、実効的な取り締まりの証拠が乏しいこと。当局は改革を発表済みだが、MSCIは「十分な進展が一貫して確認できていない」という市場参加者の声を挙げている。</li>
+      <li><b>「提案」であって、「決定」ではない。</b>ジャカルタ総合指数は、発表後の最初の取引日（10月16日）に約11.6%下落した。長期では、<b>決定までの日程</b>と、<b>自分の投信・ETFのベンチマーク</b>を確認する。</li>
+    </ul></div>
+
+    <h2>1. 何が提案されたのか</h2>
+    <p>MSCIは、世界の株式市場を「先進国」「新興国」「フロンティア」などの区分に分けて、それぞれの指数を作っています。2026年10月15日（米国時間）、MSCIは、<b>MSCIインドネシア指数を、新興国から「スタンドアロン市場」へ再分類する案</b>について、意見募集を始めたと発表しました。</p>
+    <ul>
+      <li>日本では「格下げ」と呼ばれることが多いですが、MSCIの用語は<b>「再分類（reclassification）」</b>です。国債の格付けのような、国の信用力の評価とは別の話で、<b>MSCIの指数の中での、市場の区分</b>の話です。</li>
+      <li>提案が実施されると、MSCIの資料によれば、<b>関連する世界・地域の合成指数に反映される</b>ことになります。</li>
+      <li>MSCIは、フロンティア市場への再分類では「問題の深さを適切に認識できない」という市場参加者の意見がある、として、フロンティアではなくスタンドアロンを提案しています。</li>
+    </ul>
+
+    <h2>2. ここまでの経緯</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>時期</th><th>出来事</th></tr></thead><tbody><tr><td data-label="時期">2026年1月</td><td data-label="出来事">MSCIが、インドネシア株の一部の指数変更（比率や株数の引き上げ、構成銘柄への追加など）を止める「凍結」を始める</td></tr><tr><td data-label="時期">2026年6月</td><td data-label="出来事">年次の市場分類の見直しで、株主構成の不透明さや、協調取引の疑いなどの懸念を報告。「11月の指数見直しまでに十分な進展がなければ、再分類の意見募集を検討する」と表明</td></tr><tr><td data-label="時期">2026年10月15日（米国時間）</td><td data-label="出来事">再分類案の意見募集を開始（プレスリリース）</td></tr><tr><td data-label="時期">2026年10月16日</td><td data-label="出来事">発表後の最初の取引日。ジャカルタ総合指数が前日比で約11.6%下落（株価データ）</td></tr></tbody></table></div>
+    <p class="art-fig">出典：MSCIプレスリリース（2026年10月15日）、MSCI「Consultation on a Market Reclassification Proposal for Indonesia」、株価データ。</p>
+
+    <h2>3. MSCIが挙げている理由</h2>
+    <p>MSCIが、プレスリリースと意見募集の文書で挙げている懸念は、次のとおりです。</p>
+    <ul>
+      <li><b>株主構成の不透明さ。</b>誰がどれだけ株式を持っているかが、分かりにくい状態が続いている。</li>
+      <li><b>協調取引の疑い。</b>複数の主体が連携して株価を動かしているのではないか、という疑いが続いている。</li>
+      <li><b>取り締まりの実効性。</b>「意味のある取り締まりが行われた証拠が乏しい」としている。</li>
+      <li>6月の市場アクセスの評価では、<b>「情報の流れ」が悪化</b>と評価され、詳細な市場情報が常に英語で開示されるわけではない、とも書かれている。</li>
+    </ul>
+    <p>一方、インドネシア当局は、次の改革を発表しています。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目</th><th>内容</th></tr></thead><tbody><tr><td data-label="項目">1%超の株主の開示</td><td data-label="内容">所有割合が1%を超える株主の開示を強化</td></tr><tr><td data-label="項目">投資家区分の開示</td><td data-label="内容">投資家の区分を、より細かく開示</td></tr><tr><td data-label="項目">HSC報告</td><td data-label="内容">保有が特定の株主に集中している銘柄（High Shareholding Concentration）の報告制度</td></tr><tr><td data-label="項目">最低浮動株比率</td><td data-label="内容">最低15%の浮動株を求める方向への工程表（ロードマップ）</td></tr></tbody></table></div>
+    <p>MSCIによると、機関投資家は、これらの改革について「<b>一貫した実施</b>」と「<b>市場全体への実質的な効果の証拠</b>」が必要だと強調しており、現時点では十分な進展が一貫して確認できていないとのことです。</p>
+    <p class="art-fig">出典：MSCIプレスリリース、MSCI意見募集の文書。内容は要約・言い換えです。</p>
+
+    <h2>4. 「凍結」とは何か</h2>
+    <p>MSCIは2026年1月から、インドネシア証券について、指数見直しや企業行動に伴う一部の変更を<b>凍結</b>しています。今回の発表でも、この凍結は<b>「追って通知するまで」継続</b>とされました。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>MSCIが行わないこと（凍結）</th><th>MSCIが続けること</th></tr></thead><tbody><tr><td data-label="MSCIが行わないこと（凍結）">FIF（指数に反映する株式の比率）やNOS（指数に使う株数）の引き上げ</td><td data-label="MSCIが続けること">HSCの枠組みで当局が特定した銘柄の、指数からの除外</td></tr><tr><td data-label="MSCIが行わないこと（凍結）">MSCIインドネシアIMI（投資可能な市場全体の指数）への銘柄の追加</td><td data-label="MSCIが続けること">1%超の株主の開示データを使った、浮動株の推定の調整</td></tr><tr><td data-label="MSCIが行わないこと（凍結）">規模別の指数の間での、上位への入れ替え</td><td data-label="MSCIが続けること"></td></tr></tbody></table></div>
+    <p class="art-fig">出典：MSCIプレスリリース。FIFは Foreign Inclusion Factor、NOSは Number of Shares の略。</p>
+
+    <h2>5. 意見募集で問われていること</h2>
+    <p>MSCIは、市場参加者に、次のような点について意見を求めています（意見募集の文書より、要約）。</p>
+    <ul>
+      <li>再分類案に賛成か。賛成なら、実施の時期と、段階を分けるか。反対なら、フロンティア市場への再分類が適切か。</li>
+      <li>発表された改革は、<b>指数の構成銘柄や大型株だけでなく、市場全体で</b>一貫して実施されているか。</li>
+      <li>協調取引に対する、<b>実効的な取り締まり</b>を見たか。</li>
+      <li>凍結が解除された後、<b>協調取引が戻る懸念</b>があるか。あるなら、どんな証拠でその懸念が和らぐか。</li>
+    </ul>
+    <p>MSCIは、「<b>意見募集で、市場の統治と機能の実質的な改善を示す明確な証拠が見つからない限り、提案どおり進める</b>ことを見込む」としています。つまり、状況次第では、見直される余地も残されています。</p>
+    <p class="art-fig">出典：MSCIプレスリリース、MSCI意見募集の文書。なお、MSCI指数の時価総額や構成比などのデータは、MSCIの著作物で再掲載に制限があるため、本記事には載せていません。意見募集の文書の付録で確認できます。</p>
+
+    <h2>6. 市場の反応</h2>
+    <figure class="fig"><div class="fig-title">ジャカルタ総合指数（2025年末＝100、日次終値）</div><svg viewBox="0 0 420 200" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="166.6" x2="368" y2="166.6" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="170.1" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >60</text><line x1="8" y1="99.7" x2="368" y2="99.7" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="103.2" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >80</text><line x1="8" y1="32.9" x2="368" y2="32.9" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="36.4" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >100</text><defs><linearGradient id="g90965" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,174.0 8.0,32.9 9.9,28.9 11.8,24.7 13.7,21.8 15.6,21.3 17.5,22.1 19.4,21.7 21.3,23.7 23.2,21.2 25.1,17.9 26.9,16.3 28.8,14.0 30.7,14.0 32.6,18.8 34.5,19.5 36.4,21.1 38.3,20.2 40.2,20.0 42.1,45.5 44.0,48.9 45.9,45.1 47.8,60.9 49.7,53.1 51.6,52.2 53.5,53.9 55.4,60.4 57.3,56.6 59.2,52.8 61.1,46.6 62.9,47.6 64.8,49.7 66.7,45.9 68.6,47.3 70.5,47.4 72.4,42.6 74.3,47.0 76.2,45.4 78.1,48.8 80.0,48.8 81.9,57.2 83.8,60.2 85.7,74.2 87.6,69.1 89.5,73.9 91.4,83.5 93.3,79.5 95.2,81.5 97.1,82.5 98.9,91.2 100.8,95.7 102.7,92.4 104.6,84.9 106.5,90.2 108.4,92.8 110.3,93.0 112.2,94.7 114.1,89.4 116.0,95.5 117.9,96.9 119.8,97.7 121.7,85.7 123.6,84.6 125.5,78.8 127.4,77.2 129.3,70.4 131.2,72.4 133.1,72.5 134.9,72.0 136.8,73.6 138.7,74.9 140.6,75.6 142.5,81.9 144.4,91.5 146.3,92.4 148.2,93.7 150.1,92.6 152.0,98.2 153.9,97.6 155.8,94.3 157.7,93.0 159.6,89.8 161.5,97.7 163.4,100.2 165.3,102.0 167.2,107.2 169.1,112.0 170.9,120.9 172.8,122.9 174.7,131.5 176.6,128.9 178.5,127.2 180.4,130.2 182.3,130.3 184.2,127.6 186.1,137.5 188.0,141.4 189.9,150.9 191.8,160.6 193.7,145.0 195.6,139.0 197.5,139.6 199.4,134.9 201.3,125.3 203.2,126.7 205.1,128.5 206.9,128.4 208.8,130.7 210.7,131.3 212.6,139.7 214.5,135.2 216.4,139.2 218.3,142.1 220.2,149.0 222.1,147.0 224.0,145.1 225.9,140.0 227.8,138.4 229.7,135.7 231.6,140.1 233.5,138.6 235.4,138.1 237.3,133.7 239.2,133.7 241.1,133.6 242.9,131.0 244.8,128.4 246.7,126.2 248.6,122.1 250.5,122.3 252.4,123.0 254.3,127.6 256.2,128.0 258.1,130.2 260.0,131.7 261.9,128.0 263.8,126.1 265.7,126.1 267.6,122.8 269.5,121.6 271.4,121.9 273.3,119.4 275.2,121.1 277.1,124.8 278.9,120.7 280.8,123.5 282.7,119.7 284.6,117.8 286.5,120.0 288.4,115.8 290.3,114.9 292.2,115.8 294.1,119.5 296.0,115.0 297.9,115.2 299.8,114.9 301.7,112.0 303.6,112.2 305.5,109.4 307.4,110.6 309.3,111.2 311.2,108.7 313.1,109.0 314.9,112.4 316.8,114.3 318.7,114.5 320.6,117.4 322.5,118.3 324.4,117.3 326.3,118.1 328.2,120.3 330.1,124.5 332.0,120.7 333.9,123.7 335.8,125.9 337.7,129.5 339.6,130.5 341.5,132.5 343.4,134.8 345.3,133.8 347.2,130.6 349.1,127.7 350.9,129.5 352.8,134.0 354.7,131.6 356.6,137.7 358.5,138.1 360.4,137.4 362.3,140.5 364.2,166.7 366.1,174.0 368.0,163.1 368.0,174.0" fill="url(#g90965)"/><polyline points="8.0,32.9 9.9,28.9 11.8,24.7 13.7,21.8 15.6,21.3 17.5,22.1 19.4,21.7 21.3,23.7 23.2,21.2 25.1,17.9 26.9,16.3 28.8,14.0 30.7,14.0 32.6,18.8 34.5,19.5 36.4,21.1 38.3,20.2 40.2,20.0 42.1,45.5 44.0,48.9 45.9,45.1 47.8,60.9 49.7,53.1 51.6,52.2 53.5,53.9 55.4,60.4 57.3,56.6 59.2,52.8 61.1,46.6 62.9,47.6 64.8,49.7 66.7,45.9 68.6,47.3 70.5,47.4 72.4,42.6 74.3,47.0 76.2,45.4 78.1,48.8 80.0,48.8 81.9,57.2 83.8,60.2 85.7,74.2 87.6,69.1 89.5,73.9 91.4,83.5 93.3,79.5 95.2,81.5 97.1,82.5 98.9,91.2 100.8,95.7 102.7,92.4 104.6,84.9 106.5,90.2 108.4,92.8 110.3,93.0 112.2,94.7 114.1,89.4 116.0,95.5 117.9,96.9 119.8,97.7 121.7,85.7 123.6,84.6 125.5,78.8 127.4,77.2 129.3,70.4 131.2,72.4 133.1,72.5 134.9,72.0 136.8,73.6 138.7,74.9 140.6,75.6 142.5,81.9 144.4,91.5 146.3,92.4 148.2,93.7 150.1,92.6 152.0,98.2 153.9,97.6 155.8,94.3 157.7,93.0 159.6,89.8 161.5,97.7 163.4,100.2 165.3,102.0 167.2,107.2 169.1,112.0 170.9,120.9 172.8,122.9 174.7,131.5 176.6,128.9 178.5,127.2 180.4,130.2 182.3,130.3 184.2,127.6 186.1,137.5 188.0,141.4 189.9,150.9 191.8,160.6 193.7,145.0 195.6,139.0 197.5,139.6 199.4,134.9 201.3,125.3 203.2,126.7 205.1,128.5 206.9,128.4 208.8,130.7 210.7,131.3 212.6,139.7 214.5,135.2 216.4,139.2 218.3,142.1 220.2,149.0 222.1,147.0 224.0,145.1 225.9,140.0 227.8,138.4 229.7,135.7 231.6,140.1 233.5,138.6 235.4,138.1 237.3,133.7 239.2,133.7 241.1,133.6 242.9,131.0 244.8,128.4 246.7,126.2 248.6,122.1 250.5,122.3 252.4,123.0 254.3,127.6 256.2,128.0 258.1,130.2 260.0,131.7 261.9,128.0 263.8,126.1 265.7,126.1 267.6,122.8 269.5,121.6 271.4,121.9 273.3,119.4 275.2,121.1 277.1,124.8 278.9,120.7 280.8,123.5 282.7,119.7 284.6,117.8 286.5,120.0 288.4,115.8 290.3,114.9 292.2,115.8 294.1,119.5 296.0,115.0 297.9,115.2 299.8,114.9 301.7,112.0 303.6,112.2 305.5,109.4 307.4,110.6 309.3,111.2 311.2,108.7 313.1,109.0 314.9,112.4 316.8,114.3 318.7,114.5 320.6,117.4 322.5,118.3 324.4,117.3 326.3,118.1 328.2,120.3 330.1,124.5 332.0,120.7 333.9,123.7 335.8,125.9 337.7,129.5 339.6,130.5 341.5,132.5 343.4,134.8 345.3,133.8 347.2,130.6 349.1,127.7 350.9,129.5 352.8,134.0 354.7,131.6 356.6,137.7 358.5,138.1 360.4,137.4 362.3,140.5 364.2,166.7 366.1,174.0 368.0,163.1" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><line x1="8" y1="32.9" x2="368" y2="32.9" stroke="#111827" stroke-width="1" stroke-dasharray="4 4"/><text x="10.0" y="27.9" font-size="10" text-anchor="start" fill="#111827" font-weight="700" ></text><circle cx="368.0" cy="163.1" r="3.4" fill="#111827"/><text x="8.0" y="192.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2025/12/30</text><text x="368.0" y="192.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10/20</text></svg><figcaption>出典：株価データ（ジャカルタ総合指数、日次終値、ルピア建て）。MSCIインドネシア指数ではない点に注意。2025年末（2025/12/30）の8,646.94に対し、2026/10/20は5,278.89（-39.0%）。MSCIの発表後の最初の取引日（10月16日）の終値は5,185.10で、前日比-11.6%。</figcaption></figure>
+    <ul>
+      <li>MSCIの発表（米国時間10月15日）の後、<b>最初の取引日となった10月16日</b>に、ジャカルタ総合指数は5,864から5,185へ、<b>-11.6%</b>下落しました。</li>
+      <li>10月19日は4,997、10月20日は5,279でした。<b>2025年末と比べると、-39.0%</b>の水準です。</li>
+      <li>ただし、この値動きの<b>理由が、すべてMSCIの発表によるとは言い切れません</b>。年初からの下落には、凍結が始まった1月以降の動きも含まれます。</li>
+    </ul>
+
+    <h2>7. 今後の日程</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>日付</th><th>イベント</th><th>見る点</th></tr></thead><tbody><tr><td data-label="日付">2026年11月</td><td data-label="イベント">MSCIの指数見直し（6月に、進展の確認時点として挙げた時期）</td><td data-label="見る点">凍結の扱いや、再分類に関する追加の発表があるか</td></tr><tr><td data-label="日付">2027年4月30日</td><td data-label="イベント">意見募集の期限</td><td data-label="見る点">期限までに、MSCIが途中経過（中間報告）を出すか（時期は未定）</td></tr><tr><td data-label="日付">2027年6月30日まで</td><td data-label="イベント">MSCIが最終決定を公表</td><td data-label="見る点">提案どおりスタンドアロンになるか、見直されるか</td></tr><tr><td data-label="日付">凍結の解除まで（時期未定）</td><td data-label="イベント">凍結は「追って通知するまで」継続</td><td data-label="見る点">解除の時期と、解除後の扱い</td></tr></tbody></table></div>
+    <p class="art-fig">出典：MSCIプレスリリース。日程は変更されることがあります。</p>
+
+    <h2>8. 日本の個人投資家にとっては</h2>
+    <ul>
+      <li><b>インドネシアに直接投資していなくても、関係しうる。</b>MSCIの新興国指数などに連動する投資信託やETFを持っている場合、指数の構成が変われば、ファンドの組入れも変わりうる。</li>
+      <li>ただし、<b>提案が決定するまでは、指数は変わらない</b>。MSCIも、提案は「指数の変更になる場合も、ならない場合もある」と注記している。</li>
+      <li>自分のファンドが、どの指数を目標にしているか（<b>ベンチマーク</b>）は、目論見書や運用会社の月次レポートで確認できる。インドネシアの組入比率も、同じ資料に載っていることが多い。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄やファンドの売買を勧めるものではありません。MSCIの最終決定や、インドネシア株の値動きを予想するものでもありません。</div>
+
+    <h2>9. 長期投資家は、何を確認するか</h2>
+    <p>確認する項目と、その数字が出る時期をまとめました。右端の「確認する時期」は、情報が出る場所の目安です。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>現在の状況</th><th>なぜ重要か</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目">① 決定の内容と時期</td><td data-label="現在の状況">意見募集は2027年4月30日まで、最終決定は同年6月30日まで</td><td data-label="なぜ重要か">指数の分類が実際に変わるのは、決定後。MSCIも「変更になるとは限らない」と注記</td><td data-label="確認する時期">2027年4月30日、6月30日まで</td></tr><tr><td data-label="確認する項目">② 凍結の継続・解除</td><td data-label="現在の状況">「追って通知するまで」凍結を継続</td><td data-label="なぜ重要か">比率や株数の引き上げ、銘柄の追加が止まっている状態が続く</td><td data-label="確認する時期">MSCIの発表（随時）</td></tr><tr><td data-label="確認する項目">③ インドネシア当局の改革の実施</td><td data-label="現在の状況">1%超の開示、HSC報告、浮動株15%への工程表を発表済み</td><td data-label="なぜ重要か">MSCIは「一貫した実施」と「取り締まりの実効性」の証拠を求めている</td><td data-label="確認する時期">当局・取引所の発表（随時）</td></tr><tr><td data-label="確認する項目">④ 自分の投信・ETFのベンチマーク</td><td data-label="現在の状況">（ファンドごとに異なる）</td><td data-label="なぜ重要か">指数に連動するファンドは、指数の構成変更の影響を受けうる</td><td data-label="確認する時期">目論見書、運用会社の月次レポート</td></tr></tbody></table></div>
+    <p class="art-fig">出典：MSCIプレスリリース、MSCI意見募集の文書。日程と開示される項目は、MSCIの公式サイトで確認してください。</p>
+
+    <div class="art-fine">
+      <p>※ 本文のMSCIに関する内容は、MSCIのプレスリリース（2026年10月15日）と、意見募集の文書（2026年10月）に基づく要約・言い換えです。原文は英語で、末尾の出典から確認できます。</p>
+      <p>※ ジャカルタ総合指数は、現地の株価指数（ルピア建て）で、MSCIインドネシア指数とは別のものです。日次終値の2026/10/20時点です。</p>
+      <p>※ 「スタンドアロン市場」の定義や、再分類が実施された場合の具体的な扱いは、MSCIの方法論と、最終決定の内容によります。この記事では、MSCIが書いている範囲にとどめています。</p>
+      <p>※ 指数の時価総額や構成比など、MSCI指数のデータは、MSCIの利用条件のため、本記事には掲載していません。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>MSCI「MSCI Launches a Consultation on a Proposal to Reclassify Indonesia from Emerging Market to Standalone Market Status」（プレスリリース、2026年10月15日）：<a href="https://www.msci.com/downloads/documents/press-releases/media-room/Indonesia_PR_Oct_26.pdf" target="_blank" rel="noopener">https://www.msci.com/downloads/documents/press-releases/media-room/Indonesia_PR_Oct_26.pdf</a></li><li>MSCI「Consultation on a Market Reclassification Proposal for Indonesia」（2026年10月）：<a href="https://www.msci.com/downloads/documents/indexes/consultations/equity/Indonesia_Consultation_Oct_26.pdf" target="_blank" rel="noopener">https://www.msci.com/downloads/documents/indexes/consultations/equity/Indonesia_Consultation_Oct_26.pdf</a></li><li>MSCI「Index consultations」：<a href="https://www.msci.com/indexes/index-resources/index-consultations" target="_blank" rel="noopener">https://www.msci.com/indexes/index-resources/index-consultations</a></li><li>株価データ（ジャカルタ総合指数の日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月20日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="market-crashes-history.html">過去の暴落を、長期投資家の目線で読む</a><a href="india.html">インドを、長期投資家の目線で読む</a><a href="us-jobs-report-2026-09.html">米雇用統計（2026年9月分）を、長期投資家の目線で読む</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
