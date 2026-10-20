@@ -352,6 +352,7 @@
     .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
     .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
     .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
     .art-table.ms td:not(:first-child) { padding-left: 0; }
     .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
     .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
@@ -482,7 +483,7 @@
     <p>例えば、PERが20倍、ROEが10%（0.1）なら、PBRは、20 × 0.1 ＝ 2.0倍です。つまり、<b>PBRが高いのは、収益性（ROE）が高いか、成長への期待（PER）が大きいから</b>です。</p>
 
     <h2>4. 見るときの注意</h2>
-    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>見方</th><th>意味</th><th>注意点</th></tr></thead><tbody><tr><td data-label="見方">PBRが1倍を超える</td><td data-label="意味">株価が、帳簿上の純資産より高い。利益を生む力（収益性や成長）が評価されている場合が多い</td><td data-label="注意点">期待が外れると、株価が下がることがある</td></tr><tr><td data-label="見方">PBRが1倍を下回る</td><td data-label="意味">株価が、帳簿上の純資産より低い</td><td data-label="注意点">「割安」とは限らない。収益性が低い、資産の中身に不安がある、などの理由もある</td></tr></tbody></table></div>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>見方</th><th>意味</th><th>注意点</th></tr></thead><tbody><tr><td data-label="見方"><span class="tv">PBRが1倍を超える</span></td><td data-label="意味"><span class="tv">株価が、帳簿上の純資産より高い。利益を生む力（収益性や成長）が評価されている場合が多い</span></td><td data-label="注意点"><span class="tv">期待が外れると、株価が下がることがある</span></td></tr><tr><td data-label="見方"><span class="tv">PBRが1倍を下回る</span></td><td data-label="意味"><span class="tv">株価が、帳簿上の純資産より低い</span></td><td data-label="注意点"><span class="tv">「割安」とは限らない。収益性が低い、資産の中身に不安がある、などの理由もある</span></td></tr></tbody></table></div>
     <ul>
       <li><b>業種で、水準が違う。</b>資産を多く持つ業種と、少ない業種では、普通に見られるPBRが違う。同じ業種で比べる。</li>
       <li><b>帳簿の資産は、時価とは違う。</b>土地や有価証券は、購入時の価格で載っていることがあり、実際の価値と離れる場合がある。</li>

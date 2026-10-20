@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="パナソニックHDの本格量産の前倒し発表（2026年10月20日）をきっかけに、ペロブスカイト太陽電池の現在地を整理。国の目標、各社の計画、課題、確認する時期を、公表資料から。">
+<title>ペロブスカイト太陽電池を、長期投資家の目線で読む - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/perovskite-solar.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="ペロブスカイト太陽電池を、長期投資家の目線で読む">
+<meta property="og:description" content="パナソニックHDの本格量産の前倒し発表（2026年10月20日）をきっかけに、ペロブスカイト太陽電池の現在地を整理。国の目標、各社の計画、課題、確認する時期を、公表資料から。">
+<meta property="og:url" content="https://fire-app.jp/articles/perovskite-solar.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/perovskite-solar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/perovskite-solar.jpg">
+<meta name="twitter:title" content="ペロブスカイト太陽電池を、長期投資家の目線で読む">
+<meta name="twitter:description" content="パナソニックHDの本格量産の前倒し発表（2026年10月20日）をきっかけに、ペロブスカイト太陽電池の現在地を整理。国の目標、各社の計画、課題、確認する時期を、公表資料から。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ペロブスカイト太陽電池を、長期投資家の目線で読む", "description": "パナソニックHDの本格量産の前倒し発表（2026年10月20日）をきっかけに、ペロブスカイト太陽電池の現在地を整理。国の目標、各社の計画、課題、確認する時期を、公表資料から。", "inLanguage": "ja", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/perovskite-solar.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "テーマ・技術", "keywords": ["テクノロジー", "日本株"], "image": ["https://fire-app.jp/articles/og/perovskite-solar.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "ペロブスカイト太陽電池を、長期投資家の目線で読む", "item": "https://fire-app.jp/articles/perovskite-solar.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · テーマ・技術</div>
+    <h1>ペロブスカイト太陽電池を、<br>長期投資家の目線で読む</h1>
+    <p class="subtitle">「先行販売」と「本格量産」を分けて、国の目標と日程で追う</p>
+    <div class="art-meta"><span><b>作成</b> 2026年10月21日</span><span><b>情報の時点</b> 2026年10月20日のパナソニックHD発表／国の資料（2026年4月）</span></div>
+    <div class="art-tags"><a href="index.html?tag=テクノロジー">#テクノロジー</a><a href="index.html?tag=日本株">#日本株</a></div>
+    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公表された資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は公表資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="art-summary"><h2>3行でいうと</h2><ul>
+      <li>パナソニックHDは<b>2026年10月20日</b>、ガラス型ペロブスカイト太陽電池の<b>本格量産を1年前倒しし、2029年4月に始める</b>と発表した。<b>先行量産品の販売は、2026年9月から</b>始まっている。</li>
+      <li>国は、<b>2040年に約20GW</b>の導入と、<b>2030年に14円/kWh</b>の発電コストを<b>目標</b>に掲げる。フィルム型の積水化学は、<b>2027年4月に100MW</b>の製造ラインを稼働させる予定。</li>
+      <li>「本格量産」と「普及」は、<b>これから</b>。長期では、<b>量産の時期、コスト、耐久性、施工のルール、各社の決算への寄与</b>を、時期とあわせて確認する。</li>
+    </ul></div>
+
+    <h2>1. ペロブスカイト太陽電池とは</h2>
+    <p>ペロブスカイト太陽電池は、<b>「軽くて柔軟」な、次世代型の太陽電池</b>です。国の資料では、<b>建物の壁面や、耐荷重性の低い屋根など、これまで導入が難しかった場所にも設置できる</b>ことが期待されています。</p>
+    <ul>
+      <li><b>フィルム型：</b>薄く、曲げられる。軽さを生かした設置が想定される（積水化学など）。</li>
+      <li><b>ガラス型：</b>建材のガラスと一体になる。窓や壁を想定している（パナソニックHDなど）。</li>
+      <li>主な原料の<b>ヨウ素</b>は、日本が世界第2位の産出量（シェア30%）。国は、原料を含めたサプライチェーンの強化にも資すると位置づけている。</li>
+    </ul>
+    <p class="art-fig">出典：資源エネルギー庁「ペロブスカイト太陽電池の導入促進について」（2026年4月）。</p>
+
+    <h2>2. 2026年10月20日に、何が発表されたか</h2>
+    <p>ニュースでは「量産へ」と伝えられましたが、正確には、<b>「本格量産の開始時期を、1年前倒しする」発表</b>です。量産が始まったわけではありません。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目</th><th>内容</th></tr></thead><tbody><tr><td data-label="項目"><span class="tv">発表日</span></td><td data-label="内容"><span class="tv">2026年10月20日（パナソニックHD）</span></td></tr><tr><td data-label="項目"><span class="tv">発表の中身</span></td><td data-label="内容"><span class="tv">ガラス型ペロブスカイト太陽電池の<b>本格量産の開始時期を、1年前倒し</b>（当初：2030年度）</span></td></tr><tr><td data-label="項目"><span class="tv">本格量産</span></td><td data-label="内容"><span class="tv"><b>2029年4月</b>から。滋賀県長浜市の拠点で</span></td></tr><tr><td data-label="項目"><span class="tv">先行量産・販売</span></td><td data-label="内容"><span class="tv"><b>2026年9月</b>から開始。生産は大阪府守口市の開発拠点で行い、導入を通じて施工・運用のノウハウを蓄積</span></td></tr><tr><td data-label="項目"><span class="tv">国の事業</span></td><td data-label="内容"><span class="tv">2025年9月に、NEDOのグリーンイノベーション基金事業に採択。量産技術と施工技術を開発中</span></td></tr><tr><td data-label="項目"><span class="tv">公表されていないもの</span></td><td data-label="内容"><span class="tv">販売数量などの定量目標、投資額（発表の本文には記載なし）</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：パナソニックHD「ガラス型ペロブスカイト太陽電池の本格量産計画を一年前倒し…」（2026年10月20日）。</p>
+    <p>2026年9月24日には、神戸の遊覧船ターミナル「かもめりあ」で、ガラス型の実証が始まっています（合わせガラス8枚を、入口に設置し、系統に連系）。実証は、2029年3月まで（予定）です。出力は、公表されていません。</p>
+
+    <h2>3. 国の目標と、支援</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目</th><th>内容</th></tr></thead><tbody><tr><td data-label="項目"><span class="tv">導入量</span></td><td data-label="内容"><span class="tv"><b>2040年に約20GW</b>の導入を目指す</span></td></tr><tr><td data-label="項目"><span class="tv">発電コスト</span></td><td data-label="内容"><span class="tv">2025年20円/kWh、2030年14円/kWhが可能となる技術を確立。2040年に自立化できる水準として10〜14円/kWh以下を目指す</span></td></tr><tr><td data-label="項目"><span class="tv">生産体制</span></td><td data-label="内容"><span class="tv">GXサプライチェーン構築支援の補助金も使い、<b>2030年までの早期に、GW級の生産体制</b>を目指す</span></td></tr><tr><td data-label="項目"><span class="tv">初期の需要</span></td><td data-label="内容"><span class="tv">政府機関・自治体や、環境価値を重視する民間企業が、初期の需要を牽引</span></td></tr><tr><td data-label="項目"><span class="tv">導入支援</span></td><td data-label="内容"><span class="tv">2025年度から補助を開始。モデル事業5件を採択。2026年度の予算に、導入計画の策定支援とあわせて総額70億円を計上</span></td></tr><tr><td data-label="項目"><span class="tv">自治体の動き</span></td><td data-label="内容"><span class="tv">東京都は、2035年に約1GW、2040年に約2GWの導入目標を設定（2025年5月時点で、20の自治体が導入に関わる予算措置などに取り組む）</span></td></tr></tbody></table></div>
+    <figure class="fig"><div class="fig-title">国が掲げる、発電コストの目標（円／kWh）</div><svg viewBox="0 0 420 170" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.0" x2="410" y2="140.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="82.0" y="22.0" width="56.0" height="118.0" rx="3" fill="#ec4899"/><text x="110.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >20円</text><text x="110.0" y="160.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年（目標）</text><rect x="282.0" y="57.4" width="56.0" height="82.6" rx="3" fill="#ec4899"/><text x="310.0" y="51.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >14円</text><text x="310.0" y="160.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2030年（目標）</text></svg><figcaption>出典：資源エネルギー庁「ペロブスカイト太陽電池の導入促進について」（2026年4月）。国が、GI基金（グリーンイノベーション基金）を使って「確立する技術の水準」として掲げる<b>目標</b>で、実績ではない。2040年は、自立化できる水準として「10〜14円/kWh以下」を目指す（10円は、研究開発の進展などで大幅に下がる場合）。</figcaption></figure>
+    <p class="art-fig">出典：資源エネルギー庁「ペロブスカイト太陽電池の導入促進について」（2026年4月）。数字は、いずれも<b>目標</b>であり、達成を保証するものではない。</p>
+
+    <h2>4. 量産計画の時間軸</h2>
+    <figure class="fig"><div class="fig-title">量産・導入の計画（各社・国の公表ベース）</div><svg viewBox="0 0 420 206" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="36" x2="402" y2="36" stroke="#111827" stroke-width="2" stroke-linecap="round"/><line x1="18.0" y1="32" x2="18.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="18.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2026年</text><line x1="94.8" y1="32" x2="94.8" y2="40" stroke="#111827" stroke-width="1.5"/><text x="94.8" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2027年</text><line x1="171.6" y1="32" x2="171.6" y2="40" stroke="#111827" stroke-width="1.5"/><text x="171.6" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2028年</text><line x1="248.4" y1="32" x2="248.4" y2="40" stroke="#111827" stroke-width="1.5"/><text x="248.4" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2029年</text><line x1="325.2" y1="32" x2="325.2" y2="40" stroke="#111827" stroke-width="1.5"/><text x="325.2" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >2030年</text><circle cx="73.3" cy="36.0" r="9" fill="#ec4899"/><text x="73.3" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >1</text><circle cx="79.4" cy="14.0" r="9" fill="#111827"/><text x="79.4" y="17.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >2</text><circle cx="114.0" cy="36.0" r="9" fill="#2563eb"/><text x="114.0" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >3</text><circle cx="267.6" cy="36.0" r="9" fill="#ec4899"/><text x="267.6" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >4</text><circle cx="325.2" cy="36.0" r="9" fill="#2563eb"/><text x="325.2" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >5</text><circle cx="26" cy="88" r="8" fill="#ec4899"/><text x="26.0" y="91.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >1</text><text x="42.0" y="92.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2026年9月</text><text x="136.0" y="92.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >パナソニックHD：先行量産品の販売を開始</text><circle cx="26" cy="112" r="8" fill="#111827"/><text x="26.0" y="115.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >2</text><text x="42.0" y="116.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2026年10月</text><text x="136.0" y="116.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >パナソニックHD：本格量産の前倒しを発表（10/20）</text><circle cx="26" cy="136" r="8" fill="#2563eb"/><text x="26.0" y="139.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >3</text><text x="42.0" y="140.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2027年4月</text><text x="136.0" y="140.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >積水化学：100MWの製造ラインが稼働（予定）</text><circle cx="26" cy="160" r="8" fill="#ec4899"/><text x="26.0" y="163.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >4</text><text x="42.0" y="164.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2029年4月</text><text x="136.0" y="164.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >パナソニックHD：長浜拠点で本格量産（予定）</text><circle cx="26" cy="184" r="8" fill="#2563eb"/><text x="26.0" y="187.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >5</text><text x="42.0" y="188.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >2030年</text><text x="136.0" y="188.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >積水化学：GW級の製造ラインを目指す</text></svg><figcaption>出典：パナソニックHD、積水化学の公表資料。日付は、各社が公表した計画で、確定した実績ではない。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>年・月</th><th>出来事</th></tr></thead><tbody><tr><td data-label="年・月"><span class="tv">2024年12月26日</span></td><td data-label="出来事"><span class="tv">積水化学が、ペロブスカイト太陽電池の量産化を取締役会で決議。新会社を設立し、2027年4月の稼働を予定（出典：積水化学の適時開示）</span></td></tr><tr><td data-label="年・月"><span class="tv">2025年9月</span></td><td data-label="出来事"><span class="tv">パナソニックHDが、GI基金事業に採択（ガラス型）（出典：パナソニックHD）</span></td></tr><tr><td data-label="年・月"><span class="tv">2026年3月18日</span></td><td data-label="出来事"><span class="tv">フレキシブル太陽電池の設計・施工ガイドラインの初版を、NEDOが公表（出典：資源エネルギー庁）</span></td></tr><tr><td data-label="年・月"><span class="tv">2026年9月24日</span></td><td data-label="出来事"><span class="tv">神戸の遊覧船ターミナルで、ガラス型の実証を開始（合わせガラス8枚。実証は2029年3月まで予定）（出典：パナソニックHD）</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：積水化学の適時開示（2024年12月26日）、パナソニックHD、資源エネルギー庁、NEDO。</p>
+
+    <h2>5. 企業の動き</h2>
+    <p>国の資料では、積水化学が先行し、GI基金で量産技術を開発する3社（エネコートテクノロジーズ、リコー、パナソニックHD）が追う形で整理されています。3社は、<b>2030年度に、年間200〜300MW以上の量産構想</b>を持つとされています。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>企業・グループ</th><th>方式</th><th>計画</th></tr></thead><tbody><tr><td data-label="企業・グループ"><span class="tv">積水化学工業（積水ソーラーフィルム）</span></td><td data-label="方式"><span class="tv">フィルム型</span></td><td data-label="計画"><span class="tv">堺市の工場に、<b>100MWの製造ライン（2027年4月稼働予定）</b>。2030年にGW級の製造ラインを目指す。投資総額900億円（補助金込み）</span></td></tr><tr><td data-label="企業・グループ"><span class="tv">パナソニックホールディングス</span></td><td data-label="方式"><span class="tv">ガラス型（AGC、パナソニック環境エンジニアリングと連携）</span></td><td data-label="計画"><span class="tv"><b>2029年4月に、長浜拠点で本格量産</b>。2026年9月から、先行量産品を販売</span></td></tr><tr><td data-label="企業・グループ"><span class="tv">エネコートテクノロジーズ</span></td><td data-label="方式"><span class="tv">フィルム型</span></td><td data-label="計画"><span class="tv">量産化・低コスト化を目指し、日揮、KDDI、豊田合成、YKK APなどと実証・研究開発</span></td></tr><tr><td data-label="企業・グループ"><span class="tv">リコー</span></td><td data-label="方式"><span class="tv">フィルム型（インクジェット印刷）</span></td><td data-label="計画"><span class="tv">全機能層のインクジェット印刷によるロール・トゥー・ロール製造。大和ハウス工業、NTTアノードエナジーと連携</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：資源エネルギー庁「ペロブスカイト太陽電池の導入促進について」（2026年4月）、積水化学の適時開示、パナソニックHD。上場の有無や銘柄は、各社のIRで確認してください。順番は、優劣や推奨を示すものではありません。</p>
+
+    <h2>6. 課題と、わからないこと</h2>
+    <p>公的資料や、各社の資料に書かれている範囲では、次の点が、これからの課題として挙げられています。</p>
+    <ul>
+      <li><b>耐久性：</b>積水化学の資料では、加速試験（85℃・85%RH・1000時間）で維持率95%。<b>屋外20年相当の耐久性は、今後の目標</b>。</li>
+      <li><b>変換効率：</b>同資料で、30cm幅のモジュールで14.8%、今後<b>18%レベル</b>を目指す。</li>
+      <li><b>コスト：</b>国の目標は、2030年に14円/kWh。現時点の達成状況は、資料に明記されていない。</li>
+      <li><b>施工・法令：</b>設計・施工のガイドラインは、初版が2026年3月に公表された。建築基準法・消防法の扱いは、関係省庁・消防などと検討中とされている。</li>
+      <li><b>量産の立ち上げ：</b>100MW（2027年4月）、GW級（2030年）、本格量産（2029年4月）は、いずれも<b>計画</b>。</li>
+    </ul>
+    <p class="art-fig">出典：積水ソーラーフィルム「フィルム型ペロブスカイト太陽電池の事業進捗について」（GX専門家ワーキンググループ資料、2026年2月5日）、資源エネルギー庁（2026年4月）。</p>
+
+    <h2>7. 長期投資家は、何を確認するか</h2>
+    <p>確認する項目と、その情報が出る時期をまとめました。右端の「確認する時期」は、情報が出る場所の目安です。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>現在の状況</th><th>なぜ重要か</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 量産計画の進捗</span></td><td data-label="現在の状況"><span class="tv">パナソニックHDは2029年4月、積水化学は2027年4月（100MW）の計画</span></td><td data-label="なぜ重要か"><span class="tv">計画どおりに進むかで、普及の時期が変わる</span></td><td data-label="確認する時期"><span class="tv">各社のIR・適時開示（随時）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 発電コスト</span></td><td data-label="現在の状況"><span class="tv">国の目標は、2030年に14円/kWh。現在の達成状況は、資料に明記なし</span></td><td data-label="なぜ重要か"><span class="tv">コストが下がらないと、補助に頼る状態が続く</span></td><td data-label="確認する時期"><span class="tv">資源エネルギー庁・NEDOの発表（随時）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 耐久性と変換効率</span></td><td data-label="現在の状況"><span class="tv">積水化学の資料では、加速試験で維持率95%（85℃・85%RH・1000時間）。屋外20年相当は、今後の目標</span></td><td data-label="なぜ重要か"><span class="tv">長期の信頼性が、導入の前提になる</span></td><td data-label="確認する時期"><span class="tv">実証結果の公表（事業ごとに異なる）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 施工・法令の整備</span></td><td data-label="現在の状況"><span class="tv">ガイドライン初版は公表済み。建築基準法・消防法の扱いは、検討中と資料にある</span></td><td data-label="なぜ重要か"><span class="tv">設置のルールが整わないと、導入が進みにくい</span></td><td data-label="確認する時期"><span class="tv">国の通達・ガイドライン更新（随時）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 導入支援と需要</span></td><td data-label="現在の状況"><span class="tv">2026年度の予算70億円。20の自治体が取り組む</span></td><td data-label="なぜ重要か"><span class="tv">初期の需要は、補助と公的施設が牽引する</span></td><td data-label="確認する時期"><span class="tv">国の予算（毎年度）、自治体の発表</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 業績への寄与</span></td><td data-label="現在の状況"><span class="tv">積水化学は、2024年12月時点で「連結業績への影響は軽微」と開示</span></td><td data-label="なぜ重要か"><span class="tv">売上に効いてくる時期は、各社の決算で確認する</span></td><td data-label="確認する時期"><span class="tv">各社の決算（四半期ごと）</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：各社の公表資料、資源エネルギー庁（2026年4月）。日程と開示される項目は、各社のIR、国の公式サイトで確認してください。</p>
+
+    <h2>8. どう受け止めるか</h2>
+    <ul>
+      <li><b>「計画」と「実績」を分けて読む。</b>2027年、2029年、2030年は、いずれも会社や国の計画。計画の時期は、前倒しにも、後ろ倒しにもなりうる。</li>
+      <li><b>「先行販売」と「本格量産」は、別の段階。</b>先行販売は、導入を通じて、施工や運用のノウハウを蓄積する段階とされている。</li>
+      <li><b>国の目標は、「目標」。</b>2040年の約20GW、2030年の14円/kWhは、実現を前提にしたものではない。</li>
+      <li><b>1社の発表で、技術や市場全体を判断しない。</b>方式（フィルム型・ガラス型）や、企業ごとに、時期も用途も異なる。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。ペロブスカイト太陽電池の普及や、関連企業の業績・株価を、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字・日付は、パナソニックHDのニュースリリース（2026年10月20日、9月24日）、積水化学の適時開示（2024年12月26日）、積水ソーラーフィルムの資料（2026年2月5日）、資源エネルギー庁の資料（2026年4月）に基づく要約です。</p>
+      <p>※ 国・各社が示す年や数字は、<b>目標・計画</b>であり、実績ではありません。予想や見通しではなく、公表されたとおりに記載しています。</p>
+      <p>※ 「かもめりあ」の実証の出力は、公表されていません。製品の寸法・出力・発電効率は、発表の本文に記載がないため、載せていません。</p>
+      <p>※ 企業の並べ方は、公的資料の記載にそろえたもので、優劣を示すものではありません。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>パナソニックHD「ガラス型ペロブスカイト太陽電池の本格量産計画を一年前倒し、2029年4月より長浜拠点で生産開始」（2026年10月20日）：<a href="https://news.panasonic.com/jp/press/jn261020-1" target="_blank" rel="noopener">https://news.panasonic.com/jp/press/jn261020-1</a></li><li>パナソニックHD「ガラス型ペロブスカイト太陽電池の実証（神戸・かもめりあ）」（2026年9月24日）：<a href="https://news.panasonic.com/jp/press/jn260924-1" target="_blank" rel="noopener">https://news.panasonic.com/jp/press/jn260924-1</a></li><li>資源エネルギー庁「ペロブスカイト太陽電池の導入促進について」（2026年4月、環境省サイトに掲載）：<a href="https://www.env.go.jp/content/000395593.pdf" target="_blank" rel="noopener">https://www.env.go.jp/content/000395593.pdf</a></li><li>積水化学工業「ペロブスカイト太陽電池の量産化に関するお知らせ」（適時開示、2024年12月26日）：<a href="https://www2.jpx.co.jp/disc/42040/140120241226544787.pdf" target="_blank" rel="noopener">https://www2.jpx.co.jp/disc/42040/140120241226544787.pdf</a></li><li>積水ソーラーフィルム「フィルム型ペロブスカイト太陽電池の事業進捗について」（GX専門家ワーキンググループ資料5、2026年2月5日）：<a href="https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai14/shiryo5.pdf" target="_blank" rel="noopener">https://www.cas.go.jp/jp/seisaku/gx_jikkou_kaigi/senmonka_wg/dai14/shiryo5.pdf</a></li><li>NEDO「グリーンイノベーション基金事業『次世代型太陽電池の開発』…採択」（2025年9月10日）：<a href="https://www.nedo.go.jp/news/press/AA5_101885.html" target="_blank" rel="noopener">https://www.nedo.go.jp/news/press/AA5_101885.html</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月21日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="allganize-ipo.html">Allganize Holdingsの新規上場を、長期投資家の目線で読む</a><a href="mabgenesis-ipo.html">MabGenesisの新規上場を、長期投資家の目線で読む</a><a href="toggle-holdings-ipo.html">トグルホールディングスの新規上場を、長期投資家の目線で読む</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
