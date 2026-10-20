@@ -362,8 +362,19 @@
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
 
-  .art-visual { margin: 22px 0 4px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg,#fff0f5,#ffe4ec); border: 1px solid #fbe4ec; }
-  .art-visual svg { display: block; width: 100%; height: auto; }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
   .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
   .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
   .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
@@ -445,19 +456,17 @@
     <div class="eyebrow">COLUMN · 業界分析</div>
     <h1>不動産業界を、<br>長期投資家の目線で読む</h1>
     <p class="subtitle">金利・人口というマクロと、大手5社の決算比較</p>
-    <div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 大手5社の2026年3月期決算（各社の決算短信）、金融データは2026年10月13日時点</span></div>
-    <div class="art-tags"><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=金利・物価">#金利・物価</a><a href="index.html?tag=人口動態">#人口動態</a></div>
-    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+
+
   </div>
 </section>
 
 <section class="doc-body art">
   <div class="container-sm">
-    <div class="art-summary"><h2>3行でいうと</h2><ul>
-      <li>大手5社は、2026年3月期に<b>全社が増益</b>（営業利益 ＋6.6%〜＋18.6%）。ところが株価は、2026年2〜3月の高値から<b>2〜4割下落</b>（1年では＋6%〜△10%）。<b>日経平均（1年で＋44.7%）には、大きく後れを取っている</b>。</li>
-      <li>理由の中心は金利。政策金利は2024年7月の0.25%から、<b>2026年9月に1.25%</b>まで上昇し、10年国債利回りは3%前後に。一方、世帯数は<b>2030年をピークに減少</b>に向かう。</li>
-      <li>5社でも、稼ぎ方は違う。営業利益率は<b>住友不動産の28.3%から東急の13.4%まで</b>開きがある。長期で見るのは、<b>金利上昇を、賃料と価格に転嫁できるか</b>。</li>
-    </ul></div>
+    <div class="pts"><div class="pt"><h3>全社増益でも、株価は2〜4割安</h3><p class="pt-d">大手5社は、2026年3月期に<b>全社が増益</b>（営業利益 ＋6.6%〜＋18.6%）。ところが株価は、2026年2〜3月の高値から<b>2〜4割下落</b>（1年では＋6%〜△10%）。<b>日経平均（1年で＋44.7%）には、大きく後れを取っている</b>。</p></div><div class="pt"><h3>理由の中心は金利</h3><p class="pt-d">理由の中心は金利。政策金利は2024年7月の0.25%から、<b>2026年9月に1.25%</b>まで上昇し、10年国債利回りは3%前後に。一方、世帯数は<b>2030年をピークに減少</b>に向かう。</p></div><div class="pt"><h3>稼ぎ方は5社で違う</h3><p class="pt-d">5社でも、稼ぎ方は違う。営業利益率は<b>住友不動産の28.3%から東急の13.4%まで</b>開きがある。長期で見るのは、<b>金利上昇を、賃料と価格に転嫁できるか</b>。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月13日</span><span><b>情報の時点</b> 大手5社の2026年3月期決算（各社の決算短信）、金融データは2026年10月13日時点</span></div>
+<div class="art-tags"><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=金利・物価">#金利・物価</a><a href="index.html?tag=人口動態">#人口動態</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
 
     <h2>1. 不動産業界は、何で稼ぐのか</h2>
     <p>ここで見るのは、オフィスビルや商業施設、分譲マンションなどを手がける<b>総合デベロッパー</b>です。稼ぎ方は、大きく3つに分けられます。</p>

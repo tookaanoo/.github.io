@@ -362,8 +362,19 @@
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
 
-  .art-visual { margin: 22px 0 4px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg,#fff0f5,#ffe4ec); border: 1px solid #fbe4ec; }
-  .art-visual svg { display: block; width: 100%; height: auto; }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
   .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
   .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
   .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
@@ -445,19 +456,17 @@
     <div class="eyebrow">COLUMN · 用語解説</div>
     <h1>PER（株価収益率）とは</h1>
     <p class="subtitle">株価が、1株あたり利益の何倍かを見る指標</p>
-    <div class="art-meta"><span><b>作成</b> 2026年10月14日</span><span><b>情報の時点</b> 2026年10月14日時点</span></div>
-    <div class="art-tags"><a href="index.html?tag=決算">#決算</a></div>
-    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、用語の意味と見方を整理した情報提供です。例の数字は、説明のための架空のものです。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+
+
   </div>
 </section>
 
 <section class="doc-body art">
   <div class="container-sm">
-    <div class="art-summary"><h2>ひとことで</h2><ul>
-      <li><b>PER（株価収益率）は、株価が1株あたり利益の何倍か</b>を示す指標。「利益の何年分の値段がついているか」の目安。</li>
-      <li>計算式は、<b>PER ＝ 株価 ÷ 1株あたり利益（EPS）</b>。</li>
-      <li>数字の大小だけで、割安・割高は決まらない。<b>同じ業種、同じ前提で比べる</b>のが基本。</li>
-    </ul></div>
+    <div class="pts"><div class="pt"><h3>株価が利益の何年分か</h3><p class="pt-d"><b>PER（株価収益率）は、株価が1株あたり利益の何倍か</b>を示す指標。「利益の何年分の値段がついているか」の目安。</p></div><div class="pt"><h3>PER＝株価÷1株あたり利益</h3><p class="pt-d">計算式は、<b>PER ＝ 株価 ÷ 1株あたり利益（EPS）</b>。</p></div><div class="pt"><h3>数字の大小だけでは決まらない</h3><p class="pt-d">数字の大小だけで、割安・割高は決まらない。<b>同じ業種、同じ前提で比べる</b>のが基本。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月14日</span><span><b>情報の時点</b> 2026年10月14日時点</span></div>
+<div class="art-tags"><a href="index.html?tag=決算">#決算</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、用語の意味と見方を整理した情報提供です。例の数字は、説明のための架空のものです。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
 
     <h2>1. 計算のしかた</h2>
     <p>株価が1,000円で、1株あたりの利益（EPS）が50円なら、PERは20倍です。</p>

@@ -362,8 +362,19 @@
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
 
-  .art-visual { margin: 22px 0 4px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg,#fff0f5,#ffe4ec); border: 1px solid #fbe4ec; }
-  .art-visual svg { display: block; width: 100%; height: auto; }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
   .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
   .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
   .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
@@ -445,19 +456,17 @@
     <div class="eyebrow">COLUMN · ウォッチポイント</div>
     <h1>2026年10〜12月の<br>経済日程と、確認ポイント</h1>
     <p class="subtitle">日程そのものより、「何を確認するか」を先に決める</p>
-    <div class="art-meta"><span><b>作成</b> 2026年10月14日</span><span><b>情報の時点</b> 2026年10月14日時点の予定</span></div>
-    <div class="art-tags"><a href="index.html?tag=金利・物価">#金利・物価</a><a href="index.html?tag=決算">#決算</a></div>
-    <div class="art-note"><b>この記事について</b>　特定の売買や投資のタイミングを勧めるものではなく、公表された日程と、確認するポイントを整理した情報提供です。日程は変更されることがあります。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+
+
   </div>
 </section>
 
 <section class="doc-body art">
   <div class="container-sm">
-    <div class="art-summary"><h2>3行でいうと</h2><ul>
-      <li>2026年10〜12月は、<b>米FOMCが2回（10月・12月）、日銀の決定会合が2回、米雇用統計が2回、米CPIが2回</b>。国内では、3月期決算企業の第2四半期決算が重なる。</li>
-      <li>見るのは、<b>金利、物価、雇用、企業業績</b>の4つ。<b>日程そのものより、「何を確認するか」を先に決めておく</b>と、ニュースに振り回されにくい。</li>
-      <li>この記事は、主要な日程と、確認ポイントの一覧。数字の中身は、公表元の資料で確認する。</li>
-    </ul></div>
+    <div class="pts"><div class="pt"><h3>FOMC・日銀・雇用統計・CPIが各2回</h3><p class="pt-d">2026年10〜12月は、<b>米FOMCが2回（10月・12月）、日銀の決定会合が2回、米雇用統計が2回、米CPIが2回</b>。国内では、3月期決算企業の第2四半期決算が重なる。</p></div><div class="pt"><h3>見るのは、金利・物価・雇用・業績</h3><p class="pt-d">見るのは、<b>金利、物価、雇用、企業業績</b>の4つ。<b>日程そのものより、「何を確認するか」を先に決めておく</b>と、ニュースに振り回されにくい。</p></div><div class="pt"><h3>日程と確認ポイントの一覧</h3><p class="pt-d">この記事は、主要な日程と、確認ポイントの一覧。数字の中身は、公表元の資料で確認する。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月14日</span><span><b>情報の時点</b> 2026年10月14日時点の予定</span></div>
+<div class="art-tags"><a href="index.html?tag=金利・物価">#金利・物価</a><a href="index.html?tag=決算">#決算</a></div>
+<div class="art-note"><b>この記事について</b>　特定の売買や投資のタイミングを勧めるものではなく、公表された日程と、確認するポイントを整理した情報提供です。日程は変更されることがあります。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
 
     <h2>1. 日程を、時系列で見る</h2>
     <figure class="fig"><div class="fig-title">2026年10〜12月の、主な経済日程</div><svg viewBox="0 0 420 302" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="36" x2="402" y2="36" stroke="#111827" stroke-width="2" stroke-linecap="round"/><line x1="18.0" y1="32" x2="18.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="18.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >10月</text><line x1="146.0" y1="32" x2="146.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="146.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >11月</text><line x1="274.0" y1="32" x2="274.0" y2="40" stroke="#111827" stroke-width="1.5"/><text x="274.0" y="56.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >12月</text><circle cx="129.4" cy="36.0" r="9" fill="#ec4899"/><text x="129.4" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><circle cx="139.6" cy="14.0" r="9" fill="#111827"/><text x="139.6" y="17.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >②</text><circle cx="158.8" cy="36.0" r="9" fill="#7c3aed"/><text x="158.8" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><circle cx="171.6" cy="14.0" r="9" fill="#ec4899"/><text x="171.6" y="17.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >④</text><circle cx="187.0" cy="36.0" r="9" fill="#ec4899"/><text x="187.0" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >⑤</text><circle cx="286.8" cy="36.0" r="9" fill="#ec4899"/><text x="286.8" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >⑥</text><circle cx="308.6" cy="14.0" r="9" fill="#ec4899"/><text x="308.6" y="17.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >⑦</text><circle cx="316.2" cy="36.0" r="9" fill="#ec4899"/><text x="316.2" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >⑧</text><circle cx="350.8" cy="36.0" r="9" fill="#111827"/><text x="350.8" y="39.6" font-size="10.5" text-anchor="middle" fill="#fff" font-weight="800" >⑨</text><circle cx="26" cy="88" r="8" fill="#ec4899"/><text x="26.0" y="91.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >①</text><text x="42.0" y="92.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >10/27〜28</text><text x="136.0" y="92.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >米FOMC（政策金利の判断）</text><circle cx="26" cy="112" r="8" fill="#111827"/><text x="26.0" y="115.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >②</text><text x="42.0" y="116.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >10/29〜30</text><text x="136.0" y="116.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >日銀 金融政策決定会合</text><circle cx="26" cy="136" r="8" fill="#7c3aed"/><text x="26.0" y="139.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >③</text><text x="42.0" y="140.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >11月上旬〜中旬</text><text x="136.0" y="140.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >国内企業の第2四半期決算</text><circle cx="26" cy="160" r="8" fill="#ec4899"/><text x="26.0" y="163.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >④</text><text x="42.0" y="164.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >11/6</text><text x="136.0" y="164.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >米雇用統計（10月分）</text><circle cx="26" cy="184" r="8" fill="#ec4899"/><text x="26.0" y="187.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >⑤</text><text x="42.0" y="188.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >11/10</text><text x="136.0" y="188.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >米CPI（10月分）</text><circle cx="26" cy="208" r="8" fill="#ec4899"/><text x="26.0" y="211.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >⑥</text><text x="42.0" y="212.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >12/4</text><text x="136.0" y="212.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >米雇用統計（11月分）</text><circle cx="26" cy="232" r="8" fill="#ec4899"/><text x="26.0" y="235.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >⑦</text><text x="42.0" y="236.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >12/8〜9</text><text x="136.0" y="236.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >米FOMC（経済見通しを公表）</text><circle cx="26" cy="256" r="8" fill="#ec4899"/><text x="26.0" y="259.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >⑧</text><text x="42.0" y="260.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >12/10</text><text x="136.0" y="260.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >米CPI（11月分）</text><circle cx="26" cy="280" r="8" fill="#111827"/><text x="26.0" y="283.6" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="800" >⑨</text><text x="42.0" y="284.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >12/17〜18</text><text x="136.0" y="284.0" font-size="10.5" text-anchor="start" fill="#6b7280" font-weight="500" >日銀 金融政策決定会合</text></svg><figcaption>番号は日付の順。米国はFRB・労働統計局（BLS）の公表予定、日銀は決定会合の予定日（2日目に結果）。日程は、変更されることがあります。</figcaption></figure>

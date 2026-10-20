@@ -362,8 +362,19 @@
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
 
-  .art-visual { margin: 22px 0 4px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg,#fff0f5,#ffe4ec); border: 1px solid #fbe4ec; }
-  .art-visual svg { display: block; width: 100%; height: auto; }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
   .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
   .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
   .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
@@ -445,19 +456,17 @@
     <div class="eyebrow">COLUMN · 個別銘柄</div>
     <h1>MabGenesisの<br>新規上場を、<br>長期投資家の目線で読む</h1>
     <p class="subtitle">ペット用の抗体医薬を研究。契約の積み上げと、顧客の集中を確認する</p>
-    <div class="art-meta"><span><b>作成</b> 2026年10月17日</span><span><b>情報の時点</b> 2026年9月28日提出の有価証券報告書（Ⅰの部）／2026年10月13日に仮条件決定</span></div>
-    <div class="art-tags"><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=新規上場">#新規上場</a></div>
-    <div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+
+
   </div>
 </section>
 
 <section class="doc-body art">
   <div class="container-sm">
-    <div class="art-summary"><h2>3行でいうと</h2><ul>
-      <li>MabGenesisは、<b>ペット（犬・猫）用の抗体医薬品</b>を研究する創薬ベンチャー。<b>東京証券取引所グロース市場に、2026年11月2日に上場する予定</b>。</li>
-      <li>売上は、製薬会社との共同研究の<b>契約一時金やマイルストーン</b>が中心。2026年3月期は、売上が約3.4億円（前期の約2.3倍）、<b>初めて黒字</b>（純利益約0.36億円）。ただし、<b>上位3社で売上の約88%</b>を占める。</li>
-      <li>長期では、<b>契約の積み上げ、導出済み・探索中のプロジェクトの進捗、顧客の集中</b>を確認する。この記事は、公開価格の妥当性や、申込みの是非を判断するものではない。</li>
-    </ul></div>
+    <div class="pts"><div class="pt"><h3>11月2日に上場予定</h3><p class="pt-d">MabGenesisは、<b>ペット（犬・猫）用の抗体医薬品</b>を研究する創薬ベンチャー。<b>東京証券取引所グロース市場に、2026年11月2日に上場する予定</b>。</p></div><div class="pt"><h3>売上3.4億円で、初めて黒字</h3><p class="pt-d">売上は、製薬会社との共同研究の<b>契約一時金やマイルストーン</b>が中心。2026年3月期は、売上が約3.4億円（前期の約2.3倍）、<b>初めて黒字</b>（純利益約0.36億円）。ただし、<b>上位3社で売上の約88%</b>を占める。</p></div><div class="pt"><h3>見るのは、契約の積み上げと顧客の集中</h3><p class="pt-d">長期では、<b>契約の積み上げ、導出済み・探索中のプロジェクトの進捗、顧客の集中</b>を確認する。この記事は、公開価格の妥当性や、申込みの是非を判断するものではない。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月17日</span><span><b>情報の時点</b> 2026年9月28日提出の有価証券報告書（Ⅰの部）／2026年10月13日に仮条件決定</span></div>
+<div class="art-tags"><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=新規上場">#新規上場</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
 
     <h2>1. どんな会社か</h2>
     <p>MabGenesisは、2019年6月に設立された、神奈川県横浜市に本社を置く創薬ベンチャーです。藤田医科大学と宮崎大学で開発された抗体の取得技術を、医療に生かすために設立されました。従業員は13人です（2026年3月期末）。</p>

@@ -362,8 +362,19 @@
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
 
-  .art-visual { margin: 22px 0 4px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg,#fff0f5,#ffe4ec); border: 1px solid #fbe4ec; }
-  .art-visual svg { display: block; width: 100%; height: auto; }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
   .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
   .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
   .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
@@ -445,19 +456,17 @@
     <div class="eyebrow">COLUMN · シミュレーション</div>
     <h1>積立投資のシミュレーションを、<br>長期投資家の目線で検証する</h1>
     <p class="subtitle">「月5万円を20年」の結果と、「元本割れしない」の真偽</p>
-    <div class="art-meta"><span><b>作成</b> 2026年10月14日</span><span><b>情報の時点</b> 2025年11月までの株価（終値）と、仮定の年率</span></div>
-    <div class="art-tags"><a href="index.html?tag=積立">#積立</a><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=日本株">#日本株</a></div>
-    <div class="art-note"><b>この記事について</b>　特定の売買を勧めるものではなく、仮定と過去のデータによる試算を整理した情報提供です。数値は株価データと計算に基づきます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div>
+
+
   </div>
 </section>
 
 <section class="doc-body art">
   <div class="container-sm">
-    <div class="art-summary"><h2>3行でいうと</h2><ul>
-      <li>毎月5万円を20年積み立てると、年率の仮定ごとに、<b>年3%で約1,642万円、年5%で約2,055万円、年7%で約2,605万円</b>（元本は1,200万円）。年率は予想ではなく、仮定。</li>
-      <li>「20年続ければ元本割れしない」を過去のデータで確かめると、<b>S&P500は全開始月で元本を上回った一方、日経平均は42%の開始月で元本割れ</b>。市場と開始時期で、結果が違う。</li>
-      <li>FIREの目標額（年間支出の25倍）に届くには、<b>年間支出300万円（7,500万円）なら、年5%の仮定でも、30年なら月9万円、20年なら月18万円が必要</b>。</li>
-    </ul></div>
+    <div class="pts"><div class="pt"><h3>月5万円×20年は約1,642〜2,605万円</h3><p class="pt-d">毎月5万円を20年積み立てると、年率の仮定ごとに、<b>年3%で約1,642万円、年5%で約2,055万円、年7%で約2,605万円</b>（元本は1,200万円）。年率は予想ではなく、仮定。</p></div><div class="pt"><h3>S&P500は全開始月で元本超え</h3><p class="pt-d">「20年続ければ元本割れしない」を過去のデータで確かめると、<b>S&P500は全開始月で元本を上回った一方、日経平均は42%の開始月で元本割れ</b>。市場と開始時期で、結果が違う。</p></div><div class="pt"><h3>7,500万円には月9〜18万円</h3><p class="pt-d">FIREの目標額（年間支出の25倍）に届くには、<b>年間支出300万円（7,500万円）なら、年5%の仮定でも、30年なら月9万円、20年なら月18万円が必要</b>。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月14日</span><span><b>情報の時点</b> 2025年11月までの株価（終値）と、仮定の年率</span></div>
+<div class="art-tags"><a href="index.html?tag=積立">#積立</a><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=日本株">#日本株</a></div>
+<div class="art-note"><b>この記事について</b>　特定の売買を勧めるものではなく、仮定と過去のデータによる試算を整理した情報提供です。数値は株価データと計算に基づきます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
 
     <h2>1. この記事でやること</h2>
     <p>積立投資について、よく聞く2つの疑問を、数字で確かめます。</p>
