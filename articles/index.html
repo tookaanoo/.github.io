@@ -329,15 +329,25 @@
   .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
   .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
   .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
   @media (max-width: 768px) {
     .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
     .art-table.ms { min-width: 0; }
     .art-table.ms thead { display: none; }
     .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
-    .art-table.ms tr { border: 1px solid #f3f4f6; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; background: #fff; }
-    .art-table.ms td { border: none; padding: 5px 0; min-width: 0 !important; }
-    .art-table.ms td:first-child { font-size: 14.5px; padding-bottom: 8px; }
-    .art-table.ms td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .08em; margin-bottom: 1px; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
     .tbl-wrap:has(.ms) { overflow: visible; }
   }
 
