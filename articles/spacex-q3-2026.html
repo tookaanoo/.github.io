@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SpaceXの2026年7〜9月期決算（10月20日発表）を、数字と事業別（宇宙・通信・SI）で整理。純利益44億ドルの中身と、長期投資家が確認したい6つのポイント。">
+<title>SpaceXの2026年7〜9月期決算を、長期投資家の目線で読む - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/spacex-q3-2026.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="SpaceXの2026年7〜9月期決算を、長期投資家の目線で読む">
+<meta property="og:description" content="SpaceXの2026年7〜9月期決算（10月20日発表）を、数字と事業別（宇宙・通信・SI）で整理。純利益44億ドルの中身と、長期投資家が確認したい6つのポイント。">
+<meta property="og:url" content="https://fire-app.jp/articles/spacex-q3-2026.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/spacex-q3-2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/spacex-q3-2026.jpg">
+<meta name="twitter:title" content="SpaceXの2026年7〜9月期決算を、長期投資家の目線で読む">
+<meta name="twitter:description" content="SpaceXの2026年7〜9月期決算（10月20日発表）を、数字と事業別（宇宙・通信・SI）で整理。純利益44億ドルの中身と、長期投資家が確認したい6つのポイント。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "SpaceXの2026年7〜9月期決算を、長期投資家の目線で読む", "description": "SpaceXの2026年7〜9月期決算（10月20日発表）を、数字と事業別（宇宙・通信・SI）で整理。純利益44億ドルの中身と、長期投資家が確認したい6つのポイント。", "inLanguage": "ja", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/spacex-q3-2026.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "個別銘柄", "keywords": ["米国株", "決算", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/spacex-q3-2026.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "SpaceXの2026年7〜9月期決算を、長期投資家の目線で読む", "item": "https://fire-app.jp/articles/spacex-q3-2026.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>SpaceXの2026年7〜9月期決算を、<br>長期投資家の目線で読む</h1>
+    <p class="subtitle">売上は約2.6倍、純利益は黒字。その中身を分けて見る</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>売上146億ドル、純利益44億ドル</h3><p class="pt-d">SpaceXの2026年7〜9月期決算（<b>2026年10月20日</b>発表）。売上は<b>約146億ドル</b>で、前年同期の約2.6倍。<b>純利益は約44億ドルの黒字</b>（前年同期は約11億ドルの赤字）。</p></div><div class="pt"><h3>純利益のうち、営業利益は28億ドル</h3><p class="pt-d">ただし、純利益44億ドルのうち、<b>営業利益は約28億ドル</b>。差は、利息、その他の収益（関連当事者の分を含む）、法人税等の戻しによる。SIは、買収したCursorに関連する株式報酬（約12億ドル）を引いても、<b>約4.3億ドルの営業黒字</b>になった。</p></div><div class="pt"><h3>見るのは、投資・資金・買収の寄与</h3><p class="pt-d">長期では、<b>設備投資（196億ドル）と資金、SIの売上の中身（買収の寄与）、Starlinkの加入者と単価</b>を、決算ごとに確認する。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月21日</span><span><b>情報の時点</b> 2026年10月20日の決算発表（8-K）／株価は10月20日終値</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この決算の位置づけ</h2>
+    <p>SpaceXは、2026年6月に、Nasdaq（ティッカーSPCX）に上場しました。今回の7〜9月期は、上場後<b>2回目</b>の四半期決算で、<b>2026年10月20日</b>に、決算発表の資料がSEC（米証券取引委員会）に提出されました（Form 8-Kの添付書類）。</p>
+    <ul>
+      <li>数字は、<b>監査を受けていない</b>速報です。四半期報告書（10-Q）は、会社のSEC提出書類で確認します（この記事の時点では、確認していません）。</li>
+      <li>前回の決算の説明にあった事業は、<b>名前が変わりました</b>。これまで「AI」と呼んでいたセグメントは、「<b>Super Intelligence（SI）</b>」と呼ばれています（会社の説明）。</li>
+      <li>3つの事業は、<b>Space（宇宙）</b>、<b>Connectivity（通信、Starlink）</b>、<b>SI</b>（AIのモデル、ソフトウェア、データセンターとインフラ、広告など）です。</li>
+    </ul>
+
+    <h2>2. 数字：売上は約2.6倍、純利益は黒字</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目</th><th>2026年7〜9月</th><th>前年同期</th><th>前期（4〜6月）</th></tr></thead><tbody><tr><td data-label="項目"><span class="tv"><b>売上</b></span></td><td data-label="2026年7〜9月"><span class="tv">145.8億ドル</span></td><td data-label="前年同期"><span class="tv">55.8億ドル（+161%）</span></td><td data-label="前期（4〜6月）"><span class="tv">78.1億ドル</span></td></tr><tr><td data-label="項目"><span class="tv"><b>営業損益</b></span></td><td data-label="2026年7〜9月"><span class="tv">＋27.9億ドル</span></td><td data-label="前年同期"><span class="tv">−2.7億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">−1.4億ドル</span></td></tr><tr><td data-label="項目"><span class="tv"><b>純損益</b></span></td><td data-label="2026年7〜9月"><span class="tv">＋44.0億ドル</span></td><td data-label="前年同期"><span class="tv">−10.5億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">−5.4億ドル</span></td></tr><tr><td data-label="項目"><span class="tv"><b>調整後EBITDA</b>（会社の定義）</span></td><td data-label="2026年7〜9月"><span class="tv">88.1億ドル</span></td><td data-label="前年同期"><span class="tv">21.7億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">35.4億ドル</span></td></tr><tr><td data-label="項目"><span class="tv"><b>設備投資</b></span></td><td data-label="2026年7〜9月"><span class="tv">195.9億ドル</span></td><td data-label="前年同期"><span class="tv">68.8億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">183.7億ドル</span></td></tr><tr><td data-label="項目"><span class="tv"><b>1株利益</b>（希薄化後）</span></td><td data-label="2026年7〜9月"><span class="tv">0.35ドル</span></td><td data-label="前年同期"><span class="tv">−0.36ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">—</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：SpaceXの決算発表（2026年10月20日、8-K Exhibit 99.1）。前期の純損益は、四半期報告書（2026年4〜6月期）より。調整後EBITDAは、会社が定義した指標で、会計基準（GAAP）の利益とは違います。</p>
+    <figure class="fig"><div class="fig-title">セグメント別の売上（億ドル、7〜9月期）</div><svg viewBox="0 0 420 220" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb"/><rect x="34.7" y="153.3" width="40.0" height="36.7" rx="3" fill="#cbd5e1"/><text x="54.7" y="148.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >16.7</text><rect x="78.7" y="151.1" width="40.0" height="38.9" rx="3" fill="#ec4899"/><text x="98.7" y="146.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >17.7</text><text x="76.7" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Space</text><text x="76.7" y="222.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（宇宙）</text><rect x="168.0" y="121.9" width="40.0" height="68.1" rx="3" fill="#cbd5e1"/><text x="188.0" y="116.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >31.0</text><rect x="212.0" y="74.7" width="40.0" height="115.3" rx="3" fill="#ec4899"/><text x="232.0" y="69.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >52.5</text><text x="210.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Connectivity</text><text x="210.0" y="222.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（通信）</text><rect x="301.3" y="172.2" width="40.0" height="17.8" rx="3" fill="#cbd5e1"/><text x="321.3" y="167.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >8.1</text><rect x="345.3" y="24.0" width="40.0" height="166.0" rx="3" fill="#ec4899"/><text x="365.3" y="19.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >75.6</text><text x="343.3" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >SI</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年</text><rect x="95" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="108.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年</text></svg><figcaption>出典：SpaceXの決算発表（8-K Exhibit 99.1）。<b>全体の売上は145.8億ドルで、前年同期（55.8億ドル）の約2.6倍</b>。SIの売上は、約9.3倍（8.1億ドル→75.6億ドル）。</figcaption></figure>
+    <p>売上の増加（約90億ドル）の主な内訳は、SI（＋67億ドル）と、通信（＋22億ドル）です。会社は、SIの増加を「クラウドサービス契約の開始、Cursorの買収、Grokの利用の拡大」と説明しています。宇宙は、約1億ドルの増加です。</p>
+
+    <h2>3. 純利益44億ドルの中身</h2>
+    <figure class="fig"><div class="fig-title">営業利益から純利益まで（億ドル、2026年7〜9月期）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="22.7" y="86.1" width="41.3" height="103.9" rx="3" fill="#111827"/><text x="43.3" y="80.1" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >27.9</text><text x="43.3" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業利益</text><line x1="64.0" y1="86.1" x2="89.3" y2="86.1" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="89.3" y="86.1" width="41.3" height="25.1" rx="3" fill="#64748b"/><text x="110.0" y="124.2" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-6.8</text><text x="110.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >支払利息</text><line x1="130.7" y1="111.2" x2="156.0" y2="111.2" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="156.0" y="78.7" width="41.3" height="32.5" rx="3" fill="#ec4899"/><text x="176.7" y="72.7" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+8.7</text><text x="176.7" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >受取利息</text><line x1="197.3" y1="78.7" x2="222.7" y2="78.7" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="222.7" y="40.5" width="41.3" height="38.2" rx="3" fill="#ec4899"/><text x="243.3" y="34.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+10.3</text><text x="243.3" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >その他の</text><text x="243.3" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >収益（純）</text><line x1="264.0" y1="40.5" x2="289.3" y2="40.5" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="289.3" y="26.0" width="41.3" height="14.5" rx="3" fill="#ec4899"/><text x="310.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+3.9</text><text x="310.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >法人税等</text><text x="310.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >（戻し）</text><line x1="330.7" y1="26.0" x2="356.0" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="356.0" y="26.0" width="41.3" height="164.0" rx="3" fill="#111827"/><text x="376.7" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >44.0</text><text x="376.7" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >純利益</text></svg><figcaption>出典：同決算発表の連結損益計算書。<b>純利益44.0億ドルのうち、営業利益は27.9億ドル</b>。差額は、利息（受取−支払＝約＋2.0億ドル）、その他の収益（約＋10.3億ドル。うち関連当事者が5.6億ドル）、法人税等の戻し（約＋3.9億ドル）。</figcaption></figure>
+    <ul>
+      <li><b>本業（営業利益）：27.9億ドル</b>。前年同期は2.7億ドルの営業赤字でした。</li>
+      <li><b>利息：</b>支払利息が6.8億ドル、受取利息が8.7億ドル（差し引き約＋2.0億ドル）。手元の現金・有価証券が、大きく増えたためです。</li>
+      <li><b>その他の収益（純）：10.3億ドル。</b>うち5.6億ドルは、<b>関連当事者</b>によるもの（会社の開示）。</li>
+      <li><b>法人税等：3.9億ドルの「戻し」</b>（利益が出ているのに、税金の費用がマイナス）。</li>
+    </ul>
+    <p>つまり、純利益の約37%は、営業利益以外の項目によるものです。これらが次の四半期にも続くかは、この資料からは、わかりません。</p>
+
+    <h2>4. どの事業が、利益を出しているか</h2>
+    <figure class="fig"><div class="fig-title">セグメント別の営業損益（億ドル、7〜9月期）</div><svg viewBox="0 0 420 262" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="137.1" x2="410" y2="137.1" stroke="#e5e7eb" stroke-width="1.2"/><rect x="34.7" y="125.8" width="40.0" height="11.3" rx="3" fill="#cbd5e1"/><text x="54.7" y="120.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+2.6</text><rect x="78.7" y="137.1" width="40.0" height="1.0" rx="3" fill="#ec4899"/><text x="98.7" y="150.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-0.1</text><text x="76.7" y="254.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Space</text><text x="76.7" y="266.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（宇宙）</text><rect x="168.0" y="85.4" width="40.0" height="51.8" rx="3" fill="#cbd5e1"/><text x="188.0" y="80.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+11.9</text><rect x="212.0" y="34.0" width="40.0" height="103.1" rx="3" fill="#ec4899"/><text x="232.0" y="29.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+23.7</text><text x="210.0" y="254.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Connectivity</text><text x="210.0" y="266.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（通信）</text><rect x="301.3" y="137.1" width="40.0" height="74.9" rx="3" fill="#cbd5e1"/><text x="321.3" y="224.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-17.2</text><rect x="345.3" y="118.4" width="40.0" height="18.7" rx="3" fill="#ec4899"/><text x="365.3" y="113.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+4.3</text><text x="343.3" y="254.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >SI</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年</text><rect x="95" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="108.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年</text></svg><figcaption>出典：同決算発表。<b>通信が約23.7億ドルの黒字</b>で、SIは前年同期の約17.2億ドルの赤字から、約4.3億ドルの黒字に。SIの数字は、買収したCursorに関連する株式報酬（約12.2億ドル）を引いたあとのもの。宇宙は、ほぼ収支ゼロ（−0.1億ドル）。</figcaption></figure>
+    <ul>
+      <li><b>通信（Connectivity）：</b>営業利益23.7億ドル。前年同期の11.9億ドルから、約2倍（＋99%）。売上は52.5億ドルで、前年同期比＋69%。</li>
+      <li><b>SI：</b>営業利益4.3億ドル。前年同期は17.2億ドルの赤字。この数字は、<b>Cursorの買収に関連する株式報酬12.2億ドル</b>を引いたあとのものです（会社の説明）。</li>
+      <li><b>宇宙（Space）：</b>営業損益はほぼゼロ（−0.1億ドル）。前年同期は2.6億ドルの黒字。研究開発費が、Starshipを中心に増えています。</li>
+    </ul>
+
+    <h2>5. Starlink：加入者は約1.9倍、単価は下がった</h2>
+    <figure class="fig"><div class="fig-title">Starlinkの加入者数と、1加入者あたりの月額収入</div><svg viewBox="0 0 420 170" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.0" x2="410" y2="140.0" stroke="#e5e7eb"/><rect x="26.0" y="91.3" width="120.0" height="48.7" rx="3" fill="#cbd5e1"/><text x="86.0" y="86.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7.2</text><rect x="150.0" y="58.8" width="120.0" height="81.2" rx="3" fill="#f9a8d4"/><text x="210.0" y="53.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >12.0</text><rect x="274.0" y="48.0" width="120.0" height="92.0" rx="3" fill="#ec4899"/><text x="334.0" y="43.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >13.6</text><text x="210.0" y="160.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >個人向け加入者数（百万）</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年9月末</text><rect x="128" y="4" width="9" height="9" rx="2" fill="#f9a8d4"/><text x="141.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年6月末</text><rect x="246" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="259.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年9月末</text></svg><svg viewBox="0 0 420 170" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.0" x2="410" y2="140.0" stroke="#e5e7eb"/><rect x="26.0" y="48.0" width="120.0" height="92.0" rx="3" fill="#cbd5e1"/><text x="86.0" y="43.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >83</text><rect x="150.0" y="66.8" width="120.0" height="73.2" rx="3" fill="#f9a8d4"/><text x="210.0" y="61.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >66</text><rect x="274.0" y="63.5" width="120.0" height="76.5" rx="3" fill="#ec4899"/><text x="334.0" y="58.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >69</text><text x="210.0" y="160.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1加入者あたりの月額収入（ARPU、ドル）</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年7〜9月</text><rect x="139" y="4" width="9" height="9" rx="2" fill="#f9a8d4"/><text x="152.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年4〜6月</text><rect x="268" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="281.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年7〜9月</text></svg><figcaption>出典：同決算発表。<b>加入者は、前年同期の720万から1,360万に。1加入者あたりの月額収入は、83ドルから69ドルに下がった</b>（前期の66ドルからは、上昇）。</figcaption></figure>
+    <ul>
+      <li>個人向けの加入者は、1年で約1.9倍の1,360万人（前期から160万人の増加）。</li>
+      <li>1加入者あたりの月額収入（ARPU）は、前年同期の83ドルから69ドルに下がりました。前期（66ドル）からは、約5%の上昇です。</li>
+      <li>法人・政府向けの売上は、21.3億ドルで、前年同期比＋91%。<b>航空機は3,800機以上</b>に、Starlinkが搭載されたとのことです（会社の説明）。</li>
+      <li>指標の名前が、「Starlink加入者」から「<b>Starlink個人向け加入者</b>」に変わっています。管理された法人・政府向けの契約（航空、海上、政府など）は、この数字に含まれません（会社の定義）。</li>
+    </ul>
+
+    <h2>6. SI：売上は約9.3倍、買収の寄与も</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>SIの売上・投資</th><th>2026年7〜9月</th><th>前期（4〜6月）</th><th>前年同期</th></tr></thead><tbody><tr><td data-label="SIの売上・投資"><span class="tv">SI向けのソリューション・インフラの売上</span></td><td data-label="2026年7〜9月"><span class="tv">70.2億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">21.9億ドル</span></td><td data-label="前年同期"><span class="tv">3.6億ドル</span></td></tr><tr><td data-label="SIの売上・投資"><span class="tv">広告の売上</span></td><td data-label="2026年7〜9月"><span class="tv">5.4億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">3.7億ドル</span></td><td data-label="前年同期"><span class="tv">4.5億ドル</span></td></tr><tr><td data-label="SIの売上・投資"><span class="tv"><b>SIの売上（合計）</b></span></td><td data-label="2026年7〜9月"><span class="tv">75.6億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">25.6億ドル</span></td><td data-label="前年同期"><span class="tv">8.1億ドル</span></td></tr><tr><td data-label="SIの売上・投資"><span class="tv">SIの営業損益</span></td><td data-label="2026年7〜9月"><span class="tv">＋4.3億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">−12.6億ドル</span></td><td data-label="前年同期"><span class="tv">−17.2億ドル</span></td></tr><tr><td data-label="SIの売上・投資"><span class="tv">SIの設備投資</span></td><td data-label="2026年7〜9月"><span class="tv">164.4億ドル</span></td><td data-label="前期（4〜6月）"><span class="tv">158.3億ドル</span></td><td data-label="前年同期"><span class="tv">47.6億ドル</span></td></tr><tr><td data-label="SIの売上・投資"><span class="tv">稼働容量（会社の定義）</span></td><td data-label="2026年7〜9月"><span class="tv">1.7ギガワット</span></td><td data-label="前期（4〜6月）"><span class="tv">1.4ギガワット</span></td><td data-label="前年同期"><span class="tv">0.6ギガワット</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：SpaceXの決算発表（2026年10月20日、8-K Exhibit 99.1）。稼働容量は、会社が定義した指標（GPUの合計の想定消費電力）。</p>
+    <ul>
+      <li>SIの売上は、前期から約3倍の75.6億ドル。<b>「ソリューション・インフラ」が70.2億ドル</b>で、広告は5.4億ドルです。</li>
+      <li><b>Cursorは、2026年8月14日に買収が完了</b>。暗黙の株式価値は600億ドル、会計上の買収価格は425億ドルとのことです。買収後から9月末までに、<b>6.1億ドル</b>の売上を寄与しました。</li>
+      <li>設備投資は、<b>SIだけで164.4億ドル</b>（前年同期は47.6億ドル）。会社は、データセンター「COLOSSUS II」の建設を、継続していると説明しています。</li>
+    </ul>
+
+    <h2>7. 財務：現金は約900億ドル、負債も増えた</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目（2026年9月末）</th><th>金額</th><th>メモ</th></tr></thead><tbody><tr><td data-label="項目（2026年9月末）"><span class="tv">現金・現金同等物</span></td><td data-label="金額"><span class="tv">513億ドル</span></td><td data-label="メモ"><span class="tv">2025年末は247億ドル</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">有価証券（市場性のあるもの）</span></td><td data-label="金額"><span class="tv">386億ドル</span></td><td data-label="メモ"><span class="tv">2025年末はゼロ</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">有利子負債（リースを含む）</span></td><td data-label="金額"><span class="tv">388億ドル</span></td><td data-label="メモ"><span class="tv">うち関連当事者向けが約129億ドル</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">総資産</span></td><td data-label="金額"><span class="tv">2,540億ドル</span></td><td data-label="メモ"><span class="tv">2025年末は921億ドル</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">のれん</span></td><td data-label="金額"><span class="tv">484億ドル</span></td><td data-label="メモ"><span class="tv">2025年末は118億ドル。Cursorの買収などで増えた</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">純資産</span></td><td data-label="金額"><span class="tv">1,768億ドル</span></td><td data-label="メモ"><span class="tv">2025年末は26億ドル（優先株は別に388億ドル）</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">設備投資（1〜9月累計）</span></td><td data-label="金額"><span class="tv">481億ドル</span></td><td data-label="メモ"><span class="tv">7〜9月期は196億ドル</span></td></tr><tr><td data-label="項目（2026年9月末）"><span class="tv">営業キャッシュフロー（1〜9月累計）</span></td><td data-label="金額"><span class="tv">131億ドル</span></td><td data-label="メモ"><span class="tv">前年の同じ期間は41億ドル</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：SpaceXの決算発表（連結貸借対照表、キャッシュフロー計算書）。1億ドル＝100百万ドル。</p>
+    <p>上場による調達（純額857億ドル）などで、手元の現金・有価証券は約900億ドルになりました。一方で、有利子負債は約388億ドル、1〜9月の設備投資は481億ドルと、投資の規模も、非常に大きくなっています。</p>
+    <p><b>通信事業では、</b>10月8日に、800MHz帯の免許（全国、最大14MHz）を取得する契約を結んだと発表しています（完了は2027年上半期の見込み、規制当局の承認が条件）。</p>
+
+    <h2>8. 上場後の株価</h2>
+    <figure class="fig"><div class="fig-title">上場後の株価（日次終値、ドル）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="184.0" x2="368" y2="184.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="187.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >100</text><line x1="8" y1="123.3" x2="368" y2="123.3" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="126.8" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >150</text><line x1="8" y1="62.6" x2="368" y2="62.6" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="66.1" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >200</text><defs><linearGradient id="g59203" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,184.0 8.0,110.0 12.0,71.7 16.1,48.7 20.1,72.5 24.2,80.8 28.2,117.7 32.3,115.9 36.3,117.8 40.4,119.6 44.4,119.4 48.4,106.1 52.5,98.0 56.5,114.1 60.6,108.7 64.6,110.6 68.7,123.9 72.7,125.3 76.8,120.7 80.8,129.0 84.9,136.5 88.9,140.2 92.9,141.2 97.0,146.2 101.0,154.9 105.1,159.9 109.1,155.4 113.2,165.5 117.2,161.9 121.3,165.7 125.3,167.6 129.3,164.1 133.4,168.8 137.4,169.2 141.5,173.8 145.5,166.4 149.6,153.2 153.6,174.0 157.7,165.9 161.7,143.8 165.8,137.0 169.8,143.6 173.8,128.0 177.9,133.9 181.9,135.4 186.0,127.9 190.0,131.4 194.1,135.9 198.1,142.7 202.2,139.1 206.2,141.5 210.2,137.9 214.3,135.9 218.3,134.4 222.4,133.6 226.4,130.9 230.5,132.7 234.5,134.6 238.6,123.6 242.6,125.8 246.7,119.1 250.7,126.3 254.7,125.5 258.8,121.8 262.8,125.5 266.9,131.2 270.9,122.2 275.0,117.4 279.0,120.0 283.1,121.0 287.1,117.6 291.1,125.3 295.2,125.7 299.2,124.9 303.3,128.8 307.3,124.2 311.4,122.2 315.4,125.6 319.5,112.4 323.5,97.7 327.6,96.7 331.6,101.9 335.6,110.5 339.7,108.0 343.7,107.0 347.8,115.3 351.8,120.7 355.9,125.0 359.9,128.1 364.0,125.8 368.0,126.0 368.0,184.0" fill="url(#g59203)"/><polyline points="8.0,110.0 12.0,71.7 16.1,48.7 20.1,72.5 24.2,80.8 28.2,117.7 32.3,115.9 36.3,117.8 40.4,119.6 44.4,119.4 48.4,106.1 52.5,98.0 56.5,114.1 60.6,108.7 64.6,110.6 68.7,123.9 72.7,125.3 76.8,120.7 80.8,129.0 84.9,136.5 88.9,140.2 92.9,141.2 97.0,146.2 101.0,154.9 105.1,159.9 109.1,155.4 113.2,165.5 117.2,161.9 121.3,165.7 125.3,167.6 129.3,164.1 133.4,168.8 137.4,169.2 141.5,173.8 145.5,166.4 149.6,153.2 153.6,174.0 157.7,165.9 161.7,143.8 165.8,137.0 169.8,143.6 173.8,128.0 177.9,133.9 181.9,135.4 186.0,127.9 190.0,131.4 194.1,135.9 198.1,142.7 202.2,139.1 206.2,141.5 210.2,137.9 214.3,135.9 218.3,134.4 222.4,133.6 226.4,130.9 230.5,132.7 234.5,134.6 238.6,123.6 242.6,125.8 246.7,119.1 250.7,126.3 254.7,125.5 258.8,121.8 262.8,125.5 266.9,131.2 270.9,122.2 275.0,117.4 279.0,120.0 283.1,121.0 287.1,117.6 291.1,125.3 295.2,125.7 299.2,124.9 303.3,128.8 307.3,124.2 311.4,122.2 315.4,125.6 319.5,112.4 323.5,97.7 327.6,96.7 331.6,101.9 335.6,110.5 339.7,108.0 343.7,107.0 347.8,115.3 351.8,120.7 355.9,125.0 359.9,128.1 364.0,125.8 368.0,126.0" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><line x1="8" y1="141.5" x2="368" y2="141.5" stroke="#111827" stroke-width="1" stroke-dasharray="4 4"/><text x="10.0" y="136.5" font-size="10" text-anchor="start" fill="#111827" font-weight="700" ></text><circle cx="368.0" cy="126.0" r="3.4" fill="#111827"/><text x="8.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >06/12</text><text x="368.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >10/20</text></svg><figcaption>出典：株価データ（2026-06-12〜2026-10-20）。直近の終値は<b>$147.79</b>（公募価格の135ドルに対して+9%）。上場後の高値は$211.39（2026-06-16）、安値は$108.27（2026-08-05）。<b>決算の発表は、米国時間10月20日の取引終了後。この終値は、発表前のもの</b>。</figcaption></figure>
+    <p>決算発表は、<b>米国時間の10月20日の取引が終わったあと</b>でした。グラフの最後の終値は、発表前のものです。決算の数字は、株価の水準が妥当かを、示すものではありません。</p>
+
+    <h2>9. 次の決算で、何を確認するか</h2>
+    <p>決算ごとに、次の6項目を確認します。右端の「確認する時期」は、その数字が出る開示を示しています。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 営業利益と、純利益の差</span></td><td data-label="今回の数字"><span class="tv">営業利益27.9億ドル／純利益44.0億ドル（差の主な内訳：利息、その他の収益、税金の戻し）</span></td><td data-label="なぜ重要か"><span class="tv">純利益の中身が、本業の稼ぐ力か、一時的な項目かを分ける</span></td><td data-label="外れた場合"><span class="tv">非営業の項目が減ると、純利益は、営業利益の水準に近づく</span></td><td data-label="確認する時期"><span class="tv">次の10-Q／四半期の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② SIの売上の中身</span></td><td data-label="今回の数字"><span class="tv">売上75.6億ドル（うち、Cursorは6.1億ドル）。営業損益は＋4.3億ドル</span></td><td data-label="なぜ重要か"><span class="tv">買収と、クラウド契約と、本体の成長を、分けて見る</span></td><td data-label="外れた場合"><span class="tv">買収の効果を除くと、伸びが小さい場合がある</span></td><td data-label="確認する時期"><span class="tv">次の10-Q／四半期の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 設備投資と、資金</span></td><td data-label="今回の数字"><span class="tv">設備投資196億ドル（SIが164億ドル）／現金・有価証券900億ドル／有利子負債388億ドル</span></td><td data-label="なぜ重要か"><span class="tv">投資のペースを、資金で賄えるかを確認する</span></td><td data-label="外れた場合"><span class="tv">投資が続くと、現金が減り、負債が増える</span></td><td data-label="確認する時期"><span class="tv">次の10-Q（貸借対照表）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ Starlinkの加入者と単価</span></td><td data-label="今回の数字"><span class="tv">加入者1,360万（前期1,200万）／ARPU 69ドル（前年83ドル）</span></td><td data-label="なぜ重要か"><span class="tv">加入者の伸びが、売上の伸びにつながっているか</span></td><td data-label="外れた場合"><span class="tv">単価の下落が続くと、売上が伸びにくい</span></td><td data-label="確認する時期"><span class="tv">次の10-Q／四半期の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 宇宙事業の進捗</span></td><td data-label="今回の数字"><span class="tv">打ち上げ35回（前年44回）、初の軌道投入のStarship（26機のStarlink V3衛星）</span></td><td data-label="なぜ重要か"><span class="tv">次世代ロケットの開発が、費用に見合う成果を出すか</span></td><td data-label="外れた場合"><span class="tv">開発費が増えても、実績が積み上がらない</span></td><td data-label="確認する時期"><span class="tv">打ち上げは随時／費用は次の10-Q</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 買収した事業の統合</span></td><td data-label="今回の数字"><span class="tv">Cursor（買収価格は会計上425億ドル）、800MHz帯の免許取得（2027年上半期に完了予定）</span></td><td data-label="なぜ重要か"><span class="tv">大型の買収が、成果に結びつくか</span></td><td data-label="外れた場合"><span class="tv">統合の費用や株式報酬が、利益を圧迫する</span></td><td data-label="確認する時期"><span class="tv">適時開示・次の10-Q</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年7〜9月期の決算発表（8-K）。次の四半期（10〜12月期）の決算日程は、会社のIRや、SECの提出書類で確認してください。</p>
+
+    <h2>10. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「黒字」の中身を、分けて見る。</b>純利益と、営業利益と、非営業の項目では、続くかどうかの性質が違う。</li>
+      <li><b>買収の効果を、切り分ける。</b>SIの売上の急増には、買収（Cursor）が含まれる。売上の伸びが、事業の成長か、買収の寄与かを、あとの決算で確認する。</li>
+      <li><b>売上と投資の規模を、あわせて見る。</b>売上が増えた一方、設備投資も、四半期で約196億ドルと、大きく増えている。</li>
+      <li><b>株価の水準で、判断しない。</b>数字が前進しているかを、決算ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。過去の決算と株価は、将来を約束するものではありません。決算の発表後の株価の動きを、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字は、決算発表の資料（Form 8-K Exhibit 99.1、2026年10月20日提出）に基づきます。監査を受けていない数字で、四半期報告書（10-Q）の確認は、これからです。</p>
+      <p>※ 調整後EBITDA、ARPU、稼働容量、「個人向け加入者」などは、会社が定義した指標です。他社の同名の指標と、定義が違う場合があります。</p>
+      <p>※ 前期（2026年4〜6月期）の純損益は、四半期報告書（10-Q）の数字です。</p>
+      <p>※ 1億ドル＝100百万ドルで換算し、小数点以下を丸めています。株価は、日次終値です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>SEC EDGAR「Space Exploration Technologies Corp.（CIK 1181412）」Form 8-K（2026年10月20日提出）Exhibit 99.1「SpaceX Reports Third Quarter 2026 Results」：<a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm</a></li><li>SEC EDGAR「Space Exploration Technologies Corp.」Form 8-K（2026年10月20日提出）本文：<a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spcx-20261020.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spcx-20261020.htm</a></li><li>SEC EDGAR「Space Exploration Technologies Corp.」Form 10-Q（2026年8月4日提出、4〜6月期）：<a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1181412&type=10-Q" target="_blank" rel="noopener">https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1181412&type=10-Q</a></li><li>株価データ（上場後の日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月21日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="spacex-q2-2026.html">SpaceXの上場後初の決算（2026年4〜6月期）を、長期投資家の目線で読む</a><a href="spacex.html">SpaceXの目論見書を、長期投資家の目線で読む</a><a href="toyota.html">トヨタの決算を、長期投資家の目線で読む</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
