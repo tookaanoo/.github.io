@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alphabetの2026年7〜9月期決算（10月28日発表）。売上+25%、Cloudは約2倍。一方、設備投資は営業キャッシュフローを超え、借入と株式で資金を調達。成長の中身と、成長の資金を整理する。">
+<title>Alphabetの2026年7〜9月期決算｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/alphabet-q3-2026.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Alphabetの2026年7〜9月期決算｜長期投資家の目線">
+<meta property="og:description" content="Alphabetの2026年7〜9月期決算（10月28日発表）。売上+25%、Cloudは約2倍。一方、設備投資は営業キャッシュフローを超え、借入と株式で資金を調達。成長の中身と、成長の資金を整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/alphabet-q3-2026.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/alphabet-q3-2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/alphabet-q3-2026.jpg">
+<meta name="twitter:title" content="Alphabetの2026年7〜9月期決算｜長期投資家の目線">
+<meta name="twitter:description" content="Alphabetの2026年7〜9月期決算（10月28日発表）。売上+25%、Cloudは約2倍。一方、設備投資は営業キャッシュフローを超え、借入と株式で資金を調達。成長の中身と、成長の資金を整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Alphabetの2026年7〜9月期決算｜長期投資家の目線", "description": "Alphabetの2026年7〜9月期決算（10月28日発表）。売上+25%、Cloudは約2倍。一方、設備投資は営業キャッシュフローを超え、借入と株式で資金を調達。成長の中身と、成長の資金を整理する。", "inLanguage": "ja", "datePublished": "2026-10-29", "dateModified": "2026-10-29", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/alphabet-q3-2026.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "個別銘柄", "keywords": ["米国株", "決算", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/alphabet-q3-2026.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "Alphabetの2026年7〜9月期決算｜長期投資家の目線", "item": "https://fire-app.jp/articles/alphabet-q3-2026.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>Alphabetの2026年7〜9月期決算<br>｜長期投資家の目線</h1>
+    <p class="subtitle">Cloudは約2倍。設備投資は、営業キャッシュフローを超えた</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>売上は25%増、Cloudは約2倍</h3><p class="pt-d">Alphabetの2026年7〜9月期決算（<b>2026年10月28日</b>発表）。売上は1,276億ドルで<b>前年同期比 +25%</b>、営業利益は+30%。<b>Google Cloudの売上は約2倍</b>（+103%）になった。</p></div><div class="pt"><h3>増収分の約6割がCloud</h3><p class="pt-d">売上の増加分（252億ドル）の<b>約6割が、Google Cloud</b>。検索・その他は約3割。純利益が減ったのは、保有株式の評価損（−87億ドル）で、本業の利益が減ったのではない。</p></div><div class="pt"><h3>設備投資が営業CFを上回る</h3><p class="pt-d">一方、<b>設備投資は514億ドル（前年の約2.1倍）で、営業キャッシュフロー（423億ドル）を超えた</b>。フリーキャッシュフローは−91億ドル。長期では、<b>成長の資金をどう賄っているか</b>（借入・株式・優先株）を確認する。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月29日</span><span><b>情報の時点</b> 2026年10月28日の決算発表（8-K）／株価は10月28日終値</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この決算の位置づけ</h2>
+    <p>Alphabetは、<b>2026年10月28日</b>の米国市場の取引終了後に、2026年7〜9月期の決算を発表しました。決算の発表資料は、SEC（米証券取引委員会）に、Form 8-Kの添付書類として提出されています。</p>
+    <ul>
+      <li>数字は<b>監査を受けていない</b>速報です。四半期報告書（10-Q）は、この記事の時点では確認していません。</li>
+      <li>事業は<b>Google Services</b>（検索、YouTube、Android、端末など）、<b>Google Cloud</b>、<b>Other Bets</b>（自動運転など）の3つ。AIの研究開発費の一部は、どの事業にも配分されず、「Alphabetレベルの活動」として別に計上されます。</li>
+      <li>この記事の軸は、<b>「成長の中身」と「成長の資金」</b>です。何が伸びたかと、その伸びを支える投資を、どう賄っているかを、同じ決算で並べて見ます。</li>
+    </ul>
+
+    <h2>2. 数字：売上も営業利益も、大きく伸びた</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">売上</div><div class="tile-v">1,275.8<small>億ドル</small></div><div class="tile-n"><b>前年同期（1,023.5億ドル）比 +25%</b><br>前年同期の伸びは+16%</div></div><div class="tile key"><div class="tile-l">営業利益</div><div class="tile-v">405.8<small>億ドル</small></div><div class="tile-n"><b>前年同期（312.3億ドル）比 +30%</b><br>営業利益率 31.8%</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">純利益（普通株主分）</div><div class="tile-v">261.7<small>億ドル</small></div><div class="tile-n">前年同期 349.8億ドル（−25%）。株式の評価損の影響</div></div><div class="tile"><div class="tile-l">1株利益（希薄化後）</div><div class="tile-v">2.12<small>ドル</small></div><div class="tile-n">前年同期 2.87ドル</div></div><div class="tile"><div class="tile-l">Google Services</div><div class="tile-v">963.0<small>億ドル</small></div><div class="tile-n">前年同期 870.5億ドル（+11%）。検索・その他は+12%</div></div><div class="tile"><div class="tile-l">Google Cloud</div><div class="tile-v">307.1<small>億ドル</small></div><div class="tile-n">前年同期 151.6億ドル（+103%）</div></div></div>
+    <p class="art-fig">出典：Alphabetの決算（8-K Exhibit 99.1、2026年10月28日）。売上の伸びは、為替の影響を除いても+25%（会社の発表）。</p>
+
+    <h2>3. 売上の伸びは、どこから来たか</h2>
+    <figure class="fig"><div class="fig-title">売上の増加分は、どこから来たか（億ドル、前年同期との差）</div><svg viewBox="0 0 420 242" role="img" xmlns="http://www.w3.org/2000/svg"><text x="110.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Google Cloud</text><rect x="118.0" y="4" width="236.0" height="22" rx="3" fill="#ec4899"/><text x="359.0" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+155.5</text><text x="110.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >検索・その他</text><rect x="118.0" y="38" width="102.9" height="22" rx="3" fill="#f9a8d4"/><text x="225.9" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+67.8</text><text x="110.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >サブスク・端末など</text><rect x="118.0" y="72" width="21.6" height="22" rx="3" fill="#f9a8d4"/><text x="144.6" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+14.2</text><text x="110.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >YouTube広告</text><rect x="118.0" y="106" width="14.4" height="22" rx="3" fill="#f9a8d4"/><text x="137.4" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+9.5</text><text x="110.0" y="154.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >為替ヘッジ</text><rect x="118.0" y="140" width="6.1" height="22" rx="3" fill="#cbd5e1"/><text x="129.1" y="154.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+4.0</text><text x="110.0" y="188.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >広告ネットワーク</text><rect x="118.0" y="174" width="1.5" height="22" rx="3" fill="#cbd5e1"/><text x="124.5" y="188.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+1.0</text><text x="110.0" y="222.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Other Bets</text><rect x="118.0" y="208" width="1.0" height="22" rx="3" fill="#cbd5e1"/><text x="123.4" y="222.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >+0.3</text></svg><figcaption>出典：Alphabetの決算（8-K Exhibit 99.1、2026年10月28日）。売上の合計は<b>+252.3億ドル</b>（1,023.5億ドル→1,275.8億ドル）。<b>Google Cloudが、増加分の約62%</b>、検索・その他が約27%。</figcaption></figure>
+    <ul>
+      <li><b>Google Cloudは、売上が約2倍</b>（151.6億ドル→307.1億ドル）。営業利益は、35.9億ドルから111.2億ドルへ。会社は、AIインフラとAIソリューションの需要に加え、<b>TPUシステムの販売</b>が寄与したと説明しています。</li>
+      <li><b>検索・その他は+12%</b>（565.7億ドル→633.5億ドル）。会社は、検索クエリの伸びが「過去5年で最高」と説明しています。</li>
+      <li>YouTube広告は+9%、サブスクリプション・プラットフォーム・端末は+11%。広告ネットワークは+1%でした。</li>
+    </ul>
+    <figure class="fig"><div class="fig-title">Google Cloudの売上と営業利益（億ドル、7〜9月期）</div><svg viewBox="0 0 420 220" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb"/><rect x="48.0" y="117.9" width="60.0" height="72.1" rx="3" fill="#cbd5e1"/><text x="78.0" y="112.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >151.6</text><rect x="112.0" y="44.0" width="60.0" height="146.0" rx="3" fill="#ec4899"/><text x="142.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >307.1</text><text x="110.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >売上</text><rect x="248.0" y="172.9" width="60.0" height="17.1" rx="3" fill="#cbd5e1"/><text x="278.0" y="167.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >35.9</text><rect x="312.0" y="137.1" width="60.0" height="52.9" rx="3" fill="#ec4899"/><text x="342.0" y="132.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >111.2</text><text x="310.0" y="210.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >営業利益</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年7〜9月</text><rect x="139" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="152.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年7〜9月</text></svg><figcaption>出典：同決算。営業利益率は、23.7%から36.2%へ。売上には、<b>TPU（AI用の半導体）システムの販売</b>が含まれる（会社の説明：「有意な寄与」。金額は8-Kに記載なし）。</figcaption></figure>
+    <p>Cloudの売上には、利用料やサブスクリプションなどの<b>継続的な収入</b>と、TPUシステムの<b>販売</b>が含まれます。8-Kでは、その内訳が示されていません。<b>在庫が、2025年末の24億ドルから133億ドルに増えている</b>こと（貸借対照表）は、販売する製品の在庫が増えたことと整合しますが、8-Kだけでは、関係を確認できません。</p>
+
+    <h2>4. 営業利益は+30%、純利益は−25%</h2>
+    <figure class="fig"><div class="fig-title">営業利益から純利益まで（億ドル、2026年7〜9月期）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.2" y="26.0" width="49.6" height="164.0" rx="3" fill="#111827"/><text x="50.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >405.8</text><text x="50.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >営業利益</text><line x1="74.8" y1="26.0" x2="105.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="105.2" y="26.0" width="49.6" height="35.0" rx="3" fill="#64748b"/><text x="130.0" y="74.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-86.6</text><text x="130.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >株式の</text><text x="130.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >評価損益</text><line x1="154.8" y1="61.0" x2="185.2" y2="61.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="185.2" y="59.2" width="49.6" height="1.8" rx="3" fill="#ec4899"/><text x="210.0" y="53.2" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+4.4</text><text x="210.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >その他</text><line x1="234.8" y1="59.2" x2="265.2" y2="59.2" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="265.2" y="59.2" width="49.6" height="23.8" rx="3" fill="#64748b"/><text x="290.0" y="96.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-58.9</text><text x="290.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >法人税等</text><line x1="314.8" y1="83.0" x2="345.2" y2="83.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="345.2" y="83.0" width="49.6" height="107.0" rx="3" fill="#111827"/><text x="370.0" y="77.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >264.7</text><text x="370.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >純利益</text></svg><figcaption>出典：同決算の損益計算書。「株式の評価損益」は、保有する株式（非上場株を含む）の時価の変動で、<b>前年同期は+107.3億ドルの利益、今期は−86.6億ドルの損失</b>。普通株主に帰属する純利益は261.7億ドル（優先株の配当3.0億ドルを引いた後）。</figcaption></figure>
+    <ul>
+      <li>営業利益は、312億ドルから406億ドルへ（+30%）。</li>
+      <li>その他の損益は、前年同期の+128億ドルから、今期は<b>−82億ドル</b>。内訳の主因は<b>株式の評価損益</b>（+107億ドル→−87億ドル）で、利息収支や為替などの影響は小さい。</li>
+      <li>この評価損益は、会社の説明では、<b>損失が純利益を67億ドル、1株利益を0.55ドル押し下げた</b>。</li>
+      <li>利息費用は、1.4億ドルから9.7億ドルに増えた。借入が増えたことと整合する。</li>
+    </ul>
+
+    <h2>5. 投資と現金：設備投資が、営業キャッシュフローを超えた</h2>
+    <figure class="fig"><div class="fig-title">営業キャッシュフローと設備投資（億ドル、四半期ごと）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="196.0" x2="410" y2="196.0" stroke="#e5e7eb"/><rect x="24.0" y="55.6" width="24.0" height="140.4" rx="3" fill="#cbd5e1"/><text x="36.0" y="50.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >484</text><rect x="52.0" y="126.4" width="24.0" height="69.6" rx="3" fill="#ec4899"/><text x="64.0" y="121.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >240</text><text x="50.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><text x="50.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="104.0" y="44.0" width="24.0" height="152.0" rx="3" fill="#cbd5e1"/><text x="116.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >524</text><rect x="132.0" y="115.1" width="24.0" height="80.9" rx="3" fill="#ec4899"/><text x="144.0" y="110.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >279</text><text x="130.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><rect x="184.0" y="63.1" width="24.0" height="132.9" rx="3" fill="#cbd5e1"/><text x="196.0" y="58.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >458</text><rect x="212.0" y="92.4" width="24.0" height="103.6" rx="3" fill="#ec4899"/><text x="224.0" y="87.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >357</text><text x="210.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年</text><text x="210.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1〜3月</text><rect x="264.0" y="82.6" width="24.0" height="113.4" rx="3" fill="#cbd5e1"/><text x="276.0" y="77.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >391</text><rect x="292.0" y="65.8" width="24.0" height="130.2" rx="3" fill="#ec4899"/><text x="304.0" y="60.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >449</text><text x="290.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="344.0" y="73.3" width="24.0" height="122.7" rx="3" fill="#cbd5e1"/><text x="356.0" y="68.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >423</text><rect x="372.0" y="46.9" width="24.0" height="149.1" rx="3" fill="#ec4899"/><text x="384.0" y="41.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >514</text><text x="370.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >営業キャッシュフロー</text><rect x="150" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="163.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >設備投資</text></svg><figcaption>出典：同決算。フリーキャッシュフロー（営業CF−設備投資）は、前年同期+245億ドル → 4〜6月期−59億ドル → 7〜9月期<b>−91億ドル</b>。直近12か月では+197億ドル。</figcaption></figure>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">設備投資</div><div class="tile-v">513.6<small>億ドル</small></div><div class="tile-n"><b>前年同期（239.5億ドル）の約2.1倍</b><br>前期（4〜6月）は449.2億ドル</div></div><div class="tile key"><div class="tile-l">フリーキャッシュフロー</div><div class="tile-v">−90.7<small>億ドル</small></div><div class="tile-n"><b>営業CF（422.9億ドル）が、設備投資を下回った</b><br>前年同期は+244.6億ドル</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">長期の借入</div><div class="tile-v">1,251<small>億ドル</small></div><div class="tile-n">2025年末の465億ドルから、約2.7倍</div></div><div class="tile"><div class="tile-l">現金・有価証券</div><div class="tile-v">2,651<small>億ドル</small></div><div class="tile-n">2025年末 1,268億ドル</div></div><div class="tile"><div class="tile-l">総資産</div><div class="tile-v">1兆33<small>億ドル</small></div><div class="tile-n">2025年末 5,953億ドル</div></div><div class="tile"><div class="tile-l">在庫</div><div class="tile-v">133<small>億ドル</small></div><div class="tile-n">2025年末 24億ドル</div></div></div>
+    <p class="art-fig">出典：同決算の貸借対照表、キャッシュフロー計算書。フリーキャッシュフローは、会社の定義（営業キャッシュフロー−設備投資）。1億ドル＝100百万ドルで換算。</p>
+    <p>設備投資は、<b>5四半期で、240億ドルから514億ドルへ</b>、ほぼ毎期増えています。営業キャッシュフローは、同じ期間で484億ドルから423億ドルに減りました。<b>2026年4〜6月期から、設備投資が営業キャッシュフローを上回っています</b>。</p>
+
+    <h2>6. その資金は、どう賄っているか</h2>
+    <figure class="fig"><div class="fig-title">2026年1〜9月の、資金の出入り（億ドル）</div><svg viewBox="0 0 420 310" role="img" xmlns="http://www.w3.org/2000/svg"><text x="114.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >営業キャッシュフロー</text><rect x="122.0" y="4" width="215.2" height="22" rx="3" fill="#cbd5e1"/><text x="342.2" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,271</text><text x="114.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >社債などの発行（純）</text><rect x="122.0" y="38" width="129.2" height="22" rx="3" fill="#cbd5e1"/><text x="256.2" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >763</text><text x="114.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >普通株の発行</text><rect x="122.0" y="72" width="72.6" height="22" rx="3" fill="#cbd5e1"/><text x="199.6" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >429</text><text x="114.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >優先株の発行</text><rect x="122.0" y="106" width="32.3" height="22" rx="3" fill="#cbd5e1"/><text x="159.3" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >191</text><text x="114.0" y="154.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >設備投資</text><rect x="122.0" y="140" width="223.5" height="22" rx="3" fill="#ec4899"/><text x="350.5" y="154.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,320</text><text x="114.0" y="188.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >企業買収など</text><rect x="122.0" y="174" width="57.7" height="22" rx="3" fill="#f9a8d4"/><text x="184.7" y="188.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >341</text><text x="114.0" y="222.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >非上場株などの購入</text><rect x="122.0" y="208" width="41.0" height="22" rx="3" fill="#f9a8d4"/><text x="168.0" y="222.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >242</text><text x="114.0" y="256.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >配当</text><rect x="122.0" y="242" width="13.9" height="22" rx="3" fill="#f9a8d4"/><text x="140.9" y="256.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >82</text><text x="114.0" y="290.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >自社株買い</text><rect x="122.0" y="276" width="1.0" height="22" rx="3" fill="#f9a8d4"/><text x="127.0" y="290.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >0</text></svg><figcaption>出典：同決算のキャッシュフロー計算書（1〜9月の累計）。上の4本（灰色）が入ってきた資金、下の5本（ピンク）が出ていった資金。社債などの発行（純）は、発行852億ドルから返済89億ドルを引いた額。<b>自社株買いは、前年の1〜9月は398億ドル、今年はゼロ</b>。</figcaption></figure>
+    <ul>
+      <li><b>社債：</b>7〜9月期に、純額287億ドルの社債を発行（会社の説明）。長期の借入は、2025年末の465億ドルから1,251億ドルへ。</li>
+      <li><b>株式：</b>7〜9月期に、普通株を発行して124億ドルを調達（At-the-Market方式。残りの発行枠は276億ドル）。1〜9月では、普通株429億ドルと優先株（強制転換型）191億ドルを調達。発行済みの株式数は、2025年末の120.9億株から122.9億株に増えた。</li>
+      <li><b>自社株買い：</b>7〜9月期は、ゼロ（前年同期は115億ドル）。<b>配当</b>は、1株0.22ドルを継続。</li>
+      <li>現金・有価証券は、2025年末の1,268億ドルから2,651億ドルへ。<b>調達した資金が、手元にも積み上がっている</b>。</li>
+    </ul>
+    <p>他社と比べる物差しとして、「設備投資÷営業キャッシュフロー」があります。Alphabetの7〜9月期は<b>121%</b>（前年同期は49%）。同じ四半期のMicrosoftは68%（前年同期は43%）です（<a href="microsoft-q1-fy2027.html">Microsoftの記事</a>）。</p>
+
+    <h2>7. 決算前の株価</h2>
+    <figure class="fig"><div class="fig-title">Alphabet（GOOGL）の株価（日次終値、ドル）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="149.1" x2="368" y2="149.1" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="152.6" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >300</text><line x1="8" y1="83.3" x2="368" y2="83.3" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="86.8" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >350</text><line x1="8" y1="17.4" x2="368" y2="17.4" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="20.9" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >400</text><defs><linearGradient id="g76347" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,184.0 8.0,182.6 9.4,173.5 10.9,173.9 12.3,170.5 13.8,178.7 15.2,169.8 16.6,169.2 18.1,177.0 19.5,162.1 21.0,160.6 22.4,166.6 23.8,177.3 25.3,180.2 26.7,168.8 28.2,169.8 29.6,158.6 31.0,163.0 32.5,149.6 33.9,124.6 35.4,118.2 36.8,122.8 38.2,122.5 39.7,129.5 41.1,128.3 42.6,123.3 44.0,125.9 45.4,121.1 46.9,131.0 48.3,126.6 49.8,122.5 51.2,132.7 52.6,136.9 54.1,138.3 55.5,140.5 57.0,153.4 58.4,145.9 59.8,139.7 61.3,136.2 62.7,130.2 64.2,130.6 65.6,131.3 67.0,131.3 68.5,130.9 69.9,132.0 71.4,129.2 72.8,127.3 74.2,130.2 75.7,120.2 77.1,115.6 78.6,111.5 80.0,107.2 81.4,101.8 82.9,101.9 84.3,106.0 85.8,109.6 87.2,120.1 88.6,111.7 90.1,108.9 91.5,112.3 93.0,105.3 94.4,103.6 95.8,101.7 97.3,98.7 98.7,99.1 100.2,91.6 101.6,96.8 103.0,105.6 104.5,108.0 105.9,119.0 107.4,117.1 108.8,124.6 110.2,134.7 111.7,137.3 113.1,141.6 114.6,146.5 116.0,144.7 117.4,145.4 118.9,129.4 120.3,134.0 121.8,134.8 123.2,132.1 124.6,139.4 126.1,133.6 127.5,140.5 129.0,144.4 130.4,145.0 131.8,148.0 133.3,151.1 134.7,140.7 136.2,139.8 137.6,137.7 139.0,144.4 140.5,146.1 141.9,141.8 143.4,134.7 144.8,139.0 146.2,139.7 147.7,147.8 149.1,146.4 150.6,161.7 152.0,161.1 153.4,174.2 154.9,182.9 156.3,184.0 157.8,165.5 159.2,152.5 160.6,154.7 162.1,149.1 163.5,141.9 165.0,126.3 166.4,124.8 167.8,126.4 169.3,121.1 170.7,105.8 172.2,100.2 173.6,101.7 175.0,94.2 176.5,99.8 177.9,106.6 179.4,97.3 180.8,97.9 182.2,90.7 183.7,82.8 185.1,83.6 186.6,83.4 188.0,37.5 189.4,36.3 190.9,39.5 192.3,32.7 193.8,20.0 195.2,20.1 196.6,16.4 198.1,32.4 199.5,34.1 201.0,14.0 202.4,16.0 203.8,21.7 205.3,21.5 206.7,33.7 208.2,32.1 209.6,33.7 211.0,39.9 212.5,32.1 213.9,32.2 215.4,30.4 216.8,43.3 218.2,48.6 219.7,67.7 221.1,71.4 222.6,54.1 224.0,58.9 225.4,65.8 226.9,64.5 228.3,74.9 229.8,73.0 231.2,70.5 232.6,57.8 234.1,52.7 235.5,65.1 237.0,59.5 238.4,83.7 239.8,88.4 241.3,89.5 242.7,91.6 244.2,99.9 245.6,78.5 247.0,73.6 248.5,68.5 249.9,70.2 251.4,61.6 252.8,60.9 254.2,67.6 255.7,71.6 257.1,73.8 258.6,80.0 260.0,70.8 261.4,55.7 262.9,77.4 264.3,87.5 265.8,80.7 267.2,87.0 268.6,93.7 270.1,125.8 271.5,123.1 273.0,114.1 274.4,104.7 275.8,100.8 277.3,104.8 278.7,75.2 280.2,52.3 281.6,46.9 283.0,66.9 284.5,73.1 285.9,77.6 287.4,73.4 288.8,91.4 290.2,91.8 291.7,88.1 293.1,88.7 294.6,91.2 296.0,90.9 297.4,90.2 298.9,95.6 300.3,90.1 301.8,85.8 303.2,87.3 304.6,93.8 306.1,95.6 307.5,87.8 309.0,97.3 310.4,103.0 311.8,100.2 313.3,93.2 314.7,98.5 316.2,98.6 317.6,108.8 319.0,106.2 320.5,98.4 321.9,84.1 323.4,89.9 324.8,92.7 326.2,86.8 327.7,83.9 329.1,76.7 330.6,81.8 332.0,99.3 333.4,93.3 334.9,91.3 336.3,92.8 337.8,95.2 339.2,91.1 340.6,98.8 342.1,91.8 343.5,87.9 345.0,86.3 346.4,82.6 347.8,85.5 349.3,81.1 350.7,79.7 352.2,78.3 353.6,86.4 355.0,84.3 356.5,95.7 357.9,90.9 359.4,96.1 360.8,103.3 362.2,117.2 363.7,122.5 365.1,127.0 366.6,122.0 368.0,116.3 368.0,184.0" fill="url(#g76347)"/><polyline points="8.0,182.6 9.4,173.5 10.9,173.9 12.3,170.5 13.8,178.7 15.2,169.8 16.6,169.2 18.1,177.0 19.5,162.1 21.0,160.6 22.4,166.6 23.8,177.3 25.3,180.2 26.7,168.8 28.2,169.8 29.6,158.6 31.0,163.0 32.5,149.6 33.9,124.6 35.4,118.2 36.8,122.8 38.2,122.5 39.7,129.5 41.1,128.3 42.6,123.3 44.0,125.9 45.4,121.1 46.9,131.0 48.3,126.6 49.8,122.5 51.2,132.7 52.6,136.9 54.1,138.3 55.5,140.5 57.0,153.4 58.4,145.9 59.8,139.7 61.3,136.2 62.7,130.2 64.2,130.6 65.6,131.3 67.0,131.3 68.5,130.9 69.9,132.0 71.4,129.2 72.8,127.3 74.2,130.2 75.7,120.2 77.1,115.6 78.6,111.5 80.0,107.2 81.4,101.8 82.9,101.9 84.3,106.0 85.8,109.6 87.2,120.1 88.6,111.7 90.1,108.9 91.5,112.3 93.0,105.3 94.4,103.6 95.8,101.7 97.3,98.7 98.7,99.1 100.2,91.6 101.6,96.8 103.0,105.6 104.5,108.0 105.9,119.0 107.4,117.1 108.8,124.6 110.2,134.7 111.7,137.3 113.1,141.6 114.6,146.5 116.0,144.7 117.4,145.4 118.9,129.4 120.3,134.0 121.8,134.8 123.2,132.1 124.6,139.4 126.1,133.6 127.5,140.5 129.0,144.4 130.4,145.0 131.8,148.0 133.3,151.1 134.7,140.7 136.2,139.8 137.6,137.7 139.0,144.4 140.5,146.1 141.9,141.8 143.4,134.7 144.8,139.0 146.2,139.7 147.7,147.8 149.1,146.4 150.6,161.7 152.0,161.1 153.4,174.2 154.9,182.9 156.3,184.0 157.8,165.5 159.2,152.5 160.6,154.7 162.1,149.1 163.5,141.9 165.0,126.3 166.4,124.8 167.8,126.4 169.3,121.1 170.7,105.8 172.2,100.2 173.6,101.7 175.0,94.2 176.5,99.8 177.9,106.6 179.4,97.3 180.8,97.9 182.2,90.7 183.7,82.8 185.1,83.6 186.6,83.4 188.0,37.5 189.4,36.3 190.9,39.5 192.3,32.7 193.8,20.0 195.2,20.1 196.6,16.4 198.1,32.4 199.5,34.1 201.0,14.0 202.4,16.0 203.8,21.7 205.3,21.5 206.7,33.7 208.2,32.1 209.6,33.7 211.0,39.9 212.5,32.1 213.9,32.2 215.4,30.4 216.8,43.3 218.2,48.6 219.7,67.7 221.1,71.4 222.6,54.1 224.0,58.9 225.4,65.8 226.9,64.5 228.3,74.9 229.8,73.0 231.2,70.5 232.6,57.8 234.1,52.7 235.5,65.1 237.0,59.5 238.4,83.7 239.8,88.4 241.3,89.5 242.7,91.6 244.2,99.9 245.6,78.5 247.0,73.6 248.5,68.5 249.9,70.2 251.4,61.6 252.8,60.9 254.2,67.6 255.7,71.6 257.1,73.8 258.6,80.0 260.0,70.8 261.4,55.7 262.9,77.4 264.3,87.5 265.8,80.7 267.2,87.0 268.6,93.7 270.1,125.8 271.5,123.1 273.0,114.1 274.4,104.7 275.8,100.8 277.3,104.8 278.7,75.2 280.2,52.3 281.6,46.9 283.0,66.9 284.5,73.1 285.9,77.6 287.4,73.4 288.8,91.4 290.2,91.8 291.7,88.1 293.1,88.7 294.6,91.2 296.0,90.9 297.4,90.2 298.9,95.6 300.3,90.1 301.8,85.8 303.2,87.3 304.6,93.8 306.1,95.6 307.5,87.8 309.0,97.3 310.4,103.0 311.8,100.2 313.3,93.2 314.7,98.5 316.2,98.6 317.6,108.8 319.0,106.2 320.5,98.4 321.9,84.1 323.4,89.9 324.8,92.7 326.2,86.8 327.7,83.9 329.1,76.7 330.6,81.8 332.0,99.3 333.4,93.3 334.9,91.3 336.3,92.8 337.8,95.2 339.2,91.1 340.6,98.8 342.1,91.8 343.5,87.9 345.0,86.3 346.4,82.6 347.8,85.5 349.3,81.1 350.7,79.7 352.2,78.3 353.6,86.4 355.0,84.3 356.5,95.7 357.9,90.9 359.4,96.1 360.8,103.3 362.2,117.2 363.7,122.5 365.1,127.0 366.6,122.0 368.0,116.3" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="368.0" cy="116.3" r="3.4" fill="#111827"/><text x="8.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >25/10/29</text><text x="368.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >10/28</text></svg><figcaption>出典：株価データ（2025-10-29〜2026-10-28）。直近の終値は<b>$324.89</b>。1年間の高値は$402.62（2026-05-13）、安値は$273.50（2026-03-30）。<b>決算の発表は、米国時間10月28日の取引終了後。この終値は、発表前のもの</b>。</figcaption></figure>
+    <p>決算の発表は、米国時間の10月28日の取引が終わったあとでした。決算後の株価の反応は、この記事では取り上げていません。決算の数字は、株価の水準が妥当かを、示すものではありません。</p>
+
+    <h2>8. 次の決算で、何を確認するか</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① Cloudの伸びと利益率</span></td><td data-label="今回の数字"><span class="tv">売上+103%、営業利益率36.2%</span></td><td data-label="なぜ重要か"><span class="tv">増収分の約6割を担う。伸びが続くか</span></td><td data-label="外れた場合"><span class="tv">伸びの鈍化、利益率の低下</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② TPU販売の寄与</span></td><td data-label="今回の数字"><span class="tv">「有意な寄与」（金額は8-Kに記載なし）。在庫は133億ドル</span></td><td data-label="なぜ重要か"><span class="tv">販売（一時的）と、利用料（継続的）を分けて見たい</span></td><td data-label="外れた場合"><span class="tv">寄与の大きい期と小さい期で、売上がぶれる</span></td><td data-label="確認する時期"><span class="tv">10-Qの注記、次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 設備投資とフリーキャッシュフロー</span></td><td data-label="今回の数字"><span class="tv">設備投資513.6億ドル、FCF −90.7億ドル</span></td><td data-label="なぜ重要か"><span class="tv">投資を、営業CFで賄えているか</span></td><td data-label="外れた場合"><span class="tv">FCFの赤字が続く、投資がさらに増える</span></td><td data-label="確認する時期"><span class="tv">次の10-Q／決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 資金の調達と株主還元</span></td><td data-label="今回の数字"><span class="tv">社債・株式・優先株で資金を調達。自社株買いはゼロ</span></td><td data-label="なぜ重要か"><span class="tv">借入の増加と、株式数の増加（希薄化）</span></td><td data-label="外れた場合"><span class="tv">調達がさらに増える、自社株買いが再開する</span></td><td data-label="確認する時期"><span class="tv">10-Q、決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 純利益のぶれ</span></td><td data-label="今回の数字"><span class="tv">株式の評価損−86.6億ドル（前年は+107.3億ドル）</span></td><td data-label="なぜ重要か"><span class="tv">純利益は、本業と投資の評価損益が混ざる</span></td><td data-label="外れた場合"><span class="tv">評価損益で、利益が大きくぶれる</span></td><td data-label="確認する時期"><span class="tv">決算（その他の収益・費用の表）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 検索の伸び</span></td><td data-label="今回の数字"><span class="tv">検索・その他+12%。会社は「検索クエリの伸びは過去5年で最高」と説明</span></td><td data-label="なぜ重要か"><span class="tv">AIの普及が、中核の広告を押し上げるか</span></td><td data-label="外れた場合"><span class="tv">伸びの鈍化</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年7〜9月期の決算発表（8-K）。次の四半期（10〜12月期）の決算日程は、会社のIRで確認してください。</p>
+
+    <h2>9. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「何が伸びたか」を分ける。</b>全体の+25%の約6割は、Cloud。中核の検索も+12%で伸びているが、伸びの主役は変わってきている。</li>
+      <li><b>純利益のぶれは、本業と分けて読む。</b>株式の評価損益は、前年同期の+107億ドルから今期−87億ドルへ。純利益の前年比は、本業の力を示さない。</li>
+      <li><b>成長の「資金」を見る。</b>設備投資が営業CFを超えた期間は、借入や株式の発行で埋める。借入と株式数の増加は、将来の利益の取り分に影響する。</li>
+      <li><b>販売と利用料を分ける。</b>TPUの販売のような一時的な売上と、継続的な利用料では、先の読み方が変わる。</li>
+      <li><b>株価の水準で、判断しない。</b>数字が前進しているかを、決算ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。過去の決算と株価は、将来を約束するものではありません。決算の発表後の株価の動きや、会社の計画の実現を、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字は、決算の発表資料（Form 8-K Exhibit 99.1、2026年10月28日提出）に基づきます。監査を受けていない数字で、四半期報告書（10-Q）の確認は、これからです。</p>
+      <p>※ フリーキャッシュフローは、会社が定義した指標（営業キャッシュフロー−設備投資）です。他社の同名の指標と、定義が違う場合があります。</p>
+      <p>※ 1億ドル＝100百万ドルで換算し、小数点以下を丸めています。割合は、換算前の数字で計算しています。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>SEC EDGAR「Alphabet Inc.（CIK 1652044）」Form 8-K（2026年10月28日提出）Exhibit 99.1「Alphabet Announces Third Quarter 2026 Results」：<a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm</a></li><li>株価データ（日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月29日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="microsoft-q1-fy2027.html">Microsoftの2026年7〜9月期決算（FY27 第1四半期）｜長期投資家の目線</a><a href="spacex-q3-2026.html">SpaceXの2026年7〜9月期決算｜長期投資家の目線</a><a href="anthropic-ipo.html">Anthropicの新規上場｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
