@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="S&amp;P500の上位への集中、時価総額加重と均等加重の比較、円で買うときの為替の影響を、データで確かめる。">
+<title>S&P500を買うとは、何を買うことか｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/sp500.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="S&amp;P500を買うとは、何を買うことか｜長期投資家の目線">
+<meta property="og:description" content="S&amp;P500の上位への集中、時価総額加重と均等加重の比較、円で買うときの為替の影響を、データで確かめる。">
+<meta property="og:url" content="https://fire-app.jp/articles/sp500.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/sp500.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/sp500.jpg">
+<meta name="twitter:title" content="S&amp;P500を買うとは、何を買うことか｜長期投資家の目線">
+<meta name="twitter:description" content="S&amp;P500の上位への集中、時価総額加重と均等加重の比較、円で買うときの為替の影響を、データで確かめる。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "S&P500を買うとは、何を買うことか｜長期投資家の目線", "description": "S&P500の上位への集中、時価総額加重と均等加重の比較、円で買うときの為替の影響を、データで確かめる。", "inLanguage": "ja", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/sp500.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "国・インデックス", "keywords": ["米国株", "為替"], "image": ["https://fire-app.jp/articles/og/sp500.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "S&P500を買うとは、何を買うことか｜長期投資家の目線", "item": "https://fire-app.jp/articles/sp500.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 国・インデックス</div>
+    <h1>S&P500を買うとは、<br>何を買うことか<br>｜長期投資家の目線</h1>
+    <p class="subtitle">上位への集中、加重の方式、為替。3つの軸で、中身を確かめる</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>上位10社で、指数の約4割</h3><p class="pt-d">S&P500は、約500社への分散と言われるが、<b>上位10社で指数の約39.5%</b>（2026年10月26日、NVIDIA 7.9%・Apple 7.6%・Microsoft 6.0%など）。<b>上位21社で、半分に達する</b>。</p></div><div class="pt"><h3>加重の方式で、優劣が入れ替わる</h3><p class="pt-d">構成比を時価総額で決めるS&P500（SPY）と、500社を同じ比率にした均等加重（RSP）は、2003年5月から、<b>年率11.3%と10.8%で、ほぼ同じ</b>。ただし、5年ごとの差は−5.5〜＋5.6ポイントの間で入れ替わる。</p></div><div class="pt"><h3>円で買うと、為替も買っている</h3><p class="pt-d">円で買う人は、<b>為替も一緒に買っている</b>。1996年11月から、ドル建ては年9.9%、円換算は年11.1%。10年ごとの円換算は、−5.4%から＋21.1%まで、ドル建てと大きく違う。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月28日</span><span><b>情報の時点</b> SPYの構成銘柄（2026年10月26日）／株価データ（2026年10月）</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=為替">#為替</a></div>
+<div class="art-note"><b>この記事について</b>　特定の金融商品や投資方法を勧めるものではなく、公開されたデータの内容を整理した情報提供です。数値・時期は公表資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の問い</h2>
+    <p>S&P500は、米国を代表する大型株約500社で作る株価指数です。連動する投資信託やETFは、「500社に分散できる」商品として、広く使われています。この記事では、<b>S&P500を買うとは、実際に何を買うことなのか</b>を、3つの軸から、データで確かめます。</p>
+    <ul>
+      <li><b>① 何を、どれだけ買っているか</b>（上位銘柄への集中）</li>
+      <li><b>② 「大きい会社ほど多く買う」方式は、得なのか</b>（時価総額加重と均等加重の比較）</li>
+      <li><b>③ 円で買うと、何が加わるか</b>（為替）</li>
+    </ul>
+
+    <h2>2. 軸①：何を買っているか ― 上位に偏る</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">上位10社の合計</div><div class="tile-v"><small>約</small>39.5<small>%</small></div><div class="tile-n"><b>NVIDIA 7.9%、Apple 7.6%、Microsoft 6.0%</b>で、上位3社だけで約21.5%</div></div><div class="tile key"><div class="tile-l">指数の半分に達する社数</div><div class="tile-v">21<small>社</small></div><div class="tile-n"><b>残りの約480社で、残りの半分</b>。約500社のうち、上位の少数が大きな比率を占める</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">上位5社の合計</div><div class="tile-v"><small>約</small>30.2<small>%</small></div><div class="tile-n">2026年10月26日時点</div></div><div class="tile"><div class="tile-l">構成銘柄</div><div class="tile-v"><small>約</small>500<small>社</small></div><div class="tile-n">Alphabetは2種類の株式で、合算して数える</div></div></div>
+    <figure class="fig"><div class="fig-title">S&amp;P500の構成比の上位10社（%、2026年10月26日）</div><svg viewBox="0 0 420 344" role="img" xmlns="http://www.w3.org/2000/svg"><text x="124.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >NVIDIA</text><rect x="132.0" y="4" width="217.7" height="22" rx="3" fill="#ec4899"/><text x="354.7" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >7.9</text><text x="124.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Apple</text><rect x="132.0" y="38" width="209.1" height="22" rx="3" fill="#ec4899"/><text x="346.1" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >7.6</text><text x="124.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Microsoft</text><rect x="132.0" y="72" width="164.8" height="22" rx="3" fill="#ec4899"/><text x="301.8" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >6.0</text><text x="124.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Alphabet（2種類の合計）</text><rect x="132.0" y="106" width="139.7" height="22" rx="3" fill="#f9a8d4"/><text x="276.7" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >5.1</text><text x="124.0" y="154.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Amazon</text><rect x="132.0" y="140" width="102.0" height="22" rx="3" fill="#f9a8d4"/><text x="239.0" y="154.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >3.7</text><text x="124.0" y="188.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Broadcom</text><rect x="132.0" y="174" width="65.3" height="22" rx="3" fill="#f9a8d4"/><text x="202.3" y="188.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >2.4</text><text x="124.0" y="222.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Meta</text><rect x="132.0" y="208" width="57.9" height="22" rx="3" fill="#f9a8d4"/><text x="194.9" y="222.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >2.1</text><text x="124.0" y="256.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Tesla</text><rect x="132.0" y="242" width="46.0" height="22" rx="3" fill="#f9a8d4"/><text x="183.0" y="256.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1.7</text><text x="124.0" y="290.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Eli Lilly</text><rect x="132.0" y="276" width="42.7" height="22" rx="3" fill="#f9a8d4"/><text x="179.7" y="290.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1.6</text><text x="124.0" y="324.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >Berkshire Hathaway</text><rect x="132.0" y="310" width="42.4" height="22" rx="3" fill="#f9a8d4"/><text x="179.4" y="324.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1.5</text></svg><figcaption>出典：State Street Global Advisors「SPDR S&P 500 ETF Trust（SPY）」の構成銘柄（2026年10月26日時点）。S&P500に連動するETFの構成比で、指数の構成比の近似。Alphabetは、2種類の株式（Class A・C）を合算。<b>上位10社の合計は、約39.5%</b>。</figcaption></figure>
+    <ul>
+      <li>S&P500の構成比は、会社の<b>時価総額（株価×株数）に比例</b>します。大きい会社ほど、指数の中での比率が大きくなります。</li>
+      <li>株価が上がった会社は、比率が自動的に増えます。<b>上がったものを、より多く持つ仕組み</b>とも言えます。下がった会社は、比率が小さくなります。</li>
+      <li>上位10社（約39.5%）の中には、AI向け半導体、パソコン・スマートフォン、クラウド、ネット広告・通販の会社が並びます。<b>同じ時期の同じ流れ（たとえばAI投資）に、上位の会社が一緒に動きやすい</b>という点は、「500社に分散」というイメージとは違う面です。</li>
+    </ul>
+
+    <h2>3. 軸②：「大きい会社ほど多く」は、得か </h2>
+    <p>500社を、すべて同じ比率（約0.2%ずつ）で持つ指数もあります（均等加重）。時価総額加重（S&P500）と、均等加重のETFを、同じ期間で比べました。</p>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">時価総額加重（SPY）</div><div class="tile-v">年11.3%</div><div class="tile-n"><b>累計12.2倍</b>（2003年5月〜2026年10月、配当込み）</div></div><div class="tile key"><div class="tile-l">均等加重（RSP）</div><div class="tile-v">年10.8%</div><div class="tile-n"><b>累計11.1倍</b>。<b>年率の差は、約0.4ポイント</b></div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">5年間で時価総額加重が上回った割合</div><div class="tile-v"><small>約</small>55<small>%</small></div><div class="tile-n">222か月のうち（2008年5月〜2026年10月）</div></div><div class="tile"><div class="tile-l">5年間の差の幅</div><div class="tile-v">−5.5<small>〜＋5.6ポイント</small></div><div class="tile-n">年率の差（時価総額加重−均等加重）</div></div></div>
+    <figure class="fig"><div class="fig-title">時価総額加重と均等加重の差（ポイント／年、直近5年間の年率の差）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="214.0" x2="380" y2="214.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="217.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-6</text><line x1="8" y1="182.0" x2="380" y2="182.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="185.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-4</text><line x1="8" y1="150.0" x2="380" y2="150.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="153.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-2</text><line x1="8" y1="86.0" x2="380" y2="86.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="89.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+2</text><line x1="8" y1="54.0" x2="380" y2="54.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="57.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+4</text><line x1="8" y1="22.0" x2="380" y2="22.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="25.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+6</text><polygon points="16.4,118.0 16.4,118.0 16.4,117.2 16.4,117.2 18.1,105.0 18.1,105.0 19.8,111.1 19.8,111.1 21.5,109.5 21.5,109.5 23.1,106.6 23.1,106.6 24.8,109.7 24.8,109.7 25.4,118.0 25.4,118.0" fill="#ec4899" fill-opacity=".30"/><polygon points="157.2,118.0 157.2,118.0 157.8,116.6 157.8,116.6 159.5,113.4 159.5,113.4 161.2,108.9 161.2,108.9 162.9,107.6 162.9,107.6 164.5,109.7 164.5,109.7 166.2,110.8 166.2,110.8 167.9,113.0 167.9,113.0 169.6,110.0 169.6,110.0 171.3,108.9 171.3,108.9 173.0,116.6 173.0,116.6 173.7,118.0 173.7,118.0" fill="#ec4899" fill-opacity=".30"/><polygon points="198.1,118.0 198.1,118.0 198.2,117.5 198.2,117.5 199.9,117.5 199.9,117.5 201.6,112.7 201.6,112.7 203.3,103.4 203.3,103.4 204.9,101.8 204.9,101.8 206.6,106.8 206.6,106.8 208.3,107.1 208.3,107.1 210.0,102.5 210.0,102.5 211.7,103.4 211.7,103.4 213.4,99.8 213.4,99.8 215.0,95.0 215.0,95.0 216.7,90.3 216.7,90.3 218.4,90.8 218.4,90.8 220.1,96.1 220.1,96.1 221.8,92.7 221.8,92.7 223.5,95.9 223.5,95.9 225.1,94.8 225.1,94.8 226.8,92.2 226.8,92.2 228.5,91.4 228.5,91.4 230.2,90.5 230.2,90.5 231.9,89.4 231.9,89.4 233.6,90.5 233.6,90.5 235.2,84.2 235.2,84.2 236.9,92.7 236.9,92.7 238.6,87.1 238.6,87.1 240.3,86.6 240.3,86.6 242.0,83.9 242.0,83.9 243.7,77.0 243.7,77.0 245.3,74.2 245.3,74.2 247.0,51.8 247.0,51.8 248.7,57.2 248.7,57.2 250.4,58.6 250.4,58.6 252.1,58.0 252.1,58.0 253.8,59.1 253.8,59.1 255.4,46.2 255.4,46.2 257.1,52.4 257.1,52.4 258.8,65.5 258.8,65.5 260.5,75.4 260.5,75.4 262.2,79.3 262.2,79.3 263.9,82.0 263.9,82.0 265.5,89.4 265.5,89.4 267.2,90.5 267.2,90.5 268.9,84.9 268.9,84.9 270.6,90.8 270.6,90.8 272.3,84.1 272.3,84.1 274.0,78.3 274.0,78.3 275.6,75.8 275.6,75.8 277.3,79.1 277.3,79.1 279.0,75.1 279.0,75.1 280.7,63.1 280.7,63.1 282.4,71.9 282.4,71.9 284.1,75.3 284.1,75.3 285.7,86.2 285.7,86.2 287.4,82.5 287.4,82.5 289.1,93.2 289.1,93.2 290.8,99.1 290.8,99.1 292.5,93.2 292.5,93.2 294.2,92.6 294.2,92.6 295.8,99.6 295.8,99.6 297.5,97.2 297.5,97.2 299.2,106.3 299.2,106.3 300.9,107.3 300.9,107.3 302.6,111.3 302.6,111.3 304.0,118.0 304.0,118.0" fill="#ec4899" fill-opacity=".30"/><polygon points="306.0,118.0 306.0,118.0 307.6,96.2 307.6,96.2 309.3,92.4 309.3,92.4 311.0,80.7 311.0,80.7 312.7,82.8 312.7,82.8 314.4,85.5 314.4,85.5 316.0,84.4 316.0,84.4 317.7,85.0 317.7,85.0 319.4,79.0 319.4,79.0 321.1,75.9 321.1,75.9 322.8,85.5 322.8,85.5 324.5,71.3 324.5,71.3 326.1,65.5 326.1,65.5 327.8,73.0 327.8,73.0 329.5,72.6 329.5,72.6 331.2,65.8 331.2,65.8 332.9,50.2 332.9,50.2 334.6,63.8 334.6,63.8 336.2,69.7 336.2,69.7 337.9,65.7 337.9,65.7 339.6,66.8 339.6,66.8 341.3,69.0 341.3,69.0 343.0,55.8 343.0,55.8 344.7,64.7 344.7,64.7 346.3,70.2 346.3,70.2 348.0,102.2 348.0,102.2 349.7,91.6 349.7,91.6 351.4,84.7 351.4,84.7 353.1,79.6 353.1,79.6 354.8,78.5 354.8,78.5 356.4,90.3 356.4,90.3 358.1,76.2 358.1,76.2 359.8,56.6 359.8,56.6 361.5,53.0 361.5,53.0 363.2,53.2 363.2,53.2 364.9,58.8 364.9,58.8 366.5,63.1 366.5,63.1 368.2,55.4 368.2,55.4 369.9,42.5 369.9,42.5 371.6,28.7 371.6,28.7 373.3,48.2 373.3,48.2 375.0,56.1 375.0,56.1 376.6,55.9 376.6,55.9 378.3,36.1 378.3,36.1 380.0,54.8 380.0,118.0" fill="#ec4899" fill-opacity=".30"/><polygon points="8.0,118.0 8.0,154.5 9.7,148.7 9.7,148.7 11.4,148.1 11.4,148.1 13.0,145.2 13.0,145.2 14.7,140.6 14.7,140.6 16.4,118.0 16.4,118.0" fill="#64748b" fill-opacity=".30"/><polygon points="25.4,118.0 25.4,118.0 26.5,135.0 26.5,135.0 28.2,136.7 28.2,136.7 29.9,129.5 29.9,129.5 31.6,139.4 31.6,139.4 33.2,146.8 33.2,146.8 34.9,147.3 34.9,147.3 36.6,137.7 36.6,137.7 38.3,131.8 38.3,131.8 40.0,138.0 40.0,138.0 41.7,141.8 41.7,141.8 43.3,145.0 43.3,145.0 45.0,147.4 45.0,147.4 46.7,155.9 46.7,155.9 48.4,153.0 48.4,153.0 50.1,144.2 50.1,144.2 51.8,142.0 51.8,142.0 53.4,140.9 53.4,140.9 55.1,145.8 55.1,145.8 56.8,146.5 56.8,146.5 58.5,148.4 58.5,148.4 60.2,148.1 60.2,148.1 61.9,142.2 61.9,142.2 63.5,144.7 63.5,144.7 65.2,146.0 65.2,146.0 66.9,148.1 66.9,148.1 68.6,149.8 68.6,149.8 70.3,151.1 70.3,151.1 72.0,151.4 72.0,151.4 73.6,146.0 73.6,146.0 75.3,139.1 75.3,139.1 77.0,143.8 77.0,143.8 78.7,140.6 78.7,140.6 80.4,140.1 80.4,140.1 82.1,140.6 82.1,140.6 83.7,135.0 83.7,135.0 85.4,133.2 85.4,133.2 87.1,132.9 87.1,132.9 88.8,129.7 88.8,129.7 90.5,130.5 90.5,130.5 92.2,131.8 92.2,131.8 93.8,137.5 93.8,137.5 95.5,141.8 95.5,141.8 97.2,145.7 97.2,145.7 98.9,151.0 98.9,151.0 100.6,157.5 100.6,157.5 102.3,156.6 102.3,156.6 103.9,157.4 103.9,157.4 105.6,163.1 105.6,163.1 107.3,159.0 107.3,159.0 109.0,156.2 109.0,156.2 110.7,162.8 110.7,162.8 112.4,163.6 112.4,163.6 114.0,158.5 114.0,158.5 115.7,168.9 115.7,168.9 117.4,190.5 117.4,190.5 119.1,200.6 119.1,200.6 120.8,193.8 120.8,193.8 122.5,197.5 122.5,197.5 124.1,205.4 124.1,205.4 125.8,196.1 125.8,196.1 127.5,163.4 127.5,163.4 129.2,160.2 129.2,160.2 130.9,167.9 130.9,167.9 132.6,157.0 132.6,157.0 134.2,151.0 134.2,151.0 135.9,139.8 135.9,139.8 137.6,149.4 137.6,149.4 139.3,151.0 139.3,151.0 141.0,143.1 141.0,143.1 142.7,142.0 142.7,142.0 144.3,138.6 144.3,138.6 146.0,136.7 146.0,136.7 147.7,130.6 147.7,130.6 149.4,126.3 149.4,126.3 151.1,130.0 151.1,130.0 152.8,123.3 152.8,123.3 154.4,126.8 154.4,126.8 156.1,120.9 156.1,120.9 157.2,118.0 157.2,118.0" fill="#64748b" fill-opacity=".30"/><polygon points="173.7,118.0 173.7,118.0 174.6,119.9 174.6,119.9 176.3,128.9 176.3,128.9 178.0,119.0 178.0,119.0 179.7,126.2 179.7,126.2 181.4,126.2 181.4,126.2 183.1,123.3 183.1,123.3 184.7,121.7 184.7,121.7 186.4,124.4 186.4,124.4 188.1,123.6 188.1,123.6 189.8,124.4 189.8,124.4 191.5,127.0 191.5,127.0 193.2,129.2 193.2,129.2 194.8,122.5 194.8,122.5 196.5,125.8 196.5,125.8 198.1,118.0 198.1,118.0" fill="#64748b" fill-opacity=".30"/><polygon points="304.0,118.0 304.0,118.0 304.3,119.1 304.3,119.1 305.9,118.6 305.9,118.6 306.0,118.0 306.0,118.0" fill="#64748b" fill-opacity=".30"/><polyline points="8.0,154.5 9.7,148.7 11.4,148.1 13.0,145.2 14.7,140.6 16.4,117.2 18.1,105.0 19.8,111.1 21.5,109.5 23.1,106.6 24.8,109.7 26.5,135.0 28.2,136.7 29.9,129.5 31.6,139.4 33.2,146.8 34.9,147.3 36.6,137.7 38.3,131.8 40.0,138.0 41.7,141.8 43.3,145.0 45.0,147.4 46.7,155.9 48.4,153.0 50.1,144.2 51.8,142.0 53.4,140.9 55.1,145.8 56.8,146.5 58.5,148.4 60.2,148.1 61.9,142.2 63.5,144.7 65.2,146.0 66.9,148.1 68.6,149.8 70.3,151.1 72.0,151.4 73.6,146.0 75.3,139.1 77.0,143.8 78.7,140.6 80.4,140.1 82.1,140.6 83.7,135.0 85.4,133.2 87.1,132.9 88.8,129.7 90.5,130.5 92.2,131.8 93.8,137.5 95.5,141.8 97.2,145.7 98.9,151.0 100.6,157.5 102.3,156.6 103.9,157.4 105.6,163.1 107.3,159.0 109.0,156.2 110.7,162.8 112.4,163.6 114.0,158.5 115.7,168.9 117.4,190.5 119.1,200.6 120.8,193.8 122.5,197.5 124.1,205.4 125.8,196.1 127.5,163.4 129.2,160.2 130.9,167.9 132.6,157.0 134.2,151.0 135.9,139.8 137.6,149.4 139.3,151.0 141.0,143.1 142.7,142.0 144.3,138.6 146.0,136.7 147.7,130.6 149.4,126.3 151.1,130.0 152.8,123.3 154.4,126.8 156.1,120.9 157.8,116.6 159.5,113.4 161.2,108.9 162.9,107.6 164.5,109.7 166.2,110.8 167.9,113.0 169.6,110.0 171.3,108.9 173.0,116.6 174.6,119.9 176.3,128.9 178.0,119.0 179.7,126.2 181.4,126.2 183.1,123.3 184.7,121.7 186.4,124.4 188.1,123.6 189.8,124.4 191.5,127.0 193.2,129.2 194.8,122.5 196.5,125.8 198.2,117.5 199.9,117.5 201.6,112.7 203.3,103.4 204.9,101.8 206.6,106.8 208.3,107.1 210.0,102.5 211.7,103.4 213.4,99.8 215.0,95.0 216.7,90.3 218.4,90.8 220.1,96.1 221.8,92.7 223.5,95.9 225.1,94.8 226.8,92.2 228.5,91.4 230.2,90.5 231.9,89.4 233.6,90.5 235.2,84.2 236.9,92.7 238.6,87.1 240.3,86.6 242.0,83.9 243.7,77.0 245.3,74.2 247.0,51.8 248.7,57.2 250.4,58.6 252.1,58.0 253.8,59.1 255.4,46.2 257.1,52.4 258.8,65.5 260.5,75.4 262.2,79.3 263.9,82.0 265.5,89.4 267.2,90.5 268.9,84.9 270.6,90.8 272.3,84.1 274.0,78.3 275.6,75.8 277.3,79.1 279.0,75.1 280.7,63.1 282.4,71.9 284.1,75.3 285.7,86.2 287.4,82.5 289.1,93.2 290.8,99.1 292.5,93.2 294.2,92.6 295.8,99.6 297.5,97.2 299.2,106.3 300.9,107.3 302.6,111.3 304.3,119.1 305.9,118.6 307.6,96.2 309.3,92.4 311.0,80.7 312.7,82.8 314.4,85.5 316.0,84.4 317.7,85.0 319.4,79.0 321.1,75.9 322.8,85.5 324.5,71.3 326.1,65.5 327.8,73.0 329.5,72.6 331.2,65.8 332.9,50.2 334.6,63.8 336.2,69.7 337.9,65.7 339.6,66.8 341.3,69.0 343.0,55.8 344.7,64.7 346.3,70.2 348.0,102.2 349.7,91.6 351.4,84.7 353.1,79.6 354.8,78.5 356.4,90.3 358.1,76.2 359.8,56.6 361.5,53.0 363.2,53.2 364.9,58.8 366.5,63.1 368.2,55.4 369.9,42.5 371.6,28.7 373.3,48.2 375.0,56.1 376.6,55.9 378.3,36.1 380.0,54.8" fill="none" stroke="#111827" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><line x1="8" y1="118.0" x2="380" y2="118.0" stroke="#111827" stroke-width="1.6"/><text x="386.0" y="121.5" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >0</text><text x="12.0" y="14.0" font-size="10" text-anchor="start" fill="#ec4899" font-weight="800" >▲ 時価総額加重（上位に偏る方）が有利</text><text x="12.0" y="208.0" font-size="10" text-anchor="start" fill="#64748b" font-weight="800" >▼ 均等加重が有利</text><circle cx="380.0" cy="54.8" r="3.4" fill="#111827"/><text x="41.7" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2010</text><text x="122.5" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2014</text><text x="203.3" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2018</text><text x="284.1" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2022</text><text x="364.9" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2026</text></svg><figcaption>出典：株価データ（SPYとRSPの、配当込みの調整後終値、月次）。各月について、直近5年間の年率リターンの差（時価総額加重−均等加重）。0より上（ピンク）は時価総額加重が、下（グレー）は均等加重が有利だった期間。<b>2013年ごろは均等加重が約5ポイント上回り、2024〜2026年は時価総額加重が約4ポイント上回る</b>。</figcaption></figure>
+    <ul>
+      <li><b>長期では、ほぼ同じ</b>です。2003年5月から23年余りで、時価総額加重が年11.3%、均等加重が年10.8%（配当込み）。</li>
+      <li>ただし、<b>5年ごとに見ると、優劣は入れ替わります</b>。2009〜2014年ごろは、均等加重が有利。2018〜2026年は、時価総額加重が有利で、2024〜2026年は約4ポイントの差です。</li>
+      <li>特に、<b>2023年と2024年は、時価総額加重が、均等加重を約12ポイント上回りました</b>。上位の会社が、指数を引っ張った時期です。一方、2009年と2022年などは、均等加重が上回りました。</li>
+      <li>上位に偏る度合いは、時期によって変わります。<b>いまの約40%という集中が、これまでの優位を支えた面</b>があります。この優位が続くとは限りません。</li>
+    </ul>
+
+    <h2>4. 軸③：円で買うと、為替も買っている</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">ドル建て（1996年11月〜2026年10月）</div><div class="tile-v">年9.9%</div><div class="tile-n"><b>円換算は、年11.1%</b>。ドル円は、113.8円から157.7円へ円安</div></div><div class="tile key"><div class="tile-l">最大の下落（月次）</div><div class="tile-v">ドル建て−50.8%</div><div class="tile-n"><b>円換算は−59.8%</b>。下落の局面で円高が重なると、深くなる</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">10年間で、円換算がドル建てを下回った割合</div><div class="tile-v"><small>約</small>47<small>%</small></div><div class="tile-n">240通り（10年間の年率の比較）</div></div><div class="tile"><div class="tile-l">10年間の円換算の年率の幅</div><div class="tile-v">−5.4<small>〜＋21.1%</small></div><div class="tile-n">最小は2009年2月まで、最大は2021年12月まで</div></div></div>
+    <figure class="fig"><div class="fig-title">10年間の年率リターン：ドル建てと円換算（%、各年末までの10年）</div><svg viewBox="0 0 420 230" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="186.0" x2="410" y2="186.0" stroke="#e5e7eb"/><rect x="18.0" y="128.6" width="15.0" height="57.4" rx="3" fill="#cbd5e1"/><text x="25.5" y="123.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >8.3</text><rect x="37.0" y="126.5" width="15.0" height="59.5" rx="3" fill="#ec4899"/><text x="44.5" y="121.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >8.6</text><text x="35.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2006</text><text x="35.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="68.0" y="192.9" width="15.0" height="1.0" rx="3" fill="#cbd5e1"/><text x="75.5" y="187.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-1.0</text><rect x="87.0" y="199.1" width="15.0" height="1.0" rx="3" fill="#ec4899"/><text x="94.5" y="194.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-1.9</text><text x="85.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2009</text><text x="85.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="118.0" y="137.6" width="15.0" height="48.4" rx="3" fill="#cbd5e1"/><text x="125.5" y="132.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7.0</text><rect x="137.0" y="161.1" width="15.0" height="24.9" rx="3" fill="#ec4899"/><text x="144.5" y="156.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.6</text><text x="135.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2012</text><text x="135.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="168.0" y="136.2" width="15.0" height="49.8" rx="3" fill="#cbd5e1"/><text x="175.5" y="131.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7.2</text><rect x="187.0" y="134.8" width="15.0" height="51.2" rx="3" fill="#ec4899"/><text x="194.5" y="129.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7.4</text><text x="185.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2015</text><text x="185.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="218.0" y="96.0" width="15.0" height="90.0" rx="3" fill="#cbd5e1"/><text x="225.5" y="91.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >13.0</text><rect x="237.0" y="80.8" width="15.0" height="105.2" rx="3" fill="#ec4899"/><text x="244.5" y="75.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >15.2</text><text x="235.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2018</text><text x="235.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="268.0" y="72.5" width="15.0" height="113.5" rx="3" fill="#cbd5e1"/><text x="275.5" y="67.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >16.4</text><rect x="287.0" y="40.0" width="15.0" height="146.0" rx="3" fill="#ec4899"/><text x="294.5" y="35.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >21.1</text><text x="285.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2021</text><text x="285.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="318.0" y="96.0" width="15.0" height="90.0" rx="3" fill="#cbd5e1"/><text x="325.5" y="91.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >13.0</text><rect x="337.0" y="74.6" width="15.0" height="111.4" rx="3" fill="#ec4899"/><text x="344.5" y="69.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >16.1</text><text x="335.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2024</text><text x="335.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >年末</text><rect x="368.0" y="78.7" width="15.0" height="107.3" rx="3" fill="#cbd5e1"/><text x="375.5" y="73.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >15.5</text><rect x="387.0" y="44.8" width="15.0" height="141.2" rx="3" fill="#ec4899"/><text x="394.5" y="39.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >20.4</text><text x="385.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026</text><text x="385.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >ドル建て</text><rect x="84" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="97.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >円換算</text></svg><figcaption>出典：株価データ（SPYの配当込みの調整後終値、月次と、ドル円）。円換算は、ドル建ての価格に、その月のドル円を掛けたもの。<b>円安が進んだ期間は円換算が上回り、円高が進んだ期間は下回る</b>（例：2012年末までの10年は、ドル建て7.0%に対し、円換算は3.6%）。</figcaption></figure>
+    <ul>
+      <li>日本の投資家が、為替ヘッジをしないS&P500連動の商品を買うと、<b>株価の動きに、ドル円の動きが加わります</b>。</li>
+      <li>1996年11月から約30年では、円安が進んだため（113.8円→157.7円）、円換算の方が、年率で約1.2ポイント高くなりました。</li>
+      <li>ただし、<b>期間によっては逆</b>です。2012年末までの10年では、円高が進み、ドル建て7.0%に対して、円換算は3.6%でした。</li>
+      <li>最大の下落は、ドル建てで−50.8%、円換算で−59.8%。下落のときに円高が重なると、円換算の損失は深くなります。</li>
+    </ul>
+
+    <h2>5. 3つの軸から見えること</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>軸</th><th>分かったこと</th><th>確認する場所</th></tr></thead><tbody><tr><td data-label="軸"><span class="tv">① 何を買っているか</span></td><td data-label="分かったこと"><span class="tv">約500社でも、上位10社で約39.5%、上位21社で半分。大きい会社ほど、比率が大きい（時価総額に比例）。</span></td><td data-label="確認する場所"><span class="tv">運用会社の月次レポート、構成銘柄の一覧</span></td></tr><tr><td data-label="軸"><span class="tv">② 加重の方式</span></td><td data-label="分かったこと"><span class="tv">時価総額加重と均等加重は、長期ではほぼ同じ（年率の差は約0.4ポイント）。ただし5年ごとの差は−5.5〜＋5.6ポイントで、入れ替わる。</span></td><td data-label="確認する場所"><span class="tv">指数の方法論、商品ごとの運用コスト</span></td></tr><tr><td data-label="軸"><span class="tv">③ 通貨</span></td><td data-label="分かったこと"><span class="tv">円換算は、ドル建てと、10年ごとに大きく違う（−5.4〜＋21.1%）。</span></td><td data-label="確認する場所"><span class="tv">為替ヘッジの有無（ファンドの目論見書）</span></td></tr></tbody></table></div>
+
+    <h2>6. 見るときの注意</h2>
+    <ul>
+      <li><b>ETFの数字で、指数を近似している。</b>構成比は、S&P500に連動するETF（SPY）の構成銘柄を使い、リターンは、ETFの配当込みの調整後終値（SPY、均等加重のRSP）を使いました。ETFの運用コストが引かれた後の数字で、指数そのものとは、わずかに違います。</li>
+      <li><b>均等加重は、別の商品との比較。</b>RSPは、S&P500の構成銘柄を、同じ比率で持つETFで、運用方法（比率の戻し方など）も異なります。</li>
+      <li><b>月次データで、期間の端点が数字を左右する。</b>5年や10年の年率は、始点と終点の月で変わります。</li>
+      <li><b>過去の数字は、将来を約束しない。</b>集中の度合いや、為替は、これから変わります。</li>
+      <li><b>日本で買える商品は、仕組みが違う。</b>投資信託には、為替ヘッジの有無、信託報酬、基準価額の算出方法の違いがあります。目論見書で確認できます。</li>
+    </ul>
+
+    <h2>7. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「500社に分散」の中身を知る。</b>約500社でも、上位21社で半分。同じ流れに、上位が一緒に動くこともある。</li>
+      <li><b>「大きい会社ほど多く持つ」仕組みを理解する。</b>勝っている会社を、自動で増やす仕組み。集中が追い風の時期もあれば、逆風の時期もある。</li>
+      <li><b>為替は、株価とは別の変数。</b>円で買うなら、ドル円の動きが、10年単位で結果を変えうる。ヘッジの有無は、商品ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の金融商品や投資方法を勧めるものではありません。過去のデータの整理であり、将来の値動きや為替を予想するものではありません。</div>
+
+    <div class="art-fine">
+      <p>※ 構成比は、SPDR S&P 500 ETF Trust（SPY）の構成銘柄（2026年10月26日時点）のうち、上位銘柄を、Alphabetの2種類の株式を合算して集計した値です。ETFの構成比は、指数の構成比の近似です。</p>
+      <p>※ リターンは、SPY・RSPの、配当込みの調整後終値（月次）です。RSPの開始は2003年5月のため、比較は同月から。円換算は、月末のドル円を使っています。</p>
+      <p>※ 「5年間の差」は、各月までの直近5年間の年率の差です。2008年5月〜2026年10月の222か月分。</p>
+      <p>※ 数字は、小数点以下を丸めています。為替ヘッジ付きの商品、信託報酬、税金は考慮していません。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>State Street Global Advisors「SPDR S&P 500 ETF Trust（SPY）」構成銘柄（2026年10月26日時点）：<a href="https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy" target="_blank" rel="noopener">https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy</a></li><li>株価データ（SPY・RSPの調整後終値、ドル円、月次）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月28日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="india.html">インド｜長期投資家の目線</a><a href="new-nisa.html">新NISAに入れるのは、高配当株か、成長株か、インデックスか｜仕組みから考える</a><a href="anthropic-ipo.html">Anthropicの新規上場｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
