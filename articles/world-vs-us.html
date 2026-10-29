@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="全世界株の約3分の2は米国。差の正体は米国外の約36%で、優劣は2007年末を境に入れ替わった。2008年以降のデータで、「保険」だったかを確かめる。">
+<title>全世界株と米国株の比較｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/world-vs-us.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="全世界株と米国株の比較｜長期投資家の目線">
+<meta property="og:description" content="全世界株の約3分の2は米国。差の正体は米国外の約36%で、優劣は2007年末を境に入れ替わった。2008年以降のデータで、「保険」だったかを確かめる。">
+<meta property="og:url" content="https://fire-app.jp/articles/world-vs-us.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/world-vs-us.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/world-vs-us.jpg">
+<meta name="twitter:title" content="全世界株と米国株の比較｜長期投資家の目線">
+<meta name="twitter:description" content="全世界株の約3分の2は米国。差の正体は米国外の約36%で、優劣は2007年末を境に入れ替わった。2008年以降のデータで、「保険」だったかを確かめる。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "全世界株と米国株の比較｜長期投資家の目線", "description": "全世界株の約3分の2は米国。差の正体は米国外の約36%で、優劣は2007年末を境に入れ替わった。2008年以降のデータで、「保険」だったかを確かめる。", "inLanguage": "ja", "datePublished": "2026-10-29", "dateModified": "2026-10-29", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/world-vs-us.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["米国株", "FIRE・資産形成", "為替"], "image": ["https://fire-app.jp/articles/og/world-vs-us.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "全世界株と米国株の比較｜長期投資家の目線", "item": "https://fire-app.jp/articles/world-vs-us.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>全世界株と米国株の比較<br>｜長期投資家の目線</h1>
+    <p class="subtitle">差の正体は、米国外の約36%。優劣は、時代で入れ替わる</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>全世界株の約3分の2は、米国</h3><p class="pt-d">全世界株（MSCI ACWI）の<b>約3分の2は米国</b>（64.2%、2026年9月末）。<b>全世界株と米国株の差は、残りの約36%</b>、つまり米国外の部分だけです。</p></div><div class="pt"><h3>2007年末を境に、優劣が入れ替わった</h3><p class="pt-d">その米国外は、<b>2007年末を境に、優劣が入れ替わりました</b>。2001年末〜2007年末は米国外の先進国が年率14.2%、米国が6.0%。2007年末以降は、米国が11.2%、米国外の先進国が4.5%です。</p></div><div class="pt"><h3>2008年以降、年率で3.6ポイントの差</h3><p class="pt-d">2008年7月以降、全世界株は米国株より<b>年率3.6ポイント低く</b>（8.8%と12.4%）、5年間の年率で上回った窓は<b>0 / 163</b>。ただし、2008〜2009年の下落は、全世界株の方が深く（−51.7%と−46.3%）、「暴落に強い」わけではありませんでした。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月29日</span><span><b>情報の時点</b> MSCIファクトシート（2026年9月末）／株価データ（2026年10月）</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a><a href="index.html?tag=為替">#為替</a></div>
+<div class="art-note"><b>この記事について</b>　特定の金融商品や投資方法を勧めるものではなく、公開されたデータの内容を整理した情報提供です。数値・時期は公表資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の問い：全世界株と米国株の、何が違うのか</h2>
+    <p>「全世界株か、米国株か」は、投資の入り口でよく聞かれる問いです。この記事は、<b>どちらを選ぶべきかは述べません</b>。過去のデータで、<b>2つの違いが何から生まれているか</b>を確かめます。</p>
+    <ul>
+      <li>この記事の軸は、<b>「差の正体は、米国外の約36%」</b>という見方です。全世界株は、中身の約3分の2が米国なので、米国外の部分が、米国に比べて良かったか悪かったかが、そのまま2つの差になります。</li>
+      <li>比べるのは、<b>米国株（SPY）</b>、<b>全世界株（ACWI）</b>、<b>米国外の先進国（EFA）</b>のETFの調整後終値（配当込み、ドル建て、月次）です。</li>
+      <li>全世界株のETFの価格は、<b>2008年4月から</b>しかありません。それ以前は、米国と米国外先進国の比較（2001年9月から）で見ます。</li>
+    </ul>
+
+    <h2>2. 全世界株の中身：約3分の2は米国</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">米国の比率（ACWI）</div><div class="tile-v">64.2<small>%</small></div><div class="tile-n">2026年9月末。<b>全世界株と米国株の差は、残りの約36%</b></div></div><div class="tile key"><div class="tile-l">上位10社の比率</div><div class="tile-v">25.4<small>%</small></div><div class="tile-n">ACWI。S&P500では39.5%（<a href="sp500.html">S&P500の記事</a>）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">日本の比率（ACWI）</div><div class="tile-v">5.2<small>%</small></div><div class="tile-n">米国に次ぐ2位。台湾3.5%、英国3.0%</div></div><div class="tile"><div class="tile-l">構成銘柄数</div><div class="tile-v">2,414<small></small></div><div class="tile-n">23の先進国と24の新興国</div></div></div>
+    <figure class="fig"><div class="fig-title">MSCI ACWIの国別の構成比（%、2026年9月末）</div><svg viewBox="0 0 420 208" role="img" xmlns="http://www.w3.org/2000/svg"><text x="122.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >米国</text><rect x="130.0" y="4" width="219.4" height="22" rx="3" fill="#ec4899"/><text x="354.4" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >64.2</text><text x="122.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >日本</text><rect x="130.0" y="38" width="17.8" height="22" rx="3" fill="#cbd5e1"/><text x="152.8" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >5.2</text><text x="122.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >台湾</text><rect x="130.0" y="72" width="11.8" height="22" rx="3" fill="#cbd5e1"/><text x="146.8" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >3.5</text><text x="122.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >英国</text><rect x="130.0" y="106" width="10.2" height="22" rx="3" fill="#cbd5e1"/><text x="145.2" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >3.0</text><text x="122.0" y="154.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >カナダ</text><rect x="130.0" y="140" width="9.9" height="22" rx="3" fill="#cbd5e1"/><text x="144.9" y="154.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >2.9</text><text x="122.0" y="188.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >その他（40か国超）</text><rect x="130.0" y="174" width="72.5" height="22" rx="3" fill="#cbd5e1"/><text x="207.5" y="188.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >21.2</text></svg><figcaption>出典：MSCI「MSCI ACWI Index (USD) Factsheet」（2026年9月30日）。構成銘柄は2,414。<b>全世界株の約3分の2は、米国</b>。上位10社の合計は25.4%（うち9社が米国企業）。</figcaption></figure>
+    <p>全世界株を買うことは、<b>米国株を6割あまり買い、残りで日本や台湾、英国、カナダなどを買う</b>ことです。日本は5.2%で、国別の2位です。</p>
+
+    <h2>3. 米国と米国外：優劣は、2007年末を境に入れ替わった</h2>
+    <figure class="fig"><div class="fig-title">年率リターン：2007年末を境に、優劣が入れ替わった（%）</div><svg viewBox="0 0 420 230" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="186.0" x2="410" y2="186.0" stroke="#e5e7eb"/><rect x="48.0" y="126.0" width="60.0" height="60.0" rx="3" fill="#ec4899"/><text x="78.0" y="121.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6.0</text><rect x="112.0" y="44.0" width="60.0" height="142.0" rx="3" fill="#cbd5e1"/><text x="142.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >14.2</text><text x="110.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2001年末〜</text><text x="110.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2007年末</text><rect x="248.0" y="74.0" width="60.0" height="112.0" rx="3" fill="#ec4899"/><text x="278.0" y="69.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >11.2</text><rect x="312.0" y="141.0" width="60.0" height="45.0" rx="3" fill="#cbd5e1"/><text x="342.0" y="136.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4.5</text><text x="310.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2007年末〜</text><text x="310.0" y="232.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年10月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >米国（SPY）</text><rect x="117" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="130.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >米国外の先進国（EFA）</text></svg><figcaption>出典：株価データ（SPYとEFAの、配当込みの調整後終値、月次、ドル建て）。EFAは、日本・欧州・豪州などの先進国（米国・カナダ・新興国を除く）の株式ETF。<b>米国外の全体ではなく、一部の近似</b>。</figcaption></figure>
+    <p>2001年末から2026年10月までを、2007年末で分けると、結果が逆になります。</p>
+    <ul>
+      <li><b>2001年末〜2007年末（6年）：</b>米国外の先進国が年率<b>14.2%</b>、米国が<b>6.0%</b>。</li>
+      <li><b>2007年末〜2026年10月（約19年）：</b>米国が年率<b>11.2%</b>、米国外の先進国が<b>4.5%</b>。</li>
+    </ul>
+    <p>1年ごとの差を並べると、<b>米国外が上の年</b>は24年中11年あります。2002〜2007年の6年は、すべて米国外が上でした。</p>
+    <figure class="fig"><div class="fig-title">暦年の差：米国（SPY）−米国外の先進国（EFA）（ポイント）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="43.0" y="12.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >米国が上</text><rect x="110" y="4" width="9" height="9" rx="2" fill="#64748b"/><text x="123.0" y="12.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >米国外が上</text><line x1="30" y1="224.0" x2="410" y2="224.0" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="227.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >-20</text><line x1="30" y1="184.4" x2="410" y2="184.4" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="187.9" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >-10</text><line x1="30" y1="105.2" x2="410" y2="105.2" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="108.7" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+10</text><line x1="30" y1="65.6" x2="410" y2="65.6" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="69.1" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+20</text><line x1="30" y1="26.0" x2="410" y2="26.0" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="29.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+30</text><rect x="32.5" y="144.8" width="10.8" height="24.6" fill="#64748b"/><rect x="48.4" y="144.8" width="10.8" height="47.9" fill="#64748b"/><text x="53.8" y="202.7" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-12</text><rect x="64.2" y="144.8" width="10.8" height="32.9" fill="#64748b"/><rect x="80.0" y="144.8" width="10.8" height="33.7" fill="#64748b"/><rect x="95.9" y="144.8" width="10.8" height="39.6" fill="#64748b"/><text x="101.3" y="194.4" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-10</text><rect x="111.7" y="144.8" width="10.8" height="19.0" fill="#64748b"/><rect x="127.5" y="128.2" width="10.8" height="16.6" fill="#ec4899"/><rect x="143.4" y="144.8" width="10.8" height="2.4" fill="#64748b"/><rect x="159.2" y="117.5" width="10.8" height="27.3" fill="#ec4899"/><rect x="175.0" y="89.0" width="10.8" height="55.8" fill="#ec4899"/><text x="180.4" y="85.5" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+14</text><rect x="190.9" y="144.8" width="10.8" height="11.1" fill="#64748b"/><rect x="206.7" y="101.6" width="10.8" height="43.2" fill="#ec4899"/><text x="212.1" y="98.1" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+11</text><rect x="222.5" y="66.8" width="10.8" height="78.0" fill="#ec4899"/><text x="227.9" y="63.3" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+20</text><rect x="238.4" y="136.1" width="10.8" height="8.7" fill="#ec4899"/><rect x="254.2" y="102.8" width="10.8" height="42.0" fill="#ec4899"/><text x="259.6" y="99.3" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+11</text><rect x="270.0" y="144.8" width="10.8" height="13.5" fill="#64748b"/><rect x="285.9" y="108.0" width="10.8" height="36.8" fill="#ec4899"/><rect x="301.7" y="108.4" width="10.8" height="36.4" fill="#ec4899"/><rect x="317.5" y="102.4" width="10.8" height="42.4" fill="#ec4899"/><text x="322.9" y="98.9" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+11</text><rect x="333.4" y="76.3" width="10.8" height="68.5" fill="#ec4899"/><text x="338.8" y="72.8" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+17</text><rect x="349.2" y="144.8" width="10.8" height="15.0" fill="#64748b"/><rect x="365.0" y="113.9" width="10.8" height="30.9" fill="#ec4899"/><rect x="380.9" y="60.1" width="10.8" height="84.7" fill="#ec4899"/><text x="386.3" y="56.6" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+21</text><rect x="396.7" y="144.8" width="10.8" height="54.6" fill="#64748b"/><text x="402.1" y="209.4" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-14</text><line x1="30" y1="144.8" x2="410" y2="144.8" stroke="#111827" stroke-width="1.2"/><text x="37.9" y="242.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2002</text><text x="117.1" y="242.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2007</text><text x="196.2" y="242.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2012</text><text x="275.4" y="242.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2017</text><text x="354.6" y="242.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2022</text><text x="402.1" y="242.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2025</text></svg><figcaption>出典：株価データ（SPYとEFAの、配当込みの調整後終値、月次、ドル建て）。各年の1年間のリターンの差。<b>2002〜2007年は6年続けて米国外が上</b>。2008年以降は米国が上の年が多いが、2009・2012・2017・2022・2025年は米国外が上。24年中、米国外が上は11年。</figcaption></figure>
+    <p>つまり、「米国が勝ち続けてきた」のではなく、<b>2008年以降の約18年が、米国の時代だった</b>、というのが、データの示すところです。それ以前の6年は、逆でした。</p>
+
+    <h2>4. 全世界株は、「保険」だったか</h2>
+    <p>全世界株を、米国が負けたときの「保険」と考えると、<b>保険料（平均で年何ポイント減ったか）</b>と、<b>保険金（米国が負けた年に、どれだけ助けたか）</b>が気になります。2008年7月以降の数字は、次のとおりです。</p>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">年率の差（2008年7月〜）</div><div class="tile-v">3.6<small>ポイント</small></div><div class="tile-n"><b>米国 12.4%、全世界 8.8%</b>（年率）。累計は、米国株が8.5倍、全世界株が4.7倍</div></div><div class="tile key"><div class="tile-l">5年間の年率で、全世界株が上回った</div><div class="tile-v">0<small> / 163</small></div><div class="tile-n">2008年以降の、月ごとにずらした5年間の窓。<b>一度もなし</b></div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">最大の下落：全世界株（月次）</div><div class="tile-v">−51.7<small>%</small></div><div class="tile-n">米国株は−46.3%。どちらも2008年5月〜2009年2月。<b>全世界株の方が深かった</b></div></div><div class="tile"><div class="tile-l">2022年の下落：全世界株（月次）</div><div class="tile-v">−25.7<small>%</small></div><div class="tile-n">米国株は−23.9%（2021年12月〜2022年9月）</div></div><div class="tile"><div class="tile-l">暦年で全世界株が上回った年</div><div class="tile-v">17<small>年中4年</small></div><div class="tile-n">2009・2012・2017・2025年</div></div><div class="tile"><div class="tile-l">2026年（10月まで）：全世界株</div><div class="tile-v">+12.9<small>%</small></div><div class="tile-n">米国株 +13.7%、米国外先進国（EFA）+9.9%</div></div></div>
+    <p class="art-fig">出典：株価データ（SPYとACWIの、配当込みの調整後終値、月次、ドル建て）。累計と年率は、2008年7月〜2026年10月。5年間の窓は、月ごとにずらした163通り。</p>
+    <figure class="fig"><div class="fig-title">暦年の差：全世界株（ACWI）−米国株（SPY）（ポイント）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="43.0" y="12.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >全世界株が上</text><rect x="130" y="4" width="9" height="9" rx="2" fill="#64748b"/><text x="143.0" y="12.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >米国株が上</text><line x1="30" y1="214.0" x2="410" y2="214.0" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="217.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >-12</text><line x1="30" y1="176.4" x2="410" y2="176.4" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="179.9" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >-8</text><line x1="30" y1="138.8" x2="410" y2="138.8" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="142.3" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >-4</text><line x1="30" y1="63.6" x2="410" y2="63.6" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="67.1" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+4</text><line x1="30" y1="26.0" x2="410" y2="26.0" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="29.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+8</text><rect x="33.6" y="44.8" width="15.2" height="56.4" fill="#ec4899"/><text x="41.2" y="41.3" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+6</text><rect x="55.9" y="101.2" width="15.2" height="21.6" fill="#64748b"/><text x="63.5" y="132.8" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-2</text><rect x="78.3" y="101.2" width="15.2" height="91.2" fill="#64748b"/><text x="85.9" y="202.4" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-10</text><rect x="100.6" y="93.7" width="15.2" height="7.5" fill="#ec4899"/><text x="108.2" y="90.2" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+1</text><rect x="123.0" y="101.2" width="15.2" height="93.1" fill="#64748b"/><text x="130.6" y="204.3" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-10</text><rect x="145.3" y="101.2" width="15.2" height="90.2" fill="#64748b"/><text x="152.9" y="201.4" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-10</text><rect x="167.7" y="101.2" width="15.2" height="32.0" fill="#64748b"/><text x="175.3" y="143.2" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-3</text><rect x="190.0" y="101.2" width="15.2" height="33.8" fill="#64748b"/><text x="197.6" y="145.0" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-4</text><rect x="212.4" y="76.8" width="15.2" height="24.4" fill="#ec4899"/><text x="220.0" y="73.3" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+3</text><rect x="234.8" y="101.2" width="15.2" height="43.2" fill="#64748b"/><text x="242.4" y="154.4" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-5</text><rect x="257.1" y="101.2" width="15.2" height="43.2" fill="#64748b"/><text x="264.7" y="154.4" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-5</text><rect x="279.5" y="101.2" width="15.2" height="18.8" fill="#64748b"/><text x="287.1" y="130.0" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-2</text><rect x="301.8" y="101.2" width="15.2" height="94.9" fill="#64748b"/><text x="309.4" y="206.1" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-10</text><rect x="324.2" y="101.2" width="15.2" height="1.9" fill="#64748b"/><text x="331.8" y="113.1" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >0</text><rect x="346.5" y="101.2" width="15.2" height="36.7" fill="#64748b"/><text x="354.1" y="147.9" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-4</text><rect x="368.9" y="101.2" width="15.2" height="69.6" fill="#64748b"/><text x="376.5" y="180.8" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-7</text><rect x="391.2" y="57.0" width="15.2" height="44.2" fill="#ec4899"/><text x="398.8" y="53.5" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+5</text><line x1="30" y1="101.2" x2="410" y2="101.2" stroke="#111827" stroke-width="1.2"/><text x="41.2" y="232.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2009</text><text x="130.6" y="232.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2013</text><text x="220.0" y="232.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2017</text><text x="309.4" y="232.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2021</text><text x="398.8" y="232.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2025</text></svg><figcaption>出典：株価データ（ACWIとSPYの、配当込みの調整後終値、月次、ドル建て）。<b>全世界株が米国株を上回ったのは、17年中4年</b>（2009・2012・2017・2025年）。上回った幅は最大でも+6.0ポイント。下回った年の最大は−10.1ポイント（2021年）。</figcaption></figure>
+    <ul>
+      <li><b>保険料：</b>2008年7月以降、年率で3.6ポイント。全世界株が米国株を上回る年は少なく、上回った幅も、最大で+6.0ポイントでした。</li>
+      <li><b>保険金：</b>米国が負けた年（2009・2012・2017・2025年）に、全世界株が上回った幅は、+0.8〜+6.0ポイント。<b>米国が大きく下落した2008〜2009年と2022年は、全世界株も同じように下落</b>し、むしろ下落幅は大きかった。</li>
+      <li>ただし、これは<b>米国が優位だった2008年以降の話</b>です。2002〜2007年は、米国外が年率8ポイント前後、上回っていました。</li>
+    </ul>
+
+    <h2>5. 運営者の見方</h2>
+    <div class="art-note"><b>運営者の見方（仮説）</b>　全世界株と米国株の選択は、「米国がこれからも勝つか」の予想に、答えを出すことだと思っていました。しかしデータを見ると、<b>どちらの時代が来るかを当てるより、「どちらが来ても、受け止められるか」を決めること</b>のように思います。全世界株は、約36%を米国外に置くことで、<b>米国外の時代が来たときの取り分を、あらかじめ確保する</b>選び方です。その代わり、米国の時代が続けば、差は開きます。<b>これは仮説で、確かめられた事実ではありません</b>。</div>
+
+    <h2>6. 選ぶときに、確認すること</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 米国の比率</span></td><td data-label="今回の数字"><span class="tv">64.2%（ACWI、2026年9月末）</span></td><td data-label="なぜ重要か"><span class="tv">全世界株を持っても、米国への集中は残る</span></td><td data-label="外れた場合"><span class="tv">比率が上がり続ける、下がる</span></td><td data-label="確認する時期"><span class="tv">MSCIのファクトシート（毎月）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 米国と米国外の、差の向き</span></td><td data-label="今回の数字"><span class="tv">2025年は米国外が上（+13.8ポイント）。2026年は10月まで、米国が上</span></td><td data-label="なぜ重要か"><span class="tv">2007年末を境に入れ替わった前例がある</span></td><td data-label="外れた場合"><span class="tv">差の向きが変わる</span></td><td data-label="確認する時期"><span class="tv">毎年の暦年の結果</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 上位10社の比率</span></td><td data-label="今回の数字"><span class="tv">ACWI 25.4%／S&P500 39.5%</span></td><td data-label="なぜ重要か"><span class="tv">米国株は、全世界株より上位に偏る</span></td><td data-label="外れた場合"><span class="tv">比率の変化</span></td><td data-label="確認する時期"><span class="tv">構成比（半年ごとなど）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 円換算の影響</span></td><td data-label="今回の数字"><span class="tv">この記事はドル建て</span></td><td data-label="なぜ重要か"><span class="tv">円で持つ場合は、為替が加わる（<a href="sp500.html">S&P500の記事</a>）</span></td><td data-label="外れた場合"><span class="tv">ドル円の大きな変動</span></td><td data-label="確認する時期"><span class="tv">自分の商品の、円建ての基準価額</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 商品ごとの違い</span></td><td data-label="今回の数字"><span class="tv">この記事は、ETFの調整後終値で比較</span></td><td data-label="なぜ重要か"><span class="tv">信託報酬、為替ヘッジ、対象指数が違う</span></td><td data-label="外れた場合"><span class="tv">コストの差が、長期で効く</span></td><td data-label="確認する時期"><span class="tv">目論見書・運用報告書</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 自分の資産の偏り</span></td><td data-label="今回の数字"><span class="tv">日本の比率は、ACWIでは5.2%</span></td><td data-label="なぜ重要か"><span class="tv">収入・住まいが日本なら、資産と生活の両方が日本に寄る</span></td><td data-label="外れた場合"><span class="tv">—</span></td><td data-label="確認する時期"><span class="tv">自分の資産と収入の全体</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、MSCIのファクトシート（2026年9月30日）と、株価データ（2026年10月）。構成比は毎月、リターンは暦年ごとに変わります。</p>
+
+    <h2>7. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>差の正体を見る。</b>全世界株と米国株の差は、米国外の約36%。その部分に期待するか、しないかが、実質的な選択になる。</li>
+      <li><b>測る期間で、結論が変わる。</b>2008年以降だけなら米国、2002〜2007年だけなら米国外。1つの期間で、優劣を決めない。</li>
+      <li><b>全世界株でも、米国の集中は残る。</b>64%は米国で、上位10社は25%。「暴落に強い」わけではなく、2008〜2009年は下落が深かった。</li>
+      <li><b>過去の差は、将来を約束しない。</b>米国の優位が続くか、入れ替わるかは、この記事では予想しない。</li>
+      <li><b>円で持つなら、為替も加わる。</b>ドル建ての差とは別に、円換算の影響を確認する（<a href="sp500.html">S&P500の記事</a>）。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の金融商品や投資方法を勧めるものではありません。過去のデータの整理であり、将来の値動きや為替を予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 国別の構成比・上位10社の比率・銘柄数は、MSCI ACWI Index (USD)のファクトシート（2026年9月30日）です。</p>
+      <p>※ リターンは、SPY（米国）、EFA（米国・カナダを除く先進国）、ACWI（全世界）の、配当込みの調整後終値（月次、ドル建て）です。各ETFの開始は、SPYが1993年、EFAが2001年9月、ACWIが2008年4月です。2026年10月は、月の途中までの値です。</p>
+      <p>※ 「暦年の差」は、各年の12月末から12月末までのリターンの差です。「5年間の窓」は、各月までの直近5年間の年率で、全世界株と米国株を比べたものです。</p>
+      <p>※ EFAは、新興国とカナダを含まないため、「米国外」の全体を表しません。信託報酬、為替ヘッジ、税金は考慮していません。数字は、小数点以下を丸めています。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>MSCI「MSCI ACWI Index (USD) Factsheet」（2026年9月30日）：<a href="https://www.msci.com/documents/10199/8d97d244-4685-4200-a24c-3e2942e3adeb" target="_blank" rel="noopener">https://www.msci.com/documents/10199/8d97d244-4685-4200-a24c-3e2942e3adeb</a></li><li>株価データ（SPY・EFA・ACWIの調整後終値、月次）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月29日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="new-nisa.html">新NISAに入れるのは、高配当株か、成長株か、インデックスか｜仕組みから考える</a><a href="sp500.html">S&amp;P500を買うとは、何を買うことか｜長期投資家の目線</a><a href="dca-simulation.html">積立投資のシミュレーション｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
