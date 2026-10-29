@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Amazonの2026年7〜9月期決算（10月29日発表）。営業利益率は過去最高、売上の23%のAWSが営業利益の63%。一方、設備投資は営業キャッシュフローの約1.8倍。Alphabet・Microsoftと並べて整理する。">
+<title>Amazonの2026年7〜9月期決算｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/amazon-q3-2026.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Amazonの2026年7〜9月期決算｜長期投資家の目線">
+<meta property="og:description" content="Amazonの2026年7〜9月期決算（10月29日発表）。営業利益率は過去最高、売上の23%のAWSが営業利益の63%。一方、設備投資は営業キャッシュフローの約1.8倍。Alphabet・Microsoftと並べて整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/amazon-q3-2026.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/amazon-q3-2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/amazon-q3-2026.jpg">
+<meta name="twitter:title" content="Amazonの2026年7〜9月期決算｜長期投資家の目線">
+<meta name="twitter:description" content="Amazonの2026年7〜9月期決算（10月29日発表）。営業利益率は過去最高、売上の23%のAWSが営業利益の63%。一方、設備投資は営業キャッシュフローの約1.8倍。Alphabet・Microsoftと並べて整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Amazonの2026年7〜9月期決算｜長期投資家の目線", "description": "Amazonの2026年7〜9月期決算（10月29日発表）。営業利益率は過去最高、売上の23%のAWSが営業利益の63%。一方、設備投資は営業キャッシュフローの約1.8倍。Alphabet・Microsoftと並べて整理する。", "inLanguage": "ja", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/amazon-q3-2026.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "個別銘柄", "keywords": ["米国株", "決算", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/amazon-q3-2026.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "Amazonの2026年7〜9月期決算｜長期投資家の目線", "item": "https://fire-app.jp/articles/amazon-q3-2026.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>Amazonの2026年7〜9月期決算<br>｜長期投資家の目線</h1>
+    <p class="subtitle">売上の23%のAWSが、営業利益の63%。設備投資は、営業CFの約1.8倍</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>営業利益率13.9%は過去最高</h3><p class="pt-d">Amazonの2026年7〜9月期決算（<b>2026年10月29日</b>発表）。売上は2,019億ドルで+12%（Prime Dayの時期のずれを除くと約+16%）、営業利益は281億ドルで<b>営業利益率13.9%は過去最高</b>。AWSの売上は+39%。</p></div><div class="pt"><h3>売上の23%のAWSが、利益の63%</h3><p class="pt-d"><b>売上の23%のAWSが、営業利益の63%</b>を稼いでいる。純利益が−2%なのは、前年同期に、Anthropicへの投資の利益（95億ドル）があったため。</p></div><div class="pt"><h3>設備投資は営業CFの約1.8倍</h3><p class="pt-d">一方、<b>設備投資は773億ドル（前年同期の約2.2倍）で、営業キャッシュフロー（424億ドル）の約1.8倍</b>。直近12か月のフリーキャッシュフローは−424億ドルで、長期借入は656億ドルから1,731億ドルに増えた。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月30日</span><span><b>情報の時点</b> 2026年10月29日の決算発表（8-K）／株価は10月29日終値</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この決算の位置づけ</h2>
+    <p>Amazonは、<b>2026年10月29日</b>の米国市場の取引終了後に、2026年7〜9月期の決算を発表しました。決算の発表資料は、SEC（米証券取引委員会）に、Form 8-Kの添付書類として提出されています。</p>
+    <ul>
+      <li>数字は<b>監査を受けていない</b>速報です。四半期報告書（10-Q）は、この記事の時点では確認していません。</li>
+      <li>事業は、<b>北米</b>、<b>国際</b>、<b>AWS</b>（クラウド）の3つのセグメントです。</li>
+      <li>この記事の軸は、<b>「利益を稼ぐ事業」と「お金を使う場所」が、同じ事業に集まっている</b>ことです。AWSが利益の中心で、AI向けの設備投資も、AWSの成長のために増えています。<a href="alphabet-q3-2026.html">Alphabet</a>、<a href="microsoft-q1-fy2027.html">Microsoft</a>と、同じ物差しでも並べます。</li>
+    </ul>
+
+    <h2>2. 数字：売上+12%、営業利益+61%</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">売上</div><div class="tile-v">2,019.4<small>億ドル</small></div><div class="tile-n"><b>前年同期（1,801.7億ドル）比 +12%</b><br>Prime Dayの時期のずれを除くと、約+16%（会社の説明）</div></div><div class="tile key"><div class="tile-l">営業利益</div><div class="tile-v">280.8<small>億ドル</small></div><div class="tile-n"><b>前年同期（174.2億ドル）比 +61%</b><br>営業利益率 <b>13.9%（過去最高）</b></div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">純利益</div><div class="tile-v">206.9<small>億ドル</small></div><div class="tile-n">前年同期 211.9億ドル（−2%）。前年は投資の利益が大きい</div></div><div class="tile"><div class="tile-l">1株利益（希薄化後）</div><div class="tile-v">1.89<small>ドル</small></div><div class="tile-n">前年同期 1.95ドル</div></div><div class="tile"><div class="tile-l">AWS：売上</div><div class="tile-v">459.8<small>億ドル</small></div><div class="tile-n">前年同期 330.1億ドル（+39%）。年換算で1,840億ドル</div></div><div class="tile"><div class="tile-l">AWS：営業利益</div><div class="tile-v">177.7<small>億ドル</small></div><div class="tile-n">営業利益率 38.7%（前年同期 34.6%）</div></div></div>
+    <p class="art-fig">出典：Amazonの決算（8-K Exhibit 99.1、2026年10月29日）。売上の伸びは、為替の影響を除くと+13%。2026年は、Prime Dayが多くの国で4〜6月期に移り、2025年は7〜9月期だった（会社の説明）。</p>
+
+    <h2>3. 利益の中身：売上の23%が、営業利益の63%</h2>
+    <figure class="fig"><div class="fig-title">売上と営業利益の構成（%、2026年7〜9月期）</div><svg viewBox="0 0 420 164" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="64" y="6" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="77.0" y="14.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >北米</text><rect x="108" y="6" width="9" height="9" rx="2" fill="#e2e8f0"/><text x="121.0" y="14.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >国際</text><rect x="152" y="6" width="9" height="9" rx="2" fill="#ec4899"/><text x="165.0" y="14.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >AWS</text><text x="58.0" y="63.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >売上</text><rect x="64.0" y="40" width="194.5" height="40" fill="#cbd5e1"/><text x="161.3" y="63.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >56</text><rect x="258.5" y="40" width="74.1" height="40" fill="#e2e8f0"/><text x="295.6" y="63.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >21</text><rect x="332.7" y="40" width="79.3" height="40" fill="#ec4899"/><text x="372.3" y="63.6" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >23</text><text x="58.0" y="125.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >営業利益</text><rect x="64.0" y="102" width="108.2" height="40" fill="#cbd5e1"/><text x="118.1" y="125.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >31</text><rect x="172.2" y="102" width="19.5" height="40" fill="#e2e8f0"/><rect x="191.7" y="102" width="220.3" height="40" fill="#ec4899"/><text x="301.9" y="125.6" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >63</text></svg><figcaption>出典：Amazonの決算（8-K Exhibit 99.1、2026年10月29日）のセグメント情報。売上は<b>AWSが23%</b>、営業利益は<b>AWSが63%</b>（177.7億ドル／281.0億ドル）。</figcaption></figure>
+    <div class="tiles tiles-sm"><div class="tile"><div class="tile-l">北米：売上</div><div class="tile-v">1,128.5<small>億ドル</small></div><div class="tile-n">+6%。営業利益 87.2億ドル（前年同期 47.9億ドル）、営業利益率 7.7%</div></div><div class="tile"><div class="tile-l">国際：売上</div><div class="tile-v">431.1<small>億ドル</small></div><div class="tile-n">+5%（為替の影響を除くと+8%）。営業利益 15.8億ドル、営業利益率 3.7%</div></div></div>
+    <p class="art-fig">出典：同決算のセグメント情報。営業利益の合計は280.8億ドル。</p>
+    <ul>
+      <li><b>AWSの売上は+39%</b>（330.1億ドル→459.8億ドル）。会社は、「ほぼ5年で最も速い伸び」と説明しています。営業利益は、114.3億ドルから177.7億ドルへ。</li>
+      <li>北米の営業利益率は、4.5%から7.7%へ。国際は、2.9%から3.7%へ。<b>小売の利益率も、上がっています</b>。</li>
+      <li>会社全体の営業利益率は、9.7%から13.9%へ上がり、会社は「過去最高」と述べています。</li>
+    </ul>
+
+    <h2>4. 純利益は−2%：前年の投資の利益が大きい</h2>
+    <ul>
+      <li>純利益は、211.9億ドルから206.9億ドルへ（−2%）。営業利益が+61%なのに、純利益が減ったのは、<b>非営業の損益</b>の差です。</li>
+      <li>会社は、「前年同期に、<b>Anthropicへの投資から、税引前で95億ドルの利益</b>があったことが主因」と説明しています（<a href="anthropic-ipo.html">Anthropicの記事</a>）。</li>
+      <li>今期の非営業損益は、−12.1億ドル。利息費用が、5.4億ドルから16.9億ドルに増えています。</li>
+      <li>1〜9月の累計では、純利益は565億ドルから<b>1,136億ドル</b>に増えています。非営業の収益（684億ドル）が大きく、8-Kは、この内訳を説明していません。</li>
+    </ul>
+
+    <h2>5. 投資と現金：設備投資は営業キャッシュフローの約1.8倍</h2>
+    <figure class="fig"><div class="fig-title">営業キャッシュフローと設備投資（直近12か月の累計、億ドル）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="206.0" x2="410" y2="206.0" stroke="#e5e7eb"/><rect x="24.0" y="105.5" width="24.0" height="100.5" rx="3" fill="#cbd5e1"/><text x="36.0" y="100.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1307</text><rect x="52.0" y="116.9" width="24.0" height="89.1" rx="3" fill="#ec4899"/><text x="64.0" y="111.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1159</text><text x="50.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >25年</text><text x="50.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="104.0" y="98.7" width="24.0" height="107.3" rx="3" fill="#cbd5e1"/><text x="116.0" y="93.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1395</text><rect x="132.0" y="107.4" width="24.0" height="98.6" rx="3" fill="#ec4899"/><text x="144.0" y="102.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1283</text><text x="130.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><rect x="184.0" y="91.8" width="24.0" height="114.2" rx="3" fill="#cbd5e1"/><text x="196.0" y="86.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1485</text><rect x="212.0" y="92.7" width="24.0" height="113.3" rx="3" fill="#ec4899"/><text x="224.0" y="87.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1473</text><text x="210.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >26年</text><text x="210.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1〜3月</text><rect x="264.0" y="81.9" width="24.0" height="124.1" rx="3" fill="#cbd5e1"/><text x="276.0" y="76.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1614</text><rect x="292.0" y="76.1" width="24.0" height="129.9" rx="3" fill="#ec4899"/><text x="304.0" y="71.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1690</text><text x="290.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="344.0" y="76.6" width="24.0" height="129.4" rx="3" fill="#cbd5e1"/><text x="356.0" y="71.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1683</text><rect x="372.0" y="44.0" width="24.0" height="162.0" rx="3" fill="#ec4899"/><text x="384.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >2107</text><text x="370.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >営業キャッシュフロー</text><rect x="150" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="163.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >設備投資（純）</text></svg><figcaption>出典：同決算の補足資料。設備投資（純）は、会社の定義で「有形固定資産の購入（売却・補助金等を除く）」。<b>直近12か月のフリーキャッシュフロー</b>は、2025年7〜9月期+148億ドル → 2026年1〜3月期+12億ドル → 4〜6月期−76億ドル → <b>7〜9月期−424億ドル</b>。</figcaption></figure>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">設備投資（購入）</div><div class="tile-v">772.6<small>億ドル</small></div><div class="tile-n"><b>前年同期（350.9億ドル）の約2.2倍</b><br>前年同期は、営業CF（355.3億ドル）とほぼ同じだった</div></div><div class="tile key"><div class="tile-l">フリーキャッシュフロー（直近12か月）</div><div class="tile-v">−423.6<small>億ドル</small></div><div class="tile-n"><b>前年同期（+147.9億ドル）から赤字に転じた</b><br>会社の定義：営業CF−設備投資（売却・補助金を除く）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">営業キャッシュフロー（7〜9月）</div><div class="tile-v">424.2<small>億ドル</small></div><div class="tile-n">前年同期 355.3億ドル（+19%）</div></div><div class="tile"><div class="tile-l">長期の借入</div><div class="tile-v">1,731<small>億ドル</small></div><div class="tile-n">2025年末 656億ドル。1〜9月に、1,151億ドルを調達</div></div><div class="tile"><div class="tile-l">現金・有価証券</div><div class="tile-v">1,142<small>億ドル</small></div><div class="tile-n">2025年末 1,230億ドル</div></div><div class="tile"><div class="tile-l">総資産</div><div class="tile-v">1兆2,434<small>億ドル</small></div><div class="tile-n">2025年末 8,180億ドル。固定資産（純額）は3,570億→5,089億ドル</div></div></div>
+    <p class="art-fig">出典：同決算の貸借対照表、キャッシュフロー計算書、補足資料。7〜9月だけのフリーキャッシュフロー（営業CF−購入＋売却・補助金）は、当サイトの計算で約−335億ドル。</p>
+    <p>直近12か月で見ると、設備投資（純）は、<b>1年で1,159億ドルから2,107億ドルへ</b>（+82%）増えました。営業キャッシュフローは、1,307億ドルから1,683億ドルへ（+29%）。<b>2026年4〜6月期の累計から、設備投資が営業キャッシュフローを上回っています</b>。会社は、増加の主因を「AIへの投資」と説明しています。</p>
+
+    <h2>6. その資金は、どう賄っているか</h2>
+    <figure class="fig"><div class="fig-title">2026年1〜9月の、資金の出入り（億ドル）</div><svg viewBox="0 0 420 140" role="img" xmlns="http://www.w3.org/2000/svg"><text x="120.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >営業キャッシュフロー</text><rect x="128.0" y="4" width="148.5" height="22" rx="3" fill="#cbd5e1"/><text x="281.5" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,138</text><text x="120.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >長期借入（純）</text><rect x="128.0" y="38" width="146.6" height="22" rx="3" fill="#cbd5e1"/><text x="279.6" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,123</text><text x="120.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >設備投資（購入）</text><rect x="128.0" y="72" width="229.3" height="22" rx="3" fill="#ec4899"/><text x="362.3" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,757</text><text x="120.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >買収・出資など</text><rect x="128.0" y="106" width="83.3" height="22" rx="3" fill="#f9a8d4"/><text x="216.3" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >638</text></svg><figcaption>出典：同決算のキャッシュフロー計算書（1〜9月の累計）。上の2本（灰色）が入ってきた資金、下の2本（ピンク）が出ていった資金。長期借入（純）は、調達1,151億ドルから返済28億ドルを引いた額。有価証券の売買は含まない。</figcaption></figure>
+    <ul>
+      <li><b>借入：</b>7〜9月期だけで、長期借入を481億ドル調達（前年同期はゼロ）。1〜9月で1,151億ドル。<b>長期借入は、2025年末の656億ドルから1,731億ドルへ、約2.6倍</b>。</li>
+      <li><b>現金：</b>現金・有価証券は、1,230億ドルから1,142億ドルへ減った。借入があっても、手元は増えていない。</li>
+      <li><b>買収・出資：</b>1〜9月で638億ドル（前年同期は24億ドル）。内訳は、8-Kに記載がない。</li>
+      <li>自社株買いは、ありません。発行済み株式数は、10,731百万株から10,811百万株へ、約0.7%増えました。</li>
+    </ul>
+
+    <h2>7. 3社を、同じ物差しで並べる</h2>
+    <figure class="fig"><div class="fig-title">設備投資÷営業キャッシュフロー（%、7〜9月期）</div><svg viewBox="0 0 420 230" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="200.0" x2="410" y2="200.0" stroke="#e5e7eb"/><rect x="34.7" y="158.0" width="40.0" height="42.0" rx="3" fill="#cbd5e1"/><text x="54.7" y="153.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >49</text><rect x="78.7" y="96.3" width="40.0" height="103.7" rx="3" fill="#ec4899"/><text x="98.7" y="91.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >121</text><text x="76.7" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Alphabet</text><rect x="168.0" y="163.1" width="40.0" height="36.9" rx="3" fill="#cbd5e1"/><text x="188.0" y="158.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >43</text><rect x="212.0" y="141.7" width="40.0" height="58.3" rx="3" fill="#ec4899"/><text x="232.0" y="136.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >68</text><text x="210.0" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Microsoft</text><rect x="301.3" y="115.1" width="40.0" height="84.9" rx="3" fill="#cbd5e1"/><text x="321.3" y="110.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >99</text><rect x="345.3" y="44.0" width="40.0" height="156.0" rx="3" fill="#ec4899"/><text x="365.3" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >182</text><text x="343.3" y="220.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Amazon</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2025年7〜9月</text><rect x="139" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="152.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >2026年7〜9月</text></svg><figcaption>出典：3社の決算（8-K、2026年10月28〜29日）。設備投資は、Alphabetが「Purchases of property and equipment」、Microsoftが「Additions to property and equipment」、Amazonが「Purchases of property and equipment」（売却・補助金を引く前）。<b>100%を超えると、営業CFより多く投資している</b>。</figcaption></figure>
+    <p>同じ7〜9月に、<a href="alphabet-q3-2026.html">Alphabet</a>、<a href="microsoft-q1-fy2027.html">Microsoft</a>、Amazonの3社が決算を発表しました。「設備投資÷営業キャッシュフロー」で並べると、<b>3社とも前年より上がっていますが、水準は違います</b>。</p>
+    <ul>
+      <li><b>Amazon：</b>99% → <b>182%</b>（前年は、ほぼ同額。今期は、営業CFの約1.8倍）</li>
+      <li><b>Alphabet：</b>49% → <b>121%</b></li>
+      <li><b>Microsoft：</b>43% → <b>68%</b>（営業CFの範囲内）</li>
+    </ul>
+    <p>この比率は、投資の中身（AI向けか、通常の設備か）を示しません。3社の決算の読み方は、この記事の軸と同じです。<b>投資の大きさと、それを賄う資金（営業CF、借入、株式）を、セットで見る</b>ことです。</p>
+
+    <h2>8. 会社が示している、見通しと計画</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">2026年の設備投資（会社の計画）</div><div class="tile-v"><small>約</small>2,200<small>億ドル</small></div><div class="tile-n">「cash capital expenditures」。従来の見通しを維持（会社の説明）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">10〜12月期の売上（会社の見通し）</div><div class="tile-v">2,400<small>〜2,470億ドル</small></div><div class="tile-n">前年同期比 +12〜16%</div></div><div class="tile"><div class="tile-l">10〜12月期の営業利益（会社の見通し）</div><div class="tile-v">285<small>〜335億ドル</small></div><div class="tile-n">前年同期 250億ドル</div></div></div>
+    <p class="art-fig">出典：同決算の「Financial Guidance」。<b>いずれも会社の見通し・計画で、実績ではありません</b>。為替、関税、メモリー半導体の供給などで、変わる可能性があると、会社は説明しています。</p>
+    <ul>
+      <li>会社は、<b>10〜12月期の広告収入</b>は、2桁後半（high teens）の伸びを見込むとしています。7〜9月期は+12%でした（Prime Dayの時期のずれなどの影響）。</li>
+      <li>CEOのJassy氏は、AWSの売上の伸びが「2027年と2028年も、40%を超える見込み」と述べています（会社の発表。見通しで、実現は保証されません）。</li>
+    </ul>
+
+    <h2>9. 決算前の株価</h2>
+    <figure class="fig"><div class="fig-title">Amazon（AMZN）の株価（日次終値、ドル）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="181.6" x2="368" y2="181.6" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="185.1" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >200</text><line x1="8" y1="131.7" x2="368" y2="131.7" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="135.2" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >225</text><line x1="8" y1="81.9" x2="368" y2="81.9" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="85.4" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >250</text><line x1="8" y1="32.0" x2="368" y2="32.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="35.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >275</text><defs><linearGradient id="g70812" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,184.0 8.0,136.0 9.4,93.4 10.9,73.9 12.3,83.2 13.8,81.5 15.2,95.7 16.6,93.0 18.1,85.0 19.5,83.7 21.0,93.4 22.4,106.6 23.8,112.4 25.3,116.0 26.7,136.6 28.2,136.3 29.6,147.4 31.0,140.3 32.5,129.2 33.9,122.4 35.4,123.4 36.8,115.3 38.2,114.0 39.7,112.9 41.1,117.0 42.6,123.5 44.0,122.7 45.4,128.0 46.9,125.9 48.3,118.2 49.8,121.2 51.2,129.3 52.6,136.6 54.1,136.6 55.5,139.2 57.0,128.2 58.4,127.0 59.8,124.9 61.3,117.5 62.7,117.0 64.2,116.7 65.6,117.6 67.0,116.7 68.5,120.1 69.9,128.7 71.4,115.6 72.8,99.9 74.2,98.7 75.7,89.3 77.1,87.1 78.6,88.9 80.0,96.6 81.4,108.5 82.9,105.4 84.3,103.6 85.8,119.8 87.2,119.1 88.6,113.1 90.1,103.5 91.5,105.0 93.0,92.5 94.4,95.8 95.8,98.4 97.3,103.2 98.7,95.9 100.2,104.6 101.6,115.8 103.0,136.3 104.5,161.0 105.9,164.2 107.4,167.7 108.8,173.4 110.2,182.4 111.7,184.0 113.1,179.3 114.6,172.0 116.0,171.9 117.4,161.4 118.9,171.1 120.3,164.5 121.8,160.4 123.2,165.8 124.6,161.6 126.1,164.9 127.5,164.2 129.0,148.0 130.4,143.8 131.8,155.2 133.3,154.7 134.7,153.0 136.2,156.4 137.6,162.6 139.0,166.3 140.5,158.2 141.9,151.3 143.4,161.9 144.8,164.1 146.2,170.9 147.7,161.4 149.1,167.1 150.6,158.2 152.0,166.5 153.4,182.9 154.9,179.7 156.3,165.1 157.8,160.5 159.2,162.1 160.6,156.1 162.1,154.1 163.5,139.2 165.0,114.5 166.4,105.0 167.8,102.0 169.3,83.8 170.7,84.8 172.2,82.5 173.6,80.7 175.0,85.3 176.5,82.0 177.9,71.2 179.4,71.7 180.8,54.0 182.2,59.7 183.7,62.5 185.1,55.8 186.6,51.8 188.0,45.4 189.4,37.9 190.9,34.9 192.3,32.0 193.8,39.6 195.2,36.6 196.6,44.0 198.1,50.3 199.5,41.7 201.0,47.5 202.4,53.7 203.8,52.2 205.3,63.2 206.7,51.9 208.2,45.0 209.6,49.3 211.0,51.4 212.5,38.3 213.9,34.0 215.4,40.7 216.8,59.4 218.2,68.9 219.7,81.8 221.1,74.3 222.6,89.8 224.0,91.4 225.4,93.4 226.9,105.8 228.3,98.8 229.8,104.7 231.2,89.8 232.6,89.8 234.1,106.8 235.5,93.0 237.0,116.2 238.4,113.6 239.8,113.2 241.3,127.7 242.7,116.4 244.2,101.5 245.6,105.1 247.0,98.4 248.5,96.5 249.9,93.5 251.4,89.9 252.8,94.6 254.2,87.8 255.7,91.2 257.1,87.2 258.6,86.9 260.0,72.0 261.4,82.1 262.9,87.4 264.3,81.9 265.8,86.7 267.2,92.1 268.6,114.4 270.1,117.5 271.5,119.0 273.0,120.0 274.4,128.4 275.8,110.8 277.3,38.8 278.7,14.0 280.2,27.2 281.6,36.7 283.0,37.5 284.5,33.0 285.9,25.8 287.4,37.4 288.8,47.4 290.2,51.7 291.7,56.6 293.1,59.3 294.6,63.0 296.0,50.3 297.4,61.7 298.9,64.6 300.3,57.8 301.8,59.8 303.2,61.4 304.6,69.4 306.1,49.1 307.5,62.4 309.0,72.0 310.4,71.9 311.8,64.1 313.3,64.9 314.7,68.0 316.2,77.1 317.6,78.1 319.0,68.3 320.5,74.8 321.9,85.0 323.4,89.9 324.8,79.5 326.2,74.5 327.7,65.0 329.1,71.9 330.6,83.3 332.0,83.1 333.4,82.5 334.9,89.5 336.3,88.5 337.8,83.6 339.2,85.4 340.6,78.8 342.1,79.1 343.5,69.3 345.0,62.1 346.4,73.8 347.8,57.1 349.3,62.8 350.7,64.7 352.2,73.7 353.6,72.4 355.0,81.9 356.5,57.0 357.9,56.7 359.4,57.2 360.8,81.1 362.2,85.8 363.7,83.7 365.1,75.7 366.6,72.7 368.0,94.2 368.0,184.0" fill="url(#g70812)"/><polyline points="8.0,136.0 9.4,93.4 10.9,73.9 12.3,83.2 13.8,81.5 15.2,95.7 16.6,93.0 18.1,85.0 19.5,83.7 21.0,93.4 22.4,106.6 23.8,112.4 25.3,116.0 26.7,136.6 28.2,136.3 29.6,147.4 31.0,140.3 32.5,129.2 33.9,122.4 35.4,123.4 36.8,115.3 38.2,114.0 39.7,112.9 41.1,117.0 42.6,123.5 44.0,122.7 45.4,128.0 46.9,125.9 48.3,118.2 49.8,121.2 51.2,129.3 52.6,136.6 54.1,136.6 55.5,139.2 57.0,128.2 58.4,127.0 59.8,124.9 61.3,117.5 62.7,117.0 64.2,116.7 65.6,117.6 67.0,116.7 68.5,120.1 69.9,128.7 71.4,115.6 72.8,99.9 74.2,98.7 75.7,89.3 77.1,87.1 78.6,88.9 80.0,96.6 81.4,108.5 82.9,105.4 84.3,103.6 85.8,119.8 87.2,119.1 88.6,113.1 90.1,103.5 91.5,105.0 93.0,92.5 94.4,95.8 95.8,98.4 97.3,103.2 98.7,95.9 100.2,104.6 101.6,115.8 103.0,136.3 104.5,161.0 105.9,164.2 107.4,167.7 108.8,173.4 110.2,182.4 111.7,184.0 113.1,179.3 114.6,172.0 116.0,171.9 117.4,161.4 118.9,171.1 120.3,164.5 121.8,160.4 123.2,165.8 124.6,161.6 126.1,164.9 127.5,164.2 129.0,148.0 130.4,143.8 131.8,155.2 133.3,154.7 134.7,153.0 136.2,156.4 137.6,162.6 139.0,166.3 140.5,158.2 141.9,151.3 143.4,161.9 144.8,164.1 146.2,170.9 147.7,161.4 149.1,167.1 150.6,158.2 152.0,166.5 153.4,182.9 154.9,179.7 156.3,165.1 157.8,160.5 159.2,162.1 160.6,156.1 162.1,154.1 163.5,139.2 165.0,114.5 166.4,105.0 167.8,102.0 169.3,83.8 170.7,84.8 172.2,82.5 173.6,80.7 175.0,85.3 176.5,82.0 177.9,71.2 179.4,71.7 180.8,54.0 182.2,59.7 183.7,62.5 185.1,55.8 186.6,51.8 188.0,45.4 189.4,37.9 190.9,34.9 192.3,32.0 193.8,39.6 195.2,36.6 196.6,44.0 198.1,50.3 199.5,41.7 201.0,47.5 202.4,53.7 203.8,52.2 205.3,63.2 206.7,51.9 208.2,45.0 209.6,49.3 211.0,51.4 212.5,38.3 213.9,34.0 215.4,40.7 216.8,59.4 218.2,68.9 219.7,81.8 221.1,74.3 222.6,89.8 224.0,91.4 225.4,93.4 226.9,105.8 228.3,98.8 229.8,104.7 231.2,89.8 232.6,89.8 234.1,106.8 235.5,93.0 237.0,116.2 238.4,113.6 239.8,113.2 241.3,127.7 242.7,116.4 244.2,101.5 245.6,105.1 247.0,98.4 248.5,96.5 249.9,93.5 251.4,89.9 252.8,94.6 254.2,87.8 255.7,91.2 257.1,87.2 258.6,86.9 260.0,72.0 261.4,82.1 262.9,87.4 264.3,81.9 265.8,86.7 267.2,92.1 268.6,114.4 270.1,117.5 271.5,119.0 273.0,120.0 274.4,128.4 275.8,110.8 277.3,38.8 278.7,14.0 280.2,27.2 281.6,36.7 283.0,37.5 284.5,33.0 285.9,25.8 287.4,37.4 288.8,47.4 290.2,51.7 291.7,56.6 293.1,59.3 294.6,63.0 296.0,50.3 297.4,61.7 298.9,64.6 300.3,57.8 301.8,59.8 303.2,61.4 304.6,69.4 306.1,49.1 307.5,62.4 309.0,72.0 310.4,71.9 311.8,64.1 313.3,64.9 314.7,68.0 316.2,77.1 317.6,78.1 319.0,68.3 320.5,74.8 321.9,85.0 323.4,89.9 324.8,79.5 326.2,74.5 327.7,65.0 329.1,71.9 330.6,83.3 332.0,83.1 333.4,82.5 334.9,89.5 336.3,88.5 337.8,83.6 339.2,85.4 340.6,78.8 342.1,79.1 343.5,69.3 345.0,62.1 346.4,73.8 347.8,57.1 349.3,62.8 350.7,64.7 352.2,73.7 353.6,72.4 355.0,81.9 356.5,57.0 357.9,56.7 359.4,57.2 360.8,81.1 362.2,85.8 363.7,83.7 365.1,75.7 366.6,72.7 368.0,94.2" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="368.0" cy="94.2" r="3.4" fill="#111827"/><text x="8.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >25/10/30</text><text x="368.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >10/29</text></svg><figcaption>出典：株価データ（2025-10-30〜2026-10-29）。直近の終値は<b>$243.79</b>。1年間の高値は$284.02（2026-08-03）、安値は$198.79（2026-02-13）。<b>決算の発表は、米国時間10月28日の取引終了後。この終値は、発表前のもの</b>。</figcaption></figure>
+    <p>決算の発表は、米国時間の10月29日の取引が終わったあとでした。決算後の株価の反応は、この記事では取り上げていません。決算の数字は、株価の水準が妥当かを、示すものではありません。</p>
+
+    <h2>10. 次の決算で、何を確認するか</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① AWSの伸びと利益率</span></td><td data-label="今回の数字"><span class="tv">売上+39%、営業利益率38.7%</span></td><td data-label="なぜ重要か"><span class="tv">営業利益の63%を担う。伸びが続くか</span></td><td data-label="外れた場合"><span class="tv">伸びの鈍化、利益率の低下</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 設備投資とフリーキャッシュフロー</span></td><td data-label="今回の数字"><span class="tv">設備投資772.6億ドル。FCF（直近12か月）−423.6億ドル</span></td><td data-label="なぜ重要か"><span class="tv">投資が営業CFを大きく上回る状態が、いつまで続くか</span></td><td data-label="外れた場合"><span class="tv">赤字の拡大、投資の増額</span></td><td data-label="確認する時期"><span class="tv">次の10-Q／決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 借入の増加</span></td><td data-label="今回の数字"><span class="tv">長期借入1,731億ドル（2025年末 656億ドル）</span></td><td data-label="なぜ重要か"><span class="tv">利息費用（7〜9月 16.9億ドル、前年同期5.4億ドル）の増加</span></td><td data-label="外れた場合"><span class="tv">借入のさらなる増加</span></td><td data-label="確認する時期"><span class="tv">10-Q、決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 利益の質</span></td><td data-label="今回の数字"><span class="tv">純利益は−2%。前年は投資の利益95億ドル</span></td><td data-label="なぜ重要か"><span class="tv">本業（営業利益）と、投資の評価損益を分けて見る</span></td><td data-label="外れた場合"><span class="tv">評価損益で、利益が大きくぶれる</span></td><td data-label="確認する時期"><span class="tv">決算（非営業の収益・費用）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 小売の利益率</span></td><td data-label="今回の数字"><span class="tv">北米の営業利益率7.7%、国際3.7%</span></td><td data-label="なぜ重要か"><span class="tv">AWS以外の事業の、収益力</span></td><td data-label="外れた場合"><span class="tv">利益率の低下</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 会社の2026年の設備投資計画</span></td><td data-label="今回の数字"><span class="tv">約2,200億ドル</span></td><td data-label="なぜ重要か"><span class="tv">投資の規模。今期の購入額（9か月で1,757億ドル）に対して</span></td><td data-label="外れた場合"><span class="tv">計画の引き上げ</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年7〜9月期の決算発表（8-K）。次の四半期（10〜12月期）の決算日程は、会社のIRで確認してください。</p>
+
+    <h2>11. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>利益の源を分けて見る。</b>売上の23%のAWSが、営業利益の63%。小売の利益率も上がっているが、会社の利益は、AWSの伸びに大きく左右される。</li>
+      <li><b>純利益のぶれは、本業と分ける。</b>純利益は、投資の評価損益で大きく動く。営業利益（+61%）と純利益（−2%）は、別の数字として読む。</li>
+      <li><b>投資の「大きさ」と「資金」をセットで見る。</b>設備投資が営業CFの約1.8倍になると、差額は借入などで埋める。借入の増加は、利息費用の増加につながる。</li>
+      <li><b>3社を並べて、水準の違いを見る。</b>設備投資が増えている点は共通だが、営業CFとの比率は、121%、68%、182%と大きく違う。</li>
+      <li><b>会社の見通しは、「見通し」として読む。</b>2026年の設備投資約2,200億ドルや、AWSの伸びの見通しは、実現が保証されたものではない。</li>
+      <li><b>株価の水準で、判断しない。</b>数字が前進しているかを、決算ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。過去の決算と株価は、将来を約束するものではありません。決算の発表後の株価の動きや、会社の計画の実現を、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字は、決算の発表資料（Form 8-K Exhibit 99.1、2026年10月29日提出）に基づきます。監査を受けていない数字で、四半期報告書（10-Q）の確認は、これからです。</p>
+      <p>※ フリーキャッシュフローは、会社が定義した指標（営業キャッシュフロー−有形固定資産の購入（売却・補助金等を除く））です。他社の同名の指標と、定義が違う場合があります。3社の「設備投資÷営業キャッシュフロー」は、売却・補助金等を引く前の購入額を、当サイトが計算したものです。</p>
+      <p>※ 1億ドル＝100百万ドルで換算し、小数点以下を丸めています。割合は、換算前の数字で計算しています。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>SEC EDGAR「Amazon.com, Inc.（CIK 1018724）」Form 8-K（2026年10月29日提出）Exhibit 99.1「Amazon.com Announces Third Quarter Results」：<a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm</a></li><li>株価データ（日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月30日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="alphabet-q3-2026.html">Alphabetの2026年7〜9月期決算｜長期投資家の目線</a><a href="microsoft-q1-fy2027.html">Microsoftの2026年7〜9月期決算（FY27 第1四半期）｜長期投資家の目線</a><a href="spacex-q3-2026.html">SpaceXの2026年7〜9月期決算｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
