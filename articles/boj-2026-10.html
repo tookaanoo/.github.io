@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="日銀は政策金利を1.25%程度で据え置き。票決は8対1。4月以降の5回すべてで反対票が出ている。ETFの売却ペースの引き上げと、展望レポートも整理する。">
+<title>日銀の金融政策決定会合（2026年10月）の結果｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/boj-2026-10.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="日銀の金融政策決定会合（2026年10月）の結果｜長期投資家の目線">
+<meta property="og:description" content="日銀は政策金利を1.25%程度で据え置き。票決は8対1。4月以降の5回すべてで反対票が出ている。ETFの売却ペースの引き上げと、展望レポートも整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/boj-2026-10.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/boj-2026-10.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/boj-2026-10.jpg">
+<meta name="twitter:title" content="日銀の金融政策決定会合（2026年10月）の結果｜長期投資家の目線">
+<meta name="twitter:description" content="日銀は政策金利を1.25%程度で据え置き。票決は8対1。4月以降の5回すべてで反対票が出ている。ETFの売却ペースの引き上げと、展望レポートも整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "日銀の金融政策決定会合（2026年10月）の結果｜長期投資家の目線", "description": "日銀は政策金利を1.25%程度で据え置き。票決は8対1。4月以降の5回すべてで反対票が出ている。ETFの売却ペースの引き上げと、展望レポートも整理する。", "inLanguage": "ja", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/boj-2026-10.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "指標解説", "keywords": ["日本株", "金利・物価"], "image": ["https://fire-app.jp/articles/og/boj-2026-10.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "日銀の金融政策決定会合（2026年10月）の結果｜長期投資家の目線", "item": "https://fire-app.jp/articles/boj-2026-10.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 指標解説</div>
+    <h1>日銀の金融政策決定会合<br>（2026年10月）の結果<br>｜長期投資家の目線</h1>
+    <p class="subtitle">据え置き。反対票は、毎回、決定の両側に出ている</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>政策金利は1.25%程度で据え置き</h3><p class="pt-d">日本銀行は2026年10月30日、政策金利（無担保コールレート）を<b>1.25%程度で据え置き</b>ました。9月に1.0%から引き上げたあと、最初の会合です。票決は<b>8対1</b>で、反対の1人は、1.5%への引き上げを主張しました。</p></div><div class="pt"><h3>反対票は、5回すべてで出ている</h3><p class="pt-d">4月以降の5回の会合は、<b>すべてで反対票が出ています</b>。据え置いた会合では「より高い金利」を、利上げした会合では「据え置き」を主張する反対票でした。<b>反対票は、決定の両側に分かれて出ています</b>。</p></div><div class="pt"><h3>ETFの売却は、年8,600億円に</h3><p class="pt-d">あわせて、<b>ETFの売却ペースを、年間3,300億円から8,600億円（簿価）に引き上げる</b>ことが、全員一致で決まりました（2027年1月から）。展望レポートは、<b>AI関連需要</b>を、成長の押し上げ要因に挙げています。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年10月30日</span><span><b>情報の時点</b> 日本銀行の公表資料（2026年10月30日）</span></div>
+<div class="art-tags"><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=金利・物価">#金利・物価</a></div>
+<div class="art-note"><b>この記事について</b>　特定の売買を勧めるものではなく、公表された内容と「長期で何を見ればよいか」を整理した情報提供です。数値・文言は公表資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この会合の位置づけ</h2>
+    <p>日銀の金融政策決定会合は、政策金利を決める会合です。<b>2026年10月29〜30日</b>に開かれ、30日の12時02分に、決定文と展望レポート（基本的見解）が公表されました。</p>
+    <ul>
+      <li>この記事の数字と文言は、<b>日銀が公表した決定文、展望レポート（基本的見解）、ETFの決定資料</b>に基づきます。日本語の原文を、要約しています。</li>
+      <li>展望レポートの全文（背景説明を含む）は11月2日、「主な意見」は11月10日、議事要旨は12月23日に公表される予定です。この記事は、<b>30日に公表された資料の範囲</b>です。</li>
+      <li>この記事の軸は、FOMCの記事と同じく、<b>反対票の向き</b>です（<a href="fomc-2026-10.html">FOMCの記事</a>）。日銀では、反対票が、決定の両側に分かれて出ています。</li>
+    </ul>
+
+    <h2>2. 今回の決定</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">政策金利（無担保コールレート）</div><div class="tile-v">1.25<small>%程度</small></div><div class="tile-n"><b>据え置き</b>。9月18日に、1.0%から引き上げ</div></div><div class="tile key"><div class="tile-l">票決</div><div class="tile-v">8<small>対1</small></div><div class="tile-n"><b>反対の1人（高田委員）は、1.5%への引き上げを主張</b></div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">ETFの売却ペース</div><div class="tile-v">簿価 8,600億円/年</div><div class="tile-n"><b>年3,300億円から引き上げ</b>。2027年1月から。全員一致</div></div><div class="tile"><div class="tile-l">基調的な物価上昇率</div><div class="tile-v">2<small>%と概ね整合的</small></div><div class="tile-n">展望レポートの表現。先行きも同程度で推移</div></div></div>
+    <p class="art-fig">出典：日本銀行「当面の金融政策運営について」（2026年10月30日）。反対の1人（高田委員）は、「基調物価が物価安定の目標に達した中、機動的な対応が可能となる中立金利に近づけるペースを速める新たな局面に入った」として、1.5%への引き上げを提案しました（反対多数で否決）。</p>
+
+    <h2>3. 反対票は、毎回、出ている</h2>
+    <figure class="fig"><div class="fig-title">会合ごとの、反対票の向き（人数、2026年）</div><svg viewBox="0 0 420 262" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="6" width="9" height="9" rx="2" fill="#ec4899"/><text x="27.0" y="14.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >高い金利を主張</text><rect x="134" y="6" width="9" height="9" rx="2" fill="#64748b"/><text x="147.0" y="14.5" font-size="9.5" text-anchor="start" fill="#6b7280" font-weight="600" >据え置きを主張</text><line x1="14" y1="122" x2="406" y2="122" stroke="#111827" stroke-width="1"/><rect x="36.2" y="32" width="34" height="90" fill="#ec4899"/><text x="53.2" y="27.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >3</text><text x="53.2" y="208.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >4月</text><text x="53.2" y="225.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="700" >据え置き</text><text x="53.2" y="240.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="600" >0.75%</text><rect x="114.6" y="122" width="34" height="30" fill="#64748b"/><text x="131.6" y="165.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >1</text><text x="131.6" y="208.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6月</text><text x="131.6" y="225.0" font-size="9.5" text-anchor="middle" fill="#ec4899" font-weight="700" >利上げ</text><text x="131.6" y="240.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="600" >1.00%</text><rect x="193.0" y="92" width="34" height="30" fill="#ec4899"/><text x="210.0" y="87.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >1</text><text x="210.0" y="208.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >7月</text><text x="210.0" y="225.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="700" >据え置き</text><text x="210.0" y="240.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="600" >1.00%</text><rect x="271.4" y="122" width="34" height="60" fill="#64748b"/><text x="288.4" y="195.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >2</text><text x="288.4" y="208.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >9月</text><text x="288.4" y="225.0" font-size="9.5" text-anchor="middle" fill="#ec4899" font-weight="700" >利上げ</text><text x="288.4" y="240.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="600" >1.25%</text><rect x="349.8" y="92" width="34" height="30" fill="#ec4899"/><text x="366.8" y="87.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="800" >1</text><text x="366.8" y="208.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >10月</text><text x="366.8" y="225.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="700" >据え置き</text><text x="366.8" y="240.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="600" >1.25%</text></svg><figcaption>出典：日本銀行「当面の金融政策運営について」「金融市場調節方針の変更について」（2026年4月28日、6月16日、7月31日、9月18日、10月30日）。下段は、その会合の決定と、決定後の無担保コールレート（オーバーナイト物）の誘導目標。<b>5回すべてで、反対票が出ている</b>。6月は、植田総裁が欠席。</figcaption></figure>
+    <div class="rcs"><div class="rc"><div class="rc-t">4月28日</div><div class="rc-g"><div class="rc-m"><div class="rc-l">決定</div><div class="rc-v">据え置き</div><div class="rc-s">0.75%</div></div><div class="rc-m hl"><div class="rc-l">票決</div><div class="rc-v">6対3</div><div class="rc-s">3人が1.0%への引き上げを主張</div></div></div></div><div class="rc"><div class="rc-t">6月16日</div><div class="rc-g"><div class="rc-m hl"><div class="rc-l">決定</div><div class="rc-v">利上げ</div><div class="rc-s">0.75% → 1.0%</div></div><div class="rc-m"><div class="rc-l">票決</div><div class="rc-v">7対1</div><div class="rc-s">1人が据え置きを主張。総裁は欠席</div></div></div></div><div class="rc"><div class="rc-t">7月31日</div><div class="rc-g"><div class="rc-m"><div class="rc-l">決定</div><div class="rc-v">据え置き</div><div class="rc-s">1.0%</div></div><div class="rc-m"><div class="rc-l">票決</div><div class="rc-v">8対1</div><div class="rc-s">1人が1.25%を主張</div></div></div></div><div class="rc"><div class="rc-t">9月18日</div><div class="rc-g"><div class="rc-m hl"><div class="rc-l">決定</div><div class="rc-v">利上げ</div><div class="rc-s">1.0% → 1.25%</div></div><div class="rc-m"><div class="rc-l">票決</div><div class="rc-v">7対2</div><div class="rc-s">2人が据え置きを主張</div></div></div></div><div class="rc"><div class="rc-t">10月30日</div><div class="rc-g"><div class="rc-m"><div class="rc-l">決定</div><div class="rc-v">据え置き</div><div class="rc-s">1.25%</div></div><div class="rc-m hl"><div class="rc-l">票決</div><div class="rc-v">8対1</div><div class="rc-s">1人が1.5%を主張</div></div></div></div></div>
+    <p class="art-fig">出典：日本銀行の決定文（2026年4月28日、6月16日、7月31日、9月18日、10月30日）。「票決」は、賛成対反対の人数。1月・3月の会合は、この記事に含めていません。</p>
+    <ul>
+      <li><b>据え置いた3回（4月・7月・10月）：</b>反対は、すべて<b>より高い金利</b>の主張。4月は3人（1.0%）、7月は1人（1.25%）、10月は1人（1.5%）。</li>
+      <li><b>利上げした2回（6月・9月）：</b>反対は、<b>据え置き</b>の主張。6月は1人、9月は2人（「経済・物価は、これまでより大きく加速しているわけではなく、このタイミングの利上げは適切ではない」などの理由）。</li>
+      <li>高田委員は、4月・7月・10月の据え置きの3回とも、<b>現在の水準より0.25ポイント高い金利</b>を主張しました（1.0%、1.25%、1.5%）。</li>
+    </ul>
+
+    <h2>4. ETFの売却ペースを、約2.6倍に</h2>
+    <figure class="fig"><div class="fig-title">ETFの売却ペース（年間、簿価、億円）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="180.0" x2="410" y2="180.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="82.0" y="119.4" width="56.0" height="60.6" rx="3" fill="#cbd5e1"/><text x="110.0" y="113.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >3,300</text><text x="110.0" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >現在</text><text x="110.0" y="212.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（2026年1月〜）</text><rect x="282.0" y="22.0" width="56.0" height="158.0" rx="3" fill="#ec4899"/><text x="310.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >8,600</text><text x="310.0" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >見直し後</text><text x="310.0" y="212.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（2027年1月〜）</text></svg><figcaption>出典：日本銀行「ETFの売却ペースの見直しに関する決定」（2026年10月30日）。市場全体の売買代金に占める売却額（時価）の割合は、0.05%程度から0.1%程度へ。時価では、年間2兆4,600億円程度。</figcaption></figure>
+    <ul>
+      <li>日銀は、2026年1月からETFの売却を始めています。「市場に大きな影響を与えることなく、円滑に進捗」「株式市場全体の売買代金も拡大」と説明し、売却ペースを見直しました。</li>
+      <li>年間の売却額は、簿価で3,300億円から<b>8,600億円</b>へ（時価で年2兆4,600億円程度）。2027年1月から実施します。</li>
+      <li>保有ETF残高（2026年9月末、簿価）を年間の売却額で割った、売却完了までの年数は、<b>約112年から約43年</b>になります（日銀の試算）。</li>
+      <li>日銀は、「市場等の状況に応じ、売却額の一時的な調整、停止を行うことができる（従来どおり）」としています。</li>
+    </ul>
+
+    <h2>5. 展望レポート：物価は2%を上回る水準へ、AI関連需要が上向き要因</h2>
+    <div class="tiles tiles-sm"><div class="tile"><div class="tile-l">実質GDP（中央値）</div><div class="tile-v">0.7<small>% / 0.7% / 0.8%</small></div><div class="tile-n">2026・2027・2028年度。7月から、+0.1 / −0.1 / ±0</div></div><div class="tile"><div class="tile-l">消費者物価（除く生鮮）</div><div class="tile-v">2.5<small>% / 2.6% / 2.0%</small></div><div class="tile-n">2026・2027・2028年度。2027年度は7月から+0.2</div></div><div class="tile"><div class="tile-l">除く生鮮・エネルギー</div><div class="tile-v">2.4<small>% / 2.7% / 2.3%</small></div><div class="tile-n">2026・2027・2028年度</div></div></div>
+    <p class="art-fig">出典：日本銀行「展望レポート（2026年10月）基本的見解」。政策委員の見通しの中央値。括弧内は、2026年7月からの変化。飲食料品の消費税率引き下げの影響は、織り込んでいません（日銀の注記）。</p>
+    <ul>
+      <li><b>経済：</b>2026年度は、伸び率を縮小しつつも緩やかな成長が続く。下向きの要因は「春先以降のエネルギー・原材料価格の上昇」、<b>上向きの要因は「AI関連需要、賃上げ、政府の施策等」</b>。</li>
+      <li><b>物価：</b>見通し期間の前半は、2%をはっきり上回る水準まで伸び率が高まる。要因は、原油価格の上昇、<b>半導体価格等の上昇</b>、円安。後半は、2%程度に向けて縮小する。</li>
+      <li><b>基調的な物価上昇率：</b>「2%の物価安定の目標と概ね整合的な水準」で、先行きも同程度で推移すると、日銀は評価しています。</li>
+      <li><b>リスク：</b>要因は、中東情勢、AI関連需要の動向、為替相場の変動など。物価は、上振れリスクの方が大きいとしています。</li>
+    </ul>
+
+    <h2>6. 運営者の見方</h2>
+    <div class="art-note"><b>運営者の見方（仮説）</b>　反対票が、決定の両側に分かれて出ていることは、<b>委員会の中で、「いつ・どこまで」の判断が割れている</b>ことを示しているのでは、と私は考えています。5回続けて反対が出ている点は、方針が定まっていないというより、<b>物価が2%に達した後の、新しい局面の進め方</b>に、幅広い意見があることの表れかもしれません。ただし、反対票の理由は、決定文に簡潔に書かれているだけで、<b>これは仮説で、確かめられた事実ではありません</b>。</div>
+
+    <h2>7. 次の会合まで、何を確認するか</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の状態</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 政策金利の水準</span></td><td data-label="今回の状態"><span class="tv">1.25%程度（9月に引き上げ）</span></td><td data-label="なぜ重要か"><span class="tv">借入・預金・債券の金利の出発点</span></td><td data-label="外れた場合"><span class="tv">追加の利上げ、据え置きの長期化</span></td><td data-label="確認する時期"><span class="tv">12月の決定会合（日程は、日銀の公表で確認）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 反対票の向き</span></td><td data-label="今回の状態"><span class="tv">1人が、1.5%を主張</span></td><td data-label="なぜ重要か"><span class="tv">委員会内の温度差。次の利上げの時期を測る手がかりの一つ</span></td><td data-label="外れた場合"><span class="tv">反対票が増える、向きが変わる</span></td><td data-label="確認する時期"><span class="tv">12月の決定文</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 物価の動き</span></td><td data-label="今回の状態"><span class="tv">基調的な物価上昇率は、2%と概ね整合的（日銀の評価）</span></td><td data-label="なぜ重要か"><span class="tv">利上げの判断材料</span></td><td data-label="外れた場合"><span class="tv">2%を大きく上回る、下回る</span></td><td data-label="確認する時期"><span class="tv">全国CPI（11月下旬）、東京都区部CPI</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ ETFの売却</span></td><td data-label="今回の状態"><span class="tv">2027年1月から、簿価で年8,600億円</span></td><td data-label="なぜ重要か"><span class="tv">株式市場の需給（日銀の売却額の増加）</span></td><td data-label="外れた場合"><span class="tv">市場の状況で、一時調整・停止もありうる（日銀の説明）</span></td><td data-label="確認する時期"><span class="tv">2027年1月以降の、日銀の公表</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ AI関連需要</span></td><td data-label="今回の状態"><span class="tv">展望レポートが、成長の押し上げ要因（上向き）と、リスク要因の双方に挙げる</span></td><td data-label="なぜ重要か"><span class="tv">輸出・設備投資・企業収益への寄与</span></td><td data-label="外れた場合"><span class="tv">AI関連需要の変調</span></td><td data-label="確認する時期"><span class="tv">次の展望レポート（2027年1月）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 為替・原油</span></td><td data-label="今回の状態"><span class="tv">展望レポートが、物価の上振れ要因に、円安・原油高を挙げる</span></td><td data-label="なぜ重要か"><span class="tv">輸入物価を通じた、物価への影響</span></td><td data-label="外れた場合"><span class="tv">円高に振れる、原油が下がる</span></td><td data-label="確認する時期"><span class="tv">毎月の為替・原油価格</span></td></tr></tbody></table></div>
+    <p class="art-fig">日程は、日銀と各統計の公表予定による。変更されることがあります。次回の決定会合の日程は、日銀の公表で確認してください。</p>
+
+    <h2>8. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「据え置き」だけで、判断しない。</b>決定が同じでも、反対票の向きと、展望レポートの文言で、中身は変わる。</li>
+      <li><b>金利は、出発点として見る。</b>政策金利1.25%は、住宅ローンの変動金利、預金、債券の金利の前提になる。</li>
+      <li><b>反対票は、両側にある。</b>「利上げが続く」「ここで止まる」と、一方向に決めつけない。</li>
+      <li><b>ETFの売却は、需給の材料の一つ。</b>2027年1月からの増額が、市場にどう影響するかは、この記事では予想しない。日銀は、市場の状況で調整・停止もありうるとしている。</li>
+      <li><b>FOMCと並べて見る。</b>日本は1.25%、米国は3.75〜4.00%。どちらも、反対票が、会合ごとの手がかりになっている。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の金融商品の売買を勧めるものではありません。金利、為替、株価の今後の動きや、市場の反応を予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 政策金利は、無担保コールレート（オーバーナイト物）の誘導目標です。展望レポートの数字は、政策委員の見通しの中央値です。</p>
+      <p>※ 反対票の「より高い金利／据え置きを主張」は、決定文の注記に基づきます。各委員の主張の理由は、決定文の記載を、当サイトが要約したものです。</p>
+      <p>※ 1月・3月の会合は、この記事に含めていません。数字は、小数点以下を丸めています。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>決算も経済イベントも、ひとつのカレンダーで</h3>
+  <p>配当の権利日や保有銘柄の決算、積立の実行日に加えて、日銀の金融政策決定会合やFOMC・雇用統計などの経済イベントも、同じカレンダーで確認できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-calendar">カレンダーを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>日本銀行「当面の金融政策運営について」2026年10月30日：<a href="https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k261030a.pdf" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k261030a.pdf</a></li><li>日本銀行「展望レポート（2026年10月）基本的見解」：<a href="https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k261030b.pdf" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k261030b.pdf</a></li><li>日本銀行「ETFの売却ペースの見直しに関する決定」2026年10月30日：<a href="https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k261030c.pdf" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k261030c.pdf</a></li><li>日本銀行「金融市場調節方針の変更について」2026年9月18日：<a href="https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k260918a.pdf" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k260918a.pdf</a></li><li>日本銀行「当面の金融政策運営について」2026年7月31日：<a href="https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k260731a.pdf" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/k260731a.pdf</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年10月30日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="real-estate-industry.html">不動産業界｜長期投資家の目線</a><a href="fomc-2026-10.html">FOMC（2026年10月）の結果｜長期投資家の目線</a><a href="us-jobs-report-2026-09.html">米雇用統計（2026年9月分）｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
