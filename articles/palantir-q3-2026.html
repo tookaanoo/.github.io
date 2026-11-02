@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Palantirの2026年7〜9月期決算（11月2日発表）。売上は約2倍、米国の民間が政府を初めて上回った。一方、契約額（TCV）の伸びは+6%。見通しと実績の差、GAAPと調整後の利益、設備投資の小ささを整理する。">
+<title>Palantirの2026年7〜9月期決算｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/palantir-q3-2026.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Palantirの2026年7〜9月期決算｜長期投資家の目線">
+<meta property="og:description" content="Palantirの2026年7〜9月期決算（11月2日発表）。売上は約2倍、米国の民間が政府を初めて上回った。一方、契約額（TCV）の伸びは+6%。見通しと実績の差、GAAPと調整後の利益、設備投資の小ささを整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/palantir-q3-2026.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/palantir-q3-2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/palantir-q3-2026.jpg">
+<meta name="twitter:title" content="Palantirの2026年7〜9月期決算｜長期投資家の目線">
+<meta name="twitter:description" content="Palantirの2026年7〜9月期決算（11月2日発表）。売上は約2倍、米国の民間が政府を初めて上回った。一方、契約額（TCV）の伸びは+6%。見通しと実績の差、GAAPと調整後の利益、設備投資の小ささを整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Palantirの2026年7〜9月期決算｜長期投資家の目線", "description": "Palantirの2026年7〜9月期決算（11月2日発表）。売上は約2倍、米国の民間が政府を初めて上回った。一方、契約額（TCV）の伸びは+6%。見通しと実績の差、GAAPと調整後の利益、設備投資の小ささを整理する。", "inLanguage": "ja", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/palantir-q3-2026.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "個別銘柄", "keywords": ["米国株", "決算", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/palantir-q3-2026.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "Palantirの2026年7〜9月期決算｜長期投資家の目線", "item": "https://fire-app.jp/articles/palantir-q3-2026.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>Palantirの2026年7〜9月期決算<br>｜長期投資家の目線</h1>
+    <p class="subtitle">売上は約2倍。では、契約の積み上がりは？</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>売上は約2倍、営業利益率47%</h3><p class="pt-d">Palantirの2026年7〜9月期決算（<b>2026年11月2日</b>発表）。売上は23.1億ドルで<b>前年同期の約2倍（+96%）</b>、GAAPの営業利益率は47%。米国の民間向けの売上が、<b>初めて米国政府向けを上回った</b>。</p></div><div class="pt"><h3>契約額TCVの伸びは+6%</h3><p class="pt-d">この記事の軸は、<b>「売上の伸び」と「将来の売上の予約」の差</b>。売上は+96%だが、その四半期の契約額（TCV）は前年同期比+6%、残りの契約額（RDV）は前期比+4%。契約額は四半期ごとに波が大きく、一回の数字で結論は出せない。</p></div><div class="pt"><h3>見通しを5回連続で6〜9%上回る</h3><p class="pt-d">見通しは、直近5回とも<b>実績が中央値を6〜9%上回って</b>きた。調整後の利益は、<b>株式報酬の足し戻しと、23%の想定税率が打ち消し合って</b>、GAAPとほぼ同じ。設備投資がほとんどなく、現金が積み上がる点は、AI関連の大手クラウド企業と対照的。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月3日</span><span><b>情報の時点</b> 2026年11月2日の決算発表（8-K）／株価は11月2日終値</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この決算の位置づけ</h2>
+    <p>Palantir（NASDAQ：PLTR）は、<b>2026年11月2日</b>の米国市場の取引終了後に、2026年7〜9月期の決算を発表しました。決算説明資料は、SEC（米証券取引委員会）に、Form 8-Kの Exhibit 99.1として提出されています。この記事は、その原文と、過去5四半期の同じ資料に基づきます。</p>
+    <ul>
+      <li>数字は、<b>監査を受けていない</b>速報です。四半期報告書（10-Q）は、この記事の時点では確認していません。</li>
+      <li>Palantirは、政府・企業向けに、データを統合して分析するソフトウェア（Foundry、AIP など）を提供する会社です。AI関連の銘柄として注目されますが、<b>設備投資の小さい会社です</b>（後述の「投資と現金」を参照）。</li>
+      <li>会社は、決算説明資料の見出しで、結果を「Crushing Consensus Expectations（市場予想を圧倒した）」と表現しています。これは<b>会社の言葉</b>で、この記事は、数字そのものを確認します。</li>
+    </ul>
+
+    <h2>2. 数字：売上は約2倍、営業利益は約2.8倍</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">売上</div><div class="tile-v">23.13<small>億ドル</small></div><div class="tile-n"><b>前年同期（11.81億ドル）比 +96%</b>（前期比 +20%）<br>四半期の売上が、初めて20億ドルを超えた</div></div><div class="tile key"><div class="tile-l">営業利益（GAAP）</div><div class="tile-v">10.85<small>億ドル</small></div><div class="tile-n"><b>前年同期（3.93億ドル）の約2.8倍</b><br>営業利益率 <b>47%</b>（前年同期 33%）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">調整後の営業利益（会社の定義）</div><div class="tile-v">14.27<small>億ドル</small></div><div class="tile-n">営業利益率 62%（前年同期 51%）</div></div><div class="tile"><div class="tile-l">純利益（GAAP）</div><div class="tile-v">11.28<small>億ドル</small></div><div class="tile-n">前年同期 4.76億ドル。純利益率 49%</div></div><div class="tile"><div class="tile-l">1株利益（GAAP、希薄化後）</div><div class="tile-v">0.44<small>ドル</small></div><div class="tile-n">前年同期 0.18ドル</div></div><div class="tile"><div class="tile-l">営業キャッシュフロー</div><div class="tile-v">12.05<small>億ドル</small></div><div class="tile-n">前年同期 5.08億ドル。売上に対して52%</div></div></div>
+    <p class="art-fig">出典：Palantirの決算説明資料（8-K Exhibit 99.1、2026年11月2日）。調整後の営業利益は、会社の定義で、株式報酬と、それに関する給与税を足し戻した数字。</p>
+    <p>費用は、売上ほど増えていません。営業費用（販売管理費・研究開発費など）は8.45億ドルで、前年同期（5.81億ドル）の<b>約1.5倍</b>。売上が約2倍になったため、営業利益率が33%から47%に上がりました。</p>
+
+    <h2>3. 売上の中身：米国の民間が、政府を上回った</h2>
+    <figure class="fig"><div class="fig-title">売上の内訳（億ドル、四半期ごと）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="206.0" x2="410" y2="206.0" stroke="#e5e7eb"/><rect x="12.0" y="155.6" width="19.6" height="50.4" rx="3" fill="#ec4899"/><text x="21.8" y="150.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.1</text><rect x="33.6" y="135.9" width="19.6" height="70.1" rx="3" fill="#cbd5e1"/><text x="43.3" y="130.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4.3</text><rect x="55.1" y="161.2" width="19.6" height="44.8" rx="3" fill="#94a3b8"/><text x="64.9" y="156.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >2.7</text><text x="43.3" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><text x="43.3" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="78.7" y="140.6" width="19.6" height="65.4" rx="3" fill="#ec4899"/><text x="88.4" y="135.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4.0</text><rect x="100.2" y="126.0" width="19.6" height="80.0" rx="3" fill="#cbd5e1"/><text x="110.0" y="121.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4.9</text><rect x="121.8" y="156.9" width="19.6" height="49.1" rx="3" fill="#94a3b8"/><text x="131.6" y="151.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.0</text><text x="110.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="145.3" y="122.5" width="19.6" height="83.5" rx="3" fill="#ec4899"/><text x="155.1" y="117.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >5.1</text><rect x="166.9" y="112.2" width="19.6" height="93.8" rx="3" fill="#cbd5e1"/><text x="176.7" y="107.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >5.7</text><rect x="188.4" y="151.7" width="19.6" height="54.3" rx="3" fill="#94a3b8"/><text x="198.2" y="146.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.3</text><text x="176.7" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><rect x="212.0" y="108.0" width="19.6" height="98.0" rx="3" fill="#ec4899"/><text x="221.8" y="103.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6.0</text><rect x="233.6" y="92.9" width="19.6" height="113.1" rx="3" fill="#cbd5e1"/><text x="243.3" y="87.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6.9</text><rect x="255.1" y="148.2" width="19.6" height="57.8" rx="3" fill="#94a3b8"/><text x="264.9" y="143.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.5</text><text x="243.3" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年</text><text x="243.3" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1〜3月</text><rect x="278.7" y="80.2" width="19.6" height="125.8" rx="3" fill="#ec4899"/><text x="288.4" y="75.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7.6</text><rect x="300.2" y="72.8" width="19.6" height="133.2" rx="3" fill="#cbd5e1"/><text x="310.0" y="67.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >8.1</text><rect x="321.8" y="146.2" width="19.6" height="59.8" rx="3" fill="#94a3b8"/><text x="331.6" y="141.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.6</text><text x="310.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="345.3" y="44.0" width="19.6" height="162.0" rx="3" fill="#ec4899"/><text x="355.1" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >9.8</text><rect x="366.9" y="49.1" width="19.6" height="156.9" rx="3" fill="#cbd5e1"/><text x="376.7" y="44.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >9.5</text><rect x="388.4" y="144.1" width="19.6" height="61.9" rx="3" fill="#94a3b8"/><text x="398.2" y="139.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.8</text><text x="376.7" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >米国・民間</text><rect x="95" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="108.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >米国・政府</text><rect x="180" y="4" width="9" height="9" rx="2" fill="#94a3b8"/><text x="193.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >米国外（計算値）</text></svg><figcaption>出典：Palantirの決算（8-K Exhibit 99.1、各四半期）。米国外は、総売上から米国（民間＋政府）を引いた<b>計算値</b>（各社の開示は百万ドル単位の丸め）。<b>2026年7〜9月期、米国の民間が、政府を初めて上回った</b>（9.84億ドル／9.53億ドル）。</figcaption></figure>
+    <ul>
+      <li><b>米国・民間：</b>9.84億ドル（前年同期比+148%、前期比+29%）。<b>米国・政府：</b>9.53億ドル（+96%、前期比+18%）。</li>
+      <li><b>米国外</b>は、総売上から米国を引いた計算値で、約3.8億ドル（前年同期比+26%）。<b>総売上に占める比率は約16%</b>で、前年同期（約25%）から下がっています。</li>
+      <li>つまり、売上の増加は、<b>ほぼ米国で起きています</b>。会社は、米国の売上全体が+119%と説明しています。</li>
+    </ul>
+
+    <h2>4. 見通しと実績：毎回、上回ってきた</h2>
+    <figure class="fig"><div class="fig-title">売上：会社の見通し（中央値）と、実績（億ドル）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="196.0" x2="410" y2="196.0" stroke="#e5e7eb"/><rect x="24.0" y="124.7" width="24.0" height="71.3" rx="3" fill="#cbd5e1"/><text x="36.0" y="119.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >10.8</text><rect x="52.0" y="118.4" width="24.0" height="77.6" rx="3" fill="#ec4899"/><text x="64.0" y="113.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >11.8</text><text x="50.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><text x="50.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="104.0" y="108.7" width="24.0" height="87.3" rx="3" fill="#cbd5e1"/><text x="116.0" y="103.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >13.3</text><rect x="132.0" y="103.5" width="24.0" height="92.5" rx="3" fill="#ec4899"/><text x="144.0" y="98.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >14.1</text><text x="130.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><rect x="184.0" y="95.2" width="24.0" height="100.8" rx="3" fill="#cbd5e1"/><text x="196.0" y="90.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >15.3</text><rect x="212.0" y="88.7" width="24.0" height="107.3" rx="3" fill="#ec4899"/><text x="224.0" y="83.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >16.3</text><text x="210.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年</text><text x="210.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1〜3月</text><rect x="264.0" y="77.8" width="24.0" height="118.2" rx="3" fill="#cbd5e1"/><text x="276.0" y="72.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >18.0</text><rect x="292.0" y="68.8" width="24.0" height="127.2" rx="3" fill="#ec4899"/><text x="304.0" y="63.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >19.4</text><text x="290.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="344.0" y="53.9" width="24.0" height="142.1" rx="3" fill="#cbd5e1"/><text x="356.0" y="48.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >21.6</text><rect x="372.0" y="44.0" width="24.0" height="152.0" rx="3" fill="#ec4899"/><text x="384.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >23.1</text><text x="370.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >見通しの中央値</text><rect x="117" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="130.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >実績</text></svg><figcaption>出典：各四半期の決算（8-K）の「Outlook」と実績。見通しは、前の四半期の決算で示されたもの。<b>実績は、5回とも見通しの中央値を、6〜9%上回った</b>（+8.9%、+5.9%、+6.4%、+7.6%、+7.0%）。</figcaption></figure>
+    <ul>
+      <li>会社は、翌四半期の売上の見通しを、決算ごとに示します。<b>直近5回、実績は見通しの中央値を6〜9%上回りました</b>。</li>
+      <li>通期の売上の見通しも、決算ごとに引き上げられています。2026年の見通し（中央値）は、<b>2月：71.9億ドル → 5月：76.6億ドル → 8月：81.5億ドル → 11月：85.3億ドル</b>。2025年の売上（44.8億ドル）に対して、+91%の水準です。</li>
+      <li>10〜12月期の見通しは、<b>26.5億ドル</b>。前年同期（14.1億ドル）比で約+88%、7〜9月期との比較では+15%です。</li>
+    </ul>
+    <p>この「上回る」習慣が続くかは、わかりません。ただし、<b>見通しを読むときは、「中央値は、これまで実績より低めに出てきた」という事実を、頭に置く</b>と、数字の見え方が変わります。</p>
+
+    <h2>5. 予約の側を見る：契約額（TCV）と残りの契約額（RDV）</h2>
+    <p>売上は、過去に結ばれた契約が、時間をかけて売上になったものです。そのため、<b>契約の側の数字</b>を、売上と並べて確認します。</p>
+    <figure class="fig"><div class="fig-title">米国・民間の契約額（TCV、億ドル）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="180.0" x2="410" y2="180.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.0" y="117.7" width="36.7" height="62.3" rx="3" fill="#cbd5e1"/><text x="43.3" y="111.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >8.4</text><text x="43.3" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><text x="43.3" y="212.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="91.7" y="82.8" width="36.7" height="97.2" rx="3" fill="#cbd5e1"/><text x="110.0" y="76.8" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >13.1</text><text x="110.0" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="158.3" y="80.6" width="36.7" height="99.4" rx="3" fill="#cbd5e1"/><text x="176.7" y="74.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >13.4</text><text x="176.7" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><rect x="225.0" y="92.5" width="36.7" height="87.5" rx="3" fill="#cbd5e1"/><text x="243.3" y="86.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >11.8</text><text x="243.3" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年</text><text x="243.3" y="212.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1〜3月</text><rect x="291.7" y="22.0" width="36.7" height="158.0" rx="3" fill="#cbd5e1"/><text x="310.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >21.3</text><text x="310.0" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="358.3" y="71.7" width="36.7" height="108.3" rx="3" fill="#ec4899"/><text x="376.7" y="65.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >14.6</text><text x="376.7" y="200.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text></svg><figcaption>出典：各四半期の決算（8-K）。TCV（Total Contract Value）は、その四半期に結ばれた契約の、生涯の見込み価値（会社の定義）。<b>2026年4〜6月期が過去最高（21.3億ドル）で、7〜9月期は14.6億ドル</b>（前年同期比+11%）。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">米国・民間の「残りの契約額」（RDV、億ドル）</div><svg viewBox="0 0 420 225" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="195.0" x2="410" y2="195.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.0" y="121.0" width="36.7" height="74.0" rx="3" fill="#cbd5e1"/><text x="43.3" y="115.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >27.9</text><text x="43.3" y="207.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >25年4〜6月</text><text x="43.3" y="219.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >+20%</text><rect x="91.7" y="98.7" width="36.7" height="96.3" rx="3" fill="#cbd5e1"/><text x="110.0" y="92.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >36.3</text><text x="110.0" y="207.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><text x="110.0" y="219.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >+30%</text><rect x="158.3" y="78.8" width="36.7" height="116.2" rx="3" fill="#cbd5e1"/><text x="176.7" y="72.8" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >43.8</text><text x="176.7" y="207.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><text x="176.7" y="219.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >+21%</text><rect x="225.0" y="64.5" width="36.7" height="130.5" rx="3" fill="#cbd5e1"/><text x="243.3" y="58.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >49.2</text><text x="243.3" y="207.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >26年1〜3月</text><text x="243.3" y="219.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >+12%</text><rect x="291.7" y="29.4" width="36.7" height="165.6" rx="3" fill="#cbd5e1"/><text x="310.0" y="23.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >62.4</text><text x="310.0" y="207.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><text x="310.0" y="219.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >+27%</text><rect x="358.3" y="22.0" width="36.7" height="173.0" rx="3" fill="#ec4899"/><text x="376.7" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >65.2</text><text x="376.7" y="207.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><text x="376.7" y="219.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >+4%</text></svg><figcaption>出典：各四半期の決算（8-K）。RDV（Remaining Deal Value）は、契約のうち、まだ売上になっていない残りの価値（会社の定義）。最下段の数字は前期比。<b>7〜9月期は前期比+4%で、表示した6四半期で最も小さい</b>（前年同期比は+79%）。</figcaption></figure>
+    <ul>
+      <li><b>全体のTCV：</b>29.2億ドル（前年同期比+6%）。前期（33.7億ドル）よりは減りました。売上が+96%なのに対し、契約額の伸びは小さく見えます。</li>
+      <li><b>米国・民間のTCV：</b>14.6億ドル（+11%）。ただし、前期（21.3億ドル）は過去最高で、<b>契約額は四半期ごとの波が大きい</b>。大型契約の時期で、1四半期の数字が大きく動きます。</li>
+      <li><b>米国・民間のRDV：</b>65.2億ドル（前年同期比+79%、前期比+4%）。残高は積み上がっていますが、<b>伸びは売上（+148%）より小さい</b>。</li>
+      <li>会社は、この四半期に結んだ契約の件数を、<b>100万ドル以上が212件、500万ドル以上が107件、1,000万ドル以上が64件</b>と開示しています。</li>
+    </ul>
+    <p>契約額の数字は、<b>売上より先に動く</b>と考えられることが多い指標です。ただし、1四半期の増減は、大型契約の時期でぶれます。そのため、<b>数四半期の流れで確認する</b>ことが大切です。</p>
+
+    <h2>6. 利益の見方：GAAPと調整後は、なぜ同じなのか</h2>
+    <figure class="fig"><div class="fig-title">GAAPの純利益から、調整後の純利益へ（億ドル、2026年7〜9月期）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="190.0" x2="410" y2="190.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="25.2" y="64.2" width="49.6" height="125.8" rx="3" fill="#111827"/><text x="50.0" y="58.2" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >11.28</text><text x="50.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >純利益</text><text x="50.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >（GAAP）</text><line x1="74.8" y1="64.2" x2="105.2" y2="64.2" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="105.2" y="28.6" width="49.6" height="35.6" rx="3" fill="#ec4899"/><text x="130.0" y="22.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+3.19</text><text x="130.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >株式報酬</text><line x1="154.8" y1="28.6" x2="185.2" y2="28.6" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="185.2" y="26.0" width="49.6" height="2.6" rx="3" fill="#ec4899"/><text x="210.0" y="20.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+0.23</text><text x="210.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >株式報酬に</text><text x="210.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >関する給与税</text><line x1="234.8" y1="26.0" x2="265.2" y2="26.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="265.2" y="26.0" width="49.6" height="36.6" rx="3" fill="#64748b"/><text x="290.0" y="75.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >-3.28</text><text x="290.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >想定税率</text><text x="290.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >23%の調整</text><line x1="314.8" y1="62.6" x2="345.2" y2="62.6" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/><rect x="345.2" y="62.6" width="49.6" height="127.4" rx="3" fill="#111827"/><text x="370.0" y="56.6" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >11.42</text><text x="370.0" y="221.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >調整後の</text><text x="370.0" y="233.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >純利益</text></svg><figcaption>出典：決算（8-K）の「調整表」。会社は、調整後の純利益の計算で、<b>株式報酬などを足し戻す一方、長期の想定税率23%で税金を計算し直して</b>います（実際の税負担は1.2%）。結果として、調整後の1株利益（0.44ドル）は、GAAP（0.44ドル）と同じになった。</figcaption></figure>
+    <ul>
+      <li>GAAPの純利益（11.28億ドル）に、<b>株式報酬（3.19億ドル）</b>と、それに関する給与税（0.23億ドル）を足し戻すと、調整後の利益が増えます。</li>
+      <li>一方、調整後の純利益は、<b>長期の想定税率23%で、税金を計算し直します</b>。この調整が、約3.3億ドルのマイナスです。</li>
+      <li>実際の税負担は、<b>法人税等1,356万ドル（税引前利益の約1.2%）</b>。税負担が小さい理由は、この資料だけでは確認できません（10-Qで確認します）。</li>
+      <li>その結果、<b>調整後の1株利益（0.44ドル）は、GAAP（0.44ドル）と同じ</b>になりました。「調整後」の数字が、GAAPより大きいとは限りません。</li>
+      <li>GAAPの純利益には、<b>受取利息（0.89億ドル）</b>が含まれます。営業利益（10.85億ドル）に、受取利息と、その他の損益（−0.26億ドル）が加わり、純利益になります。</li>
+    </ul>
+
+    <h2>7. 投資と現金：設備投資は小さい</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">現金・米国債</div><div class="tile-v">104<small>億ドル</small></div><div class="tile-n">会社の説明。2025年末は、貸借対照表で現金14.2億＋有価証券57.5億ドル</div></div><div class="tile key"><div class="tile-l">設備投資（1〜9月）</div><div class="tile-v">0.30<small>億ドル</small></div><div class="tile-n">営業キャッシュフロー（33.2億ドル）の<b>約0.9%</b>。7〜9月期は0.08億ドル</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">売掛金</div><div class="tile-v">18.8<small>億ドル</small></div><div class="tile-n">2025年末 10.4億ドル（+81%）。売上の日数に直すと約75日（計算値）、2025年末は約68日</div></div><div class="tile"><div class="tile-l">契約負債（前受金など）</div><div class="tile-v">11.7<small>億ドル</small></div><div class="tile-n">繰延収益6.6億＋顧客預り金5.1億ドル。2025年末は7.7億ドル</div></div><div class="tile"><div class="tile-l">株式報酬</div><div class="tile-v">3.19<small>億ドル</small></div><div class="tile-n">売上の13.8%（前年同期 14.6%）。金額は前年同期（1.72億ドル）の約1.9倍</div></div><div class="tile"><div class="tile-l">希薄化後の株数</div><div class="tile-v">25.7<small>億株</small></div><div class="tile-n">前年同期 25.7億株。基本の株数は、+1.2%（23.8億→24.1億株）</div></div></div>
+    <p class="art-fig">出典：同決算説明資料の貸借対照表・キャッシュフロー計算書。「日数」は、売掛金÷当期の売上×92日（計算値）。</p>
+    <ul>
+      <li>1〜9月の設備投資は<b>約3,000万ドル</b>。営業キャッシュフロー（33.2億ドル）の1%未満です。<a href="amazon-q3-2026.html">Amazonの設備投資は営業キャッシュフローの約1.8倍</a>で、<b>AI関連でも、投資の形が大きく違います</b>。</li>
+      <li>現金は積み上がっており、<b>自社株買いも、借入も、ほとんどありません</b>（財務活動のキャッシュフローは、1〜9月で＋0.2億ドル）。</li>
+      <li>気になる点は、<b>売掛金の増加</b>です。売掛金は2025年末から+81%で、同じ期間の売上の増え方（2025年10〜12月期から+64%）より大きい。売上の日数に直すと、約68日から約75日です。ただし、大型の政府・企業の契約では、請求の時期で動きます。</li>
+    </ul>
+
+    <h2>8. 会社が示している見通し</h2>
+    <p>決算説明資料で示された見通しは、次のとおりです。<b>いずれも会社の「見通し」で、実績ではありません</b>。</p>
+    <ul>
+      <li><b>2026年10〜12月期：</b>売上26.49〜26.53億ドル。調整後の営業利益16.40〜16.44億ドル。</li>
+      <li><b>2026年通期：</b>売上85.30〜85.34億ドル（引き上げ）。米国・民間の売上は35.59億ドル超（+143%以上）。調整後の営業利益52.45〜52.49億ドル。調整後のフリーキャッシュフロー48〜50億ドル。</li>
+      <li>各四半期で、GAAPの営業利益と純利益が黒字になる見通しを、継続しています。</li>
+    </ul>
+
+    <h2>9. 決算前の株価</h2>
+    <figure class="fig"><div class="fig-title">Palantirの株価（日次終値、ドル）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="112.6" x2="368" y2="112.6" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="116.1" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >150</text><line x1="8" y1="29.1" x2="368" y2="29.1" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="32.6" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >200</text><defs><linearGradient id="g15942" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,184.0 8.0,17.1 9.4,44.6 10.9,49.3 12.3,70.8 13.8,66.0 15.2,39.8 16.6,44.2 18.1,55.6 19.5,75.6 21.0,72.5 22.4,77.1 23.8,83.7 25.3,86.9 26.7,103.0 28.2,104.5 29.6,92.2 31.0,90.0 32.5,86.3 33.9,81.8 35.4,83.4 36.8,78.1 38.2,69.1 39.7,66.0 41.1,59.6 42.6,60.0 44.0,59.4 45.4,49.3 46.9,49.9 48.3,56.6 49.8,57.1 51.2,49.6 52.6,67.0 54.1,53.0 55.5,40.2 57.0,39.2 58.4,38.9 59.8,38.9 61.3,48.0 62.7,55.5 64.2,61.1 65.6,66.3 67.0,82.8 68.5,72.5 69.9,63.0 71.4,59.7 72.8,67.8 74.2,66.7 75.7,63.5 77.1,64.3 78.6,65.2 80.0,67.4 81.4,77.6 82.9,81.7 84.3,87.0 85.8,86.1 87.2,79.9 88.6,83.4 90.1,86.4 91.5,100.4 93.0,109.5 94.4,118.3 95.8,116.4 97.3,99.5 98.7,130.1 100.2,146.0 101.6,136.2 103.0,124.5 104.5,130.2 105.9,136.5 107.4,147.5 108.8,143.7 110.2,141.0 111.7,137.0 113.1,137.9 114.6,137.3 116.0,145.0 117.4,148.0 118.9,139.0 120.3,136.1 121.8,134.0 123.2,120.7 124.6,117.3 126.1,107.3 127.5,108.2 129.0,100.7 130.4,101.9 131.8,110.7 133.3,110.0 134.7,106.8 136.2,111.0 137.6,108.1 139.0,104.1 140.5,108.0 141.9,103.1 143.4,111.5 144.8,94.5 146.2,104.6 147.7,104.3 149.1,116.7 150.6,124.2 152.0,133.4 153.4,118.8 154.9,118.5 156.3,115.2 157.8,116.1 159.2,112.5 160.6,128.1 162.1,145.2 163.5,149.3 165.0,142.1 166.4,136.5 167.8,125.7 169.3,124.7 170.7,118.7 172.2,119.5 173.6,119.4 175.0,108.3 176.5,126.7 177.9,124.2 179.4,124.2 180.8,127.4 182.2,132.7 183.7,130.8 185.1,122.5 186.6,119.3 188.0,136.2 189.4,139.7 190.9,134.3 192.3,133.0 193.8,134.5 195.2,136.0 196.6,146.0 198.1,139.8 199.5,139.4 201.0,137.4 202.4,137.2 203.8,134.1 205.3,133.6 206.7,134.5 208.2,135.0 209.6,141.8 211.0,123.8 212.5,101.7 213.9,94.8 215.4,109.0 216.8,125.7 218.2,126.5 219.7,136.8 221.1,135.2 222.6,142.6 224.0,145.7 225.4,144.2 226.9,149.4 228.3,138.2 229.8,140.6 231.2,145.0 232.6,148.6 234.1,163.6 235.5,168.2 237.0,173.6 238.4,184.0 239.8,174.5 241.3,169.9 242.7,168.3 244.2,153.2 245.6,147.2 247.0,141.8 248.5,138.7 249.9,142.3 251.4,147.6 252.8,151.4 254.2,146.0 255.7,139.8 257.1,139.8 258.6,138.6 260.0,142.1 261.4,137.9 262.9,141.6 264.3,155.1 265.8,157.1 267.2,157.9 268.6,143.5 270.1,156.8 271.5,157.7 273.0,159.0 274.4,157.6 275.8,153.3 277.3,91.5 278.7,98.5 280.2,102.7 281.6,75.9 283.0,70.5 284.5,71.0 285.9,77.5 287.4,64.2 288.8,72.5 290.2,75.0 291.7,76.7 293.1,70.6 294.6,72.6 296.0,62.6 297.4,69.4 298.9,74.7 300.3,66.7 301.8,52.6 303.2,52.0 304.6,51.9 306.1,62.7 307.5,80.1 309.0,58.3 310.4,72.0 311.8,78.7 313.3,80.0 314.7,86.1 316.2,83.9 317.6,73.7 319.0,74.9 320.5,72.0 321.9,68.8 323.4,66.5 324.8,57.4 326.2,54.2 327.7,42.8 329.1,41.5 330.6,46.4 332.0,50.0 333.4,50.9 334.9,50.7 336.3,45.8 337.8,47.9 339.2,46.8 340.6,42.4 342.1,38.9 343.5,31.2 345.0,14.0 346.4,14.1 347.8,14.6 349.3,27.5 350.7,28.3 352.2,52.4 353.6,38.9 355.0,41.5 356.5,26.2 357.9,35.5 359.4,34.5 360.8,31.1 362.2,31.2 363.7,34.4 365.1,35.1 366.6,55.7 368.0,65.3 368.0,184.0" fill="url(#g15942)"/><polyline points="8.0,17.1 9.4,44.6 10.9,49.3 12.3,70.8 13.8,66.0 15.2,39.8 16.6,44.2 18.1,55.6 19.5,75.6 21.0,72.5 22.4,77.1 23.8,83.7 25.3,86.9 26.7,103.0 28.2,104.5 29.6,92.2 31.0,90.0 32.5,86.3 33.9,81.8 35.4,83.4 36.8,78.1 38.2,69.1 39.7,66.0 41.1,59.6 42.6,60.0 44.0,59.4 45.4,49.3 46.9,49.9 48.3,56.6 49.8,57.1 51.2,49.6 52.6,67.0 54.1,53.0 55.5,40.2 57.0,39.2 58.4,38.9 59.8,38.9 61.3,48.0 62.7,55.5 64.2,61.1 65.6,66.3 67.0,82.8 68.5,72.5 69.9,63.0 71.4,59.7 72.8,67.8 74.2,66.7 75.7,63.5 77.1,64.3 78.6,65.2 80.0,67.4 81.4,77.6 82.9,81.7 84.3,87.0 85.8,86.1 87.2,79.9 88.6,83.4 90.1,86.4 91.5,100.4 93.0,109.5 94.4,118.3 95.8,116.4 97.3,99.5 98.7,130.1 100.2,146.0 101.6,136.2 103.0,124.5 104.5,130.2 105.9,136.5 107.4,147.5 108.8,143.7 110.2,141.0 111.7,137.0 113.1,137.9 114.6,137.3 116.0,145.0 117.4,148.0 118.9,139.0 120.3,136.1 121.8,134.0 123.2,120.7 124.6,117.3 126.1,107.3 127.5,108.2 129.0,100.7 130.4,101.9 131.8,110.7 133.3,110.0 134.7,106.8 136.2,111.0 137.6,108.1 139.0,104.1 140.5,108.0 141.9,103.1 143.4,111.5 144.8,94.5 146.2,104.6 147.7,104.3 149.1,116.7 150.6,124.2 152.0,133.4 153.4,118.8 154.9,118.5 156.3,115.2 157.8,116.1 159.2,112.5 160.6,128.1 162.1,145.2 163.5,149.3 165.0,142.1 166.4,136.5 167.8,125.7 169.3,124.7 170.7,118.7 172.2,119.5 173.6,119.4 175.0,108.3 176.5,126.7 177.9,124.2 179.4,124.2 180.8,127.4 182.2,132.7 183.7,130.8 185.1,122.5 186.6,119.3 188.0,136.2 189.4,139.7 190.9,134.3 192.3,133.0 193.8,134.5 195.2,136.0 196.6,146.0 198.1,139.8 199.5,139.4 201.0,137.4 202.4,137.2 203.8,134.1 205.3,133.6 206.7,134.5 208.2,135.0 209.6,141.8 211.0,123.8 212.5,101.7 213.9,94.8 215.4,109.0 216.8,125.7 218.2,126.5 219.7,136.8 221.1,135.2 222.6,142.6 224.0,145.7 225.4,144.2 226.9,149.4 228.3,138.2 229.8,140.6 231.2,145.0 232.6,148.6 234.1,163.6 235.5,168.2 237.0,173.6 238.4,184.0 239.8,174.5 241.3,169.9 242.7,168.3 244.2,153.2 245.6,147.2 247.0,141.8 248.5,138.7 249.9,142.3 251.4,147.6 252.8,151.4 254.2,146.0 255.7,139.8 257.1,139.8 258.6,138.6 260.0,142.1 261.4,137.9 262.9,141.6 264.3,155.1 265.8,157.1 267.2,157.9 268.6,143.5 270.1,156.8 271.5,157.7 273.0,159.0 274.4,157.6 275.8,153.3 277.3,91.5 278.7,98.5 280.2,102.7 281.6,75.9 283.0,70.5 284.5,71.0 285.9,77.5 287.4,64.2 288.8,72.5 290.2,75.0 291.7,76.7 293.1,70.6 294.6,72.6 296.0,62.6 297.4,69.4 298.9,74.7 300.3,66.7 301.8,52.6 303.2,52.0 304.6,51.9 306.1,62.7 307.5,80.1 309.0,58.3 310.4,72.0 311.8,78.7 313.3,80.0 314.7,86.1 316.2,83.9 317.6,73.7 319.0,74.9 320.5,72.0 321.9,68.8 323.4,66.5 324.8,57.4 326.2,54.2 327.7,42.8 329.1,41.5 330.6,46.4 332.0,50.0 333.4,50.9 334.9,50.7 336.3,45.8 337.8,47.9 339.2,46.8 340.6,42.4 342.1,38.9 343.5,31.2 345.0,14.0 346.4,14.1 347.8,14.6 349.3,27.5 350.7,28.3 352.2,52.4 353.6,38.9 355.0,41.5 356.5,26.2 357.9,35.5 359.4,34.5 360.8,31.1 362.2,31.2 363.7,34.4 365.1,35.1 366.6,55.7 368.0,65.3" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="368.0" cy="65.3" r="3.4" fill="#111827"/><text x="8.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >25/11/03</text><text x="368.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >11/02</text></svg><figcaption>出典：株価データ（2025-11-03〜2026-11-02）。直近の終値は<b>$178.34</b>。1年間の高値は$209.05（2026-10-09）、安値は$107.27（2026-06-25）。<b>決算の発表は、米国時間11月2日の取引終了後。この終値は、決算を織り込む前のもの</b>。</figcaption></figure>
+    <p>決算の発表は、米国時間の11月2日の取引が終わったあとでした。決算後の株価の反応は、この記事では取り上げていません。決算の数字は、株価の水準が妥当かを、示すものではありません。</p>
+
+    <h2>10. 次の決算で、何を確認するか</h2>
+    <p>決算ごとに、次の6項目を確認します。右端の「確認する時期」は、その数字が出る開示を示しています。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 米国・民間の伸びと、契約の積み上がり</span></td><td data-label="今回の数字"><span class="tv">米国・民間売上+148%。TCV 14.6億ドル（前年同期比+11%）。RDVは前期比+4%</span></td><td data-label="なぜ重要か"><span class="tv">売上の伸びが、新しい契約で支えられ続けるか</span></td><td data-label="外れた場合"><span class="tv">契約額の伸びが鈍いまま、売上の伸びが先に落ちる</span></td><td data-label="確認する時期"><span class="tv">次の決算（TCV・RDV）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 見通しと実績の差</span></td><td data-label="今回の数字"><span class="tv">直近5回、実績が見通しの中央値を6〜9%上回った。10〜12月期の見通しは26.5億ドル</span></td><td data-label="なぜ重要か"><span class="tv">見通しの出し方が変わっていないか</span></td><td data-label="外れた場合"><span class="tv">上回る幅が縮む、見通しを下回る</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 政府向けの伸び</span></td><td data-label="今回の数字"><span class="tv">米国・政府売上+96%（9.53億ドル）</span></td><td data-label="なぜ重要か"><span class="tv">もう一方の柱が、減速していないか</span></td><td data-label="外れた場合"><span class="tv">予算・契約の変化で伸びが落ちる</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 米国外の売上</span></td><td data-label="今回の数字"><span class="tv">計算値で3.8億ドル（前年同期比+26%）。売上の約16%（前年同期は約25%）</span></td><td data-label="なぜ重要か"><span class="tv">米国以外に広がるか、米国に依存するか</span></td><td data-label="外れた場合"><span class="tv">米国外の比率が、さらに下がる</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 株式報酬と株数</span></td><td data-label="今回の数字"><span class="tv">株式報酬3.19億ドル（売上の13.8%）。基本株数+1.2%</span></td><td data-label="なぜ重要か"><span class="tv">利益のうち、株主以外に配られる部分</span></td><td data-label="外れた場合"><span class="tv">株式報酬の急増、株数の増加</span></td><td data-label="確認する時期"><span class="tv">次の10-Q</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 売掛金と現金化</span></td><td data-label="今回の数字"><span class="tv">売掛金は2025年末比+81%。営業CF率52%</span></td><td data-label="なぜ重要か"><span class="tv">売上が、現金になっているか</span></td><td data-label="外れた場合"><span class="tv">売掛金の日数が延びる</span></td><td data-label="確認する時期"><span class="tv">次の10-Q</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年7〜9月期の決算説明資料（8-K）。次の四半期（10〜12月期）の決算日程は、会社のIRや、SECの提出書類で確認してください。</p>
+
+    <h2>11. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>売上と、契約の側を、並べて見る。</b>売上が約2倍でも、契約額（TCV）の伸びは別の動きをする。数四半期の流れで確認する。</li>
+      <li><b>見通しは「中央値」として読む。</b>過去5回、実績が見通しを上回ってきた。この習慣が続くとは限らない。</li>
+      <li><b>GAAPと調整後を、混ぜない。</b>今回は偶然ほぼ同じ数字になったが、足し戻しと税の計算し直しが、別々に入っている。</li>
+      <li><b>AI関連でも、投資の形は違う。</b>Palantirは設備投資が小さく、現金が積み上がる。クラウド大手は、設備投資が営業キャッシュフローを上回る。リスクの種類が違う。</li>
+      <li><b>株価の水準で、判断しない。</b>数字が前進しているかを、決算ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。過去の決算と株価は、将来を約束するものではありません。決算の発表後の株価の動きや、会社の見通しの実現を、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字は、決算説明資料（Form 8-K Exhibit 99.1、2026年11月2日提出）と、過去5四半期の同資料に基づきます。監査を受けていない数字で、四半期報告書（10-Q）の確認は、これからです。</p>
+      <p>※ 調整後の営業利益、調整後の純利益、調整後のフリーキャッシュフロー、TCV、RDVなどは、会社が定義した指標です。他社の同名の指標と、定義が違う場合があります。</p>
+      <p>※ 米国外の売上は、総売上から米国（民間＋政府）を引いた計算値で、各数字の丸めにより、誤差があります。売掛金の日数も、計算値です。</p>
+      <p>※ 会社の見通しは、会社の「将来予想に関する記述」で、実現が保証されているものではありません。1億ドル＝100百万ドルで換算し、小数点以下を丸めています。株価は、日次終値です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>SEC EDGAR「Palantir Technologies Inc.（CIK 1321655）」Form 8-K（2026年11月2日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm</a></li><li>SEC EDGAR「Palantir Technologies Inc.」Form 8-K（2026年8月3日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm</a></li><li>SEC EDGAR「Palantir Technologies Inc.」Form 8-K（2026年5月4日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm</a></li><li>SEC EDGAR「Palantir Technologies Inc.」Form 8-K（2026年2月2日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000004/a2025q4ex991earningsrelease.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1321655/000132165526000004/a2025q4ex991earningsrelease.htm</a></li><li>SEC EDGAR「Palantir Technologies Inc.」Form 8-K（2025年11月3日、8月4日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165525000130/a2025q3ex991earningsrelease.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1321655/000132165525000130/a2025q3ex991earningsrelease.htm</a></li><li>株価データ（日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月3日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="apple-q4-fy2026.html">Appleの2026年7〜9月期決算｜長期投資家の目線</a><a href="amazon-q3-2026.html">Amazonの2026年7〜9月期決算｜長期投資家の目線</a><a href="alphabet-q3-2026.html">Alphabetの2026年7〜9月期決算｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>

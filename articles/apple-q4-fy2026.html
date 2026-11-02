@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Appleの2026年7〜9月期決算（11月2日発表）。売上は+12%で9月期の過去最高。粗利率には関税の払戻し（約1ポイント）を含み、在庫は1年で約2.5倍。報告された数字と一時的な要因を分けて整理する。">
+<title>Appleの2026年7〜9月期決算｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/apple-q4-fy2026.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Appleの2026年7〜9月期決算｜長期投資家の目線">
+<meta property="og:description" content="Appleの2026年7〜9月期決算（11月2日発表）。売上は+12%で9月期の過去最高。粗利率には関税の払戻し（約1ポイント）を含み、在庫は1年で約2.5倍。報告された数字と一時的な要因を分けて整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/apple-q4-fy2026.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/apple-q4-fy2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/apple-q4-fy2026.jpg">
+<meta name="twitter:title" content="Appleの2026年7〜9月期決算｜長期投資家の目線">
+<meta name="twitter:description" content="Appleの2026年7〜9月期決算（11月2日発表）。売上は+12%で9月期の過去最高。粗利率には関税の払戻し（約1ポイント）を含み、在庫は1年で約2.5倍。報告された数字と一時的な要因を分けて整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Appleの2026年7〜9月期決算｜長期投資家の目線", "description": "Appleの2026年7〜9月期決算（11月2日発表）。売上は+12%で9月期の過去最高。粗利率には関税の払戻し（約1ポイント）を含み、在庫は1年で約2.5倍。報告された数字と一時的な要因を分けて整理する。", "inLanguage": "ja", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/apple-q4-fy2026.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "個別銘柄", "keywords": ["米国株", "決算", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/apple-q4-fy2026.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "Appleの2026年7〜9月期決算｜長期投資家の目線", "item": "https://fire-app.jp/articles/apple-q4-fy2026.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 個別銘柄</div>
+    <h1>Appleの2026年7〜9月期決算<br>｜長期投資家の目線</h1>
+    <p class="subtitle">過去最高の売上。粗利率の「中身」と、在庫の積み上がり</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>売上+12%、9月期の過去最高</h3><p class="pt-d">Appleの2026年7〜9月期決算（<b>2026年11月2日</b>発表）。売上は1,144.8億ドルで<b>前年同期比+12%</b>（9月期の過去最高）。ただし、前の3四半期（+16〜17%）より、伸びは小さい。2026年度の売上は4,788億ドルで、会社は「過去最高」と説明。</p></div><div class="pt"><h3>粗利率に関税の払戻し約1ポイント</h3><p class="pt-d">この記事の軸は、<b>「報告された数字」と「一時的な要因」</b>。粗利率47.9%には、<b>関税の払戻し（約1ポイント）</b>が含まれる。払戻しを除くと約46.9%で、前年同期（47.2%）をやや下回る。1株利益2.10ドルにも、0.05ドル分が含まれる。</p></div><div class="pt"><h3>在庫は1年で約2.5倍</h3><p class="pt-d">気になる点は、<b>在庫が1年で約2.5倍</b>（57.2億→145.4億ドル）、<b>研究開発費が+32%</b>（売上+12%）。理由は、決算の資料だけでは確認できない。一方、2026年度は営業CF1,451億ドルから、約1,020億ドルを株主に返した。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月3日</span><span><b>情報の時点</b> 2026年11月2日の決算発表（8-K）／株価は11月2日終値</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この決算の位置づけ</h2>
+    <p>Apple（NASDAQ：AAPL）は、<b>2026年11月2日</b>の米国市場の取引終了後に、2026年度第4四半期（2026年7〜9月期、9月26日終了）の決算を発表しました。決算説明資料は、SEC（米証券取引委員会）に、Form 8-Kの Exhibit 99.1として提出されています。この記事は、その原文と、前の3四半期の同じ資料に基づきます。</p>
+    <ul>
+      <li>数字は、<b>監査を受けていない</b>速報です。年次報告書（10-K）は、この記事の時点では確認していません。</li>
+      <li>Appleは、決算説明資料で、<b>次の四半期の見通しを示していません</b>。見通しは、電話会見で話されますが、この記事では取り上げません。</li>
+      <li>CEOは、決算説明資料で、iPhone Duo、iPhone 18 Pro、Macの新機能、新しいSiriなどの製品群に触れています。これは<b>会社の説明</b>で、売上への影響は、この記事では判断しません。</li>
+    </ul>
+
+    <h2>2. 数字：売上は+12%、1株利益は+14%</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">売上</div><div class="tile-v">1,144.8<small>億ドル</small></div><div class="tile-n"><b>前年同期（1,024.7億ドル）比 +12%</b><br>9月期として過去最高。前の3四半期は、+16〜17%</div></div><div class="tile key"><div class="tile-l">粗利率</div><div class="tile-v">47.9<small>%</small></div><div class="tile-n"><b>関税の払戻し（約1ポイント）を含む</b><br>前年同期 47.2%、4〜6月期 50.1%（払戻し約2ポイントを含む）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">営業利益</div><div class="tile-v">356.3<small>億ドル</small></div><div class="tile-n">前年同期 324.3億ドル（+10%）。営業利益率 31.1%</div></div><div class="tile"><div class="tile-l">純利益</div><div class="tile-v">307.1<small>億ドル</small></div><div class="tile-n">前年同期 274.7億ドル（+12%）</div></div><div class="tile"><div class="tile-l">1株利益（希薄化後）</div><div class="tile-v">2.10<small>ドル</small></div><div class="tile-n">前年同期 1.85ドル（+14%）。うち、関税の払戻しが0.05ドル</div></div><div class="tile"><div class="tile-l">2026年度の売上</div><div class="tile-v">4,788<small>億ドル</small></div><div class="tile-n">前年度 4,162億ドル（+15%）。1株利益は 8.98ドル（前年度 7.46ドル）</div></div></div>
+    <p class="art-fig">出典：Appleの決算説明資料（8-K Exhibit 99.1、2026年11月2日）。1億ドル＝100百万ドルで換算しています。</p>
+    <p>営業利益率は31.1%で、前年同期（31.6%）とほぼ同じ。法人税等の割合は約15.0%（前年同期16.3%）でした。1株利益が+14%と、純利益（+12%）より伸びたのは、<b>自社株買いで株数が減った</b>ためです（希薄化後の株数は148.6億株→146.3億株）。</p>
+
+    <h2>3. 売上の中身：iPhoneとMacが伸びた</h2>
+    <figure class="fig"><div class="fig-title">カテゴリ別の売上の伸び（前年同期比、%、2026年7〜9月期）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="134.6" x2="410" y2="134.6" stroke="#e5e7eb" stroke-width="1.2"/><rect x="28.0" y="51.5" width="44.0" height="83.1" rx="3" fill="#ec4899"/><text x="50.0" y="45.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+17.5%</text><text x="50.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >iPhone</text><text x="50.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >575.8億ドル</text><rect x="108.0" y="22.0" width="44.0" height="112.6" rx="3" fill="#ec4899"/><text x="130.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+23.7%</text><text x="130.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Mac</text><text x="130.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >107.9億</text><rect x="188.0" y="88.0" width="44.0" height="46.6" rx="3" fill="#ec4899"/><text x="210.0" y="82.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+9.8%</text><text x="210.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Services</text><text x="210.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >315.7億</text><rect x="268.0" y="134.6" width="44.0" height="49.4" rx="3" fill="#64748b"/><text x="290.0" y="197.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-10.4%</text><text x="290.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >iPad</text><text x="290.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >62.3億</text><rect x="348.0" y="134.6" width="44.0" height="37.5" rx="3" fill="#64748b"/><text x="370.0" y="185.1" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-7.9%</text><text x="370.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >ウェアラブル等</text><text x="370.0" y="242.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >83.0億</text></svg><figcaption>出典：Appleの決算（8-K Exhibit 99.1、2026年11月2日）。<b>iPhoneとMacが伸び、iPadとウェアラブル・ホーム・アクセサリーは減った</b>。Servicesは売上315.7億ドルで、会社は「過去最高」と説明。</figcaption></figure>
+    <ul>
+      <li><b>iPhone：</b>575.8億ドル（+17.5%）。売上全体（+12%）を、大きく上回りました。<b>Mac：</b>107.9億ドル（+23.7%）。</li>
+      <li><b>iPad：</b>62.3億ドル（−10.4%）。<b>ウェアラブル・ホーム・アクセサリー：</b>83.0億ドル（−7.9%）。2つとも、前年同期より減りました。</li>
+      <li><b>Services：</b>315.7億ドル（+9.8%）。売上の約28%ですが、粗利の約44%を生みます（Servicesの粗利率76.0%、製品の粗利率37.2%）。</li>
+    </ul>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">Servicesの売上</div><div class="tile-v">315.7<small>億ドル</small></div><div class="tile-n">前年同期 287.5億ドル（+9.8%）。売上全体の27.6%</div></div><div class="tile key"><div class="tile-l">Servicesの粗利率</div><div class="tile-v">76.0<small>%</small></div><div class="tile-n">前年同期 75.3%。粗利の43.7%を、売上の27.6%のServicesが生む</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">製品（Products）の売上</div><div class="tile-v">829.0<small>億ドル</small></div><div class="tile-n">前年同期 737.2億ドル（+12.5%）。粗利率 37.2%（前年同期 36.2%）</div></div><div class="tile"><div class="tile-l">iPhone</div><div class="tile-v">575.8<small>億ドル</small></div><div class="tile-n">前年同期 490.3億ドル（+17.5%）</div></div></div>
+
+    <h2>4. 地域別：中華圏が+21%、日本は−1.4%</h2>
+    <figure class="fig"><div class="fig-title">地域別の売上の伸び（前年同期比、%、2026年7〜9月期）</div><svg viewBox="0 0 420 225" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="159.8" x2="410" y2="159.8" stroke="#e5e7eb" stroke-width="1.2"/><rect x="28.0" y="92.9" width="44.0" height="66.9" rx="3" fill="#cbd5e1"/><text x="50.0" y="86.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+10.2%</text><text x="50.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米州</text><rect x="108.0" y="84.3" width="44.0" height="75.5" rx="3" fill="#cbd5e1"/><text x="130.0" y="78.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+11.5%</text><text x="130.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >欧州</text><rect x="188.0" y="22.0" width="44.0" height="137.8" rx="3" fill="#ec4899"/><text x="210.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+21.0%</text><text x="210.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >中華圏</text><rect x="268.0" y="159.8" width="44.0" height="9.2" rx="3" fill="#64748b"/><text x="290.0" y="182.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-1.4%</text><text x="290.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >日本</text><rect x="348.0" y="61.4" width="44.0" height="98.4" rx="3" fill="#cbd5e1"/><text x="370.0" y="55.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+15.0%</text><text x="370.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >その他</text><text x="370.0" y="227.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >アジア太平洋</text></svg><figcaption>出典：同決算のセグメント情報。中華圏は175.4億ドル（前年同期144.9億ドル）。日本は65.4億ドル（同66.4億ドル）。</figcaption></figure>
+    <ul>
+      <li><b>中華圏：</b>175.4億ドル（+21.0%）。前の2四半期（1〜3月期+28%、4〜6月期+22%）と、高い伸びが続いています。</li>
+      <li><b>日本：</b>65.4億ドル（−1.4%）。前の四半期（4〜6月期）は+13%でした。数字は<b>ドル換算の売上</b>で、為替の影響は、資料では分けて示されていません。</li>
+    </ul>
+
+    <h2>5. 粗利率：関税の払戻しを、分けて見る</h2>
+    <figure class="fig"><div class="fig-title">粗利率の推移（%）と、関税の払戻しの影響</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="206.0" x2="410" y2="206.0" stroke="#e5e7eb"/><rect x="24.0" y="53.4" width="24.0" height="152.6" rx="3" fill="#ec4899"/><text x="36.0" y="48.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >47.2</text><rect x="52.0" y="53.4" width="24.0" height="152.6" rx="3" fill="#cbd5e1"/><text x="64.0" y="48.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >47.2</text><text x="50.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><text x="50.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="104.0" y="50.1" width="24.0" height="155.9" rx="3" fill="#ec4899"/><text x="116.0" y="45.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >48.2</text><rect x="132.0" y="50.1" width="24.0" height="155.9" rx="3" fill="#cbd5e1"/><text x="144.0" y="45.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >48.2</text><text x="130.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10〜12月</text><rect x="184.0" y="46.6" width="24.0" height="159.4" rx="3" fill="#ec4899"/><text x="196.0" y="41.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >49.3</text><rect x="212.0" y="46.6" width="24.0" height="159.4" rx="3" fill="#cbd5e1"/><text x="224.0" y="41.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >49.3</text><text x="210.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年</text><text x="210.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1〜3月</text><rect x="264.0" y="44.0" width="24.0" height="162.0" rx="3" fill="#ec4899"/><text x="276.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >50.1</text><rect x="292.0" y="50.5" width="24.0" height="155.5" rx="3" fill="#cbd5e1"/><text x="304.0" y="45.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >48.1</text><text x="290.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4〜6月</text><rect x="344.0" y="51.1" width="24.0" height="154.9" rx="3" fill="#ec4899"/><text x="356.0" y="46.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >47.9</text><rect x="372.0" y="54.3" width="24.0" height="151.7" rx="3" fill="#cbd5e1"/><text x="384.0" y="49.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >46.9</text><text x="370.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7〜9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >報告値</text><rect x="73" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="86.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >関税払戻しを除く（概算）</text></svg><figcaption>出典：各四半期の決算（8-K）。会社は、4〜6月期の粗利率に「関税の払戻しによる、約2ポイントの好影響」、7〜9月期に「約1ポイントの好影響」と記載。灰色は、その分を引いた<b>概算</b>（報告値−2、−1）。ほかの四半期は、払戻しの記載なし。</figcaption></figure>
+    <ul>
+      <li>7〜9月期の粗利率は<b>47.9%</b>。会社は、<b>関税の払戻しによる約1ポイントの好影響</b>が含まれる、と説明しています。1株利益への影響は、0.05ドルです。</li>
+      <li>4〜6月期は、粗利率が50.1%で、払戻しの影響が約2ポイント（1株利益で0.11ドル）。<b>2つの四半期の粗利率は、払戻しの分だけ、高く見えています</b>。</li>
+      <li>払戻しの影響を引いた<b>概算</b>は、4〜6月期で約48.1%、7〜9月期で約46.9%です。前年同期（47.2%）と比べると、7〜9月期は、やや低い水準です。</li>
+      <li>払戻しが、今後も出るのか、いつまで続くのかは、決算の資料からは確認できません。</li>
+    </ul>
+
+    <h2>6. 費用：研究開発費が+32%</h2>
+    <figure class="fig"><div class="fig-title">売上と費用の伸び（前年同期比、%、2026年7〜9月期）</div><svg viewBox="0 0 420 225" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="181.0" x2="410" y2="181.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="32.5" y="123.4" width="55.0" height="57.6" rx="3" fill="#cbd5e1"/><text x="60.0" y="117.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+11.7%</text><text x="60.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >売上</text><rect x="132.5" y="79.6" width="55.0" height="101.4" rx="3" fill="#ec4899"/><text x="160.0" y="73.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+20.6%</text><text x="160.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >営業費用</text><text x="160.0" y="227.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（合計）</text><rect x="232.5" y="22.0" width="55.0" height="159.0" rx="3" fill="#ec4899"/><text x="260.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+32.3%</text><text x="260.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >研究開発費</text><rect x="332.5" y="152.4" width="55.0" height="28.6" rx="3" fill="#cbd5e1"/><text x="360.0" y="146.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+5.8%</text><text x="360.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >販売管理費</text></svg><figcaption>出典：同決算の損益計算書。研究開発費は117.3億ドル（前年同期88.7億ドル）、販売管理費は74.6億ドル（同70.5億ドル）。<b>営業利益率は31.1%</b>（前年同期31.6%）と、ほぼ横ばい。</figcaption></figure>
+    <ul>
+      <li>研究開発費は、<b>117.3億ドル（前年同期88.7億ドル）</b>で、売上の伸び（+12%）の約2.7倍の速さです。</li>
+      <li>四半期ごとでは、10〜12月期 108.9億、1〜3月期 114.2億、4〜6月期 117.3億、7〜9月期 117.3億ドル。<b>直近2四半期は、同じ水準</b>です。</li>
+      <li>増加の理由（AI、新製品、人員など）は、決算説明資料では説明されていません。10-Kや、会社の説明で確認します。</li>
+    </ul>
+
+    <h2>7. 在庫と、現金・株主還元</h2>
+    <figure class="fig"><div class="fig-title">在庫（棚卸資産、億ドル、四半期末）</div><svg viewBox="0 0 420 225" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="181.0" x2="410" y2="181.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="28.0" y="118.4" width="44.0" height="62.6" rx="3" fill="#cbd5e1"/><text x="50.0" y="112.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >57.2</text><text x="50.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2025年</text><text x="50.0" y="227.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >9月末</text><rect x="108.0" y="116.7" width="44.0" height="64.3" rx="3" fill="#cbd5e1"/><text x="130.0" y="110.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >58.8</text><text x="130.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >12月末</text><rect x="188.0" y="107.2" width="44.0" height="73.8" rx="3" fill="#cbd5e1"/><text x="210.0" y="101.2" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >67.5</text><text x="210.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2026年</text><text x="210.0" y="227.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >3月末</text><rect x="268.0" y="59.7" width="44.0" height="121.3" rx="3" fill="#f9a8d4"/><text x="290.0" y="53.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >110.9</text><text x="290.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >6月末</text><rect x="348.0" y="22.0" width="44.0" height="159.0" rx="3" fill="#ec4899"/><text x="370.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >145.4</text><text x="370.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >9月末</text></svg><figcaption>出典：各四半期の決算（8-K）の貸借対照表。<b>1年で約2.5倍</b>（57.2億→145.4億ドル）。年間の営業キャッシュフロー上でも、在庫の増加で89億ドルの減少要因になった。</figcaption></figure>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">在庫</div><div class="tile-v">145.4<small>億ドル</small></div><div class="tile-n"><b>前年同期（57.2億ドル）の約2.5倍</b><br>売上原価に対する日数は、約9.6日→約22.2日（計算値）</div></div><div class="tile key"><div class="tile-l">現金・有価証券 − 有利子負債</div><div class="tile-v">568<small>億ドル</small></div><div class="tile-n">前年同期 338億ドル（計算値）。現金・有価証券 1,369億ドル、有利子負債 801億ドル</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">営業キャッシュフロー（2026年度）</div><div class="tile-v">1,451<small>億ドル</small></div><div class="tile-n">前年度 1,115億ドル（+30%）</div></div><div class="tile"><div class="tile-l">自社株買い（2026年度）</div><div class="tile-v">864<small>億ドル</small></div><div class="tile-n">前年度 907億ドル。発行済株数は 147.7億→145.3億株（−1.6%）</div></div><div class="tile"><div class="tile-l">無形資産</div><div class="tile-v">202.8<small>億ドル</small></div><div class="tile-n">前年同期 110.9億ドル。資料では内訳を確認できない</div></div><div class="tile"><div class="tile-l">1株あたりの配当</div><div class="tile-v">0.27<small>ドル</small></div><div class="tile-n">11月16日に支払い（11月12日の株主に）</div></div></div>
+    <p class="art-fig">出典：同決算説明資料の貸借対照表・キャッシュフロー計算書。「日数」は、在庫÷売上原価×91日（計算値）。現金・有価証券−有利子負債は、流動・非流動の有価証券と、コマーシャル・ペーパー、長期債務（1年内返済を含む）から計算した数字。</p>
+    <ul>
+      <li><b>在庫は、四半期ごとに積み上がっています</b>（57.2億→58.8億→67.5億→110.9億→145.4億ドル）。年間のキャッシュフロー上でも、在庫の増加が89億ドルの減少要因です。</li>
+      <li>増えた理由（新製品の準備、部品の確保、需要の想定など）は、<b>資料では確認できません</b>。評価損・値引きにつながるかも、現時点では分かりません。</li>
+      <li>仕入先からの未収金（Vendor non-trade receivables）も、332億→399億ドルに増えました。買掛金は、699億→823億ドルに増えています。</li>
+    </ul>
+    <figure class="fig"><div class="fig-title">2026年度（2025年10月〜2026年9月）の、資金の出入り（億ドル）</div><svg viewBox="0 0 420 140" role="img" xmlns="http://www.w3.org/2000/svg"><text x="120.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >営業キャッシュフロー</text><rect x="128.0" y="4" width="224.9" height="22" rx="3" fill="#cbd5e1"/><text x="357.9" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >1,451</text><text x="120.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >自社株買い</text><rect x="128.0" y="38" width="133.9" height="22" rx="3" fill="#ec4899"/><text x="266.9" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >864</text><text x="120.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >配当</text><rect x="128.0" y="72" width="24.3" height="22" rx="3" fill="#f9a8d4"/><text x="157.3" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >157</text><text x="120.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >設備投資</text><rect x="128.0" y="106" width="14.0" height="22" rx="3" fill="#f9a8d4"/><text x="146.9" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >90</text></svg><figcaption>出典：同決算のキャッシュフロー計算書（12か月）。営業キャッシュフローは1,451億ドル（前年1,115億ドル）。<b>自社株買い＋配当は1,021億ドル</b>で、営業CFから設備投資を引いた額（1,360億ドル）の約75%。設備投資は、前年（127.2億ドル）より減った。</figcaption></figure>
+    <p>2026年度は、フリーキャッシュフロー（営業CF−設備投資）の約75%を、株主に返しました。設備投資は90億ドルで、前年度（127億ドル）より小さい。一方で、現金・有価証券から有利子負債を引いた額（計算値）は、338億→568億ドルに増えました。</p>
+
+    <h2>8. 決算前の株価</h2>
+    <figure class="fig"><div class="fig-title">Appleの株価（日次終値、ドル）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="178.4" x2="368" y2="178.4" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="181.9" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >250</text><line x1="8" y1="95.3" x2="368" y2="95.3" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="98.8" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >300</text><defs><linearGradient id="g98093" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,184.0 8.0,146.7 9.4,145.1 10.9,144.9 12.3,145.5 13.8,147.7 15.2,146.1 16.6,136.4 18.1,139.4 19.5,140.3 21.0,141.2 22.4,149.4 23.8,149.4 25.3,147.6 26.7,151.4 28.2,142.7 29.6,135.3 31.0,133.6 32.5,132.6 33.9,130.4 35.4,123.4 36.8,118.2 38.2,121.6 39.7,127.4 41.1,130.6 42.6,132.0 44.0,133.2 45.4,130.6 46.9,131.8 48.3,131.4 49.8,138.3 51.2,137.5 52.6,142.1 54.1,141.5 55.5,139.1 57.0,143.5 58.4,141.2 59.8,138.8 61.3,139.5 62.7,138.9 64.2,140.0 65.6,142.1 67.0,143.5 68.5,149.7 69.9,157.9 71.4,161.2 72.8,163.4 74.2,162.8 75.7,161.4 77.1,160.0 78.6,161.8 80.0,164.8 81.4,169.2 82.9,183.9 84.3,182.3 85.8,181.1 87.2,181.7 88.6,169.4 90.1,164.7 91.5,167.7 93.0,164.6 94.4,162.6 95.8,145.1 97.3,146.0 98.7,134.4 100.2,135.3 101.6,131.7 103.0,137.5 104.5,139.0 105.9,136.0 107.4,158.9 108.8,168.8 110.2,155.3 111.7,154.5 113.1,160.8 114.6,154.2 116.0,151.5 117.4,141.6 118.9,138.1 120.3,140.3 121.8,154.8 123.2,153.9 124.6,155.5 126.1,157.6 127.5,161.3 129.0,166.0 130.4,162.0 131.8,160.4 133.3,160.4 134.7,168.8 136.2,178.2 137.6,173.7 139.0,171.4 140.5,178.5 141.9,180.1 143.4,181.7 144.8,175.9 146.2,175.7 147.7,174.0 149.1,173.6 150.6,180.4 152.0,184.0 153.4,172.1 154.9,169.0 156.3,168.6 157.8,163.7 159.2,172.6 160.6,163.6 162.1,161.0 163.5,161.0 165.0,163.1 166.4,163.7 167.8,151.1 169.3,156.1 170.7,144.8 172.2,140.1 173.6,151.5 175.0,139.9 176.5,139.5 177.9,143.4 179.4,149.1 180.8,144.0 182.2,144.9 183.7,142.9 185.1,128.3 186.6,133.8 188.0,121.6 189.4,116.1 190.9,116.2 192.3,106.4 193.8,107.5 195.2,103.9 196.6,97.2 198.1,98.3 199.5,94.9 201.0,98.9 202.4,97.0 203.8,91.6 205.3,87.0 206.7,80.6 208.2,81.4 209.6,77.3 211.0,74.5 212.5,75.2 213.9,84.8 215.4,70.0 216.8,78.2 218.2,76.6 219.7,83.1 221.1,92.7 222.6,111.0 224.0,109.3 225.4,102.6 226.9,110.0 228.3,101.2 229.8,96.6 231.2,102.0 232.6,98.6 234.1,100.3 235.5,104.8 237.0,106.8 238.4,136.6 239.8,122.3 241.3,125.6 242.7,113.0 244.2,104.6 245.6,80.9 247.0,74.3 248.5,77.6 249.9,73.0 251.4,68.3 252.8,69.8 254.2,66.5 255.7,70.6 257.1,49.6 258.6,40.0 260.0,39.2 261.4,51.1 262.9,49.2 264.3,52.3 265.8,59.3 267.2,40.4 268.6,33.9 270.1,28.7 271.5,31.8 273.0,39.7 274.4,80.5 275.8,89.6 277.3,79.7 278.7,77.0 280.2,74.7 281.6,73.1 283.0,81.6 284.5,87.1 285.9,91.6 287.4,86.6 288.8,85.4 290.2,86.0 291.7,78.6 293.1,67.3 294.6,76.5 296.0,79.8 297.4,78.1 298.9,78.8 300.3,72.9 301.8,71.1 303.2,62.6 304.6,67.3 306.1,53.5 307.5,53.8 309.0,48.4 310.4,62.1 311.8,68.3 313.3,69.8 314.7,51.1 316.2,41.7 317.6,40.3 319.0,43.2 320.5,41.4 321.9,33.8 323.4,35.2 324.8,30.5 326.2,29.2 327.7,33.8 329.1,35.6 330.6,27.0 332.0,31.5 333.4,46.4 334.9,40.4 336.3,44.9 337.8,39.3 339.2,40.6 340.6,39.4 342.1,34.3 343.5,28.1 345.0,34.4 346.4,27.2 347.8,26.7 349.3,23.9 350.7,25.5 352.2,23.1 353.6,23.9 355.0,29.6 356.5,22.2 357.9,15.1 359.4,16.0 360.8,22.3 362.2,17.0 363.7,22.4 365.1,14.0 366.6,21.1 368.0,31.6 368.0,184.0" fill="url(#g98093)"/><polyline points="8.0,146.7 9.4,145.1 10.9,144.9 12.3,145.5 13.8,147.7 15.2,146.1 16.6,136.4 18.1,139.4 19.5,140.3 21.0,141.2 22.4,149.4 23.8,149.4 25.3,147.6 26.7,151.4 28.2,142.7 29.6,135.3 31.0,133.6 32.5,132.6 33.9,130.4 35.4,123.4 36.8,118.2 38.2,121.6 39.7,127.4 41.1,130.6 42.6,132.0 44.0,133.2 45.4,130.6 46.9,131.8 48.3,131.4 49.8,138.3 51.2,137.5 52.6,142.1 54.1,141.5 55.5,139.1 57.0,143.5 58.4,141.2 59.8,138.8 61.3,139.5 62.7,138.9 64.2,140.0 65.6,142.1 67.0,143.5 68.5,149.7 69.9,157.9 71.4,161.2 72.8,163.4 74.2,162.8 75.7,161.4 77.1,160.0 78.6,161.8 80.0,164.8 81.4,169.2 82.9,183.9 84.3,182.3 85.8,181.1 87.2,181.7 88.6,169.4 90.1,164.7 91.5,167.7 93.0,164.6 94.4,162.6 95.8,145.1 97.3,146.0 98.7,134.4 100.2,135.3 101.6,131.7 103.0,137.5 104.5,139.0 105.9,136.0 107.4,158.9 108.8,168.8 110.2,155.3 111.7,154.5 113.1,160.8 114.6,154.2 116.0,151.5 117.4,141.6 118.9,138.1 120.3,140.3 121.8,154.8 123.2,153.9 124.6,155.5 126.1,157.6 127.5,161.3 129.0,166.0 130.4,162.0 131.8,160.4 133.3,160.4 134.7,168.8 136.2,178.2 137.6,173.7 139.0,171.4 140.5,178.5 141.9,180.1 143.4,181.7 144.8,175.9 146.2,175.7 147.7,174.0 149.1,173.6 150.6,180.4 152.0,184.0 153.4,172.1 154.9,169.0 156.3,168.6 157.8,163.7 159.2,172.6 160.6,163.6 162.1,161.0 163.5,161.0 165.0,163.1 166.4,163.7 167.8,151.1 169.3,156.1 170.7,144.8 172.2,140.1 173.6,151.5 175.0,139.9 176.5,139.5 177.9,143.4 179.4,149.1 180.8,144.0 182.2,144.9 183.7,142.9 185.1,128.3 186.6,133.8 188.0,121.6 189.4,116.1 190.9,116.2 192.3,106.4 193.8,107.5 195.2,103.9 196.6,97.2 198.1,98.3 199.5,94.9 201.0,98.9 202.4,97.0 203.8,91.6 205.3,87.0 206.7,80.6 208.2,81.4 209.6,77.3 211.0,74.5 212.5,75.2 213.9,84.8 215.4,70.0 216.8,78.2 218.2,76.6 219.7,83.1 221.1,92.7 222.6,111.0 224.0,109.3 225.4,102.6 226.9,110.0 228.3,101.2 229.8,96.6 231.2,102.0 232.6,98.6 234.1,100.3 235.5,104.8 237.0,106.8 238.4,136.6 239.8,122.3 241.3,125.6 242.7,113.0 244.2,104.6 245.6,80.9 247.0,74.3 248.5,77.6 249.9,73.0 251.4,68.3 252.8,69.8 254.2,66.5 255.7,70.6 257.1,49.6 258.6,40.0 260.0,39.2 261.4,51.1 262.9,49.2 264.3,52.3 265.8,59.3 267.2,40.4 268.6,33.9 270.1,28.7 271.5,31.8 273.0,39.7 274.4,80.5 275.8,89.6 277.3,79.7 278.7,77.0 280.2,74.7 281.6,73.1 283.0,81.6 284.5,87.1 285.9,91.6 287.4,86.6 288.8,85.4 290.2,86.0 291.7,78.6 293.1,67.3 294.6,76.5 296.0,79.8 297.4,78.1 298.9,78.8 300.3,72.9 301.8,71.1 303.2,62.6 304.6,67.3 306.1,53.5 307.5,53.8 309.0,48.4 310.4,62.1 311.8,68.3 313.3,69.8 314.7,51.1 316.2,41.7 317.6,40.3 319.0,43.2 320.5,41.4 321.9,33.8 323.4,35.2 324.8,30.5 326.2,29.2 327.7,33.8 329.1,35.6 330.6,27.0 332.0,31.5 333.4,46.4 334.9,40.4 336.3,44.9 337.8,39.3 339.2,40.6 340.6,39.4 342.1,34.3 343.5,28.1 345.0,34.4 346.4,27.2 347.8,26.7 349.3,23.9 350.7,25.5 352.2,23.1 353.6,23.9 355.0,29.6 356.5,22.2 357.9,15.1 359.4,16.0 360.8,22.3 362.2,17.0 363.7,22.4 365.1,14.0 366.6,21.1 368.0,31.6" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="368.0" cy="31.6" r="3.4" fill="#111827"/><text x="8.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >25/11/03</text><text x="368.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >11/02</text></svg><figcaption>出典：株価データ（2025-11-03〜2026-11-02）。直近の終値は<b>$338.32</b>。1年間の高値は$348.91（2026-10-29）、安値は$246.63（2026-03-30）。<b>決算の発表は、米国時間11月2日の取引終了後。この終値は、決算を織り込む前のもの</b>。</figcaption></figure>
+    <p>決算の発表は、米国時間の11月2日の取引が終わったあとでした。決算後の株価の反応は、この記事では取り上げていません。決算の数字は、株価の水準が妥当かを、示すものではありません。</p>
+
+    <h2>9. 次の決算で、何を確認するか</h2>
+    <p>決算ごとに、次の6項目を確認します。右端の「確認する時期」は、その数字が出る開示を示しています。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 売上の伸びの、鈍化と中身</span></td><td data-label="今回の数字"><span class="tv">売上+12%（前の3四半期は+16〜17%）。iPhone +17.5%、iPad −10.4%</span></td><td data-label="なぜ重要か"><span class="tv">伸びが、iPhoneだけに頼っていないか</span></td><td data-label="外れた場合"><span class="tv">iPhone以外の減少が広がる</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 粗利率（関税の払戻しを除く）</span></td><td data-label="今回の数字"><span class="tv">報告値47.9%。払戻しを除く概算は約46.9%</span></td><td data-label="なぜ重要か"><span class="tv">払戻しは一時的。除いた粗利率が、どう動くか</span></td><td data-label="外れた場合"><span class="tv">払戻しを除くと、粗利率が下がる</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 在庫の水準</span></td><td data-label="今回の数字"><span class="tv">145.4億ドル（1年で約2.5倍）</span></td><td data-label="なぜ重要か"><span class="tv">在庫の積み上がりが、新製品の準備か、需要の想定か</span></td><td data-label="外れた場合"><span class="tv">在庫が高止まりし、評価損・値引きが出る</span></td><td data-label="確認する時期"><span class="tv">次の決算・10-K</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 研究開発費の伸び</span></td><td data-label="今回の数字"><span class="tv">研究開発費+32%（売上+12%）</span></td><td data-label="なぜ重要か"><span class="tv">費用が、売上より速く増える状態が続くか</span></td><td data-label="外れた場合"><span class="tv">営業利益率が下がる</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 中華圏と日本</span></td><td data-label="今回の数字"><span class="tv">中華圏+21%（175.4億ドル）。日本−1.4%</span></td><td data-label="なぜ重要か"><span class="tv">最大級の海外市場の、需要の強さ</span></td><td data-label="外れた場合"><span class="tv">中華圏の伸びが鈍る</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 株主還元と現金</span></td><td data-label="今回の数字"><span class="tv">自社株買い864億ドル、配当157億ドル（2026年度）</span></td><td data-label="なぜ重要か"><span class="tv">還元が営業CFの範囲内か</span></td><td data-label="外れた場合"><span class="tv">還元が営業CFを上回る</span></td><td data-label="確認する時期"><span class="tv">次の決算・10-K</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年7〜9月期の決算説明資料（8-K）。次の四半期（10〜12月期）の決算日程は、会社のIRや、SECの提出書類で確認してください。</p>
+
+    <h2>10. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>報告された利益と、一時的な要因を、分ける。</b>関税の払戻しは、粗利率を約1ポイント、1株利益を0.05ドル押し上げた。払戻しを除いた水準で、前年と比べる。</li>
+      <li><b>伸びの「水準」と「方向」を、別に見る。</b>売上は過去最高でも、前の3四半期より、伸びは小さい。</li>
+      <li><b>貸借対照表の動きに、注意を払う。</b>在庫の増加は、売上や利益には、まだ出ていない。理由は、次の資料で確認する。</li>
+      <li><b>株主還元の大きさを、1株あたりで見る。</b>自社株買いで、株数は1年で1.6%減った。1株利益の伸びが、純利益より大きい理由のひとつ。</li>
+      <li><b>株価の水準で、判断しない。</b>数字が前進しているかを、決算ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。過去の決算と株価は、将来を約束するものではありません。決算の発表後の株価の動きや、会社の計画の実現を、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字は、決算説明資料（Form 8-K Exhibit 99.1、2026年11月2日提出）と、2026年度の前の3四半期の同資料に基づきます。監査を受けていない数字で、年次報告書（10-K）の確認は、これからです。</p>
+      <p>※ 関税の払戻しの影響（粗利率で「約1ポイント」「約2ポイント」、1株利益で0.05ドル・0.11ドル）は、会社の説明です。「払戻しを除く粗利率」は、それを引いた概算で、会社が公表した数字ではありません。</p>
+      <p>※ 在庫の日数、現金・有価証券−有利子負債、粗利率、各種の伸び率は、決算説明資料の数字からの計算値です。四半期の数字は、前の四半期の資料の数字を使っています。</p>
+      <p>※ 1億ドル＝100百万ドルで換算し、小数点以下を丸めています。株価は、日次終値です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄は、ウォッチリストで見守る</h3>
+  <p>保有前の銘柄も、価格と値動きをリストで一覧。気になる銘柄を、みんなでFIREのウォッチリストに入れておけます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-watchlist">ウォッチリストを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>SEC EDGAR「Apple Inc.（CIK 320193）」Form 8-K（2026年11月2日提出）Exhibit 99.1「Apple reports fourth quarter results」：<a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/a8-kex991q4202609262026.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/320193/000032019326000024/a8-kex991q4202609262026.htm</a></li><li>SEC EDGAR「Apple Inc.」Form 8-K（2026年7月30日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/a8-kex991q3202606272026.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/a8-kex991q3202606272026.htm</a></li><li>SEC EDGAR「Apple Inc.」Form 8-K（2026年4月30日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/a8-kex991q2202603282026.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/a8-kex991q2202603282026.htm</a></li><li>SEC EDGAR「Apple Inc.」Form 8-K（2026年1月29日提出）Exhibit 99.1：<a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/a8-kex991q1202612272025.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/a8-kex991q1202612272025.htm</a></li><li>株価データ（日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月3日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="palantir-q3-2026.html">Palantirの2026年7〜9月期決算｜長期投資家の目線</a><a href="amazon-q3-2026.html">Amazonの2026年7〜9月期決算｜長期投資家の目線</a><a href="alphabet-q3-2026.html">Alphabetの2026年7〜9月期決算｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
