@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2026年11月3日に決算を発表した、AI設備投資を支える4社（AMD、Super Micro、Arista、Astera Labs）。売上の伸びは+45%〜約+298%、粗利率は12.7%〜72.3%。売上の大きさと利益の取り分、現金の動き、会社の見通しを比べる。">
+<title>AMD・Super Micro・Arista・Astera Labsの決算｜AI投資の「流れ先」を比べる - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/ai-infra-four-q3-2026.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="AMD・Super Micro・Arista・Astera Labsの決算｜AI投資の「流れ先」を比べる">
+<meta property="og:description" content="2026年11月3日に決算を発表した、AI設備投資を支える4社（AMD、Super Micro、Arista、Astera Labs）。売上の伸びは+45%〜約+298%、粗利率は12.7%〜72.3%。売上の大きさと利益の取り分、現金の動き、会社の見通しを比べる。">
+<meta property="og:url" content="https://fire-app.jp/articles/ai-infra-four-q3-2026.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/ai-infra-four-q3-2026.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/ai-infra-four-q3-2026.jpg">
+<meta name="twitter:title" content="AMD・Super Micro・Arista・Astera Labsの決算｜AI投資の「流れ先」を比べる">
+<meta name="twitter:description" content="2026年11月3日に決算を発表した、AI設備投資を支える4社（AMD、Super Micro、Arista、Astera Labs）。売上の伸びは+45%〜約+298%、粗利率は12.7%〜72.3%。売上の大きさと利益の取り分、現金の動き、会社の見通しを比べる。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AMD・Super Micro・Arista・Astera Labsの決算｜AI投資の「流れ先」を比べる", "description": "2026年11月3日に決算を発表した、AI設備投資を支える4社（AMD、Super Micro、Arista、Astera Labs）。売上の伸びは+45%〜約+298%、粗利率は12.7%〜72.3%。売上の大きさと利益の取り分、現金の動き、会社の見通しを比べる。", "inLanguage": "ja", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/ai-infra-four-q3-2026.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "業界分析", "keywords": ["米国株", "決算", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/ai-infra-four-q3-2026.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "AMD・Super Micro・Arista・Astera Labsの決算｜AI投資の「流れ先」を比べる", "item": "https://fire-app.jp/articles/ai-infra-four-q3-2026.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 業界分析</div>
+    <h1>AMD・Super Micro・Arista・Astera Labsの決算<br>｜AI投資の「流れ先」を比べる</h1>
+    <p class="subtitle">同じAI投資でも、層によって、利益の取り分と現金の動きは違う</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>粗利率は72%から13%まで、約6倍の差</h3><p class="pt-d">2026年11月3日、AIの設備投資を支える4社（<b>AMD、Super Micro、Arista、Astera Labs</b>）が、7〜9月期の決算を発表した。<b>売上の伸びは、前年同期比で+45%〜約+298%</b>。AI投資の「どの層にいるか」で、数字の中身は大きく違う。</p></div><div class="pt"><h3>売上最大のSuper Microは、営業CFがマイナス</h3><p class="pt-d">この記事の軸は、<b>「売上の大きさ」と「利益の取り分」は、別の話</b>という点。粗利率は、<b>Astera Labs 72.3%、Arista 63.6%、AMD 53.9%、Super Micro 12.7%</b>。売上が最大のSuper Microは、営業利益ではAMDを下回る。</p></div><div class="pt"><h3>次の四半期の見通しは、+3%から+27%まで</h3><p class="pt-d">気になる点は、<b>現金の動き</b>。Super Microは、売上が約4倍でも<b>営業キャッシュフローがマイナス（−4.3億ドル）</b>。AMDは、7〜9月の営業CFが純利益の約49%。会社の次の四半期の見通しは、AMDとAstera Labsが前期比+27%前後、Super Microは+3%。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月4日</span><span><b>情報の時点</b> 2026年11月3日の決算発表（8-K）／株価は11月3日終値</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=決算">#決算</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この決算の位置づけ</h2>
+    <p>4社は、AI向けのデータセンターで、それぞれ別の役割を担っています。</p>
+    <ul>
+      <li><b>AMD（NASDAQ：AMD）：</b>AI向けのGPU（Instinct）とサーバー向けCPU（EPYC）。</li>
+      <li><b>Super Micro（NASDAQ：SMCI）：</b>AI向けのサーバーを、組み立てて納める会社。</li>
+      <li><b>Arista（NYSE：ANET）：</b>データセンターの、ネットワーク機器（スイッチ）。</li>
+      <li><b>Astera Labs（NASDAQ：ALAB）：</b>AIサーバーの中で、半導体同士をつなぐ半導体（接続用）。</li>
+    </ul>
+    <p>4社とも、<b>2026年11月3日</b>の米国市場の取引終了後に、決算を発表しました。決算説明資料は、SEC（米証券取引委員会）に、Form 8-KのExhibit 99.1として提出されています。この記事は、その原文に基づきます。</p>
+    <ul>
+      <li>数字は、<b>監査を受けていない</b>速報です。四半期報告書（10-Q）などは、この記事の時点では確認していません。</li>
+      <li>決算期が、同じではありません。<b>Super Microだけ、6月決算</b>（今回は2027年6月期の第1四半期）。ほかの3社は、12月決算の第3四半期です。</li>
+      <li>会社の見通しは、決算説明資料に書かれた数字だけを使います。電話会見の内容は、この記事では取り上げません。</li>
+    </ul>
+
+    <h2>2. 4社の数字：売上の伸びは、+45%〜約+298%</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">AMD（GPU・CPU）</div><div class="tile-v">売上 133.8億ドル</div><div class="tile-n"><b>前年同期比 +45%</b>。粗利率 53.9%、営業利益率 21.2%<br>データセンター部門 85億ドル（+97%、売上の約64%）</div></div><div class="tile key"><div class="tile-l">Super Micro（サーバー）</div><div class="tile-v">売上 199.5億ドル</div><div class="tile-n"><b>前年同期比 約+298%</b>。粗利率 12.7%、営業利益率 10.4%<br>営業キャッシュフローは −4.3億ドル</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">Arista（ネットワーク）</div><div class="tile-v">売上 36.6億ドル</div><div class="tile-n"><b>前年同期比 +58.5%</b>。粗利率 63.6%、営業利益率 44.9%<br>会社は「IPO以来で最も高い伸び」と説明</div></div><div class="tile"><div class="tile-l">Astera Labs（接続の半導体）</div><div class="tile-v">売上 5.8億ドル</div><div class="tile-n"><b>前年同期比 +154%</b>、前期比 +49%。粗利率 72.3%、営業利益率 30.6%<br>スイッチの「Scorpio」が、最大の製品群に</div></div></div>
+    <p class="art-fig">出典：各社の決算説明資料（8-K Exhibit 99.1、2026年11月3日）。営業利益率・粗利率は、GAAPの数字から当サイトが計算。1億ドル＝100百万ドルで換算しています。</p>
+    <figure class="fig"><div class="fig-title">売上の伸び（%、2026年7〜9月期）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="206.0" x2="410" y2="206.0" stroke="#e5e7eb"/><rect x="28.0" y="181.7" width="30.0" height="24.3" rx="3" fill="#cbd5e1"/><text x="43.0" y="176.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+45%</text><rect x="62.0" y="197.3" width="30.0" height="8.7" rx="3" fill="#ec4899"/><text x="77.0" y="192.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+16%</text><text x="60.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >AMD</text><rect x="128.0" y="44.0" width="30.0" height="162.0" rx="3" fill="#cbd5e1"/><text x="143.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+298%</text><rect x="162.0" y="162.6" width="30.0" height="43.4" rx="3" fill="#ec4899"/><text x="177.0" y="157.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+80%</text><text x="160.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Super</text><text x="160.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Micro</text><rect x="228.0" y="174.1" width="30.0" height="31.9" rx="3" fill="#cbd5e1"/><text x="243.0" y="169.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+58%</text><rect x="262.0" y="194.8" width="30.0" height="11.2" rx="3" fill="#ec4899"/><text x="277.0" y="189.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+20%</text><text x="260.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Arista</text><rect x="328.0" y="122.3" width="30.0" height="83.7" rx="3" fill="#cbd5e1"/><text x="343.0" y="117.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+154%</text><rect x="362.0" y="179.3" width="30.0" height="26.7" rx="3" fill="#ec4899"/><text x="377.0" y="174.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+49%</text><text x="360.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Astera</text><text x="360.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Labs</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >前年同期比</text><rect x="95" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="108.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >前期比</text></svg><figcaption>出典：各社の決算（8-K Exhibit 99.1、2026年11月3日）。前年同期比・前期比は、売上から<b>当サイトが計算</b>（Super Microの前期比は、会社が示した「前期11.1億ドル」の丸めた数字からの概算）。Super Microは<b>決算期が6月</b>で、今回は2027年6月期の第1四半期（2026年7〜9月）。売上は、AMD 133.8億ドル、Super Micro 199.5億ドル、Arista 36.6億ドル、Astera Labs 5.8億ドル。</figcaption></figure>
+    <ul>
+      <li><b>Super Micro：</b>売上は199.5億ドルで、前年同期（50.2億ドル）の約4倍、前期（約111億ドル）の約1.8倍。伸びは、4社で最大です。</li>
+      <li><b>Astera Labs：</b>売上は5.8億ドル（+154%）。前期比でも+49%で、会社は、スイッチ製品の「Scorpio」が、<b>最大の製品群になった</b>と説明しています。</li>
+      <li><b>Arista：</b>+58.5%は、会社によると「IPO以来、最も高い前年同期比の伸び」。製品は+66.9%、サービスは+17.9%です。</li>
+      <li><b>AMD：</b>+45%。データセンター部門が85億ドル（+97%）で、売上の約64%。一方、クライアントとゲームは37億ドル（−8%）で、ゲームが−40%でした。</li>
+    </ul>
+
+    <h2>3. 売上の大きさと、利益の取り分は、別の話</h2>
+    <figure class="fig"><div class="fig-title">粗利率と営業利益率（GAAP、%、2026年7〜9月期）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="206.0" x2="410" y2="206.0" stroke="#e5e7eb"/><rect x="28.0" y="85.2" width="30.0" height="120.8" rx="3" fill="#cbd5e1"/><text x="43.0" y="80.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >53.9</text><rect x="62.0" y="158.5" width="30.0" height="47.5" rx="3" fill="#ec4899"/><text x="77.0" y="153.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >21.2</text><text x="60.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >AMD</text><rect x="128.0" y="177.5" width="30.0" height="28.5" rx="3" fill="#cbd5e1"/><text x="143.0" y="172.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >12.7</text><rect x="162.0" y="182.7" width="30.0" height="23.3" rx="3" fill="#ec4899"/><text x="177.0" y="177.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >10.4</text><text x="160.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Super</text><text x="160.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Micro</text><rect x="228.0" y="63.5" width="30.0" height="142.5" rx="3" fill="#cbd5e1"/><text x="243.0" y="58.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >63.6</text><rect x="262.0" y="105.4" width="30.0" height="100.6" rx="3" fill="#ec4899"/><text x="277.0" y="100.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >44.9</text><text x="260.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Arista</text><rect x="328.0" y="44.0" width="30.0" height="162.0" rx="3" fill="#cbd5e1"/><text x="343.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >72.3</text><rect x="362.0" y="137.4" width="30.0" height="68.6" rx="3" fill="#ec4899"/><text x="377.0" y="132.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >30.6</text><text x="360.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Astera</text><text x="360.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Labs</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >粗利率</text><rect x="73" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="86.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >営業利益率</text></svg><figcaption>出典：同決算の損益計算書から、<b>当サイトが計算</b>（粗利÷売上、営業利益÷売上）。<b>粗利率は、Astera Labsの72.3%と、Super Microの12.7%で、約6倍の差</b>。会社が示す非GAAPの営業利益率は、AMD 29%、Arista 49.1%、Astera Labs 44.7%（Super Microは、非GAAPの営業利益率を示していない）。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">売上と営業利益（GAAP、億ドル、2026年7〜9月期）</div><svg viewBox="0 0 420 202" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="96" y="3" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="109.0" y="11.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >売上</text><rect x="152" y="3" width="9" height="9" rx="2" fill="#ec4899"/><text x="165.0" y="11.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >営業利益</text><text x="88.0" y="35.5" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >Super Micro</text><rect x="96" y="18" width="264.0" height="14" rx="3" fill="#cbd5e1"/><text x="365.0" y="28.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >199.5</text><rect x="96" y="34" width="27.3" height="14" rx="3" fill="#ec4899"/><text x="128.3" y="44.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >20.6</text><text x="88.0" y="81.5" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >AMD</text><rect x="96" y="64" width="177.1" height="14" rx="3" fill="#cbd5e1"/><text x="278.1" y="74.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >133.8</text><rect x="96" y="80" width="37.4" height="14" rx="3" fill="#ec4899"/><text x="138.4" y="90.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >28.3</text><text x="88.0" y="127.5" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >Arista</text><rect x="96" y="110" width="48.4" height="14" rx="3" fill="#cbd5e1"/><text x="149.4" y="120.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >36.6</text><rect x="96" y="126" width="21.7" height="14" rx="3" fill="#ec4899"/><text x="122.7" y="136.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >16.4</text><text x="88.0" y="173.5" font-size="10.5" text-anchor="end" fill="#111827" font-weight="700" >Astera Labs</text><rect x="96" y="156" width="7.7" height="14" rx="3" fill="#cbd5e1"/><text x="108.7" y="166.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >5.8</text><rect x="96" y="172" width="2.4" height="14" rx="3" fill="#ec4899"/><text x="103.4" y="182.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >1.8</text></svg><figcaption>出典：同決算。<b>売上はSuper Microが最大でも、営業利益はAMDが最大</b>。営業利益は、Super Micro 20.6億ドル（2,064百万ドル）、AMD 28.3億ドル（2,832百万ドル）、Arista 16.4億ドル、Astera Labs 1.8億ドル。</figcaption></figure>
+    <ul>
+      <li><b>粗利率の差は、約6倍。</b>接続用の半導体（Astera Labs）は72.3%、ネットワーク機器（Arista）は63.6%、GPU・CPU（AMD）は53.9%。サーバーの組み立て（Super Micro）は12.7%です。</li>
+      <li>売上は、Super Microが199.5億ドルで最大。しかし<b>営業利益は、AMDの28.3億ドルが最大</b>で、Super Microは20.6億ドル、Aristaは16.4億ドルでした。</li>
+      <li>Super Microの<b>営業費用は、売上の約2.4%</b>（4.8億ドル）と小さく、営業利益率は10.4%。粗利率が12.7%と薄いなかで、費用を抑えて、利益を残しています。</li>
+      <li>これは、<b>各社の事業の違い</b>を示す数字です。「どの層が優れているか」を示すものではありません。Super Microの売上の増加が、粗利率の低い仕事に偏っているのか、構成の変化なのかは、決算の資料からは確認できません。</li>
+    </ul>
+
+    <h2>4. 利益の「見え方」：調整後と、GAAPの差</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th></th><th>AMD</th><th>Super Micro</th><th>Arista</th><th>Astera Labs</th></tr></thead><tbody><tr><td data-label=""><span class="tv">1株利益（GAAP）</span></td><td data-label="AMD"><span class="tv">1.46ドル（前年同期 0.75）</span></td><td data-label="Super Micro"><span class="tv">1.75ドル（同 0.26）</span></td><td data-label="Arista"><span class="tv">1.22ドル（同 0.67）</span></td><td data-label="Astera Labs"><span class="tv">0.99ドル</span></td></tr><tr><td data-label=""><span class="tv">1株利益（調整後）</span></td><td data-label="AMD"><span class="tv">2.09ドル（同 1.20）</span></td><td data-label="Super Micro"><span class="tv">1.81ドル（同 0.35）</span></td><td data-label="Arista"><span class="tv">1.20ドル（同 0.77）</span></td><td data-label="Astera Labs"><span class="tv">1.32ドル</span></td></tr><tr><td data-label=""><span class="tv">調整後−GAAP</span></td><td data-label="AMD"><span class="tv">+0.63ドル</span></td><td data-label="Super Micro"><span class="tv">+0.06ドル</span></td><td data-label="Arista"><span class="tv">−0.02ドル</span></td><td data-label="Astera Labs"><span class="tv">+0.33ドル</span></td></tr><tr><td data-label=""><span class="tv">主な調整の中身</span></td><td data-label="AMD"><span class="tv"><b>顧客向けワラントの公正価値の変動 10.97億ドル</b>（1株あたり0.66ドル）、株式報酬、無形資産の償却</span></td><td data-label="Super Micro"><span class="tv">株式報酬など（会社の資料では、小さい）</span></td><td data-label="Arista"><span class="tv"><b>戦略投資の利益 1.35億ドルを除外</b>（調整後のほうが低い）、株式報酬</span></td><td data-label="Astera Labs"><span class="tv">株式報酬（0.8億ドル。売上の14.1%）</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：同決算の、GAAPと非GAAPの調整表。Super Microの前年同期は、2026年6月期の第1四半期（7〜9月）。「調整後−GAAP」は、当サイトが計算。</p>
+    <ul>
+      <li><b>AMDの差（0.63ドル）が、最大。</b>主な中身は、「顧客向けワラント（新株予約権）の公正価値の変動」です。決算説明資料の調整表と、キャッシュフロー計算書に出てきますが、<b>ワラントの条件や、顧客の名前は、資料では説明されていません</b>。10-Qで確認します。</li>
+      <li>Aristaは、<b>調整後のほうが低い</b>。1.35億ドルの戦略投資の利益を、調整後から除いているためです。営業の利益は、GAAPと調整後で、ほぼ同じ傾向（営業利益率44.9%／49.1%）です。</li>
+      <li>Astera Labsは、株式報酬（0.8億ドル）が売上の14.1%。調整後の営業利益率44.7%と、GAAPの30.6%の差は、ほぼ株式報酬です。法人税は、税引前利益の約4.7%（0.09億ドル）と、小さい。</li>
+    </ul>
+
+    <h2>5. 現金と在庫：売上の伸びに、現金は付いてきたか</h2>
+    <figure class="fig"><div class="fig-title">営業キャッシュフロー÷純利益（%）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="140.8" x2="410" y2="140.8" stroke="#e5e7eb" stroke-width="1.2"/><rect x="32.5" y="22.0" width="55.0" height="118.8" rx="3" fill="#ec4899"/><text x="60.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+107%</text><text x="60.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >AMD</text><text x="60.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >1〜9月累計</text><rect x="132.5" y="140.8" width="55.0" height="30.2" rx="3" fill="#64748b"/><text x="160.0" y="184.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-27%</text><text x="160.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Super Micro</text><text x="160.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >7〜9月</text><rect x="232.5" y="24.2" width="55.0" height="116.5" rx="3" fill="#ec4899"/><text x="260.0" y="18.2" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+105%</text><text x="260.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Arista</text><text x="260.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >1〜9月累計</text><rect x="332.5" y="49.6" width="55.0" height="91.2" rx="3" fill="#ec4899"/><text x="360.0" y="43.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+82%</text><text x="360.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Astera Labs</text><text x="360.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >1〜9月累計</text></svg><figcaption>出典：同決算のキャッシュフロー計算書と損益計算書から、<b>当サイトが計算</b>。<b>期間が同じではない</b>点に注意：Super Microは、2027年6月期第1四半期の3か月（営業CF −4.3億ドル、純利益 15.9億ドル）。ほかの3社は、1〜9月の累計（AMD 65.2億ドル／61.1億ドル、Arista 39.8億ドル／38.0億ドル、Astera Labs 3.4億ドル／4.2億ドル）。AMDの7〜9月だけでは、営業CF 12.0億ドル、純利益 24.3億ドル（約49%）。</figcaption></figure>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">Super Micro：売上は急増、現金は減った</div><div class="tile-v">営業CF −4.3億ドル</div><div class="tile-n">純利益 15.9億ドルに対し。売掛金が<b>+35.6億ドル</b>（61.3億→96.9億ドル）、在庫が+24.8億ドル、前受金（契約負債）が+30.5億ドル。現金 69億ドル、銀行借入と転換社債 86億ドル</div></div><div class="tile key"><div class="tile-l">AMD：在庫と売掛金が増加</div><div class="tile-v">営業CF 12.0億ドル（7〜9月）</div><div class="tile-n">純利益 24.3億ドルの約49%。在庫が<b>+30.0億ドル</b>、売掛金が+19.3億ドル、買掛金が+23.1億ドル。長期債務は 32.2億→70.8億ドル（2025年末比）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">Arista：現金は積み上がる</div><div class="tile-v">現金・有価証券 143.6億ドル</div><div class="tile-n">2025年末の107.4億ドルから+36.2億ドル。営業CF（1〜9月）39.8億ドル。前受金は 53.7億→68.4億ドル（+27%）</div></div><div class="tile"><div class="tile-l">Astera Labs：在庫が約3.4倍</div><div class="tile-v">在庫 2.0億ドル</div><div class="tile-n">2025年末の0.59億ドルから。営業CF（1〜9月）3.4億ドル、設備投資 0.73億ドル（前年同期 0.19億ドル）。現金・有価証券 13.8億ドル</div></div></div>
+    <p class="art-fig">出典：同決算の貸借対照表・キャッシュフロー計算書。Super Microの前受金の増加は「契約負債（Deferred revenue）の増減」。Aristaの現金・有価証券は、現金・現金同等物と、市場性のある有価証券の合計。</p>
+    <figure class="fig"><div class="fig-title">在庫（棚卸資産）の増加率（%）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="183.0" x2="410" y2="183.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="32.5" y="153.1" width="55.0" height="29.9" rx="3" fill="#ec4899"/><text x="60.0" y="147.1" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+45%</text><text x="60.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >AMD</text><text x="60.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >2025年末比</text><rect x="132.5" y="171.8" width="55.0" height="11.2" rx="3" fill="#ec4899"/><text x="160.0" y="165.8" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+17%</text><text x="160.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Super Micro</text><text x="160.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >6月末比</text><rect x="232.5" y="154.4" width="55.0" height="28.6" rx="3" fill="#ec4899"/><text x="260.0" y="148.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+43%</text><text x="260.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Arista</text><text x="260.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >2025年末比</text><rect x="332.5" y="22.0" width="55.0" height="161.0" rx="3" fill="#64748b"/><text x="360.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+241%</text><text x="360.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Astera Labs</text><text x="360.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >2025年末比</text></svg><figcaption>出典：同決算の貸借対照表から、<b>当サイトが計算</b>。基準の時点は、AMD・Arista・Astera Labsが2025年12月末（9か月で）、Super Microが2026年6月末（3か月で）。在庫は、AMD 79.2億→114.6億ドル、Super Micro 128.9億→150.5億ドル、Arista 22.5億→32.1億ドル、Astera Labs 0.59億→2.01億ドル。</figcaption></figure>
+    <ul>
+      <li><b>Super Microは、売上が急増するなかで、現金を使いました。</b>売掛金の増加（35.6億ドル）と在庫の増加（24.8億ドル）が、前受金の増加（30.5億ドル）で、大部分は埋まりましたが、営業CFは−4.3億ドルでした。前年同期も、−9.2億ドルです。</li>
+      <li>AMDは、7〜9月の営業CFが、純利益の約半分でした。在庫（+30.0億ドル）と売掛金（+19.3億ドル）の増加を、買掛金（+23.1億ドル）が、一部まかなっています。1〜9月の累計では、営業CFが純利益と同水準です。</li>
+      <li>Astera Labsの在庫は、<b>2025年末の約3.4倍</b>（0.59億→2.01億ドル）。売上の伸び（9か月で+121%）より、在庫の伸びのほうが大きい。増えた理由（供給の確保、新製品の準備など）は、資料では説明されていません。</li>
+      <li>在庫の増加は、<b>売上の伸びを支える準備</b>とも、<b>需要の想定の大きさ</b>とも読めます。決算の資料だけでは、どちらかは判断できません。</li>
+    </ul>
+
+    <h2>6. 会社が示した、次の四半期の見通し</h2>
+    <figure class="fig"><div class="fig-title">会社が示した次の四半期の見通し（中央値の、前期比、%）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="183.0" x2="410" y2="183.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="32.5" y="22.0" width="55.0" height="161.0" rx="3" fill="#ec4899"/><text x="60.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+27.0%</text><text x="60.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >AMD</text><text x="60.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >約170億ドル</text><rect x="132.5" y="166.3" width="55.0" height="16.7" rx="3" fill="#cbd5e1"/><text x="160.0" y="160.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+2.8%</text><text x="160.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Super Micro</text><text x="160.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >約205億ドル</text><rect x="232.5" y="135.3" width="55.0" height="47.7" rx="3" fill="#cbd5e1"/><text x="260.0" y="129.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+8.0%</text><text x="260.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Arista</text><text x="260.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >約39.5億ドル</text><rect x="332.5" y="25.0" width="55.0" height="158.0" rx="3" fill="#ec4899"/><text x="360.0" y="19.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+26.5%</text><text x="360.0" y="217.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >Astera Labs</text><text x="360.0" y="229.0" font-size="9.5" text-anchor="middle" fill="#9ca3af" font-weight="500" >約7.4億ドル</text></svg><figcaption>出典：同決算の「見通し」。2026年10〜12月期の売上の見通し（Super Microは、2027年6月期の第2四半期）の<b>中央値を、今回の売上と比べた伸び</b>（当サイトが計算）。AMDは約170億ドル（±3%）、Super Microは195〜215億ドル、Aristaは39〜40億ドル、Astera Labsは7.3〜7.5億ドル。会社の見通しは、<b>実績を保証するものではありません</b>。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th></th><th>今回（7〜9月）</th><th>会社の見通し</th><th>見通しから逆算した数字（計算値）</th></tr></thead><tbody><tr><td data-label=""><span class="tv">Super Micro（2027年6月期）</span></td><td data-label="今回（7〜9月）"><span class="tv">売上 199.5億ドル</span></td><td data-label="会社の見通し"><span class="tv">10〜12月期 195〜215億ドル。2027年6月期通期 720〜820億ドル</span></td><td data-label="見通しから逆算した数字（計算値）"><span class="tv">通期の見通しから、今回を引くと、残り3四半期の合計は <b>520〜620億ドル</b>。<b>1四半期あたり約174〜207億ドル</b>で、今回（199.5億ドル）と同じ水準か、やや低い</span></td></tr><tr><td data-label=""><span class="tv">AMD</span></td><td data-label="今回（7〜9月）"><span class="tv">売上 133.8億ドル</span></td><td data-label="会社の見通し"><span class="tv">10〜12月期 約170億ドル（±3%）。前年同期比 約+66%、前期比 約+27%</span></td><td data-label="見通しから逆算した数字（計算値）"><span class="tv">—（通期の見通しは示されていない）</span></td></tr><tr><td data-label=""><span class="tv">Arista</span></td><td data-label="今回（7〜9月）"><span class="tv">売上 36.6億ドル</span></td><td data-label="会社の見通し"><span class="tv">10〜12月期 39〜40億ドル。非GAAP営業利益率 48〜49%</span></td><td data-label="見通しから逆算した数字（計算値）"><span class="tv">中央値は、前期比 約+8%</span></td></tr><tr><td data-label=""><span class="tv">Astera Labs</span></td><td data-label="今回（7〜9月）"><span class="tv">売上 5.8億ドル</span></td><td data-label="会社の見通し"><span class="tv">10〜12月期 7.3〜7.5億ドル。粗利率 約72%</span></td><td data-label="見通しから逆算した数字（計算値）"><span class="tv">中央値は、前期比 約+26.5%</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：同決算の「見通し」。中央値の前期比は、当サイトの計算。AMDは、「約170億ドル、±3%」で、会社が「前年同期比 約+66%、前期比 約+27%」と記載。Super Microの逆算は、通期720〜820億ドルから、今回の売上（199.5億ドル）を引いて3で割った計算値。</p>
+    <ul>
+      <li>AMDとAstera Labsは、<b>前期比+27%前後</b>の見通し。Aristaは+8%、Super Microは+3%です。</li>
+      <li>Super Microは、前期比+3%の見通しに加えて、通期の見通し（720〜820億ドル）から逆算すると、<b>残り3四半期は、1四半期あたり約174〜207億ドル</b>です。今回（199.5億ドル）と、同じ水準か、やや低い水準です。</li>
+      <li>会社の見通しが、実績を上回る（または下回る）傾向があるかは、<b>この記事のデータでは確認していません</b>。次の決算で、実績と見通しを比べます。</li>
+    </ul>
+
+    <h2>7. 決算前の株価</h2>
+    <figure class="fig"><div class="fig-title">この1年の株価（2025年11月4日＝100、日次終値）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="34" y1="171.3" x2="324" y2="171.3" stroke="#e5e7eb"/><text x="29.0" y="174.8" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >100</text><line x1="34" y1="78.4" x2="324" y2="78.4" stroke="#e5e7eb"/><text x="29.0" y="81.9" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >200</text><polyline points="34.0,171.3 35.2,169.0 36.3,175.9 37.5,177.5 38.6,173.6 39.8,176.0 41.0,168.1 42.1,172.1 43.3,172.5 44.4,174.9 45.6,178.7 46.8,181.2 47.9,187.7 49.1,188.5 50.2,184.3 51.4,187.7 52.6,184.6 53.7,183.4 54.9,182.6 56.0,184.3 57.2,183.4 58.4,184.0 59.5,183.3 60.7,182.1 61.8,181.9 63.0,182.0 64.2,182.0 65.3,185.9 66.5,187.1 67.6,186.5 68.8,190.6 70.0,189.5 71.1,184.9 72.3,184.4 73.4,184.4 74.6,184.3 75.8,184.4 76.9,184.1 78.1,184.2 79.2,184.7 80.4,181.2 81.6,182.1 82.7,184.6 83.9,186.2 85.0,188.2 86.2,188.8 87.4,187.1 88.5,182.1 89.7,181.2 90.8,179.6 92.0,178.1 93.2,178.1 94.3,171.4 95.5,170.0 96.6,167.8 97.8,170.9 99.0,170.6 100.1,170.3 101.3,170.5 102.4,176.3 103.6,172.7 104.8,174.3 105.9,189.9 107.1,192.7 108.2,186.8 109.4,184.0 110.6,184.9 111.7,184.9 112.9,187.7 114.0,187.2 115.2,188.8 116.4,189.9 117.5,188.7 118.7,189.9 119.8,191.2 121.0,184.8 122.2,185.9 123.3,188.6 124.5,189.9 125.6,190.4 126.8,193.3 128.0,189.2 129.1,190.1 130.3,192.7 131.4,188.9 132.6,188.7 133.8,188.1 134.9,190.8 136.1,192.4 137.2,191.2 138.4,191.3 139.6,190.1 140.7,188.0 141.9,189.4 143.0,188.9 144.2,187.9 145.4,182.4 146.5,188.5 147.7,189.2 148.8,191.4 150.0,188.7 151.2,186.1 152.3,183.4 153.5,182.4 154.6,181.9 155.8,178.1 157.0,176.3 158.1,173.2 159.3,172.5 160.4,169.5 161.6,168.3 162.8,160.9 163.9,160.8 165.1,162.1 166.2,158.5 167.4,151.5 168.6,150.8 169.7,135.0 170.9,139.9 172.0,144.2 173.2,139.0 174.4,132.5 175.5,130.3 176.7,137.4 177.8,132.3 179.0,107.7 180.2,112.5 181.3,95.1 182.5,93.8 183.6,97.7 184.8,98.7 186.0,97.2 187.1,106.7 188.3,107.8 189.4,110.4 190.6,98.0 191.8,97.2 192.9,90.6 194.1,77.0 195.2,80.1 196.4,71.8 197.6,72.5 198.7,74.7 199.9,70.5 201.0,62.7 202.2,69.9 203.4,91.0 204.5,82.1 205.7,87.6 206.8,96.2 208.0,82.8 209.2,74.2 210.3,60.9 211.5,75.8 212.6,73.8 213.8,64.6 215.0,59.3 216.1,71.1 217.3,71.2 218.4,66.4 219.6,70.5 220.8,63.8 221.9,48.4 223.1,63.3 224.2,71.9 225.4,59.1 226.6,72.5 227.7,72.0 228.9,61.1 230.0,57.0 231.2,65.7 232.4,60.6 233.5,67.7 234.7,78.1 235.8,80.1 237.0,77.2 238.2,62.0 239.3,59.0 240.5,63.7 241.6,70.3 242.8,80.4 244.0,95.3 245.1,104.7 246.3,83.9 247.4,87.3 248.6,84.2 249.8,71.6 250.9,85.2 252.1,82.5 253.2,84.7 254.4,89.8 255.6,88.0 256.7,84.8 257.9,84.8 259.0,73.1 260.2,76.3 261.4,84.3 262.5,91.0 263.7,89.8 264.8,88.4 266.0,94.6 267.2,86.2 268.3,85.6 269.5,87.2 270.6,91.3 271.8,89.4 273.0,93.5 274.1,94.4 275.3,94.8 276.4,86.8 277.6,76.4 278.8,70.6 279.9,77.1 281.1,72.5 282.2,80.9 283.4,76.9 284.6,73.8 285.7,61.7 286.9,56.3 288.0,35.6 289.2,32.5 290.4,35.9 291.5,30.5 292.7,30.0 293.8,38.4 295.0,38.5 296.2,37.0 297.3,35.5 298.5,28.7 299.6,29.5 300.8,23.0 302.0,24.3 303.1,33.7 304.3,38.3 305.4,43.5 306.6,39.3 307.8,52.2 308.9,55.4 310.1,67.8 311.2,64.3 312.4,65.6 313.6,58.9 314.7,75.5 315.9,72.2 317.0,66.9 318.2,56.1 319.4,49.3 320.5,53.8 321.7,76.7 322.8,90.8 324.0,84.5" fill="none" stroke="#ec4899" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/><polyline points="34.0,171.3 35.2,170.0 36.3,179.9 37.5,178.5 38.6,174.2 39.8,177.4 41.0,182.5 42.1,189.4 43.3,189.5 44.4,191.0 45.6,192.0 46.8,190.7 47.9,192.1 49.1,190.8 50.2,187.7 51.4,189.2 52.6,184.3 53.7,182.6 54.9,178.7 56.0,190.2 57.2,185.2 58.4,185.2 59.5,180.7 60.7,173.2 61.8,177.7 63.0,179.1 64.2,174.2 65.3,187.1 66.5,189.8 67.6,189.1 68.8,191.6 70.0,188.7 71.1,179.1 72.3,174.8 73.4,176.8 74.6,176.2 75.8,177.6 76.9,176.1 78.1,175.7 79.2,178.0 80.4,171.2 81.6,177.7 82.7,180.8 83.9,178.4 85.0,183.0 86.2,180.0 87.4,174.8 88.5,170.7 89.7,175.1 90.8,173.9 92.0,169.9 93.2,169.0 94.3,173.1 95.5,172.9 96.6,176.3 97.8,179.7 99.0,175.7 100.1,177.3 101.3,181.1 102.4,186.2 103.6,185.3 104.8,182.1 105.9,189.3 107.1,190.2 108.2,176.2 109.4,167.0 110.6,169.5 111.7,189.8 112.9,198.7 114.0,197.2 115.2,200.2 116.4,197.1 117.5,195.5 118.7,197.1 119.8,197.8 121.0,197.7 122.2,197.8 123.3,199.6 124.5,202.7 125.6,201.8 126.8,207.4 128.0,205.3 129.1,202.1 130.3,202.5 131.4,200.9 132.6,203.9 133.8,199.6 134.9,202.1 136.1,201.9 137.2,198.2 138.4,198.1 139.6,198.8 140.7,198.9 141.9,204.1 143.0,200.1 144.2,201.2 145.4,201.9 146.5,205.4 147.7,206.0 148.8,212.3 150.0,207.5 151.2,209.1 152.3,203.5 153.5,203.1 154.6,202.6 155.8,199.2 157.0,197.2 158.1,187.0 159.3,177.8 160.4,175.9 161.6,175.1 162.8,175.7 163.9,174.1 165.1,173.2 166.2,164.8 167.4,163.7 168.6,161.9 169.7,154.0 170.9,162.4 172.0,169.3 173.2,162.3 174.4,163.3 175.5,159.2 176.7,160.0 177.8,152.5 179.0,153.4 180.2,162.9 181.3,160.7 182.5,156.8 183.6,158.3 184.8,148.1 186.0,145.8 187.1,143.7 188.3,152.6 189.4,137.7 190.6,115.3 191.8,109.9 192.9,105.3 194.1,99.1 195.2,95.7 196.4,83.3 197.6,86.6 198.7,98.4 199.9,79.9 201.0,75.9 202.2,78.7 203.4,100.0 204.5,84.8 205.7,87.2 206.8,92.8 208.0,73.9 209.2,74.0 210.3,62.6 211.5,76.8 212.6,70.1 213.8,48.2 215.0,36.5 216.1,58.6 217.3,57.1 218.4,58.0 219.6,61.3 220.8,28.0 221.9,14.0 223.1,41.0 224.2,53.7 225.4,40.0 226.6,65.9 227.7,60.6 228.9,48.0 230.0,50.3 231.2,76.7 232.4,76.8 233.5,82.6 234.7,98.6 235.8,106.9 237.0,104.1 238.2,98.6 239.3,92.8 240.5,94.8 241.6,113.2 242.8,117.9 244.0,129.4 245.1,134.9 246.3,109.0 247.4,103.0 248.6,97.9 249.8,76.9 250.9,99.3 252.1,92.5 253.2,91.1 254.4,99.9 255.6,102.6 256.7,99.1 257.9,97.0 259.0,97.6 260.2,98.4 261.4,107.0 262.5,114.5 263.7,113.7 264.8,116.6 266.0,120.5 267.2,117.8 268.3,113.8 269.5,106.7 270.6,114.3 271.8,110.4 273.0,119.2 274.1,122.2 275.3,117.7 276.4,103.4 277.6,114.6 278.8,108.5 279.9,116.8 281.1,113.4 282.2,131.1 283.4,133.4 284.6,124.8 285.7,112.2 286.9,107.1 288.0,87.7 289.2,75.9 290.4,77.5 291.5,77.5 292.7,75.3 293.8,82.2 295.0,78.9 296.2,79.8 297.3,79.6 298.5,82.7 299.6,76.5 300.8,62.3 302.0,66.2 303.1,84.4 304.3,86.9 305.4,96.3 306.6,95.7 307.8,108.7 308.9,107.8 310.1,116.2 311.2,115.8 312.4,116.7 313.6,114.0 314.7,130.7 315.9,131.0 317.0,129.8 318.2,115.7 319.4,110.3 320.5,113.8 321.7,130.2 322.8,145.3 324.0,143.2" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="34.0,171.3 35.2,179.3 36.3,183.2 37.5,182.8 38.6,181.2 39.8,182.6 41.0,182.6 42.1,185.4 43.3,184.8 44.4,187.2 45.6,189.6 46.8,188.7 47.9,191.9 49.1,193.2 50.2,190.3 51.4,188.6 52.6,187.0 53.7,185.2 54.9,186.7 56.0,187.3 57.2,186.9 58.4,186.5 59.5,186.4 60.7,186.1 61.8,185.6 63.0,184.2 64.2,182.9 65.3,188.8 66.5,188.1 67.6,187.9 68.8,190.2 70.0,188.8 71.1,184.9 72.3,185.1 73.4,184.8 74.6,185.1 75.8,184.5 76.9,183.1 78.1,184.1 79.2,185.0 80.4,183.4 81.6,181.2 82.7,184.0 83.9,185.5 85.0,189.4 86.2,189.9 87.4,189.6 88.5,185.6 89.7,188.6 90.8,185.2 92.0,185.7 93.2,187.1 94.3,187.2 95.5,180.5 96.6,181.8 97.8,177.3 99.0,175.5 100.1,173.4 101.3,174.6 102.4,178.5 103.6,180.5 104.8,179.9 105.9,185.4 107.1,186.4 108.2,181.1 109.4,178.5 110.6,177.5 111.7,179.1 112.9,182.5 114.0,178.6 115.2,178.0 116.4,179.8 117.5,181.2 118.7,183.9 119.8,187.1 121.0,186.3 122.2,183.8 123.3,185.4 124.5,183.5 125.6,186.0 126.8,188.9 128.0,182.7 129.1,179.9 130.3,183.8 131.4,181.3 132.6,179.8 133.8,180.6 134.9,183.1 136.1,183.4 137.2,182.4 138.4,183.7 139.6,181.9 140.7,181.8 141.9,184.8 143.0,182.0 144.2,185.1 145.4,182.6 146.5,190.1 147.7,191.2 148.8,194.0 150.0,190.0 151.2,188.7 152.3,187.6 153.5,187.9 154.6,183.4 155.8,176.5 157.0,175.9 158.1,175.1 159.3,172.3 160.4,170.8 161.6,170.9 162.8,166.8 163.9,164.9 165.1,163.3 166.2,159.7 167.4,156.7 168.6,159.8 169.7,157.2 170.9,159.9 172.0,164.2 173.2,162.2 174.4,159.7 175.5,159.8 176.7,159.8 177.8,161.3 179.0,175.3 180.2,178.5 181.3,178.5 182.5,181.7 183.6,178.0 184.8,179.1 186.0,174.8 187.1,178.3 188.3,178.5 189.4,178.6 190.6,179.2 191.8,174.3 192.9,171.1 194.1,168.6 195.2,170.9 196.4,170.3 197.6,167.8 198.7,161.0 199.9,158.2 201.0,158.7 202.2,163.8 203.4,170.9 204.5,169.6 205.7,172.2 206.8,172.4 208.0,169.6 209.2,165.5 210.3,161.9 211.5,162.6 212.6,164.5 213.8,161.6 215.0,158.6 216.1,166.1 217.3,166.4 218.4,164.1 219.6,168.9 220.8,165.0 221.9,161.5 223.1,163.4 224.2,167.4 225.4,159.4 226.6,163.5 227.7,154.7 228.9,152.5 230.0,151.1 231.2,154.6 232.4,153.8 233.5,160.2 234.7,162.3 235.8,162.2 237.0,161.8 238.2,158.6 239.3,158.4 240.5,157.4 241.6,159.0 242.8,160.9 244.0,161.6 245.1,168.7 246.3,160.8 247.4,155.1 248.6,152.4 249.8,149.0 250.9,144.9 252.1,147.9 253.2,150.1 254.4,148.4 255.6,144.5 256.7,136.9 257.9,141.0 259.0,144.0 260.2,142.2 261.4,147.4 262.5,151.4 263.7,153.1 264.8,150.1 266.0,150.4 267.2,148.7 268.3,141.9 269.5,142.6 270.6,146.0 271.8,145.8 273.0,149.7 274.1,151.6 275.3,148.4 276.4,147.0 277.6,146.3 278.8,147.5 279.9,149.9 281.1,143.5 282.2,150.6 283.4,147.6 284.6,144.7 285.7,143.5 286.9,143.6 288.0,140.0 289.2,140.1 290.4,141.1 291.5,139.8 292.7,139.3 293.8,140.3 295.0,141.5 296.2,141.1 297.3,140.5 298.5,138.8 299.6,139.1 300.8,133.9 302.0,133.7 303.1,136.6 304.3,133.1 305.4,136.7 306.6,140.5 307.8,146.0 308.9,152.0 310.1,157.2 311.2,153.6 312.4,154.6 313.6,152.7 314.7,160.7 315.9,160.0 317.0,157.0 318.2,151.1 319.4,151.3 320.5,152.8 321.7,162.1 322.8,164.9 324.0,161.4" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="34.0,171.3 35.2,181.9 36.3,185.2 37.5,186.3 38.6,185.5 39.8,188.2 41.0,189.9 42.1,195.5 43.3,192.9 44.4,197.4 45.6,195.8 46.8,198.1 47.9,202.4 49.1,201.1 50.2,198.9 51.4,200.6 52.6,199.9 53.7,197.9 54.9,198.8 56.0,199.7 57.2,198.2 58.4,197.2 59.5,196.2 60.7,194.9 61.8,195.6 63.0,195.8 64.2,197.6 65.3,200.9 66.5,202.8 67.6,202.2 68.8,205.8 70.0,206.7 71.1,203.3 72.3,203.3 73.4,204.0 74.6,204.4 75.8,204.2 76.9,205.3 78.1,206.1 79.2,206.9 80.4,203.6 81.6,205.3 82.7,204.4 83.9,205.4 85.0,205.6 86.2,205.1 87.4,205.2 88.5,208.2 89.7,208.8 90.8,206.6 92.0,200.3 93.2,202.7 94.3,201.1 95.5,200.6 96.6,202.1 97.8,203.9 99.0,203.1 100.1,203.1 101.3,205.2 102.4,207.2 103.6,206.0 104.8,206.1 105.9,198.1 107.1,203.8 108.2,196.9 109.4,198.5 110.6,198.9 111.7,201.4 112.9,204.6 114.0,204.4 115.2,205.2 116.4,206.0 117.5,201.2 118.7,200.7 119.8,204.0 121.0,203.2 122.2,198.4 123.3,201.0 124.5,200.8 125.6,201.9 126.8,204.1 128.0,200.2 129.1,201.1 130.3,202.9 131.4,201.6 132.6,201.9 133.8,201.9 134.9,203.7 136.1,204.0 137.2,201.8 138.4,202.5 139.6,204.8 140.7,203.9 141.9,224.0 143.0,221.9 144.2,220.7 145.4,217.1 146.5,220.7 147.7,221.2 148.8,223.0 150.0,219.6 151.2,220.1 152.3,218.7 153.5,221.0 154.6,219.8 155.8,218.4 157.0,218.7 158.1,214.7 159.3,213.3 160.4,210.9 161.6,210.8 162.8,208.6 163.9,208.3 165.1,207.8 166.2,208.5 167.4,207.0 168.6,211.8 169.7,207.2 170.9,209.7 172.0,210.8 173.2,212.7 174.4,210.5 175.5,211.1 176.7,209.5 177.8,209.7 179.0,196.3 180.2,198.3 181.3,194.9 182.5,198.5 183.6,200.0 184.8,201.5 186.0,199.5 187.1,203.4 188.3,203.8 189.4,204.3 190.6,198.7 191.8,198.7 192.9,194.5 194.1,191.5 195.2,189.4 196.4,183.3 197.6,173.9 198.7,172.4 199.9,165.9 201.0,171.3 202.2,172.3 203.4,182.6 204.5,178.0 205.7,184.6 206.8,206.9 208.0,201.6 209.2,204.5 210.3,203.8 211.5,207.0 212.6,209.8 213.8,204.1 215.0,194.7 216.1,198.9 217.3,200.6 218.4,202.1 219.6,204.2 220.8,209.1 221.9,206.8 223.1,210.0 224.2,210.9 225.4,210.9 226.6,212.8 227.7,209.0 228.9,208.9 230.0,208.8 231.2,210.0 232.4,210.0 233.5,211.5 234.7,215.9 235.8,216.8 237.0,217.5 238.2,214.3 239.3,204.3 240.5,203.1 241.6,205.2 242.8,205.8 244.0,208.5 245.1,213.9 246.3,209.9 247.4,208.6 248.6,208.1 249.8,202.1 250.9,204.8 252.1,206.7 253.2,203.2 254.4,202.6 255.6,202.3 256.7,190.5 257.9,187.5 259.0,186.2 260.2,189.2 261.4,190.9 262.5,192.5 263.7,192.7 264.8,191.3 266.0,195.3 267.2,188.9 268.3,191.0 269.5,188.9 270.6,191.6 271.8,191.2 273.0,192.3 274.1,191.7 275.3,190.0 276.4,186.6 277.6,185.3 278.8,187.9 279.9,191.0 281.1,185.6 282.2,192.2 283.4,194.4 284.6,192.0 285.7,185.2 286.9,187.6 288.0,183.5 289.2,182.8 290.4,183.0 291.5,182.9 292.7,179.5 293.8,182.4 295.0,183.8 296.2,183.7 297.3,182.1 298.5,178.6 299.6,179.6 300.8,179.1 302.0,176.2 303.1,180.4 304.3,182.2 305.4,185.9 306.6,187.7 307.8,194.1 308.9,195.5 310.1,202.2 311.2,201.3 312.4,200.6 313.6,194.5 314.7,198.2 315.9,199.7 317.0,200.2 318.2,195.5 319.4,194.1 320.5,196.8 321.7,199.7 322.8,204.6 324.0,202.7" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="324" cy="84.5" r="3" fill="#ec4899"/><text x="331.0" y="88.0" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >AMD</text><text x="331.0" y="99.5" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >+94%</text><circle cx="324" cy="143.2" r="3" fill="#2563eb"/><text x="331.0" y="146.7" font-size="9.5" text-anchor="start" fill="#2563eb" font-weight="700" >Astera Labs</text><text x="331.0" y="158.2" font-size="9.5" text-anchor="start" fill="#2563eb" font-weight="700" >+30%</text><circle cx="324" cy="161.4" r="3" fill="#16a34a"/><text x="331.0" y="170.7" font-size="9.5" text-anchor="start" fill="#16a34a" font-weight="700" >Arista</text><text x="331.0" y="182.2" font-size="9.5" text-anchor="start" fill="#16a34a" font-weight="700" >+11%</text><circle cx="324" cy="202.7" r="3" fill="#64748b"/><text x="331.0" y="206.2" font-size="9.5" text-anchor="start" fill="#64748b" font-weight="700" >Super Micro</text><text x="331.0" y="217.7" font-size="9.5" text-anchor="start" fill="#64748b" font-weight="700" >-34%</text><text x="34.0" y="242.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >25/11/4</text><text x="179.0" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >26/5</text><text x="324.0" y="242.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >26/11/3</text></svg><figcaption>出典：株価データ（2025年11月4日〜2026年11月3日の終値）。<b>配当は含まない、価格の推移</b>。1年間の変化は、AMD +94%（終値$483.90）、Astera Labs +30%（$233.62）、Arista +11%（$169.91）、Super Micro -34%（$31.39）。<b>4社の決算の発表は、米国時間11月3日の取引終了後。この終値は、決算を織り込む前のもの</b>。</figcaption></figure>
+    <p>決算の発表は、米国時間の11月3日の取引が終わったあとでした。決算後の株価の反応は、この記事では取り上げていません。決算の数字は、株価の水準が妥当かを、示すものではありません。</p>
+
+    <h2>8. 次の決算で、何を確認するか</h2>
+    <p>決算ごとに、次の6項目を確認します。右端の「確認する時期」は、その数字が出る開示を示しています。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>外れた場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① AMDの、顧客向けワラント</span></td><td data-label="今回の数字"><span class="tv">公正価値の変動 10.97億ドル（1株あたり0.66ドル）。キャッシュフロー計算書に「顧客に発行したワラントの非現金の影響 11.8億ドル」</span></td><td data-label="なぜ重要か"><span class="tv">GAAPとの差（0.63ドル）の中身。売上の計上や、顧客との関係に影響しうる</span></td><td data-label="外れた場合"><span class="tv">ワラントの条件次第で、売上や利益の見え方が変わる</span></td><td data-label="確認する時期"><span class="tv">AMDの10-Q</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② Super Microの、現金</span></td><td data-label="今回の数字"><span class="tv">営業CF −4.3億ドル。売掛金96.9億ドル、在庫150.5億ドル</span></td><td data-label="なぜ重要か"><span class="tv">売上が急増するなか、代金の回収と在庫が、資金を使っているか</span></td><td data-label="外れた場合"><span class="tv">売掛金・在庫の増加が、売上の伸びを上回る</span></td><td data-label="確認する時期"><span class="tv">次の決算（2027年2月ごろ）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ Super Microの、粗利率</span></td><td data-label="今回の数字"><span class="tv">12.7%（前期 17.5%、前年同期 9.3%）</span></td><td data-label="なぜ重要か"><span class="tv">売上の規模が大きくなるなかで、利益の取り分が薄い構造か</span></td><td data-label="外れた場合"><span class="tv">粗利率が、さらに下がる</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ Aristaの、粗利率</span></td><td data-label="今回の数字"><span class="tv">63.6%（前年同期 64.6%）</span></td><td data-label="なぜ重要か"><span class="tv">製品の構成の変化（AI向けの比重）が、粗利率に出るか</span></td><td data-label="外れた場合"><span class="tv">粗利率の低下が続く</span></td><td data-label="確認する時期"><span class="tv">次の決算</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ Astera Labsの、在庫と売上の積み上がり</span></td><td data-label="今回の数字"><span class="tv">在庫 2.0億ドル（+241%）。10〜12月期の売上は、7.3〜7.5億ドルの見通し</span></td><td data-label="なぜ重要か"><span class="tv">見通しの達成と、在庫の伸びが、釣り合っているか</span></td><td data-label="外れた場合"><span class="tv">在庫の増加が、売上の伸びを上回る</span></td><td data-label="確認する時期"><span class="tv">次の決算（2027年2月ごろ）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑥ 4社の「次の四半期の見通し」</span></td><td data-label="今回の数字"><span class="tv">AMD 約170億、Super Micro 195〜215億、Arista 39〜40億、Astera Labs 7.3〜7.5億ドル</span></td><td data-label="なぜ重要か"><span class="tv">実績が、中央値を上回るか、下回るか（次の決算で、実績と比べる）</span></td><td data-label="外れた場合"><span class="tv">見通しを下回る</span></td><td data-label="確認する時期"><span class="tv">各社の次の決算</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年7〜9月期の決算説明資料（8-K）。次の四半期の決算日程は、各社のIRや、SECの提出書類で確認してください。</p>
+
+    <h2>9. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「AI関連」と、ひとくくりにしない。</b>4社は、同じ需要の中にいても、粗利率（12.7%〜72.3%）も、現金の動きも違う。どの層の、どの数字を見ているかを、分ける。</li>
+      <li><b>売上の伸びと、利益・現金を、別に見る。</b>売上が約4倍でも、営業キャッシュフローがマイナスになる例がある。売上が増えるほど、売掛金と在庫に、資金が使われる。</li>
+      <li><b>調整後の利益は、中身を確認する。</b>AMDのGAAPと調整後の差は、1株あたり0.63ドル。差の中身（ワラント）は、10-Qで確認する。</li>
+      <li><b>会社の見通しは、実績と比べる。</b>見通しは、実績の約束ではない。次の決算で、中央値と実績の差を、確認する。</li>
+      <li><b>株価の水準で、判断しない。</b>4社の1年間の株価は、AMD +94%、Super Micro −34%と、大きく違う。数字が前進しているかを、決算ごとに確認する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄の売買を勧めるものではありません。過去の決算と株価は、将来を約束するものではありません。決算の発表後の株価の動きや、会社の計画の実現を、予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 数字は、各社の決算説明資料（Form 8-K Exhibit 99.1、2026年11月3日提出）に基づきます。監査を受けていない数字で、四半期報告書（10-Q）などの確認は、これからです。</p>
+      <p>※ 粗利率・営業利益率・営業CF÷純利益・在庫の増加率・見通しの中央値の前期比・通期の見通しからの逆算は、決算説明資料の数字からの計算値です。Super Microの前期比は、「前期11.1億ドル」（会社が丸めた数字）からの概算です。</p>
+      <p>※ AMDの「顧客向けワラント」の公正価値の変動と、キャッシュフロー計算書の「顧客に発行したワラントの非現金の影響」は、決算説明資料の記載です。ワラントの条件・顧客・会計処理の詳細は、資料では確認できません。</p>
+      <p>※ 1億ドル＝100百万ドルで換算し、小数点以下を丸めています。株価は、日次終値（11月3日は、取引終了時の価格）です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>気になる銘柄を、並べて比べる</h3>
+  <p>現在価格や配当利回りなどの指標は表で、価格の推移は起点を100とした指数チャートで重ねて比較できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-compare">銘柄比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>SEC EDGAR「Advanced Micro Devices, Inc.（CIK 2488）」Form 8-K（2026年11月3日提出）Exhibit 99.1「AMD Reports Third Quarter 2026 Financial Results」：<a href="https://www.sec.gov/Archives/edgar/data/2488/000000248826000188/q32026991.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/2488/000000248826000188/q32026991.htm</a></li><li>SEC EDGAR「Super Micro Computer, Inc.（CIK 1375365）」Form 8-K（2026年11月3日提出）Exhibit 99.1「Supermicro Announces First Quarter of Fiscal Year 2027 Financial Results」：<a href="https://www.sec.gov/Archives/edgar/data/1375365/000137536526000026/exhibit991_20260930.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1375365/000137536526000026/exhibit991_20260930.htm</a></li><li>SEC EDGAR「Arista Networks, Inc.（CIK 1596532）」Form 8-K（2026年11月3日提出）Exhibit 99.1「Arista Networks, Inc. Reports Third Quarter 2026 Financial Results」：<a href="https://www.sec.gov/Archives/edgar/data/1596532/000159653226000252/ex991q326-earningsrelease.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1596532/000159653226000252/ex991q326-earningsrelease.htm</a></li><li>SEC EDGAR「Astera Labs, Inc.（CIK 1736297）」Form 8-K（2026年11月3日提出）Exhibit 99.1「Astera Labs Reports Third Quarter 2026 Financial Results」：<a href="https://www.sec.gov/Archives/edgar/data/1736297/000173629726000044/q326exhibit991.htm" target="_blank" rel="noopener">https://www.sec.gov/Archives/edgar/data/1736297/000173629726000044/q326exhibit991.htm</a></li><li>株価データ（日次終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月4日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="apple-q4-fy2026.html">Appleの2026年7〜9月期決算｜長期投資家の目線</a><a href="palantir-q3-2026.html">Palantirの2026年7〜9月期決算｜長期投資家の目線</a><a href="cloud-big3.html">クラウド3強の比較｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
