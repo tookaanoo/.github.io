@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="日本株・米国株・先進国・新興国・米国債券・金・米国REITの暦年リターン（円換算）を、21年分の順位表で見る。1位になった資産は6つ。前年の1位が翌年も1位だったのは、20組中2回。">
+<title>資産クラスの暦年リターン｜2005〜2025年の21年を、順位表で見る - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/asset-class-returns.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="資産クラスの暦年リターン｜2005〜2025年の21年を、順位表で見る">
+<meta property="og:description" content="日本株・米国株・先進国・新興国・米国債券・金・米国REITの暦年リターン（円換算）を、21年分の順位表で見る。1位になった資産は6つ。前年の1位が翌年も1位だったのは、20組中2回。">
+<meta property="og:url" content="https://fire-app.jp/articles/asset-class-returns.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/asset-class-returns.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/asset-class-returns.jpg">
+<meta name="twitter:title" content="資産クラスの暦年リターン｜2005〜2025年の21年を、順位表で見る">
+<meta name="twitter:description" content="日本株・米国株・先進国・新興国・米国債券・金・米国REITの暦年リターン（円換算）を、21年分の順位表で見る。1位になった資産は6つ。前年の1位が翌年も1位だったのは、20組中2回。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "資産クラスの暦年リターン｜2005〜2025年の21年を、順位表で見る", "description": "日本株・米国株・先進国・新興国・米国債券・金・米国REITの暦年リターン（円換算）を、21年分の順位表で見る。1位になった資産は6つ。前年の1位が翌年も1位だったのは、20組中2回。", "inLanguage": "ja", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/asset-class-returns.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["米国株", "日本株", "為替"], "image": ["https://fire-app.jp/articles/og/asset-class-returns.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "資産クラスの暦年リターン｜2005〜2025年の21年を、順位表で見る", "item": "https://fire-app.jp/articles/asset-class-returns.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>資産クラスの暦年リターン<br>｜21年を、順位表で見る</h1>
+    <p class="subtitle">1位は毎年入れ替わる。前年の1位は、翌年どうなったか</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>1位になった資産は、7つのうち6つ</h3><p class="pt-d">7つの資産（日本株・米国株・先進国・新興国・米国債券・金・米国REIT）の<b>暦年リターン（円換算、2005〜2025年の21年）を、順位表で見ました</b>。1位になった資産は<b>6つ</b>で、<b>毎年の1位と最下位の差は、10〜74ポイント</b>です。</p></div><div class="pt"><h3>前年の1位は、翌年に最下位が7回（20組）</h3><p class="pt-d">この記事の軸は、<b>「前年の1位は、翌年どうなったか」</b>。前年の1位が翌年も1位だったのは<b>20組中2回</b>。翌年に<b>最下位になったのは7回</b>でした。去年の1位を、今年も持ち続けるとは、限りません。</p></div><div class="pt"><h3>2008年は、債券と金以外が−41%〜−59%</h3><p class="pt-d">気になる点は、<b>2008年</b>。債券と金を除く5つが、−41%〜−59%でした。また、円で持つ場合、<b>為替が、米国株の暦年リターンを、−14ポイント〜+29ポイント動かしました</b>。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月5日</span><span><b>情報の時点</b> 株価データ（2005〜2025年、2026年は11月初めまで）</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=為替">#為替</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の問い：毎年の1位は、どう入れ替わってきたか</h2>
+    <p>「去年、いちばん上がった資産」は、よく話題になります。この記事は、<b>どの資産を持つべきかは述べません</b>。過去21年の暦年リターンを、同じ条件で並べて、<b>順位がどう動いたか</b>を見ます。</p>
+    <ul>
+      <li>期間は、<b>2005〜2025年の21年</b>（12月末から12月末まで）。2026年は、11月初めまでの途中経過として、別に示します。</li>
+      <li>各資産は、<b>米国に上場している代表的なETF</b>の、配当込みの調整後終値（月次）です。<b>円換算</b>（各年末のドル円）で、<b>為替ヘッジなし</b>。税金・手数料・信託報酬は、考慮していません。</li>
+      <li>日本の債券・日本のREIT・現金は、ここには含みません。データの取り方が、他の資産と揃えにくいためです（「前提と限界」に書きます）。</li>
+    </ul>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>資産</th><th>使ったデータ</th><th>注意</th></tr></thead><tbody><tr><td data-label="資産"><span class="tv">日本株</span></td><td data-label="使ったデータ"><span class="tv">iShares MSCI Japan ETF（EWJ）</span></td><td data-label="注意"><span class="tv">日経平均・TOPIXそのものではない。ドル建てのETFを円換算</span></td></tr><tr><td data-label="資産"><span class="tv">米国株</span></td><td data-label="使ったデータ"><span class="tv">SPDR S&P 500 ETF（SPY）</span></td><td data-label="注意"><span class="tv">米国の大型株</span></td></tr><tr><td data-label="資産"><span class="tv">先進国（米国除く）</span></td><td data-label="使ったデータ"><span class="tv">iShares MSCI EAFE ETF（EFA）</span></td><td data-label="注意"><span class="tv">日本・欧州・豪州など。カナダと新興国は含まない</span></td></tr><tr><td data-label="資産"><span class="tv">新興国</span></td><td data-label="使ったデータ"><span class="tv">iShares MSCI Emerging Markets ETF（EEM）</span></td><td data-label="注意"><span class="tv">中国・インド・台湾など</span></td></tr><tr><td data-label="資産"><span class="tv">米国債券</span></td><td data-label="使ったデータ"><span class="tv">iShares Core U.S. Aggregate Bond ETF（AGG）</span></td><td data-label="注意"><span class="tv">米国の投資適格債の全体。日本の債券ではない</span></td></tr><tr><td data-label="資産"><span class="tv">金</span></td><td data-label="使ったデータ"><span class="tv">SPDR Gold Shares（GLD）</span></td><td data-label="注意"><span class="tv">配当・利息がない。価格の動きのみ</span></td></tr><tr><td data-label="資産"><span class="tv">米国REIT</span></td><td data-label="使ったデータ"><span class="tv">Vanguard Real Estate ETF（VNQ）</span></td><td data-label="注意"><span class="tv">米国の不動産投資信託。日本のREITではない</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：株価データ（各ETFの調整後終値、月次、2026年11月初めまで）と、ドル円（月次）。</p>
+
+    <h2>2. 順位表：色は、その年の順位</h2>
+    <figure class="fig"><div class="fig-title">7つの資産の、暦年リターン（円換算、%）。色は、その年の順位</div><svg viewBox="0 0 420 495" role="img" xmlns="http://www.w3.org/2000/svg"><text x="64.9" y="19.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >日本株</text><text x="118.6" y="19.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >米国株</text><text x="172.3" y="13.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >先進国</text><text x="172.3" y="25.0" font-size="8.5" text-anchor="middle" fill="#6b7280" font-weight="500" >(米国除く)</text><text x="226.0" y="19.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >新興国</text><text x="279.7" y="19.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >米国債券</text><text x="333.4" y="19.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >金</text><text x="387.1" y="19.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >米国REIT</text><text x="33.0" y="48.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2005</text><rect x="39.2" y="35.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="64.9" y="48.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+43</text><rect x="92.9" y="35.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="118.6" y="48.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+21</text><rect x="146.6" y="35.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="172.3" y="48.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+31</text><rect x="200.3" y="35.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="226.0" y="48.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+53</text><rect x="254.1" y="35.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="48.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+18</text><rect x="307.8" y="35.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="333.4" y="48.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+36</text><rect x="361.5" y="35.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="387.1" y="48.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+29</text><text x="33.0" y="68.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2006</text><rect x="39.2" y="55.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="64.9" y="68.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+7</text><rect x="92.9" y="55.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="118.6" y="68.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+17</text><rect x="146.6" y="55.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="68.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+27</text><rect x="200.3" y="55.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="226.0" y="68.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+32</text><rect x="254.1" y="55.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="68.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+5</text><rect x="307.8" y="55.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="333.4" y="68.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+24</text><rect x="361.5" y="55.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="387.1" y="68.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+36</text><text x="33.0" y="89.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2007</text><rect x="39.2" y="76.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="64.9" y="89.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-11</text><rect x="92.9" y="76.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="118.6" y="89.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-1</text><rect x="146.6" y="76.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="89.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+3</text><rect x="200.3" y="76.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="226.0" y="89.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+25</text><rect x="254.1" y="76.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="279.7" y="89.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >0</text><rect x="307.8" y="76.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="333.4" y="89.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+22</text><rect x="361.5" y="76.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="387.1" y="89.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-22</text><text x="33.0" y="109.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2008</text><rect x="39.2" y="96.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="64.9" y="109.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-41</text><rect x="92.9" y="96.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="118.6" y="109.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-49</text><rect x="146.6" y="96.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="172.3" y="109.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-52</text><rect x="200.3" y="96.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="226.0" y="109.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-58</text><rect x="254.1" y="96.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="279.7" y="109.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-12</text><rect x="307.8" y="96.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="333.4" y="109.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-15</text><rect x="361.5" y="96.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="387.1" y="109.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-49</text><text x="33.0" y="130.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2009</text><rect x="39.2" y="117.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="64.9" y="130.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+6</text><rect x="92.9" y="117.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="118.6" y="130.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+30</text><rect x="146.6" y="117.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="130.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+30</text><rect x="200.3" y="117.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="226.0" y="130.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+73</text><rect x="254.1" y="117.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="130.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+6</text><rect x="307.8" y="117.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="333.4" y="130.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+27</text><rect x="361.5" y="117.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="387.1" y="130.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+33</text><text x="33.0" y="150.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2010</text><rect x="39.2" y="137.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="64.9" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >0</text><rect x="92.9" y="137.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="118.6" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+1</text><rect x="146.6" y="137.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="172.3" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-5</text><rect x="200.3" y="137.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="226.0" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+2</text><rect x="254.1" y="137.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="150.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-7</text><rect x="307.8" y="137.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="333.4" y="150.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+13</text><rect x="361.5" y="137.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="387.1" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+13</text><text x="33.0" y="171.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2011</text><rect x="39.2" y="158.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="64.9" y="171.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-19</text><rect x="92.9" y="158.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="118.6" y="171.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-3</text><rect x="146.6" y="158.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="172.3" y="171.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-16</text><rect x="200.3" y="158.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="226.0" y="171.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-23</text><rect x="254.1" y="158.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="279.7" y="171.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+3</text><rect x="307.8" y="158.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="333.4" y="171.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+4</text><rect x="361.5" y="158.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="387.1" y="171.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+4</text><text x="33.0" y="191.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2012</text><rect x="39.2" y="178.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="64.9" y="191.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+21</text><rect x="92.9" y="178.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="118.6" y="191.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+28</text><rect x="146.6" y="178.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="172.3" y="191.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+31</text><rect x="200.3" y="178.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="226.0" y="191.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+32</text><rect x="254.1" y="178.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="191.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+15</text><rect x="307.8" y="178.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="333.4" y="191.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+18</text><rect x="361.5" y="178.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="387.1" y="191.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+30</text><text x="33.0" y="212.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2013</text><rect x="39.2" y="199.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="64.9" y="212.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+54</text><rect x="92.9" y="199.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="118.6" y="212.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+62</text><rect x="146.6" y="199.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="212.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+48</text><rect x="200.3" y="199.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="226.0" y="212.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+18</text><rect x="254.1" y="199.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="279.7" y="212.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+20</text><rect x="307.8" y="199.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="333.4" y="212.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-13</text><rect x="361.5" y="199.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="387.1" y="212.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+25</text><text x="33.0" y="232.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2014</text><rect x="39.2" y="219.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="64.9" y="232.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+7</text><rect x="92.9" y="219.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="118.6" y="232.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+29</text><rect x="146.6" y="219.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="172.3" y="232.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+7</text><rect x="200.3" y="219.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="226.0" y="232.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+9</text><rect x="254.1" y="219.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="279.7" y="232.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+21</text><rect x="307.8" y="219.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="333.4" y="232.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+11</text><rect x="361.5" y="219.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="387.1" y="232.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+48</text><text x="33.0" y="253.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2015</text><rect x="39.2" y="240.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="64.9" y="253.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+10</text><rect x="92.9" y="240.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="118.6" y="253.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+2</text><rect x="146.6" y="240.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="172.3" y="253.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >0</text><rect x="200.3" y="240.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="226.0" y="253.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-15</text><rect x="254.1" y="240.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="279.7" y="253.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+1</text><rect x="307.8" y="240.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="333.4" y="253.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-10</text><rect x="361.5" y="240.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="387.1" y="253.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+3</text><text x="33.0" y="273.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2016</text><rect x="39.2" y="260.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="64.9" y="273.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >0</text><rect x="92.9" y="260.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="118.6" y="273.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+9</text><rect x="146.6" y="260.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="172.3" y="273.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-2</text><rect x="200.3" y="260.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="226.0" y="273.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+8</text><rect x="254.1" y="260.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="279.7" y="273.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-1</text><rect x="307.8" y="260.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="333.4" y="273.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+5</text><rect x="361.5" y="260.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="387.1" y="273.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+5</text><text x="33.0" y="294.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2017</text><rect x="39.2" y="281.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="64.9" y="294.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+20</text><rect x="92.9" y="281.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="118.6" y="294.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+17</text><rect x="146.6" y="281.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="172.3" y="294.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+21</text><rect x="200.3" y="281.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="226.0" y="294.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+32</text><rect x="254.1" y="281.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="294.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >0</text><rect x="307.8" y="281.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="333.4" y="294.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+9</text><rect x="361.5" y="281.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="387.1" y="294.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+1</text><text x="33.0" y="314.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2018</text><rect x="39.2" y="301.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="64.9" y="314.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-16</text><rect x="92.9" y="301.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="118.6" y="314.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-7</text><rect x="146.6" y="301.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="172.3" y="314.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-16</text><rect x="200.3" y="301.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="226.0" y="314.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-17</text><rect x="254.1" y="301.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="279.7" y="314.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-2</text><rect x="307.8" y="301.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="333.4" y="314.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-4</text><rect x="361.5" y="301.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="387.1" y="314.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-8</text><text x="33.0" y="335.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2019</text><rect x="39.2" y="322.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="64.9" y="335.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+18</text><rect x="92.9" y="322.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="118.6" y="335.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+29</text><rect x="146.6" y="322.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="335.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+20</text><rect x="200.3" y="322.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="226.0" y="335.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+17</text><rect x="254.1" y="322.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="335.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+7</text><rect x="307.8" y="322.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="333.4" y="335.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+16</text><rect x="361.5" y="322.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="387.1" y="335.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+27</text><text x="33.0" y="355.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2020</text><rect x="39.2" y="342.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="64.9" y="355.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+9</text><rect x="92.9" y="342.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="118.6" y="355.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+12</text><rect x="146.6" y="342.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="172.3" y="355.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+2</text><rect x="200.3" y="342.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="226.0" y="355.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+11</text><rect x="254.1" y="342.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="279.7" y="355.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+2</text><rect x="307.8" y="342.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="333.4" y="355.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+18</text><rect x="361.5" y="342.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="387.1" y="355.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-10</text><text x="33.0" y="376.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2021</text><rect x="39.2" y="363.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="64.9" y="376.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+13</text><rect x="92.9" y="363.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="118.6" y="376.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+44</text><rect x="146.6" y="363.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="376.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+24</text><rect x="200.3" y="363.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="226.0" y="376.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+8</text><rect x="254.1" y="363.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="279.7" y="376.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+10</text><rect x="307.8" y="363.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="333.4" y="376.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+7</text><rect x="361.5" y="363.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="387.1" y="376.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+57</text><text x="33.0" y="396.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2022</text><rect x="39.2" y="383.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="64.9" y="396.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-6</text><rect x="92.9" y="383.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="118.6" y="396.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-7</text><rect x="146.6" y="383.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="396.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-2</text><rect x="200.3" y="383.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="226.0" y="396.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-9</text><rect x="254.1" y="383.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="279.7" y="396.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >-1</text><rect x="307.8" y="383.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="333.4" y="396.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+13</text><rect x="361.5" y="383.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="387.1" y="396.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-16</text><text x="33.0" y="417.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2023</text><rect x="39.2" y="404.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="64.9" y="417.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+29</text><rect x="92.9" y="404.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="118.6" y="417.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+36</text><rect x="146.6" y="404.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="417.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+27</text><rect x="200.3" y="404.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="226.0" y="417.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+17</text><rect x="254.1" y="404.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="417.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+14</text><rect x="307.8" y="404.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="333.4" y="417.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+21</text><rect x="361.5" y="404.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="387.1" y="417.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+20</text><text x="33.0" y="437.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2024</text><rect x="39.2" y="424.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="64.9" y="437.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+19</text><rect x="92.9" y="424.5" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="118.6" y="437.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+39</text><rect x="146.6" y="424.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="172.3" y="437.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+15</text><rect x="200.3" y="424.5" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="226.0" y="437.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+19</text><rect x="254.1" y="424.5" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="279.7" y="437.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+13</text><rect x="307.8" y="424.5" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="333.4" y="437.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+41</text><rect x="361.5" y="424.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="387.1" y="437.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+17</text><text x="33.0" y="458.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2025</text><rect x="39.2" y="445.0" width="51.3" height="18.5" rx="3" fill="#fce7f3"/><text x="64.9" y="458.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+25</text><rect x="92.9" y="445.0" width="51.3" height="18.5" rx="3" fill="#e2e8f0"/><text x="118.6" y="458.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+17</text><rect x="146.6" y="445.0" width="51.3" height="18.5" rx="3" fill="#f9a8d4"/><text x="172.3" y="458.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+31</text><rect x="200.3" y="445.0" width="51.3" height="18.5" rx="3" fill="#f472b6"/><text x="226.0" y="458.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+33</text><rect x="254.1" y="445.0" width="51.3" height="18.5" rx="3" fill="#cbd5e1"/><text x="279.7" y="458.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+7</text><rect x="307.8" y="445.0" width="51.3" height="18.5" rx="3" fill="#ec4899"/><text x="333.4" y="458.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+63</text><rect x="361.5" y="445.0" width="51.3" height="18.5" rx="3" fill="#64748b"/><text x="387.1" y="458.2" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+3</text><text x="33.0" y="482.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >2026*</text><rect x="39.2" y="469.5" width="51.3" height="18.5" rx="3" fill="#ec4899" fill-opacity="0.8"/><text x="64.9" y="482.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+18</text><rect x="92.9" y="469.5" width="51.3" height="18.5" rx="3" fill="#f9a8d4" fill-opacity="0.8"/><text x="118.6" y="482.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+15</text><rect x="146.6" y="469.5" width="51.3" height="18.5" rx="3" fill="#e2e8f0" fill-opacity="0.8"/><text x="172.3" y="482.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+13</text><rect x="200.3" y="469.5" width="51.3" height="18.5" rx="3" fill="#fce7f3" fill-opacity="0.8"/><text x="226.0" y="482.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+15</text><rect x="254.1" y="469.5" width="51.3" height="18.5" rx="3" fill="#cbd5e1" fill-opacity="0.8"/><text x="279.7" y="482.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >0</text><rect x="307.8" y="469.5" width="51.3" height="18.5" rx="3" fill="#64748b" fill-opacity="0.8"/><text x="333.4" y="482.7" font-size="9.5" text-anchor="middle" fill="#ffffff" font-weight="700" >-5</text><rect x="361.5" y="469.5" width="51.3" height="18.5" rx="3" fill="#f472b6" fill-opacity="0.8"/><text x="387.1" y="482.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="600" >+15</text></svg><figcaption>出典：株価データ（各資産の代表ETFの調整後終値、月次）から、当サイトが計算。<b>濃いピンクが1位、濃いグレーが最下位</b>（その間は、薄い色）。円換算・為替ヘッジなし・配当込み・税金と手数料は考慮せず。<b>2026年*は、11月初めまでの途中経過</b>で、年間の順位ではありません。</figcaption></figure>
+    <ul>
+      <li><b>1位は、毎年のように入れ替わります。</b>2005〜2025年で、1位が同じ資産だったのは、2010〜2011年（金）と、2024〜2025年（金）だけです。</li>
+      <li><b>2008年は、ほぼ全面安。</b>米国債券（−12.4%）と金（−14.8%）以外は、−41%〜−59%でした。翌年の2009年は、新興国が+73%、米国REITが+33%、米国株が+30%です。</li>
+      <li><b>米国株は、2013年・2016年・2019年・2023年の4回、1位</b>でした。2005〜2012年は、4〜6位が続きました（円換算）。</li>
+      <li><b>2026年（11月初めまで）は、日本株が+18%、米国REITが+15%、米国株が+15%。金は−5%</b>で、7つの中で最下位です。金は、2025年に+63%で1位でした。年の途中の数字で、年間の順位ではありません。</li>
+    </ul>
+
+    <h2>3. 1位になった回数、最下位になった回数</h2>
+    <figure class="fig"><div class="fig-title">1位になった回数と、最下位になった回数（2005〜2025年の21年）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="187.0" x2="410" y2="187.0" stroke="#e5e7eb"/><rect x="19.4" y="171.3" width="17.1" height="15.7" rx="3" fill="#ec4899"/><text x="28.0" y="166.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1</text><rect x="40.6" y="171.3" width="17.1" height="15.7" rx="3" fill="#94a3b8"/><text x="49.1" y="166.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1</text><text x="38.6" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >日本株</text><rect x="76.6" y="124.3" width="17.1" height="62.7" rx="3" fill="#ec4899"/><text x="85.1" y="119.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4</text><rect x="97.7" y="187.0" width="17.1" height="1.0" rx="3" fill="#94a3b8"/><text x="106.3" y="182.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >0</text><text x="95.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国株</text><rect x="133.7" y="187.0" width="17.1" height="1.0" rx="3" fill="#ec4899"/><text x="142.3" y="182.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >0</text><rect x="154.9" y="171.3" width="17.1" height="15.7" rx="3" fill="#94a3b8"/><text x="163.4" y="166.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1</text><text x="152.9" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >先進国</text><rect x="190.9" y="108.7" width="17.1" height="78.3" rx="3" fill="#ec4899"/><text x="199.4" y="103.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >5</text><rect x="212.0" y="124.3" width="17.1" height="62.7" rx="3" fill="#94a3b8"/><text x="220.6" y="119.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4</text><text x="210.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >新興国</text><rect x="248.0" y="155.7" width="17.1" height="31.3" rx="3" fill="#ec4899"/><text x="256.6" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >2</text><rect x="269.1" y="46.0" width="17.1" height="141.0" rx="3" fill="#94a3b8"/><text x="277.7" y="41.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >9</text><text x="267.1" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国</text><text x="267.1" y="237.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >債券</text><rect x="305.1" y="93.0" width="17.1" height="94.0" rx="3" fill="#ec4899"/><text x="313.7" y="88.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6</text><rect x="326.3" y="155.7" width="17.1" height="31.3" rx="3" fill="#94a3b8"/><text x="334.9" y="150.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >2</text><text x="324.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >金</text><rect x="362.3" y="140.0" width="17.1" height="47.0" rx="3" fill="#ec4899"/><text x="370.9" y="135.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3</text><rect x="383.4" y="124.3" width="17.1" height="62.7" rx="3" fill="#94a3b8"/><text x="392.0" y="119.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4</text><text x="381.4" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国</text><text x="381.4" y="237.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >REIT</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >1位</text><rect x="62" y="4" width="9" height="9" rx="2" fill="#94a3b8"/><text x="75.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >最下位</text></svg><figcaption>出典：同データ（当サイトで集計）。<b>1位になった資産は、7つのうち6つ</b>（先進国は0回）。米国債券は、最下位が9回で最多ですが、1位も2回（2008年と2018年）あります。株式が大きく下がった年に、1位になりました。</figcaption></figure>
+    <ul>
+      <li>1位の回数は、<b>金 6回、新興国 5回、米国株 4回、米国REIT 3回、米国債券 2回、日本株 1回</b>。先進国（米国除く）は、1回もありません。</li>
+      <li>最下位が最も多いのは<b>米国債券（9回）</b>。株式が上がる年は、債券が下位になりやすい、という並びです。一方で、株式が大きく下がった2008年と2018年は、1位でした。</li>
+      <li>新興国は、1位が5回、最下位が4回。<b>両方に、よく出てきます</b>。年ごとの順位の振れ幅が、大きい資産です。</li>
+    </ul>
+
+    <h2>4. 前年の1位は、翌年どうなったか</h2>
+    <figure class="fig"><div class="fig-title">前年の1位だった資産が、翌年に何位になったか（20組）</div><svg viewBox="0 0 420 215" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="181.0" x2="410" y2="181.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="22.9" y="135.6" width="31.4" height="45.4" rx="3" fill="#ec4899"/><text x="38.6" y="129.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2</text><text x="38.6" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >1位</text><rect x="80.0" y="67.4" width="31.4" height="113.6" rx="3" fill="#f9a8d4"/><text x="95.7" y="61.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >5</text><text x="95.7" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2位</text><rect x="137.1" y="158.3" width="31.4" height="22.7" rx="3" fill="#f9a8d4"/><text x="152.9" y="152.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >1</text><text x="152.9" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >3位</text><rect x="194.3" y="135.6" width="31.4" height="45.4" rx="3" fill="#cbd5e1"/><text x="210.0" y="129.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2</text><text x="210.0" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4位</text><rect x="251.4" y="158.3" width="31.4" height="22.7" rx="3" fill="#cbd5e1"/><text x="267.1" y="152.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >1</text><text x="267.1" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >5位</text><rect x="308.6" y="135.6" width="31.4" height="45.4" rx="3" fill="#cbd5e1"/><text x="324.3" y="129.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2</text><text x="324.3" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >6位</text><rect x="365.7" y="22.0" width="31.4" height="159.0" rx="3" fill="#64748b"/><text x="381.4" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >7</text><text x="381.4" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7位</text></svg><figcaption>出典：同データ（当サイトで集計）。2005〜2025年の連続する20組（前年→翌年）。<b>前年の1位が、翌年も1位だったのは2回</b>、<b>翌年に最下位になったのは7回</b>。上位3位以内に残ったのは8回でした。</figcaption></figure>
+    <ul>
+      <li>前年の1位が、翌年も1位だったのは<b>2回</b>（2011年、2025年の金）。<b>翌年に最下位になったのは7回</b>（20組の約35%）で、翌年の順位として最も多い結果でした。</li>
+      <li>逆に、前年の最下位が、翌年に1位になったのは<b>6回</b>。順位は、翌年に持ち越されにくい、という見え方です。</li>
+      <li>ただし、これは<b>21年・7資産の、小さな標本</b>です。「前年の1位が、必ず翌年に下がる」という法則を、示すものではありません。</li>
+    </ul>
+
+    <h2>5. 最高の年と最悪の年：幅の大きさ</h2>
+    <figure class="fig"><div class="fig-title">各資産の、最高の年と最悪の年（円換算、%、2005〜2025年）</div><svg viewBox="0 0 420 265" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="134.6" x2="410" y2="134.6" stroke="#e5e7eb" stroke-width="1.2"/><rect x="19.4" y="60.6" width="17.1" height="74.0" rx="3" fill="#ec4899"/><text x="28.0" y="55.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+54</text><rect x="40.6" y="134.6" width="17.1" height="56.0" rx="3" fill="#94a3b8"/><text x="49.1" y="202.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-41</text><text x="38.6" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >日本株</text><rect x="76.6" y="50.0" width="17.1" height="84.6" rx="3" fill="#ec4899"/><text x="85.1" y="45.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+62</text><rect x="97.7" y="134.6" width="17.1" height="66.9" rx="3" fill="#94a3b8"/><text x="106.3" y="213.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-49</text><text x="95.7" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国株</text><rect x="133.7" y="68.3" width="17.1" height="66.3" rx="3" fill="#ec4899"/><text x="142.3" y="63.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+48</text><rect x="154.9" y="134.6" width="17.1" height="71.7" rx="3" fill="#94a3b8"/><text x="163.4" y="218.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-52</text><text x="152.9" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >先進国</text><rect x="190.9" y="34.0" width="17.1" height="100.6" rx="3" fill="#ec4899"/><text x="199.4" y="29.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+73</text><rect x="212.0" y="134.6" width="17.1" height="80.4" rx="3" fill="#94a3b8"/><text x="220.6" y="227.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-58</text><text x="210.0" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >新興国</text><rect x="248.0" y="106.2" width="17.1" height="28.4" rx="3" fill="#ec4899"/><text x="256.6" y="101.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+21</text><rect x="269.1" y="134.6" width="17.1" height="17.0" rx="3" fill="#94a3b8"/><text x="277.7" y="163.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-12</text><text x="267.1" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国</text><text x="267.1" y="269.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >債券</text><rect x="305.1" y="47.9" width="17.1" height="86.7" rx="3" fill="#ec4899"/><text x="313.7" y="42.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+63</text><rect x="326.3" y="134.6" width="17.1" height="20.4" rx="3" fill="#94a3b8"/><text x="334.9" y="166.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-15</text><text x="324.3" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >金</text><rect x="362.3" y="56.5" width="17.1" height="78.1" rx="3" fill="#ec4899"/><text x="370.9" y="51.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+57</text><rect x="383.4" y="134.6" width="17.1" height="67.1" rx="3" fill="#94a3b8"/><text x="392.0" y="213.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-49</text><text x="381.4" y="257.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国</text><text x="381.4" y="269.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >REIT</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >最高の年</text><rect x="84" y="4" width="9" height="9" rx="2" fill="#94a3b8"/><text x="97.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >最悪の年</text></svg><figcaption>出典：同データ（当サイトで集計）。<b>7つすべて、最悪の年は2008年</b>。株式と米国REITは−41%〜−59%、金は−14.8%、米国債券は−12.4%。最高の年は、新興国が2009年（+73%）、金が2025年（+63%）、米国株が2013年（+62%）。</figcaption></figure>
+    <ul>
+      <li>株式（日本株・米国株・先進国・新興国）と米国REITは、<b>最悪の年がすべて2008年</b>で、−41%〜−59%。金と米国債券も最悪の年は2008年でしたが、−14.8%と−12.4%にとどまりました。</li>
+      <li>最高の年は、新興国+73%（2009年）、金+63%（2025年）、米国株+62%（2013年）、米国REIT+57%（2021年）。<b>1つの資産の「最高の年」を基準にすると、期待が大きくなりすぎます</b>。</li>
+      <li>毎年の<b>1位と最下位の差</b>は、最小の年（2016年）で約10ポイント、最大の年（2013年）で約74ポイントでした。</li>
+    </ul>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">1位になった資産</div><div class="tile-v">7<small>つのうち6つ</small></div><div class="tile-n">金 6回、新興国 5回、米国株 4回、米国REIT 3回、米国債券 2回、日本株 1回（2005〜2025年）。先進国は0回</div></div><div class="tile key"><div class="tile-l">前年の1位→翌年</div><div class="tile-v">最下位が7回（20組中）</div><div class="tile-n">翌年も1位は2回。上位3位以内は8回。前年の最下位が翌年に1位になったのは6回</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">1位と最下位の差</div><div class="tile-v">10<small>〜74ポイント</small></div><div class="tile-n">毎年の最大の差。最小は2016年（10ポイント）、最大は2013年（74ポイント）</div></div><div class="tile"><div class="tile-l">2008年</div><div class="tile-v">債券と金以外は、−41%〜−59%</div><div class="tile-n">米国債券 −12.4%、金 −14.8%。その年に1位になったのは米国債券</div></div></div>
+    <p class="art-fig">出典：同データから、当サイトが集計・計算。</p>
+
+    <h2>6. 為替：円で持つと、何が変わるか</h2>
+    <figure class="fig"><div class="fig-title">為替の影響：米国株の、円換算−ドル建て（ポイント）</div><svg viewBox="0 0 420 215" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="189.0" x2="410" y2="189.0" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="192.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >-20</text><line x1="30" y1="80.3" x2="410" y2="80.3" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="83.8" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+20</text><line x1="30" y1="26.0" x2="410" y2="26.0" stroke="#e5e7eb" stroke-width="1"/><text x="26.0" y="29.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="500" >+40</text><rect x="32.9" y="91.3" width="12.3" height="43.3" fill="#ec4899"/><text x="39.0" y="87.8" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+16</text><rect x="51.0" y="132.2" width="12.3" height="2.5" fill="#ec4899"/><rect x="69.1" y="134.7" width="12.3" height="17.7" fill="#64748b"/><rect x="87.2" y="134.7" width="12.3" height="32.3" fill="#64748b"/><text x="93.3" y="177.0" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-12</text><rect x="105.3" y="126.1" width="12.3" height="8.6" fill="#ec4899"/><rect x="123.4" y="134.7" width="12.3" height="38.5" fill="#64748b"/><text x="129.5" y="183.1" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >-14</text><rect x="141.5" y="134.7" width="12.3" height="13.0" fill="#64748b"/><rect x="159.6" y="101.0" width="12.3" height="33.7" fill="#ec4899"/><text x="165.7" y="97.5" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+12</text><rect x="177.7" y="55.3" width="12.3" height="79.3" fill="#ec4899"/><text x="183.8" y="51.8" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+29</text><rect x="195.8" y="92.0" width="12.3" height="42.7" fill="#ec4899"/><text x="201.9" y="88.5" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+16</text><rect x="213.8" y="132.4" width="12.3" height="2.3" fill="#ec4899"/><rect x="231.9" y="134.7" width="12.3" height="9.0" fill="#64748b"/><rect x="250.0" y="134.7" width="12.3" height="11.9" fill="#64748b"/><rect x="268.1" y="134.7" width="12.3" height="5.4" fill="#64748b"/><rect x="286.2" y="134.7" width="12.3" height="4.7" fill="#64748b"/><rect x="304.3" y="134.7" width="12.3" height="17.0" fill="#64748b"/><rect x="322.4" y="94.2" width="12.3" height="40.5" fill="#ec4899"/><text x="328.6" y="90.7" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+15</text><rect x="340.5" y="103.7" width="12.3" height="31.0" fill="#ec4899"/><text x="346.7" y="100.2" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+11</text><rect x="358.6" y="108.8" width="12.3" height="25.9" fill="#ec4899"/><text x="364.8" y="105.3" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+10</text><rect x="376.7" y="96.2" width="12.3" height="38.4" fill="#ec4899"/><text x="382.9" y="92.7" font-size="8.5" text-anchor="middle" fill="#111827" font-weight="700" >+14</text><rect x="394.8" y="134.7" width="12.3" height="1.2" fill="#64748b"/><line x1="30" y1="134.7" x2="410" y2="134.7" stroke="#111827" stroke-width="1.2"/><text x="39.0" y="207.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2005</text><text x="129.5" y="207.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2010</text><text x="220.0" y="207.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2015</text><text x="310.5" y="207.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2020</text><text x="401.0" y="207.0" font-size="9" text-anchor="middle" fill="#6b7280" font-weight="500" >2025</text></svg><figcaption>出典：同データ（当サイトで計算）。SPYの暦年リターンを、円換算とドル建てで比べた差。<b>最大の押し上げは2013年（+29ポイント）、最大の押し下げは2010年（-14ポイント）</b>。円で持つ人は、資産そのものの値動きに、為替の動きが加わります。</figcaption></figure>
+    <ul>
+      <li>円換算の米国株の暦年リターンは、ドル建てと比べて、<b>2013年に+29ポイント、2014年に+16ポイント、2021年に+15ポイント、2024年に+14ポイント</b>高くなりました（円安）。</li>
+      <li>逆に、<b>2010年は−14ポイント、2008年は−12ポイント</b>（円高）でした。</li>
+      <li>円換算の順位は、<b>資産そのものの値動きと、為替の動きの合計</b>です。ドル建ての順位表とは、年によって違います。為替ヘッジをすると、為替の影響は小さくなりますが、この記事の数字には含みません。</li>
+    </ul>
+
+    <h2>7. 21年の年率と、7つを均等に持った場合（参考）</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">金</div><div class="tile-v">年率 13.3%</div><div class="tile-n">2005〜2025年の21年（円換算）。<b>2025年（+63%）を除く20年は 11.3%</b>。配当・利息はない</div></div><div class="tile key"><div class="tile-l">米国株</div><div class="tile-v">年率 12.9%</div><div class="tile-n">2025年を除く20年は 12.6%。毎年のプラスは21年中16回</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">米国REIT・新興国・先進国</div><div class="tile-v">年率 8.8%・8.6%・8.0%</div><div class="tile-n">この順。2008年の下落（約−49%〜−59%）を含む</div></div><div class="tile"><div class="tile-l">日本株・米国債券</div><div class="tile-v">年率 6.8%・5.2%</div><div class="tile-n">日本株は、MSCI Japan連動ETFの円換算。米国債券は、年ごとの値動きが最も小さい</div></div></div>
+    <p class="art-fig">出典：同データから、当サイトが計算（幾何平均、円換算）。<b>年率は、始点と終点の選び方で、順位が変わります</b>。特に金は、2025年の+63%が、21年の年率を押し上げています。</p>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">7つを、毎年同じ比率に戻した場合（計算例）</div><div class="tile-v">年率 9.8%</div><div class="tile-n">毎年1/7ずつに戻す単純な計算。マイナスの年は5回（21年中）。最悪は2008年の-39%、最高は2005年の+33%</div></div></div>
+    <p class="art-fig">計算例：7つの資産を、毎年末に同じ比率（1/7）に戻したと仮定した場合。<b>特定の配分を勧めるものではありません</b>。日本の債券・REIT・現金は含まず、税金・手数料・リバランスの費用も考慮していません。</p>
+    <ul>
+      <li>7つを均等に持った場合の最悪の年は<b>2008年の約-39%</b>。単独の資産の最悪（新興国 −59%）よりは小さいものの、<b>大きな下落は避けられていません</b>。</li>
+      <li>マイナスの年は、21年中5回。単独の資産のマイナスの年（4〜7回）と、同じ範囲です。</li>
+    </ul>
+
+    <h2>8. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「去年の1位」で、今年を決めない。</b>前年の1位が翌年も1位だったのは、20組中2回。翌年に最下位になったのは7回でした。</li>
+      <li><b>下落の深さを、先に知っておく。</b>株式と米国REITは、2008年に−41%〜−59%。「最悪の年」は、「平均の年」とは、別の数字です。</li>
+      <li><b>円で持つなら、為替が加わる。</b>米国株の暦年リターンは、為替で−14ポイント〜+29ポイント動いた。資産の値動きと、為替の影響を、分けて見る。</li>
+      <li><b>平均や年率は、期間の選び方で変わる。</b>金の年率は、2025年を入れるか外すかで、13.3%と11.3%になる。</li>
+      <li><b>過去の順位は、将来を約束しない。</b>次の1位が何かは、この記事では予想しない。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の金融商品・資産・配分を勧めるものではありません。過去のデータの整理であり、将来の値動きや為替を予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ リターンは、各ETFの調整後終値（配当・分配金を再投資したものとして調整、月次）の、12月末から12月末までの変化です。2026年は、2025年12月末から2026年11月初めまでの途中経過です。</p>
+      <p>※ 円換算は、各資産のドル建ての調整後終値に、同じ月末のドル円（月次）を掛けて計算しました。為替ヘッジはなく、ETFの信託報酬は価格に含まれますが、税金・売買手数料は含みません。</p>
+      <p>※ 日本株は、日経平均・TOPIXではなく、MSCI Japan連動のETF（EWJ）です。米国債券（AGG）・米国REIT（VNQ）は米国の資産で、日本の債券・日本のREIT・現金は含みません。金（GLD）は、配当・利息のない資産です。</p>
+      <p>※ 順位は、7つの資産の中での相対的な順位です。他の資産（個別株・コモディティ・ヘッジ付き商品など）を含めると、順位は変わります。数字は、小数点以下を丸めています。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>株価データ（SPY・EFA・EEM・EWJ・AGG・GLD・VNQの調整後終値、月次）</li><li>為替データ（ドル円、月次）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月5日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="index-comparison.html">日経225・TOPIX・S&amp;P500の比較｜AI半導体の比重と中身</a><a href="world-vs-us.html">全世界株と米国株の比較｜長期投資家の目線</a><a href="new-nisa.html">新NISAに入れるのは、高配当株か、成長株か、インデックスか｜仕組みから考える</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
