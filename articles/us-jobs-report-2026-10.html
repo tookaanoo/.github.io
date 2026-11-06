@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="米雇用統計（2026年10月分）の結果と、9月分の数字が1か月でどう変わったか。雇用+16.5万人、失業率4.1%。8〜9月は+8.4万人の上方修正。賃金は物価を下回る。">
+<title>米雇用統計（2026年10月分）｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/us-jobs-report-2026-10.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="米雇用統計（2026年10月分）｜長期投資家の目線">
+<meta property="og:description" content="米雇用統計（2026年10月分）の結果と、9月分の数字が1か月でどう変わったか。雇用+16.5万人、失業率4.1%。8〜9月は+8.4万人の上方修正。賃金は物価を下回る。">
+<meta property="og:url" content="https://fire-app.jp/articles/us-jobs-report-2026-10.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/us-jobs-report-2026-10.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/us-jobs-report-2026-10.jpg">
+<meta name="twitter:title" content="米雇用統計（2026年10月分）｜長期投資家の目線">
+<meta name="twitter:description" content="米雇用統計（2026年10月分）の結果と、9月分の数字が1か月でどう変わったか。雇用+16.5万人、失業率4.1%。8〜9月は+8.4万人の上方修正。賃金は物価を下回る。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "米雇用統計（2026年10月分）｜長期投資家の目線", "description": "米雇用統計（2026年10月分）の結果と、9月分の数字が1か月でどう変わったか。雇用+16.5万人、失業率4.1%。8〜9月は+8.4万人の上方修正。賃金は物価を下回る。", "inLanguage": "ja", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/us-jobs-report-2026-10.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "指標解説", "keywords": ["米国株", "金利・物価"], "image": ["https://fire-app.jp/articles/og/us-jobs-report-2026-10.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "米雇用統計（2026年10月分）｜長期投資家の目線", "item": "https://fire-app.jp/articles/us-jobs-report-2026-10.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 指標解説</div>
+    <h1>米雇用統計（2026年10月分）<br>｜長期投資家の目線</h1>
+    <p class="subtitle">前回の数字は、1か月でどう変わったか</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>雇用+16.5万人、失業率4.1%</h3><p class="pt-d">2026年10月分の雇用者数は<b>+16.5万人</b>、失業率は<b>4.1%</b>（9月は4.2%）。9月分の記事（10月13日）の数字から、<b>1か月で、見え方が変わった</b>。</p></div><div class="pt"><h3>9月分の数字は、1か月で+8.4万人の上方修正</h3><p class="pt-d">この記事の軸は、<b>「前回の数字は、1か月後にどう変わったか」</b>。8月は+13.3万人→+18.6万人、9月は+2.9万人→+6.0万人と、<b>合計+8.4万人の上方修正</b>。直近3か月の平均は、<b>月+5.1万人→+13.7万人</b>。前回は下方修正（−6万人）だったので、<b>改定の方向は毎月同じではない</b>。</p></div><div class="pt"><h3>増えた業種は偏り、賃金は物価を下回る</h3><p class="pt-d">ただし、増えた業種は<b>専門・ビジネスと教育・医療に偏り</b>（2つで約75%）。賃金は+3.1%で、<b>物価（9月 +3.7%）を下回る</b>。雇用・物価・金利を、セットで見る。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月7日</span><span><b>情報の時点</b> BLS（2026年11月6日公表）／FRED</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=金利・物価">#金利・物価</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の位置づけ</h2>
+    <p>米国の雇用統計は、米労働省の労働統計局（BLS）が毎月公表する、労働市場の統計です。<b>2026年11月6日</b>に、10月分が公表されました。このサイトでは、<a href="us-jobs-report-2026-09.html">9月分の記事</a>で、仕組みと見る順番を整理しています。今回は、<b>前回の数字と、今回の数字を並べる</b>ことに、重点を置きます。</p>
+    <ul>
+      <li>数字は、BLSの公開API（時系列データ）で取得した、<b>速報値と改定後の値</b>です。速報値は、あとから改定されます。</li>
+      <li>FRBは、<b>2026年9月に利上げ</b>し、10月28日のFOMCでは<b>据え置き</b>ました（<a href="fomc-2026-10.html">FOMCの記事</a>）。雇用統計は、その後の最初の指標です。</li>
+    </ul>
+
+    <h2>2. 2026年10月分の結果</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">非農業部門の雇用者数（前月比）</div><div class="tile-v">＋16.5<small>万人</small></div><div class="tile-n"><b>前月（改定後）は＋6.0万人</b>。直近3か月の平均は月＋13.7万人</div></div><div class="tile key"><div class="tile-l">失業率</div><div class="tile-v">4.1<small>%</small></div><div class="tile-n">前月は4.2%。<b>0.1ポイントの低下</b>で、小さな動き</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">平均時給（前年比）</div><div class="tile-v">＋3.1<small>%</small></div><div class="tile-n">前月は＋3.2%。前月比は＋0.4%（38.00ドル）</div></div><div class="tile"><div class="tile-l">労働参加率</div><div class="tile-v">61.9<small>%</small></div><div class="tile-n">前月は61.8%。0.1ポイントの上昇</div></div><div class="tile"><div class="tile-l">前月・前々月の改定（合計）</div><div class="tile-v">＋8.4<small>万人</small></div><div class="tile-n">8月 ＋5.3万人、9月 ＋3.1万人。<b>前回は、下方修正（−6万人）だった</b></div></div></div>
+    <p class="art-fig">出典：米労働省労働統計局（BLS）の時系列データ（事業所調査・家計調査、2026年11月6日の公表を反映）。1万人＝10千人で換算しています。</p>
+
+    <h2>3. 9月分の記事の数字は、1か月でどう変わったか</h2>
+    <figure class="fig"><div class="fig-title">前回（9月分の発表時）の数字と、今回の数字（万人）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="201.0" x2="410" y2="201.0" stroke="#e5e7eb"/><rect x="48.0" y="88.7" width="60.0" height="112.3" rx="3" fill="#cbd5e1"/><text x="78.0" y="83.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+13.3</text><rect x="112.0" y="44.0" width="60.0" height="157.0" rx="3" fill="#ec4899"/><text x="142.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+18.6</text><text x="110.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >8月</text><rect x="248.0" y="176.5" width="60.0" height="24.5" rx="3" fill="#cbd5e1"/><text x="278.0" y="171.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+2.9</text><rect x="312.0" y="150.4" width="60.0" height="50.6" rx="3" fill="#ec4899"/><text x="342.0" y="145.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+6.0</text><text x="310.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >9月分の発表時点</text><rect x="128" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="141.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >今回（改定後）</text></svg><figcaption>出典：BLS。前回の数字は、当サイトの9月分の記事（2026年10月13日）に載せたもの。<b>8月は+13.3万人→+18.6万人（+5.3万人）、9月は+2.9万人→+6.0万人（+3.1万人）</b>。合計で<b>+8.4万人の上方修正</b>。7月は−1.0万人のまま変わらず。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>項目</th><th>9月分の記事に書いた数字</th><th>今回の数字</th><th>変化</th></tr></thead><tbody><tr><td data-label="項目"><span class="tv">8月の雇用者数</span></td><td data-label="9月分の記事に書いた数字"><span class="tv">＋13.3万人</span></td><td data-label="今回の数字"><span class="tv">＋18.6万人</span></td><td data-label="変化"><span class="tv">＋5.3万人（上方修正）</span></td></tr><tr><td data-label="項目"><span class="tv">9月の雇用者数</span></td><td data-label="9月分の記事に書いた数字"><span class="tv">＋2.9万人（速報）</span></td><td data-label="今回の数字"><span class="tv">＋6.0万人</span></td><td data-label="変化"><span class="tv">＋3.1万人（上方修正）</span></td></tr><tr><td data-label="項目"><span class="tv">直近3か月の平均</span></td><td data-label="9月分の記事に書いた数字"><span class="tv">月＋5.1万人（7〜9月）</span></td><td data-label="今回の数字"><span class="tv">月＋13.7万人（8〜10月）</span></td><td data-label="変化"><span class="tv">前回は弱く、今回は強く見える</span></td></tr><tr><td data-label="項目"><span class="tv">失業率</span></td><td data-label="9月分の記事に書いた数字"><span class="tv">4.2%（9月）</span></td><td data-label="今回の数字"><span class="tv">4.1%（10月）</span></td><td data-label="変化"><span class="tv">−0.1ポイント</span></td></tr><tr><td data-label="項目"><span class="tv">物価の前年比</span></td><td data-label="9月分の記事に書いた数字"><span class="tv">＋3.4%（8月）</span></td><td data-label="今回の数字"><span class="tv">＋3.7%（9月）</span></td><td data-label="変化"><span class="tv">＋0.3ポイント</span></td></tr></tbody></table></div>
+    <ul>
+      <li>前回（9月分の発表）は、8月と9月が、合計で6万人の<b>下方修正</b>でした。今回は、逆に、合計で8.4万人の<b>上方修正</b>です。</li>
+      <li>7月は−1.0万人のまま。つまり、<b>7月だけが、マイナスのまま残っています</b>。</li>
+      <li>直近3か月の平均は、前回の月+5.1万人（7〜9月）から、今回の月+13.7万人（8〜10月）へ。<b>同じ指標でも、1か月で、弱い印象から強い印象に変わりました</b>。</li>
+      <li>改定の方向は、毎月同じではありません。<b>「前の数字を、後から変わるものとして読む」</b>のが、基本です。</li>
+    </ul>
+
+    <h2>4. 単月でなく「流れ」で見る</h2>
+    <figure class="fig"><div class="fig-title">非農業部門の雇用者数、月ごとの増減（千人、2024年11月〜2026年10月）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="116.5" x2="412" y2="116.5" stroke="#e5e7eb" stroke-width="1.2"/><rect x="11.2" y="65.3" width="10.4" height="51.1" rx="2" fill="#ec4899" opacity="0.55"/><rect x="28.0" y="26.0" width="10.4" height="90.5" rx="2" fill="#ec4899" opacity="0.55"/><rect x="44.9" y="116.5" width="10.4" height="18.3" rx="2" fill="#64748b" opacity="0.55"/><text x="50.1" y="198.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >25/1</text><rect x="61.7" y="100.4" width="10.4" height="16.0" rx="2" fill="#ec4899" opacity="0.55"/><rect x="78.5" y="90.9" width="10.4" height="25.6" rx="2" fill="#ec4899" opacity="0.55"/><rect x="95.4" y="75.2" width="10.4" height="41.2" rx="2" fill="#ec4899" opacity="0.55"/><rect x="112.2" y="111.5" width="10.4" height="5.0" rx="2" fill="#ec4899" opacity="0.55"/><rect x="129.0" y="116.5" width="10.4" height="7.6" rx="2" fill="#64748b" opacity="0.55"/><rect x="145.9" y="92.0" width="10.4" height="24.4" rx="2" fill="#ec4899" opacity="0.55"/><text x="151.1" y="198.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >25/7</text><rect x="162.7" y="116.5" width="10.4" height="26.7" rx="2" fill="#64748b" opacity="0.55"/><rect x="179.5" y="87.5" width="10.4" height="29.0" rx="2" fill="#ec4899" opacity="0.55"/><rect x="196.4" y="116.5" width="10.4" height="53.4" rx="2" fill="#64748b" opacity="0.55"/><rect x="213.2" y="100.8" width="10.4" height="15.6" rx="2" fill="#ec4899" opacity="0.55"/><rect x="230.0" y="116.5" width="10.4" height="6.5" rx="2" fill="#64748b" opacity="0.55"/><rect x="246.9" y="55.4" width="10.4" height="61.1" rx="2" fill="#ec4899" opacity="0.55"/><text x="252.1" y="198.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >26/1</text><rect x="263.7" y="116.5" width="10.4" height="59.5" rx="2" fill="#64748b" opacity="0.55"/><rect x="280.5" y="34.8" width="10.4" height="81.7" rx="2" fill="#ec4899" opacity="0.55"/><rect x="297.4" y="60.0" width="10.4" height="56.5" rx="2" fill="#ec4899" opacity="0.55"/><rect x="314.2" y="92.4" width="10.4" height="24.0" rx="2" fill="#ec4899" opacity="0.55"/><rect x="331.0" y="104.6" width="10.4" height="11.8" rx="2" fill="#ec4899" opacity="0.55"/><rect x="347.9" y="116.5" width="10.4" height="3.8" rx="2" fill="#64748b" opacity="0.55"/><text x="353.1" y="198.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >26/7</text><rect x="364.7" y="45.5" width="10.4" height="71.0" rx="2" fill="#ec4899" opacity="1"/><text x="369.9" y="40.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+186</text><rect x="381.5" y="93.6" width="10.4" height="22.9" rx="2" fill="#ec4899" opacity="1"/><text x="386.8" y="88.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+60</text><rect x="398.4" y="53.5" width="10.4" height="63.0" rx="2" fill="#ec4899" opacity="1"/><text x="403.6" y="48.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+165</text><text x="403.6" y="198.0" font-size="9.5" text-anchor="middle" fill="#6b7280" font-weight="500" >26/10</text></svg><figcaption>出典：米労働省労働統計局（BLS）の時系列（2026年11月6日の公表を反映）。濃い3本が8〜10月。<b>8月は+18.6万人、9月は+6.0万人、10月は+16.5万人</b>。直近3か月の平均は月+13.7万人、過去12か月の平均は月+7.4万人。過去12か月では、マイナスの月が3回（2025年12月、2026年2月、7月）。</figcaption></figure>
+    <ul>
+      <li><b>月ごとの増減は、大きく振れています。</b>過去12か月（2025年11月〜2026年10月）では、+21.4万人（2026年3月）から−15.6万人（2月）まで。</li>
+      <li><b>春（3〜4月）に加速し、夏（5〜7月）に減速し、秋（8〜10月）に再び持ち直す</b>、という形です（5月 +6.3万人、6月 +3.1万人、7月 −1.0万人、8月 +18.6万人、9月 +6.0万人、10月 +16.5万人）。</li>
+      <li>過去12か月の増加は、合計で約88.5万人。<b>月平均では+7.4万人</b>です。直近3か月の平均（+13.7万人）は、これを大きく上回っています。</li>
+    </ul>
+
+    <h2>5. どの業種が増えたか</h2>
+    <figure class="fig"><div class="fig-title">業種別の雇用者数の増減（万人、2026年10月）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="153.6" x2="410" y2="153.6" stroke="#e5e7eb" stroke-width="1.2"/><rect x="21.2" y="22.0" width="27.5" height="131.6" rx="3" fill="#ec4899"/><text x="35.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+7.0</text><text x="35.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >専門・</text><text x="35.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >ビジネス</text><rect x="71.2" y="54.0" width="27.5" height="99.6" rx="3" fill="#ec4899"/><text x="85.0" y="48.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+5.3</text><text x="85.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >教育・</text><text x="85.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >医療</text><rect x="121.2" y="112.2" width="27.5" height="41.3" rx="3" fill="#f9a8d4"/><text x="135.0" y="106.2" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+2.2</text><text x="135.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >運輸・</text><text x="135.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >卸小売</text><rect x="171.2" y="117.9" width="27.5" height="35.7" rx="3" fill="#f9a8d4"/><text x="185.0" y="111.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+1.9</text><text x="185.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >製造業</text><rect x="221.2" y="140.4" width="27.5" height="13.2" rx="3" fill="#cbd5e1"/><text x="235.0" y="134.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.7</text><text x="235.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >金融</text><rect x="271.2" y="142.3" width="27.5" height="11.3" rx="3" fill="#cbd5e1"/><text x="285.0" y="136.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.6</text><text x="285.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >政府</text><rect x="321.2" y="153.6" width="27.5" height="5.6" rx="3" fill="#64748b"/><text x="335.0" y="172.2" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-0.3</text><text x="335.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >建設</text><rect x="371.2" y="153.6" width="27.5" height="24.4" rx="3" fill="#64748b"/><text x="385.0" y="191.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-1.3</text><text x="385.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >娯楽・</text><text x="385.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >宿泊</text></svg><figcaption>出典：BLS（事業所調査）。<b>専門・ビジネスサービスが+7.0万人、教育・医療が+5.3万人</b>と、2つで全体（+16.5万人）の約75%。娯楽・宿泊は−1.3万人、建設は−0.3万人。鉱業（−0.1万人）、情報、その他サービスは図に含めていません。数字は速報で、あとから改定されます。</figcaption></figure>
+    <ul>
+      <li>10月の増加は、<b>専門・ビジネスサービス（+7.0万人）と教育・医療（+5.3万人）</b>の2つで、全体の約75%（当サイトで計算）。</li>
+      <li>運輸・卸小売・公益は+2.2万人、製造業は+1.9万人。一方、<b>娯楽・宿泊は−1.3万人、建設は−0.3万人</b>でした。</li>
+      <li>1つの月の業種別の数字は、あとから大きく改定されることがあります。<b>広がりがあるか</b>は、数か月の流れで確認します。</li>
+    </ul>
+
+    <h2>6. 失業率と賃金：物価に追いついていない</h2>
+    <figure class="fig"><div class="fig-title">失業率の推移（%、2024年1月〜2026年10月）</div><svg viewBox="0 0 420 190" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="164.0" x2="368" y2="164.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="167.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >3.5%</text><line x1="8" y1="114.0" x2="368" y2="114.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="117.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >4.0%</text><line x1="8" y1="64.0" x2="368" y2="64.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="67.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >4.5%</text><line x1="8" y1="14.0" x2="368" y2="14.0" stroke="#e5e7eb" stroke-width="1"/><text x="374.0" y="17.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >5.0%</text><defs><linearGradient id="g22403" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec4899" stop-opacity=".22"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></linearGradient></defs><polygon points="8.0,164.0 8.0,144.0 18.9,124.0 29.8,124.0 40.7,124.0 51.6,124.0 62.5,104.0 73.5,94.0 84.4,94.0 95.3,104.0 106.2,104.0 117.1,94.0 128.0,104.0 138.9,114.0 149.8,94.0 160.7,94.0 171.6,94.0 182.5,84.0 193.5,104.0 204.4,84.0 215.3,84.0 226.2,74.0 237.1,69.0 248.0,64.0 258.9,74.0 269.8,84.0 280.7,74.0 291.6,84.0 302.5,84.0 313.5,84.0 324.4,94.0 335.3,104.0 346.2,104.0 357.1,94.0 368.0,104.0 368.0,164.0" fill="url(#g22403)"/><polyline points="8.0,144.0 18.9,124.0 29.8,124.0 40.7,124.0 51.6,124.0 62.5,104.0 73.5,94.0 84.4,94.0 95.3,104.0 106.2,104.0 117.1,94.0 128.0,104.0 138.9,114.0 149.8,94.0 160.7,94.0 171.6,94.0 182.5,84.0 193.5,104.0 204.4,84.0 215.3,84.0 226.2,74.0 237.1,69.0 248.0,64.0 258.9,74.0 269.8,84.0 280.7,74.0 291.6,84.0 302.5,84.0 313.5,84.0 324.4,94.0 335.3,104.0 346.2,104.0 357.1,94.0 368.0,104.0" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="248.0" cy="64.0" r="3" fill="#ec4899"/><text x="248.0" y="57.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >4.5%</text><circle cx="8.0" cy="144.0" r="3" fill="#ec4899"/><text x="30.0" y="158.0" font-size="10" text-anchor="middle" fill="#111827" font-weight="700" >3.7%</text><circle cx="368.0" cy="104.0" r="3.4" fill="#111827"/><text x="8.0" y="182.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2024/1</text><text x="138.9" y="182.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2025/1</text><text x="269.8" y="182.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2026/1</text><text x="368.0" y="182.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10</text></svg><figcaption>出典：BLS（家計調査）。2025年10月は公表値がなく、直線でつないでいる。<b>2025年11月の4.5%を頂点に、2026年10月は4.1%</b>（9月は4.2%、8月は4.1%）。労働参加率は61.9%（9月は61.8%）。</figcaption></figure>
+    <p>失業率は4.1%で、2025年11月（4.5%）から低下しています。労働参加率は61.9%でした。</p>
+    <figure class="fig"><div class="fig-title">賃金と物価の前年比（%）</div><svg viewBox="0 0 420 210" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="184.0" x2="328" y2="184.0" stroke="#e5e7eb"/><text x="37.0" y="187.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >2.0%</text><line x1="42" y1="116.0" x2="328" y2="116.0" stroke="#e5e7eb"/><text x="37.0" y="119.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >3.0%</text><line x1="42" y1="48.0" x2="328" y2="48.0" stroke="#e5e7eb"/><text x="37.0" y="51.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >4.0%</text><polyline points="42.0,44.6 55.0,35.4 68.0,42.4 81.0,49.7 94.0,40.3 107.0,33.5 120.0,53.9 133.0,49.1 146.0,57.8 159.0,50.6 172.0,49.7 185.0,58.3 198.0,52.6 211.0,66.6 224.0,71.5 237.0,68.4 250.0,86.5 263.0,77.1 276.0,93.2 289.0,90.0 302.0,101.8 315.0,108.3 328.0,105.1" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,144.6 55.0,135.1 68.0,124.8 81.0,116.6 94.0,129.5 107.0,158.0 120.0,161.9 133.0,158.3 146.0,137.7 159.0,133.5 172.0,120.2 185.0,114.5 198.0,136.6 211.0,139.6 224.0,157.4 237.0,154.5 250.0,96.6 263.0,63.0 276.0,36.7 289.0,84.5 302.0,95.3 315.0,92.0 328.0,67.2" fill="none" stroke="#111827" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="328" cy="67.2" r="3" fill="#111827"/><text x="335.0" y="70.7" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >消費者物価</text><text x="335.0" y="82.2" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >3.7%</text><circle cx="328" cy="105.1" r="3" fill="#ec4899"/><text x="335.0" y="108.6" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >平均時給</text><text x="335.0" y="120.1" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >3.2%</text><text x="42.0" y="202.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2024/10</text><text x="328.0" y="202.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/09</text></svg><figcaption>出典：BLS（平均時給）、FRED（消費者物価指数CPI、季節調整済みの指数の前年比）。2025年10月は物価の公表値がなく、欠測。物価は、10月分が未公表のため、<b>最新の9月は+3.7%（時給は+3.2%）</b>。10月の時給は+3.1%。</figcaption></figure>
+    <ul>
+      <li>平均時給は、前年比+3.1%（38.00ドル）。前月比では+0.4%です。</li>
+      <li>物価（消費者物価、季節調整済み）は、<b>9月に前年比+3.7%</b>（前月比+0.65%）。8月の+3.4%から、伸びが大きくなりました。<b>時給の伸びを0.6ポイントほど上回り</b>、家計の購買力は目減りしている状態です。</li>
+      <li>10月分の物価は、まだ公表されていません（11月10日の予定）。</li>
+    </ul>
+
+    <h2>7. 金利とのつながり</h2>
+    <p>FRBは、9月16日のFOMCで、政策金利の誘導目標を<b>3.75〜4.00%</b>に引き上げ、10月28日のFOMCでは据え置きました。10月の政策金利（フェデラルファンド実効金利）は、月平均で3.88%でした（FRED）。</p>
+    <ul>
+      <li>雇用の持ち直しと、物価の高止まり。<b>今後の指標は、「利上げが続くのか」の材料としても、読まれます</b>。</li>
+      <li>この記事は、金利の先行きを予想するものではありません。<b>数字が、どちらの見方を支えるか</b>を、確認する材料として見ます。</li>
+    </ul>
+
+    <h2>8. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>前の数字を、変わるものとして読む。</b>前回は下方修正、今回は上方修正。改定の方向は、毎月同じとは限らない。</li>
+      <li><b>単月の数字に反応しない。</b>雇用者数は、+21万人から−16万人まで振れる。平均と、方向で見る。</li>
+      <li><b>増えた業種の広がりを、確認する。</b>2つの業種で全体の約75%という月は、全体の強さを、そのまま示すとは限らない。</li>
+      <li><b>賃金は、物価と比べる。</b>時給+3.1%に対し、物価+3.7%。購買力の回復には、まだ届いていない。</li>
+      <li><b>「良い数字＝株高」とは限らない。</b>市場は、数字そのものより、予想との差と、金利の見通しで動く。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の売買を勧めるものではありません。雇用統計の結果から、株価・金利・為替の動きを予想するものでもありません。</div>
+
+    <h2>9. 毎月の見る順番（チェックリスト）</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>見る順番</th><th>何を見るか</th><th>見方のポイント</th></tr></thead><tbody><tr><td data-label="見る順番"><span class="tv">① 雇用者数</span></td><td data-label="何を見るか"><span class="tv">前月比の増減と、直近3か月の平均</span></td><td data-label="見方のポイント"><span class="tv">単月でなく平均で。前の2か月の改定も一緒に見る（改定の方向は、毎月同じではない）</span></td></tr><tr><td data-label="見る順番"><span class="tv">② 失業率</span></td><td data-label="何を見るか"><span class="tv">水準と、数か月の方向</span></td><td data-label="見方のポイント"><span class="tv">0.1ポイントは誤差の範囲になりうる。方向が続くかで見る</span></td></tr><tr><td data-label="見る順番"><span class="tv">③ 平均時給</span></td><td data-label="何を見るか"><span class="tv">前年比の伸び</span></td><td data-label="見方のポイント"><span class="tv">物価の伸びと比べて、実質で増えているか</span></td></tr><tr><td data-label="見る順番"><span class="tv">④ 労働参加率</span></td><td data-label="何を見るか"><span class="tv">働く人の割合</span></td><td data-label="見方のポイント"><span class="tv">失業率が下がっても、参加率が下がっていれば中身は弱い</span></td></tr><tr><td data-label="見る順番"><span class="tv">⑤ 業種の広がり</span></td><td data-label="何を見るか"><span class="tv">増えた業種が、広がっているか・偏っているか</span></td><td data-label="見方のポイント"><span class="tv">2つの業種で、全体の約75%という月もある</span></td></tr><tr><td data-label="見る順番"><span class="tv">⑥ 政策金利との関係</span></td><td data-label="何を見るか"><span class="tv">FRBが物価と雇用のどちらを重く見ているか</span></td><td data-label="見方のポイント"><span class="tv">数字そのものより、金利の見通しがどう変わるか</span></td></tr></tbody></table></div>
+
+    <h2>10. 次に確認する日程</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>日付</th><th>イベント</th><th>見る点</th></tr></thead><tbody><tr><td data-label="日付"><span class="tv">2026年11月10日（予定）</span></td><td data-label="イベント"><span class="tv">米消費者物価指数（CPI、10月分）</span></td><td data-label="見る点"><span class="tv">9月の前年比+3.7%から、物価の伸びがどう動くか</span></td></tr><tr><td data-label="日付"><span class="tv">2026年12月4日（予定）</span></td><td data-label="イベント"><span class="tv">雇用統計（11月分）</span></td><td data-label="見る点"><span class="tv">10月分の改定と、直近3か月の平均がどう変わるか</span></td></tr><tr><td data-label="日付"><span class="tv">2026年12月8〜9日</span></td><td data-label="イベント"><span class="tv">FOMC（経済見通しを公表）</span></td><td data-label="見る点"><span class="tv">政策金利の見通しと、失業率・物価の予想</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：BLS、FRB「FOMC Calendars」。日程は予定で、変更されることがあります。</p>
+
+    <div class="art-fine">
+      <p>※ 雇用者数・失業率・平均時給・労働参加率・業種別の数字は、BLSの公開API（時系列データ）の値です。2026年11月6日の公表を反映した値で、速報のため、あとから改定されます。</p>
+      <p>※ 「前回の数字」は、このサイトの9月分の記事（2026年10月13日）に載せた数字です。上方修正の合計（+8.4万人）、直近3か月の平均、業種の寄与（約75%）、物価と時給の差は、当サイトの計算値です。</p>
+      <p>※ 2025年10月は、家計調査（失業率・労働参加率）と物価の公表値がなく、グラフは欠測または直線でつないでいます。物価は、季節調整済みの消費者物価指数（CPI-U）の前年比です。</p>
+      <p>※ 1万人＝10千人で換算し、小数点以下を丸めています。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>決算も経済イベントも、ひとつのカレンダーで</h3>
+  <p>配当の権利日や保有銘柄の決算、積立の実行日に加えて、日銀の金融政策決定会合やFOMC・雇用統計などの経済イベントも、同じカレンダーで確認できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-calendar">カレンダーを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>米労働省労働統計局（BLS）公開API（非農業部門の雇用者数・業種別・失業率・平均時給・労働参加率の時系列）：<a href="https://api.bls.gov/publicAPI/v2/timeseries/data/" target="_blank" rel="noopener">https://api.bls.gov/publicAPI/v2/timeseries/data/</a></li><li>FRB「FOMC Calendars」：<a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm</a></li><li>FRED（フェデラルファンド実効金利、消費者物価指数）：<a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">https://fred.stlouisfed.org/</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月7日　初版（2026年10月分）</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="fomc-2026-10.html">FOMC（2026年10月）の結果｜長期投資家の目線</a><a href="us-jobs-report-2026-09.html">米雇用統計（2026年9月分）｜長期投資家の目線</a><a href="boj-2026-10.html">日銀の金融政策決定会合（2026年10月）の結果｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
