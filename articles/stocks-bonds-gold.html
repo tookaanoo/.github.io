@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="株（SPY）・債券（AGG）・金（GLD）の2004〜2026年の月次データで、株が下がったときの債券と金の動きを確かめる。2008年は支え、2022年は3つとも下落。混ぜた場合の下落幅も試算する。">
+<title>株・債券・金の比較｜下がった月・年に、何が起きたか - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/stocks-bonds-gold.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="株・債券・金の比較｜下がった月・年に、何が起きたか">
+<meta property="og:description" content="株（SPY）・債券（AGG）・金（GLD）の2004〜2026年の月次データで、株が下がったときの債券と金の動きを確かめる。2008年は支え、2022年は3つとも下落。混ぜた場合の下落幅も試算する。">
+<meta property="og:url" content="https://fire-app.jp/articles/stocks-bonds-gold.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/stocks-bonds-gold.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/stocks-bonds-gold.jpg">
+<meta name="twitter:title" content="株・債券・金の比較｜下がった月・年に、何が起きたか">
+<meta name="twitter:description" content="株（SPY）・債券（AGG）・金（GLD）の2004〜2026年の月次データで、株が下がったときの債券と金の動きを確かめる。2008年は支え、2022年は3つとも下落。混ぜた場合の下落幅も試算する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "株・債券・金の比較｜下がった月・年に、何が起きたか", "description": "株（SPY）・債券（AGG）・金（GLD）の2004〜2026年の月次データで、株が下がったときの債券と金の動きを確かめる。2008年は支え、2022年は3つとも下落。混ぜた場合の下落幅も試算する。", "inLanguage": "ja", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/stocks-bonds-gold.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["米国株", "FIRE・資産形成"], "image": ["https://fire-app.jp/articles/og/stocks-bonds-gold.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "株・債券・金の比較｜下がった月・年に、何が起きたか", "item": "https://fire-app.jp/articles/stocks-bonds-gold.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>株・債券・金の比較<br>｜下がったときに、何が起きたか</h1>
+    <p class="subtitle">株が下がった月・局面・年に、債券と金はどう動いたか</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>株が−5%以下の月、債券は平均ほぼゼロ</h3><p class="pt-d">2004年12月から2026年10月までの月次で、<b>株（SPY）が−5%以下の月は24か月</b>。その月の債券（AGG）は<b>平均−0.17%（上昇は42%）</b>、金（GLD）は<b>平均+1.63%（上昇は63%）</b>。債券は横ばい、金は上がりやすいが、<b>保証ではない</b>。</p></div><div class="pt"><h3>2008年は支え、2022年は3つとも下落</h3><p class="pt-d">株が15%以上下がった3局面のうち、<b>2008年（−50.8%）と2020年（−19.4%）では債券と金が上がった</b>。<b>2022年は、債券−14.4%、金−9.5%と、3つとも下がった</b>。</p></div><div class="pt"><h3>混ぜると下落は−50.8%から−18.7%（試算）</h3><p class="pt-d">混ぜると、下落は小さくなる。最大の下落は、<b>株100%が−50.8%、株・債券・金の3分の1ずつが−18.7%</b>（試算）。ただし年率は10.7%から8.4%に下がる。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月9日</span><span><b>情報の時点</b> 2004年12月〜2026年10月、ドル建て・月次</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の問い</h2>
+    <p>「株が下がったときは、債券や金が支えてくれる」と言われます。この言葉は、<b>過去のデータでは、どこまで本当だったのか</b>。この記事では、米国株（SPY）、米国の総合債券（AGG）、金（GLD）の、配当込みの月次のデータで確かめます。期間は、GLDの上場後の<b>2004年12月から2026年10月（262か月）</b>、ドル建てです。</p>
+    <ul>
+      <li><b>① 下がった月：</b>株が大きく下がった月に、債券と金は、どう動いたか</li>
+      <li><b>② 下がった局面・年：</b>株が15%以上下がった局面と、マイナスの年で、どうだったか</li>
+      <li><b>③ 混ぜた場合：</b>3つを混ぜると、下落の深さは、どう変わるか（試算）</li>
+    </ul>
+    <p>どの組み合わせが「正しい」かは、決めません。<b>「下がったときに上がる」とは限らない</b>ことを、数字で確かめるのが目的です。7つの資産の暦年リターンは、<a href="asset-class-returns.html">資産クラスの暦年リターン</a>で、並べています。</p>
+
+    <h2>2. 軸①：株が下がった月に、債券と金は、どう動いたか</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">株が下がった月（−5%以下）</div><div class="tile-v">24<small>か月</small></div><div class="tile-n">262か月のうち。2008年と2022年に、それぞれ5か月</div></div><div class="tile key"><div class="tile-l">その月の、債券の動き</div><div class="tile-v">平均−0.17%</div><div class="tile-n">上がったのは10か月（42%）。<b>債券は、株が下がる月に、ほぼ横ばい</b></div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">その月の、金の動き</div><div class="tile-v">平均+1.63%</div><div class="tile-n">上がったのは15か月（63%）。ただし−16.1%（2008年10月）、−11.1%（2011年9月）もあった</div></div><div class="tile"><div class="tile-l">月次リターンの相関</div><div class="tile-v">株と債券 0.23</div><div class="tile-n">株と金は0.09、債券と金は0.35。<b>どれも、強く同じ方向には動いていない</b></div></div></div>
+    <figure class="fig"><div class="fig-title">株が月に−5%以下の下落をした24か月に、債券と金はどう動いたか（月数）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="201.0" x2="410" y2="201.0" stroke="#e5e7eb"/><rect x="48.0" y="96.3" width="60.0" height="104.7" rx="3" fill="#ec4899"/><text x="78.0" y="91.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >10</text><rect x="112.0" y="54.5" width="60.0" height="146.5" rx="3" fill="#cbd5e1"/><text x="142.0" y="49.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >14</text><text x="110.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >債券（AGG）</text><rect x="248.0" y="44.0" width="60.0" height="157.0" rx="3" fill="#ec4899"/><text x="278.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >15</text><rect x="312.0" y="106.8" width="60.0" height="94.2" rx="3" fill="#cbd5e1"/><text x="342.0" y="101.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >9</text><text x="310.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >金（GLD）</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >上がった月</text><rect x="95" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="108.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >下がった月</text></svg><figcaption>出典：株価データ（SPY・AGG・GLDの配当込みの調整後終値、月次、ドル建て。2004年12月〜2026年10月の262か月）。SPYが前月比−5%以下だった24か月。<b>債券は10か月で上昇、金は15か月で上昇</b>。平均は、債券−0.17%、金+1.63%（当サイトの計算）。</figcaption></figure>
+    <ul>
+      <li>SPYが前月比−5%以下になった月は、262か月のうち<b>24か月</b>（約9%）。2008年に5回、2022年に5回、2020年に2回あります。</li>
+      <li><b>債券は、その月に、平均−0.17%。上がったのは10か月、下がったのは14か月</b>。株が下がったからといって、債券が上がる月が多いわけではありません。</li>
+      <li><b>金は、平均+1.63%。上がったのは15か月、下がったのは9か月</b>。ただし、2008年10月（株−16.5%、金−16.1%）や、2011年9月（株−6.9%、金−11.1%）のように、<b>株と一緒に大きく下がる月</b>もありました。</li>
+      <li>月次リターンの相関（−1〜＋1）は、株と債券が<b>0.23</b>、株と金が<b>0.09</b>、債券と金が<b>0.35</b>（当サイトの計算）。<b>強く同じ方向にも、逆の方向にも、動いていません</b>。</li>
+    </ul>
+
+    <h2>3. 軸②：株が大きく下がった局面と、マイナスの年</h2>
+    <figure class="fig"><div class="fig-title">株が15%以上下がった3つの局面で、債券と金はどう動いたか（%）</div><svg viewBox="0 0 420 285" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="85.6" x2="410" y2="85.6" stroke="#e5e7eb" stroke-width="1.2"/><rect x="12.7" y="85.6" width="40.0" height="147.4" rx="3" fill="#94a3b8"/><text x="32.7" y="245.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-50.8</text><rect x="56.7" y="66.8" width="40.0" height="18.9" rx="3" fill="#cbd5e1"/><text x="76.7" y="61.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+6.5</text><rect x="100.7" y="34.0" width="40.0" height="51.6" rx="3" fill="#ec4899"/><text x="120.7" y="29.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+17.8</text><text x="76.7" y="277.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2007年10月→</text><text x="76.7" y="289.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2009年2月</text><rect x="146.0" y="85.6" width="40.0" height="56.3" rx="3" fill="#94a3b8"/><text x="166.0" y="153.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-19.4</text><rect x="190.0" y="76.6" width="40.0" height="9.0" rx="3" fill="#cbd5e1"/><text x="210.0" y="71.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+3.1</text><rect x="234.0" y="75.2" width="40.0" height="10.4" rx="3" fill="#ec4899"/><text x="254.0" y="70.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >+3.6</text><text x="210.0" y="277.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2019年12月→</text><text x="210.0" y="289.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2020年3月</text><rect x="279.3" y="85.6" width="40.0" height="69.3" rx="3" fill="#94a3b8"/><text x="299.3" y="167.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-23.9</text><rect x="323.3" y="85.6" width="40.0" height="41.8" rx="3" fill="#cbd5e1"/><text x="343.3" y="139.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-14.4</text><rect x="367.3" y="85.6" width="40.0" height="27.6" rx="3" fill="#ec4899"/><text x="387.3" y="125.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >-9.5</text><text x="343.3" y="277.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2021年12月→</text><text x="343.3" y="289.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >2022年9月</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#94a3b8"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >株（SPY）</text><rect x="106" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="119.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >債券（AGG）</text><rect x="213" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="226.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >金（GLD）</text></svg><figcaption>出典：株価データ（月次、配当込み、ドル建て）。SPYが、それまでの最高値から15%以上下がった3つの局面について、<b>株が最高値をつけた月末から、底の月末まで</b>の、各資産のリターン。<b>1つ目と2つ目は債券と金が上がり、3つ目は3つとも下がった</b>。</figcaption></figure>
+    <ul>
+      <li><b>金融危機（2007年10月→2009年2月）：</b>株−50.8%に対し、債券+6.5%、金+17.8%。<b>2つとも、下落を支えました</b>。</li>
+      <li><b>コロナ（2019年12月→2020年3月）：</b>株−19.4%に対し、債券+3.1%、金+3.6%。小さく、上がりました。</li>
+      <li><b>2022年（2021年12月→2022年9月）：</b>株−23.9%に対し、<b>債券−14.4%、金−9.5%</b>。<b>3つとも、下がりました</b>。</li>
+    </ul>
+    <p>暦年で、株がマイナスだった年は、2005〜2025年の21年のうち、3年です。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>年</th><th>株（SPY）</th><th>債券（AGG）</th><th>金（GLD）</th><th>3つの動き</th></tr></thead><tbody><tr><td data-label="年"><span class="tv">2008年</span></td><td class="num" data-label="株（SPY）"><span class="tv">−36.8%</span></td><td class="num" data-label="債券（AGG）"><span class="tv">+7.9%</span></td><td class="num" data-label="金（GLD）"><span class="tv">+4.9%</span></td><td data-label="3つの動き"><span class="tv">株だけが下がった</span></td></tr><tr><td data-label="年"><span class="tv">2018年</span></td><td class="num" data-label="株（SPY）"><span class="tv">−4.6%</span></td><td class="num" data-label="債券（AGG）"><span class="tv">+0.3%</span></td><td class="num" data-label="金（GLD）"><span class="tv">−1.9%</span></td><td data-label="3つの動き"><span class="tv">株と金が下がった（小さい）</span></td></tr><tr><td data-label="年"><span class="tv">2022年</span></td><td class="num" data-label="株（SPY）"><span class="tv">−18.2%</span></td><td class="num" data-label="債券（AGG）"><span class="tv">−13.0%</span></td><td class="num" data-label="金（GLD）"><span class="tv">−0.8%</span></td><td data-label="3つの動き"><span class="tv"><b>3つとも下がった</b></span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：株価データ（月次、配当込み、ドル建て）。各年末から次の年末まで。</p>
+    <ul>
+      <li>2022年は、<b>株、債券、金の3つがそろってマイナス</b>でした（金は−0.8%と小さい）。2022年は、物価の上昇を受けて、金利が上がった年です。<b>金利が上がる局面では、債券の価格は下がります</b>。</li>
+      <li>逆に、債券が下がった年（2013年、2021年、2022年）のうち、<b>株も下がったのは2022年だけ</b>。2013年と2021年は、株が+32.3%、+28.7%でした。</li>
+      <li>金は、21年のうち6年でマイナスでした（2013年−28.3%、2015年−10.7%など）。</li>
+    </ul>
+
+    <h2>4. 軸③：混ぜると、下落はどう変わるか（試算）</h2>
+    <figure class="fig"><div class="fig-title">混ぜた場合の、最大の下落幅（月次、2004年12月〜2026年10月、%）</div><svg viewBox="0 0 420 174" role="img" xmlns="http://www.w3.org/2000/svg"><text x="148.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >株100%</text><rect x="156.0" y="4" width="186.3" height="22" rx="3" fill="#94a3b8"/><text x="347.3" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >−50.8</text><text x="148.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >金100%</text><rect x="156.0" y="38" width="157.3" height="22" rx="3" fill="#ec4899"/><text x="318.3" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >−42.9</text><text x="148.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >株60%・債券40%</text><rect x="156.0" y="72" width="118.4" height="22" rx="3" fill="#f9a8d4"/><text x="279.4" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >−32.3</text><text x="148.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >株・債券・金を3分の1ずつ</text><rect x="156.0" y="106" width="68.6" height="22" rx="3" fill="#f9a8d4"/><text x="229.6" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >−18.7</text><text x="148.0" y="154.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >債券100%</text><rect x="156.0" y="140" width="62.7" height="22" rx="3" fill="#cbd5e1"/><text x="223.7" y="154.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >−17.1</text></svg><figcaption>出典：株価データ（月次、配当込み、ドル建て）から、<b>当サイトが試算</b>。毎月、決めた比率に戻す（リバランス）単純な計算で、手数料・税・為替は含まない。<b>実際の運用の結果ではなく、将来を約束するものでもありません</b>。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>比率</th><th>年率</th><th>最大の下落</th><th>2007年10月→2009年2月</th><th>2019年12月→2020年3月</th><th>2021年12月→2022年9月</th></tr></thead><tbody><tr><td data-label="比率"><span class="tv">株100%</span></td><td class="num" data-label="年率"><span class="tv">10.7%</span></td><td class="num" data-label="最大の下落"><span class="tv">−50.8%</span></td><td class="num" data-label="2007年10月→2009年2月"><span class="tv">−50.8%</span></td><td class="num" data-label="2019年12月→2020年3月"><span class="tv">−19.4%</span></td><td class="num" data-label="2021年12月→2022年9月"><span class="tv">−23.9%</span></td></tr><tr><td data-label="比率"><span class="tv">債券100%</span></td><td class="num" data-label="年率"><span class="tv">2.9%</span></td><td class="num" data-label="最大の下落"><span class="tv">−17.1%</span></td><td class="num" data-label="2007年10月→2009年2月"><span class="tv">+6.5%</span></td><td class="num" data-label="2019年12月→2020年3月"><span class="tv">+3.1%</span></td><td class="num" data-label="2021年12月→2022年9月"><span class="tv">−14.4%</span></td></tr><tr><td data-label="比率"><span class="tv">金100%</span></td><td class="num" data-label="年率"><span class="tv">10.1%</span></td><td class="num" data-label="最大の下落"><span class="tv">−42.9%</span></td><td class="num" data-label="2007年10月→2009年2月"><span class="tv">+17.8%</span></td><td class="num" data-label="2019年12月→2020年3月"><span class="tv">+3.6%</span></td><td class="num" data-label="2021年12月→2022年9月"><span class="tv">−9.5%</span></td></tr><tr><td data-label="比率"><span class="tv">株60%・債券40%</span></td><td class="num" data-label="年率"><span class="tv">7.8%</span></td><td class="num" data-label="最大の下落"><span class="tv">−32.3%</span></td><td class="num" data-label="2007年10月→2009年2月"><span class="tv">−32.3%</span></td><td class="num" data-label="2019年12月→2020年3月"><span class="tv">−10.8%</span></td><td class="num" data-label="2021年12月→2022年9月"><span class="tv">−20.0%</span></td></tr><tr><td data-label="比率"><span class="tv">株・債券・金を3分の1ずつ</span></td><td class="num" data-label="年率"><span class="tv">8.4%</span></td><td class="num" data-label="最大の下落"><span class="tv">−18.7%</span></td><td class="num" data-label="2007年10月→2009年2月"><span class="tv">−13.3%</span></td><td class="num" data-label="2019年12月→2020年3月"><span class="tv">−4.6%</span></td><td class="num" data-label="2021年12月→2022年9月"><span class="tv">−15.8%</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：株価データ（月次、配当込み、ドル建て）から、当サイトが試算。毎月、決めた比率に戻す単純な計算。手数料・税・為替は含まない。</p>
+    <ul>
+      <li><b>株100%の最大の下落は−50.8%</b>（2007年10月→2009年2月）。株60%・債券40%でも、−32.3%。</li>
+      <li><b>株・債券・金を3分の1ずつ</b>にすると、最大の下落は<b>−18.7%</b>。金融危機の局面は−13.3%、2022年の局面は−15.8%です。</li>
+      <li>ただし、<b>年率は、株100%の10.7%から、8.4%に下がります</b>。下落が小さい分、リターンも小さくなる、というトレードオフです。</li>
+      <li>金100%の年率は10.1%と高く見えますが、<b>最大の下落は−42.9%</b>（2011年8月の高値から2015年12月まで）。また、<b>2025年の+63.7%が結果を押し上げています</b>（2024年末までの年率は8.9%）。</li>
+    </ul>
+
+    <h2>5. 確認する項目</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>変わった場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 株と債券の同時下落</span></td><td data-label="今回の数字"><span class="tv">2022年は、株−18.2%・債券−13.0%</span></td><td data-label="なぜ重要か"><span class="tv">金利が上がる局面では、債券も下がる</span></td><td data-label="変わった場合"><span class="tv">債券が下落を和らげない局面</span></td><td data-label="確認する時期"><span class="tv">金利が大きく動いたとき</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 金の位置づけ</span></td><td data-label="今回の数字"><span class="tv">株が下がった月の平均+1.63%。ただし63%の月</span></td><td data-label="なぜ重要か"><span class="tv">金も、大きく下がる月がある</span></td><td data-label="変わった場合"><span class="tv">金が株と同時に下がる</span></td><td data-label="確認する時期"><span class="tv">株が急落した月</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 期間の取り方</span></td><td data-label="今回の数字"><span class="tv">金の年率は、2024年末まででは8.9%、2026年10月末までは10.1%</span></td><td data-label="なぜ重要か"><span class="tv">2025年の+63.7%が、結果を押し上げている</span></td><td data-label="変わった場合"><span class="tv">直近の動きで、全体の数字が変わる</span></td><td data-label="確認する時期"><span class="tv">期間を変えて確認</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 為替</span></td><td data-label="今回の数字"><span class="tv">この記事は、ドル建て</span></td><td data-label="なぜ重要か"><span class="tv">円で持つと、ドル円の変動が加わる</span></td><td data-label="変わった場合"><span class="tv">円高・円安で、損益が変わる</span></td><td data-label="確認する時期"><span class="tv"><a href="asset-class-returns.html">資産クラスの記事</a>（円換算）</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 自分の許容範囲</span></td><td data-label="今回の数字"><span class="tv">株100%の最大の下落は−50.8%</span></td><td data-label="なぜ重要か"><span class="tv">数字を、自分の生活と照らす</span></td><td data-label="変わった場合"><span class="tv">—</span></td><td data-label="確認する時期"><span class="tv">資産を決めるとき</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2004年12月〜2026年10月のドル建て・月次。期間や資産（ETF）を変えると、数字は変わります。</p>
+
+    <h2>6. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「債券や金が支えてくれる」は、保証ではない。</b>債券は、株が下がる月の平均がほぼゼロ。金は上がりやすいが、同時に大きく下がる月もあった。</li>
+      <li><b>下落の原因で、結果が変わる。</b>景気の悪化（2008年、2020年）では、債券と金が支えた。金利の上昇（2022年）では、債券も下がった。</li>
+      <li><b>混ぜるのは、下落を小さくする代わりに、リターンも小さくする。</b>どこまで下落を許容できるかで、比率を決める話。正解は、人によって違う。</li>
+      <li><b>期間の取り方に注意する。</b>金は、2025年の+63.7%で、全期間の年率が約1.2ポイント上がっている。直近の動きが、長期の数字を変える。</li>
+      <li><b>数字を、自分の生活に照らす。</b>株100%で−50%の下落があり得る、と知ったうえで、その間も生活費と積立を続けられるかを、先に考える。</li>
+      <li><b>円で持つなら、為替も加わる。</b>この記事はドル建て。円換算では、ドル円の変動が、成績と下落の深さに加わる。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の商品や配分の売買を勧めるものではありません。過去のデータは、将来を約束するものではありません。3つの資産の将来の動きを予想するものでも、特定の資産配分をすすめるものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 株はSPDR S&P 500 ETF Trust（SPY）、債券はiShares Core U.S. Aggregate Bond ETF（AGG）、金はSPDR Gold Shares（GLD）の、配当（分配金）込みの調整後終値（月次）です。ドル建てで、ETFの費用は、価格に反映されています。AGGは2003年10月、GLDは2004年11月から。</p>
+      <p>※ 「月次」は、月末の値です。月の途中の値動きは含みません。局面の「最高値」「底」も、月末の値で決めています。</p>
+      <p>※ 混ぜた場合の試算は、毎月、決めた比率に戻す単純な計算で、手数料・税・為替・リバランスの費用を含みません。実際の運用の結果ではありません。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>株価データ（SPY・AGG・GLDの配当込みの調整後終値、月次）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月9日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="sp500-vs-nasdaq100.html">S&amp;P500とNasdaq-100（QQQ）の比較｜長期投資家の目線</a><a href="world-vs-us.html">全世界株と米国株の比較｜長期投資家の目線</a><a href="new-nisa.html">新NISAに入れるのは、高配当株か、成長株か、インデックスか｜仕組みから考える</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
