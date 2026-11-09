@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="S&amp;P500とNasdaq-100（QQQ）を、中身・成績・下落の3軸で比べる。QQQは上位10社で46.8%、半導体27.1%、金融を含まない。1999年からの年率は10.4%と8.4%だが、下落は−81%で回復に約14年7か月。">
+<title>S&P500とNasdaq-100（QQQ）の比較｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/sp500-vs-nasdaq100.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="S&amp;P500とNasdaq-100（QQQ）の比較｜長期投資家の目線">
+<meta property="og:description" content="S&amp;P500とNasdaq-100（QQQ）を、中身・成績・下落の3軸で比べる。QQQは上位10社で46.8%、半導体27.1%、金融を含まない。1999年からの年率は10.4%と8.4%だが、下落は−81%で回復に約14年7か月。">
+<meta property="og:url" content="https://fire-app.jp/articles/sp500-vs-nasdaq100.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/sp500-vs-nasdaq100.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/sp500-vs-nasdaq100.jpg">
+<meta name="twitter:title" content="S&amp;P500とNasdaq-100（QQQ）の比較｜長期投資家の目線">
+<meta name="twitter:description" content="S&amp;P500とNasdaq-100（QQQ）を、中身・成績・下落の3軸で比べる。QQQは上位10社で46.8%、半導体27.1%、金融を含まない。1999年からの年率は10.4%と8.4%だが、下落は−81%で回復に約14年7か月。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "S&P500とNasdaq-100（QQQ）の比較｜長期投資家の目線", "description": "S&P500とNasdaq-100（QQQ）を、中身・成績・下落の3軸で比べる。QQQは上位10社で46.8%、半導体27.1%、金融を含まない。1999年からの年率は10.4%と8.4%だが、下落は−81%で回復に約14年7か月。", "inLanguage": "ja", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/sp500-vs-nasdaq100.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["米国株", "FIRE・資産形成"], "image": ["https://fire-app.jp/articles/og/sp500-vs-nasdaq100.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "S&P500とNasdaq-100（QQQ）の比較｜長期投資家の目線", "item": "https://fire-app.jp/articles/sp500-vs-nasdaq100.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>S&P500とNasdaq-100の比較<br>｜長期投資家の目線</h1>
+    <p class="subtitle">同じ米国株でも、中身と下落の深さは違う</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>QQQは上位10社で46.8%、S&P500は37.6%</h3><p class="pt-d">どちらも米国の大型株の指数だが、<b>Nasdaq-100（QQQ）は約100社で、上位10社が46.8%。S&P500（SPY）は約500社で、上位10社が37.6%</b>（2026年11月5日）。QQQは、<b>金融を除く</b>ルールで、半導体・製造装置の比重も27.1%と高い（S&P500は17.0%）。</p></div><div class="pt"><h3>年率10.4%と8.4%。10年では約89%でQQQが上</h3><p class="pt-d">1999年4月からの配当込みの年率は、<b>QQQが10.4%、SPYが8.4%</b>。10年間で見ると、QQQが上回った期間が約89%。ただし<b>QQQは、2000年からの下落が−81.1%で、高値の回復は14年7か月後</b>。SPYの最大の下落は−50.8%。</p></div><div class="pt"><h3>下落はQQQ−81%、回復に約14年7か月</h3><p class="pt-d">「どちらが上か」より、<b>「何に偏り、どんな下落があり得るか」を知ったうえで選ぶ</b>のが、この記事の見方。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月9日</span><span><b>情報の時点</b> 2026年11月5日の構成比／2026年10月末までの月次データ</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の問い</h2>
+    <p>S&P500は、米国を代表する大型株約500社の指数。Nasdaq-100は、Nasdaqに上場する<b>金融を除く</b>大型株100社の指数です。連動するETFのSPYとQQQは、どちらも「米国株」として、広く使われています。この記事では、2つを<b>3つの軸</b>で比べます。</p>
+    <ul>
+      <li><b>① 中身：</b>何が、どれだけ入っているか（集中、AI関連、含まれない業種）</li>
+      <li><b>② 成績：</b>配当込みの長期のリターンと、期間による違い</li>
+      <li><b>③ 下落：</b>高値からの落ち込みの深さと、回復にかかった時間</li>
+    </ul>
+    <p>どちらが「得」かは、決めません。<b>同じ米国株でも、中身と値動きが違う</b>ことを、公表されたデータで確かめます。S&P500そのものは、<a href="sp500.html">S&P500を買うとは、何を買うことか</a>で解説しています。</p>
+
+    <h2>2. 軸①：中身 ― QQQは、より上位に集中している</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">上位10社の合計：Nasdaq-100</div><div class="tile-v">46.8<small>%</small></div><div class="tile-n"><b>S&P500は37.6%</b>。最大の1社は、どちらもAppleで、8.7%と7.9%</div></div><div class="tile key"><div class="tile-l">銘柄数</div><div class="tile-v"><small>約</small>100<small>社 vs 約500社</small></div><div class="tile-n">Nasdaq-100は、Nasdaq上場の「金融を除く」大型株100社（Invescoの説明）。S&P500は503〜504</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">AI投資の大手4社＋Alphabetの2種</div><div class="tile-v">20.4<small>% vs 17.1%</small></div><div class="tile-n">Microsoft・Amazon・Alphabet（2種）・Metaの構成比の合計（当サイトの計算）</div></div><div class="tile"><div class="tile-l">半導体・半導体製造装置</div><div class="tile-v">27.1<small>% vs 17.0%</small></div><div class="tile-n">Nasdaq-100は11月5日、S&P500は<a href="index-comparison.html">別の記事</a>の10月26日時点。分類は同じ（当サイトの分類）</div></div></div>
+    <figure class="fig"><div class="fig-title">上位への集中（構成比の合計、%、2026年11月5日）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="216.0" x2="410" y2="216.0" stroke="#e5e7eb"/><rect x="28.0" y="186.9" width="30.0" height="29.1" rx="3" fill="#cbd5e1"/><text x="43.0" y="181.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7.9</text><rect x="62.0" y="184.0" width="30.0" height="32.0" rx="3" fill="#ec4899"/><text x="77.0" y="179.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >8.7</text><text x="60.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >最大の1社</text><rect x="128.0" y="138.4" width="30.0" height="77.6" rx="3" fill="#cbd5e1"/><text x="143.0" y="133.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >21.1</text><rect x="162.0" y="130.8" width="30.0" height="85.2" rx="3" fill="#ec4899"/><text x="177.0" y="125.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >23.2</text><text x="160.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >上位3社</text><rect x="228.0" y="114.0" width="30.0" height="102.0" rx="3" fill="#cbd5e1"/><text x="243.0" y="109.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >27.8</text><rect x="262.0" y="99.9" width="30.0" height="116.1" rx="3" fill="#ec4899"/><text x="277.0" y="94.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >31.6</text><text x="260.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >上位5社</text><rect x="328.0" y="77.9" width="30.0" height="138.1" rx="3" fill="#cbd5e1"/><text x="343.0" y="72.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >37.6</text><rect x="362.0" y="44.0" width="30.0" height="172.0" rx="3" fill="#ec4899"/><text x="377.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >46.8</text><text x="360.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >上位10社</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >S&amp;P500（SPY）</text><rect x="161" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="174.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >Nasdaq-100（QQQ）</text></svg><figcaption>出典：State Street Global Advisors「SPDR S&P 500 ETF Trust（SPY）」とInvesco「Invesco QQQ」の組入比率（いずれも2026年11月5日時点）。上位3社の合計は、S&P500が7.92＋6.93＋6.27、Nasdaq-100が8.70＋7.58＋6.89（当サイトの計算）。Alphabetは、2種類の株式を別々に数えた値。<b>上位10社の合計は、Nasdaq-100が46.8%、S&P500が37.6%</b>。</figcaption></figure>
+    <ul>
+      <li>上位10社の合計は、QQQが<b>46.8%</b>、SPYが<b>37.6%</b>。約100社のQQQは、上位10社で、ほぼ半分です。</li>
+      <li>上位4社は、どちらも<b>Apple、NVIDIA、Microsoft、Amazon</b>。ただし、5位以下は違います。QQQにはMicron、AMD、Tesla、Walmartが入り、S&P500の上位10社には、Broadcom、Eli Lilly、Berkshire Hathawayが入ります。</li>
+    </ul>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>順位</th><th>S&P500（SPY）</th><th>構成比</th><th>Nasdaq-100（QQQ）</th><th>構成比</th></tr></thead><tbody><tr><td data-label="順位"><span class="tv">1</span></td><td data-label="S&P500（SPY）"><span class="tv">Apple</span></td><td class="num" data-label="構成比"><span class="tv">7.92%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Apple</span></td><td class="num" data-label="構成比"><span class="tv">8.70%</span></td></tr><tr><td data-label="順位"><span class="tv">2</span></td><td data-label="S&P500（SPY）"><span class="tv">NVIDIA</span></td><td class="num" data-label="構成比"><span class="tv">6.93%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">NVIDIA</span></td><td class="num" data-label="構成比"><span class="tv">7.58%</span></td></tr><tr><td data-label="順位"><span class="tv">3</span></td><td data-label="S&P500（SPY）"><span class="tv">Microsoft</span></td><td class="num" data-label="構成比"><span class="tv">6.27%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Microsoft</span></td><td class="num" data-label="構成比"><span class="tv">6.89%</span></td></tr><tr><td data-label="順位"><span class="tv">4</span></td><td data-label="S&P500（SPY）"><span class="tv">Amazon</span></td><td class="num" data-label="構成比"><span class="tv">4.03%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Amazon</span></td><td class="num" data-label="構成比"><span class="tv">4.86%</span></td></tr><tr><td data-label="順位"><span class="tv">5</span></td><td data-label="S&P500（SPY）"><span class="tv">Alphabet（A）</span></td><td class="num" data-label="構成比"><span class="tv">2.61%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Micron Technology</span></td><td class="num" data-label="構成比"><span class="tv">3.54%</span></td></tr><tr><td data-label="順位"><span class="tv">6</span></td><td data-label="S&P500（SPY）"><span class="tv">Broadcom</span></td><td class="num" data-label="構成比"><span class="tv">2.19%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">AMD</span></td><td class="num" data-label="構成比"><span class="tv">3.15%</span></td></tr><tr><td data-label="順位"><span class="tv">7</span></td><td data-label="S&P500（SPY）"><span class="tv">Alphabet（C）</span></td><td class="num" data-label="構成比"><span class="tv">2.11%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Tesla</span></td><td class="num" data-label="構成比"><span class="tv">3.13%</span></td></tr><tr><td data-label="順位"><span class="tv">8</span></td><td data-label="S&P500（SPY）"><span class="tv">Meta</span></td><td class="num" data-label="構成比"><span class="tv">2.10%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Meta</span></td><td class="num" data-label="構成比"><span class="tv">3.11%</span></td></tr><tr><td data-label="順位"><span class="tv">9</span></td><td data-label="S&P500（SPY）"><span class="tv">Eli Lilly</span></td><td class="num" data-label="構成比"><span class="tv">1.72%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Walmart</span></td><td class="num" data-label="構成比"><span class="tv">2.97%</span></td></tr><tr><td data-label="順位"><span class="tv">10</span></td><td data-label="S&P500（SPY）"><span class="tv">Berkshire Hathaway（B）</span></td><td class="num" data-label="構成比"><span class="tv">1.68%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv">Alphabet（A）</span></td><td class="num" data-label="構成比"><span class="tv">2.87%</span></td></tr><tr><td data-label="順位"><span class="tv">合計</span></td><td data-label="S&P500（SPY）"><span class="tv"></span></td><td class="num" data-label="構成比"><span class="tv">37.56%</span></td><td data-label="Nasdaq-100（QQQ）"><span class="tv"></span></td><td class="num" data-label="構成比"><span class="tv">46.79%</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：State Street Global Advisors「SPDR S&P 500 ETF Trust（SPY）」（2026年11月5日時点、上位10銘柄）。Invesco「Invesco QQQ」（同日、全銘柄の一覧）。ETFの組入比率で、指数の構成比の近似。Alphabetは、2種類の株式を別々に数えている。</p>
+
+    <h3>AI関連の比重</h3>
+    <ul>
+      <li>AI投資の大手（<a href="meta-q3-2026.html">Meta</a>、Microsoft、Amazon、Alphabet）の合計は、<b>QQQが20.4%、SPYが17.1%</b>（当サイトの計算）。</li>
+      <li>「半導体・半導体製造装置」の比重は、QQQが<b>27.1%</b>（NVIDIA 7.58%、Micron 3.54%、AMD 3.15%、Broadcom 2.40%など）。S&P500は、<a href="index-comparison.html">別の記事</a>で17.0%（2026年10月26日時点）。分類は、同じ基準（設計・製造・メモリ・装置・検査・ウエハー）です。<b>日付が違う</b>ため、小さな差は、この比較に含まれます。</li>
+      <li>QQQには、上場して間もないAI・宇宙関連の会社も入っています（SpaceX 2.53%、CoreWeave 0.10%、Nebius 0.14%、Rocket Lab 0.13%）。S&P500の上位10社には、入っていません。</li>
+    </ul>
+
+    <h3>「テクノロジー」の数字は、並べられない</h3>
+    <p>Invescoのページは、QQQの業種別の配分を「Technology 64.4%」（2026年10月31日）と示し、SSGAは、S&P500を「Information Technology 35.54%」（11月5日）と示しています。<b>業種の分類の体系が違う</b>（Invescoは基礎素材・電気通信などの区分、SSGAはGICSの区分）ため、この2つの数字は、並べて比べられません。この記事は、<b>銘柄ごとの構成比</b>で比べています。</p>
+    <ul>
+      <li>QQQは、<b>テクノロジーだけのETFではありません</b>。Walmart 2.97%、Costco 2.26%、Linde 1.15%、PepsiCo 0.93%、Amgen 1.19%なども入っています。</li>
+      <li>一方、QQQは、<b>金融大手を含みません</b>（指数のルール。Invescoの説明）。S&P500では、金融は12.77%（GICS、11月5日）です。</li>
+      <li>QQQの指数は、<b>四半期ごとに調整</b>し、<b>年に1回、構成銘柄を入れ替える</b>（Invescoの説明）。</li>
+    </ul>
+
+    <h2>3. 軸②：成績 ― 期間で、結論が変わる</h2>
+    <p>1999年4月（QQQの設定の翌月）から2026年10月までの、配当込みの月次データで比べます。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>期間（月末から2026年10月末まで）</th><th>QQQ（年率）</th><th>SPY（年率）</th><th>累計（QQQ／SPY）</th></tr></thead><tbody><tr><td data-label="期間（月末から2026年10月末まで）"><span class="tv">1999年4月末〜（QQQの設定の翌月）</span></td><td class="num" data-label="QQQ（年率）"><span class="tv">10.4%</span></td><td class="num" data-label="SPY（年率）"><span class="tv">8.4%</span></td><td class="num" data-label="累計（QQQ／SPY）"><span class="tv">15.3倍／9.2倍</span></td></tr><tr><td data-label="期間（月末から2026年10月末まで）"><span class="tv">2003年1月末〜（ITバブル崩壊の後）</span></td><td class="num" data-label="QQQ（年率）"><span class="tv">15.9%</span></td><td class="num" data-label="SPY（年率）"><span class="tv">11.6%</span></td><td class="num" data-label="累計（QQQ／SPY）"><span class="tv">33.6倍／13.5倍</span></td></tr><tr><td data-label="期間（月末から2026年10月末まで）"><span class="tv">2009年2月末〜（金融危機の底）</span></td><td class="num" data-label="QQQ（年率）"><span class="tv">21.0%</span></td><td class="num" data-label="SPY（年率）"><span class="tv">16.1%</span></td><td class="num" data-label="累計（QQQ／SPY）"><span class="tv">29.1倍／14.1倍</span></td></tr><tr><td data-label="期間（月末から2026年10月末まで）"><span class="tv">2016年10月末〜（直近10年）</span></td><td class="num" data-label="QQQ（年率）"><span class="tv">20.2%</span></td><td class="num" data-label="SPY（年率）"><span class="tv">15.3%</span></td><td class="num" data-label="累計（QQQ／SPY）"><span class="tv">6.3倍／4.2倍</span></td></tr><tr><td data-label="期間（月末から2026年10月末まで）"><span class="tv">2021年10月末〜（直近5年）</span></td><td class="num" data-label="QQQ（年率）"><span class="tv">13.0%</span></td><td class="num" data-label="SPY（年率）"><span class="tv">12.0%</span></td><td class="num" data-label="累計（QQQ／SPY）"><span class="tv">1.8倍／1.8倍</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：株価データ（QQQとSPYの、配当込みの調整後終値、月次）。年率は、月末の値から、当サイトが計算。<b>過去の数字で、将来を約束するものではありません</b>。</p>
+    <ul>
+      <li>全期間（約27年）では、QQQの年率が<b>10.4%、SPYが8.4%</b>。2ポイントの差が、27年の複利で、<b>15.3倍と9.2倍</b>の差になります。</li>
+      <li>ただし、<b>起点によって、差の大きさは変わります</b>。ITバブル崩壊の後（2003年1月末）からは15.9% vs 11.6%と広がり、直近5年（2021年10月末〜）では13.0% vs 12.0%と、ほぼ並びます。</li>
+      <li>暦年（2000〜2025年の26年）では、QQQがSPYを<b>上回ったのは16年</b>。両方がマイナスだった6年（2000、2001、2002、2008、2018、2022年）のうち、<b>QQQのマイナスが大きかったのは5年</b>です（2018年は、QQQ −0.1%、SPY −4.6%）。</li>
+      <li>月次リターンのばらつき（年率換算）は、QQQが<b>23.3%</b>、SPYが<b>15.0%</b>（当サイトの計算）。</li>
+    </ul>
+    <figure class="fig"><div class="fig-title">10年間の年率リターンの差（QQQ−SPY、ポイント、各月末までの10年）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="214.0" x2="380" y2="214.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="217.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-8</text><line x1="8" y1="190.0" x2="380" y2="190.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="193.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-6</text><line x1="8" y1="166.0" x2="380" y2="166.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="169.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-4</text><line x1="8" y1="142.0" x2="380" y2="142.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="145.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >-2</text><line x1="8" y1="94.0" x2="380" y2="94.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="97.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+2</text><line x1="8" y1="70.0" x2="380" y2="70.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="73.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+4</text><line x1="8" y1="46.0" x2="380" y2="46.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="49.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+6</text><line x1="8" y1="22.0" x2="380" y2="22.0" stroke="#e5e7eb" stroke-width="1"/><text x="386.0" y="25.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >+8</text><polygon points="47.3,118.0 47.3,118.0 48.7,104.4 48.7,104.4 50.5,114.7 50.5,114.7 52.3,111.7 52.3,111.7 54.1,117.7 54.1,117.7 55.8,103.3 55.8,103.3 57.6,94.0 57.6,94.0 59.4,71.8 59.4,71.8 61.1,90.4 61.1,90.4 62.9,103.7 62.9,103.7 64.7,102.7 64.7,102.7 66.5,98.1 66.5,98.1 68.2,81.1 68.2,81.1 70.0,83.0 70.0,83.0 71.8,74.7 71.8,74.7 73.5,70.0 73.5,70.0 75.3,61.6 75.3,61.6 77.1,60.2 77.1,60.2 78.9,53.7 78.9,53.7 80.6,53.1 80.6,53.1 82.4,70.6 82.4,70.6 84.2,78.0 84.2,78.0 85.9,70.2 85.9,70.2 87.7,76.7 87.7,76.7 89.5,83.5 89.5,83.5 91.3,84.6 91.3,84.6 93.0,84.3 93.0,84.3 94.8,86.6 94.8,86.6 96.6,87.4 96.6,87.4 98.3,91.4 98.3,91.4 100.1,91.8 100.1,91.8 101.9,87.1 101.9,87.1 103.7,90.6 103.7,90.6 105.4,89.1 105.4,89.1 107.2,86.3 107.2,86.3 109.0,83.9 109.0,83.9 110.7,79.5 110.7,79.5 112.5,83.3 112.5,83.3 114.3,83.1 114.3,83.1 116.1,84.6 116.1,84.6 117.8,85.1 117.8,85.1 119.6,75.5 119.6,75.5 121.4,70.3 121.4,70.3 123.1,72.6 123.1,72.6 124.9,77.0 124.9,77.0 126.7,76.7 126.7,76.7 128.5,79.5 128.5,79.5 130.2,72.7 130.2,72.7 132.0,67.1 132.0,67.1 133.8,68.3 133.8,68.3 135.5,63.4 135.5,63.4 137.3,69.4 137.3,69.4 139.1,65.4 139.1,65.4 140.9,67.3 140.9,67.3 142.6,67.9 142.6,67.9 144.4,68.1 144.4,68.1 146.2,65.3 146.2,65.3 147.9,67.3 147.9,67.3 149.7,65.1 149.7,65.1 151.5,70.2 151.5,70.2 153.3,68.6 153.3,68.6 155.0,68.7 155.0,68.7 156.8,71.7 156.8,71.7 158.6,62.0 158.6,62.0 160.3,65.1 160.3,65.1 162.1,53.9 162.1,53.9 163.9,56.2 163.9,56.2 165.7,56.0 165.7,56.0 167.4,57.9 167.4,57.9 169.2,64.0 169.2,64.0 171.0,60.8 171.0,60.8 172.7,57.2 172.7,57.2 174.5,56.7 174.5,56.7 176.3,53.4 176.3,53.4 178.1,52.8 178.1,52.8 179.8,49.3 179.8,49.3 181.6,55.8 181.6,55.8 183.4,57.0 183.4,57.0 185.1,56.7 185.1,56.7 186.9,61.7 186.9,61.7 188.7,66.0 188.7,66.0 190.5,63.0 190.5,63.0 192.2,65.1 192.2,65.1 194.0,51.6 194.0,51.6 195.8,45.1 195.8,45.1 197.5,51.0 197.5,51.0 199.3,55.4 199.3,55.4 201.1,56.9 201.1,56.9 202.9,53.7 202.9,53.7 204.6,56.7 204.6,56.7 206.4,53.1 206.4,53.1 208.2,43.7 208.2,43.7 209.9,47.3 209.9,47.3 211.7,42.5 211.7,42.5 213.5,44.9 213.5,44.9 215.3,51.4 215.3,51.4 217.0,59.5 217.0,59.5 218.8,59.5 218.8,59.5 220.6,61.9 220.6,61.9 222.3,61.8 222.3,61.8 224.1,64.9 224.1,64.9 225.9,65.3 225.9,65.3 227.7,62.8 227.7,62.8 229.4,67.2 229.4,67.2 231.2,62.4 231.2,62.4 233.0,62.1 233.0,62.1 234.7,65.2 234.7,65.2 236.5,56.5 236.5,56.5 238.3,56.4 238.3,56.4 240.1,51.6 240.1,51.6 241.8,49.1 241.8,49.1 243.6,46.6 243.6,46.6 245.4,38.6 245.4,38.6 247.1,37.2 247.1,37.2 248.9,30.0 248.9,30.0 250.7,39.7 250.7,39.7 252.5,44.4 252.5,44.4 254.2,42.9 254.2,42.9 256.0,38.9 256.0,38.9 257.8,38.0 257.8,38.0 259.5,41.7 259.5,41.7 261.3,44.7 261.3,44.7 263.1,43.6 263.1,43.6 264.9,46.0 264.9,46.0 266.6,39.7 266.6,39.7 268.4,44.1 268.4,44.1 270.2,42.3 270.2,42.3 271.9,47.6 271.9,47.6 273.7,46.0 273.7,46.0 275.5,38.5 275.5,38.5 277.3,40.8 277.3,40.8 279.0,52.1 279.0,52.1 280.8,57.7 280.8,57.7 282.6,59.0 282.6,59.0 284.3,66.4 284.3,66.4 286.1,67.1 286.1,67.1 287.9,68.2 287.9,68.2 289.7,63.3 289.7,63.3 291.4,68.8 291.4,68.8 293.2,69.2 293.2,69.2 295.0,69.1 295.0,69.1 296.7,69.9 296.7,69.9 298.5,73.3 298.5,73.3 300.3,64.3 300.3,64.3 302.1,60.1 302.1,60.1 303.8,51.4 303.8,51.4 305.6,53.8 305.6,53.8 307.4,45.6 307.4,45.6 309.1,43.7 309.1,43.7 310.9,44.6 310.9,44.6 312.7,48.0 312.7,48.0 314.5,51.4 314.5,51.4 316.2,52.1 316.2,52.1 318.0,50.4 318.0,50.4 319.8,49.3 319.8,49.3 321.5,51.0 321.5,51.0 323.3,51.7 323.3,51.7 325.1,49.2 325.1,49.2 326.9,48.6 326.9,48.6 328.6,49.9 328.6,49.9 330.4,47.3 330.4,47.3 332.2,54.8 332.2,54.8 333.9,58.1 333.9,58.1 335.7,58.0 335.7,58.0 337.5,58.6 337.5,58.6 339.3,61.7 339.3,61.7 341.0,54.9 341.0,54.9 342.8,56.5 342.8,56.5 344.6,61.1 344.6,61.1 346.3,63.3 346.3,63.3 348.1,61.5 348.1,61.5 349.9,58.8 349.9,58.8 351.7,56.0 351.7,56.0 353.4,59.0 353.4,59.0 355.2,58.9 355.2,58.9 357.0,56.6 357.0,56.6 358.7,57.4 358.7,57.4 360.5,60.2 360.5,60.2 362.3,61.4 362.3,61.4 364.1,58.4 364.1,58.4 365.8,58.5 365.8,58.5 367.6,59.2 367.6,59.2 369.4,46.7 369.4,46.7 371.1,43.1 371.1,43.1 372.9,38.0 372.9,38.0 374.7,53.0 374.7,53.0 376.5,52.1 376.5,52.1 378.2,50.1 378.2,50.1 380.0,59.1 380.0,118.0" fill="#ec4899" fill-opacity=".30"/><polygon points="8.0,118.0 8.0,137.8 9.8,139.8 9.8,139.8 11.5,141.8 11.5,141.8 13.3,142.6 13.3,142.6 15.1,152.0 15.1,152.0 16.9,153.4 16.9,153.4 18.6,157.5 18.6,157.5 20.4,168.4 20.4,168.4 22.2,182.9 22.2,182.9 23.9,190.0 23.9,190.0 25.7,209.8 25.7,209.8 27.5,200.4 27.5,200.4 29.3,187.9 29.3,187.9 31.0,173.8 31.0,173.8 32.8,185.2 32.8,185.2 34.6,182.2 34.6,182.2 36.3,189.4 36.3,189.4 38.1,177.2 38.1,177.2 39.9,165.8 39.9,165.8 41.7,145.0 41.7,145.0 43.4,138.9 43.4,138.9 45.2,144.6 45.2,144.6 47.0,120.6 47.0,120.6 47.3,118.0 47.3,118.0" fill="#64748b" fill-opacity=".30"/><polyline points="8.0,137.8 9.8,139.8 11.5,141.8 13.3,142.6 15.1,152.0 16.9,153.4 18.6,157.5 20.4,168.4 22.2,182.9 23.9,190.0 25.7,209.8 27.5,200.4 29.3,187.9 31.0,173.8 32.8,185.2 34.6,182.2 36.3,189.4 38.1,177.2 39.9,165.8 41.7,145.0 43.4,138.9 45.2,144.6 47.0,120.6 48.7,104.4 50.5,114.7 52.3,111.7 54.1,117.7 55.8,103.3 57.6,94.0 59.4,71.8 61.1,90.4 62.9,103.7 64.7,102.7 66.5,98.1 68.2,81.1 70.0,83.0 71.8,74.7 73.5,70.0 75.3,61.6 77.1,60.2 78.9,53.7 80.6,53.1 82.4,70.6 84.2,78.0 85.9,70.2 87.7,76.7 89.5,83.5 91.3,84.6 93.0,84.3 94.8,86.6 96.6,87.4 98.3,91.4 100.1,91.8 101.9,87.1 103.7,90.6 105.4,89.1 107.2,86.3 109.0,83.9 110.7,79.5 112.5,83.3 114.3,83.1 116.1,84.6 117.8,85.1 119.6,75.5 121.4,70.3 123.1,72.6 124.9,77.0 126.7,76.7 128.5,79.5 130.2,72.7 132.0,67.1 133.8,68.3 135.5,63.4 137.3,69.4 139.1,65.4 140.9,67.3 142.6,67.9 144.4,68.1 146.2,65.3 147.9,67.3 149.7,65.1 151.5,70.2 153.3,68.6 155.0,68.7 156.8,71.7 158.6,62.0 160.3,65.1 162.1,53.9 163.9,56.2 165.7,56.0 167.4,57.9 169.2,64.0 171.0,60.8 172.7,57.2 174.5,56.7 176.3,53.4 178.1,52.8 179.8,49.3 181.6,55.8 183.4,57.0 185.1,56.7 186.9,61.7 188.7,66.0 190.5,63.0 192.2,65.1 194.0,51.6 195.8,45.1 197.5,51.0 199.3,55.4 201.1,56.9 202.9,53.7 204.6,56.7 206.4,53.1 208.2,43.7 209.9,47.3 211.7,42.5 213.5,44.9 215.3,51.4 217.0,59.5 218.8,59.5 220.6,61.9 222.3,61.8 224.1,64.9 225.9,65.3 227.7,62.8 229.4,67.2 231.2,62.4 233.0,62.1 234.7,65.2 236.5,56.5 238.3,56.4 240.1,51.6 241.8,49.1 243.6,46.6 245.4,38.6 247.1,37.2 248.9,30.0 250.7,39.7 252.5,44.4 254.2,42.9 256.0,38.9 257.8,38.0 259.5,41.7 261.3,44.7 263.1,43.6 264.9,46.0 266.6,39.7 268.4,44.1 270.2,42.3 271.9,47.6 273.7,46.0 275.5,38.5 277.3,40.8 279.0,52.1 280.8,57.7 282.6,59.0 284.3,66.4 286.1,67.1 287.9,68.2 289.7,63.3 291.4,68.8 293.2,69.2 295.0,69.1 296.7,69.9 298.5,73.3 300.3,64.3 302.1,60.1 303.8,51.4 305.6,53.8 307.4,45.6 309.1,43.7 310.9,44.6 312.7,48.0 314.5,51.4 316.2,52.1 318.0,50.4 319.8,49.3 321.5,51.0 323.3,51.7 325.1,49.2 326.9,48.6 328.6,49.9 330.4,47.3 332.2,54.8 333.9,58.1 335.7,58.0 337.5,58.6 339.3,61.7 341.0,54.9 342.8,56.5 344.6,61.1 346.3,63.3 348.1,61.5 349.9,58.8 351.7,56.0 353.4,59.0 355.2,58.9 357.0,56.6 358.7,57.4 360.5,60.2 362.3,61.4 364.1,58.4 365.8,58.5 367.6,59.2 369.4,46.7 371.1,43.1 372.9,38.0 374.7,53.0 376.5,52.1 378.2,50.1 380.0,59.1" fill="none" stroke="#111827" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><line x1="8" y1="118.0" x2="380" y2="118.0" stroke="#111827" stroke-width="1.6"/><text x="386.0" y="121.5" font-size="10.5" text-anchor="start" fill="#111827" font-weight="800" >0</text><text x="12.0" y="14.0" font-size="10" text-anchor="start" fill="#ec4899" font-weight="800" >▲ QQQが有利</text><text x="12.0" y="208.0" font-size="10" text-anchor="start" fill="#64748b" font-weight="800" >▼ SPYが有利</text><circle cx="380.0" cy="59.1" r="3.4" fill="#111827"/><text x="43.4" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2010</text><text x="149.7" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2015</text><text x="256.0" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2020</text><text x="380.0" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >26/10</text></svg><figcaption>出典：株価データ（QQQとSPYの配当込みの調整後終値、月次）。<b>各月末までの10年間</b>の年率リターンの差（QQQ−SPY）。211通り（2009年4月〜2026年10月の各月末）のうち、QQQが上回ったのは<b>188通り（約89%）</b>。下回ったのは、2009年4月〜2011年2月に終わる23通り。</figcaption></figure>
+    <ul>
+      <li><b>10年間の年率で、QQQがSPYを上回ったのは、211通りのうち188通り（約89%）。</b>下回ったのは23通りで、すべて<b>ITバブル崩壊（2000〜2002年）を含む、2009年4月〜2011年2月に終わる10年間</b>です。</li>
+      <li>幅は、QQQが<b>−8.1%〜＋22.9%</b>、SPYが<b>−2.5%〜＋16.5%</b>。<b>QQQは、上にも下にも、幅が広い</b>。直近（2016年10月末〜2026年10月末）は、20.2%と15.3%です。</li>
+    </ul>
+
+    <h2>4. 軸③：下落 ― QQQの下落は、深く、長かった</h2>
+    <figure class="fig"><div class="fig-title">高値からの下落率（月次、配当込み、%）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="40" y1="199.3" x2="368" y2="199.3" stroke="#e5e7eb"/><text x="35.0" y="202.8" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-75%</text><line x1="40" y1="137.5" x2="368" y2="137.5" stroke="#e5e7eb"/><text x="35.0" y="141.0" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-50%</text><line x1="40" y1="75.8" x2="368" y2="75.8" stroke="#e5e7eb"/><text x="35.0" y="79.3" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-25%</text><line x1="40" y1="14.0" x2="368" y2="14.0" stroke="#e5e7eb"/><text x="35.0" y="17.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0%</text><polyline points="40.0,14.0 41.0,21.8 42.0,14.0 43.0,18.4 44.0,14.0 45.0,14.0 46.0,14.0 47.0,14.0 48.0,14.0 48.9,18.6 49.9,14.0 50.9,14.0 51.9,47.3 52.9,73.5 53.9,50.2 54.9,59.3 55.9,31.8 56.9,60.8 57.9,76.7 58.9,119.0 59.9,129.4 60.9,116.0 61.9,154.0 62.9,172.7 63.9,156.9 64.8,160.1 65.8,157.9 66.8,166.8 67.8,178.4 68.8,195.7 69.8,184.6 70.8,171.6 71.8,173.3 72.8,174.2 73.8,184.8 74.8,179.7 75.8,189.5 76.8,193.3 77.8,202.2 78.8,207.2 79.8,208.1 80.8,214.3 81.7,205.7 82.7,198.5 83.7,206.1 84.7,205.9 85.7,204.3 86.7,204.1 87.7,199.1 88.7,193.8 89.7,193.5 90.7,189.3 91.7,185.7 92.7,187.9 93.7,181.7 94.7,181.2 95.7,178.8 96.7,177.4 97.6,178.5 98.6,180.2 99.6,182.6 100.6,178.6 101.6,175.9 102.6,182.3 103.6,184.3 104.6,181.7 105.6,177.8 106.6,172.8 107.6,170.1 108.6,175.8 109.6,176.2 110.6,177.7 111.6,181.3 112.6,174.3 113.6,177.2 114.5,170.8 115.5,172.2 116.5,171.1 117.5,172.4 118.5,167.0 119.5,168.7 120.5,165.0 121.5,167.1 122.5,165.1 123.5,165.3 124.5,172.2 125.5,172.3 126.5,176.1 127.5,172.1 128.5,167.9 129.5,163.5 130.4,160.2 131.4,162.1 132.4,160.0 133.4,161.7 134.4,161.2 135.4,155.6 136.4,152.3 137.4,151.7 138.4,151.9 139.4,148.8 140.4,142.9 141.4,134.6 142.4,143.1 143.4,143.2 144.4,157.2 145.4,162.3 146.4,160.4 147.3,152.4 148.3,145.9 149.3,157.0 150.3,156.3 151.3,154.8 152.3,171.4 153.3,185.2 154.3,193.9 155.3,192.4 156.3,194.0 157.3,197.5 158.3,190.9 159.3,181.8 160.3,179.2 161.3,176.8 162.3,169.7 163.2,168.4 164.2,163.1 165.2,166.1 166.2,160.1 167.2,154.8 168.2,161.7 169.2,157.1 170.2,149.1 171.2,146.6 172.2,155.1 173.2,161.4 174.2,154.2 175.2,159.7 176.2,146.3 177.2,139.0 178.2,139.2 179.2,133.5 180.1,129.8 181.1,125.7 182.1,126.3 183.1,122.4 184.1,124.1 185.1,126.9 186.1,124.7 187.1,131.6 188.1,137.4 189.1,124.5 190.1,128.2 191.1,129.0 192.1,117.9 193.1,108.7 194.1,101.0 195.1,102.9 196.0,114.0 197.0,108.7 198.0,107.2 199.0,99.2 200.0,97.8 201.0,106.4 202.0,104.4 203.0,105.1 204.0,100.9 205.0,100.4 206.0,95.5 207.0,91.3 208.0,85.3 209.0,89.5 210.0,78.6 211.0,79.4 212.0,70.6 212.9,61.1 213.9,54.0 214.9,48.0 215.9,52.1 216.9,41.3 217.9,47.3 218.9,48.0 219.9,38.4 220.9,31.5 221.9,28.8 222.9,17.1 223.9,19.0 224.9,14.0 225.9,14.0 226.9,19.5 227.9,24.6 228.8,14.0 229.8,19.8 230.8,15.2 231.8,14.0 232.8,20.1 233.8,14.0 234.8,30.9 235.8,35.9 236.8,14.0 237.8,14.0 238.8,17.9 239.8,34.7 240.8,38.3 241.8,23.0 242.8,30.6 243.8,20.5 244.8,26.0 245.7,14.0 246.7,14.0 247.7,14.0 248.7,17.6 249.7,16.5 250.7,14.0 251.7,14.0 252.7,14.0 253.7,14.0 254.7,14.0 255.7,14.0 256.7,19.7 257.7,14.0 258.7,14.0 259.7,14.7 260.7,14.0 261.6,14.0 262.6,14.0 263.6,14.0 264.6,17.2 265.6,27.1 266.6,26.0 267.6,14.0 268.6,14.0 269.6,14.0 270.6,14.0 271.6,14.7 272.6,35.9 273.6,36.5 274.6,55.9 275.6,37.4 276.6,30.7 277.6,21.7 278.5,14.0 279.5,34.3 280.5,17.1 281.5,14.0 282.5,18.7 283.5,16.5 284.5,14.0 285.5,14.0 286.5,14.0 287.5,14.0 288.5,29.0 289.5,45.9 290.5,14.0 291.5,14.0 292.5,14.0 293.5,14.0 294.4,14.0 295.4,28.3 296.4,35.4 297.4,14.0 298.4,14.0 299.4,14.0 300.4,14.3 301.4,14.0 302.4,14.0 303.4,17.0 304.4,14.0 305.4,14.0 306.4,14.0 307.4,28.0 308.4,14.0 309.4,14.0 310.4,14.0 311.3,35.6 312.3,45.7 313.3,35.6 314.3,66.3 315.3,69.4 316.3,86.5 317.3,64.5 318.3,74.6 319.3,94.3 320.3,87.6 321.3,78.0 322.3,94.5 323.3,76.8 324.3,77.4 325.3,60.0 326.3,59.0 327.2,43.0 328.2,29.3 329.2,20.3 330.2,23.9 331.2,36.0 332.2,40.6 333.2,16.8 334.2,14.0 335.2,14.0 336.2,14.0 337.2,14.0 338.2,24.8 339.2,14.0 340.2,14.0 341.2,18.1 342.2,15.5 343.2,14.0 344.1,16.1 345.1,14.0 346.1,14.0 347.1,14.0 348.1,20.7 349.1,38.9 350.1,35.8 351.1,15.1 352.1,14.0 353.1,14.0 354.1,14.0 355.1,14.0 356.1,14.0 357.1,17.9 358.1,19.5 359.1,16.5 360.0,22.2 361.0,33.8 362.0,14.0 363.0,14.0 364.0,14.4 365.0,30.6 366.0,20.9 367.0,14.0 368.0,30.5" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="40.0,14.0 41.0,19.6 42.0,14.0 43.0,21.7 44.0,22.9 45.0,28.2 46.0,14.0 47.0,14.0 48.0,14.0 48.9,26.3 49.9,29.9 50.9,14.0 51.9,22.7 52.9,26.4 53.9,21.8 54.9,25.6 55.9,14.0 56.9,27.6 57.9,28.6 58.9,46.0 59.9,47.1 60.9,37.6 61.9,58.9 62.9,70.3 63.9,53.9 64.8,55.1 65.8,60.0 66.8,62.1 67.8,73.9 68.8,89.2 69.8,86.9 70.8,73.3 71.8,72.3 72.8,74.1 73.8,77.5 74.8,71.4 75.8,82.4 76.8,83.5 77.8,96.6 78.8,109.5 79.8,108.5 80.8,124.5 81.7,113.3 82.7,104.1 83.7,113.0 84.7,116.7 85.7,118.6 86.7,118.3 87.7,106.2 88.7,97.7 89.7,96.0 90.7,93.0 91.7,89.6 92.7,91.4 93.7,82.3 94.7,80.4 95.7,71.3 96.7,67.6 97.6,64.9 98.6,67.5 99.6,71.2 100.6,67.9 101.6,64.4 102.6,70.7 103.6,70.2 104.6,68.3 105.6,65.8 106.6,57.1 107.6,51.0 108.6,55.7 109.6,51.4 110.6,55.3 111.6,59.1 112.6,52.6 113.6,52.3 114.5,44.3 115.5,46.3 116.5,44.6 117.5,49.7 118.5,40.4 119.5,40.9 120.5,35.6 121.5,34.3 122.5,30.5 123.5,27.6 124.5,34.7 125.5,34.1 126.5,33.1 127.5,28.1 128.5,21.8 129.5,14.2 130.4,14.0 131.4,14.0 132.4,14.0 133.4,18.8 134.4,16.0 135.4,14.0 136.4,14.0 137.4,17.6 138.4,25.2 139.4,22.2 140.4,14.0 141.4,14.0 142.4,23.6 143.4,26.2 144.4,40.4 145.4,46.1 146.4,48.1 147.3,37.9 148.3,34.5 149.3,53.5 150.3,55.3 151.3,52.2 152.3,71.8 153.3,103.1 154.3,114.1 155.3,112.6 156.3,124.8 157.3,139.5 158.3,129.3 159.3,116.3 160.3,107.8 161.3,107.9 162.3,96.5 163.2,90.4 164.2,84.3 165.2,87.7 166.2,77.0 167.2,73.5 168.2,80.3 169.2,74.7 170.2,63.4 171.2,60.3 172.2,76.3 173.2,85.8 174.2,73.9 175.2,82.3 176.2,66.3 177.2,58.8 178.2,58.8 179.2,45.3 180.1,40.3 181.1,32.6 182.1,32.6 183.1,26.0 184.1,28.6 185.1,32.5 186.1,37.1 187.1,49.4 188.1,64.1 189.1,42.6 190.1,43.5 191.1,41.2 192.1,31.0 193.1,21.0 194.1,14.0 195.1,15.6 196.0,30.4 197.0,21.0 198.0,18.2 199.0,14.0 200.0,14.0 201.0,18.5 202.0,17.1 203.0,14.9 204.0,14.0 205.0,14.0 206.0,14.0 207.0,14.0 208.0,14.0 209.0,17.3 210.0,14.0 211.0,21.4 212.0,14.0 212.9,14.0 213.9,14.0 214.9,14.0 215.9,22.7 216.9,14.0 217.9,14.0 218.9,14.0 219.9,14.0 220.9,14.0 221.9,17.3 222.9,14.0 223.9,17.4 224.9,14.0 225.9,14.0 226.9,14.6 227.9,21.9 228.8,14.0 229.8,17.9 230.8,15.5 231.8,14.0 232.8,19.0 233.8,14.0 234.8,29.1 235.8,35.0 236.8,15.7 237.8,14.9 238.8,19.1 239.8,31.2 240.8,31.3 241.8,15.9 242.8,14.9 243.8,14.0 244.8,14.0 245.7,14.0 246.7,14.0 247.7,14.0 248.7,18.3 249.7,14.0 250.7,14.0 251.7,14.0 252.7,14.0 253.7,14.0 254.7,14.0 255.7,14.0 256.7,14.0 257.7,14.0 258.7,14.0 259.7,14.0 260.7,14.0 261.6,14.0 262.6,14.0 263.6,14.0 264.6,23.0 265.6,29.5 266.6,28.3 267.6,22.7 268.6,21.3 269.6,14.0 270.6,14.0 271.6,14.0 272.6,31.1 273.6,26.8 274.6,47.4 275.6,30.3 276.6,22.8 277.6,18.5 278.5,14.0 279.5,29.8 280.5,14.0 281.5,14.0 282.5,18.1 283.5,14.0 284.5,14.0 285.5,14.0 286.5,14.0 287.5,14.1 288.5,33.7 289.5,62.0 290.5,36.8 291.5,26.1 292.5,21.9 293.5,14.0 294.4,14.0 295.4,23.3 296.4,29.2 297.4,14.0 298.4,14.0 299.4,16.5 300.4,14.0 301.4,14.0 302.4,14.0 303.4,14.0 304.4,14.0 305.4,14.0 306.4,14.0 307.4,25.5 308.4,14.0 309.4,16.0 310.4,14.0 311.3,27.0 312.3,33.9 313.3,25.4 314.3,46.1 315.3,45.6 316.3,63.4 317.3,45.2 318.3,54.0 319.3,73.1 320.3,57.8 321.3,46.5 322.3,58.9 323.3,46.2 324.3,51.6 325.3,43.8 326.3,40.4 327.2,39.3 328.2,25.0 329.2,17.2 330.2,21.2 331.2,32.6 332.2,37.5 333.2,17.1 334.2,14.0 335.2,14.0 336.2,14.0 337.2,14.0 338.2,24.0 339.2,14.0 340.2,14.0 341.2,14.0 342.2,14.0 343.2,14.0 344.1,16.2 345.1,14.0 346.1,19.9 347.1,14.0 348.1,17.1 349.1,30.7 350.1,32.7 351.1,18.4 352.1,14.0 353.1,14.0 354.1,14.0 355.1,14.0 356.1,14.0 357.1,14.0 358.1,14.0 359.1,14.0 360.0,16.1 361.0,28.2 362.0,14.0 363.0,14.0 364.0,16.5 365.0,16.5 366.0,14.0 367.0,14.8 368.0,17.0" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="368" cy="17.0" r="3" fill="#64748b"/><text x="375.0" y="20.5" font-size="9.5" text-anchor="start" fill="#64748b" font-weight="700" >SPY</text><text x="375.0" y="32.0" font-size="9.5" text-anchor="start" fill="#64748b" font-weight="700" >-1%</text><circle cx="368" cy="30.5" r="3" fill="#ec4899"/><text x="375.0" y="44.5" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >QQQ</text><text x="375.0" y="56.0" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >-7%</text><text x="59.9" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2000</text><text x="155.3" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2008</text><text x="226.9" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2014</text><text x="322.3" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2022</text><text x="368.0" y="242.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >26/10</text></svg><figcaption>出典：株価データ（QQQとSPYの、配当込みの調整後終値、月次。1999年4月〜2026年10月）。各月の値が、それまでの最高値から何%下にあるか。<b>QQQは、2000年3月の高値から2002年9月までに−81.1%。配当込みで高値を取り戻したのは2014年10月（175か月後）</b>。SPYの最大の下落は、2007年10月からの−50.8%（53か月で回復）。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>局面（月次）</th><th>QQQ</th><th>SPY</th></tr></thead><tbody><tr><td data-label="局面（月次）"><span class="tv">ITバブル崩壊（2000年）</span></td><td data-label="QQQ"><span class="tv">−81.1%（2000年3月→2002年9月）。<b>高値の回復は2014年10月</b>（175か月後）</span></td><td data-label="SPY"><span class="tv">−44.7%（2000年8月→2002年9月）。回復は2006年11月（75か月後）</span></td></tr><tr><td data-label="局面（月次）"><span class="tv">金融危機（2007〜09年）</span></td><td data-label="QQQ"><span class="tv">QQQは、上の長い下落の途中</span></td><td data-label="SPY"><span class="tv">−50.8%（2007年10月→2009年2月）。回復は2012年3月（53か月後）</span></td></tr><tr><td data-label="局面（月次）"><span class="tv">2022年の下落</span></td><td data-label="QQQ"><span class="tv">−32.6%（2021年12月→2022年12月）。回復は2023年12月（24か月後）</span></td><td data-label="SPY"><span class="tv">−23.9%（2021年12月→2022年9月）。回復は2023年12月（24か月後）</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：株価データ（月次、配当込みの調整後終値）。月次のため、月の途中の下落は、含まれない。回復は、配当込みで、それまでの最高値を月末の値が上回った月。</p>
+    <ul>
+      <li>QQQは、<b>2000年3月から2002年9月までに−81.1%</b>。配当込みで高値を取り戻したのは、<b>2014年10月</b>。<b>約14年7か月</b>、高値を下回り続けました。</li>
+      <li>SPYも、−44.7%（2000年〜2002年）、−50.8%（2007年〜2009年）と、深い下落が2回あり、回復は75か月、53か月かかっています。</li>
+      <li>2022年は、QQQが−32.6%、SPYが−23.9%と、<b>下落の深さは違いましたが、回復までの期間は、どちらも24か月</b>でした。</li>
+      <li>2026年10月末時点のQQQは、それまでの最高値より約6.7%下、SPYは約1.2%下です（月次、当サイトの計算）。</li>
+    </ul>
+
+    <h2>5. 3つの軸を、まとめると</h2>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>軸</th><th>QQQ（Nasdaq-100）</th><th>SPY（S&P500）</th></tr></thead><tbody><tr><td data-label="軸"><span class="tv">① 中身</span></td><td data-label="QQQ（Nasdaq-100）"><span class="tv">約100社。上位10社で46.8%。半導体・製造装置27.1%。金融を含まない</span></td><td data-label="SPY（S&P500）"><span class="tv">約500社。上位10社で37.6%。半導体・製造装置17.0%（10月26日）。金融12.8%</span></td></tr><tr><td data-label="軸"><span class="tv">② 成績（1999年4月〜）</span></td><td data-label="QQQ（Nasdaq-100）"><span class="tv">年率10.4%。10年間でSPYを上回った割合は約89%</span></td><td data-label="SPY（S&P500）"><span class="tv">年率8.4%。起点によって、差は縮まる</span></td></tr><tr><td data-label="軸"><span class="tv">③ 下落</span></td><td data-label="QQQ（Nasdaq-100）"><span class="tv">最大−81.1%。高値の回復に約14年7か月</span></td><td data-label="SPY（S&P500）"><span class="tv">最大−50.8%。回復に53か月</span></td></tr></tbody></table></div>
+
+    <h2>6. 確認する項目</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認する項目</th><th>今回の数字</th><th>なぜ重要か</th><th>変わった場合</th><th>確認する時期</th></tr></thead><tbody><tr><td data-label="確認する項目"><span class="tv">① 上位10社の合計</span></td><td data-label="今回の数字"><span class="tv">QQQ 46.8%、SPY 37.6%</span></td><td data-label="なぜ重要か"><span class="tv">集中が高いほど、少数の会社の動きが、全体を左右する</span></td><td data-label="変わった場合"><span class="tv">合計がさらに上がる、または下がる</span></td><td data-label="確認する時期"><span class="tv">運用会社の月次の構成比</span></td></tr><tr><td data-label="確認する項目"><span class="tv">② 半導体・製造装置の比重</span></td><td data-label="今回の数字"><span class="tv">QQQ 27.1%、S&P500 17.0%</span></td><td data-label="なぜ重要か"><span class="tv">AI投資の波に、どれだけ連動するか</span></td><td data-label="変わった場合"><span class="tv">比重の低下（株価の下落や入れ替え）</span></td><td data-label="確認する時期"><span class="tv">四半期ごとの構成比</span></td></tr><tr><td data-label="確認する項目"><span class="tv">③ 下落の深さ</span></td><td data-label="今回の数字"><span class="tv">過去の最大：QQQ −81%、SPY −51%</span></td><td data-label="なぜ重要か"><span class="tv">自分が耐えられる下落の幅と、照らす</span></td><td data-label="変わった場合"><span class="tv">新しい大きな下落</span></td><td data-label="確認する時期"><span class="tv">毎月の評価額</span></td></tr><tr><td data-label="確認する項目"><span class="tv">④ 新しい銘柄の組み入れ</span></td><td data-label="今回の数字"><span class="tv">QQQ：SpaceX 2.53%、CoreWeave 0.10%など</span></td><td data-label="なぜ重要か"><span class="tv">上場して間もない会社が、すぐに入る仕組み</span></td><td data-label="変わった場合"><span class="tv">入れ替え、比重の変化</span></td><td data-label="確認する時期"><span class="tv">年次の再構成、四半期の調整</span></td></tr><tr><td data-label="確認する項目"><span class="tv">⑤ 金融の有無</span></td><td data-label="今回の数字"><span class="tv">QQQ：金融大手は一覧に見当たらない。S&P500の金融は12.8%</span></td><td data-label="なぜ重要か"><span class="tv">「米国株」でも、含まれない業種がある</span></td><td data-label="変わった場合"><span class="tv">指数のルールの変更</span></td><td data-label="確認する時期"><span class="tv">指数の方法論</span></td></tr></tbody></table></div>
+    <p class="art-fig">数字は、2026年11月5日時点の組入比率と、2026年10月末までの月次データ。</p>
+
+    <h2>7. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「どちらが上か」ではなく、「何に偏っているか」を見る。</b>QQQは、AIや半導体の比重が高く、金融を含まない。S&P500は、より広い業種に散らばるが、それでも上位10社で約4割。</li>
+      <li><b>成績の差は、起点で変わる。</b>全期間の年率差は2ポイントだが、2021年10月末からの5年では約1ポイント。ITバブル崩壊を含む10年間は、QQQが下回った。</li>
+      <li><b>リターンの幅は、リスクの幅でもある。</b>QQQの10年間の年率は、−8.1%〜＋22.9%。SPYは−2.5%〜＋16.5%。幅が広い分、期間によって、結果が大きく違う。</li>
+      <li><b>深い下落が、あり得る前提で選ぶ。</b>QQQは、−81%の下落と、14年7か月の回復を経験している。同じことが起きるとは限らないが、<b>自分が、その間も続けられるか</b>を、先に考える。</li>
+      <li><b>両方持つなら、重なりに注意する。</b>上位4社（Apple、NVIDIA、Microsoft、Amazon）は、どちらにも入っている。2つを足しても、分散は思ったほど広がらない。</li>
+      <li><b>円で買うなら、為替も加わる。</b>この記事は、ドル建てで比べている。円換算の影響は、<a href="sp500.html">S&P500の記事</a>と同じ考え方（ドル円の変動が、成績に加わる）。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の商品の売買を勧めるものではありません。過去の成績は、将来を約束するものではありません。2つの指数の将来の優劣や、下落の有無を予想するものでもありません。</div>
+
+    <div class="art-fine">
+      <p>※ 構成比は、ETF（SPY、QQQ）の組入比率で、指数の構成比の近似です。SPYは上位10銘柄のみの公表を使い、QQQは全銘柄の一覧を使っています。日付は、いずれも2026年11月5日です（S&P500の半導体比重は、別の記事の10月26日時点）。</p>
+      <p>※ 「半導体・半導体製造装置」の分類は、当サイトの基準（設計・製造・メモリ・装置・検査・ウエハー）です。QQQでは、NVIDIA、Micron、AMD、Broadcom、Intel、Texas Instruments、Applied Materials、Lam Research、Analog Devices、KLA、QUALCOMM、ASML、Sandisk、Marvell、Monolithic Power、NXP、Microchip、Teradyne、ARM、Astera Labsを含めました。Seagate、Western Digital、Lumentumなどは含めていません。</p>
+      <p>※ 株価データは、配当込みの調整後終値の月次です。月の途中の下落や、日次の値動きは含みません。QQQは、1999年3月10日の設定です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>Invesco「Invesco QQQ ETF」ページ（構成銘柄、概要、2026年11月5日時点）：<a href="https://www.invesco.com/qqq-etf/en/about.html" target="_blank" rel="noopener">https://www.invesco.com/qqq-etf/en/about.html</a></li><li>State Street Global Advisors「SPDR S&P 500 ETF Trust（SPY）」（上位銘柄、業種配分、2026年11月5日時点）：<a href="https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy" target="_blank" rel="noopener">https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy</a></li><li>Nasdaq「NASDAQ-100 Index（NDX）」構成銘柄：<a href="https://indexes.nasdaqomx.com/Index/Weighting/NDX" target="_blank" rel="noopener">https://indexes.nasdaqomx.com/Index/Weighting/NDX</a></li><li>株価データ（QQQ・SPYの配当込みの調整後終値、月次）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月9日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="world-vs-us.html">全世界株と米国株の比較｜長期投資家の目線</a><a href="new-nisa.html">新NISAに入れるのは、高配当株か、成長株か、インデックスか｜仕組みから考える</a><a href="dca-simulation.html">積立投資のシミュレーション｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
