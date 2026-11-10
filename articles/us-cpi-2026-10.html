@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="米CPI（2026年10月分）の結果と、前年比が出ない月の読み方。総合は前月比+0.4%、コアは3か月続けて+0.3%。年率換算と、賃金・金利とのつながりも整理する。">
+<title>米CPI（2026年10月分）｜長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/us-cpi-2026-10.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="米CPI（2026年10月分）｜長期投資家の目線">
+<meta property="og:description" content="米CPI（2026年10月分）の結果と、前年比が出ない月の読み方。総合は前月比+0.4%、コアは3か月続けて+0.3%。年率換算と、賃金・金利とのつながりも整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/us-cpi-2026-10.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/us-cpi-2026-10.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/us-cpi-2026-10.jpg">
+<meta name="twitter:title" content="米CPI（2026年10月分）｜長期投資家の目線">
+<meta name="twitter:description" content="米CPI（2026年10月分）の結果と、前年比が出ない月の読み方。総合は前月比+0.4%、コアは3か月続けて+0.3%。年率換算と、賃金・金利とのつながりも整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "米CPI（2026年10月分）｜長期投資家の目線", "description": "米CPI（2026年10月分）の結果と、前年比が出ない月の読み方。総合は前月比+0.4%、コアは3か月続けて+0.3%。年率換算と、賃金・金利とのつながりも整理する。", "inLanguage": "ja", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/us-cpi-2026-10.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "指標解説", "keywords": ["米国株", "金利・物価"], "image": ["https://fire-app.jp/articles/og/us-cpi-2026-10.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "米CPI（2026年10月分）｜長期投資家の目線", "item": "https://fire-app.jp/articles/us-cpi-2026-10.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 指標解説</div>
+    <h1>米CPI（2026年10月分）<br>｜長期投資家の目線</h1>
+    <p class="subtitle">前年比が出ない月は、どう読むか</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>総合+0.4%、コア+0.3%</h3><p class="pt-d">2026年10月の米CPIは、総合が前月比<b>+0.4%</b>（9月は+0.6%）、コアが<b>+0.3%</b>。ただし<b>前年比は、公表されていません</b>。2025年10月は、政府機関の閉鎖（歳出の失効）で調査がなく、比べる数字がないためです（BLS）。</p></div><div class="pt"><h3>前年比は公表されていない</h3><p class="pt-d">この記事の軸は、<b>「前年比が出ない月は、どう読むか」</b>。前月比の並び、3か月・6か月の年率換算、9月の前年比（+3.7%）を組み合わせる。<b>総合はエネルギーで大きく振れるが、コアは3か月続けて+0.3%</b>（年率換算で+3.7%）。</p></div><div class="pt"><h3>コアは3か月続けて+0.3%</h3><p class="pt-d">9月の前年比（コア+2.6%）より、<b>直近3か月の勢いのほうが強い</b>。賃金（+3.1%）との比較、FRBの判断材料としての見方も整理する。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月11日</span><span><b>情報の時点</b> BLS（2026年11月10日公表）</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=金利・物価">#金利・物価</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. この記事の位置づけ</h2>
+    <p>消費者物価指数（CPI）は、米労働省の労働統計局（BLS）が毎月公表する、家計が買うモノやサービスの価格の指数です。10月分は<b>2026年11月10日（日本時間の夜）</b>に公表されました。このサイトでは、<a href="us-jobs-report-2026-10.html">雇用統計（10月分）の記事</a>で、賃金と物価を並べています。今回は、物価そのものを取り上げます。</p>
+    <ul>
+      <li>数字は、BLSの公表資料（表A）と、BLSの公開API（時系列データ）で確認しました。API由来の年率換算などは、当サイトの計算値です。</li>
+      <li>FRBは、<b>2026年9月に利上げ</b>し、10月28日のFOMCでは<b>据え置き</b>ました（<a href="fomc-2026-10.html">FOMCの記事</a>）。物価は、その判断を左右する指標の一つです。</li>
+    </ul>
+
+    <h2>2. 2026年10月分の結果</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">総合CPI（前月比）</div><div class="tile-v">＋0.4<small>%</small></div><div class="tile-n">前月は＋0.6%。<b>前年比は、公表されていない</b></div></div><div class="tile key"><div class="tile-l">コアCPI（前月比）</div><div class="tile-v">＋0.3<small>%</small></div><div class="tile-n">8月、9月に続き、<b>3か月続けて＋0.3%</b></div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">エネルギー（前月比）</div><div class="tile-v">＋0.7<small>%</small></div><div class="tile-n">9月は＋5.2%。ガソリンは＋1.0%（9月は＋9.1%）</div></div><div class="tile"><div class="tile-l">食品（前月比）</div><div class="tile-v">＋0.5<small>%</small></div><div class="tile-n">9月は0.0%。家庭の食品＋0.4%、外食＋0.5%</div></div><div class="tile"><div class="tile-l">住居（前月比）</div><div class="tile-v">＋0.3<small>%</small></div><div class="tile-n">家賃＋0.2%、持ち家の帰属家賃＋0.3%。総合の上昇の3割超</div></div></div>
+    <p class="art-fig">出典：米労働省労働統計局（BLS）「Consumer Price Index – October 2026」（2026年11月10日公表）。季節調整済みの前月比。</p>
+
+    <h2>3. 前年比が出ない月は、どう読むか</h2>
+    <p>BLSは、公表資料に次のように書いています。「2025年10月は、歳出の失効のため調査をしておらず、ほとんどの系列で2025年10月の指数を公表できない。そのため、2026年10月の12か月変化は、2025年10月のデータがない指数では公表できない」。見出しの「前年比○%」が、今回は、ありません。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>見方</th><th>10月の数字</th><th>何がわかるか</th></tr></thead><tbody><tr><td data-label="見方"><span class="tv">① 前月比の並び（BLS）</span></td><td data-label="10月の数字"><span class="tv">総合：4月から順に＋0.6、＋0.5、−0.4、＋0.1、＋0.4、＋0.6、＋0.4（%）</span></td><td data-label="何がわかるか"><span class="tv">エネルギーで振れる総合と、安定したコア</span></td></tr><tr><td data-label="見方"><span class="tv">② 3か月の年率換算（当サイト計算）</span></td><td data-label="10月の数字"><span class="tv">総合＋5.7%、コア＋3.7%</span></td><td data-label="何がわかるか"><span class="tv">直近の勢い。前月比を年に直した数字</span></td></tr><tr><td data-label="見方"><span class="tv">③ 6か月の年率換算（当サイト計算）</span></td><td data-label="10月の数字"><span class="tv">総合＋3.1%、コア＋2.7%</span></td><td data-label="何がわかるか"><span class="tv">エネルギーの振れが、ならされる</span></td></tr><tr><td data-label="見方"><span class="tv">④ 9月の前年比（BLSの公表値）</span></td><td data-label="10月の数字"><span class="tv">総合＋3.7%、コア＋2.6%</span></td><td data-label="何がわかるか"><span class="tv">10月が出ない間の、いちばん新しい12か月の数字</span></td></tr><tr><td data-label="見方"><span class="tv">⑤ 参考：2025年11月比（11か月）</span></td><td data-label="10月の数字"><span class="tv">総合＋3.8%、コア＋2.7%（当サイト計算）</span></td><td data-label="何がわかるか"><span class="tv">BLSの12か月変化とは別物。参考値</span></td></tr></tbody></table></div>
+    <ul>
+      <li>前年比は、<b>12か月分の動きを1つにまとめた数字</b>です。これが使えないときは、<b>期間の違う数字を並べて、同じ方向かを確認</b>します。</li>
+      <li>今回は、どの期間で見ても<b>コアは+2.7〜3.7%台</b>で、9月の前年比（+2.6%）より、直近が強い形です。</li>
+      <li>⑤の「2025年11月比」は、11か月の変化です。<b>12か月の前年比と並べて比べてはいけません</b>。あくまで参考です。</li>
+    </ul>
+
+    <h2>4. 総合は振れ、コアは0.3%が続く</h2>
+    <figure class="fig"><div class="fig-title">消費者物価（CPI）の前月比（%、総合とコア、2026年4〜10月）</div><svg viewBox="0 0 420 215" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="176.5" x2="350" y2="176.5" stroke="#e5e7eb"/><text x="37.0" y="180.0" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-0.5%</text><line x1="42" y1="114.0" x2="350" y2="114.0" stroke="#e5e7eb"/><text x="37.0" y="117.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0.0%</text><line x1="42" y1="51.5" x2="350" y2="51.5" stroke="#e5e7eb"/><text x="37.0" y="55.0" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0.5%</text><polyline points="42.0,39.0 93.3,51.5 144.7,164.0 196.0,101.5 247.3,64.0 298.7,39.0 350.0,64.0" fill="none" stroke="#ec4899" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,64.0 93.3,89.0 144.7,114.0 196.0,89.0 247.3,76.5 298.7,76.5 350.0,76.5" fill="none" stroke="#111827" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/><circle cx="350" cy="64.0" r="3" fill="#ec4899"/><text x="357.0" y="67.5" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >総合</text><text x="357.0" y="79.0" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >+0.4%</text><circle cx="350" cy="76.5" r="3" fill="#111827"/><text x="357.0" y="91.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >コア</text><text x="357.0" y="103.0" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >+0.3%</text><text x="42.0" y="207.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >4月</text><text x="196.0" y="207.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >7月</text><text x="350.0" y="207.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >10月</text></svg><figcaption>出典：BLS（2026年11月10日公表の表A）。コアは、食品とエネルギーを除いた指数です。<b>総合は、6月の−0.4%から9月の+0.6%まで大きく振れましたが、コアは、8〜10月が3か月続けて+0.3%</b>です。</figcaption></figure>
+    <figure class="fig"><div class="fig-title">エネルギーの前月比（%、季節調整済み、2026年4〜10月）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="101.7" x2="410" y2="101.7" stroke="#e5e7eb" stroke-width="1.2"/><rect x="22.9" y="43.4" width="31.4" height="58.2" rx="3" fill="#ec4899"/><text x="38.6" y="37.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+3.8</text><text x="38.6" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >4月</text><rect x="80.0" y="41.9" width="31.4" height="59.8" rx="3" fill="#ec4899"/><text x="95.7" y="35.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+3.9</text><text x="95.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >5月</text><rect x="137.1" y="101.7" width="31.4" height="87.3" rx="3" fill="#64748b"/><text x="152.9" y="202.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-5.7</text><text x="152.9" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >6月</text><rect x="194.3" y="101.7" width="31.4" height="23.0" rx="3" fill="#64748b"/><text x="210.0" y="137.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-1.5</text><text x="210.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >7月</text><rect x="251.4" y="69.5" width="31.4" height="32.2" rx="3" fill="#ec4899"/><text x="267.1" y="63.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+2.1</text><text x="267.1" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >8月</text><rect x="308.6" y="22.0" width="31.4" height="79.7" rx="3" fill="#ec4899"/><text x="324.3" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+5.2</text><text x="324.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >9月</text><rect x="365.7" y="90.9" width="31.4" height="10.7" rx="3" fill="#f9a8d4"/><text x="381.4" y="84.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.7</text><text x="381.4" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10月</text></svg><figcaption>出典：BLS（表A）。<b>エネルギーは、4〜5月に+3.8%、+3.9%、6〜7月に−5.7%、−1.5%、9月に+5.2%</b>。10月は+0.7%と落ち着きました。ガソリンは、9月に+9.1%、10月に+1.0%（季節調整前では−0.7%）。</figcaption></figure>
+    <ul>
+      <li>総合とコアの差は、<b>ほとんどがエネルギー</b>です。エネルギーは、4〜5月に約4%上がり、6〜7月に下がり、9月に+5.2%と跳ねました。</li>
+      <li>10月のエネルギーは+0.7%。ガソリンは、<b>季節調整後に+1.0%、季節調整前は−0.7%</b>でした。どちらの数字かで、印象が変わります。</li>
+      <li>コアは、4月の+0.4%から5〜7月は+0.0〜0.2%に鈍り、<b>8〜10月は+0.3%で止まっています</b>。</li>
+    </ul>
+
+    <h2>5. 10月の中身</h2>
+    <figure class="fig"><div class="fig-title">10月の前月比：主な項目（%、季節調整済み）</div><svg viewBox="0 0 420 245" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="94.3" x2="410" y2="94.3" stroke="#e5e7eb" stroke-width="1.2"/><rect x="21.2" y="22.0" width="27.5" height="72.3" rx="3" fill="#ec4899"/><text x="35.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+1.0</text><text x="35.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >ガソリン</text><rect x="71.2" y="29.2" width="27.5" height="65.0" rx="3" fill="#ec4899"/><text x="85.0" y="23.2" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.9</text><text x="85.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >電気</text><rect x="121.2" y="36.5" width="27.5" height="57.8" rx="3" fill="#ec4899"/><text x="135.0" y="30.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.8</text><text x="135.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >交通</text><text x="135.0" y="247.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >サービス</text><rect x="171.2" y="58.1" width="27.5" height="36.1" rx="3" fill="#f9a8d4"/><text x="185.0" y="52.1" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.5</text><text x="185.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >食品</text><rect x="221.2" y="72.6" width="27.5" height="21.7" rx="3" fill="#f9a8d4"/><text x="235.0" y="66.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.3</text><text x="235.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >住居</text><rect x="271.2" y="72.6" width="27.5" height="21.7" rx="3" fill="#f9a8d4"/><text x="285.0" y="66.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.3</text><text x="285.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >医療</text><text x="285.0" y="247.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >サービス</text><rect x="321.2" y="79.8" width="27.5" height="14.5" rx="3" fill="#cbd5e1"/><text x="335.0" y="73.8" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >+0.2</text><text x="335.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >新車</text><rect x="371.2" y="94.3" width="27.5" height="86.7" rx="3" fill="#64748b"/><text x="385.0" y="194.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >-1.2</text><text x="385.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >中古車</text></svg><figcaption>出典：BLS（表A、本文）。<b>10月は、ガソリン、電気、交通サービスなどが上がる一方、中古車（−1.2%）が下がりました</b>。住居（0.3%）は、総合の上昇の3割超を占めます（BLS）。</figcaption></figure>
+    <ul>
+      <li>上がったのは、ガソリン（+1.0%）、電気（+0.9%）、運輸サービス（+0.8%）、食品（+0.5%）など。外食は+0.5%、フルサービスの食事は+0.7%でした。</li>
+      <li>下がったのは、<b>中古車（−1.2%）</b>と、通信（−0.1%）。中古車は、9月に+0.7%上がっていました。</li>
+      <li>住居は+0.3%で、<b>総合の上昇の3割超</b>（BLS）。家賃は+0.2%、持ち家の帰属家賃は+0.3%と、動きはゆっくりです。</li>
+      <li>運輸サービス（+0.8%）、レクリエーション（+0.8%）、自動車保険（+0.7%）など、<b>エネルギー以外にも上昇が見られます</b>。</li>
+    </ul>
+
+    <h2>6. 年率換算で、勢いを比べる</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>期間</th><th>総合</th><th>コア</th><th>エネルギー</th></tr></thead><tbody><tr><td data-label="期間"><span class="tv">10月の前月比（BLS）</span></td><td data-label="総合"><span class="tv">＋0.4%</span></td><td data-label="コア"><span class="tv">＋0.3%</span></td><td data-label="エネルギー"><span class="tv">＋0.7%</span></td></tr><tr><td data-label="期間"><span class="tv">3か月（7→10月）の年率</span></td><td data-label="総合"><span class="tv">＋5.7%</span></td><td data-label="コア"><span class="tv">＋3.7%</span></td><td data-label="エネルギー"><span class="tv">＋36.8%</span></td></tr><tr><td data-label="期間"><span class="tv">6か月（4→10月）の年率</span></td><td data-label="総合"><span class="tv">＋3.1%</span></td><td data-label="コア"><span class="tv">＋2.7%</span></td><td data-label="エネルギー"><span class="tv">＋8.9%</span></td></tr><tr><td data-label="期間"><span class="tv">9月の前年比（BLS）</span></td><td data-label="総合"><span class="tv">＋3.7%</span></td><td data-label="コア"><span class="tv">＋2.6%</span></td><td data-label="エネルギー"><span class="tv">＋20.4%</span></td></tr></tbody></table></div>
+    <ul>
+      <li>直近3か月の年率は、<b>総合が+5.7%、コアが+3.7%</b>。9月の前年比（総合+3.7%、コア+2.6%）より、<b>コアの勢いが強く</b>見えます。</li>
+      <li>6か月に延ばすと、総合は+3.1%、コアは+2.7%。<b>期間を延ばすと、エネルギーの振れがならされます</b>。</li>
+      <li>年率換算は、短い期間の動きを12か月に引き伸ばした数字です。<b>1か月の振れが、そのまま増幅される</b>ので、予測ではなく「直近の勢い」として見ます。</li>
+    </ul>
+
+    <h2>7. 賃金との比較</h2>
+    <p>雇用統計（10月分）で、平均時給は<b>前年比+3.1%</b>、前月比+0.4%でした。物価の前年比は、9月が+3.7%（BLS）。10月は公表されませんが、<b>9月の差（時給が物価を約0.6ポイント下回る）が、すぐに解消したとは言えません</b>。</p>
+    <ul>
+      <li>10月の前月比は、時給も総合CPIも+0.4%。1か月だけで見ると、<b>購買力は横ばい</b>です。</li>
+      <li>家計の「実質」は、12か月前との比較で決まります。前年比が出ない月は、<b>12月の発表で確認</b>することになります。</li>
+    </ul>
+
+    <h2>8. 金利とのつながり</h2>
+    <p>FRBは、9月16日のFOMCで、政策金利の誘導目標を<b>3.75〜4.00%</b>に引き上げ、10月28日には据え置きました。10月のCPIは、その後の最初の物価指標です。</p>
+    <ul>
+      <li>エネルギーの上昇が落ち着く一方、<b>コアが+0.3%で続く</b>。「一時的な振れ」と見るか、「広がり」と見るかで、金利の見方が分かれます。</li>
+      <li>この記事は、金利の先行きを予想するものではありません。<b>数字が、どちらの見方を支えるか</b>を確認する材料として見ます。</li>
+    </ul>
+
+    <h2>9. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>総合とコアを、分けて見る。</b>総合の振れの大半は、エネルギーです。</li>
+      <li><b>前年比が出ない月は、期間を変えて確認する。</b>前月比の並び、3か月・6か月の年率、直近の前年比を重ねる。</li>
+      <li><b>1か月の数字で、結論を出さない。</b>コアの+0.3%は3か月続いたが、まだ3つの点です。</li>
+      <li><b>賃金は、物価と比べる。</b>名目で増えても、実質で増えているとは限らない。</li>
+      <li><b>「物価が高い＝株安」とは限らない。</b>市場は、数字そのものより、予想との差と、金利の見通しで動く。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の売買を勧めるものではありません。CPIの結果から、株価・金利・為替の動きを予想するものでもありません。</div>
+
+    <h2>10. 毎月の見る順番（チェックリスト）</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>見る順番</th><th>何を見るか</th><th>見方のポイント</th></tr></thead><tbody><tr><td data-label="見る順番"><span class="tv">① 前月比（総合とコア）</span></td><td data-label="何を見るか"><span class="tv">総合とコアの差</span></td><td data-label="見方のポイント"><span class="tv">差の大半はエネルギー。エネルギーは月ごとに大きく振れる</span></td></tr><tr><td data-label="見る順番"><span class="tv">② コアの並び</span></td><td data-label="何を見るか"><span class="tv">3か月以上の方向</span></td><td data-label="見方のポイント"><span class="tv">0.2%台は落ち着き、0.3%以上が続くと粘り</span></td></tr><tr><td data-label="見る順番"><span class="tv">③ 前年比（出る月は）</span></td><td data-label="何を見るか"><span class="tv">12か月の水準</span></td><td data-label="見方のポイント"><span class="tv">今回のように出ない月は、年率換算で補う</span></td></tr><tr><td data-label="見る順番"><span class="tv">④ 住居とサービス</span></td><td data-label="何を見るか"><span class="tv">家賃・帰属家賃・運輸サービス</span></td><td data-label="見方のポイント"><span class="tv">動きがゆっくりで、いったん上がると下がりにくい</span></td></tr><tr><td data-label="見る順番"><span class="tv">⑤ 賃金との比較</span></td><td data-label="何を見るか"><span class="tv">平均時給の伸びと物価</span></td><td data-label="見方のポイント"><span class="tv">実質で増えているか</span></td></tr><tr><td data-label="見る順番"><span class="tv">⑥ 政策金利との関係</span></td><td data-label="何を見るか"><span class="tv">FRBが物価と雇用のどちらを重く見るか</span></td><td data-label="見方のポイント"><span class="tv">数字そのものより、金利の見通しがどう変わるか</span></td></tr></tbody></table></div>
+
+    <h2>11. 次に確認する日程</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>日付</th><th>イベント</th><th>見る点</th></tr></thead><tbody><tr><td data-label="日付"><span class="tv">2026年12月4日（予定）</span></td><td data-label="イベント"><span class="tv">雇用統計（11月分）</span></td><td data-label="見る点"><span class="tv">賃金の伸びと、雇用者数の改定</span></td></tr><tr><td data-label="日付"><span class="tv">2026年12月8〜9日</span></td><td data-label="イベント"><span class="tv">FOMC（経済見通しを公表）</span></td><td data-label="見る点"><span class="tv">政策金利の見通しと、物価の予想</span></td></tr><tr><td data-label="日付"><span class="tv">2026年12月10日（予定）</span></td><td data-label="イベント"><span class="tv">米消費者物価指数（CPI、11月分）</span></td><td data-label="見る点"><span class="tv">前年比が公表されるか。コアの並びが続くか</span></td></tr></tbody></table></div>
+    <p class="art-fig">出典：BLS、FRB「FOMC Calendars」。日程は予定で、変更されることがあります。</p>
+
+    <div class="art-fine">
+      <p>※ 前月比・項目別の数字は、BLSの公表資料（2026年11月10日、表A）の値です。季節調整済みで、小数第1位に丸められています。</p>
+      <p>※ 3か月・6か月の年率換算、2025年11月比（11か月）は、BLSの公開API（季節調整済み指数）から当サイトが計算した値で、BLSの公表値ではありません。指数は、あとから改定されることがあります。</p>
+      <p>※ 総合の前月比は、図では公表値の丸め（+0.4%、9月は+0.6%）を使っています。指数から計算すると、10月は+0.35%、9月は+0.65%です。</p>
+      <p>※ 9月の前年比（総合+3.7%、コア+2.6%、エネルギー+20.4%）は、BLSが2026年10月14日に公表した値です。</p>
+      <p>※ 賃金は、このサイトの雇用統計（10月分）の記事に載せた数字です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>決算も経済イベントも、ひとつのカレンダーで</h3>
+  <p>配当の権利日や保有銘柄の決算、積立の実行日に加えて、日銀の金融政策決定会合やFOMC・雇用統計などの経済イベントも、同じカレンダーで確認できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#tool-calendar">カレンダーを見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>米労働省労働統計局（BLS）「Consumer Price Index Summary」：<a href="https://www.bls.gov/news.release/cpi.nr0.htm" target="_blank" rel="noopener">https://www.bls.gov/news.release/cpi.nr0.htm</a></li><li>米労働省労働統計局（BLS）公開API（CPI時系列）：<a href="https://api.bls.gov/publicAPI/v2/timeseries/data/" target="_blank" rel="noopener">https://api.bls.gov/publicAPI/v2/timeseries/data/</a></li><li>FRB「FOMC Calendars」：<a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener">https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月11日　初版（2026年10月分）</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="us-jobs-report-2026-10.html">米雇用統計（2026年10月分）｜長期投資家の目線</a><a href="fomc-2026-10.html">FOMC（2026年10月）の結果｜長期投資家の目線</a><a href="us-jobs-report-2026-09.html">米雇用統計（2026年9月分）｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
