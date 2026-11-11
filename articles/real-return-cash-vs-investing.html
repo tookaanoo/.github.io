@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="現金100万円は、2015年から2026年9月で、購買力が85.6万円に。日本株・米国株・金・債券は、実質でどうだったか。円安の影響も含めて、物価で割り戻して整理する。">
+<title>現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/real-return-cash-vs-investing.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果">
+<meta property="og:description" content="現金100万円は、2015年から2026年9月で、購買力が85.6万円に。日本株・米国株・金・債券は、実質でどうだったか。円安の影響も含めて、物価で割り戻して整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/real-return-cash-vs-investing.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/real-return-cash-vs-investing.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/real-return-cash-vs-investing.jpg">
+<meta name="twitter:title" content="現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果">
+<meta name="twitter:description" content="現金100万円は、2015年から2026年9月で、購買力が85.6万円に。日本株・米国株・金・債券は、実質でどうだったか。円安の影響も含めて、物価で割り戻して整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果", "description": "現金100万円は、2015年から2026年9月で、購買力が85.6万円に。日本株・米国株・金・債券は、実質でどうだったか。円安の影響も含めて、物価で割り戻して整理する。", "inLanguage": "ja", "datePublished": "2026-11-12", "dateModified": "2026-11-12", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/real-return-cash-vs-investing.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["FIRE・資産形成", "米国株", "日本株", "為替", "金利・物価"], "image": ["https://fire-app.jp/articles/og/real-return-cash-vs-investing.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果", "item": "https://fire-app.jp/articles/real-return-cash-vs-investing.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>現金と投資を、<br>「実質」で比べる</h1>
+    <p class="subtitle">物価で割り戻した、2015年からの結果</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>現金100万円は、実質85.6万円</h3><p class="pt-d">現金100万円を、2015年1月から2026年9月まで持ち続けると、金額は100万円のまま、<b>購買力は85.6万円</b>（実質−14.4%）。物価が、16.9%上がったためです。</p></div><div class="pt"><h3>物価は、11年8か月で+16.9%</h3><p class="pt-d">この記事の軸は、<b>「名目ではなく、実質で見る」</b>。同じ期間、日本株は実質で3.7倍、米国株（円換算）は5.3倍、金は3.5倍、債券は1.33倍。<b>ただし、円建ての成績には、1.34倍の円安が含まれます</b>。</p></div><div class="pt"><h3>円建ての成績には、1.34倍の円安が含まれる</h3><p class="pt-d">現金の目減りは、<b>2022年以降に集中</b>しました。<b>投資は、下落する時期もある</b>（実質の最大の下落は、日本株-23%、米国株-20%、金-22%）。「現金か、投資か」ではなく、<b>目的ごとに分けて</b>考える材料です。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月12日</span><span><b>情報の時点</b> 総務省統計局／株価データ</span></div>
+<div class="art-tags"><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=為替">#為替</a><a href="index.html?tag=金利・物価">#金利・物価</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. 「名目」と「実質」</h2>
+    <p>100万円の預金は、10年後も、通帳の上では100万円です。これが<b>名目</b>です。一方、物価が上がると、同じ100万円で買えるモノは減ります。物価で割り戻した価値が<b>実質</b>です。</p>
+    <ul>
+      <li>物価は、総務省統計局の「消費者物価指数（全国・総合）」を使います。2026年9月は、前年同月比+2.1%（2026年10月23日公表、2025年基準）でした。</li>
+      <li>この記事の「現金」は、<b>利息を含めない現金</b>です。預金の利息は、計算に入れていません。</li>
+      <li>投資の数字は、配当込みのETFの月次データ（円換算）です。<b>税金・手数料は含みません</b>。</li>
+    </ul>
+
+    <h2>2. 2015年1月から2026年9月の結果</h2>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">現金100万円の購買力</div><div class="tile-v">85.6<small>万円</small></div><div class="tile-n">2015年1月から2026年9月。<b>名目は100万円のまま</b>。物価は+16.9%</div></div><div class="tile key"><div class="tile-l">米国株（円換算）</div><div class="tile-v">532<small>万円</small></div><div class="tile-n">実質。名目は622万円。ドル建てでは4.64倍</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">日本株（TOPIX連動ETF）</div><div class="tile-v">373<small>万円</small></div><div class="tile-n">実質。名目は436万円。年率+11.9%（実質）</div></div><div class="tile"><div class="tile-l">金（円換算）</div><div class="tile-v">354<small>万円</small></div><div class="tile-n">実質。名目は413万円</div></div><div class="tile"><div class="tile-l">米国債券（円換算）</div><div class="tile-v">133<small>万円</small></div><div class="tile-n">実質。名目は156万円。<b>実質で開始時を下回った月が、41か月</b></div></div></div>
+    <p class="art-fig">出典：株価データ（配当込みの調整後終値、月次、円換算）、総務省統計局「消費者物価指数」。期間は、2015年1月末から2026年9月末までの11年8か月。名目の値は、物価で割り戻す前の金額です。</p>
+    <figure class="fig"><div class="fig-title">100万円の、実質の価値（万円、2015年1月＝100、物価で割り戻し）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="224.0" x2="334" y2="224.0" stroke="#e5e7eb"/><text x="37.0" y="227.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0</text><line x1="42" y1="149.0" x2="334" y2="149.0" stroke="#e5e7eb"/><text x="37.0" y="152.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >200</text><line x1="42" y1="74.0" x2="334" y2="74.0" stroke="#e5e7eb"/><text x="37.0" y="77.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >400</text><polyline points="42.0,186.5 44.1,183.6 46.2,184.2 48.3,184.4 50.3,182.3 52.4,183.5 54.5,182.0 56.6,185.5 58.7,186.9 60.8,183.5 62.9,182.5 64.9,184.0 67.0,185.6 69.1,188.1 71.2,186.1 73.3,188.1 75.4,185.9 77.5,188.6 79.5,187.3 81.6,187.1 83.7,187.8 85.8,187.4 87.9,183.2 90.0,180.6 92.1,181.0 94.1,179.6 96.2,180.0 98.3,179.9 100.4,179.5 102.5,178.7 104.6,178.3 106.7,178.3 108.7,176.4 110.8,175.3 112.9,174.4 115.0,173.6 117.1,172.7 119.2,175.2 121.3,176.9 123.3,175.4 125.4,174.4 127.5,173.3 129.6,171.2 131.7,169.8 133.8,168.2 135.9,172.5 137.9,171.3 140.0,177.1 142.1,174.0 144.2,171.4 146.3,170.5 148.4,168.1 150.5,172.7 152.5,169.9 154.6,168.6 156.7,170.7 158.8,169.0 160.9,167.5 163.0,165.1 165.1,163.7 167.1,163.7 169.2,168.7 171.3,175.7 173.4,170.2 175.5,167.0 177.6,166.0 179.7,164.3 181.7,159.6 183.8,161.8 185.9,164.0 188.0,157.5 190.1,155.6 192.2,155.6 194.3,152.4 196.3,146.6 198.4,142.9 200.5,141.8 202.6,139.6 204.7,138.4 206.8,135.7 208.9,138.6 210.9,130.9 213.0,131.8 215.1,126.5 217.2,131.7 219.3,134.5 221.4,126.4 223.5,129.7 225.5,131.1 227.6,132.9 229.7,127.5 231.8,127.9 233.9,133.6 236.0,124.5 238.1,125.7 240.1,136.6 242.2,132.0 244.3,129.7 246.4,128.8 248.5,125.7 250.6,122.8 252.7,112.4 254.7,112.5 256.8,110.4 258.9,113.7 261.0,117.2 263.1,108.8 265.2,108.3 267.3,101.4 269.3,92.0 271.4,87.5 273.5,89.3 275.6,82.4 277.7,73.9 279.8,80.4 281.9,84.0 283.9,84.0 286.0,76.1 288.1,71.4 290.2,68.8 292.3,68.4 294.4,73.9 296.5,83.0 298.5,91.5 300.6,81.9 302.7,74.0 304.8,65.8 306.9,65.2 309.0,57.6 311.1,48.8 313.1,46.5 315.2,45.8 317.3,44.9 319.4,44.1 321.5,49.4 323.6,31.2 325.7,23.0 327.7,21.9 329.8,25.0 331.9,20.1 334.0,24.4" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,186.5 44.1,183.5 46.2,182.8 48.3,181.8 50.3,179.7 52.4,180.7 54.5,173.2 56.6,177.1 58.7,180.6 60.8,176.0 62.9,175.1 64.9,176.1 67.0,179.3 69.1,183.7 71.2,181.8 73.3,182.1 75.4,181.0 77.5,185.0 79.5,182.5 81.6,182.3 83.7,182.3 85.8,180.2 87.9,177.8 90.0,176.1 92.1,175.9 94.1,175.4 96.2,175.7 98.3,175.3 100.4,174.2 102.5,172.7 104.6,172.4 106.7,172.5 108.7,170.4 110.8,167.5 112.9,166.8 115.0,166.2 117.1,165.6 119.2,167.7 121.3,168.7 123.3,166.7 125.4,167.7 127.5,168.1 129.6,167.4 131.7,168.4 133.8,165.3 135.9,171.0 137.9,170.2 140.0,175.4 142.1,173.1 144.2,171.9 146.3,171.9 148.4,171.1 150.5,174.5 152.5,173.1 154.6,172.6 156.7,174.4 158.8,171.6 160.9,169.2 163.0,168.2 165.1,167.3 167.1,168.4 169.2,174.0 171.3,177.0 173.4,175.1 175.5,171.6 177.6,171.8 179.7,173.7 181.7,169.9 183.8,168.9 185.9,170.3 188.0,164.3 190.1,162.4 192.2,162.6 194.3,160.5 196.3,156.9 198.4,158.3 200.5,157.7 202.6,157.0 204.7,158.5 206.8,156.5 208.9,153.7 210.9,154.7 213.0,157.3 215.1,155.1 217.2,158.6 219.3,159.0 221.4,156.6 223.5,158.5 225.5,158.2 227.6,159.5 229.7,157.4 231.8,156.2 233.9,160.8 236.0,158.0 238.1,156.2 240.1,159.4 242.2,156.9 244.3,155.8 246.4,154.8 248.5,153.5 250.6,151.0 252.7,145.6 254.7,144.8 256.8,144.7 258.9,144.3 261.0,147.3 263.1,143.1 265.2,143.2 267.3,137.0 269.3,132.5 271.4,129.0 273.5,130.3 275.6,128.9 277.7,128.4 279.8,129.1 281.9,132.5 283.9,133.7 286.0,132.6 288.1,133.4 290.2,130.2 292.3,130.5 294.4,133.8 296.5,133.7 298.5,133.6 300.6,129.5 302.7,127.6 304.8,124.6 306.9,120.2 309.0,117.3 311.1,111.3 313.1,110.1 315.2,108.7 317.3,103.3 319.4,90.0 321.5,104.1 323.6,97.1 325.7,90.0 327.7,88.3 329.8,88.4 331.9,83.3 334.0,84.1" fill="none" stroke="#111827" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,186.5 44.1,188.0 46.2,188.8 48.3,189.3 50.3,187.8 52.4,188.6 54.5,190.5 56.6,190.1 58.7,191.1 60.8,190.1 62.9,191.7 64.9,192.5 67.0,190.4 69.1,189.1 71.2,189.8 73.3,190.1 75.4,190.9 77.5,190.5 79.5,189.9 81.6,190.8 83.7,191.2 85.8,191.3 87.9,191.7 90.0,191.0 92.1,190.2 94.1,189.3 96.2,189.8 98.3,189.5 100.4,189.7 102.5,190.0 104.6,189.7 106.7,188.3 108.7,188.8 110.8,189.1 112.9,189.4 115.0,188.5 117.1,188.7 119.2,189.9 121.3,189.9 123.3,189.3 125.4,189.9 127.5,190.5 129.6,191.2 131.7,192.1 133.8,191.5 135.9,191.1 137.9,190.8 140.0,190.0 142.1,189.5 144.2,189.1 146.3,189.7 148.4,189.7 150.5,189.9 152.5,187.6 154.6,187.3 156.7,185.3 158.8,186.1 160.9,185.0 163.0,186.0 165.1,184.8 167.1,183.0 169.2,183.5 171.3,183.6 173.4,181.2 175.5,179.6 177.6,178.4 179.7,174.8 181.7,174.6 183.8,176.5 185.9,177.3 188.0,179.8 190.1,177.1 192.2,178.2 194.3,180.2 196.3,179.3 198.4,177.9 200.5,174.0 202.6,177.4 204.7,176.7 206.8,176.6 208.9,177.5 210.9,175.9 213.0,176.3 215.1,174.2 217.2,175.1 219.3,172.1 221.4,168.8 223.5,166.8 225.5,169.6 227.6,166.8 229.7,169.9 231.8,169.5 233.9,169.1 236.0,169.1 238.1,168.3 240.1,169.9 242.2,167.3 244.3,167.6 246.4,164.8 248.5,163.3 250.6,162.6 252.7,161.8 254.7,162.5 256.8,161.1 258.9,162.9 261.0,159.1 263.1,158.2 265.2,160.0 267.3,158.2 269.3,156.4 271.4,150.4 273.5,146.1 275.6,144.8 277.7,143.0 279.8,143.3 281.9,145.5 283.9,143.2 286.0,134.2 288.1,139.3 290.2,137.0 292.3,133.3 294.4,133.7 296.5,125.7 298.5,125.8 300.6,124.9 302.7,124.1 304.8,121.7 306.9,118.3 309.0,104.6 311.1,96.8 313.1,88.4 315.2,85.0 317.3,69.5 319.4,53.8 321.5,69.4 323.6,71.9 325.7,75.7 327.7,91.0 329.8,91.9 331.9,79.1 334.0,91.3" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,186.5 44.1,186.1 46.2,185.9 48.3,186.6 50.3,185.3 52.4,186.0 54.5,185.2 56.6,186.2 58.7,186.4 60.8,186.1 62.9,185.4 64.9,186.2 67.0,185.4 69.1,187.5 71.2,187.6 73.3,189.6 75.4,188.1 77.5,190.1 79.5,190.0 81.6,189.9 83.7,190.4 85.8,189.8 87.9,188.2 90.0,186.6 92.1,187.5 94.1,187.5 96.2,187.8 98.3,187.8 100.4,187.7 102.5,187.3 104.6,187.6 106.7,187.4 108.7,186.8 110.8,186.8 112.9,187.3 115.0,187.0 117.1,188.8 119.2,189.5 121.3,189.6 123.3,189.0 125.4,188.9 127.5,188.3 129.6,188.1 131.7,188.1 133.8,187.5 135.9,188.1 137.9,187.6 140.0,187.8 142.1,187.9 144.2,187.3 146.3,186.5 148.4,186.4 150.5,186.5 152.5,186.6 154.6,186.2 156.7,186.1 158.8,185.8 160.9,185.5 163.0,185.3 165.1,185.5 167.1,184.7 169.2,184.3 171.3,184.5 173.4,184.3 175.5,183.6 177.6,183.3 179.7,183.9 181.7,184.0 183.8,183.9 185.9,184.5 188.0,184.1 190.1,184.3 192.2,184.3 194.3,184.1 196.3,183.2 198.4,183.1 200.5,182.8 202.6,182.3 204.7,182.2 206.8,182.2 208.9,182.0 210.9,181.2 213.0,181.2 215.1,180.9 217.2,181.8 219.3,182.3 221.4,181.4 223.5,180.6 225.5,181.0 227.6,178.8 229.7,179.0 231.8,178.7 233.9,179.0 236.0,178.8 238.1,180.1 240.1,182.9 242.2,182.0 244.3,181.0 246.4,181.0 248.5,180.0 250.6,179.5 252.7,178.1 254.7,179.6 256.8,178.3 258.9,178.6 261.0,179.7 263.1,178.3 265.2,178.5 267.3,176.5 269.3,176.2 271.4,175.7 273.5,175.5 275.6,174.7 277.7,173.1 279.8,174.7 281.9,176.4 283.9,176.7 286.0,174.8 288.1,175.6 290.2,174.4 292.3,175.4 294.4,175.4 296.5,175.7 298.5,178.0 300.6,177.9 302.7,177.0 304.8,175.7 306.9,175.9 309.0,174.8 311.1,173.1 313.1,172.2 315.2,172.2 317.3,172.6 319.4,171.0 321.5,170.9 323.6,170.8 325.7,171.2 327.7,170.2 329.8,171.8 331.9,171.7 334.0,173.9" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,186.5 44.1,186.4 46.2,186.5 48.3,186.7 50.3,186.8 52.4,186.7 54.5,186.7 56.6,186.7 58.7,186.8 60.8,186.7 62.9,186.6 64.9,186.6 67.0,186.5 69.1,186.5 71.2,186.5 73.3,186.6 75.4,186.6 77.5,186.6 79.5,186.5 81.6,186.5 83.7,186.6 85.8,186.8 87.9,186.8 90.0,186.7 92.1,186.6 94.1,186.6 96.2,186.6 98.3,186.8 100.4,186.8 102.5,186.7 104.6,186.7 106.7,186.8 108.7,186.9 110.8,186.9 112.9,187.0 115.0,187.1 117.1,187.1 119.2,187.1 121.3,187.0 123.3,187.0 125.4,187.0 127.5,187.0 129.6,187.0 131.7,187.2 133.8,187.3 135.9,187.4 137.9,187.3 140.0,187.2 142.1,187.2 144.2,187.2 146.3,187.2 148.4,187.3 150.5,187.3 152.5,187.3 154.6,187.2 156.7,187.3 158.8,187.4 160.9,187.5 163.0,187.5 165.1,187.5 167.1,187.5 169.2,187.4 171.3,187.4 173.4,187.3 175.5,187.3 177.6,187.2 179.7,187.3 181.7,187.3 183.8,187.2 185.9,187.2 188.0,187.1 190.1,187.0 192.2,187.2 194.3,187.2 196.3,187.2 198.4,186.9 200.5,187.0 202.6,187.1 204.7,187.2 206.8,187.2 208.9,187.3 210.9,187.2 213.0,187.3 215.1,187.3 217.2,187.4 219.3,187.5 221.4,187.7 223.5,187.8 225.5,187.9 227.6,187.9 229.7,188.1 231.8,188.2 233.9,188.4 236.0,188.6 238.1,188.7 240.1,188.7 242.2,188.9 244.3,188.7 246.4,188.8 248.5,189.0 250.6,189.1 252.7,189.1 254.7,189.2 256.8,189.3 258.9,189.4 261.0,189.7 263.1,189.6 265.2,189.6 267.3,189.6 269.3,189.6 271.4,189.7 273.5,189.9 275.6,190.0 277.7,190.0 279.8,190.2 281.9,190.3 283.9,190.3 286.0,190.5 288.1,190.6 290.2,190.8 292.3,191.0 294.4,190.9 296.5,190.9 298.5,191.1 300.6,191.2 302.7,191.1 304.8,191.2 306.9,191.2 309.0,191.2 311.1,191.4 313.1,191.5 315.2,191.5 317.3,191.5 319.4,191.3 321.5,191.4 323.6,191.5 325.7,191.7 327.7,191.7 329.8,191.8 331.9,191.9 334.0,191.9" fill="none" stroke="#64748b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="334" cy="24.4" r="3" fill="#ec4899"/><text x="341.0" y="27.9" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >米国株</text><text x="341.0" y="39.4" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >532</text><circle cx="334" cy="84.1" r="3" fill="#111827"/><text x="341.0" y="87.6" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >日本株</text><text x="341.0" y="99.1" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >373</text><circle cx="334" cy="91.3" r="3" fill="#94a3b8"/><text x="341.0" y="111.6" font-size="9.5" text-anchor="start" fill="#94a3b8" font-weight="700" >金</text><text x="341.0" y="123.1" font-size="9.5" text-anchor="start" fill="#94a3b8" font-weight="700" >354</text><circle cx="334" cy="173.9" r="3" fill="#cbd5e1"/><text x="341.0" y="177.4" font-size="9.5" text-anchor="start" fill="#cbd5e1" font-weight="700" >債券</text><text x="341.0" y="188.9" font-size="9.5" text-anchor="start" fill="#cbd5e1" font-weight="700" >133</text><circle cx="334" cy="191.9" r="3" fill="#64748b"/><text x="341.0" y="201.4" font-size="9.5" text-anchor="start" fill="#64748b" font-weight="700" >現金</text><text x="341.0" y="212.9" font-size="9.5" text-anchor="start" fill="#64748b" font-weight="700" >86</text><text x="42.0" y="242.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2015/1</text><text x="167.1" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2020/1</text><text x="334.0" y="242.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/9</text></svg><figcaption>出典：株価データ（配当込みの調整後終値、月次、円換算）、総務省統計局「消費者物価指数」（全国・総合）。<b>2026年9月時点の実質の価値は、米国株532万円、日本株373万円、金354万円、債券133万円、現金85.6万円</b>。税金・手数料は含みません。</figcaption></figure>
+    <ul>
+      <li>現金は、名目では変わらず、<b>実質で85.6万円</b>。物価は、年率で+1.3%上がっています。</li>
+      <li>投資は、実質でも大きく増えています。ただし、<b>2015年は、株高・円安が続いた期間の入り口</b>です。始点と終点の選び方で、結果は変わります。</li>
+    </ul>
+
+    <h2>3. 現金の目減りは、いつ起きたか</h2>
+    <figure class="fig"><div class="fig-title">現金100万円の購買力（万円、各年末、2015年1月＝100）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="195.0" x2="410" y2="195.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="17.5" y="22.0" width="18.3" height="173.0" rx="3" fill="#cbd5e1"/><text x="26.7" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >99.8</text><text x="26.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;15</text><rect x="50.8" y="22.5" width="18.3" height="172.5" rx="3" fill="#cbd5e1"/><text x="60.0" y="16.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >99.4</text><text x="60.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;16</text><rect x="84.2" y="24.3" width="18.3" height="170.7" rx="3" fill="#cbd5e1"/><text x="93.3" y="18.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >98.4</text><text x="93.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;17</text><rect x="117.5" y="24.8" width="18.3" height="170.2" rx="3" fill="#cbd5e1"/><text x="126.7" y="18.8" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >98.2</text><text x="126.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;18</text><rect x="150.8" y="26.1" width="18.3" height="168.9" rx="3" fill="#cbd5e1"/><text x="160.0" y="20.1" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >97.4</text><text x="160.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;19</text><rect x="184.2" y="23.9" width="18.3" height="171.1" rx="3" fill="#cbd5e1"/><text x="193.3" y="17.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >98.6</text><text x="193.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;20</text><rect x="217.5" y="25.3" width="18.3" height="169.7" rx="3" fill="#cbd5e1"/><text x="226.7" y="19.3" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >97.9</text><text x="226.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;21</text><rect x="250.8" y="31.9" width="18.3" height="163.1" rx="3" fill="#64748b"/><text x="260.0" y="25.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >94.1</text><text x="260.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;22</text><rect x="284.2" y="35.9" width="18.3" height="159.1" rx="3" fill="#64748b"/><text x="293.3" y="29.9" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >91.7</text><text x="293.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;23</text><rect x="317.5" y="41.5" width="18.3" height="153.5" rx="3" fill="#64748b"/><text x="326.7" y="35.5" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >88.5</text><text x="326.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;24</text><rect x="350.8" y="44.7" width="18.3" height="150.3" rx="3" fill="#64748b"/><text x="360.0" y="38.7" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >86.7</text><text x="360.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;25</text><rect x="384.2" y="46.6" width="18.3" height="148.4" rx="3" fill="#64748b"/><text x="393.3" y="40.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >85.6</text><text x="393.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >&#x27;26</text><text x="393.3" y="237.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >9月</text></svg><figcaption>出典：総務省統計局「消費者物価指数」（全国・総合、2015年基準と2020年基準を接続）。<b>2015〜2021年は、100万円が97.9万円（−2.1%）にとどまり、2022年から、91.7万円（2023年末）、88.5万円、86.7万円、85.6万円（2026年9月）と減りました</b>。物価は、2015年1月から2026年9月で、+16.9%（年率+1.3%）。</figcaption></figure>
+    <ul>
+      <li>2015年1月から2021年末までは、物価の上昇が小さく、現金の購買力は<b>97.9万円</b>とほぼ横ばいでした。</li>
+      <li>2022年以降は、<b>購買力が、91.7万円（2023年末）→88.5万円（2024年末）→86.7万円（2025年末）→85.6万円</b>と減りました。</li>
+      <li>物価の年率は、2015年1月〜2021年末が約+0.3%、2021年末〜2026年9月が約+2.9%（当サイトの計算）。<b>目減りは、物価上昇の局面に集中</b>しています。</li>
+    </ul>
+
+    <h2>4. 物価が上がり続けると、どうなるか（計算）</h2>
+    <p>100万円の購買力を、物価の上昇率が一定だったとして計算します。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>物価の上昇率（年）</th><th>10年後</th><th>20年後</th><th>30年後</th></tr></thead><tbody><tr><td data-label="物価の上昇率（年）"><span class="tv">1%</span></td><td data-label="10年後"><span class="tv">90.4万円</span></td><td data-label="20年後"><span class="tv">81.8万円</span></td><td data-label="30年後"><span class="tv">74.0万円</span></td></tr><tr><td data-label="物価の上昇率（年）"><span class="tv">2%</span></td><td data-label="10年後"><span class="tv">81.7万円</span></td><td data-label="20年後"><span class="tv">66.8万円</span></td><td data-label="30年後"><span class="tv">54.5万円</span></td></tr><tr><td data-label="物価の上昇率（年）"><span class="tv">3%</span></td><td data-label="10年後"><span class="tv">73.7万円</span></td><td data-label="20年後"><span class="tv">54.4万円</span></td><td data-label="30年後"><span class="tv">40.1万円</span></td></tr></tbody></table></div>
+    <ul>
+      <li>物価が年2%なら、<b>10年で81.7万円、20年で66.8万円</b>。日本銀行は、物価安定の目標を2%としています。</li>
+      <li>これは、将来の予想ではなく、<b>算数</b>です。物価が実際にどうなるかは、わかりません。</li>
+    </ul>
+
+    <h2>5. 投資は、実質でどうだったか</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th></th><th>実質の最大の下落（高値から）</th><th>実質で開始時を下回った月</th><th>2015年1月からの実質の倍率</th></tr></thead><tbody><tr><td data-label=""><span class="tv">日本株</span></td><td data-label="実質の最大の下落（高値から）"><span class="tv">-23.1%</span></td><td data-label="実質で開始時を下回った月"><span class="tv">0／141か月</span></td><td data-label="2015年1月からの実質の倍率"><span class="tv">3.73倍</span></td></tr><tr><td data-label=""><span class="tv">米国株（円換算）</span></td><td data-label="実質の最大の下落（高値から）"><span class="tv">-19.9%</span></td><td data-label="実質で開始時を下回った月"><span class="tv">8／141か月</span></td><td data-label="2015年1月からの実質の倍率"><span class="tv">5.32倍</span></td></tr><tr><td data-label=""><span class="tv">金（円換算）</span></td><td data-label="実質の最大の下落（高値から）"><span class="tv">-22.4%</span></td><td data-label="実質で開始時を下回った月"><span class="tv">54／141か月</span></td><td data-label="2015年1月からの実質の倍率"><span class="tv">3.54倍</span></td></tr><tr><td data-label=""><span class="tv">米国債券（円換算）</span></td><td data-label="実質の最大の下落（高値から）"><span class="tv">-13.6%</span></td><td data-label="実質で開始時を下回った月"><span class="tv">41／141か月</span></td><td data-label="2015年1月からの実質の倍率"><span class="tv">1.33倍</span></td></tr><tr><td data-label=""><span class="tv">現金</span></td><td data-label="実質の最大の下落（高値から）"><span class="tv">0%（名目は変わらない）</span></td><td data-label="実質で開始時を下回った月"><span class="tv">137／141か月</span></td><td data-label="2015年1月からの実質の倍率"><span class="tv">0.86倍</span></td></tr></tbody></table></div>
+    <ul>
+      <li>米国株（円換算）は、実質で5.3倍。ただし、<b>実質の最大の下落は-19.9%</b>で、開始時を下回った月が8か月ありました。</li>
+      <li>金は、実質で3.5倍ですが、<b>開始時を下回った月が54か月</b>と、長い低迷期間がありました。</li>
+      <li>債券（米国債、円換算）は、実質で1.33倍。<b>開始時を下回った月は41か月</b>で、株と比べて、成績は控えめです。</li>
+    </ul>
+
+    <h2>6. 円建ての成績の、中身</h2>
+    <figure class="fig"><div class="fig-title">ドル建てと円建ての倍率（2015年1月→2026年9月、倍）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="201.0" x2="410" y2="201.0" stroke="#e5e7eb"/><rect x="34.7" y="83.9" width="40.0" height="117.1" rx="3" fill="#cbd5e1"/><text x="54.7" y="78.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4.64</text><rect x="78.7" y="44.0" width="40.0" height="157.0" rx="3" fill="#ec4899"/><text x="98.7" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6.22</text><text x="76.7" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >米国株</text><rect x="168.0" y="171.6" width="40.0" height="29.4" rx="3" fill="#cbd5e1"/><text x="188.0" y="166.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1.16</text><rect x="212.0" y="161.6" width="40.0" height="39.4" rx="3" fill="#ec4899"/><text x="232.0" y="156.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1.56</text><text x="210.0" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >債券</text><rect x="301.3" y="123.1" width="40.0" height="77.9" rx="3" fill="#cbd5e1"/><text x="321.3" y="118.1" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3.08</text><rect x="345.3" y="96.6" width="40.0" height="104.4" rx="3" fill="#ec4899"/><text x="365.3" y="91.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4.13</text><text x="343.3" y="225.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >金</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >ドル建て</text><rect x="84" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="97.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >円建て</text></svg><figcaption>出典：株価データ（配当込みの調整後終値、月次）。為替（ドル円）は、2015年1月の約117円から、2026年9月の約157円へ（<b>1.34倍の円安</b>）。<b>債券は、ドル建てで1.16倍、円建てで1.56倍</b>。円建ての成績の約3分の2は、為替です（当サイトの計算）。</figcaption></figure>
+    <ul>
+      <li>米国株は、ドル建てで4.64倍、円建てで6.22倍。<b>円安が、約1.34倍</b>押し上げています。</li>
+      <li>米国債券は、ドル建てでは1.16倍でしたが、円建てでは1.56倍。<b>円建ての成績の大半は、為替</b>です。</li>
+      <li>この期間の「物価に勝った」結果には、<b>円安が大きく効いています</b>。円高の局面では、逆になります。</li>
+    </ul>
+
+    <h2>7. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>現金は、安全だが、購買力は守れない。</b>いつでも使える安心と、実質の目減りは、両方とも本当です。</li>
+      <li><b>「現金か、投資か」ではなく、目的で分ける。</b>数年以内に使うお金と、10年以上使わないお金では、向いている置き場所が違います。</li>
+      <li><b>実質の下落も、見ておく。</b>実質の最大の下落は、米国株で-20%、金で-22%、日本株で-23%でした。</li>
+      <li><b>為替の効果を、成績と混ぜない。</b>円安で上がった分は、円高で、戻ることもあります。</li>
+      <li><b>期間の選び方に、気をつける。</b>この記事の期間は、株高と円安が重なった期間です。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の商品の売買を勧めるものではありません。過去の結果は、将来の成績を保証しません。投資の判断は、ご自身の資金計画と責任で行ってください。</div>
+
+    <h2>8. 毎回の見る順番（チェックリスト）</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>見るもの</th><th>見方</th><th>注意点</th></tr></thead><tbody><tr><td data-label="見るもの"><span class="tv">① 名目と実質</span></td><td data-label="見方"><span class="tv">名目の金額を、物価で割り戻す</span></td><td data-label="注意点"><span class="tv">金額が同じでも、買えるモノは減る</span></td></tr><tr><td data-label="見るもの"><span class="tv">② 期間</span></td><td data-label="見方"><span class="tv">物価は、期間で大きく変わる</span></td><td data-label="注意点"><span class="tv">2015〜2021年と、2022年以降で、現金の減り方が違う</span></td></tr><tr><td data-label="見るもの"><span class="tv">③ 通貨</span></td><td data-label="見方"><span class="tv">円建てか、ドル建てか</span></td><td data-label="注意点"><span class="tv">円安は、外貨資産の円建ての成績を押し上げる。円高なら逆</span></td></tr><tr><td data-label="見るもの"><span class="tv">④ 下落</span></td><td data-label="見方"><span class="tv">実質の最大の下落</span></td><td data-label="注意点"><span class="tv">「平均」だけでなく、高値からの下落も見る</span></td></tr><tr><td data-label="見るもの"><span class="tv">⑤ 費用と税金</span></td><td data-label="見方"><span class="tv">手数料、税金、為替の手数料</span></td><td data-label="注意点"><span class="tv">この記事の数字には、含まれていない</span></td></tr></tbody></table></div>
+
+    <div class="art-fine">
+      <p>※ 物価は、総務省統計局「消費者物価指数」（全国・総合、月次）です。2015年基準（2015年1月〜2019年12月）と、2020年基準（2020年1月〜2026年9月）を、2020年1月の値で接続しています。2026年10月分は、まだ公表されていないため、2026年9月までとしました。</p>
+      <p>※ 株価データは、日本株が「TOPIX連動ETF（1306）」、米国株が「SPY」、米国債券が「AGG」、金が「GLD」の、配当込みの調整後終値（月次）です。米国のETFは、月末のドル円レートで円換算しています。</p>
+      <p>※ 日本株の2026年3月末の価格に、データの異常値（10分の1の表示）があり、前後の水準に合わせて補正しています。</p>
+      <p>※ 実質の価値、倍率、年率、最大の下落、開始時を下回った月の数は、当サイトの計算値です。税金、手数料、為替の手数料は、含んでいません。</p>
+      <p>※ 「現金」は、利息を含めない現金（名目の金額は変わらない）としています。預金の利息は、含んでいません。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>総務省統計局「消費者物価指数」：<a href="https://www.stat.go.jp/data/cpi/" target="_blank" rel="noopener">https://www.stat.go.jp/data/cpi/</a></li><li>日本銀行「金融政策の概要」：<a href="https://www.boj.or.jp/mopo/outline/index.htm" target="_blank" rel="noopener">https://www.boj.or.jp/mopo/outline/index.htm</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月12日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="asset-class-returns.html">資産クラスの暦年リターン｜2005〜2025年の21年を、順位表で見る</a><a href="index-comparison.html">日経225・TOPIX・S&amp;P500の比較｜AI半導体の比重と中身</a><a href="world-vs-us.html">全世界株と米国株の比較｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
