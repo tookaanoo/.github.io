@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FIREの3つの型で、必要な資産額はどう変わるか。年間支出300万円、取り崩し率3.5%なら、フルFIREは約8,571万円。副収入、積立を止めて育てる場合、年金を入れた場合を、条件別に試算して整理する。">
+<title>フルFIRE・サイドFIRE・コーストFIRE｜必要な資産額を条件別に比べる - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/fire-types-required-assets.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="フルFIRE・サイドFIRE・コーストFIRE｜必要な資産額を条件別に比べる">
+<meta property="og:description" content="FIREの3つの型で、必要な資産額はどう変わるか。年間支出300万円、取り崩し率3.5%なら、フルFIREは約8,571万円。副収入、積立を止めて育てる場合、年金を入れた場合を、条件別に試算して整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/fire-types-required-assets.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/fire-types-required-assets.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/fire-types-required-assets.jpg">
+<meta name="twitter:title" content="フルFIRE・サイドFIRE・コーストFIRE｜必要な資産額を条件別に比べる">
+<meta name="twitter:description" content="FIREの3つの型で、必要な資産額はどう変わるか。年間支出300万円、取り崩し率3.5%なら、フルFIREは約8,571万円。副収入、積立を止めて育てる場合、年金を入れた場合を、条件別に試算して整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "フルFIRE・サイドFIRE・コーストFIRE｜必要な資産額を条件別に比べる", "description": "FIREの3つの型で、必要な資産額はどう変わるか。年間支出300万円、取り崩し率3.5%なら、フルFIREは約8,571万円。副収入、積立を止めて育てる場合、年金を入れた場合を、条件別に試算して整理する。", "inLanguage": "ja", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/fire-types-required-assets.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["FIRE・資産形成"], "image": ["https://fire-app.jp/articles/og/fire-types-required-assets.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "フルFIRE・サイドFIRE・コーストFIRE｜必要な資産額を条件別に比べる", "item": "https://fire-app.jp/articles/fire-types-required-assets.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>フルFIRE・サイドFIRE・<br>コーストFIRE</h1>
+    <p class="subtitle">必要な資産額を、条件別に比べる</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>フルFIREは年間支出の約28.6倍（3.5%）</h3><p class="pt-d">FIREには、<b>フルFIRE（資産の取り崩しだけ）、サイドFIRE（副収入と組み合わせる）、コーストFIRE（積立を止めて、運用で育てる）</b>の3つの形があり、<b>必要な資産額の考え方が違います</b>。年間支出300万円、取り崩し率3.5%なら、フルFIREは約8,571万円です。</p></div><div class="pt"><h3>副収入が月10万円なら約5,143万円</h3><p class="pt-d">この記事の軸は、<b>「必要額は、条件で大きく変わる」</b>。副収入が月10万円あれば約5,143万円、月15万円なら約3,429万円。コーストFIREは、退職まで25年あり実質3%で育つなら、<b>今の資産は約4,094万円</b>で届く計算です。<b>年金（国民年金の満額）を入れると</b>、95歳までの必要額は、45歳でFIREする単身（年間支出240万円）で、約1,303万円減ります。</p></div><div class="pt"><h3>年金を入れると、65歳以降の必要額は小さくなる</h3><p class="pt-d">数字は、<b>仮定を置いた計算</b>で、予想や約束ではありません。支出は、家計調査（2025年平均）で、二人以上の世帯が年約377万円、単身世帯が年約208万円。<b>自分の支出に置き換えて</b>使います。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月17日</span><span><b>情報の時点</b> 総務省統計局・日本年金機構</span></div>
+<div class="art-tags"><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. 3つのFIRE：何が違うか</h2>
+    <p>FIRE（Financial Independence, Retire Early）は、資産からの収入で生活費を賄えるようにして、早く仕事から離れる考え方です。<b>どのくらい仕事から離れるか</b>で、3つの形に分けて呼ばれます。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>型</th><th>仕組み</th><th>必要資産の考え方</th></tr></thead><tbody><tr><td data-label="型"><span class="tv">フルFIRE</span></td><td data-label="仕組み"><span class="tv">働かず、資産の取り崩しだけで暮らす</span></td><td data-label="必要資産の考え方"><span class="tv">年間支出 ÷ 取り崩し率</span></td></tr><tr><td data-label="型"><span class="tv">サイドFIRE</span></td><td data-label="仕組み"><span class="tv">副収入で、支出の一部を賄い、残りを取り崩す</span></td><td data-label="必要資産の考え方"><span class="tv">（年間支出 − 副収入）÷ 取り崩し率</span></td></tr><tr><td data-label="型"><span class="tv">コーストFIRE</span></td><td data-label="仕組み"><span class="tv">積立を止め、運用だけで目標額に育てる。生活費は働いて賄う</span></td><td data-label="必要資産の考え方"><span class="tv">目標額 ÷（1＋リターン）^退職までの年数</span></td></tr></tbody></table></div>
+    <ul>
+      <li>この記事の計算は、<b>今の物価で考える（実質）</b>。物価の上昇は、リターンと支出の両方にかかるため、「実質のリターン」で計算します。</li>
+      <li>取り崩し率は、<b>3.0%・3.5%・4.0%</b>の3つで見ます。4%ルール（年間支出の25倍）の考え方は、<a href="fire-4-percent-rule.html">別の記事</a>で整理しています。</li>
+    </ul>
+
+    <h2>2. 自分の支出は、いくらか</h2>
+    <figure class="fig"><div class="fig-title">支出の目安：家計調査の、年間の消費支出（万円、2025年平均）</div><svg viewBox="0 0 420 174" role="img" xmlns="http://www.w3.org/2000/svg"><text x="96.0" y="18.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >二人以上の世帯</text><rect x="104.0" y="4" width="240.4" height="22" rx="3" fill="#ec4899"/><text x="349.4" y="18.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >377</text><text x="96.0" y="52.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >総世帯</text><rect x="104.0" y="38" width="199.0" height="22" rx="3" fill="#94a3b8"/><text x="308.0" y="52.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >312</text><text x="96.0" y="86.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >単身世帯</text><rect x="104.0" y="72" width="132.5" height="22" rx="3" fill="#94a3b8"/><text x="241.5" y="86.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >208</text><text x="96.0" y="120.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >高齢夫婦・無職</text><rect x="104.0" y="106" width="202.1" height="22" rx="3" fill="#cbd5e1"/><text x="311.1" y="120.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >317</text><text x="96.0" y="154.8" font-size="10.5" text-anchor="end" fill="#111827" font-weight="600" >高齢単身・無職</text><rect x="104.0" y="140" width="113.7" height="22" rx="3" fill="#cbd5e1"/><text x="222.7" y="154.8" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >178</text></svg><figcaption>出典：総務省統計局「家計調査（家計収支編）2025年（令和7年）平均」の月平均額×12（当サイトの計算）。二人以上の世帯は月314,001円、単身世帯は月173,042円、65歳以上の夫婦のみの無職世帯は月263,979円、単身の無職世帯は月148,445円。<b>世帯の平均で、自分の支出とは異なります</b>。税・社会保険料は、消費支出に含まれません。</figcaption></figure>
+    <ul>
+      <li>家計調査（2025年平均）の<b>消費支出は、二人以上の世帯で月314,001円（年約377万円）、単身世帯で月173,042円（年約208万円）</b>。</li>
+      <li>65歳以上の無職世帯では、<b>夫婦のみで月263,979円、単身で月148,445円</b>。収入（社会保障給付が中心）より、消費支出が多く、夫婦で月約4.2万円、単身で月約3.0万円の赤字です（総務省）。</li>
+      <li>これらは、世帯の平均です。<b>自分の実際の支出（税・社会保険料を含む）</b>を、1年間の家計簿で出すのが基本です。</li>
+    </ul>
+
+    <h2>3. フルFIRE：支出 ÷ 取り崩し率</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>年間支出</th><th>取り崩し率4.0%</th><th>3.5%</th><th>3.0%</th></tr></thead><tbody><tr><td data-label="年間支出"><span class="tv">240万円</span></td><td data-label="取り崩し率4.0%"><span class="tv">6,000万円</span></td><td data-label="3.5%"><span class="tv">6,857万円</span></td><td data-label="3.0%"><span class="tv">8,000万円</span></td></tr><tr><td data-label="年間支出"><span class="tv">300万円</span></td><td data-label="取り崩し率4.0%"><span class="tv">7,500万円</span></td><td data-label="3.5%"><span class="tv">8,571万円</span></td><td data-label="3.0%"><span class="tv">10,000万円</span></td></tr><tr><td data-label="年間支出"><span class="tv">360万円</span></td><td data-label="取り崩し率4.0%"><span class="tv">9,000万円</span></td><td data-label="3.5%"><span class="tv">10,286万円</span></td><td data-label="3.0%"><span class="tv">12,000万円</span></td></tr></tbody></table></div>
+    <ul>
+      <li>年間支出300万円なら、取り崩し率3.5%で<b>約8,571万円</b>、3.0%で10,000万円、4.0%で7,500万円。</li>
+      <li>取り崩し率を0.5ポイント下げるだけで、必要額は、<b>約1,100万〜1,400万円</b>増えます。</li>
+    </ul>
+
+    <h2>4. サイドFIRE：副収入が、必要額をどれだけ減らすか</h2>
+    <figure class="fig"><div class="fig-title">サイドFIRE：副収入で、必要な資産はどう変わるか（万円、年間支出300万円、取り崩し率3.5%）</div><svg viewBox="0 0 420 245" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="193.0" x2="410" y2="193.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="32.5" y="22.0" width="55.0" height="171.0" rx="3" fill="#cbd5e1"/><text x="60.0" y="16.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >8,571</text><text x="60.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >フルFIRE</text><text x="60.0" y="247.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >（副収入なし）</text><rect x="132.5" y="56.2" width="55.0" height="136.8" rx="3" fill="#ec4899"/><text x="160.0" y="50.2" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6,857</text><text x="160.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >副収入</text><text x="160.0" y="247.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >月5万円</text><rect x="232.5" y="90.4" width="55.0" height="102.6" rx="3" fill="#ec4899"/><text x="260.0" y="84.4" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >5,143</text><text x="260.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >副収入</text><text x="260.0" y="247.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >月10万円</text><rect x="332.5" y="124.6" width="55.0" height="68.4" rx="3" fill="#ec4899"/><text x="360.0" y="118.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >3,429</text><text x="360.0" y="235.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >副収入</text><text x="360.0" y="247.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >月15万円</text></svg><figcaption>出典：当サイトの計算（必要な資産＝（年間支出−副収入）÷取り崩し率）。<b>副収入が月5万円（年60万円）あると、必要な資産は約8,571万円から約6,857万円に、月10万円で約5,143万円、月15万円で約3,429万円</b>。副収入の税・社会保険料は含んでいません。</figcaption></figure>
+    <ul>
+      <li>必要額は、<b>（年間支出 − 副収入）÷ 取り崩し率</b>。年間支出300万円、取り崩し率3.5%なら、副収入が1年に60万円（月5万円）増えるごとに、必要額は<b>約1,714万円</b>減ります。</li>
+      <li>副収入には、税・社会保険料がかかります。<b>手取りの額で考える</b>のが基本です。</li>
+      <li>副収入は、<b>仕事を続けられる間だけ</b>の収入です。体力・健康・仕事の需要が変わると、必要額は戻ります。</li>
+    </ul>
+
+    <h2>5. コーストFIRE：積立を止めて、運用で育てる</h2>
+    <figure class="fig"><div class="fig-title">コーストFIRE：今いくらあれば、積立を止めても届くか（万円、目標8,571万円）</div><svg viewBox="0 0 420 235" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="209.0" x2="340" y2="209.0" stroke="#e5e7eb"/><text x="37.0" y="212.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0</text><line x1="42" y1="154.8" x2="340" y2="154.8" stroke="#e5e7eb"/><text x="37.0" y="158.3" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >2,500</text><line x1="42" y1="100.7" x2="340" y2="100.7" stroke="#e5e7eb"/><text x="37.0" y="104.2" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >5,000</text><line x1="42" y1="46.5" x2="340" y2="46.5" stroke="#e5e7eb"/><text x="37.0" y="50.0" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >7,500</text><polyline points="42.0,23.3 51.9,26.9 61.9,30.5 71.8,34.0 81.7,37.4 91.7,40.8 101.6,44.1 111.5,47.3 121.5,50.5 131.4,53.6 141.3,56.6 151.3,59.6 161.2,62.6 171.1,65.4 181.1,68.3 191.0,71.0 200.9,73.7 210.9,76.4 220.8,79.0 230.7,81.5 240.7,84.0 250.6,86.5 260.5,88.9 270.5,91.2 280.4,93.5 290.3,95.8 300.3,98.0 310.2,100.2 320.1,102.3 330.1,104.4 340.0,106.5" fill="none" stroke="#111827" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,23.3 51.9,28.7 61.9,33.9 71.8,39.0 81.7,44.0 91.7,48.8 101.6,53.5 111.5,58.0 121.5,62.4 131.4,66.7 141.3,70.8 151.3,74.8 161.2,78.7 171.1,82.5 181.1,86.2 191.0,89.8 200.9,93.3 210.9,96.6 220.8,99.9 230.7,103.1 240.7,106.2 250.6,109.2 260.5,112.1 270.5,114.9 280.4,117.6 290.3,120.3 300.3,122.9 310.2,125.4 320.1,127.8 330.1,130.2 340.0,132.5" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,23.3 51.9,30.4 61.9,37.3 71.8,43.9 81.7,50.3 91.7,56.4 101.6,62.2 111.5,67.9 121.5,73.3 131.4,78.5 141.3,83.5 151.3,88.4 161.2,93.0 171.1,97.5 181.1,101.8 191.0,105.9 200.9,109.8 210.9,113.7 220.8,117.3 230.7,120.9 240.7,124.2 250.6,127.5 260.5,130.6 270.5,133.7 280.4,136.5 290.3,139.3 300.3,142.0 310.2,144.6 320.1,147.1 330.1,149.5 340.0,151.7" fill="none" stroke="#94a3b8" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round"/><circle cx="340" cy="106.5" r="3" fill="#111827"/><text x="347.0" y="110.0" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >実質2%</text><text x="347.0" y="121.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >4,732</text><circle cx="340" cy="132.5" r="3" fill="#ec4899"/><text x="347.0" y="136.0" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >実質3%</text><text x="347.0" y="147.5" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >3,531</text><circle cx="340" cy="151.7" r="3" fill="#94a3b8"/><text x="347.0" y="160.0" font-size="9.5" text-anchor="start" fill="#94a3b8" font-weight="700" >実質4%</text><text x="347.0" y="171.5" font-size="9.5" text-anchor="start" fill="#94a3b8" font-weight="700" >2,643</text><text x="42.0" y="227.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >今</text><text x="141.3" y="227.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >10年後</text><text x="240.7" y="227.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >20年後</text><text x="340.0" y="227.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >30年後</text></svg><figcaption>出典：当サイトの計算（必要な今の資産＝目標額÷（1＋実質リターン）^退職までの年数）。横軸は、退職（資産の取り崩しの開始）までの年数。<b>25年後なら、実質3%で約4,094万円、実質2%で約5,225万円、実質4%で約3,215万円</b>。リターンは予想ではなく、仮定です。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>退職までの年数</th><th>実質2%</th><th>実質3%</th><th>実質4%</th></tr></thead><tbody><tr><td data-label="退職までの年数"><span class="tv">10年</span></td><td data-label="実質2%"><span class="tv">7,032万円</span></td><td data-label="実質3%"><span class="tv">6,378万円</span></td><td data-label="実質4%"><span class="tv">5,791万円</span></td></tr><tr><td data-label="退職までの年数"><span class="tv">15年</span></td><td data-label="実質2%"><span class="tv">6,369万円</span></td><td data-label="実質3%"><span class="tv">5,502万円</span></td><td data-label="実質4%"><span class="tv">4,759万円</span></td></tr><tr><td data-label="退職までの年数"><span class="tv">20年</span></td><td data-label="実質2%"><span class="tv">5,768万円</span></td><td data-label="実質3%"><span class="tv">4,746万円</span></td><td data-label="実質4%"><span class="tv">3,912万円</span></td></tr><tr><td data-label="退職までの年数"><span class="tv">25年</span></td><td data-label="実質2%"><span class="tv">5,225万円</span></td><td data-label="実質3%"><span class="tv">4,094万円</span></td><td data-label="実質4%"><span class="tv">3,215万円</span></td></tr><tr><td data-label="退職までの年数"><span class="tv">30年</span></td><td data-label="実質2%"><span class="tv">4,732万円</span></td><td data-label="実質3%"><span class="tv">3,531万円</span></td><td data-label="実質4%"><span class="tv">2,643万円</span></td></tr></tbody></table></div>
+    <ul>
+      <li>コーストFIREは、<b>「今の資産が、運用だけで、退職時に目標額に育つ」</b>状態です。以降は、積立をしなくても、目標額に届く計算になります（生活費は、働いて賄う）。</li>
+      <li>退職まで20年、実質リターン3%なら、今の資産は<b>約4,746万円</b>で届きます。実質2%だと約5,768万円、実質4%だと約3,912万円。<b>仮定するリターンで、必要な今の資産は大きく変わります</b>。</li>
+      <li>運用の結果は、毎年変動します。<b>仮定どおりに育つ保証はなく</b>、一時的に下がれば、到達は遅れます。</li>
+    </ul>
+
+    <h2>6. 年金を入れると、必要額はどう変わるか</h2>
+    <p>老齢年金は、<b>65歳から</b>受け取る前提で考えます（繰上げ・繰下げで、受取額と開始年齢が変わります）。2026年度の国民年金（老齢基礎年金）の満額は<b>月70,608円（年約84.7万円）</b>です（日本年金機構、昭和31年4月2日以後生まれの方）。</p>
+    <p>ここでは、「取り崩し率」ではなく、<b>95歳まで資金が持つ</b>ように、毎年の支出と年金の現在価値で計算します（FIRE後、毎年初に年間支出を引き出し、実質リターン2%で運用）。</p>
+    <figure class="fig"><div class="fig-title">年金を入れた必要額（万円、年間支出240万円、95歳まで、実質リターン2%）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="202.0" x2="410" y2="202.0" stroke="#e5e7eb"/><rect x="24.0" y="44.0" width="24.0" height="158.0" rx="3" fill="#cbd5e1"/><text x="36.0" y="39.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >8,121</text><rect x="52.0" y="67.0" width="24.0" height="135.0" rx="3" fill="#ec4899"/><text x="64.0" y="62.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6,941</text><text x="50.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >40歳で</text><text x="50.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >FIRE</text><rect x="104.0" y="52.3" width="24.0" height="149.7" rx="3" fill="#cbd5e1"/><text x="116.0" y="47.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7,692</text><rect x="132.0" y="77.7" width="24.0" height="124.3" rx="3" fill="#ec4899"/><text x="144.0" y="72.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6,390</text><text x="130.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >45歳で</text><text x="130.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >FIRE</text><rect x="184.0" y="61.5" width="24.0" height="140.5" rx="3" fill="#cbd5e1"/><text x="196.0" y="56.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >7,219</text><rect x="212.0" y="89.5" width="24.0" height="112.5" rx="3" fill="#ec4899"/><text x="224.0" y="84.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >5,781</text><text x="210.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >50歳で</text><text x="210.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >FIRE</text><rect x="264.0" y="71.7" width="24.0" height="130.3" rx="3" fill="#cbd5e1"/><text x="276.0" y="66.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6,697</text><rect x="292.0" y="102.6" width="24.0" height="99.4" rx="3" fill="#ec4899"/><text x="304.0" y="97.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >5,109</text><text x="290.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >55歳で</text><text x="290.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >FIRE</text><rect x="344.0" y="82.9" width="24.0" height="119.1" rx="3" fill="#cbd5e1"/><text x="356.0" y="77.9" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >6,120</text><rect x="372.0" y="117.0" width="24.0" height="85.0" rx="3" fill="#ec4899"/><text x="384.0" y="112.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >4,367</text><text x="370.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >60歳で</text><text x="370.0" y="252.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >FIRE</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >年金なし</text><rect x="84" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="97.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >年金あり（65歳から）</text></svg><figcaption>出典：当サイトの計算。FIRE後、95歳まで毎年初に年間支出を引き出し、実質リターン2%で運用する前提で、必要な資産の現在価値を計算。年金は、国民年金の満額（年84.7万円、2026年度）を、65歳から95歳まで受け取る前提。<b>年金を入れると、必要額は、40歳FIREで約1,180万円、50歳で約1,438万円、60歳で約1,753万円減ります</b>。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>FIREする年齢</th><th>年金なし</th><th>年金あり</th><th>年金の効果</th></tr></thead><tbody><tr><td data-label="FIREする年齢"><span class="tv">40歳</span></td><td data-label="年金なし"><span class="tv">8,121万円</span></td><td data-label="年金あり"><span class="tv">6,941万円</span></td><td data-label="年金の効果"><span class="tv">−1,180万円</span></td></tr><tr><td data-label="FIREする年齢"><span class="tv">45歳</span></td><td data-label="年金なし"><span class="tv">7,692万円</span></td><td data-label="年金あり"><span class="tv">6,390万円</span></td><td data-label="年金の効果"><span class="tv">−1,303万円</span></td></tr><tr><td data-label="FIREする年齢"><span class="tv">50歳</span></td><td data-label="年金なし"><span class="tv">7,219万円</span></td><td data-label="年金あり"><span class="tv">5,781万円</span></td><td data-label="年金の効果"><span class="tv">−1,438万円</span></td></tr><tr><td data-label="FIREする年齢"><span class="tv">55歳</span></td><td data-label="年金なし"><span class="tv">6,697万円</span></td><td data-label="年金あり"><span class="tv">5,109万円</span></td><td data-label="年金の効果"><span class="tv">−1,588万円</span></td></tr><tr><td data-label="FIREする年齢"><span class="tv">60歳</span></td><td data-label="年金なし"><span class="tv">6,120万円</span></td><td data-label="年金あり"><span class="tv">4,367万円</span></td><td data-label="年金の効果"><span class="tv">−1,753万円</span></td></tr></tbody></table></div>
+    <ul>
+      <li>年間支出240万円の単身では、<b>40歳でFIREすると、年金なしで約8,121万円、年金ありで約6,941万円</b>。年金の効果は、約1,180万円です。</li>
+      <li>60歳でFIREすると、年金なしで約6,120万円、年金ありで約4,367万円。<b>FIREする年齢が遅いほど、期間が短くなり、必要額は小さく</b>なります。</li>
+      <li>年金の効果は、FIREの年齢が早いほど、割り引かれて小さくなります（40歳で約1,180万円、60歳で約1,753万円）。</li>
+    </ul>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>実質リターン</th><th>1%</th><th>2%</th><th>3%</th></tr></thead><tbody><tr><td data-label="実質リターン"><span class="tv">単身・年間支出240万円（45歳でFIRE、年金あり）</span></td><td data-label="1%"><span class="tv">7,691万円</span></td><td data-label="2%"><span class="tv">6,390万円</span></td><td data-label="3%"><span class="tv">5,413万円</span></td></tr><tr><td data-label="実質リターン"><span class="tv">夫婦・年間支出360万円（45歳でFIRE、年金あり）</span></td><td data-label="1%"><span class="tv">10,632万円</span></td><td data-label="2%"><span class="tv">8,934万円</span></td><td data-label="3%"><span class="tv">7,646万円</span></td></tr></tbody></table></div>
+    <ul>
+      <li>実質リターンの仮定が1%・2%・3%で、必要額は<b>大きく変わります</b>。45歳でFIREする単身では、約7,691万円〜約5,413万円です。</li>
+      <li>この計算の年金は、<b>国民年金の満額</b>（保険料を40年納めた場合）です。FIRE後は、<b>国民年金の保険料の納付と、健康保険料の負担</b>が続きます。厚生年金の加入期間が長ければ、年金は増えます。</li>
+      <li>「年間支出÷3.5%」（約6,857万円）は、<b>資産を使い切らない前提の目安</b>です。95歳までに使い切る前提とは、前提が違うため、数字は一致しません。</li>
+      <li>公的年金の見込額は、<b>ねんきん定期便などで、自分の数字</b>を確認します。</li>
+    </ul>
+
+    <h2>7. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>「必要額」は、1つの数字ではない。</b>支出、副収入、年金、期間、取り崩し率で、数千万円単位で変わる。</li>
+      <li><b>3つの型を、組み合わせて考える。</b>たとえば、サイドFIREで始め、年金が入る65歳以降に、副収入を減らしていく。</li>
+      <li><b>仮定は、幅で見る。</b>リターンは実質2〜4%、取り崩し率は3.0〜4.0%の幅で、必要額がどう動くかを見る。</li>
+      <li><b>年金は、65歳以降の支出を支える。</b>受給開始年齢と見込額を確認し、それまでの期間の資金と、分けて考える。</li>
+      <li><b>支出は、定期的に見直す。</b>1年に1回は、自分の家計で、数字を更新する。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の投資方法・取り崩し方法を勧めるものではありません。計算は、仮定を置いた試算で、将来の運用成績や、年金額を約束するものではありません。税金、手数料、物価、制度の変更は、含んでいません。</div>
+
+    <h2>8. 確認するチェックリスト</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認すること</th><th>見方</th><th>注意点</th></tr></thead><tbody><tr><td data-label="確認すること"><span class="tv">① 支出</span></td><td data-label="見方"><span class="tv">税・社会保険料を含む、実際の生活費</span></td><td data-label="注意点"><span class="tv">家計調査の平均は、あくまで目安</span></td></tr><tr><td data-label="確認すること"><span class="tv">② 取り崩し率</span></td><td data-label="見方"><span class="tv">3.0〜4.0%の幅</span></td><td data-label="注意点"><span class="tv">期間が長いほど、低めで見る</span></td></tr><tr><td data-label="確認すること"><span class="tv">③ 年金</span></td><td data-label="見方"><span class="tv">受給開始年齢と、見込額</span></td><td data-label="注意点"><span class="tv">早期FIREは、厚生年金の加入期間が短くなる</span></td></tr><tr><td data-label="確認すること"><span class="tv">④ 副収入</span></td><td data-label="見方"><span class="tv">手取りの額と、続く期間</span></td><td data-label="注意点"><span class="tv">税・社会保険料と、仕事の継続性</span></td></tr><tr><td data-label="確認すること"><span class="tv">⑤ 運用の前提</span></td><td data-label="見方"><span class="tv">実質リターンの仮定</span></td><td data-label="注意点"><span class="tv">相場は毎年変動し、順序リスクもある</span></td></tr></tbody></table></div>
+
+    <div class="art-fine">
+      <p>※ 支出の数字は、総務省統計局「家計調査（家計収支編）2025年（令和7年）平均」の「家計の概要」（2026年3月10日公表）の月平均額です。月平均額×12は、当サイトの計算です。</p>
+      <p>※ 年金額は、日本年金機構「令和8年度の年金額」（2026年4月分から）。老齢基礎年金（満額）は月70,608円。厚生年金（夫婦2人分の老齢基礎年金を含む標準的な年金額）は月237,279円ですが、この記事の計算には使っていません。</p>
+      <p>※ すべて、今の物価で考える「実質」の試算です。取り崩し率、実質リターンは、仮定です。税金（売却益への課税、NISA口座の非課税の扱い）、手数料、国民健康保険料、国民年金保険料は、含んでいません。</p>
+      <p>※ 「年金あり・なし」の計算は、FIRE後、95歳まで毎年初に年間支出を引き出し、実質リターン2%（表で1〜3%）で運用する前提の、現在価値です。年金は、65歳から95歳まで、毎年初に受け取る前提です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>総務省統計局「家計調査（家計収支編）2025年（令和7年）平均結果」：<a href="https://www.stat.go.jp/data/kakei/2025np/" target="_blank" rel="noopener">https://www.stat.go.jp/data/kakei/2025np/</a></li><li>日本年金機構「令和8年度の年金額（令和8年4月分から）」：<a href="https://www.nenkin.go.jp/oshirase/taisetu/kojin/2026/202604/0401.html" target="_blank" rel="noopener">https://www.nenkin.go.jp/oshirase/taisetu/kojin/2026/202604/0401.html</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月17日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="real-return-cash-vs-investing.html">現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果</a><a href="stocks-bonds-gold.html">株・債券・金の比較｜下がったときに、何が起きたか</a><a href="sp500-vs-nasdaq100.html">S&amp;P500とNasdaq-100（QQQ）の比較｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
