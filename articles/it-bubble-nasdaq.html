@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ITバブルで、Nasdaq-100（QQQ）は高値から−81.1%、高値に戻るまで14年7か月。最悪の日に一括で始めた場合と、毎月積み立てた場合を、配当込みのデータで比べる。">
+<title>ITバブル（2000年）｜Nasdaq-100が高値に戻るまで、長期投資家の目線 - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/it-bubble-nasdaq.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="ITバブル（2000年）｜Nasdaq-100が高値に戻るまで、長期投資家の目線">
+<meta property="og:description" content="ITバブルで、Nasdaq-100（QQQ）は高値から−81.1%、高値に戻るまで14年7か月。最悪の日に一括で始めた場合と、毎月積み立てた場合を、配当込みのデータで比べる。">
+<meta property="og:url" content="https://fire-app.jp/articles/it-bubble-nasdaq.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/it-bubble-nasdaq.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/it-bubble-nasdaq.jpg">
+<meta name="twitter:title" content="ITバブル（2000年）｜Nasdaq-100が高値に戻るまで、長期投資家の目線">
+<meta name="twitter:description" content="ITバブルで、Nasdaq-100（QQQ）は高値から−81.1%、高値に戻るまで14年7か月。最悪の日に一括で始めた場合と、毎月積み立てた場合を、配当込みのデータで比べる。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ITバブル（2000年）｜Nasdaq-100が高値に戻るまで、長期投資家の目線", "description": "ITバブルで、Nasdaq-100（QQQ）は高値から−81.1%、高値に戻るまで14年7か月。最悪の日に一括で始めた場合と、毎月積み立てた場合を、配当込みのデータで比べる。", "inLanguage": "ja", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/it-bubble-nasdaq.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "歴史・事例", "keywords": ["米国株", "リスク・暴落", "積立", "テクノロジー"], "image": ["https://fire-app.jp/articles/og/it-bubble-nasdaq.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "ITバブル（2000年）｜Nasdaq-100が高値に戻るまで、長期投資家の目線", "item": "https://fire-app.jp/articles/it-bubble-nasdaq.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 歴史・事例</div>
+    <h1>ITバブル（2000年）</h1>
+    <p class="subtitle">Nasdaq-100が高値に戻るまで</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>高値から−81%、戻るまで14年7か月</h3><p class="pt-d">Nasdaq-100（QQQ）は、ITバブルの高値（2000年3月）から2002年9月までに、<b>−81.1%</b>（30か月）下がり、<b>高値に戻ったのは2014年10月</b>（高値から14年7か月）でした。</p></div><div class="pt"><h3>今回の−19.9%は、同じ日数でITバブルより浅い</h3><p class="pt-d">この記事の軸は、<b>「最悪の日に始めた人は、どうなったか」</b>。高値の月に<b>一括</b>で買っても、2026年10月まで持てば<b>7.5倍（年率7.9%）</b>。S&P500（8.0倍、年率8.1%）と、ほぼ同じです。<b>毎月の積立</b>なら、元本を取り戻したのは<b>2009年7月</b>（約9年4か月後）で、一括より、約5年早い。</p></div><div class="pt"><h3>積立なら、元本を約9年4か月で回復</h3><p class="pt-d"><b>今回（2026年10月6日の高値から）</b>は、33営業日目に最大−19.9%、2026年11月23日の終値で−13.6%。<b>同じ営業日数のITバブル（−28.1%）より浅く</b>、高値の前の約11か月の上昇も、ITバブルが+111%、今回が+25%と違います。ただし、ITバブルは、その後も下がり続け（最大−83.0%）、<b>最初の数か月では、先は分かりません</b>。ITバブルの高値回復は、14年7か月後でした。この記事は、今回の原因や、売買を述べるものではありません。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月24日</span><span><b>情報の時点</b> 株価データ（QQQ・SPY、月次、配当込み）</span></div>
+<div class="art-tags"><a href="index.html?tag=米国株">#米国株</a><a href="index.html?tag=リスク・暴落">#リスク・暴落</a><a href="index.html?tag=積立">#積立</a><a href="index.html?tag=テクノロジー">#テクノロジー</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. ITバブルとは</h2>
+    <p>ITバブルは、<b>1990年代後半から2000年にかけて、インターネット関連の株が急騰し、その後、急落した</b>出来事です。この記事では、ナスダック100指数に連動する<b>QQQ</b>（配当込みの調整後終値、月次、ドル建て）で、数字を確認します。</p>
+    <div class="tiles-key"><div class="tile key"><div class="tile-l">Nasdaq-100の最大の下落</div><div class="tile-v">−81.1<small>%</small></div><div class="tile-n">2000年3月の高値から2002年9月まで（30か月）</div></div><div class="tile key"><div class="tile-l">高値に戻るまで</div><div class="tile-v">14<small>年7か月</small></div><div class="tile-n">2014年10月に、2000年3月の高値を上回った（底から12年1か月）</div></div></div><div class="tiles tiles-sm"><div class="tile"><div class="tile-l">高値で一括で買った場合（2026年10月）</div><div class="tile-v">7.5<small>倍</small></div><div class="tile-n">年率7.9%。S&P500は8.0倍（年率8.1%）</div></div><div class="tile"><div class="tile-l">毎月積立で、元本を取り戻した時期</div><div class="tile-v">2009<small>年7月</small></div><div class="tile-n">始めてから約9年4か月。2026年10月は11.6倍</div></div><div class="tile"><div class="tile-l">高値の前の1年</div><div class="tile-v">+104<small>%</small></div><div class="tile-n">1999年4月→2000年3月（11か月）。急騰のあとの下落だった</div></div></div>
+    <p class="art-fig">出典：株価データ（QQQ、SPY、配当込みの調整後終値、月次）。QQQは、1999年4月から。税・手数料・為替は含みません。</p>
+    <ul>
+      <li>高値の前の11か月（1999年4月→2000年3月）で、<b>+104%</b>。</li>
+      <li>その後、2000年3月から2002年9月までの30か月で、<b>−81.1%</b>。同じ時期のS&P500（配当込み）は、2000年の高値から2002年9月までに、−44.7%でした。</li>
+    </ul>
+
+    <h2>2. 下落の深さと、回復の長さ</h2>
+    <figure class="fig"><div class="fig-title">高値からの下落率（%、Nasdaq-100とS&amp;P500、配当込み）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="180.7" x2="350" y2="180.7" stroke="#e5e7eb"/><text x="37.0" y="184.2" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-75%</text><line x1="42" y1="125.1" x2="350" y2="125.1" stroke="#e5e7eb"/><text x="37.0" y="128.6" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-50%</text><line x1="42" y1="69.6" x2="350" y2="69.6" stroke="#e5e7eb"/><text x="37.0" y="73.1" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-25%</text><line x1="42" y1="14.0" x2="350" y2="14.0" stroke="#e5e7eb"/><text x="37.0" y="17.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0%</text><polyline points="42.0,14.0 42.9,21.0 43.9,14.0 44.8,18.0 45.7,14.0 46.7,14.0 47.6,14.0 48.5,14.0 49.5,14.0 50.4,18.1 51.3,14.0 52.3,14.0 53.2,43.9 54.1,67.5 55.1,46.6 56.0,54.7 56.9,30.0 57.9,56.1 58.8,70.4 59.7,108.4 60.7,117.8 61.6,105.7 62.5,139.9 63.5,156.8 64.4,142.6 65.3,145.4 66.3,143.5 67.2,151.5 68.1,161.9 69.1,177.4 70.0,167.4 70.9,155.8 71.9,157.3 72.8,158.1 73.7,167.7 74.7,163.0 75.6,171.8 76.5,175.3 77.5,183.3 78.4,187.8 79.3,188.6 80.3,194.2 81.2,186.4 82.1,180.0 83.1,186.8 84.0,186.6 84.9,185.2 85.9,185.0 86.8,180.5 87.7,175.8 88.7,175.4 89.6,171.7 90.5,168.5 91.5,170.4 92.4,164.8 93.3,164.4 94.3,162.2 95.2,161.0 96.1,162.0 97.1,163.5 98.0,165.6 98.9,162.0 99.9,159.6 100.8,165.4 101.7,167.2 102.7,164.9 103.6,161.3 104.5,156.8 105.5,154.4 106.4,159.6 107.3,159.9 108.3,161.3 109.2,164.5 110.1,158.2 111.1,160.8 112.0,155.0 112.9,156.3 113.9,155.3 114.8,156.5 115.7,151.6 116.7,153.1 117.6,149.8 118.5,151.7 119.5,149.9 120.4,150.1 121.3,156.3 122.3,156.4 123.2,159.8 124.1,156.2 125.1,152.5 126.0,148.5 126.9,145.5 127.9,147.2 128.8,145.3 129.7,146.8 130.7,146.4 131.6,141.3 132.5,138.4 133.5,137.9 134.4,138.0 135.3,135.3 136.3,130.0 137.2,122.5 138.1,130.2 139.1,130.2 140.0,142.8 140.9,147.4 141.9,145.7 142.8,138.5 143.7,132.7 144.7,142.6 145.6,142.0 146.5,140.7 147.5,155.5 148.4,168.0 149.3,175.8 150.3,174.5 151.2,175.9 152.1,179.1 153.1,173.2 154.0,164.9 154.9,162.6 155.9,160.5 156.8,154.1 157.7,152.9 158.7,148.1 159.6,150.8 160.5,145.4 161.5,140.7 162.4,146.9 163.3,142.8 164.3,135.6 165.2,133.3 166.1,140.9 167.1,146.6 168.0,140.1 168.9,145.0 169.9,133.0 170.8,126.5 171.7,126.7 172.7,121.4 173.6,118.2 174.5,114.5 175.5,115.0 176.4,111.5 177.3,113.1 178.3,115.5 179.2,113.5 180.1,119.8 181.1,125.0 182.0,113.4 182.9,116.7 183.9,117.5 184.8,107.5 185.7,99.2 186.7,92.3 187.6,94.0 188.5,104.0 189.5,99.2 190.4,97.8 191.3,90.6 192.3,89.4 193.2,97.1 194.1,95.3 195.1,95.9 196.0,92.2 196.9,91.7 197.9,87.3 198.8,83.6 199.7,78.1 200.7,81.9 201.6,72.1 202.5,72.8 203.5,64.9 204.4,56.4 205.3,50.0 206.3,44.6 207.2,48.2 208.1,38.6 209.1,44.0 210.0,44.6 210.9,36.0 211.9,29.7 212.8,27.3 213.7,16.8 214.7,18.5 215.6,14.0 216.5,14.0 217.5,19.0 218.4,23.5 219.3,14.0 220.3,19.2 221.2,15.1 222.1,14.0 223.1,19.5 224.0,14.0 224.9,29.2 225.9,33.7 226.8,14.0 227.7,14.0 228.7,17.5 229.6,32.7 230.5,35.8 231.5,22.1 232.4,28.9 233.3,19.9 234.3,24.8 235.2,14.0 236.1,14.0 237.1,14.0 238.0,17.2 238.9,16.3 239.9,14.0 240.8,14.0 241.7,14.0 242.7,14.0 243.6,14.0 244.5,14.0 245.5,19.2 246.4,14.0 247.3,14.0 248.3,14.7 249.2,14.0 250.1,14.0 251.1,14.0 252.0,14.0 252.9,16.9 253.9,25.8 254.8,24.8 255.7,14.0 256.7,14.0 257.6,14.0 258.5,14.0 259.5,14.6 260.4,33.7 261.3,34.2 262.3,51.7 263.2,35.1 264.1,29.1 265.1,20.9 266.0,14.0 266.9,32.3 267.9,16.8 268.8,14.0 269.7,18.2 270.7,16.2 271.6,14.0 272.5,14.0 273.5,14.0 274.4,14.0 275.3,27.5 276.3,42.7 277.2,14.0 278.1,14.0 279.1,14.0 280.0,14.0 280.9,14.0 281.9,26.8 282.8,33.2 283.7,14.0 284.7,14.0 285.6,14.0 286.5,14.3 287.5,14.0 288.4,14.0 289.3,16.7 290.3,14.0 291.2,14.0 292.1,14.0 293.1,26.6 294.0,14.0 294.9,14.0 295.9,14.0 296.8,33.4 297.7,42.5 298.7,33.5 299.6,61.0 300.5,63.8 301.5,79.2 302.4,59.5 303.3,68.5 304.3,86.2 305.2,80.2 306.1,71.6 307.1,86.4 308.0,70.4 308.9,71.0 309.9,55.4 310.8,54.4 311.7,40.1 312.7,27.8 313.6,19.7 314.5,22.9 315.5,33.8 316.4,37.9 317.3,16.5 318.3,14.0 319.2,14.0 320.1,14.0 321.1,14.0 322.0,23.7 322.9,14.0 323.9,14.0 324.8,17.7 325.7,15.3 326.7,14.0 327.6,15.9 328.5,14.0 329.5,14.0 330.4,14.0 331.3,20.0 332.3,36.4 333.2,33.6 334.1,15.0 335.1,14.0 336.0,14.0 336.9,14.0 337.9,14.0 338.8,14.0 339.7,17.5 340.7,18.9 341.6,16.3 342.5,21.4 343.5,31.8 344.4,14.0 345.3,14.0 346.3,14.3 347.2,28.9 348.1,20.2 349.1,14.0 350.0,28.8" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,14.0 42.9,19.1 43.9,14.0 44.8,20.9 45.7,22.0 46.7,26.8 47.6,14.0 48.5,14.0 49.5,14.0 50.4,25.1 51.3,28.3 52.3,14.0 53.2,21.8 54.1,25.2 55.1,21.0 56.0,24.4 56.9,14.0 57.9,26.2 58.8,27.2 59.7,42.8 60.7,43.8 61.6,35.2 62.5,54.4 63.5,64.6 64.4,49.9 65.3,51.0 66.3,55.4 67.2,57.2 68.1,67.9 69.1,81.6 70.0,79.6 70.9,67.4 71.9,66.4 72.8,68.1 73.7,71.1 74.7,65.6 75.6,75.5 76.5,76.5 77.5,88.3 78.4,99.9 79.3,99.0 80.3,113.4 81.2,103.3 82.1,95.1 83.1,103.1 84.0,106.3 84.9,108.1 85.9,107.8 86.8,97.0 87.7,89.3 88.7,87.8 89.6,85.1 90.5,82.0 91.5,83.6 92.4,75.5 93.3,73.7 94.3,65.5 95.2,62.2 96.1,59.8 97.1,62.1 98.0,65.4 98.9,62.5 99.9,59.3 100.8,65.0 101.7,64.6 102.7,62.9 103.6,60.6 104.5,52.8 105.5,47.3 106.4,51.5 107.3,47.7 108.3,51.1 109.2,54.6 110.1,48.7 111.1,48.4 112.0,41.3 112.9,43.1 113.9,41.5 114.8,46.1 115.7,37.8 116.7,38.2 117.6,33.4 118.5,32.2 119.5,28.9 120.4,26.3 121.3,32.6 122.3,32.1 123.2,31.1 124.1,26.7 125.1,21.0 126.0,14.2 126.9,14.0 127.9,14.0 128.8,14.0 129.7,18.4 130.7,15.8 131.6,14.0 132.5,14.0 133.5,17.2 134.4,24.1 135.3,21.4 136.3,14.0 137.2,14.0 138.1,22.6 139.1,25.0 140.0,37.8 140.9,42.9 141.9,44.6 142.8,35.5 143.7,32.5 144.7,49.5 145.6,51.2 146.5,48.3 147.5,66.0 148.4,94.1 149.3,104.0 150.3,102.7 151.2,113.7 152.1,126.9 153.1,117.7 154.0,106.0 154.9,98.4 155.9,98.5 156.8,88.2 157.7,82.7 158.7,77.3 159.6,80.3 160.5,70.7 161.5,67.5 162.4,73.7 163.3,68.6 164.3,58.4 165.2,55.7 166.1,70.0 167.1,78.6 168.0,67.8 168.9,75.4 169.9,61.0 170.8,54.3 171.7,54.3 172.7,42.2 173.6,37.6 174.5,30.7 175.5,30.7 176.4,24.8 177.3,27.1 178.3,30.7 179.2,34.8 180.1,45.8 181.1,59.1 182.0,39.7 182.9,40.5 183.9,38.5 184.8,29.3 185.7,20.3 186.7,14.0 187.6,15.5 188.5,28.7 189.5,20.3 190.4,17.8 191.3,14.0 192.3,14.0 193.2,18.0 194.1,16.8 195.1,14.8 196.0,14.0 196.9,14.0 197.9,14.0 198.8,14.0 199.7,14.0 200.7,17.0 201.6,14.0 202.5,20.7 203.5,14.0 204.4,14.0 205.3,14.0 206.3,14.0 207.2,21.8 208.1,14.0 209.1,14.0 210.0,14.0 210.9,14.0 211.9,14.0 212.8,17.0 213.7,14.0 214.7,17.1 215.6,14.0 216.5,14.0 217.5,14.6 218.4,21.1 219.3,14.0 220.3,17.5 221.2,15.3 222.1,14.0 223.1,18.5 224.0,14.0 224.9,27.5 225.9,32.9 226.8,15.6 227.7,14.8 228.7,18.6 229.6,29.4 230.5,29.6 231.5,15.7 232.4,14.8 233.3,14.0 234.3,14.0 235.2,14.0 236.1,14.0 237.1,14.0 238.0,17.9 238.9,14.0 239.9,14.0 240.8,14.0 241.7,14.0 242.7,14.0 243.6,14.0 244.5,14.0 245.5,14.0 246.4,14.0 247.3,14.0 248.3,14.0 249.2,14.0 250.1,14.0 251.1,14.0 252.0,14.0 252.9,22.1 253.9,27.9 254.8,26.9 255.7,21.8 256.7,20.6 257.6,14.0 258.5,14.0 259.5,14.0 260.4,29.4 261.3,25.5 262.3,44.1 263.2,28.7 264.1,22.0 265.1,18.1 266.0,14.0 266.9,28.2 267.9,14.0 268.8,14.0 269.7,17.7 270.7,14.0 271.6,14.0 272.5,14.0 273.5,14.0 274.4,14.1 275.3,31.7 276.3,57.2 277.2,34.5 278.1,24.9 279.1,21.1 280.0,14.0 280.9,14.0 281.9,22.3 282.8,27.7 283.7,14.0 284.7,14.0 285.6,16.3 286.5,14.0 287.5,14.0 288.4,14.0 289.3,14.0 290.3,14.0 291.2,14.0 292.1,14.0 293.1,24.4 294.0,14.0 294.9,15.8 295.9,14.0 296.8,25.7 297.7,31.9 298.7,24.3 299.6,42.9 300.5,42.4 301.5,58.4 302.4,42.0 303.3,50.0 304.3,67.2 305.2,53.4 306.1,43.3 307.1,54.4 308.0,43.0 308.9,47.8 309.9,40.8 310.8,37.7 311.7,36.8 312.7,23.9 313.6,16.9 314.5,20.5 315.5,30.7 316.4,35.2 317.3,16.8 318.3,14.0 319.2,14.0 320.1,14.0 321.1,14.0 322.0,23.0 322.9,14.0 323.9,14.0 324.8,14.0 325.7,14.0 326.7,14.0 327.6,16.0 328.5,14.0 329.5,19.3 330.4,14.0 331.3,16.8 332.3,29.0 333.2,30.8 334.1,17.9 335.1,14.0 336.0,14.0 336.9,14.0 337.9,14.0 338.8,14.0 339.7,14.0 340.7,14.0 341.6,14.0 342.5,15.9 343.5,26.8 344.4,14.0 345.3,14.0 346.3,16.3 347.2,16.2 348.1,14.0 349.1,14.7 350.0,16.7" fill="none" stroke="#111827" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="350" cy="16.7" r="3" fill="#111827"/><text x="357.0" y="20.2" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >S&amp;P500</text><text x="357.0" y="31.7" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >-1%</text><circle cx="350" cy="28.8" r="3" fill="#ec4899"/><text x="357.0" y="44.2" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >Nasdaq-100</text><text x="357.0" y="55.7" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >-7%</text><text x="52.3" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2000/3</text><text x="150.3" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2008/12</text><text x="350.0" y="232.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10</text></svg><figcaption>出典：株価データ（QQQとSPYの配当込みの調整後終値、月次、ドル建て）。<b>Nasdaq-100は、2000年3月の高値から2002年9月までに−81.1%</b>（30か月）。S&P500の最大の下落は、2007年10月の高値から2009年2月までの−50.8%です。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th></th><th>Nasdaq-100（ITバブル）</th><th>S&P500（金融危機）</th></tr></thead><tbody><tr><td data-label=""><span class="tv">高値の月</span></td><td data-label="Nasdaq-100（ITバブル）"><span class="tv">2000年3月</span></td><td data-label="S&P500（金融危機）"><span class="tv">2007年10月</span></td></tr><tr><td data-label=""><span class="tv">底の月</span></td><td data-label="Nasdaq-100（ITバブル）"><span class="tv">2002年9月</span></td><td data-label="S&P500（金融危機）"><span class="tv">2009年2月</span></td></tr><tr><td data-label=""><span class="tv">最大の下落</span></td><td data-label="Nasdaq-100（ITバブル）"><span class="tv">−81.1%</span></td><td data-label="S&P500（金融危機）"><span class="tv">−50.8%</span></td></tr><tr><td data-label=""><span class="tv">高値から底まで</span></td><td data-label="Nasdaq-100（ITバブル）"><span class="tv">30か月</span></td><td data-label="S&P500（金融危機）"><span class="tv">16か月</span></td></tr><tr><td data-label=""><span class="tv">高値に戻るまで（高値から）</span></td><td data-label="Nasdaq-100（ITバブル）"><span class="tv">175か月（約14.6年）</span></td><td data-label="S&P500（金融危機）"><span class="tv">53か月（約4.4年）</span></td></tr></tbody></table></div>
+    <ul>
+      <li>Nasdaq-100の下落は、<b>−81.1%と深く</b>、高値に戻るまで、<b>175か月</b>（約14.6年）。</li>
+      <li>比べると、金融危機（2007〜09年）のS&P500は、−50.8%で、高値に戻るまで53か月（約4.4年）でした。</li>
+      <li>下落の途中で、<b>「ここが底」と分かる人は、いません</b>。底だったと分かるのは、あとからです。</li>
+    </ul>
+
+    <h2>3. 今回の下落（2026年10月〜）と、ITバブルを比べる</h2>
+    <p>Nasdaq-100（QQQ）は、<b>2026年10月6日の高値</b>から下落し、2026年11月23日の終値で<b>−13.6%</b>です（高値から34営業日）。最も深い日は、2026年11月20日の<b>−19.9%</b>（33営業日目）でした。この下落を、ITバブルの最初の数か月と、<b>高値の日からの営業日数をそろえて</b>比べます。</p>
+    <figure class="fig"><div class="fig-title">高値からの下落率（%、高値の日を0とした営業日数、QQQ・配当込み）</div><svg viewBox="0 0 420 250" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="224.0" x2="346" y2="224.0" stroke="#e5e7eb"/><text x="37.0" y="227.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-40%</text><line x1="42" y1="171.5" x2="346" y2="171.5" stroke="#e5e7eb"/><text x="37.0" y="175.0" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-30%</text><line x1="42" y1="119.0" x2="346" y2="119.0" stroke="#e5e7eb"/><text x="37.0" y="122.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-20%</text><line x1="42" y1="66.5" x2="346" y2="66.5" stroke="#e5e7eb"/><text x="37.0" y="70.0" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >-10%</text><line x1="42" y1="14.0" x2="346" y2="14.0" stroke="#e5e7eb"/><text x="37.0" y="17.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0%</text><polyline points="42.0,14.0 47.1,27.4 52.1,48.6 57.2,60.8 62.3,50.8 67.3,80.0 72.4,84.5 77.5,92.6 82.5,82.0 87.6,63.6 92.7,92.6 97.7,103.2 102.8,128.8 107.9,146.6 112.9,180.6 118.0,139.4 123.1,128.8 128.1,141.3 133.2,150.0 138.3,161.1 143.3,135.6 148.4,149.4 153.5,132.2 158.5,116.5 163.6,112.6 168.7,137.2 173.7,141.6 178.8,140.8 183.9,131.3 188.9,147.2 194.0,155.6 199.1,183.4 204.1,161.7 209.2,161.7 214.3,145.2 219.3,134.1 224.4,142.5 229.5,156.7 234.5,174.8 239.6,175.1 244.7,205.4 249.7,184.5 254.8,192.3 259.9,192.3 264.9,157.5 270.0,168.4 275.1,149.4 280.1,121.6 285.2,120.5 290.3,132.2 295.3,121.3 300.4,123.2 305.5,121.0 310.5,134.4 315.6,118.8 320.7,128.3 325.7,121.0 330.8,118.8 335.9,102.1 340.9,103.7 346.0,98.2" fill="none" stroke="#ec4899" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,14.0 47.1,15.3 52.1,22.3 57.2,19.8 62.3,23.4 67.3,25.1 72.4,35.2 77.5,35.9 82.5,48.5 87.6,42.5 92.7,43.0 97.7,37.8 102.8,52.1 107.9,52.2 112.9,46.8 118.0,40.5 123.1,37.5 128.1,44.6 133.2,61.8 138.3,68.3 143.3,65.4 148.4,60.8 153.5,91.8 158.5,85.6 163.6,69.5 168.7,72.7 173.7,61.9 178.8,63.4 183.9,69.1 188.9,81.7 194.0,85.0 199.1,83.2 204.1,93.2 209.2,118.5 214.3,85.3" fill="none" stroke="#111827" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="346" cy="85.3" r="3" fill="#111827"/><text x="353.0" y="88.8" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >今回</text><text x="353.0" y="100.3" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >（2026年）</text><text x="353.0" y="111.8" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >-13.6%</text><circle cx="346" cy="98.2" r="3" fill="#ec4899"/><text x="353.0" y="124.8" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >ITバブル</text><text x="353.0" y="136.3" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >（2000年）</text><text x="353.0" y="147.8" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >-16.0%</text><text x="42.0" y="242.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >高値</text><text x="148.4" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >約1か月</text><text x="254.8" y="242.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >約2か月</text><text x="346.0" y="242.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >約3か月</text></svg><figcaption>出典：株価データ（QQQの配当込みの調整後終値、日次、ドル建て）。それぞれの高値の日（ITバブル：2000年3月27日、今回：2026年10月6日）を0とし、営業日数で並べています。<b>今回は、高値から34営業日（2026年11月23日の終値）で−13.6%、最も深い日（11月20日、33営業日目）は−19.9%</b>。ITバブルは、この図の右端（約3か月）の後も下がり続けました。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th></th><th>ITバブル（2000年）</th><th>今回（2026年）</th></tr></thead><tbody><tr><td data-label=""><span class="tv">高値の日</span></td><td data-label="ITバブル（2000年）"><span class="tv">2000年3月27日</span></td><td data-label="今回（2026年）"><span class="tv">2026年10月6日</span></td></tr><tr><td data-label=""><span class="tv">高値の前の約11か月の上昇</span></td><td data-label="ITバブル（2000年）"><span class="tv">+111%</span></td><td data-label="今回（2026年）"><span class="tv">+25%</span></td></tr><tr><td data-label=""><span class="tv">21営業日目（約1か月）</span></td><td data-label="ITバブル（2000年）"><span class="tv">−25.8%</span></td><td data-label="今回（2026年）"><span class="tv">−8.9%</span></td></tr><tr><td data-label=""><span class="tv">33営業日目（約1か月半）</span></td><td data-label="ITバブル（2000年）"><span class="tv">−28.1%</span></td><td data-label="今回（2026年）"><span class="tv">−19.9%</span></td></tr><tr><td data-label=""><span class="tv">最大の下落（日次）</span></td><td data-label="ITバブル（2000年）"><span class="tv">−83.0%（2002年10月9日）</span></td><td data-label="今回（2026年）"><span class="tv">現時点で−19.9%（2026年11月20日）</span></td></tr></tbody></table></div>
+    <ul>
+      <li><b>同じ営業日数で比べると、今回のほうが、浅い</b>です。21営業日目は、ITバブル−25.8%、今回−8.9%。33営業日目は、ITバブル−28.1%、今回−19.9%です。</li>
+      <li><b>高値の前の上昇の大きさも、違います。</b>高値の約11か月前から高値まで、ITバブルは<b>+111%</b>、今回は<b>+25%</b>でした（QQQ、日次）。</li>
+      <li><b>ITバブルは、その後も、下がり続けました。</b>42営業日目は−34.0%、最大は−83.0%（2002年10月9日、日次）で、高値に戻るまで<b>14年7か月</b>かかりました（月次）。今回は、33営業日目までしか、データがありません。</li>
+      <li>つまり、<b>最初の1〜2か月の下落の大きさだけでは、「どこまで下がるか」「いつ戻るか」は、分かりません。</b>今回が、ITバブルのように続くのか、短い期間で終わるのかは、この記事では、判断できません。</li>
+      <li>今回の下落の原因や、「バブルかどうか」は、この記事では扱いません。数字の比較に限ります。</li>
+    </ul>
+
+    <h2>4. 最悪の日に始めた人は、どうなったか</h2>
+    <figure class="fig"><div class="fig-title">2000年3月を100とした推移（Nasdaq-100とS&amp;P500、配当込み、ドル建て）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="214.0" x2="350" y2="214.0" stroke="#e5e7eb"/><text x="37.0" y="217.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0</text><line x1="42" y1="155.9" x2="350" y2="155.9" stroke="#e5e7eb"/><text x="37.0" y="159.4" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >250</text><line x1="42" y1="97.7" x2="350" y2="97.7" stroke="#e5e7eb"/><text x="37.0" y="101.2" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >500</text><line x1="42" y1="39.6" x2="350" y2="39.6" stroke="#e5e7eb"/><text x="37.0" y="43.1" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >750</text><polyline points="42.0,190.7 43.0,193.9 43.9,196.3 44.9,194.2 45.9,195.0 46.8,192.4 47.8,195.2 48.8,196.6 49.7,200.6 50.7,201.6 51.7,200.3 52.6,203.9 53.6,205.7 54.6,204.2 55.5,204.5 56.5,204.3 57.4,205.1 58.4,206.2 59.4,207.8 60.3,206.8 61.3,205.6 62.3,205.7 63.2,205.8 64.2,206.8 65.2,206.3 66.1,207.3 67.1,207.6 68.1,208.5 69.0,208.9 70.0,209.0 71.0,209.6 71.9,208.8 72.9,208.1 73.9,208.8 74.8,208.8 75.8,208.7 76.8,208.6 77.7,208.2 78.7,207.7 79.7,207.6 80.6,207.2 81.6,206.9 82.6,207.1 83.5,206.5 84.5,206.5 85.4,206.3 86.4,206.1 87.4,206.2 88.3,206.4 89.3,206.6 90.3,206.2 91.2,206.0 92.2,206.6 93.2,206.8 94.1,206.5 95.1,206.2 96.1,205.7 97.0,205.4 98.0,206.0 99.0,206.0 99.9,206.2 100.9,206.5 101.9,205.8 102.8,206.1 103.8,205.5 104.8,205.6 105.7,205.5 106.7,205.7 107.7,205.1 108.6,205.3 109.6,205.0 110.6,205.2 111.5,205.0 112.5,205.0 113.4,205.6 114.4,205.6 115.4,206.0 116.3,205.6 117.3,205.2 118.3,204.8 119.2,204.5 120.2,204.7 121.2,204.5 122.1,204.6 123.1,204.6 124.1,204.1 125.0,203.8 126.0,203.7 127.0,203.7 127.9,203.4 128.9,202.9 129.9,202.1 130.8,202.9 131.8,202.9 132.8,204.2 133.7,204.7 134.7,204.5 135.7,203.8 136.6,203.2 137.6,204.2 138.6,204.1 139.5,204.0 140.5,205.6 141.4,206.9 142.4,207.7 143.4,207.5 144.3,207.7 145.3,208.0 146.3,207.4 147.2,206.5 148.2,206.3 149.2,206.1 150.1,205.4 151.1,205.3 152.1,204.8 153.0,205.1 154.0,204.5 155.0,204.0 155.9,204.6 156.9,204.2 157.9,203.5 158.8,203.2 159.8,204.0 160.8,204.6 161.7,203.9 162.7,204.5 163.7,203.2 164.6,202.5 165.6,202.5 166.6,202.0 167.5,201.6 168.5,201.3 169.4,201.3 170.4,201.0 171.4,201.1 172.3,201.4 173.3,201.2 174.3,201.8 175.2,202.4 176.2,201.1 177.2,201.5 178.1,201.6 179.1,200.5 180.1,199.7 181.0,198.9 182.0,199.1 183.0,200.2 183.9,199.7 184.9,199.5 185.9,198.8 186.8,198.6 187.8,199.4 188.8,199.3 189.7,199.3 190.7,198.9 191.7,198.9 192.6,198.4 193.6,198.0 194.6,197.5 195.5,197.8 196.5,196.8 197.4,196.9 198.4,196.1 199.4,195.2 200.3,194.5 201.3,193.9 202.3,194.3 203.2,193.3 204.2,193.9 205.2,193.9 206.1,193.0 207.1,192.4 208.1,192.1 209.0,191.0 210.0,191.2 211.0,190.6 211.9,189.5 212.9,190.1 213.9,190.6 214.8,188.9 215.8,189.5 216.8,189.0 217.7,188.5 218.7,189.1 219.7,188.0 220.6,189.7 221.6,190.3 222.6,187.6 223.5,187.4 224.5,187.8 225.4,189.6 226.4,190.0 227.4,188.4 228.3,189.2 229.3,188.1 230.3,188.7 231.2,186.9 232.2,186.6 233.2,186.0 234.1,186.4 235.1,186.3 236.1,186.0 237.0,184.5 238.0,183.3 239.0,182.6 239.9,181.8 240.9,180.5 241.9,181.3 242.8,180.0 243.8,179.3 244.8,179.4 245.7,177.8 246.7,177.1 247.7,176.8 248.6,173.6 249.6,174.1 250.6,175.7 251.5,175.5 252.5,173.3 253.4,172.9 254.4,171.7 255.4,169.3 256.3,169.4 257.3,173.2 258.3,173.4 259.2,176.9 260.2,173.5 261.2,172.3 262.1,170.7 263.1,168.3 264.1,172.1 265.0,168.9 266.0,167.8 267.0,168.7 267.9,168.3 268.9,166.3 269.9,164.3 270.8,162.4 271.8,160.8 272.8,164.1 273.7,167.7 274.7,160.8 275.7,157.3 276.6,153.7 277.6,149.3 278.6,142.2 279.5,146.3 280.5,148.4 281.4,141.0 282.4,137.4 283.4,137.2 284.3,137.3 285.3,136.0 286.3,131.4 287.2,132.4 288.2,127.3 289.2,124.8 290.1,121.1 291.1,126.3 292.1,119.5 293.0,117.6 294.0,116.5 295.0,125.0 295.9,129.0 296.9,125.0 297.9,137.1 298.8,138.3 299.8,145.1 300.8,136.4 301.7,140.4 302.7,148.1 303.7,145.5 304.6,141.7 305.6,148.2 306.6,141.2 307.5,141.5 308.5,134.6 309.4,134.2 310.4,127.9 311.4,122.5 312.3,119.0 313.3,120.4 314.3,125.1 315.2,127.0 316.2,117.5 317.2,112.2 318.1,110.3 319.1,104.8 320.1,103.4 321.0,108.3 322.0,101.8 323.0,94.5 323.9,96.5 324.9,95.2 325.9,92.1 326.8,93.1 327.8,86.7 328.8,86.1 329.7,83.3 330.7,86.9 331.7,96.5 332.6,94.9 333.6,83.9 334.6,75.6 335.5,72.3 336.5,70.9 337.4,63.2 338.4,56.0 339.4,58.5 340.3,59.5 341.3,57.6 342.3,61.3 343.2,68.7 344.2,45.9 345.2,28.1 346.1,28.4 347.1,40.6 348.1,33.3 349.0,27.4 350.0,39.8" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,190.7 43.0,191.6 43.9,191.9 44.9,191.5 45.9,191.8 46.8,190.4 47.8,191.7 48.8,191.8 49.7,193.4 50.7,193.6 51.7,192.6 52.6,194.7 53.6,195.8 54.6,194.2 55.5,194.3 56.5,194.8 57.4,195.0 58.4,196.1 59.4,197.6 60.3,197.4 61.3,196.1 62.3,196.0 63.2,196.1 64.2,196.5 65.2,195.9 66.1,196.9 67.1,197.0 68.1,198.3 69.0,199.5 70.0,199.4 71.0,200.9 71.9,199.9 72.9,199.0 73.9,199.8 74.8,200.2 75.8,200.4 76.8,200.4 77.7,199.2 78.7,198.4 79.7,198.2 80.6,197.9 81.6,197.6 82.6,197.8 83.5,196.9 84.5,196.7 85.4,195.9 86.4,195.5 87.4,195.3 88.3,195.5 89.3,195.9 90.3,195.5 91.2,195.2 92.2,195.8 93.2,195.8 94.1,195.6 95.1,195.3 96.1,194.5 97.0,193.9 98.0,194.4 99.0,194.0 99.9,194.3 100.9,194.7 101.9,194.1 102.8,194.0 103.8,193.3 104.8,193.5 105.7,193.3 106.7,193.8 107.7,192.9 108.6,193.0 109.6,192.4 110.6,192.3 111.5,192.0 112.5,191.7 113.4,192.4 114.4,192.3 115.4,192.2 116.3,191.7 117.3,191.1 118.3,190.4 119.2,189.9 120.2,189.6 121.2,189.3 122.1,189.7 123.1,189.5 124.1,188.4 125.0,187.5 126.0,187.9 127.0,188.7 127.9,188.4 128.9,187.4 129.9,187.0 130.8,188.1 131.8,188.4 132.8,189.9 133.7,190.5 134.7,190.7 135.7,189.6 136.6,189.3 137.6,191.3 138.6,191.5 139.5,191.2 140.5,193.3 141.4,196.8 142.4,198.0 143.4,197.8 144.3,199.1 145.3,200.7 146.3,199.6 147.2,198.2 148.2,197.3 149.2,197.3 150.1,196.0 151.1,195.4 152.1,194.7 153.0,195.1 154.0,193.9 155.0,193.5 155.9,194.3 156.9,193.7 157.9,192.4 158.8,192.1 159.8,193.8 160.8,194.9 161.7,193.6 162.7,194.5 163.7,192.7 164.6,191.9 165.6,191.9 166.6,190.4 167.5,189.9 168.5,189.1 169.4,189.1 170.4,188.3 171.4,188.6 172.3,189.0 173.3,189.5 174.3,190.9 175.2,192.5 176.2,190.1 177.2,190.2 178.1,190.0 179.1,188.9 180.1,187.8 181.0,187.0 182.0,187.1 183.0,188.7 183.9,187.7 184.9,187.4 185.9,186.7 186.8,186.1 187.8,186.6 188.8,186.4 189.7,186.2 190.7,184.7 191.7,184.4 192.6,183.2 193.6,182.6 194.6,181.9 195.5,182.3 196.5,180.7 197.4,181.7 198.4,180.7 199.4,179.1 200.3,178.1 201.3,177.2 202.3,178.5 203.2,176.8 204.2,176.5 205.2,176.3 206.1,175.4 207.1,174.6 208.1,175.1 209.0,173.6 210.0,174.2 211.0,173.2 211.9,172.1 212.9,172.2 213.9,173.4 214.8,171.2 215.8,171.8 216.8,171.4 217.7,170.9 218.7,171.7 219.7,170.8 220.6,173.4 221.6,174.5 222.6,171.1 223.5,170.9 224.5,171.7 225.4,173.8 226.4,173.8 227.4,171.1 228.3,171.0 229.3,170.2 230.3,170.1 231.2,168.5 232.2,168.4 233.2,168.4 234.1,169.2 235.1,167.6 236.1,166.6 237.0,165.8 238.0,163.9 239.0,163.8 239.9,163.3 240.9,162.6 241.9,162.3 242.8,161.2 243.8,161.0 244.8,160.0 245.7,158.7 246.7,157.0 247.7,156.3 248.6,153.1 249.6,155.3 250.6,156.9 251.5,156.6 252.5,155.2 253.4,154.9 254.4,152.7 255.4,150.7 256.3,150.3 257.3,154.7 258.3,153.6 259.2,159.0 260.2,154.6 261.2,152.6 262.1,151.5 263.1,149.0 264.1,153.1 265.0,148.9 266.0,147.9 267.0,149.0 267.9,147.7 268.9,146.3 269.9,143.8 270.8,141.8 271.8,141.8 272.8,147.5 273.7,155.8 274.7,148.4 275.7,145.3 276.6,144.1 277.6,140.0 278.6,134.8 279.5,137.8 280.5,139.7 281.4,131.6 282.4,128.5 283.4,129.4 284.3,127.1 285.3,123.1 286.3,118.3 287.2,117.7 288.2,115.5 289.2,113.1 290.1,110.1 291.1,114.9 292.1,108.0 293.0,108.8 294.0,104.0 295.0,109.8 295.9,112.9 296.9,109.1 297.9,118.3 298.8,118.1 299.8,126.0 300.8,117.9 301.7,121.8 302.7,130.3 303.7,123.5 304.6,118.5 305.6,124.0 306.6,118.3 307.5,120.7 308.5,117.3 309.4,115.7 310.4,115.3 311.4,108.9 312.3,105.4 313.3,107.2 314.3,112.3 315.2,114.5 316.2,105.4 317.2,100.4 318.1,98.6 319.1,92.6 320.1,88.6 321.0,93.7 322.0,87.6 323.0,83.1 323.9,81.5 324.9,78.4 325.9,75.6 326.8,76.8 327.8,68.6 328.8,72.1 329.7,68.3 330.7,70.2 331.7,78.2 332.6,79.4 333.6,70.9 334.6,63.6 335.5,60.1 336.5,56.9 337.4,51.3 338.4,47.5 339.4,47.1 340.3,47.0 341.3,44.6 342.3,46.0 343.2,54.3 344.2,37.5 345.2,28.2 346.1,30.2 347.1,30.1 348.1,25.2 349.0,25.8 350.0,27.5" fill="none" stroke="#111827" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="350" cy="27.5" r="3" fill="#111827"/><text x="357.0" y="31.0" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >S&amp;P500</text><text x="357.0" y="42.5" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >802</text><circle cx="350" cy="39.8" r="3" fill="#ec4899"/><text x="357.0" y="55.0" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >Nasdaq-100</text><text x="357.0" y="66.5" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >749</text><text x="42.0" y="232.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2000/3</text><text x="350.0" y="232.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10</text></svg><figcaption>出典：株価データ（同上）。<b>2000年3月に一括で買った場合、Nasdaq-100は7.49倍（年率7.9%）、S&P500は8.02倍（年率8.1%）</b>（2026年10月まで）。2002年9月には、Nasdaq-100は約19まで下がりました。</figcaption></figure>
+    <ul>
+      <li>2000年3月に<b>一括</b>で買った場合、<b>2026年10月まで、7.49倍</b>（年率7.9%）。S&P500の8.02倍（年率8.1%）と、ほぼ同じ水準です。</li>
+      <li>ただし、<b>元本を取り戻すまでが、14年7か月</b>。その間、評価額が、元本を下回り続けました。</li>
+      <li>2002年9月には、評価額は、高値の月の約19%（約81%の目減り）でした。</li>
+    </ul>
+
+    <h2>5. 積立なら：元本を取り戻すのが、早かった</h2>
+    <figure class="fig"><div class="fig-title">毎月同額を積み立てた場合の「評価額÷元本」（倍、2000年3月から）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="42" y1="214.0" x2="340" y2="214.0" stroke="#e5e7eb"/><text x="37.0" y="217.5" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >0.0</text><line x1="42" y1="137.1" x2="340" y2="137.1" stroke="#e5e7eb"/><text x="37.0" y="140.6" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >5.0</text><line x1="42" y1="60.2" x2="340" y2="60.2" stroke="#e5e7eb"/><text x="37.0" y="63.7" font-size="9" text-anchor="end" fill="#9ca3af" font-weight="600" >10.0</text><polyline points="42.0,198.6 42.9,199.7 43.9,200.5 44.8,198.8 45.7,199.2 46.7,197.5 47.6,199.4 48.5,200.3 49.5,202.9 50.4,203.2 51.3,201.8 52.3,204.5 53.2,205.6 54.1,203.7 55.1,203.6 56.0,203.1 56.9,203.7 57.9,204.6 58.8,206.2 59.7,204.5 60.7,202.7 61.6,202.7 62.6,202.7 63.5,203.8 64.4,203.0 65.4,204.1 66.3,204.4 67.2,205.4 68.2,205.9 69.1,205.7 70.0,206.5 71.0,204.9 71.9,203.5 72.8,204.6 73.8,204.4 74.7,204.0 75.6,203.8 76.6,202.8 77.5,201.8 78.4,201.6 79.4,200.8 80.3,200.1 81.2,200.5 82.2,199.3 83.1,199.2 84.0,198.7 85.0,198.5 85.9,198.7 86.8,199.0 87.8,199.4 88.7,198.7 89.6,198.2 90.6,199.4 91.5,199.7 92.4,199.2 93.4,198.5 94.3,197.6 95.2,197.1 96.2,198.2 97.1,198.3 98.1,198.5 99.0,199.2 99.9,197.9 100.9,198.4 101.8,197.3 102.7,197.5 103.7,197.4 104.6,197.6 105.5,196.7 106.5,197.0 107.4,196.3 108.3,196.8 109.3,196.4 110.2,196.5 111.1,197.8 112.1,197.8 113.0,198.5 113.9,197.8 114.9,197.0 115.8,196.2 116.7,195.7 117.7,196.1 118.6,195.7 119.5,196.0 120.5,196.0 121.4,195.0 122.3,194.5 123.3,194.4 124.2,194.5 125.1,194.0 126.1,193.0 127.0,191.6 127.9,193.2 128.9,193.3 129.8,195.8 130.7,196.7 131.7,196.4 132.6,195.0 133.5,193.9 134.5,195.9 135.4,195.8 136.4,195.5 137.3,198.4 138.2,200.8 139.2,202.3 140.1,202.0 141.0,202.2 142.0,202.8 142.9,201.6 143.8,200.0 144.8,199.5 145.7,199.1 146.6,197.9 147.6,197.6 148.5,196.7 149.4,197.3 150.4,196.2 151.3,195.3 152.2,196.5 153.2,195.8 154.1,194.4 155.0,194.0 156.0,195.5 156.9,196.6 157.8,195.4 158.8,196.4 159.7,194.1 160.6,192.9 161.6,192.9 162.5,192.0 163.4,191.4 164.4,190.8 165.3,190.9 166.2,190.3 167.2,190.7 168.1,191.2 169.0,190.9 170.0,192.1 170.9,193.1 171.8,191.0 172.8,191.7 173.7,191.9 174.7,190.1 175.6,188.6 176.5,187.4 177.5,187.8 178.4,189.7 179.3,188.9 180.3,188.7 181.2,187.4 182.1,187.3 183.1,188.8 184.0,188.5 184.9,188.7 185.9,188.1 186.8,188.0 187.7,187.3 188.7,186.7 189.6,185.8 190.5,186.6 191.5,184.9 192.4,185.1 193.3,183.8 194.3,182.4 195.2,181.4 196.1,180.6 197.1,181.3 198.0,179.8 198.9,180.8 199.9,181.0 200.8,179.6 201.7,178.7 202.7,178.4 203.6,176.7 204.5,177.1 205.5,176.3 206.4,174.7 207.3,175.7 208.3,176.6 209.2,174.1 210.2,175.2 211.1,174.5 212.0,173.8 213.0,174.9 213.9,173.3 214.8,176.2 215.8,177.1 216.7,173.1 217.6,173.0 218.6,173.7 219.5,176.6 220.4,177.3 221.4,174.9 222.3,176.3 223.2,174.8 224.2,175.8 225.1,173.2 226.0,172.9 227.0,172.1 227.9,172.9 228.8,172.8 229.8,172.5 230.7,170.5 231.6,168.7 232.6,167.9 233.5,166.8 234.4,165.2 235.4,166.5 236.3,164.7 237.2,163.8 238.2,164.1 239.1,162.0 240.0,161.2 241.0,161.0 241.9,156.6 242.8,157.5 243.8,160.0 244.7,159.9 245.6,157.0 246.6,156.6 247.5,155.2 248.5,152.0 249.4,152.4 250.3,157.8 251.3,158.2 252.2,163.2 253.1,158.8 254.1,157.3 255.0,155.3 255.9,152.2 256.9,157.5 257.8,153.4 258.7,152.2 259.7,153.5 260.6,153.2 261.5,150.7 262.5,148.4 263.4,146.0 264.3,144.2 265.3,148.6 266.2,153.6 267.1,144.8 268.1,140.4 269.0,136.1 269.9,130.6 270.9,121.8 271.8,127.4 272.7,130.3 273.7,121.2 274.6,117.0 275.5,117.1 276.5,117.6 277.4,116.2 278.3,110.8 279.3,112.4 280.2,106.4 281.1,103.7 282.1,99.4 283.0,106.3 283.9,98.2 284.9,96.3 285.8,95.3 286.8,106.0 287.7,111.2 288.6,106.8 289.6,121.6 290.5,123.4 291.4,131.7 292.4,121.7 293.3,126.7 294.2,136.1 295.2,133.2 296.1,129.0 297.0,136.9 298.0,128.9 298.9,129.5 299.8,121.7 300.8,121.6 301.7,114.6 302.6,108.6 303.6,104.9 304.5,106.8 305.4,112.6 306.4,115.0 307.3,104.6 308.2,98.8 309.2,97.1 310.1,91.3 311.0,90.1 312.0,95.9 312.9,89.0 313.8,81.3 314.8,83.9 315.7,82.9 316.6,79.8 317.6,81.4 318.5,74.7 319.4,74.5 320.4,71.9 321.3,76.2 322.3,87.0 323.2,85.6 324.1,74.2 325.1,65.7 326.0,62.6 326.9,61.6 327.9,53.9 328.8,46.7 329.7,49.8 330.7,51.4 331.6,49.9 332.5,54.2 333.5,62.3 334.4,39.1 335.3,21.1 336.3,22.0 337.2,35.1 338.1,28.2 339.1,22.6 340.0,35.8" fill="none" stroke="#ec4899" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="42.0,198.6 42.9,198.9 43.9,199.0 44.8,198.6 45.7,198.8 46.7,198.0 47.6,198.8 48.5,198.9 49.5,199.8 50.4,199.8 51.3,199.1 52.3,200.4 53.2,200.9 54.1,199.7 55.1,199.7 56.0,200.0 56.9,200.0 57.9,200.7 58.8,201.7 59.7,201.3 60.7,200.3 61.6,200.1 62.6,200.2 63.5,200.4 64.4,199.9 65.4,200.6 66.3,200.6 67.2,201.5 68.2,202.3 69.1,202.1 70.0,203.2 71.0,202.2 71.9,201.4 72.8,202.0 73.8,202.2 74.7,202.3 75.6,202.1 76.6,201.1 77.5,200.3 78.4,200.1 79.4,199.9 80.3,199.5 81.2,199.7 82.2,198.9 83.1,198.7 84.0,198.0 85.0,197.7 85.9,197.5 86.8,197.7 87.8,198.0 88.7,197.8 89.6,197.5 90.6,198.0 91.5,198.0 92.4,197.9 93.4,197.7 94.3,197.0 95.2,196.5 96.2,196.9 97.1,196.6 98.1,197.0 99.0,197.3 99.9,196.8 100.9,196.8 101.8,196.2 102.7,196.4 103.7,196.3 104.6,196.7 105.5,196.0 106.5,196.1 107.4,195.7 108.3,195.6 109.3,195.4 110.2,195.2 111.1,195.8 112.1,195.8 113.0,195.7 113.9,195.4 114.9,194.9 115.8,194.4 116.7,194.0 117.7,193.8 118.6,193.6 119.5,194.0 120.5,193.9 121.4,193.0 122.3,192.4 123.3,192.8 124.2,193.5 125.1,193.3 126.1,192.6 127.0,192.3 127.9,193.2 128.9,193.5 129.8,194.8 130.7,195.3 131.7,195.5 132.6,194.7 133.5,194.4 134.5,196.1 135.4,196.3 136.4,196.0 137.3,197.7 138.2,200.4 139.2,201.3 140.1,201.2 141.0,202.2 142.0,203.4 142.9,202.5 143.8,201.3 144.8,200.6 145.7,200.6 146.6,199.6 147.6,199.0 148.5,198.5 149.4,198.8 150.4,197.9 151.3,197.6 152.2,198.2 153.2,197.7 154.1,196.7 155.0,196.4 156.0,197.8 156.9,198.7 157.8,197.6 158.8,198.4 159.7,197.0 160.6,196.4 161.6,196.4 162.5,195.2 163.4,194.8 164.4,194.2 165.3,194.2 166.2,193.7 167.2,193.9 168.1,194.3 169.0,194.7 170.0,195.8 170.9,197.1 171.8,195.3 172.8,195.4 173.7,195.2 174.7,194.4 175.6,193.5 176.5,192.9 177.5,193.1 178.4,194.4 179.3,193.6 180.3,193.4 181.2,192.9 182.1,192.4 183.1,192.9 184.0,192.8 184.9,192.6 185.9,191.6 186.8,191.4 187.7,190.5 188.7,190.2 189.6,189.6 190.5,190.0 191.5,188.8 192.4,189.7 193.3,188.9 194.3,187.9 195.2,187.1 196.1,186.5 197.1,187.6 198.0,186.4 198.9,186.3 199.9,186.2 200.8,185.6 201.7,185.1 202.7,185.5 203.6,184.5 204.5,185.0 205.5,184.4 206.4,183.7 207.3,183.8 208.3,184.8 209.2,183.2 210.2,183.8 211.1,183.6 212.0,183.3 213.0,184.0 213.9,183.4 214.8,185.3 215.8,186.1 216.7,183.8 217.6,183.8 218.6,184.4 219.5,185.9 220.4,186.0 221.4,184.2 222.3,184.2 223.2,183.7 224.2,183.7 225.1,182.7 226.0,182.7 227.0,182.8 227.9,183.4 228.8,182.4 229.8,181.8 230.7,181.3 231.6,180.1 232.6,180.2 233.5,180.0 234.4,179.6 235.4,179.4 236.3,178.8 237.2,178.8 238.2,178.2 239.1,177.5 240.0,176.4 241.0,176.1 241.9,174.1 242.8,175.6 243.8,176.8 244.7,176.7 245.6,175.9 246.6,175.8 247.5,174.5 248.5,173.3 249.4,173.2 250.3,176.1 251.3,175.5 252.2,179.0 253.1,176.3 254.1,175.2 255.0,174.6 255.9,173.1 256.9,175.8 257.8,173.2 258.7,172.7 259.7,173.5 260.6,172.8 261.5,172.1 262.5,170.7 263.4,169.5 264.3,169.7 265.3,173.3 266.2,178.4 267.1,174.0 268.1,172.2 269.0,171.6 269.9,169.2 270.9,166.2 271.8,168.1 272.7,169.4 273.7,164.7 274.6,163.0 275.5,163.7 276.5,162.4 277.4,160.2 278.3,157.5 279.3,157.3 280.2,156.2 281.1,155.0 282.1,153.4 283.0,156.4 283.9,152.5 284.9,153.2 285.8,150.6 286.8,154.1 287.7,156.0 288.6,154.0 289.6,159.4 290.5,159.4 291.4,164.1 292.4,159.6 293.3,162.0 294.2,166.9 295.2,163.2 296.1,160.5 297.0,163.7 298.0,160.7 298.9,162.2 299.8,160.4 300.8,159.7 301.7,159.6 302.6,156.2 303.6,154.5 304.5,155.6 305.4,158.5 306.4,159.8 307.3,155.0 308.2,152.5 309.2,151.7 310.1,148.6 311.0,146.7 312.0,149.6 312.9,146.5 313.8,144.3 314.8,143.6 315.7,142.2 316.6,140.9 317.6,141.7 318.5,137.6 319.4,139.6 320.4,137.8 321.3,139.0 322.3,143.4 323.2,144.2 324.1,140.0 325.1,136.4 326.0,134.8 326.9,133.4 327.9,130.7 328.8,129.0 329.7,129.0 330.7,129.2 331.6,128.2 332.5,129.1 333.5,133.5 334.4,125.3 335.3,120.9 336.3,122.1 337.2,122.3 338.1,120.1 339.1,120.6 340.0,121.7" fill="none" stroke="#111827" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="340" cy="35.8" r="3" fill="#ec4899"/><text x="347.0" y="39.3" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >Nasdaq-100</text><text x="347.0" y="50.8" font-size="9.5" text-anchor="start" fill="#ec4899" font-weight="700" >11.6倍</text><circle cx="340" cy="121.7" r="3" fill="#111827"/><text x="347.0" y="125.2" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >S&amp;P500</text><text x="347.0" y="136.7" font-size="9.5" text-anchor="start" fill="#111827" font-weight="700" >6.0倍</text><text x="42.0" y="232.0" font-size="10" text-anchor="start" fill="#6b7280" font-weight="500" >2000/3</text><text x="146.6" y="232.0" font-size="10" text-anchor="middle" fill="#6b7280" font-weight="500" >2009/7</text><text x="340.0" y="232.0" font-size="10" text-anchor="end" fill="#6b7280" font-weight="500" >2026/10</text></svg><figcaption>出典：株価データ（同上）。2000年3月から毎月同額を、Nasdaq-100に積み立てた場合。<b>評価額が元本を下回ったのは、最大で0.49倍（2002年9月）。元本を取り戻したのは2009年7月</b>（始めてから約9年4か月）。2026年10月は11.6倍。S&P500の積立は、2010年7月に元本を取り戻し、2026年10月は6.0倍です。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>始め方</th><th>元本を取り戻した時期</th><th>2026年10月の倍率</th><th>年率</th></tr></thead><tbody><tr><td data-label="始め方"><span class="tv">2000年3月（高値）に、一括</span></td><td data-label="元本を取り戻した時期"><span class="tv">2014年10月（高値に戻った月）</span></td><td data-label="2026年10月の倍率"><span class="tv">7.49倍</span></td><td data-label="年率"><span class="tv">7.9%</span></td></tr><tr><td data-label="始め方"><span class="tv">2000年3月から、毎月積立</span></td><td data-label="元本を取り戻した時期"><span class="tv">2009年7月</span></td><td data-label="2026年10月の倍率"><span class="tv">11.58倍（評価額÷元本）</span></td><td data-label="年率"><span class="tv">—</span></td></tr><tr><td data-label="始め方"><span class="tv">2002年9月（底）に、一括（後から見た最良）</span></td><td data-label="元本を取り戻した時期"><span class="tv">—</span></td><td data-label="2026年10月の倍率"><span class="tv">39.6倍</span></td><td data-label="年率"><span class="tv">16.5%</span></td></tr></tbody></table></div>
+    <ul>
+      <li>毎月同額の積立では、評価額÷元本が、<b>最低でも0.49倍</b>（2002年9月）。それでも、<b>2009年7月</b>には、元本を取り戻しました。<b>一括（2014年10月）より、約5年早い</b>です。</li>
+      <li>理由は、下落の間に、<b>安い価格で、買い増せた</b>ためです。2026年10月には、11.6倍（評価額÷元本）です。</li>
+      <li>2002年9月（底）に、一括で買えていたら、39.6倍（年率16.5%）。<b>ただし、底は、あとからしか分かりません</b>。</li>
+    </ul>
+
+    <h2>6. 今に、どう生かすか</h2>
+    <ul>
+      <li><b>下落は、深く、長いことがある。</b>1つのテーマに偏った指数は、−80%を超えることもある。</li>
+      <li><b>始める月は、選べない。</b>高値で始めても、期間が長ければ、市場全体と同じ水準になりうる（今回は26年）。</li>
+      <li><b>積立は、元本割れの期間を、短くした。</b>ただし、積立でも、一時は評価額が元本の半分以下になった。</li>
+      <li><b>指数の中身を、知る。</b>Nasdaq-100は、上位10社が約47%（2026年11月、<a href="sp500-vs-nasdaq100.html">別の記事</a>）と、集中している。</li>
+      <li><b>期間と、生活の計画を、合わせる。</b>14年7か月、評価額が元本を下回る可能性を、許容できるお金かどうか。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の銘柄・指数の売買を勧めるものではありません。過去の結果は、将来の成績を保証しません。今のAI関連株の見通しや、割高・割安について、述べるものでもありません。</div>
+
+    <h2>7. 見るときのチェックリスト</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認すること</th><th>見方</th><th>注意点</th></tr></thead><tbody><tr><td data-label="確認すること"><span class="tv">① 下落の深さ</span></td><td data-label="見方"><span class="tv">高値から底まで、何%下がるか</span></td><td data-label="注意点"><span class="tv">単独のテーマ・指数は、−80%のことがある</span></td></tr><tr><td data-label="確認すること"><span class="tv">② 回復の時間</span></td><td data-label="見方"><span class="tv">高値に戻るまで、何年かかるか</span></td><td data-label="注意点"><span class="tv">今回は、約14年7か月。生活の計画に入れる</span></td></tr><tr><td data-label="確認すること"><span class="tv">③ 始め方</span></td><td data-label="見方"><span class="tv">一括か、積立か</span></td><td data-label="注意点"><span class="tv">積立は、元本を取り戻す時期が、早かった</span></td></tr><tr><td data-label="確認すること"><span class="tv">④ 期間</span></td><td data-label="見方"><span class="tv">何年、持てるか</span></td><td data-label="注意点"><span class="tv">2000年の高値で始めても、26年持てば、S&P500と同じ年率だった</span></td></tr><tr><td data-label="確認すること"><span class="tv">⑤ 集中</span></td><td data-label="見方"><span class="tv">指数の中身（業種・上位銘柄）</span></td><td data-label="注意点"><span class="tv">偏りが、下落の深さと、回復の長さに表れる</span></td></tr><tr><td data-label="確認すること"><span class="tv">⑥ 下落の途中</span></td><td data-label="見方"><span class="tv">今の下落を、過去（ITバブル）と、同じ営業日数で比べる</span></td><td data-label="注意点"><span class="tv">最初の1〜2か月では、先は分からない（今回の比較は、第3節）</span></td></tr></tbody></table></div>
+
+    <div class="art-fine">
+      <p>※ Nasdaq-100はQQQ（Invesco QQQ Trust）、S&P500はSPYの、配当込みの調整後終値（月次）です。QQQの月次データは、1999年4月からです。ドル建てで、税・手数料・為替は含みません。</p>
+      <p>※ 「高値」「底」は、月末値の最大・最小で、日中の高値・安値とは異なります。「高値に戻る」は、月末値が、高値の月の月末値を上回った最初の月です。</p>
+      <p>※ 積立は、毎月同額を、月末値で買う前提の、単純な計算です。2026年10月（月次データの最新）までです。</p>
+      <p>※ 第1〜2節・第4〜5節は月末値（月次）、第3節の下落の比較は日々の終値（日次）です。このため、ITバブルの最大の下落は、月次で−81.1%、日次で−83.0%と、わずかに異なります。第3節は、QQQの配当込みの調整後終値（日次）です。「高値」は、各期間内の最大の終値で、営業日数は、高値の日を0とした日数です。今回の数字は、2026年11月23日の終値までです。「高値の前の約11か月の上昇」は、高値の約11か月前の終値から、高値の終値までの上昇率です（ITバブル：1999年4月27日から、今回：2025年11月6日から）。</p>
+      <p>※ S&P500の「ITバブルの時期」の下落（−44.7%）は、1999年4月以降のデータで、2000年の高値から2002年9月までの数字です。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>FIREまで、あと何年かを予測する</h3>
+  <p>楽観・中立・悲観の3つのシナリオと、あなたの実績ベースのシナリオで、FIREの到達年齢を比較できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#simulation">到達予測を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>Invesco「QQQ（Invesco QQQ Trust）」：<a href="https://www.invesco.com/qqq-etf/en/about.html" target="_blank" rel="noopener">https://www.invesco.com/qqq-etf/en/about.html</a></li><li>株価データ（QQQ、SPYの月次の調整後終値）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月24日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="market-crashes-history.html">過去の暴落｜長期投資家の目線</a><a href="anthropic-ipo-priced.html">Anthropicの上場結果｜公開価格83ドル、価格帯を超えて決まった</a><a href="nvidia-q3-fy2027.html">NVIDIAの2026年7〜10月期決算（2027年度第3四半期）｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
