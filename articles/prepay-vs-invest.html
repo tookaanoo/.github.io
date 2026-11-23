@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="借入金利が何%のとき、運用の利回りが何%を超えれば、返さないほうが有利か。NISAと課税口座の早見表と、過去の10年・20年の実績で整理する。">
+<title>繰り上げ返済と投資の早見表｜借入金利と運用利回りで、どちらが有利か - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/prepay-vs-invest.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="繰り上げ返済と投資の早見表｜借入金利と運用利回りで、どちらが有利か">
+<meta property="og:description" content="借入金利が何%のとき、運用の利回りが何%を超えれば、返さないほうが有利か。NISAと課税口座の早見表と、過去の10年・20年の実績で整理する。">
+<meta property="og:url" content="https://fire-app.jp/articles/prepay-vs-invest.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/prepay-vs-invest.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/prepay-vs-invest.jpg">
+<meta name="twitter:title" content="繰り上げ返済と投資の早見表｜借入金利と運用利回りで、どちらが有利か">
+<meta name="twitter:description" content="借入金利が何%のとき、運用の利回りが何%を超えれば、返さないほうが有利か。NISAと課税口座の早見表と、過去の10年・20年の実績で整理する。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "繰り上げ返済と投資の早見表｜借入金利と運用利回りで、どちらが有利か", "description": "借入金利が何%のとき、運用の利回りが何%を超えれば、返さないほうが有利か。NISAと課税口座の早見表と、過去の10年・20年の実績で整理する。", "inLanguage": "ja", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/prepay-vs-invest.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "比較", "keywords": ["FIRE・資産形成", "金利・物価", "日本株", "米国株"], "image": ["https://fire-app.jp/articles/og/prepay-vs-invest.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "繰り上げ返済と投資の早見表｜借入金利と運用利回りで、どちらが有利か", "item": "https://fire-app.jp/articles/prepay-vs-invest.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 比較</div>
+    <h1>繰り上げ返済と投資の早見表</h1>
+    <p class="subtitle">借入金利と運用利回りで、どちらが有利か</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>借入金利より高く運用できれば、返さない方が有利</h3><p class="pt-d"><b>返さずに運用したほうが有利になるのは、運用の利回りが、借入金利を上回るとき。</b>NISAなら「借入金利より上」、課税口座なら、税金の分だけ、少し「上乗せ」が必要です。</p></div><div class="pt"><h3>課税口座は、税金の分だけ上乗せが必要</h3><p class="pt-d">控除を受けている場合は、返済の実質の利回りが下がり、運用が有利になる境目も下がります（早見表のボタンで確認）。控除がない場合の例として、<b>借入金利が1.5%</b>なら、NISAで<b>年1.5%超</b>、課税口座（20年）で<b>年1.82%超</b>で運用できれば、返さないほうが有利。<b>借入金利が3.0%</b>なら、NISAで年3.0%超、課税口座（20年）で年3.56%超が必要です。下の早見表で、自分の借入金利の行を見ます。</p></div><div class="pt"><h3>運用の利回りは、約束されない</h3><p class="pt-d">ただし、<b>運用の利回りは、約束されません。</b>過去の10年間で、年3%を上回った割合は、日経平均（価格指数）で47%、米国株（円換算）で76%。返済は、確実で、戻せません。<b>どちらが得かは、「借入金利」と「運用に期待する利回り」と「外れたときに耐えられるか」で決まります</b>。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月24日</span><span><b>情報の時点</b> 金融庁・国土交通省・株価データ</span></div>
+<div class="art-tags"><a href="index.html?tag=FIRE・資産形成">#FIRE・資産形成</a><a href="index.html?tag=金利・物価">#金利・物価</a><a href="index.html?tag=日本株">#日本株</a><a href="index.html?tag=米国株">#米国株</a></div>
+<div class="art-note"><b>この記事について</b>　特定の銘柄の売買を勧めるものではなく、公開資料の内容と「長期で何を見ればよいか」を整理した情報提供です。数値・時期は会社の開示資料に基づき、末尾の出典で確認できます。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. 早見表：借入金利 × 運用の利回り</h2>
+    <p>手元の300万円を、①繰り上げ返済に使う、②運用する、を20年後で比べた早見表です。<b>見方：まず、ボタンで「控除の有無」と「口座」を選び、自分の「借入金利」の行を見て、「運用の年利回り」の列で、色を確認</b>します。ピンクなら運用が有利、グレーなら返済が有利です。</p>
+    <figure class="fig tgbox"><div class="fig-title">早見表：20年後に、運用が返済より何万円多いか（300万円あたり）。上のボタンで切り替え</div><style>
+.tgbox input{position:absolute;opacity:0;pointer-events:none}
+.tgbox .tgrow{margin:2px 0 10px}
+.tgbox .tgcap{font-size:12px;color:#6b7280;font-weight:700;margin:6px 0 4px}
+.tgbox label{display:inline-block;padding:7px 12px;border:1px solid #d1d5db;border-radius:999px;margin:0 6px 6px 0;font-size:13px;line-height:1.3;cursor:pointer;color:#374151;background:#fff}
+#tg-a1:checked ~ .tgrow label[for=tg-a1],#tg-a2:checked ~ .tgrow label[for=tg-a2],#tg-b1:checked ~ .tgrow label[for=tg-b1],#tg-b2:checked ~ .tgrow label[for=tg-b2]{background:#ec4899;border-color:#ec4899;color:#fff;font-weight:700}
+.tgbox .tgp{display:none}
+#tg-a1:checked ~ #tg-b1:checked ~ .p-a1b1,#tg-a1:checked ~ #tg-b2:checked ~ .p-a1b2,#tg-a2:checked ~ #tg-b1:checked ~ .p-a2b1,#tg-a2:checked ~ #tg-b2:checked ~ .p-a2b2{display:block}
+</style><input type="radio" name="tga" id="tg-a1" checked><input type="radio" name="tga" id="tg-a2"><input type="radio" name="tgb" id="tg-b1" checked><input type="radio" name="tgb" id="tg-b2"><div class="tgrow"><div class="tgcap">住宅ローン控除</div><label for="tg-a1">なし</label><label for="tg-a2">あり（控除率0.7%・残り10年）</label></div><div class="tgrow"><div class="tgcap">運用する口座</div><label for="tg-b1">NISA（非課税）</label><label for="tg-b2">課税口座</label></div><div class="tgp p-a1b1"><div class="tgcap">控除なし／NISA</div><svg viewBox="0 0 420 326" role="img" xmlns="http://www.w3.org/2000/svg"><text x="244.0" y="14.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >運用の年利回り（年率、税引き前）→</text><text x="98.3" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >0%</text><text x="146.9" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >1%</text><text x="195.4" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2%</text><text x="244.0" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >3%</text><text x="292.6" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >4%</text><text x="341.1" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >5%</text><text x="389.7" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6%</text><text x="4.0" y="32.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >借入金利↓</text><text x="66.0" y="60.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >0.5%</text><rect x="75.0" y="41" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.22"/><text x="98.3" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−31</text><rect x="123.6" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.22"/><text x="146.9" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+35</text><rect x="172.1" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.32"/><text x="195.4" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+114</text><rect x="220.7" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.44"/><text x="244.0" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+210</text><rect x="269.3" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.58"/><text x="292.6" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+326</text><rect x="317.9" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.75"/><text x="341.1" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+465</text><rect x="366.4" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.95"/><text x="389.7" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+631</text><text x="66.0" y="93.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.0%</text><rect x="75.0" y="74" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.26"/><text x="98.3" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−66</text><rect x="123.6" y="74" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="146.9" y="93.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="172.1" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.28"/><text x="195.4" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+80</text><rect x="220.7" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.40"/><text x="244.0" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+176</text><rect x="269.3" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.54"/><text x="292.6" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+291</text><rect x="317.9" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.71"/><text x="341.1" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+430</text><rect x="366.4" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.91"/><text x="389.7" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+596</text><text x="66.0" y="126.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.5%</text><rect x="75.0" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.31"/><text x="98.3" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−104</text><rect x="123.6" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.23"/><text x="146.9" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−38</text><rect x="172.1" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.23"/><text x="195.4" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+42</text><rect x="220.7" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.35"/><text x="244.0" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+138</text><rect x="269.3" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.49"/><text x="292.6" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+253</text><rect x="317.9" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.66"/><text x="341.1" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+392</text><rect x="366.4" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.87"/><text x="389.7" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+558</text><text x="66.0" y="159.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >2.0%</text><rect x="75.0" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.36"/><text x="98.3" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−146</text><rect x="123.6" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.28"/><text x="146.9" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−80</text><rect x="172.1" y="140" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="195.4" y="159.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="220.7" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.30"/><text x="244.0" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+96</text><rect x="269.3" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.44"/><text x="292.6" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+212</text><rect x="317.9" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.61"/><text x="341.1" y="159.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+350</text><rect x="366.4" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.82"/><text x="389.7" y="159.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+516</text><text x="66.0" y="192.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >3.0%</text><rect x="75.0" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.48"/><text x="98.3" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−242</text><rect x="123.6" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.40"/><text x="146.9" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−176</text><rect x="172.1" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.30"/><text x="195.4" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−96</text><rect x="220.7" y="173" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="244.0" y="192.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="269.3" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.32"/><text x="292.6" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+116</text><rect x="317.9" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.49"/><text x="341.1" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+254</text><rect x="366.4" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.70"/><text x="389.7" y="192.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+420</text><text x="66.0" y="225.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >4.0%</text><rect x="75.0" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.62"/><text x="98.3" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >−357</text><rect x="123.6" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.54"/><text x="146.9" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−291</text><rect x="172.1" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.44"/><text x="195.4" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−212</text><rect x="220.7" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.32"/><text x="244.0" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−116</text><rect x="269.3" y="206" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="292.6" y="225.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="317.9" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.35"/><text x="341.1" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+139</text><rect x="366.4" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.56"/><text x="389.7" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+305</text><text x="66.0" y="254.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >日経平均</text><text x="66.0" y="265.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >57%</text><text x="146.9" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >53%</text><text x="195.4" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >50%</text><text x="244.0" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >47%</text><text x="292.6" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >43%</text><text x="341.1" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >38%</text><text x="389.7" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >34%</text><text x="66.0" y="288.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >米国株（円）</text><text x="66.0" y="299.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >81%</text><text x="146.9" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >80%</text><text x="195.4" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >78%</text><text x="244.0" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >76%</text><text x="292.6" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >75%</text><text x="341.1" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >74%</text><text x="389.7" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >70%</text></svg></div><div class="tgp p-a1b2"><div class="tgcap">控除なし／課税口座</div><svg viewBox="0 0 420 326" role="img" xmlns="http://www.w3.org/2000/svg"><text x="244.0" y="14.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >運用の年利回り（年率、税引き前）→</text><text x="98.3" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >0%</text><text x="146.9" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >1%</text><text x="195.4" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2%</text><text x="244.0" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >3%</text><text x="292.6" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >4%</text><text x="341.1" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >5%</text><text x="389.7" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6%</text><text x="4.0" y="32.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >借入金利↓</text><text x="66.0" y="60.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >0.5%</text><rect x="75.0" y="41" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.22"/><text x="98.3" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−31</text><rect x="123.6" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.21"/><text x="146.9" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+21</text><rect x="172.1" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.28"/><text x="195.4" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+85</text><rect x="220.7" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.38"/><text x="244.0" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+161</text><rect x="269.3" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.49"/><text x="292.6" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+253</text><rect x="317.9" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.63"/><text x="341.1" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+364</text><rect x="366.4" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.79"/><text x="389.7" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+496</text><text x="66.0" y="93.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.0%</text><rect x="75.0" y="74" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.26"/><text x="98.3" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−66</text><rect x="123.6" y="74" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.20"/><text x="146.9" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−13</text><rect x="172.1" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.24"/><text x="195.4" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+50</text><rect x="220.7" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.34"/><text x="244.0" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+127</text><rect x="269.3" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.45"/><text x="292.6" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+219</text><rect x="317.9" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.59"/><text x="341.1" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+329</text><rect x="366.4" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.75"/><text x="389.7" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+462</text><text x="66.0" y="126.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.5%</text><rect x="75.0" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.31"/><text x="98.3" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−104</text><rect x="123.6" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.24"/><text x="146.9" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−51</text><rect x="172.1" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.19"/><text x="195.4" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+12</text><rect x="220.7" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.29"/><text x="244.0" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+89</text><rect x="269.3" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.40"/><text x="292.6" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+181</text><rect x="317.9" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.54"/><text x="341.1" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+291</text><rect x="366.4" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.70"/><text x="389.7" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+424</text><text x="66.0" y="159.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >2.0%</text><rect x="75.0" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.36"/><text x="98.3" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−146</text><rect x="123.6" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.29"/><text x="146.9" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−93</text><rect x="172.1" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.22"/><text x="195.4" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−30</text><rect x="220.7" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.24"/><text x="244.0" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+47</text><rect x="269.3" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.35"/><text x="292.6" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+139</text><rect x="317.9" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.49"/><text x="341.1" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+249</text><rect x="366.4" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.65"/><text x="389.7" y="159.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+382</text><text x="66.0" y="192.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >3.0%</text><rect x="75.0" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.48"/><text x="98.3" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−242</text><rect x="123.6" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.41"/><text x="146.9" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−189</text><rect x="172.1" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.33"/><text x="195.4" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−126</text><rect x="220.7" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.24"/><text x="244.0" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−49</text><rect x="269.3" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.23"/><text x="292.6" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+43</text><rect x="317.9" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.37"/><text x="341.1" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+153</text><rect x="366.4" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.53"/><text x="389.7" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+286</text><text x="66.0" y="225.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >4.0%</text><rect x="75.0" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.62"/><text x="98.3" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >−357</text><rect x="123.6" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.56"/><text x="146.9" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >−305</text><rect x="172.1" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.48"/><text x="195.4" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−241</text><rect x="220.7" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.38"/><text x="244.0" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−165</text><rect x="269.3" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.27"/><text x="292.6" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−73</text><rect x="317.9" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.23"/><text x="341.1" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+38</text><rect x="366.4" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.39"/><text x="389.7" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+170</text><text x="66.0" y="254.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >日経平均</text><text x="66.0" y="265.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >57%</text><text x="146.9" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >53%</text><text x="195.4" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >50%</text><text x="244.0" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >47%</text><text x="292.6" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >43%</text><text x="341.1" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >38%</text><text x="389.7" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >34%</text><text x="66.0" y="288.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >米国株（円）</text><text x="66.0" y="299.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >81%</text><text x="146.9" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >80%</text><text x="195.4" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >78%</text><text x="244.0" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >76%</text><text x="292.6" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >75%</text><text x="341.1" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >74%</text><text x="389.7" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >70%</text></svg></div><div class="tgp p-a2b1"><div class="tgcap">控除あり／NISA</div><svg viewBox="0 0 420 326" role="img" xmlns="http://www.w3.org/2000/svg"><text x="244.0" y="14.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >運用の年利回り（年率、税引き前）→</text><text x="98.3" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >0%</text><text x="146.9" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >1%</text><text x="195.4" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2%</text><text x="244.0" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >3%</text><text x="292.6" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >4%</text><text x="341.1" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >5%</text><text x="389.7" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6%</text><text x="4.0" y="32.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >借入金利↓</text><text x="66.0" y="60.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >0.5%</text><rect x="75.0" y="41" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="98.3" y="60.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="123.6" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.25"/><text x="146.9" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+57</text><rect x="172.1" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.35"/><text x="195.4" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+137</text><rect x="220.7" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.47"/><text x="244.0" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+233</text><rect x="269.3" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.61"/><text x="292.6" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+348</text><rect x="317.9" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.78"/><text x="341.1" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+487</text><rect x="366.4" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.95"/><text x="389.7" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+653</text><text x="66.0" y="93.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.0%</text><rect x="75.0" y="74" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.23"/><text x="98.3" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−41</text><rect x="123.6" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.21"/><text x="146.9" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+25</text><rect x="172.1" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.31"/><text x="195.4" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+104</text><rect x="220.7" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.43"/><text x="244.0" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+200</text><rect x="269.3" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.57"/><text x="292.6" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+316</text><rect x="317.9" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.74"/><text x="341.1" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+455</text><rect x="366.4" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.94"/><text x="389.7" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+621</text><text x="66.0" y="126.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.5%</text><rect x="75.0" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.27"/><text x="98.3" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−77</text><rect x="123.6" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.19"/><text x="146.9" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−11</text><rect x="172.1" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.26"/><text x="195.4" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+69</text><rect x="220.7" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.38"/><text x="244.0" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+165</text><rect x="269.3" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.52"/><text x="292.6" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+280</text><rect x="317.9" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.70"/><text x="341.1" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+419</text><rect x="366.4" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.90"/><text x="389.7" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+585</text><text x="66.0" y="159.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >2.0%</text><rect x="75.0" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.32"/><text x="98.3" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−116</text><rect x="123.6" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.24"/><text x="146.9" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−50</text><rect x="172.1" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.22"/><text x="195.4" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+30</text><rect x="220.7" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.33"/><text x="244.0" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+126</text><rect x="269.3" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.48"/><text x="292.6" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+241</text><rect x="317.9" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.65"/><text x="341.1" y="159.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+380</text><rect x="366.4" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.85"/><text x="389.7" y="159.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+546</text><text x="66.0" y="192.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >3.0%</text><rect x="75.0" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.43"/><text x="98.3" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−206</text><rect x="123.6" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.35"/><text x="146.9" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−140</text><rect x="172.1" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.25"/><text x="195.4" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−60</text><rect x="220.7" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.22"/><text x="244.0" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+36</text><rect x="269.3" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.37"/><text x="292.6" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+151</text><rect x="317.9" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.54"/><text x="341.1" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+290</text><rect x="366.4" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.74"/><text x="389.7" y="192.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+456</text><text x="66.0" y="225.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >4.0%</text><rect x="75.0" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.57"/><text x="98.3" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >−314</text><rect x="123.6" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.49"/><text x="146.9" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−248</text><rect x="172.1" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.39"/><text x="195.4" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−169</text><rect x="220.7" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.27"/><text x="244.0" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−73</text><rect x="269.3" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.23"/><text x="292.6" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+43</text><rect x="317.9" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.40"/><text x="341.1" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+182</text><rect x="366.4" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.61"/><text x="389.7" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+348</text><text x="66.0" y="254.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >日経平均</text><text x="66.0" y="265.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >57%</text><text x="146.9" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >53%</text><text x="195.4" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >50%</text><text x="244.0" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >47%</text><text x="292.6" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >43%</text><text x="341.1" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >38%</text><text x="389.7" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >34%</text><text x="66.0" y="288.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >米国株（円）</text><text x="66.0" y="299.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >81%</text><text x="146.9" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >80%</text><text x="195.4" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >78%</text><text x="244.0" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >76%</text><text x="292.6" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >75%</text><text x="341.1" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >74%</text><text x="389.7" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >70%</text></svg></div><div class="tgp p-a2b2"><div class="tgcap">控除あり／課税口座</div><svg viewBox="0 0 420 326" role="img" xmlns="http://www.w3.org/2000/svg"><text x="244.0" y="14.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >運用の年利回り（年率、税引き前）→</text><text x="98.3" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >0%</text><text x="146.9" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >1%</text><text x="195.4" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >2%</text><text x="244.0" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >3%</text><text x="292.6" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >4%</text><text x="341.1" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >5%</text><text x="389.7" y="32.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >6%</text><text x="4.0" y="32.0" font-size="10.5" text-anchor="start" fill="#111827" font-weight="700" >借入金利↓</text><text x="66.0" y="60.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >0.5%</text><rect x="75.0" y="41" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="98.3" y="60.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="123.6" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.23"/><text x="146.9" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+44</text><rect x="172.1" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.31"/><text x="195.4" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+107</text><rect x="220.7" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.41"/><text x="244.0" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+184</text><rect x="269.3" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.52"/><text x="292.6" y="60.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+276</text><rect x="317.9" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.66"/><text x="341.1" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+386</text><rect x="366.4" y="41" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.82"/><text x="389.7" y="60.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+519</text><text x="66.0" y="93.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.0%</text><rect x="75.0" y="74" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.23"/><text x="98.3" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−41</text><rect x="123.6" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.19"/><text x="146.9" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+11</text><rect x="172.1" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.27"/><text x="195.4" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+75</text><rect x="220.7" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.37"/><text x="244.0" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+151</text><rect x="269.3" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.48"/><text x="292.6" y="93.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+243</text><rect x="317.9" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.62"/><text x="341.1" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+354</text><rect x="366.4" y="74" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.78"/><text x="389.7" y="93.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+486</text><text x="66.0" y="126.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >1.5%</text><rect x="75.0" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.27"/><text x="98.3" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−77</text><rect x="123.6" y="107" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.21"/><text x="146.9" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−24</text><rect x="172.1" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.23"/><text x="195.4" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+39</text><rect x="220.7" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.32"/><text x="244.0" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+116</text><rect x="269.3" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.44"/><text x="292.6" y="126.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+208</text><rect x="317.9" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.57"/><text x="341.1" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+318</text><rect x="366.4" y="107" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.73"/><text x="389.7" y="126.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+451</text><text x="66.0" y="159.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >2.0%</text><rect x="75.0" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.32"/><text x="98.3" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−116</text><rect x="123.6" y="140" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.26"/><text x="146.9" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−63</text><rect x="172.1" y="140" width="46.6" height="31" rx="4" fill="#f3f4f6" opacity="1.00"/><text x="195.4" y="159.5" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="700" >±0</text><rect x="220.7" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.27"/><text x="244.0" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+77</text><rect x="269.3" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.39"/><text x="292.6" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+169</text><rect x="317.9" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.52"/><text x="341.1" y="159.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+279</text><rect x="366.4" y="140" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.69"/><text x="389.7" y="159.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+412</text><text x="66.0" y="192.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >3.0%</text><rect x="75.0" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.43"/><text x="98.3" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−206</text><rect x="123.6" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.37"/><text x="146.9" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−153</text><rect x="172.1" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.29"/><text x="195.4" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−90</text><rect x="220.7" y="173" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.20"/><text x="244.0" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−13</text><rect x="269.3" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.28"/><text x="292.6" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+79</text><rect x="317.9" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.41"/><text x="341.1" y="192.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+189</text><rect x="366.4" y="173" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.58"/><text x="389.7" y="192.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >+322</text><text x="66.0" y="225.5" font-size="11.5" text-anchor="end" fill="#111827" font-weight="700" >4.0%</text><rect x="75.0" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.57"/><text x="98.3" y="225.5" font-size="10.5" text-anchor="middle" fill="#ffffff" font-weight="700" >−314</text><rect x="123.6" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.50"/><text x="146.9" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−262</text><rect x="172.1" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.42"/><text x="195.4" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−198</text><rect x="220.7" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.33"/><text x="244.0" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−122</text><rect x="269.3" y="206" width="46.6" height="31" rx="4" fill="#64748b" opacity="0.22"/><text x="292.6" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >−30</text><rect x="317.9" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.28"/><text x="341.1" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+81</text><rect x="366.4" y="206" width="46.6" height="31" rx="4" fill="#ec4899" opacity="0.44"/><text x="389.7" y="225.5" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >+213</text><text x="66.0" y="254.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >日経平均</text><text x="66.0" y="265.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >57%</text><text x="146.9" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >53%</text><text x="195.4" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >50%</text><text x="244.0" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >47%</text><text x="292.6" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >43%</text><text x="341.1" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >38%</text><text x="389.7" y="258.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >34%</text><text x="66.0" y="288.0" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >米国株（円）</text><text x="66.0" y="299.5" font-size="9.5" text-anchor="end" fill="#6b7280" font-weight="600" >過去10年で</text><text x="98.3" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >81%</text><text x="146.9" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >80%</text><text x="195.4" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >78%</text><text x="244.0" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >76%</text><text x="292.6" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >75%</text><text x="341.1" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >74%</text><text x="389.7" y="292.0" font-size="10.5" text-anchor="middle" fill="#111827" font-weight="700" >70%</text></svg></div><figcaption>出典：当サイトの計算（300万円を、①繰り上げ返済に使う、②年率gで20年運用する、を比べた20年後の差）。<b>ピンク＝運用が有利、グレー＝返済が有利、白＝ほぼ同じ</b>。控除なしでは、返済は借入金利と同じ利回りで増える（利息が減る）と見なします。<b>控除ありでは、控除を受けている残り10年間は、返済で残高が減る分、控除（残高×0.7%）も減る</b>ため、その期間の返済の利回りは「借入金利−0.7%」になる、と見なします。課税口座は、20年後に売却して、利益に20.315%がかかる前提です。下の2行は、株価データ（月次）で、<b>過去の10年間の年率が、その列の利回りを上回った割合（%）</b>です（日経平均は1980年〜、米国株は円換算・配当込みで1996年〜）。</figcaption></figure>
+    <ul>
+      <li><b>色が変わる境目が、借入金利と同じ利回り</b>です（NISAの場合）。借入金利が2.0%の行では、運用の年利回りが2%を超えると、ピンクに変わります。</li>
+      <li><b>借入金利が高い行ほど、運用が有利になる境目が、右（高い利回り）にずれ</b>、同じ運用の利回りでも、差が小さくなります。たとえば、運用が年5%なら、借入金利1%の行では<b>+430万円</b>、4%の行では<b>+139万円</b>です。</li>
+      <li>数字は、<b>300万円あたり</b>です。600万円なら2倍、150万円なら半分です。</li>
+    </ul>
+    <p><b>ボタンを切り替えて</b>、「住宅ローン控除の有無」と「運用する口座」の4通りを見られます。課税口座では、<b>同じ運用の利回りでも、税金の分だけ、運用側が不利</b>になり、境目が右にずれます。</p>
+
+    <h2>2. 「返さないほうが有利になる運用の利回り」の一覧</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>借入金利</th><th>NISAで、返さない方が有利になる運用の年利回り</th><th>課税口座（10年）</th><th>課税口座（20年）</th></tr></thead><tbody><tr><td data-label="借入金利"><span class="tv">0.5%</span></td><td data-label="NISAで、返さない方が有利になる運用の年利回り"><span class="tv">0.50%超</span></td><td data-label="課税口座（10年）"><span class="tv">0.62%超</span></td><td data-label="課税口座（20年）"><span class="tv">0.62%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">1.0%</span></td><td data-label="NISAで、返さない方が有利になる運用の年利回り"><span class="tv">1.00%超</span></td><td data-label="課税口座（10年）"><span class="tv">1.24%超</span></td><td data-label="課税口座（20年）"><span class="tv">1.23%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">1.5%</span></td><td data-label="NISAで、返さない方が有利になる運用の年利回り"><span class="tv">1.50%超</span></td><td data-label="課税口座（10年）"><span class="tv">1.85%超</span></td><td data-label="課税口座（20年）"><span class="tv">1.82%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">2.0%</span></td><td data-label="NISAで、返さない方が有利になる運用の年利回り"><span class="tv">2.00%超</span></td><td data-label="課税口座（10年）"><span class="tv">2.46%超</span></td><td data-label="課税口座（20年）"><span class="tv">2.41%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">3.0%</span></td><td data-label="NISAで、返さない方が有利になる運用の年利回り"><span class="tv">3.00%超</span></td><td data-label="課税口座（10年）"><span class="tv">3.65%超</span></td><td data-label="課税口座（20年）"><span class="tv">3.56%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">4.0%</span></td><td data-label="NISAで、返さない方が有利になる運用の年利回り"><span class="tv">4.00%超</span></td><td data-label="課税口座（10年）"><span class="tv">4.83%超</span></td><td data-label="課税口座（20年）"><span class="tv">4.68%超</span></td></tr></tbody></table></div>
+    <ul>
+      <li>左の列の「借入金利」の行を見て、<b>右の数字より高い利回りで運用できるなら、返さないほうが有利</b>です。</li>
+      <li>課税口座は、<b>期間が長いほど、必要な利回りが、借入金利に近づきます</b>（税金が、最後に1回だけかかるため）。</li>
+      <li>手数料・為替の手数料は、含んでいません。<b>含めると、必要な利回りは、さらに高くなります</b>。</li>
+    </ul>
+
+    <h2>3. その利回りは、出せるのか：過去の10年・20年</h2>
+    <p>早見表の「運用の利回り」は、<b>実際には、約束されません</b>。過去の実績を、参考に見ます（上の図の下の2行も、同じデータです）。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>保有期間・対象</th><th>最低</th><th>下位25%</th><th>中央値</th><th>上位25%</th><th>最高</th></tr></thead><tbody><tr><td data-label="保有期間・対象"><span class="tv">日経平均・10年</span></td><td data-label="最低"><span class="tv">-9.4%</span></td><td data-label="下位25%"><span class="tv">-3.7%</span></td><td data-label="中央値"><span class="tv">1.9%</span></td><td data-label="上位25%"><span class="tv">8.4%</span></td><td data-label="最高"><span class="tv">18.6%</span></td></tr><tr><td data-label="保有期間・対象"><span class="tv">日経平均・20年</span></td><td data-label="最低"><span class="tv">-7.0%</span></td><td data-label="下位25%"><span class="tv">-1.5%</span></td><td data-label="中央値"><span class="tv">0.4%</span></td><td data-label="上位25%"><span class="tv">3.5%</span></td><td data-label="最高"><span class="tv">7.8%</span></td></tr><tr><td data-label="保有期間・対象"><span class="tv">米国株（円）・10年</span></td><td data-label="最低"><span class="tv">-5.4%</span></td><td data-label="下位25%"><span class="tv">3.7%</span></td><td data-label="中央値"><span class="tv">8.2%</span></td><td data-label="上位25%"><span class="tv">16.4%</span></td><td data-label="最高"><span class="tv">21.1%</span></td></tr><tr><td data-label="保有期間・対象"><span class="tv">米国株（円）・20年</span></td><td data-label="最低"><span class="tv">4.9%</span></td><td data-label="下位25%"><span class="tv">6.3%</span></td><td data-label="中央値"><span class="tv">8.7%</span></td><td data-label="上位25%"><span class="tv">11.9%</span></td><td data-label="最高"><span class="tv">13.3%</span></td></tr></tbody></table></div>
+    <ul>
+      <li>日経平均（価格指数、円）の10年間の年率は、<b>最低−9.4%、中央値1.9%、最高+18.6%</b>。年3%を上回ったのは、47%の期間でした。</li>
+      <li>米国株（円換算、配当込み）の10年間は、中央値が8.2%で、年3%を上回ったのは76%の期間。<b>最悪の10年は、年-5.4%</b>でした。</li>
+      <li>20年間では、結果がまとまります。米国株（円換算）は、最低でも年4.9%。ただし、<b>重ならない20年の期間は、3つ程度</b>しかなく、結論を出すには、データが少ない点に注意が必要です。米国株（円換算）の成績には、<b>1996年以降の円安</b>が含まれます。</li>
+    </ul>
+
+    <h2>4. 住宅ローン控除を受けている場合</h2>
+    <p>控除を受けている間は、<b>年末の借入残高の一定割合が、所得税・住民税から差し引かれます</b>。繰り上げ返済で残高が減ると、<b>控除の額も減る</b>ため、返済で減らせる「実質の負担」は、借入金利より小さくなります。上の早見表で、「あり」を選ぶと、この影響を見られます。</p>
+    <ul>
+      <li><b>前提：</b>控除率0.7%（令和4〜7年入居の新築住宅、国土交通省）、控除を受けている残りの期間は10年（最長13年のうち）、控除は満額（借入限度額・納める税額の範囲内）。この期間の返済の利回りは、<b>「借入金利−0.7%」</b>になり、期間が終わると、借入金利に戻る、と見なしています。</li>
+      <li><b>結果：</b>控除ありでは、<b>運用が有利になる境目が、左（低い利回り）にずれ</b>、同じ運用の利回りでも、運用側が有利になります。たとえば、借入金利が1.0%、運用が年3%（NISA）なら、控除なしで+176万円、控除ありで+200万円です。</li>
+      <li><b>借入金利が、控除率（0.7%）に近い、または低い場合</b>は、返済の実質の利回りが、ほぼゼロ、またはマイナスです。この場合、<b>返さずに持つこと自体が、有利になる</b>ことがあります（控除を受けている間）。</li>
+    </ul>
+    <p>控除の残りの年数で、境目が変わります。<b>返さないほうが有利になる運用の年利回り</b>を、控除の残り年数別に並べます（20年間で比べた場合）。</p>
+    <p><b>NISAで運用する場合</b></p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>借入金利</th><th>控除の残りが5年</th><th>10年</th><th>13年（満額）</th></tr></thead><tbody><tr><td data-label="借入金利"><span class="tv">0.5%</span></td><td data-label="控除の残りが5年"><span class="tv">0.32%超</span></td><td data-label="10年"><span class="tv">0.15%超</span></td><td data-label="13年（満額）"><span class="tv">0.04%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">1.0%</span></td><td data-label="控除の残りが5年"><span class="tv">0.82%超</span></td><td data-label="10年"><span class="tv">0.65%超</span></td><td data-label="13年（満額）"><span class="tv">0.54%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">1.5%</span></td><td data-label="控除の残りが5年"><span class="tv">1.32%超</span></td><td data-label="10年"><span class="tv">1.15%超</span></td><td data-label="13年（満額）"><span class="tv">1.04%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">2.0%</span></td><td data-label="控除の残りが5年"><span class="tv">1.82%超</span></td><td data-label="10年"><span class="tv">1.65%超</span></td><td data-label="13年（満額）"><span class="tv">1.54%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">3.0%</span></td><td data-label="控除の残りが5年"><span class="tv">2.82%超</span></td><td data-label="10年"><span class="tv">2.65%超</span></td><td data-label="13年（満額）"><span class="tv">2.54%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">4.0%</span></td><td data-label="控除の残りが5年"><span class="tv">3.82%超</span></td><td data-label="10年"><span class="tv">3.65%超</span></td><td data-label="13年（満額）"><span class="tv">3.54%超</span></td></tr></tbody></table></div>
+    <p><b>課税口座で運用する場合</b></p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>借入金利</th><th>控除の残りが5年</th><th>10年</th><th>13年（満額）</th></tr></thead><tbody><tr><td data-label="借入金利"><span class="tv">0.5%</span></td><td data-label="控除の残りが5年"><span class="tv">0.40%超</span></td><td data-label="10年"><span class="tv">0.19%超</span></td><td data-label="13年（満額）"><span class="tv">0.06%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">1.0%</span></td><td data-label="控除の残りが5年"><span class="tv">1.02%超</span></td><td data-label="10年"><span class="tv">0.80%超</span></td><td data-label="13年（満額）"><span class="tv">0.67%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">1.5%</span></td><td data-label="控除の残りが5年"><span class="tv">1.62%超</span></td><td data-label="10年"><span class="tv">1.41%超</span></td><td data-label="13年（満額）"><span class="tv">1.28%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">2.0%</span></td><td data-label="控除の残りが5年"><span class="tv">2.20%超</span></td><td data-label="10年"><span class="tv">2.00%超</span></td><td data-label="13年（満額）"><span class="tv">1.88%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">3.0%</span></td><td data-label="控除の残りが5年"><span class="tv">3.36%超</span></td><td data-label="10年"><span class="tv">3.16%超</span></td><td data-label="13年（満額）"><span class="tv">3.04%超</span></td></tr><tr><td data-label="借入金利"><span class="tv">4.0%</span></td><td data-label="控除の残りが5年"><span class="tv">4.48%超</span></td><td data-label="10年"><span class="tv">4.29%超</span></td><td data-label="13年（満額）"><span class="tv">4.17%超</span></td></tr></tbody></table></div>
+    <ul>
+      <li>控除の<b>残りの年数が長いほど</b>、返済の実質の利回りが低い期間が長く、運用が有利になる境目が下がります。</li>
+      <li>令和8〜12年入居も、適用期限が延長されていますが、<b>控除率・借入限度額は、入居の時期と住宅の性能で異なる</b>ため、国土交通省で確認します。実際の控除は、納める所得税・住民税の額、借入限度額で、上限があります（この記事では、実際の控除額は計算していません）。</li>
+    </ul>
+
+    <h2>5. 長期投資家は、どう受け止めるか</h2>
+    <ul>
+      <li><b>まず、早見表で、自分の「借入金利」の行を見る。</b>運用の利回りが、その金利を上回らなければ、運用の勝ち目はない。</li>
+      <li><b>運用に期待する利回りを、保守的に置く。</b>過去の10年間でも、年3%を下回った期間が、日経平均で約半分、米国株で約4分の1あった。</li>
+      <li><b>返済は「確実」、運用は「ばらつく」。</b>外れたときに耐えられるか（生活費の準備、他の返済）を、先に確認する。</li>
+      <li><b>両方を、組み合わせる。</b>一部を返済、一部を運用、という選択もある。</li>
+      <li><b>戻せるかを、意識する。</b>繰り上げ返済は、戻せない。運用は、売却して現金に戻せる（価格は変動）。</li>
+    </ul>
+    <div class="art-note">この記事は、繰り上げ返済や、特定の投資を勧めるものではありません。過去の結果は、将来の成績を保証しません。住宅ローンの契約内容、税金、控除の適用は、人によって異なります。金融機関や、税務署・専門家に確認してください。</div>
+
+    <h2>6. 判断の前に、確認すること（チェックリスト）</h2>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>確認すること</th><th>見方</th><th>注意点</th></tr></thead><tbody><tr><td data-label="確認すること"><span class="tv">① 借入金利</span></td><td data-label="見方"><span class="tv">変動か固定か。直近の金利と、見直しの時期</span></td><td data-label="注意点"><span class="tv">変動金利は、日銀の政策金利の影響を受ける</span></td></tr><tr><td data-label="確認すること"><span class="tv">② 住宅ローン控除</span></td><td data-label="見方"><span class="tv">いつまで、いくら受けるか</span></td><td data-label="注意点"><span class="tv">入居の年・住宅の性能で、控除率・限度額が違う（国土交通省）</span></td></tr><tr><td data-label="確認すること"><span class="tv">③ 手元の現金</span></td><td data-label="見方"><span class="tv">生活費の何か月分を、残すか</span></td><td data-label="注意点"><span class="tv">繰り上げ返済は、戻せない</span></td></tr><tr><td data-label="確認すること"><span class="tv">④ NISAの枠と期間</span></td><td data-label="見方"><span class="tv">枠（年360万円、生涯1,800万円）と、運用できる期間</span></td><td data-label="注意点"><span class="tv">期間が短いほど、結果のばらつきが大きい</span></td></tr><tr><td data-label="確認すること"><span class="tv">⑤ 他の借入</span></td><td data-label="見方"><span class="tv">金利の高い借入（カードローンなど）</span></td><td data-label="注意点"><span class="tv">先に返すほうが、確実に得</span></td></tr></tbody></table></div>
+
+    <div class="art-fine">
+      <p>※ 早見表は、300万円を、20年間、①繰り上げ返済（借入金利と同じ利回りで増える＝利息が減る、と見なす）、②年率gで運用、した場合の、20年後の差（万円）です。毎月の返済額・返済期間の変化、返済のタイミング、手数料は、考慮していません。</p>
+      <p>※ 過去の年率は、毎月の月末値から、「始める月から、10年後・20年後の同じ月」までの年率を、すべての月について計算した値です。期間が重なり合っているため、独立した結果の数は、はるかに少なくなります。</p>
+      <p>※ 日経平均は、価格指数（円）で、配当・税・手数料を含みません。米国株は、SPYの配当込みの調整後終値を、月末のドル円で円換算した値で、税・手数料・為替の手数料を含みません。</p>
+      <p>※ 課税口座の必要な利回りは、売却益に20.315%が、期間の最後に1回だけかかる前提の、当サイトの計算です。</p>
+      <p>※ 借入金利は、条件別に並べています。実際の金利は、金融機関・契約（変動・固定）で異なります。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>自分の資産を、主要指数と比べる</h3>
+  <p>オルカン・S&amp;P500・日経平均などの主要指数と、起点を100とした推移で重ねて比較。入金のタイミングを除いた値動きも見られます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#performance">ベンチマーク比較を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>国土交通省「住宅ローン減税」：<a href="https://www.mlit.go.jp/jutakukentiku/house/zeisei_index2.html" target="_blank" rel="noopener">https://www.mlit.go.jp/jutakukentiku/house/zeisei_index2.html</a></li><li>金融庁「新しいNISA」：<a href="https://www.fsa.go.jp/policy/nisa2/index.html" target="_blank" rel="noopener">https://www.fsa.go.jp/policy/nisa2/index.html</a></li><li>国税庁「株式等を譲渡したとき（源泉徴収を選択した特定口座等）」：<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1463.htm" target="_blank" rel="noopener">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1463.htm</a></li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月24日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="real-return-cash-vs-investing.html">現金と投資を、「実質」で比べる｜物価で割り戻した、2015年からの結果</a><a href="new-nisa.html">新NISAに入れるのは、高配当株か、成長株か、インデックスか｜仕組みから考える</a><a href="dca-simulation.html">積立投資のシミュレーション｜長期投資家の目線</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
