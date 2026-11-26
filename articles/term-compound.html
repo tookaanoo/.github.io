@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLV7LYGXP6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MLV7LYGXP6');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="複利の意味、72の法則、始める時期の差、費用と税の影響を、数字で短く解説。複利の効果が後半に集まることを、長期投資家の目線で整理。">
+<title>複利とは - みんなでFIRE</title>
+<!-- icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icons -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+
+  /* ===== Utilities ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .container-sm { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: linear-gradient(135deg, #ff3d6e 0%, #ff1f5a 50%, #d61f4a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .logo-text .grad-text {
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 60%, #6a1b9a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 900;
+  }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ec4899;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 100%; height: 100%; }
+  .logo-text { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: #374151; transition: color 0.2s; }
+  .nav-links a:hover { color: #ec4899; }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .login { font-size: 14px; font-weight: 600; }
+  .btn-primary {
+    padding: 10px 18px;
+    background: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #1f2937; }
+
+  /* ===== Doc Hero ===== */
+  .doc-hero {
+    padding: 80px 0 32px;
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-hero .eyebrow {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .doc-hero h1 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 12px;
+  }
+  .doc-hero p.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  /* ===== Doc Body ===== */
+  .doc-body {
+    padding: 48px 0 120px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .doc-meta div { margin-bottom: 2px; }
+  .doc-meta div:last-child { margin-bottom: 0; }
+  .doc-meta b { color: #374151; font-weight: 600; margin-right: 4px; }
+  .doc-body h2 {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111827;
+    margin: 48px 0 16px;
+  }
+  .doc-body h2:first-of-type { margin-top: 0; }
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 28px 0 10px;
+  }
+  .doc-body p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+  .doc-body p b { color: #111827; font-weight: 700; }
+  .doc-body ol {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style: decimal;
+  }
+  .doc-body ol > li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #374151;
+    padding-left: 4px;
+  }
+  .doc-body ol > li::marker {
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .doc-body ul {
+    margin: 6px 0 14px;
+    padding-left: 0;
+  }
+  .doc-body ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .doc-body ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+  }
+  .doc-body ul.sub-list {
+    margin-left: 24px;
+  }
+
+  /* ===== Table ===== */
+  .doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .doc-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+  .doc-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.75;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+  }
+  .doc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .doc-table tbody td:first-child {
+    width: 30%;
+    font-weight: 600;
+    color: #111827;
+    padding-right: 24px;
+  }
+  .doc-table tbody td b {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* ===== Related Links ===== */
+  .related-links {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid #f3f4f6;
+  }
+  .related-links h3 {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+  }
+  .related-grid a {
+    font-size: 14px;
+    color: #374151;
+    transition: color 0.2s;
+  }
+  .related-grid a:hover {
+    color: #ec4899;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand p { font-size: 11px; color: #6b7280; line-height: 1.7; margin-top: 12px; }
+  .footer-col .footer-head { font-size: 10px; color: #9ca3af; font-weight: 700; letter-spacing: 0.2em; margin-bottom: 12px; }
+  .footer-col ul li { font-size: 12px; color: #4b5563; margin-bottom: 8px; }
+  .footer-col ul li a:hover { color: #ec4899; }
+  .footer-bottom {
+    max-width: 1200px; margin: 48px auto 0; padding: 24px 24px 0;
+    border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between;
+    font-size: 11px; color: #9ca3af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .doc-hero h1 { font-size: 28px; }
+    .doc-body h2 { font-size: 17px; }
+    .nav-links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ===== Article ===== */
+  .art-hero { padding: 72px 0 28px; border-bottom: 1px solid #f3f4f6; }
+  .art-hero .eyebrow { font-size: 11px; color: #ec4899; letter-spacing: 0.16em; margin-bottom: 12px; }
+  .art-hero h1 { font-family: 'Inter','Noto Sans JP',sans-serif; font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .art-hero .subtitle { font-size: 15px; color: #6b7280; line-height: 1.7; }
+  .art-meta { margin-top: 18px; font-size: 12px; color: #9ca3af; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .art-meta b { color: #6b7280; font-weight: 600; }
+  .art-note { margin-top: 20px; padding: 14px 16px; background: #fdf2f8; border-radius: 12px; font-size: 12.5px; color: #6b7280; line-height: 1.8; }
+  .art-note b { color: #be185d; }
+  .art-summary { background: #f9fafb; border-radius: 16px; padding: 22px 24px; margin: 8px 0 8px; }
+  .art-summary h2 { margin: 0 0 12px !important; font-size: 15px !important; }
+  .art-summary ul li { font-size: 14.5px; color: #374151; }
+  .doc-body.art h2 { margin-top: 44px; }
+  .doc-body.art h2:first-of-type { margin-top: 28px; }
+  .doc-body.art p { font-size: 15px; line-height: 1.95; }
+  .doc-body.art ul li { font-size: 14.5px; }
+  .tbl-wrap { overflow-x: auto; margin: 16px 0 24px; -webkit-overflow-scrolling: touch; }
+  .art-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 520px; }
+  .art-table th { text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+  .art-table td { padding: 12px; border-bottom: 1px solid #f3f4f6; vertical-align: top; line-height: 1.7; color: #374151; }
+  .art-table td:first-child { font-weight: 700; color: #111827; }
+  .art-table td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .art-table.ms td:first-child { min-width: 150px; }
+  .art-fig { font-size: 12px; color: #9ca3af; margin-top: -10px; }
+  .fig { margin: 26px 0 32px; padding: 18px 18px 14px; background: #fff; border: 1px solid #f3f4f6; border-radius: 16px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
+  .fig-title { font-size: 13.5px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.5; }
+  .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .fig svg text { font-family: 'Noto Sans JP','Inter',sans-serif; }
+  .fig figcaption { font-size: 11.5px; color: #9ca3af; line-height: 1.8; margin-top: 8px; }
+  .fig figcaption b { color: #6b7280; }
+  .fig-note { font-size: 10.5px; color: #9ca3af; margin: 2px 0 0; }
+  .art-cta { margin-top: 48px; padding: 24px; border-radius: 16px; background: linear-gradient(135deg,#fff0f5,#ffe4ec); }
+  .art-cta h3 { margin: 0 0 8px; font-size: 16px; }
+  .art-cta p { margin: 0 0 14px; font-size: 14px; }
+  .art-cta a.btn { display: inline-block; padding: 10px 18px; background: #111827; color: #fff; border-radius: 9999px; font-size: 13px; font-weight: 700; }
+  .src-list li { font-size: 13px !important; word-break: break-all; }
+  .src-list a { color: #be185d; text-decoration: underline; }
+  .art-cards { display: grid; gap: 16px; margin-top: 8px; }
+  .art-card { display: block; padding: 22px 24px; border: 1px solid #f3f4f6; border-radius: 16px; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .art-card:hover { box-shadow: 0 12px 32px rgba(17,24,39,.08); transform: translateY(-2px); }
+  .art-card .tag { font-size: 10.5px; font-weight: 700; color: #ec4899; letter-spacing: .12em; }
+  .art-card h3 { margin: 6px 0 6px !important; font-size: 18px !important; line-height: 1.5; }
+  .art-card p { margin: 0 !important; font-size: 13.5px !important; color: #6b7280 !important; line-height: 1.8 !important; }
+  .doc-body ol.risk-list { list-style: none; margin: 0 0 8px; padding: 0; border-top: 1px solid #e5e7eb; }
+  .doc-body ol.risk-list > li { display: flex; gap: 12px; margin: 0; padding: 14px 0; border-bottom: 1px solid #e5e7eb; }
+  .risk-list .rn { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ec4899; font: 700 12px/20px 'Inter',sans-serif; text-align: center; color: #111827; }
+  .risk-list .rn0 { border-color: #d1d5db; color: #9ca3af; }
+  .doc-body.art .art-fine { margin: 32px 0 0; }
+  .doc-body.art .art-fine p { margin: 0 0 4px; font-size: 11.5px; line-height: 1.8; color: #9ca3af; }
+  .risk-list b { font-size: 15px; color: #111827; }
+  .risk-list .rr { display: block; margin-top: 1px; font-size: 11px; font-weight: 700; color: #ec4899; }
+  .risk-list p { margin: 4px 0 0 !important; font-size: 13.5px !important; line-height: 1.75 !important; color: #374151; }
+  @media (max-width: 768px) {
+    .art-hero h1 { font-size: 24px; } .art-hero { padding-top: 44px; }
+    .fig { padding: 14px 10px 12px; }
+    .fig svg text[font-size="8.5"], .fig svg text[font-size="9"], .fig svg text[font-size="9.5"], .fig svg text[font-size="10"] { font-size: 11.5px; }
+    .fig svg text[font-size="10.5"], .fig svg text[font-size="11"], .fig svg text[font-size="11.5"] { font-size: 12px; }
+    .art-table.ms { min-width: 0; }
+    .art-table.ms thead { display: none; }
+    .art-table.ms, .art-table.ms tbody, .art-table.ms tr, .art-table.ms td { display: block; width: 100%; }
+    .art-table.ms { border-top: 1px solid #e5e7eb; }
+    .art-table.ms tr { border: none; border-bottom: 1px solid #e5e7eb; border-radius: 0; padding: 14px 0 12px; margin: 0; background: none; }
+    .art-table.ms td { border: none; padding: 3px 0; min-width: 0 !important; font-size: 13.5px; line-height: 1.75; }
+    .art-table.ms td:first-child { font-size: 15px; padding-bottom: 6px; }
+    .art-table.ms td:not(:first-child)::before { content: attr(data-label); flex: 0 0 6.6em; margin-right: 10px; font-size: 11px; font-weight: 700; color: #ec4899; line-height: 1.9; }
+    .art-table.ms td:not(:first-child) { display: flex; }
+    .art-table.ms td .tv { flex: 1; min-width: 0; }
+    .art-table.ms td:not(:first-child) { padding-left: 0; }
+    .art-table.ms td.num { text-align: left; white-space: normal; font-family: inherit; }
+    .art-table:not(.ms) { min-width: 0; font-size: 12.5px; }
+    .art-table:not(.ms) th, .art-table:not(.ms) td { padding: 10px 6px; }
+    .art-table:not(.ms) td.num { white-space: normal; word-break: keep-all; font-size: 12px; }
+    .art-table:not(.ms) td:first-child { min-width: 4.6em; }
+    .tbl-wrap:has(.ms) { overflow: visible; }
+  }
+
+  .heat { margin: 14px 0 6px; }
+  .heat-row { display: grid; grid-template-columns: 44px repeat(4, 1fr); gap: 4px; margin-bottom: 4px; align-items: stretch; }
+  .heat-h { font-size: 10.5px; line-height: 1.3; color: #6b7280; font-weight: 700; text-align: center; padding: 0 0 4px; align-self: end; }
+  .heat-a { font-size: 12px; font-weight: 800; color: #111827; align-self: center; }
+  .heat-c { border-radius: 8px; padding: 11px 0; text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+  .heat-leg { font-size: 11.5px; color: #6b7280; margin: 6px 0 0; }
+  @media (min-width: 640px) { .heat-row { grid-template-columns: 56px repeat(4, 1fr); gap: 6px; } .heat-h { font-size: 12px; } .heat-c { font-size: 17px; padding: 13px 0; } }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0 8px; }
+  .tile { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 14px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .tile-l { font-size: 12px; font-weight: 700; color: #6b7280; line-height: 1.5; }
+  .tile-v { font-size: 26px; line-height: 1.25; font-weight: 800; color: #111827; margin: 4px 0 6px; letter-spacing: -.01em; }
+  .tile-v small { font-size: 14px; font-weight: 700; margin-left: 2px; color: #4b5563; }
+  .tile-n { font-size: 11.5px; line-height: 1.7; color: #6b7280; }
+  .rcs { display: grid; gap: 12px; margin: 18px 0 14px; }
+  .rc { background: #fff; border: 1px solid #f3e8ee; border-radius: 14px; padding: 14px 16px 12px; box-shadow: 0 4px 14px rgba(17,24,39,.04); }
+  .rc-t { font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 10px; }
+  .rc-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+  .rc-l { font-size: 11px; font-weight: 700; color: #6b7280; line-height: 1.4; }
+  .rc-v { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.35; letter-spacing: -.01em; }
+  .rc-s { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+  .rc-m.hl .rc-v { color: #be185d; font-size: 22px; }
+  .tiles-key { display: grid; gap: 12px; margin: 18px 0 12px; }
+  .tile.key { background: linear-gradient(135deg,#fff3f8,#fff); border: 1.5px solid #f9a8d4; padding: 18px 20px 16px; box-shadow: 0 10px 26px rgba(236,72,153,.12); }
+  .tile.key .tile-l { font-size: 13px; color: #be185d; }
+  .tile.key .tile-v { font-size: 46px; line-height: 1.15; margin: 6px 0 8px; }
+  .tile.key .tile-v small { font-size: 18px; margin-left: 4px; }
+  .tile.key .tile-n { font-size: 13px; line-height: 1.75; }
+  .tiles-sm { margin-top: 0; margin-bottom: 16px; }
+  .tiles-sm .tile { padding: 12px 14px 10px; }
+  .tiles-sm .tile-l { font-size: 11.5px; }
+  .tiles-sm .tile-v { font-size: 20px; margin: 2px 0 4px; }
+  .tiles-sm .tile-v small { font-size: 12px; }
+  .tiles-sm .tile-n { font-size: 11px; }
+  .tile-n b { color: #be185d; font-weight: 700; }
+  @media (max-width: 380px) { .tile-v { font-size: 22px; } }
+  .art-hero { padding-bottom: 18px; }
+  .art-hero .subtitle { margin-bottom: 0; }
+  .doc-body.art { padding-top: 22px; }
+  .doc-body.art .pts { margin-top: 0; }
+  .doc-body.art .pts-after { margin: 4px 0 0; }
+  .doc-body.art .pts-after .art-meta { margin: 18px 0 0; }
+  .doc-body.art .pts-after .art-tags { margin: 14px 0 0; }
+  .doc-body.art .pts-after .art-note { margin-top: 16px; }
+  .doc-body.art .pts { display: grid; gap: 12px; margin: 8px 0 8px; }
+  .doc-body.art .pts .pt { background: #fff; border: 1px solid #f3e8ee; border-left: 4px solid #ec4899; border-radius: 14px; padding: 16px 18px 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05); }
+  .doc-body.art .pts .pt h3 { margin: 0 0 8px; font-size: 21px; line-height: 1.4; font-weight: 800; color: #111827; letter-spacing: -.01em; }
+  .doc-body.art .pts .pt p { margin: 0; font-size: 13.5px; line-height: 1.8; color: #4b5563; }
+  .doc-body.art .pts .pt p b { color: #111827; }
+  .art-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .art-tags a, .tagchip { display: inline-block; font-size: 12.5px; font-weight: 600; color: #6b7280; background: #f3f4f6; border: 1px solid #f3f4f6; border-radius: 999px; padding: 4px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .art-tags a:hover, .tagchip:hover { color: #ec4899; border-color: #fbcfe8; background: #fff; }
+  .tagchip.on { color: #fff; background: #ec4899; border-color: #ec4899; }
+  .art-card .art-tags { margin-top: 12px; }
+  .art-card .art-tags span { font-size: 12px; color: #9ca3af; font-weight: 600; }
+  .art-search { width: 100%; box-sizing: border-box; font-size: 16px; font-family: inherit; padding: 13px 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; outline: none; }
+  .art-search:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236,72,153,.12); }
+  .filter-label { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: .12em; margin: 18px 0 8px; }
+  .catchip { display: inline-block; font-size: 12.5px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 12px; font-family: inherit; cursor: pointer; line-height: 1.6; }
+  .catchip:hover { border-color: #fbcfe8; color: #ec4899; }
+  .catchip.on { color: #fff; background: #111827; border-color: #111827; }
+  .tagchip.more { display: none; }
+  .tagbar.open .tagchip.more { display: inline-block; }
+  .morebtn { font-size: 12.5px; font-weight: 600; color: #ec4899; background: none; border: 0; padding: 4px 6px; cursor: pointer; font-family: inherit; }
+  .loadmore { display: block; margin: 24px auto 0; font-size: 14px; font-weight: 700; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 11px 28px; cursor: pointer; font-family: inherit; }
+  .loadmore:hover { border-color: #fbcfe8; color: #ec4899; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 20px; }
+  .art-count { font-size: 13px; color: #9ca3af; margin: 0 0 12px; }
+  .related-grid.col { flex-direction: column; flex-wrap: nowrap; gap: 10px; }
+  .related-grid.col a::before { content: '・'; color: #ec4899; }
+  .rel-articles + .related-links { margin-top: 32px; }
+  .art-cta .cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .art-cta a.btn.ghost, .art-cta span.btn.ghost { background: #fff; color: #111827; border: 1px solid #e5e7eb; }
+  .art-cta span.btn.ghost { display: inline-block; padding: 10px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; color: #6b7280; }
+  .art-sns { margin: 14px 0 0; font-size: 13px; color: #6b7280; }
+  .art-sns a { text-decoration: underline; color: inherit; }
+  .art-empty { display: none; padding: 32px 0; text-align: center; color: #9ca3af; font-size: 14px; }
+</style>
+<link rel="canonical" href="https://fire-app.jp/articles/term-compound.html">
+<link rel="alternate" type="application/rss+xml" title="みんなでFIRE コラム" href="https://fire-app.jp/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="みんなでFIRE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="複利とは">
+<meta property="og:description" content="複利の意味、72の法則、始める時期の差、費用と税の影響を、数字で短く解説。複利の効果が後半に集まることを、長期投資家の目線で整理。">
+<meta property="og:url" content="https://fire-app.jp/articles/term-compound.html">
+<meta property="og:image" content="https://fire-app.jp/articles/og/term-compound.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fire-app.jp/articles/og/term-compound.jpg">
+<meta name="twitter:title" content="複利とは">
+<meta name="twitter:description" content="複利の意味、72の法則、始める時期の差、費用と税の影響を、数字で短く解説。複利の効果が後半に集まることを、長期投資家の目線で整理。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "複利とは", "description": "複利の意味、72の法則、始める時期の差、費用と税の影響を、数字で短く解説。複利の効果が後半に集まることを、長期投資家の目線で整理。", "inLanguage": "ja", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fire-app.jp/articles/term-compound.html"}, "author": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "publisher": {"@type": "Organization", "name": "みんなでFIRE", "url": "https://fire-app.jp/", "sameAs": ["https://x.com/FIRE_app_jp", "https://www.threads.com/@fire_app_jp"]}, "articleSection": "基礎知識", "keywords": ["新NISA", "全世界株", "米国株"], "image": ["https://fire-app.jp/articles/og/term-compound.jpg"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "みんなでFIRE", "item": "https://fire-app.jp/"}, {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://fire-app.jp/articles/index.html"}, {"@type": "ListItem", "position": 3, "name": "複利とは", "item": "https://fire-app.jp/articles/term-compound.html"}]}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradPrivacy)"/>
+          <defs>
+            <linearGradient id="logoGradPrivacy" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF6B9D"/>
+              <stop offset="0.38" stop-color="#E91E63"/>
+              <stop offset="0.72" stop-color="#9C27B0"/>
+              <stop offset="1" stop-color="#6A1B9A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">トップ</a>
+      <a href="../features.html">機能紹介</a>
+      <a href="index.html" class="active">コラム</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="art-hero">
+  <div class="container-sm">
+    <div class="eyebrow">COLUMN · 基礎知識</div>
+    <h1>複利とは</h1>
+    <p class="subtitle">72の法則と、期間の力</p>
+
+
+  </div>
+</section>
+
+<section class="doc-body art">
+  <div class="container-sm">
+    <div class="pts"><div class="pt"><h3>増えた分の半分は最後の10年</h3><p class="pt-d"><b>複利は、増えた分にも、次の利益が付くこと。</b>100万円を年5%で、30年運用すると、単利は250万円、複利は約432万円。</p></div><div class="pt"><h3>72÷年率が、2倍の目安</h3><p class="pt-d"><b>複利の効果は、後半に集まる。</b>30年（年5%）で増えた分の<b>約半分（50%）は、最後の10年</b>で生まれる。途中でやめると、いちばん大きい部分を逃す。</p></div><div class="pt"><h3>10年早いと、評価額は1.9倍</h3><p class="pt-d"><b>「72の法則」は、72÷年率で、お金が2倍になる年数の目安。</b>年率3〜9%の範囲では、ずれは3%以内。</p></div></div>
+    <div class="pts-after"><div class="art-meta"><span><b>作成</b> 2026年11月26日</span><span><b>情報の時点</b> 2026年11月26日時点</span></div>
+<div class="art-tags"><a href="index.html?tag=新NISA">#新NISA</a><a href="index.html?tag=全世界株">#全世界株</a><a href="index.html?tag=米国株">#米国株</a></div>
+<div class="art-note"><b>この記事について</b>　特定の金融商品の売買を勧めるものではなく、計算の仕組みを整理した情報提供です。数字は、仮定にもとづく試算です。投資の判断はご自身の責任でお願いします。　この記事は、公開資料をもとにAIが作成しています。誤りに気づかれた場合は、support@fire-app.jpまでお知らせください。</div></div>
+
+    <h2>1. 複利とは</h2>
+    <p><b>単利</b>は、最初に入れた元本にだけ、利益が付く考え方です。<b>複利</b>は、<b>増えた分も元本に加えて</b>、次の期間の利益を計算します。</p>
+    <ul>
+      <li>年5%で、100万円を運用すると、1年後は105万円。</li>
+      <li>単利は、2年目も、利益は100万円の5%＝5万円。合計110万円。</li>
+      <li>複利は、2年目の利益は、105万円の5%＝5.25万円。合計110.25万円。</li>
+    </ul>
+    <p>差は小さく見えます。<b>差は、期間が長いほど広がります。</b></p>
+    <figure class="fig"><div class="fig-title">100万円を、年5%で運用した場合：単利と複利（万円）</div><svg viewBox="0 0 420 225" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="195.0" x2="410" y2="195.0" stroke="#e5e7eb"/><rect x="28.0" y="160.7" width="30.0" height="34.3" rx="3" fill="#cbd5e1"/><text x="43.0" y="155.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >150</text><rect x="62.0" y="157.7" width="30.0" height="37.3" rx="3" fill="#ec4899"/><text x="77.0" y="152.7" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >163</text><text x="60.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >10年後</text><rect x="128.0" y="149.3" width="30.0" height="45.7" rx="3" fill="#cbd5e1"/><text x="143.0" y="144.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >200</text><rect x="162.0" y="134.3" width="30.0" height="60.7" rx="3" fill="#ec4899"/><text x="177.0" y="129.3" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >265</text><text x="160.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >20年後</text><rect x="228.0" y="137.8" width="30.0" height="57.2" rx="3" fill="#cbd5e1"/><text x="243.0" y="132.8" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >250</text><rect x="262.0" y="96.2" width="30.0" height="98.8" rx="3" fill="#ec4899"/><text x="277.0" y="91.2" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >432</text><text x="260.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >30年後</text><rect x="328.0" y="126.4" width="30.0" height="68.6" rx="3" fill="#cbd5e1"/><text x="343.0" y="121.4" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >300</text><rect x="362.0" y="34.0" width="30.0" height="161.0" rx="3" fill="#ec4899"/><text x="377.0" y="29.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >704</text><text x="360.0" y="215.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >40年後</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >単利</text><rect x="62" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="75.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >複利</text></svg><figcaption>計算：複利は 100万円×1.05の年数乗。単利は、毎年、最初の100万円にだけ5万円ずつ増える計算。<b>40年で、単利は300万円、複利は約704万円</b>。年5%は、仮定の数字で、予想ではありません。</figcaption></figure>
+    <p>年率の違いと期間の長さを、表にまとめます（100万円を一度に入れた場合）。</p>
+    <div class="tbl-wrap"><table class="art-table ms"><thead><tr><th>年率</th><th>10年後</th><th>20年後</th><th>30年後</th><th>40年後</th></tr></thead><tbody><tr><td data-label="年率"><span class="tv">3%</span></td><td class="num" data-label="10年後"><span class="tv">134万円</span></td><td class="num" data-label="20年後"><span class="tv">181万円</span></td><td class="num" data-label="30年後"><span class="tv">243万円</span></td><td class="num" data-label="40年後"><span class="tv">326万円</span></td></tr><tr><td data-label="年率"><span class="tv">5%</span></td><td class="num" data-label="10年後"><span class="tv">163万円</span></td><td class="num" data-label="20年後"><span class="tv">265万円</span></td><td class="num" data-label="30年後"><span class="tv">432万円</span></td><td class="num" data-label="40年後"><span class="tv">704万円</span></td></tr><tr><td data-label="年率"><span class="tv">7%</span></td><td class="num" data-label="10年後"><span class="tv">197万円</span></td><td class="num" data-label="20年後"><span class="tv">387万円</span></td><td class="num" data-label="30年後"><span class="tv">761万円</span></td><td class="num" data-label="40年後"><span class="tv">1,497万円</span></td></tr></tbody></table></div>
+    <p class="art-fig">計算：100万円×(1＋年率)の年数乗。仮定の年率で、将来の運用成果を約束するものではありません。</p>
+
+    <h2>2. 複利の効果は、後半に集まる</h2>
+    <p>複利が「雪だるま」といわれるのは、<b>増えた分が大きくなるほど、次の期間に付く利益も大きくなる</b>からです。このため、30年のうち、増えた分の多くは、後ろの方で生まれます。</p>
+    <figure class="fig"><div class="fig-title">30年間の増えた分は、どの10年に生まれたか（年5%、全体を100%）</div><svg viewBox="0 0 420 215" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="181.0" x2="410" y2="181.0" stroke="#e5e7eb" stroke-width="1.2"/><rect x="48.7" y="122.6" width="56.0" height="58.4" rx="3" fill="#cbd5e1"/><text x="76.7" y="116.6" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >19%</text><text x="76.7" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >最初の10年</text><rect x="182.0" y="85.8" width="56.0" height="95.2" rx="3" fill="#f9a8d4"/><text x="210.0" y="79.8" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >31%</text><text x="210.0" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >次の10年</text><rect x="315.3" y="26.0" width="56.0" height="155.0" rx="3" fill="#ec4899"/><text x="343.3" y="20.0" font-size="11" text-anchor="middle" fill="#111827" font-weight="700" >50%</text><text x="343.3" y="205.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >最後の10年</text></svg><figcaption>計算：100万円を30年。増えた分（約332万円）のうち、<b>最初の10年は約63万円、最後の10年は約167万円</b>。年率3%なら最後の10年は44%、7%なら57%。</figcaption></figure>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>年率</th><th>最初の10年</th><th>次の10年</th><th>最後の10年</th></tr></thead><tbody><tr><td data-label="年率"><span class="tv">3%</span></td><td class="num" data-label="最初の10年"><span class="tv">24%</span></td><td class="num" data-label="次の10年"><span class="tv">32%</span></td><td class="num" data-label="最後の10年"><span class="tv">44%</span></td></tr><tr><td data-label="年率"><span class="tv">5%</span></td><td class="num" data-label="最初の10年"><span class="tv">19%</span></td><td class="num" data-label="次の10年"><span class="tv">31%</span></td><td class="num" data-label="最後の10年"><span class="tv">50%</span></td></tr><tr><td data-label="年率"><span class="tv">7%</span></td><td class="num" data-label="最初の10年"><span class="tv">15%</span></td><td class="num" data-label="次の10年"><span class="tv">29%</span></td><td class="num" data-label="最後の10年"><span class="tv">57%</span></td></tr></tbody></table></div>
+    <ul>
+      <li>年5%で、最後の10年に生まれる増加分は、最初の10年の<b>約2.7倍</b>です。</li>
+      <li>年率が高いほど、後半への偏りは大きい（7%で、最後の10年が57%）。</li>
+      <li><b>途中の暴落で売る、積み立てをやめる、といった選択は、いちばん増える期間を、手放すことになる。</b>これは、複利の計算から出る、一つの見方です。</li>
+    </ul>
+
+    <h2>3. 72の法則：お金が2倍になる年数の目安</h2>
+    <p><b>72÷年率（%）＝2倍になるおよその年数</b>、という経験則です。年5%なら、72÷5＝14.4年。</p>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>年率</th><th>72の法則</th><th>正確な倍増年数</th><th>ずれ</th></tr></thead><tbody><tr><td data-label="年率"><span class="tv">1%</span></td><td class="num" data-label="72の法則"><span class="tv">72.0年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">69.7年</span></td><td class="num" data-label="ずれ"><span class="tv">+3.4%</span></td></tr><tr><td data-label="年率"><span class="tv">2%</span></td><td class="num" data-label="72の法則"><span class="tv">36.0年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">35.0年</span></td><td class="num" data-label="ずれ"><span class="tv">+2.8%</span></td></tr><tr><td data-label="年率"><span class="tv">3%</span></td><td class="num" data-label="72の法則"><span class="tv">24.0年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">23.4年</span></td><td class="num" data-label="ずれ"><span class="tv">+2.3%</span></td></tr><tr><td data-label="年率"><span class="tv">5%</span></td><td class="num" data-label="72の法則"><span class="tv">14.4年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">14.2年</span></td><td class="num" data-label="ずれ"><span class="tv">+1.4%</span></td></tr><tr><td data-label="年率"><span class="tv">7%</span></td><td class="num" data-label="72の法則"><span class="tv">10.3年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">10.2年</span></td><td class="num" data-label="ずれ"><span class="tv">+0.4%</span></td></tr><tr><td data-label="年率"><span class="tv">9%</span></td><td class="num" data-label="72の法則"><span class="tv">8.0年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">8.0年</span></td><td class="num" data-label="ずれ"><span class="tv">-0.5%</span></td></tr><tr><td data-label="年率"><span class="tv">12%</span></td><td class="num" data-label="72の法則"><span class="tv">6.0年</span></td><td class="num" data-label="正確な倍増年数"><span class="tv">6.1年</span></td><td class="num" data-label="ずれ"><span class="tv">-1.9%</span></td></tr></tbody></table></div>
+    <ul>
+      <li>年率3〜9%の範囲では、ずれは<b>3%以内</b>。電卓がなくても使える。</li>
+      <li>年率が低い（1%）と、実際より長く、高い（20%）と、短く出る。</li>
+      <li>年率10%で、約7年。<b>2倍が3回で、8倍になる年数</b>は、7.2年×3＝約22年。</li>
+    </ul>
+
+    <h2>4. 始める時期の差：毎月3万円の場合</h2>
+    <p>同じ月3万円でも、始める年齢で、60歳時点の金額は大きく違います。</p>
+    <figure class="fig"><div class="fig-title">毎月3万円を、60歳まで積み立てた場合（年5%、万円）</div><svg viewBox="0 0 420 240" role="img" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="210.0" x2="410" y2="210.0" stroke="#e5e7eb"/><rect x="34.7" y="143.6" width="40.0" height="66.4" rx="3" fill="#cbd5e1"/><text x="54.7" y="138.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1,260</text><rect x="78.7" y="34.0" width="40.0" height="176.0" rx="3" fill="#ec4899"/><text x="98.7" y="29.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >3,339</text><text x="76.7" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >25歳から</text><rect x="168.0" y="162.6" width="40.0" height="47.4" rx="3" fill="#cbd5e1"/><text x="188.0" y="157.6" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >900</text><rect x="212.0" y="117.0" width="40.0" height="93.0" rx="3" fill="#ec4899"/><text x="232.0" y="112.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >1,764</text><text x="210.0" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >35歳から</text><rect x="301.3" y="181.5" width="40.0" height="28.5" rx="3" fill="#cbd5e1"/><text x="321.3" y="176.5" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >540</text><rect x="345.3" y="168.0" width="40.0" height="42.0" rx="3" fill="#ec4899"/><text x="365.3" y="163.0" font-size="9.5" text-anchor="middle" fill="#111827" font-weight="700" >798</text><text x="343.3" y="230.0" font-size="10.5" text-anchor="middle" fill="#6b7280" font-weight="500" >45歳から</text><rect x="10" y="4" width="9" height="9" rx="2" fill="#cbd5e1"/><text x="23.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >積み立てた元本</text><rect x="117" y="4" width="9" height="9" rx="2" fill="#ec4899"/><text x="130.0" y="12.5" font-size="10" text-anchor="start" fill="#6b7280" font-weight="600" >60歳時点の評価額</text></svg><figcaption>計算：月初に3万円を積み立て、年5%を月次の複利に換算（毎月 1.05の12分の1乗）。手数料・税は考えない。年5%は仮定で、予想ではありません。</figcaption></figure>
+    <ul>
+      <li><b>25歳から（35年）：元本1,260万円が、約3,339万円</b>。</li>
+      <li><b>35歳から（25年）：元本900万円が、約1,764万円</b>。</li>
+      <li>始めるのが<b>10年早いと、元本は360万円しか増えないが、評価額は約1,575万円</b>（1.9倍）違う。</li>
+      <li>35歳から始めて、25歳からと同じ約3,339万円にするには、月<b>約5.7万円</b>の積み立てが必要（同じ年5%の場合）。</li>
+    </ul>
+    <p>3,000万円に届くまでの期間は、年率で大きく変わります。</p>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>年率</th><th>3,000万円に必要な期間</th><th>そのうち元本</th></tr></thead><tbody><tr><td data-label="年率"><span class="tv">3%</span></td><td class="num" data-label="3,000万円に必要な期間"><span class="tv">42年</span></td><td class="num" data-label="そのうち元本"><span class="tv">1,512万円</span></td></tr><tr><td data-label="年率"><span class="tv">5%</span></td><td class="num" data-label="3,000万円に必要な期間"><span class="tv">34年</span></td><td class="num" data-label="そのうち元本"><span class="tv">1,224万円</span></td></tr><tr><td data-label="年率"><span class="tv">7%</span></td><td class="num" data-label="3,000万円に必要な期間"><span class="tv">28年</span></td><td class="num" data-label="そのうち元本"><span class="tv">1,008万円</span></td></tr></tbody></table></div>
+    <p class="art-fig">計算：月3万円を月初に積み立て、元本は、3万円×12か月×年数。年率は仮定です。</p>
+
+    <h2>5. 費用と税：小さい差も、複利で広がる</h2>
+    <p>複利は、<b>プラスの効果だけでなく、費用や税の効果も大きくする</b>仕組みです。年に1%の差でも、30年で結果は違ってきます。</p>
+    <div class="tbl-wrap"><table class="art-table "><thead><tr><th>条件（100万円を30年）</th><th>年率</th><th>30年後</th></tr></thead><tbody><tr><td data-label="条件（100万円を30年）"><span class="tv">年5%（費用・税なし）</span></td><td class="num" data-label="年率"><span class="tv">5%</span></td><td class="num" data-label="30年後"><span class="tv">432万円</span></td></tr><tr><td data-label="条件（100万円を30年）"><span class="tv">年4%（年1%分、差し引かれた場合）</span></td><td class="num" data-label="年率"><span class="tv">4%</span></td><td class="num" data-label="30年後"><span class="tv">324万円</span></td></tr><tr><td data-label="条件（100万円を30年）"><span class="tv">年5%で、最後に売却益へ20.315%の課税</span></td><td class="num" data-label="年率"><span class="tv">5%</span></td><td class="num" data-label="30年後"><span class="tv">365万円</span></td></tr><tr><td data-label="条件（100万円を30年）"><span class="tv">年6%（年1%分、上積みされた場合）</span></td><td class="num" data-label="年率"><span class="tv">6%</span></td><td class="num" data-label="30年後"><span class="tv">574万円</span></td></tr></tbody></table></div>
+    <ul>
+      <li>年率が1%違うと、30年後は、約432万円に対して、約324万円（−1%）／約574万円（+1%）。<b>運用の費用が年1%違うだけで、30年後に約108万円（元本100万円あたり）の差</b>。</li>
+      <li>最後に売却益へ約20.315%の税がかかる場合、約365万円。NISAのように、非課税の制度では、この部分が、そのまま手元に残る（制度の詳しい内容は「新NISA」の記事を参照）。</li>
+    </ul>
+
+    <h2>6. 限界：複利の計算は、まっすぐな年率を前提にしている</h2>
+    <ul>
+      <li>実際の運用は、<b>毎年、同じ率で増えるわけではない</b>。マイナスの年もある。年率5%の平均でも、途中の値動きで、結果は違う。</li>
+      <li>損失が出た後は、元の水準に戻すために、<b>下がった率より、大きい率が必要</b>（−50%の後、元に戻すには＋100%）。</li>
+      <li>複利の計算は、<b>仮定の年率</b>による試算で、予想ではない。株式の実際のリターンは、期間によって大きく違う。</li>
+      <li>インフレを考えると、名目の金額の増加は、実質の増加より大きい。</li>
+    </ul>
+
+    <h2>7. 長期投資家は、どう使うか</h2>
+    <ul>
+      <li><b>期間は、年率より動かしやすい。</b>運用の成績は自分で決められないが、始める時期と続ける期間は、自分で決められる。</li>
+      <li><b>後半の効果を受け取るには、途中でやめないこと</b>が前提になる。続けられる金額・方法を選ぶ。</li>
+      <li><b>目標額から、逆算する。</b>必要な年数は、年率の仮定で大きく変わる（3%で42年、7%で28年）。複数の年率で、試算する。</li>
+      <li><b>費用と税の小さな差を、軽く見ない。</b>年1%は、30年で大きくなる。</li>
+    </ul>
+    <div class="art-note">この記事は、特定の金融商品や投資方法を勧めるものではありません。数字は、仮定の年率にもとづく計算で、将来の運用成果を約束するものではありません。</div>
+
+    <div class="art-fine">
+      <p>※ 計算の前提：年率は毎年一定。積み立ては月初。月次の複利は、年率の12分の1乗で換算。手数料、税（特記以外）、インフレは考慮しない。税率20.315%は、上場株式等の譲渡益にかかる税率（所得税・復興特別所得税・住民税の合計）。</p>
+    </div>
+
+    <div class="art-cta">
+  <h3>FIREまで、あと何年かを予測する</h3>
+  <p>楽観・中立・悲観の3つのシナリオと、あなたの実績ベースのシナリオで、FIREの到達年齢を比較できます。</p>
+  <div class="cta-btns"><a class="btn" href="../features.html#simulation">到達予測を見る</a><a class="btn ghost" href="../index.html#waitlist">アプリの公開時に知らせてもらう</a></div>
+</div>
+<p class="art-sns">最新の記事は、<a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a>と<a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a>でお知らせしています。</p>
+    <h2>出典</h2><ul class="src-list"><li>計算式・前提は、本記事内に記載（外部データは使っていません）</li></ul>
+    <h2>更新履歴</h2>
+    <ul class="src-list"><li>2026年11月26日　初版</li></ul>
+    <div class="related-links rel-articles"><h3>関連記事</h3><div class="related-grid col"><a href="it-bubble-nasdaq.html">ITバブル（2000年）｜Nasdaq-100が高値に戻るまで、長期投資家の目線</a><a href="prepay-vs-invest.html">繰り上げ返済と投資の早見表｜借入金利と運用利回りで、どちらが有利か</a><a href="term-lockup.html">ロックアップとは</a></div></div>
+    <div class="related-links"><h3>Related</h3><div class="related-grid"><a href="index.html">コラム一覧</a><a href="../index.html">みんなでFIREについて</a><a href="../disclaimer.html">免責事項</a></div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 120 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55.2859 1.95262C57.8894 -0.650873 62.1105 -0.650875 64.714 1.95262C67.3175 4.55612 67.3175 8.77722 64.714 11.3807L50.5719 25.5228L60 34.9509L74.1421 20.8088C76.7456 18.2053 80.9667 18.2053 83.5702 20.8088C86.1737 23.4123 86.1737 27.6334 83.5702 30.2369L69.4281 44.379L83.5702 58.5212C96.5877 71.5386 96.5877 92.6441 83.5702 105.662C70.5527 118.679 49.4472 118.679 36.4297 105.662C23.4123 92.6441 23.4123 71.5386 36.4297 58.5212C39.0332 55.9177 43.2543 55.9177 45.8578 58.5212C48.4613 61.1247 48.4613 65.3458 45.8578 67.9493C38.0473 75.7597 38.0473 88.423 45.8578 96.2335C53.6683 104.044 66.3316 104.044 74.1421 96.2335C81.9526 88.423 81.9526 75.7597 74.1421 67.9493L41.1438 34.9509L27.0017 49.0931C8.77719 67.3175 8.77719 96.8652 27.0017 115.09C45.2261 133.314 74.7738 133.314 92.9983 115.09C111.223 96.8652 111.223 67.3175 92.9983 49.0931C90.3948 46.4896 90.3948 42.2685 92.9983 39.665C95.6018 37.0615 99.8229 37.0615 102.426 39.665C125.858 63.0964 125.858 101.086 102.426 124.518C78.9949 147.949 41.005 147.949 17.5736 124.518C-5.85789 101.086 -5.85789 63.0964 17.5736 39.665L55.2859 1.95262Z" fill="url(#logoGradFooterPriv)"/>
+              <defs><linearGradient id="logoGradFooterPriv" x1="-1.35284" y1="144.239" x2="79.6472" y2="-42.2614" gradientUnits="userSpaceOnUse"><stop stop-color="#FF6B9D"/><stop offset="0.38" stop-color="#E91E63"/><stop offset="0.72" stop-color="#9C27B0"/><stop offset="1" stop-color="#6A1B9A"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="logo-text">みんなで<span class="grad-text">FIRE</span></span>
+        </div>
+        <p>Financial Independence, within REach.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">プロダクト</div>
+        <ul>
+          <li><a href="../index.html">トップ</a></li><li><a href="../features.html">機能紹介</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">コンテンツ</div>
+        <ul>
+          <li><a href="index.html">コラム一覧</a></li><li><a href="https://x.com/FIRE_app_jp" target="_blank" rel="noopener me">X</a></li><li><a href="https://www.threads.com/@fire_app_jp" target="_blank" rel="noopener me">Threads</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-head">法的情報</div>
+        <ul>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../disclaimer.html">免責事項</a></li>
+          <li><a href="../about.html">運営者情報</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 みんなでFIRE · 投資にはリスクが伴います。本サービスは投資助言・代理業ではありません。</div>
+  </div>
+</footer>
+</body>
+</html>
